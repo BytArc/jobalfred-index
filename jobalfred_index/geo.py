@@ -107,6 +107,44 @@ def fold(s: str) -> str:
     return s.lower().strip()
 
 
+_ZIP = r"\d{3,5}(?:-\d{4})?"
+
+
+def _split_parts(raw: str) -> list[str]:
+    """Location parts, with US 'ST zip' and 'City ST zip' endings separated into a bare state code."""
+    out: list[str] = []
+    for p in (x.strip() for x in _SPLIT.split(raw)):
+        if not p:
+            continue
+        m = re.fullmatch(rf"([A-Z]{{2}})\s+{_ZIP}", p)
+        if m:
+            out.append(m.group(1))
+            continue
+        m = re.fullmatch(rf"(.+?)\s+{_ZIP}", p)
+        if m and fold(m.group(1)) in US_STATE_NAMES:
+            out.append(m.group(1))                    # "Ohio 44432" -> Ohio
+            continue
+        m = re.fullmatch(rf"(.+?)\s+([A-Z]{{2}})(?:\s+{_ZIP})?", p)
+        if m and m.group(2) in US_STATES and fold(m.group(1)) not in NAME2CC and not m.group(1).isupper():
+            out.extend([m.group(1), m.group(2)])      # "Lisbon CT 06351" -> Lisbon, CT
+            continue
+        out.append(p)
+    return out
+
+
+def has_us_state(raw: str) -> bool:
+    """True when a location carries a US state code (not a city of that same code's country), a US state name or a ZIP code."""
+    parts = _split_parts(raw or "")
+    for i, p in enumerate(parts):
+        if len(p) == 2 and p.isupper() and p in US_STATES:
+            if i > 0 and CITIES.get(fold(parts[i - 1])) == p:
+                continue                            # Berlin, DE is Germany
+            return True
+        if fold(p) in US_STATE_NAMES and fold(p) != "georgia":
+            return True
+    return False
+
+
 def country_of(*texts: str, hint: str = "") -> str:
     """Best-effort ISO country code from location strings. Returns '' if unknown."""
     hint = (hint or "").strip().upper()
@@ -120,7 +158,7 @@ def country_of(*texts: str, hint: str = "") -> str:
         if not text:
             continue
         raw = text.strip()
-        parts = [p.strip() for p in _SPLIT.split(raw) if p.strip()]
+        parts = _split_parts(raw)
         for i in range(len(parts) - 1, -1, -1):
             p = parts[i]
             f = fold(p)
@@ -139,6 +177,8 @@ def country_of(*texts: str, hint: str = "") -> str:
                     return p
             if f in NAME2CC:
                 return NAME2CC[f]
+            if f == "georgia":
+                return "GE" if any(fold(x) in ("tbilisi", "batumi", "kutaisi") for x in parts) else "US"
             if f in US_STATE_NAMES:
                 return "US"
             if f in CA_PROV_NAMES or (len(f) == 2 and f in CA_PROV and p.isupper()):

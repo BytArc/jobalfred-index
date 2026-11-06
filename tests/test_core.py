@@ -144,3 +144,25 @@ class TestPoliteClient(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestCityCollisions(unittest.TestCase):
+    def test_us_state_zip_and_names_win_over_a_shared_city_name(self):
+        for text in ["Lisbon, CT 2938", "Lisbon CT 06351", "Lisbon, Ohio 44432", "Paris, TX", "Paris, Texas", "Rome, GA", "Athens, GA",
+                     "Dublin, OH", "Dublin, CA", "Birmingham, AL", "Cambridge, MA", "Valencia, CA", "855 Lisbon St, Lewiston, ME 04240"]:
+            self.assertEqual(geo.country_of(text), "US", text)
+            self.assertTrue(geo.has_us_state(text), text)
+
+    def test_the_other_city_stays_where_it_is(self):
+        for text, cc in [("Lisbon, Portugal", "PT"), ("Lisbon", "PT"), ("Porto", "PT"), ("Paris, France", "FR"), ("Rome, Italy", "IT"),
+                         ("Athens, Greece", "GR"), ("Dublin, IE", "IE"), ("Dublin, Ireland", "IE"), ("Birmingham, UK", "GB"),
+                         ("Cambridge, UK", "GB"), ("Valencia, Spain", "ES"), ("Santiago, Chile", "CL"), ("Barcelona, Spain", "ES"),
+                         ("Berlin, DE", "DE"), ("Mumbai, IN", "IN"), ("Tbilisi, Georgia", "GE")]:
+            self.assertEqual(geo.country_of(text), cc, text)
+            self.assertFalse(geo.has_us_state(text), text)
+
+    def test_build_moves_a_wrongly_placed_row(self):
+        rows = [["Cashier", "Lowe's", "Lisbon, CT 2938", "PT", 0, "https://x/1", "", "workday", None, None, None],
+                ["Analyst", "Acme", "Lisbon, Portugal", "PT", 0, "https://x/2", "", "workday", None, None, None]]
+        self.assertEqual(shards.fix_us_collisions(rows), 1)
+        self.assertEqual([r[3] for r in rows], ["US", "PT"])

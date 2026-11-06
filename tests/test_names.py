@@ -50,3 +50,45 @@ class TestNames(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestEntityNames(unittest.TestCase):
+    """Real examples from Portugal results: page phrases, legal entities and branch labels."""
+
+    def test_page_phrases_and_visitor_words_are_rejected(self):
+        for raw in ["Welcome to our career portal!", "Student", "Traveler"]:
+            self.assertEqual(n.polish(raw, ""), n.UNDISCLOSED, raw)
+
+    def test_branch_prefix_legal_suffix_and_country_words(self):
+        for raw, slug, want in [
+            ("Spain: Spain Branch Office of Mastercard Europe", "mastercard", "Mastercard"),
+            ("Spain: Spain Branch Office of Mastercard Europe", "", "Mastercard"),
+            ("United States 1 AB Car Rental Services", "", "AB Car Rental Services"),
+            ("US Innovex", "innovex", "Innovex"),
+            ("MNG-MANGO U.K", "mango", "MANGO"),
+            ("Aggreko Canada", "aggreko", "Aggreko"),
+            ("Aggreko Canada", "", "Aggreko"),
+            ("INB Fundtech India Pvt", "fundtech", "Fundtech"),
+            ("TD SYNNEX Poland sp. z o.o", "synnex", "TD SYNNEX"),
+            ("Exclusive Networks South Africa (Pty)", "", "Exclusive Networks"),
+            ("DJO Tunisie SARL", "", "DJO"),
+            ("Michael Kors (Denmark) ApS", "", "Michael Kors"),
+            ("Deutsche Bank AG", "", "Deutsche Bank"),
+            ("Hitachi Rail UK", "", "Hitachi Rail"),
+        ]:
+            self.assertEqual(n.polish(raw, slug), want, raw)
+
+    def test_a_country_label_plus_a_code_is_not_a_name(self):
+        self.assertEqual(n.polish("UK WIP", ""), n.UNDISCLOSED)
+        self.assertEqual(n.polish("UK WIP", "wip"), n.UNDISCLOSED)
+
+    def test_real_names_with_country_words_survive(self):
+        for raw in ["Bank of Ireland", "Air France", "Canada Goose", "US Foods", "Dave & Buster's", "Microsoft"]:
+            self.assertEqual(n.polish(raw, raw.lower().replace(" ", "").replace("&", "").replace("'", "")), raw, raw)
+
+    def test_more_real_examples(self):
+        for raw, slug, want in [("Visa U.S.A. Inc.", "visa", "Visa"), ("US Innovex", "iqvia", "Innovex"),
+                                ("UK | FNZ Global Management", "fnz", "FNZ Global Management"), ("US Bank", "usbank", "US Bank"),
+                                ("Employment Channel", "acciona", "Acciona"), ("Insights. Connections. Experiences", "ncr", n.UNDISCLOSED),
+                                ("Welcome to CSL", "csl", "CSL"), ("Cushman & Wakefield RE Consultants Spain, S.L.U", "", "Cushman & Wakefield RE Consultants")]:
+            self.assertEqual(n.polish(raw, slug), want, raw)

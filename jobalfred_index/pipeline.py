@@ -121,9 +121,29 @@ def run_source(src, tenants: list[dict], state: State, client: Client, deadline:
     prog.finished = time.monotonic()
 
 
+FEED_SOURCES = {"remotive", "arbeitnow", "remoteok", "himalayas", "jobicy", "themuse", "weworkremotely"}
+
+
+def tenant_slug(ats: str, key: str) -> str:
+    head = key.split("|")[0]
+    return head.split(".")[0] if ats != "oracle" else ""
+
+
 def iter_rows(state: State):
-    for _ats, _key, rows in state.iter_rows():
-        yield from rows
+    """Stored rows with the employer's brand made clean: legal suffixes, country words and branch labels removed,
+    generic words dropped (names.polish). Nothing else about a row, and never its URL, is changed."""
+    for ats, key, rows in state.iter_rows():
+        slug = tenant_slug(ats, key)
+        urls = [r[5] for r in rows[:30]]
+        feed = ats in FEED_SOURCES or ats in ("amazon", "google", "apple", "uber", "eightfold")
+        cache: dict[str, str] = {}
+        for r in rows:
+            c = r[1]
+            if c not in cache:
+                cache[c] = names.polish(c, "" if feed else slug, urls, allow_domain=not feed) if not feed else (
+                    names.polish(c, "", (), allow_domain=False))
+            r[1] = cache[c]
+            yield r
 
 
 def run_fetch(state: State, client: Client, budget_s: float, only: list[str] | None, max_age_hours: float,

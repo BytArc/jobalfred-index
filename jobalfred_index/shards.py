@@ -105,6 +105,18 @@ def fill_country(rows: list[list]) -> int:
     return filled
 
 
+def fix_us_collisions(rows: list[list]) -> int:
+    """A city that exists in several countries (Lisbon CT, Paris TX, Dublin OH) is in the US when the location carries a
+    US state code, state name or ZIP code. Moves only rows that were put elsewhere."""
+    from . import geo
+    moved = 0
+    for r in rows:
+        if r[3] and r[3] != "US" and r[2] and geo.has_us_state(r[2]) and geo.country_of(r[2]) == "US":
+            r[3] = "US"
+            moved += 1
+    return moved
+
+
 def shard_id(r: list) -> tuple[str, str]:
     if r[4] == 2:
         return "REMOTE", ""
@@ -126,6 +138,7 @@ def build(rows_iter, out_dir: Path, log=print) -> dict:
         c = clean_company(r[1])
         if c and c != r[1] and len(c) >= 2:
             r[1] = c
+    dropped["country_corrected_to_US"] = fix_us_collisions(rows)
     dropped["country_filled_from_employer"] = fill_country(rows)
     groups: dict[str, tuple[str, list[list]]] = {}
     for r in rows:

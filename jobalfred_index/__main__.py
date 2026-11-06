@@ -126,6 +126,16 @@ def main(argv=None) -> int:
         from concurrent.futures import ThreadPoolExecutor
         from . import names
         todo = []
+        repolished = 0
+        for ats in sorted(names.NAME_FROM_PAGE):                  # clean the cached names again, no network
+            for t in state.tenants(ats):
+                nm = t.get("name")
+                if nm and nm != names.UNDISCLOSED:
+                    new = names.polish(nm, pipeline.tenant_slug(ats, t["key"]) or "", ())
+                    if new != nm:
+                        state.set_name(ats, t["key"], new, rewrite_rows=False)
+                        repolished += 1
+        log(f"names: {repolished} cached names cleaned")
         for ats in sorted(names.NAME_FROM_PAGE):
             for t in state.tenants(ats):
                 nm = t.get("name")
