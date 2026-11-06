@@ -1,0 +1,2688 @@
+{
+"v": 1,
+"generated_from": [
+"jobalfred-jobs companies.yml",
+"job-scraper.js",
+"top-companies-config.js",
+"REMOTE-RULES-AND-ATS.md"
+],
+"tenants": [
+{
+"ats": "ashby",
+"key": "1password",
+"data": {
+"name": "1Password"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "airwallex",
+"data": {
+"name": "Airwallex"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "alan",
+"data": {
+"name": "Alan"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "alchemy",
+"data": {
+"name": "Alchemy"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "alephalpha",
+"data": {
+"name": "Aleph Alpha"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "amplitude",
+"data": {
+"name": "Amplitude"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "attio",
+"data": {
+"name": "Attio"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "babbel",
+"data": {
+"name": "Babbel"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "backmarket",
+"data": {
+"name": "Back Market"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "black-forest-labs",
+"data": {
+"name": "Black Forest Labs"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "bynder",
+"data": {
+"name": "Bynder"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "cohere",
+"data": {
+"name": "Cohere"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "consensys",
+"data": {
+"name": "Consensys"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "corti",
+"data": {
+"name": "Corti"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "decagon",
+"data": {
+"name": "Decagon"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "deepgram",
+"data": {
+"name": "Deepgram"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "deepl",
+"data": {
+"name": "DeepL"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "delinea",
+"data": {
+"name": "Delinea"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "deliveroo",
+"data": {
+"name": "Deliveroo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "docker",
+"data": {
+"name": "Docker"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "doctolib",
+"data": {
+"name": "Doctolib"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "drata",
+"data": {
+"name": "Drata"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "elevenlabs",
+"data": {
+"name": "ElevenLabs"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "epidemic-sound",
+"data": {
+"name": "Epidemic Sound"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "farfetch",
+"data": {
+"name": "Farfetch"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "forto",
+"data": {
+"name": "Forto"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "hackerone",
+"data": {
+"name": "HackerOne"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "illumio",
+"data": {
+"name": "Illumio"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "kiwi-com",
+"data": {
+"name": "Kiwi.com"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "kong",
+"data": {
+"name": "Kong"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "langchain",
+"data": {
+"name": "LangChain"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "ledger",
+"data": {
+"name": "Ledger"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "legora",
+"data": {
+"name": "Legora"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "lemonade",
+"data": {
+"name": "Lemonade"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "lendable",
+"data": {
+"name": "Lendable"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "linear",
+"data": {
+"name": "Linear"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "lovable",
+"data": {
+"name": "Lovable"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "mapbox",
+"data": {
+"name": "Mapbox"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "miro",
+"data": {
+"name": "Miro"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "mollie",
+"data": {
+"name": "Mollie"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "n8n",
+"data": {
+"name": "n8n"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "notion",
+"data": {
+"name": "Notion"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "nubank",
+"data": {
+"name": "Nubank"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "openai",
+"data": {
+"name": "OpenAI"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "paddle",
+"data": {
+"name": "Paddle"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "parloa",
+"data": {
+"name": "Parloa"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "perk",
+"data": {
+"name": "TravelPerk"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "perplexity",
+"data": {
+"name": "Perplexity"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "photoroom",
+"data": {
+"name": "Photoroom"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "pleo",
+"data": {
+"name": "Pleo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "polygon-labs",
+"data": {
+"name": "Polygon Labs"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "qonto",
+"data": {
+"name": "Qonto"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "ramp",
+"data": {
+"name": "Ramp"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "redis",
+"data": {
+"name": "Redis"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "resend",
+"data": {
+"name": "Resend"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "rohlik",
+"data": {
+"name": "Rohlik"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "sierra",
+"data": {
+"name": "Sierra"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "sitecore",
+"data": {
+"name": "Sitecore"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "snowflake",
+"data": {
+"name": "Snowflake"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "snyk",
+"data": {
+"name": "Snyk"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "supabase",
+"data": {
+"name": "Supabase"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "synthesia",
+"data": {
+"name": "Synthesia"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "tekion",
+"data": {
+"name": "Tekion"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "temporal",
+"data": {
+"name": "Temporal"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "thought-machine",
+"data": {
+"name": "Thought Machine"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "trustly",
+"data": {
+"name": "Trustly"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "vanta",
+"data": {
+"name": "Vanta"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "wayve",
+"data": {
+"name": "Wayve"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "zapier",
+"data": {
+"name": "Zapier"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "ashby",
+"key": "zego",
+"data": {
+"name": "Zego"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "bamboohr",
+"key": "zendesk",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "breezy",
+"key": "breezy-hr",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "greenhouse",
+"key": "1password",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "a16z",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "abnormalsecurity",
+"data": {
+"name": "Abnormal Security"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "adyen",
+"data": {
+"name": "Adyen"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "affirm",
+"data": {
+"name": "Affirm"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "agoda",
+"data": {
+"name": "Agoda"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "airbnb",
+"data": {
+"name": "Airbnb"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "airtable",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "algolia",
+"data": {
+"name": "Algolia"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "amplemarket",
+"data": {
+"name": "Amplemarket"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "amplitude",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "anduril",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "andurilindustries",
+"data": {
+"name": "Anduril"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "anthropic",
+"data": {
+"name": "Anthropic"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "apollo",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "appsflyer",
+"data": {
+"name": "AppsFlyer"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "asana",
+"data": {
+"name": "Asana"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "auroratech",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "auth0",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "auto1group",
+"data": {
+"name": "Auto1 Group"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "benchling",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "beyondtrust",
+"data": {
+"name": "BeyondTrust"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "binance",
+"data": {
+"name": "Binance"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "bitgo",
+"data": {
+"name": "BitGo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "bitpanda",
+"data": {
+"name": "Bitpanda"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "block",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "boxinc",
+"data": {
+"name": "Box"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "braze",
+"data": {
+"name": "Braze"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "brex",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "bugcrowd",
+"data": {
+"name": "Bugcrowd"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "cabify",
+"data": {
+"name": "Cabify"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "calendly",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "canonical",
+"data": {
+"name": "Canonical"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "canva",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "carta",
+"data": {
+"name": "Carta"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "celonis",
+"data": {
+"name": "Celonis"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "chainalysis",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "chainguard",
+"data": {
+"name": "Chainguard"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "chewy",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "chime",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "circle",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "cleo",
+"data": {
+"name": "Cleo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "clickup",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "cloudflare",
+"data": {
+"name": "Cloudflare"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "cockroachlabs",
+"data": {
+"name": "Cockroach Labs"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "cognite",
+"data": {
+"name": "Cognite"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "cohere",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "coinbase",
+"data": {
+"name": "Coinbase"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "commvault",
+"data": {
+"name": "Commvault"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "confluent",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "consensys",
+"data": {
+"name": "MetaMask"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "contentful",
+"data": {
+"name": "Contentful"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "coursera",
+"data": {
+"name": "Coursera"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "crowdstrike",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "cruise",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "databricks",
+"data": {
+"name": "Databricks"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "datadog",
+"data": {
+"name": "Datadog"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "dataiku",
+"data": {
+"name": "Dataiku"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "deel",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "deliveroo",
+"data": {
+"name": "Deliveroo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "discord",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "docusign",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "doordash",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "doordashusa",
+"data": {
+"name": "DoorDash"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "dremio",
+"data": {
+"name": "Dremio"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "dropbox",
+"data": {
+"name": "Dropbox"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "druva",
+"data": {
+"name": "Druva"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "duolingo",
+"data": {
+"name": "Duolingo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "ebanx",
+"data": {
+"name": "EBANX"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "elastic",
+"data": {
+"name": "Elastic"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "elastic57",
+"data": {},
+"source": "seed:top-companies-config.js"
+},
+{
+"ats": "greenhouse",
+"key": "etsy",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "feedzai",
+"data": {
+"name": "Feedzai"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "feverup",
+"data": {
+"name": "Fever"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "figma",
+"data": {
+"name": "Figma"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "fireblocks",
+"data": {
+"name": "Fireblocks"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "five9",
+"data": {
+"name": "Five9"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "fivetran",
+"data": {
+"name": "Fivetran"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "flatironhealth",
+"data": {
+"name": "Flatiron Health"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "flexport",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "flix",
+"data": {
+"name": "Flix"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "flowtraders",
+"data": {
+"name": "Flow Traders"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "generalatlantic",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "generalcatalyst",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "getyourguide",
+"data": {
+"name": "GetYourGuide"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "gitlab",
+"data": {
+"name": "GitLab"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "gleanwork",
+"data": {
+"name": "Glean"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "gocardless",
+"data": {
+"name": "GoCardless"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "gong",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "gongio",
+"data": {
+"name": "Gong"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "grafanalabs",
+"data": {
+"name": "Grafana Labs"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "grammarly",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "gusto",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "hashicorp",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "hellofresh",
+"data": {
+"name": "HelloFresh"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "helsing",
+"data": {
+"name": "Helsing"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "hubspotjobs",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "huggingface",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "huntress",
+"data": {
+"name": "Huntress"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "imc",
+"data": {
+"name": "IMC Trading"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "instacart",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "intercom",
+"data": {
+"name": "Fin (Intercom)"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "iterable",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "jasperai",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "jumia",
+"data": {
+"name": "Jumia"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "klarna",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "klaviyo",
+"data": {
+"name": "Klaviyo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "komodohealth",
+"data": {
+"name": "Komodo Health"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "lacework",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "linear",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "liveperson",
+"data": {
+"name": "LivePerson"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "lokalise",
+"data": {
+"name": "Lokalise"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "loom",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "lucidmotors",
+"data": {
+"name": "Lucid Motors"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "lyft",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "medallia",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "mentimeter",
+"data": {
+"name": "Mentimeter"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "mirakl",
+"data": {
+"name": "Mirakl"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "miro",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "mixpanel",
+"data": {
+"name": "Mixpanel"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "mollie",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "mongodb",
+"data": {
+"name": "MongoDB"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "moniepoint",
+"data": {
+"name": "Moniepoint"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "monzo",
+"data": {
+"name": "Monzo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "mozilla",
+"data": {
+"name": "Mozilla"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "n26",
+"data": {
+"name": "N26"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "neo4j",
+"data": {
+"name": "Neo4j"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "nerdwallet",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "netlify",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "netskope",
+"data": {
+"name": "Netskope"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "newrelic",
+"data": {
+"name": "New Relic"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "nextiva",
+"data": {
+"name": "Nextiva"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "nozominetworks",
+"data": {
+"name": "Nozomi Networks"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "nuro",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "okta",
+"data": {
+"name": "Okta"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "okx",
+"data": {
+"name": "OKX"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "opensea",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "oura",
+"data": {
+"name": "Oura"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "outreach",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "pagerduty",
+"data": {
+"name": "PagerDuty"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "parloa",
+"data": {
+"name": "Parloa"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "payoneer",
+"data": {
+"name": "Payoneer"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "pingidentity",
+"data": {
+"name": "Ping Identity"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "pinterest",
+"data": {
+"name": "Pinterest"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "plaid",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "planetscale",
+"data": {
+"name": "PlanetScale"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "postman",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "procore",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "purestorage",
+"data": {
+"name": "Everpure (Pure Storage)"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "qualtrics",
+"data": {
+"name": "Qualtrics"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "raisin",
+"data": {
+"name": "Raisin"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "ramp",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "realtimeboardglobal",
+"data": {
+"name": "Miro"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "reddit",
+"data": {
+"name": "Reddit"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "remotecom",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "retool",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "revolut",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "riotgames",
+"data": {
+"name": "Riot Games"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "ripple",
+"data": {
+"name": "Ripple"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "rippling",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "robinhood",
+"data": {
+"name": "Robinhood"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "roblox",
+"data": {
+"name": "Roblox"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "rubrik",
+"data": {
+"name": "Rubrik"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "runwayml",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "salesloft",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "samsara",
+"data": {
+"name": "Samsara"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "scaleai",
+"data": {
+"name": "Scale AI"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "scandit",
+"data": {
+"name": "Scandit"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "segment",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "sentinellabs",
+"data": {
+"name": "SentinelOne"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "sentry",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "singlestore",
+"data": {
+"name": "SingleStore"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "smartlyio",
+"data": {
+"name": "Smartly.io"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "snyk",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "sofi",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "spacex",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "splunk",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "sproutsocial",
+"data": {
+"name": "Sprout Social"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "squarespace",
+"data": {
+"name": "Squarespace"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "stabilityai",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "starburst",
+"data": {
+"name": "Starburst"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "stripe",
+"data": {
+"name": "Stripe"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "sumologic",
+"data": {
+"name": "Sumo Logic"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "sumup",
+"data": {
+"name": "SumUp"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "supabase",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "sweetgreen",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "swordhealth",
+"data": {
+"name": "Sword Health"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "tanium",
+"data": {
+"name": "Tanium"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "thunes",
+"data": {
+"name": "Thunes"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "tide",
+"data": {
+"name": "Tide"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "toast",
+"data": {
+"name": "Toast"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "towerresearchcapital",
+"data": {
+"name": "Tower Research Capital"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "traderepublicbank",
+"data": {
+"name": "Trade Republic"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "trivago",
+"data": {
+"name": "Trivago"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "twilio",
+"data": {
+"name": "Twilio"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "twitch",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "typeform",
+"data": {
+"name": "Typeform"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "vectranetworks",
+"data": {
+"name": "Vectra AI"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "vercel",
+"data": {
+"name": "Vercel"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "veriff",
+"data": {
+"name": "Veriff"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "wallapop",
+"data": {
+"name": "Wallapop"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "wayfair",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "waymo",
+"data": {
+"name": "Waymo"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "webflow",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "wiseuk",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "wizinc",
+"data": {
+"name": "Wiz"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "wolt",
+"data": {
+"name": "Wolt"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "wrike",
+"data": {
+"name": "Wrike"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "xai",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "yext",
+"data": {
+"name": "Yext"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "yugabyte",
+"data": {
+"name": "Yugabyte"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "zapier",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "greenhouse",
+"key": "zocdoc",
+"data": {
+"name": "Zocdoc"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "zscaler",
+"data": {
+"name": "Zscaler"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "greenhouse",
+"key": "zuora",
+"data": {
+"name": "Zuora"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "gupy",
+"key": "ambev",
+"data": {
+"name": "Ambev"
+},
+"source": "seed:verified-example"
+},
+{
+"ats": "jazzhr",
+"key": "ctcgroup",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "lever",
+"key": "affinity",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "airbyte",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "anyscale",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "blablacar",
+"data": {
+"name": "BlaBlaCar"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "carta",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "coda",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "contentsquare",
+"data": {
+"name": "Contentsquare"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "dbtlabs",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "farfetch",
+"data": {
+"name": "Farfetch"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "fivetran",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "jobandtalent",
+"data": {
+"name": "Jobandtalent"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "lattice",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "lever",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "lodgify",
+"data": {
+"name": "Lodgify"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "lyrahealth",
+"data": {
+"name": "Lyra Health"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "marqeta",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "mercury",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "mistral",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "modal",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "netflix",
+"data": {},
+"source": "seed:top-companies-config.js"
+},
+{
+"ats": "lever",
+"key": "nium",
+"data": {
+"name": "Nium"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "offchainlabs",
+"data": {
+"name": "Offchain Labs"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "oliverwyman",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "palantir",
+"data": {
+"name": "Palantir"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "pigment",
+"data": {
+"name": "Pigment"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "replit",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "saviynt",
+"data": {
+"name": "Saviynt"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "sonarsource",
+"data": {
+"name": "Sonar"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "sophos",
+"data": {
+"name": "Sophos"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "spotify",
+"data": {
+"name": "Spotify"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "stytch",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "swile",
+"data": {
+"name": "Swile"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "sysdig",
+"data": {
+"name": "Sysdig"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "tinybird",
+"data": {
+"name": "Tinybird"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "togetherai",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "twitchtv",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "veeva",
+"data": {
+"name": "Veeva"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "vestiairecollective",
+"data": {
+"name": "Vestiaire Collective"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever",
+"key": "wandb",
+"data": {},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "lever",
+"key": "yuno",
+"data": {
+"name": "Yuno"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "lever-eu",
+"key": "tomtom",
+"data": {
+"name": "TomTom"
+},
+"source": "seed:jobalfred-jobs"
+},
+{
+"ats": "oracle",
+"key": "eeho.fa.us2.oraclecloud.com|jobsearch",
+"data": {
+"host": "eeho.fa.us2.oraclecloud.com",
+"site": "jobsearch",
+"name": "Oracle"
+},
+"source": "seed:verified-example"
+},
+{
+"ats": "oracle",
+"key": "jpmc.fa.oraclecloud.com|CX_1001",
+"data": {
+"host": "jpmc.fa.oraclecloud.com",
+"site": "CX_1001",
+"name": "JPMorgan Chase"
+},
+"source": "seed:verified-example"
+},
+{
+"ats": "recruitee",
+"key": "bunq",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "rippling",
+"key": "kindthread",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "teamtailor",
+"key": "cazoo",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "teamtailor",
+"key": "deezer",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "teamtailor",
+"key": "ornikar",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "teamtailor",
+"key": "payfit",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "workable",
+"key": "huggingface",
+"data": {},
+"source": "seed:verified-example"
+},
+{
+"ats": "workday",
+"key": "adobe.wd5|external_experienced",
+"data": {
+"tenant": "adobe",
+"wd": "wd5",
+"site": "external_experienced"
+},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "workday",
+"key": "cisco.wd5|cisco_careers",
+"data": {
+"tenant": "cisco",
+"wd": "wd5",
+"site": "Cisco_Careers"
+},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "workday",
+"key": "dell.wd1|external",
+"data": {
+"tenant": "dell",
+"wd": "wd1",
+"site": "External"
+},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "workday",
+"key": "intel.wd1|external",
+"data": {
+"tenant": "intel",
+"wd": "wd1",
+"site": "External"
+},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "workday",
+"key": "nvidia.wd5|nvidiaexternalcareersite",
+"data": {
+"tenant": "nvidia",
+"wd": "wd5",
+"site": "NVIDIAExternalCareerSite"
+},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "workday",
+"key": "salesforce.wd12|external_career_site",
+"data": {
+"tenant": "salesforce",
+"wd": "wd12",
+"site": "External_Career_Site"
+},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "workday",
+"key": "sec.wd3|samsung_careers",
+"data": {
+"tenant": "sec",
+"wd": "wd3",
+"site": "Samsung_Careers"
+},
+"source": "seed:job-scraper.js"
+},
+{
+"ats": "workday",
+"key": "zoom.wd5|zoom",
+"data": {
+"tenant": "zoom",
+"wd": "wd5",
+"site": "Zoom"
+},
+"source": "seed:job-scraper.js"
+}
+],
+"urls": [
+"https://accel.isolvedhire.com/jobs/1899686.html",
+"https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced",
+"https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/external_experienced",
+"https://ams.hirepro.in/registration/apexdemo/aptr4/openings/",
+"https://app.joinsuperset.com/launchpad/login",
+"https://app.sesametime.com/jobs/simumak/e56c0291-d6cc-42f6-8387-2c1f187f74d9/apply/personal",
+"https://apply.workable.com/blueground/j/DF694D45CA/apply/",
+"https://ats.rippling.com/kindthread/jobs/0f7926da-58f7-4b2c-bcf3-014b7008b264/apply",
+"https://canopy.bamboohr.com/careers/42",
+"https://career-ohb.csod.com/ux/ats/careersite/4/requisition/9009/application",
+"https://career.teamtailor.com/jobs/8660969-customer-success-manager-finnish-speaking/applications/new",
+"https://career55.sapsf.eu/careers",
+"https://careers-kfintech.peoplestrong.com/register",
+"https://careers-peraton.icims.com/jobs/173385/electrical-engineer---unmanned-systems/login",
+"https://careers.fountain.com/gopuff",
+"https://careers.hireology.com/hireology2/2910044/description",
+"https://careers.jobscore.com/careers/guidebook/jobs/sales-development-representative-remote-dnbfFmER5mEzM6WBDrR5Yu",
+"https://careers.lightyear.one/software-engineer-3/en/apply",
+"https://careers.mastercard.com/us/en/job/R-290748/Senior-Software-Engineer",
+"https://careers.pageuppeople.com/774/cw/en/job/502609/senior-gpu-verification-engineer",
+"https://careers.turbohire.co/job/publicjobs/85e0d392-c99f-455b-a1ce-f63680dc780c",
+"https://cisco.wd5.myworkdayjobs.com/en-US/Cisco_Careers",
+"https://cisco.wd5.myworkdayjobs.com/wday/cxs/cisco/Cisco_Careers",
+"https://clientapps.jobadder.com/79590/connecting-resources-inc/568818/diesel-mechanic-farm-equipment-mechanic/apply",
+"https://community.jobalfred.com/v1/rules/manifest",
+"https://dell.wd1.myworkdayjobs.com/en-US/External",
+"https://dell.wd1.myworkdayjobs.com/wday/cxs/dell/External",
+"https://demo.hire.trakstar.com/jobs/fk0h74/",
+"https://desktopinternet.pandape.infojobs.com.br/ApplyCT/3871639",
+"https://emp.jobylon.com/applications/jobs/284771/create/",
+"https://empleoayudaenaccion.talentclue.com/es/node/add/cv/job/129951993/company/37067300/4590/modal",
+"https://github.com/bullhorn/career-portal",
+"https://herp.careers/v1/herpinc/Qq1f9ppQHV9w/apply",
+"https://hrmos.co/pages/pokemon/jobs/0000187/apply",
+"https://intel.wd1.myworkdayjobs.com/en-US/External",
+"https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External",
+"https://job-boards.greenhouse.io/gitlab/jobs/8638232002",
+"https://jobs-lecturio.kenjo.io/data-scientist/apply",
+"https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245/application",
+"https://jobs.clearcompany.com/careers/jobs/9b5f8e2d-5fa3-f07f-6178-7c245eeb5bf9/apply",
+"https://jobs.dayforcehcm.com/en-US/mydayforce/alljobs/jobs/103906/apply",
+"https://jobs.dover.com/Dover/066865ee-3ba5-4098-9420-53cd8d45cd12",
+"https://jobs.gem.com/onesignal/am9icG9zdDpXfhdTg2T98hjzBZLMKmFW",
+"https://jobs.isastur.bizneo.cloud/jobs/candidatura-espontanea-unete-a-nuestro-equipo",
+"https://jobs.jobvite.com/panynj/job/ozTEAfwq/apply",
+"https://jobs.lever.co/palantir/6ed76ce8-4156-4b60-b120-403538bd66cd/apply",
+"https://jobs.siemens.com/en_US/externaljobs/Register",
+"https://jobs.smartrecruiters.com/Ubisoft2/744000159824028",
+"https://jobs.stationf.co/companies/wttj/jobs/social-media-content-intern-january-2027_paris",
+"https://jobsapi.ceipal.com/APISource/v2/index.html",
+"https://join.com/companies/bring/16530286/apply/authentication",
+"https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210601508/apply/email",
+"https://landing.applytojob.com/apply/wSVkDuD9nF/Growth-Marketing-Manager-Social",
+"https://landing.jobs/jobs/senior-java-software-developer-in-lisbon-2025/quick_apply/profile",
+"https://latentview.darwinbox.in/ms/candidatev2/main/auth/register",
+"https://luby.inhire.app/vagas/d76a8858-90ad-4336-82c9-1bae511e7367/profissional-engenheiroa-de-dados-aws-senior-remoto",
+"https://myjobs.adp.com/apply/auth",
+"https://nearbyfleetservices.applicantpro.com/account/",
+"https://nextronenergia.vagas.solides.com.br/vaga/937529",
+"https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite",
+"https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Developer--AI-Networking_JR2029449",
+"https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite",
+"https://ottonova.jobs.personio.de/job/2807356/apply",
+"https://paypal.eightfold.ai/careers/apply",
+"https://princesscruises.pinpointhq.com/postings/ccc962b4-288c-4c83-8936-8afee23f336a/applications/new",
+"https://recruit.uwo.ca/psc/hrprdwebER/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL",
+"https://recruiting.paylocity.com/Recruiting/Jobs/Apply/4641093",
+"https://recruiting.ultipro.com/BUI1004BMDI/JobBoard/6b442184-52a5-4635-8db5-5aa4bed2a563/OpportunityDetail?opportunityId=e000058b-f863-4161-9295-7646c0b00c0a",
+"https://recruitingbypaycor.com/career/SubmitResume.action",
+"https://renk-group.softgarden.io/job/66532203/Sales-Engineer-m-f-d-",
+"https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site",
+"https://salesforce.wd12.myworkdayjobs.com/wday/cxs/salesforce/External_Career_Site",
+"https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers",
+"https://sec.wd3.myworkdayjobs.com/wday/cxs/sec/Samsung_Careers",
+"https://securin.zohorecruit.in/jobs/careers/35163000011132046/Project-Coordinator",
+"https://sjobs.brassring.com/TGnewUI/Search/Home/Home",
+"https://spreadgroup.recruitee.com/o/head-of-performance-marketing-fmd/c/new",
+"https://talent.recrutei.com.br/ucm-business-solutions/164508/register",
+"https://talent360.freshteam.com/jobs/1B9PfIBAxqds/procurement-specialist-riyadh",
+"https://transforgroup.factorialhr.pt/apply/administrativo-m-f-lisboa-302941",
+"https://turno.keka.com/careers/applyjob/150105",
+"https://unique.careers.hibob.com/jobs/f78b4749-384c-45b5-9d52-e04b1afec580/apply",
+"https://vetsez.breezy.hr/p/ddf6ace039b401-net-developer-remote-opportunity/apply",
+"https://weg.gupy.io/candidates/jobs/12844036/apply",
+"https://who.taleo.net/careersection/iam/accessmanagement/login.jsf",
+"https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=ad333ea2-8bdb-4f34-a4b4-928a2644de1c&ccId=19000101_000001&lang=en_US&type=JS&jobId=590094&jwId=9207367300593_6",
+"https://www.careers-page.com/manatal/job/3W35R9R8/apply",
+"https://www.comeet.co/jobs/28.000/7F.F66/apply",
+"https://www.governmentjobs.com/app/signin",
+"https://www.naukri.com/faq/job-seeker-apply",
+"https://www.paycomonline.net/v4/ats/web.php/portal/3AD76C6FBDD9AAD96572860E46F630C1/jobs/163053",
+"https://www.workstream.us/j/a3539784/chick-fil-a/fountain-70772/delivery-driver-54f6f8a6/apply",
+"https://www1.jobdiva.com/private/myjobs/rssfeed_filter_outside.jsp",
+"https://zoom.wd5.myworkdayjobs.com/en-US/Zoom",
+"https://zoom.wd5.myworkdayjobs.com/wday/cxs/zoom/Zoom"
+]
+}

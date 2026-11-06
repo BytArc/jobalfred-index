@@ -1,0 +1,113 @@
+{
+ "comments": "21/08/2026: Cursor pagination is now available and is the preferred way to page through the feed. Pass the nextCursor value from each response back as ?cursor=. It is faster than offset and will never return the same job twice. The offset parameter is deprecated and will be removed in a future release. 13/03/2026: The API has been updated to include the companySlug field in the response.",
+ "updatedAt": 1793928765,
+ "offset": 0,
+ "limit": 3,
+ "totalCount": 113480,
+ "nextCursor": "MjAyNi0xMS0wNlQwMTozMjozOS4yNzQ1MzBafDI1MTI3NDM",
+ "jobs": [
+  {
+   "title": "Head of Service, Crimson Rise",
+   "companyName": "Crimson Education",
+   "companySlug": "crimson-education",
+   "companyLogo": "https://cdn-images.himalayas.app/mpc5uxmnmehbncrgv865bptiu3h7",
+   "employmentType": "Full Time",
+   "minSalary": null,
+   "maxSalary": null,
+   "salaryPeriod": "annual",
+   "seniority": [
+    "Director"
+   ],
+   "currency": null,
+   "locationRestrictions": [
+    "United States"
+   ],
+   "timezoneRestrictions": [
+    -10,
+    -9,
+    -8
+   ],
+   "categories": [
+    "Service-Delivery-Director",
+    "Education-Program-Director",
+    "Education-Director"
+   ],
+   "parentCategories": [
+    "Operations"
+   ],
+   "pubDate": 1793928765,
+   "expiryDate": 1799112764,
+   "applicationLink": "https://himalayas.app/companies/crimson-education/jobs/head-of-service-crimson-rise?utm_source=api",
+   "guid": "https://himalayas.app/companies/crimson-education/jobs/head-of-service-crimson-rise"
+  },
+  {
+   "title": "People Operations Associate - Regional",
+   "companyName": "Bjak",
+   "companySlug": "bjak",
+   "companyLogo": "https://cdn-images.himalayas.app/8ub8wtihrfrm3vfivlkcojai4np3",
+   "employmentType": "Full Time",
+   "minSalary": null,
+   "maxSalary": null,
+   "salaryPeriod": "annual",
+   "seniority": [
+    "Entry-level",
+    "Mid-level"
+   ],
+   "currency": null,
+   "locationRestrictions": [
+    "Singapore"
+   ],
+   "timezoneRestrictions": [
+    8
+   ],
+   "categories": [
+    "People-Operations-Associate",
+    "Regional-Operations-Associate",
+    "Regional-HR-Specialist"
+   ],
+   "parentCategories": [
+    "Human Resources"
+   ],
+   "pubDate": 1793928764,
+   "expiryDate": 1799112763,
+   "applicationLink": "https://himalayas.app/companies/bjak/jobs/people-operations-associate-regional-3579929614?utm_source=api",
+   "guid": "https://himalayas.app/companies/bjak/jobs/people-operations-associate-regional-3579929614"
+  },
+  {
+   "title": "Deployment Strategist",
+   "companyName": "Onboarded",
+   "companySlug": "onboarded",
+   "companyLogo": "https://cdn-images.himalayas.app/9qmrn2c2bandgu5l2ztjqj25qbg5",
+   "employmentType": "Full Time",
+   "minSalary": null,
+   "maxSalary": null,
+   "salaryPeriod": "annual",
+   "seniority": [
+    "Mid-level"
+   ],
+   "currency": null,
+   "locationRestrictions": [
+    "United States"
+   ],
+   "timezoneRestrictions": [
+    -10,
+    -9,
+    -8
+   ],
+   "categories": [
+    "Deployment-Strategist",
+    "Solutions-Architect",
+    "Partner-Solutions-Manager"
+   ],
+   "parentCategories": [
+    "Developer",
+    "Customer Service",
+    "Product"
+   ],
+   "pubDate": 1793928759,
+   "expiryDate": 1799112757,
+   "applicationLink": "https://himalayas.app/companies/onboarded/jobs/deployment-strategist?utm_source=api",
+   "guid": "https://himalayas.app/companies/onboarded/jobs/deployment-strategist"
+  }
+ ]
+}

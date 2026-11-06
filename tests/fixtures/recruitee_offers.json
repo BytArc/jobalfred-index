@@ -1,0 +1,486 @@
+{
+ "offers": [
+  {
+   "category_code": "banking",
+   "position": 1653,
+   "hybrid": true,
+   "state_name": "Wien",
+   "locations_question_type": "single_choice",
+   "postal_code": null,
+   "mailbox_email": "redacted",
+   "salary": {
+    "max": null,
+    "min": null,
+    "period": null,
+    "currency": null
+   },
+   "careers_url": "https://careers.bunq.com/o/aml-manager-austria",
+   "state_code": "9",
+   "published_at": "2026-10-30 16:32:58 UTC",
+   "updated_at": "2026-11-02 10:18:50 UTC",
+   "close_at": null,
+   "min_hours": 40,
+   "translations": {
+    "en": {
+     "title": "AML Manager, Austria",
+     "highlight": null,
+     "sharing_image": null,
+     "sharing_title": "AML Manager, Austria",
+     "sharing_description": "At bunq, we’re more than a bank. We’re on a mission to make banking work for people wherever they live in Europe. With local IBANs, our users can pay rent, sign up for the gym and get paid like a loca",
+     "locations_question": "What is your preferred work location?"
+    }
+   },
+   "title": "AML Manager, Austria",
+   "experience_code": "experienced",
+   "careers_apply_url": "https://careers.bunq.com/o/aml-manager-austria/c/new",
+   "education_code": "professional",
+   "department": "Risk, Legal & Compliance",
+   "max_hours": 40,
+   "created_at": "2026-10-30 15:29:49 UTC",
+   "open_questions": [
+    {
+     "id": 4472288,
+     "position": 1,
+     "options": {},
+     "required": true,
+     "body": "What country do you currently live in?",
+     "kind": "string",
+     "translations": {
+      "en": {
+       "body": "What country do you currently live in?"
+      }
+     },
+     "open_question_options": []
+    },
+    {
+     "id": 4472289,
+     "position": 2,
+     "options": {},
+     "required": false,
+     "body": "<p>For this role, we’re not sponsoring visas at the moment.</p>\n<p><br />But no worries, you can explore exciting opportunities in the Netherlands or Türkiye instead! Check them out at <strong><strong><a target=\"_blank\" href=\"http://careers.bunq.com/\" rel=\"noopener\">careers.bunq.com</a> </strong></strong>🌍✨<br /></p>\n",
+     "kind": "infobox",
+     "translations": {
+      "en": {
+       "body": "<p>For this role, we’re not sponsoring visas at the moment.</p>\n<p><br />But no worries, you can explore exciting opportunities in the Netherlands or Türkiye instead! Check them out at <strong><strong><a target=\"_blank\" href=\"http://careers.bunq.com/\" rel=\"noopener\">careers.bunq.com</a> </strong></strong>🌍✨<br /></p>\n"
+      }
+     },
+     "open_question_options": []
+    },
+    {
+     "id": 4472290,
+     "position": 3,
+     "options": {},
+     "required": true,
+     "body": "Are you eligible to work in the country you're applying to, without requiring sponsorship or a visa?",
+     "kind": "single_choice",
+     "translations": {
+      "en": {
+       "body": "Are you eligible to work in the country you're applying to, without requiring sponsorship or a visa?"
+      }
+     },
+     "open_question_options": [
+      {
+       "id": 6889931,
+       "position": 0,
+       "body": "I do not require visa sponsorship",
+       "translations": {
+        "en": {
+         "body": "I do not require visa sponsorship"
+        }
+       }
+      },
+      {
+       "id": 6889932,
+       "position": 1,
+       "body": "I require visa sponsorship",
+       "translations": {
+        "en": {
+         "body": "I require visa sponsorship"
+        }
+       }
+      }
+     ]
+    }
+   ],
+   "min_hours_per_week": "40",
+   "country": "Austria",
+   "location_question_visible": false,
+   "tags": [],
+   "locations_question": "What is your preferred work location?",
+   "employment_type_code": "fulltime_permanent",
+   "max_hours_per_week": "40",
+   "options_photo": "off",
+   "country_code": "AT",
+   "slug": "aml-manager-austria",
+   "company_name": "bunq",
+   "options_phone": "required",
+   "options_salutation": "off",
+   "cover_image": null,
+   "dynamic_fields": [],
+   "locations_question_required": true,
+   "on_site": false,
+   "remote": false,
+   "city": "Vienna",
+   "options_cv": "off",
+   "options_cover_letter": "off",
+   "guid": "8b395",
+   "sharing_title": "AML Manager, Austria",
+   "id": 2804401,
+   "locations": [
+    {
+     "id": 39972,
+     "name": "Vienna",
+     "state": "Wien",
+     "country": "Austria",
+     "city": "Vienna",
+     "translations": {
+      "en": {
+       "name": "Vienna",
+       "city": "Vienna",
+       "postal_code": null,
+       "street": null,
+       "note": null
+      }
+     },
+     "country_code": "AT",
+     "state_code": "9",
+     "postal_code": null,
+     "street": null,
+     "note": null
+    }
+   ],
+   "sharing_image": null,
+   "options_title": "off",
+   "location": "Vienna, Wien, Austria",
+   "highlight": null,
+   "status": "published",
+   "sharing_description": "At bunq, we’re more than a bank. We’re on a mission to make banking work for people wherever they live in Europe. With local IBANs, our users can pay rent, sign up for the gym and get paid like a loca"
+  },
+  {
+   "category_code": "banking",
+   "position": 1651,
+   "hybrid": true,
+   "state_name": "Noord-Holland",
+   "locations_question_type": "single_choice",
+   "postal_code": null,
+   "mailbox_email": "redacted",
+   "salary": {
+    "max": null,
+    "min": null,
+    "period": null,
+    "currency": null
+   },
+   "careers_url": "https://careers.bunq.com/o/data-scientist-marketing-3",
+   "state_code": "NH",
+   "published_at": "2026-10-28 13:21:58 UTC",
+   "updated_at": "2026-10-29 15:24:28 UTC",
+   "close_at": null,
+   "min_hours": 40,
+   "translations": {
+    "en": {
+     "title": "Data Scientist Marketing",
+     "highlight": null,
+     "sharing_image": null,
+     "sharing_title": "Data Scientist Marketing",
+     "sharing_description": "At bunq, we’re on a mission to Make Life Easy for our users by creating the most user-centric banking experience out there. Our paid marketing campaigns run on predictions about which new users will t",
+     "locations_question": "What is your preferred work location?"
+    }
+   },
+   "title": "Data Scientist Marketing",
+   "experience_code": "experienced",
+   "careers_apply_url": "https://careers.bunq.com/o/data-scientist-marketing-3/c/new",
+   "education_code": "professional",
+   "department": "Growth",
+   "max_hours": 40,
+   "created_at": "2026-10-28 12:08:13 UTC",
+   "open_questions": [
+    {
+     "id": 4466007,
+     "position": 1,
+     "options": {},
+     "required": true,
+     "body": "What country do you currently live in?",
+     "kind": "string",
+     "translations": {
+      "en": {
+       "body": "What country do you currently live in?"
+      }
+     },
+     "open_question_options": []
+    },
+    {
+     "id": 4466008,
+     "position": 2,
+     "options": {},
+     "required": false,
+     "body": "<p>💡 Each country has different rules for eligibility to work without requiring sponsorship.</p>\n<p><br />🇳🇱 <strong>Netherlands</strong>: You must be a Dutch/EU/EEA/Swiss citizen, or hold a valid Dutch residence permit with full work rights (e.g., refugee status, spousal visa, or permanent residence).<br /></p>\n\n<p><br /><strong>For this role, we are not sponsoring visas at the moment. But take a look at <strong><a target=\"_blank\" href=\"http://careers.bunq.com/\" rel=\"noopener\">careers.bunq.com</a> </strong>- you might find another exciting role that’s a great fit! <strong>🌈</strong></strong></p>\n<p><strong><br /></strong><br /></p>",
+     "kind": "infobox",
+     "translations": {
+      "en": {
+       "body": "<p>💡 Each country has different rules for eligibility to work without requiring sponsorship.</p>\n<p><br />🇳🇱 <strong>Netherlands</strong>: You must be a Dutch/EU/EEA/Swiss citizen, or hold a valid Dutch residence permit with full work rights (e.g., refugee status, spousal visa, or permanent residence).<br /></p>\n\n<p><br /><strong>For this role, we are not sponsoring visas at the moment. But take a look at <strong><a target=\"_blank\" href=\"http://careers.bunq.com/\" rel=\"noopener\">careers.bunq.com</a> </strong>- you might find another exciting role that’s a great fit! <strong>🌈</strong></strong></p>\n<p><strong><br /></strong><br /></p>"
+      }
+     },
+     "open_question_options": []
+    },
+    {
+     "id": 4466009,
+     "position": 3,
+     "options": {},
+     "required": true,
+     "body": "Which visa situation fits you best?",
+     "kind": "single_choice",
+     "translations": {
+      "en": {
+       "body": "Which visa situation fits you best?"
+      }
+     },
+     "open_question_options": [
+      {
+       "id": 6880260,
+       "position": 0,
+       "body": "NL: I am a EU/EEA/Swiss citizen",
+       "translations": {
+        "en": {
+         "body": "NL: I am a EU/EEA/Swiss citizen"
+        }
+       }
+      },
+      {
+       "id": 6880261,
+       "position": 1,
+       "body": "NL: I am on a spousal visa / search year visa / under the reduced salary criterion",
+       "translations": {
+        "en": {
+         "body": "NL: I am on a spousal visa / search year visa / under the reduced salary criterion"
+        }
+       }
+      },
+      {
+       "id": 6880262,
+       "position": 2,
+       "body": "NL: I require visa sponsorship and I am under 29 years of age",
+       "translations": {
+        "en": {
+         "body": "NL: I require visa sponsorship and I am under 29 years of age"
+        }
+       }
+      }
+     ]
+    }
+   ],
+   "min_hours_per_week": "40",
+   "country": "Netherlands",
+   "location_question_visible": false,
+   "tags": [
+    "Acquisition",
+    "E2",
+    "Enablers"
+   ],
+   "locations_question": "What is your preferred work location?",
+   "employment_type_code": "fulltime_permanent",
+   "max_hours_per_week": "40",
+   "options_photo": "off",
+   "country_code": "NL",
+   "slug": "data-scientist-marketing-3",
+   "company_name": "bunq",
+   "options_phone": "required",
+   "options_salutation": "off",
+   "cover_image": null,
+   "dynamic_fields": [],
+   "locations_question_required": true,
+   "on_site": false,
+   "remote": false,
+   "city": "Amsterdam",
+   "options_cv": "off",
+   "options_cover_letter": "off",
+   "guid": "7bo8p",
+   "sharing_title": "Data Scientist Marketing",
+   "id": 2800490,
+   "locations": [
+    {
+     "id": 39979,
+     "name": "Amsterdam",
+     "state": "Noord-Holland",
+     "country": "Netherlands",
+     "city": "Amsterdam",
+     "translations": {
+      "en": {
+       "name": "Amsterdam",
+       "city": "Amsterdam",
+       "postal_code": null,
+       "street": null,
+       "note": null
+      }
+     },
+     "country_code": "NL",
+     "state_code": "NH",
+     "postal_code": null,
+     "street": null,
+     "note": null
+    }
+   ],
+   "sharing_image": null,
+   "options_title": "off",
+   "location": "Amsterdam, Noord-Holland, Netherlands",
+   "highlight": null,
+   "status": "published",
+   "sharing_description": "At bunq, we’re on a mission to Make Life Easy for our users by creating the most user-centric banking experience out there. Our paid marketing campaigns run on predictions about which new users will t"
+  },
+  {
+   "category_code": "banking",
+   "position": 1651,
+   "hybrid": true,
+   "state_name": "England",
+   "locations_question_type": "single_choice",
+   "postal_code": null,
+   "mailbox_email": "redacted",
+   "salary": {
+    "max": null,
+    "min": null,
+    "period": null,
+    "currency": null
+   },
+   "careers_url": "https://careers.bunq.com/o/chief-executive-officer-uk-1",
+   "state_code": "ENG",
+   "published_at": "2026-11-02 14:03:04 UTC",
+   "updated_at": "2026-11-03 00:05:02 UTC",
+   "close_at": null,
+   "min_hours": 40,
+   "translations": {
+    "en": {
+     "title": "Chief Executive Officer, UK",
+     "highlight": null,
+     "sharing_image": null,
+     "sharing_title": "Chief Executive Officer, UK",
+     "sharing_description": "At bunq, we're not just building a banking app, we're reshaping how people experience their financial lives. As CEO, UK, you own bunq's growth in the United Kingdom end to end: you decide who we win, ",
+     "locations_question": "What is your preferred work location?"
+    }
+   },
+   "title": "Chief Executive Officer, UK",
+   "experience_code": "executive",
+   "careers_apply_url": "https://careers.bunq.com/o/chief-executive-officer-uk-1/c/new",
+   "education_code": "bachelor_degree",
+   "department": null,
+   "max_hours": 40,
+   "created_at": "2026-10-30 09:54:06 UTC",
+   "open_questions": [
+    {
+     "id": 4471280,
+     "position": 1,
+     "options": {},
+     "required": true,
+     "body": "What country do you currently live in?",
+     "kind": "string",
+     "translations": {
+      "en": {
+       "body": "What country do you currently live in?"
+      }
+     },
+     "open_question_options": []
+    },
+    {
+     "id": 4471281,
+     "position": 2,
+     "options": {},
+     "required": false,
+     "body": "<p>💡 Each country has different rules for eligibility to work without requiring sponsorship.<br /><br /></p>\n\n<p>🇬🇧 <strong>UK</strong>: You must have the legal right to work in the UK without needing a company-sponsored visa.</p>\n<p><br /><strong>For this role, we are not sponsoring visas at the moment. But take a look at <strong><a target=\"_blank\" href=\"http://careers.bunq.com/\" rel=\"noopener\">careers.bunq.com</a> </strong>- you might find another exciting role that’s a great fit! <strong>🌈</strong></strong></p>\n<p><strong><br /></strong><br /></p>",
+     "kind": "infobox",
+     "translations": {
+      "en": {
+       "body": "<p>💡 Each country has different rules for eligibility to work without requiring sponsorship.<br /><br /></p>\n\n<p>🇬🇧 <strong>UK</strong>: You must have the legal right to work in the UK without needing a company-sponsored visa.</p>\n<p><br /><strong>For this role, we are not sponsoring visas at the moment. But take a look at <strong><a target=\"_blank\" href=\"http://careers.bunq.com/\" rel=\"noopener\">careers.bunq.com</a> </strong>- you might find another exciting role that’s a great fit! <strong>🌈</strong></strong></p>\n<p><strong><br /></strong><br /></p>"
+      }
+     },
+     "open_question_options": []
+    },
+    {
+     "id": 4471282,
+     "position": 3,
+     "options": {},
+     "required": true,
+     "body": "Do you need a visa sponsorship to legally work in the UK?",
+     "kind": "single_choice",
+     "translations": {
+      "en": {
+       "body": "Do you need a visa sponsorship to legally work in the UK?"
+      }
+     },
+     "open_question_options": [
+      {
+       "id": 6888360,
+       "position": 0,
+       "body": "I do not require visa sponsorship",
+       "translations": {
+        "en": {
+         "body": "I do not require visa sponsorship"
+        }
+       }
+      },
+      {
+       "id": 6888361,
+       "position": 1,
+       "body": " I require visa sponsorship",
+       "translations": {
+        "en": {
+         "body": " I require visa sponsorship"
+        }
+       }
+      }
+     ]
+    }
+   ],
+   "min_hours_per_week": "40",
+   "country": "United Kingdom",
+   "location_question_visible": false,
+   "tags": [],
+   "locations_question": "What is your preferred work location?",
+   "employment_type_code": "fulltime_permanent",
+   "max_hours_per_week": "40",
+   "options_photo": "off",
+   "country_code": "GB",
+   "slug": "chief-executive-officer-uk-1",
+   "company_name": "bunq",
+   "options_phone": "required",
+   "options_salutation": "off",
+   "cover_image": null,
+   "dynamic_fields": [],
+   "locations_question_required": true,
+   "on_site": false,
+   "remote": false,
+   "city": "London",
+   "options_cv": "off",
+   "options_cover_letter": "off",
+   "guid": "wnum6",
+   "sharing_title": "Chief Executive Officer, UK",
+   "id": 2803562,
+   "locations": [
+    {
+     "id": 39994,
+     "name": "London",
+     "state": "England",
+     "country": "United Kingdom",
+     "city": "London",
+     "translations": {
+      "en": {
+       "name": "London",
+       "city": "London",
+       "postal_code": null,
+       "street": null,
+       "note": null
+      }
+     },
+     "country_code": "GB",
+     "state_code": "ENG",
+     "postal_code": null,
+     "street": null,
+     "note": null
+    }
+   ],
+   "sharing_image": null,
+   "options_title": "off",
+   "location": "London, England, United Kingdom",
+   "highlight": null,
+   "status": "published",
+   "sharing_description": "At bunq, we're not just building a banking app, we're reshaping how people experience their financial lives. As CEO, UK, you own bunq's growth in the United Kingdom end to end: you decide who we win, "
+  }
+ ]
+}

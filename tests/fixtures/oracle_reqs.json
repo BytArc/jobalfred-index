@@ -1,0 +1,314 @@
+{
+ "items": [
+  {
+   "SearchId": 1,
+   "Keyword": null,
+   "CorrectedKeyword": null,
+   "UseExactKeywordFlag": false,
+   "SuggestedKeyword": null,
+   "ExecuteSpellCheckFlag": true,
+   "Location": null,
+   "LocationId": null,
+   "Radius": 0,
+   "RadiusUnit": "MI",
+   "SelectedTitlesFacet": null,
+   "SelectedCategoriesFacet": null,
+   "SelectedPostingDatesFacet": null,
+   "SelectedLocationsFacet": null,
+   "LastSelectedFacet": null,
+   "Facets": "TITLES;LOCATIONS;LOCATION_LEVEL1;LOCATION_LEVEL2;LOCATION_LEVEL3;CATEGORIES;POSTING_DATES;WORK_LOCATIONS;FLEX_FIELDS;ORGANIZATIONS;WORKPLACE_TYPES",
+   "Offset": 0,
+   "Limit": 3,
+   "SortBy": "POSTING_DATES_DESC",
+   "TotalJobsCount": 7185,
+   "Latitude": null,
+   "Longitude": null,
+   "SiteNumber": "CX_1001",
+   "JobFamilyId": null,
+   "PostingStartDate": null,
+   "PostingEndDate": null,
+   "SelectedWorkLocationsFacet": null,
+   "RequisitionId": null,
+   "CandidateNumber": null,
+   "WorkLocationZipCode": null,
+   "WorkLocationCountryCode": null,
+   "SelectedFlexFieldsFacets": null,
+   "OrganizationId": null,
+   "SelectedOrganizationsFacet": null,
+   "UserTargetFacetName": null,
+   "UserTargetFacetInputTerm": null,
+   "HotJobFlag": null,
+   "WorkplaceType": null,
+   "SelectedWorkplaceTypesFacet": null,
+   "BotQRShortCode": null,
+   "requisitionList": [
+    {
+     "Id": "210783766",
+     "Title": "Hiring Event - Part Time Associate Banker Santa Clarita  West (30 Hours)",
+     "PostedDate": "2026-11-06",
+     "PostingEndDate": null,
+     "Language": "US",
+     "PrimaryLocationCountry": "US",
+     "GeographyId": 300000020697067,
+     "HotJobFlag": false,
+     "WorkplaceTypeCode": null,
+     "JobFamily": "Associate Bankers",
+     "JobFunction": "Client Management",
+     "WorkerType": null,
+     "ContractType": null,
+     "ManagerLevel": null,
+     "JobSchedule": null,
+     "JobShift": null,
+     "JobType": null,
+     "StudyLevel": null,
+     "DomesticTravelRequired": null,
+     "InternationalTravelRequired": null,
+     "WorkDurationYears": null,
+     "WorkDurationMonths": null,
+     "WorkHours": null,
+     "WorkDays": null,
+     "LegalEmployer": null,
+     "BusinessUnit": null,
+     "Department": null,
+     "Organization": null,
+     "BusinessUnitId": 300000086610208,
+     "LegalEmployerId": 300000087185180,
+     "OrganizationId": 300000165016499,
+     "MediaThumbURL": null,
+     "ShortDescriptionStr": "As an Associate Banker, you will embody our commitment to hospitality and client care.",
+     "PrimaryLocation": "Valencia, CA, United States",
+     "Distance": 1793923200000.0,
+     "TrendingFlag": false,
+     "BeFirstToApplyFlag": false,
+     "Relevancy": 9,
+     "WorkplaceType": "",
+     "ExternalQualificationsStr": null,
+     "ExternalResponsibilitiesStr": null,
+     "secondaryLocations": []
+    },
+    {
+     "Id": "210803729",
+     "Title": "Director of Software Engineering — Securities Lending Technology",
+     "PostedDate": "2026-11-06",
+     "PostingEndDate": null,
+     "Language": "US",
+     "PrimaryLocationCountry": "HK",
+     "GeographyId": 300000000289330,
+     "HotJobFlag": false,
+     "WorkplaceTypeCode": null,
+     "JobFamily": "Software Engineering",
+     "JobFunction": "Technology",
+     "WorkerType": null,
+     "ContractType": null,
+     "ManagerLevel": null,
+     "JobSchedule": null,
+     "JobShift": null,
+     "JobType": null,
+     "StudyLevel": null,
+     "DomesticTravelRequired": null,
+     "InternationalTravelRequired": null,
+     "WorkDurationYears": null,
+     "WorkDurationMonths": null,
+     "WorkHours": null,
+     "WorkDays": null,
+     "LegalEmployer": null,
+     "BusinessUnit": null,
+     "Department": null,
+     "Organization": null,
+     "BusinessUnitId": 300060261545756,
+     "LegalEmployerId": 300000086438620,
+     "OrganizationId": 300032675770864,
+     "MediaThumbURL": null,
+     "ShortDescriptionStr": "Drive innovation and solution delivery while leading a technical area and serving as a primary decision maker for your teams",
+     "PrimaryLocation": "Hong Kong",
+     "Distance": 1793923200000.0,
+     "TrendingFlag": false,
+     "BeFirstToApplyFlag": false,
+     "Relevancy": 9,
+     "WorkplaceType": "",
+     "ExternalQualificationsStr": null,
+     "ExternalResponsibilitiesStr": null,
+     "secondaryLocations": []
+    },
+    {
+     "Id": "210807046",
+     "Title": "Private Client Banker Benicia Branch- Benicia, CA",
+     "PostedDate": "2026-11-06",
+     "PostingEndDate": null,
+     "Language": "US",
+     "PrimaryLocationCountry": "US",
+     "GeographyId": 300000020696923,
+     "HotJobFlag": false,
+     "WorkplaceTypeCode": null,
+     "JobFamily": "Private Client Bankers",
+     "JobFunction": "Client Management",
+     "WorkerType": null,
+     "ContractType": null,
+     "ManagerLevel": null,
+     "JobSchedule": null,
+     "JobShift": null,
+     "JobType": null,
+     "StudyLevel": null,
+     "DomesticTravelRequired": null,
+     "InternationalTravelRequired": null,
+     "WorkDurationYears": null,
+     "WorkDurationMonths": null,
+     "WorkHours": null,
+     "WorkDays": null,
+     "LegalEmployer": null,
+     "BusinessUnit": null,
+     "Department": null,
+     "Organization": null,
+     "BusinessUnitId": 300000086610208,
+     "LegalEmployerId": 300000087185180,
+     "OrganizationId": 300000164931662,
+     "MediaThumbURL": null,
+     "ShortDescriptionStr": "As a Private Client Banker, you are the point of contact for a select group of Chase’s clients as well as customers in the Branch.",
+     "PrimaryLocation": "Benicia, CA, United States",
+     "Distance": 1793923200000.0,
+     "TrendingFlag": false,
+     "BeFirstToApplyFlag": false,
+     "Relevancy": 9,
+     "WorkplaceType": "",
+     "ExternalQualificationsStr": null,
+     "ExternalResponsibilitiesStr": null,
+     "secondaryLocations": []
+    }
+   ],
+   "categoriesFacet": [
+    {
+     "Id": 300000086152753,
+     "Name": "Software Engineering",
+     "TotalCount": 1085
+    },
+    {
+     "Id": 300000086249838,
+     "Name": "Associate Bankers",
+     "TotalCount": 671
+    },
+    {
+     "Id": 300000086153134,
+     "Name": "Advisors",
+     "TotalCount": 459
+    }
+   ],
+   "locationsFacet": [
+    {
+     "Id": 300000000289738,
+     "Name": "United States",
+     "TotalCount": 5334
+    },
+    {
+     "Id": 300000020657200,
+     "Name": "NY, United States",
+     "TotalCount": 1198
+    },
+    {
+     "Id": 300000020657211,
+     "Name": "TX, United States",
+     "TotalCount": 928
+    }
+   ],
+   "postingDatesFacet": [
+    {
+     "Id": 7,
+     "Name": "Less than 7 days",
+     "TotalCount": 1089
+    },
+    {
+     "Id": 30,
+     "Name": "Less than 30 days",
+     "TotalCount": 3739
+    },
+    {
+     "Id": 31,
+     "Name": "Greater than 30 days",
+     "TotalCount": 3446
+    }
+   ],
+   "titlesFacet": [
+    {
+     "Id": "CLM",
+     "Name": "Client Management",
+     "TotalCount": 2956
+    },
+    {
+     "Id": "TEC",
+     "Name": "Technology",
+     "TotalCount": 1529
+    },
+    {
+     "Id": "PRO",
+     "Name": "Product",
+     "TotalCount": 474
+    }
+   ],
+   "workLocationsFacet": [
+    {
+     "Id": 300000161110891,
+     "Name": "54101-1111 Polaris",
+     "TotalCount": 450
+    },
+    {
+     "Id": 300000161064890,
+     "Name": "02969-NOC 5",
+     "TotalCount": 334
+    },
+    {
+     "Id": 300000161064854,
+     "Name": "02968-NOC 4",
+     "TotalCount": 273
+    }
+   ],
+   "flexFieldsFacet": [],
+   "organizationsFacet": [
+    {
+     "Id": 300000164852218,
+     "Name": "299691-PT-DARC: DATA ANALYTICS",
+     "TotalCount": 18
+    },
+    {
+     "Id": 300000165253712,
+     "Name": "189174-DACS TECH -NY/DE",
+     "TotalCount": 17
+    },
+    {
+     "Id": 300063442926506,
+     "Name": "468352-AM OPS - PHILIPPINES 3491",
+     "TotalCount": 16
+    }
+   ],
+   "workplaceTypesFacet": [
+    {
+     "Id": "ORA_ON_SITE",
+     "Name": "On-site",
+     "TotalCount": 7185
+    }
+   ]
+  }
+ ],
+ "count": 1,
+ "hasMore": false,
+ "limit": 200,
+ "offset": 0,
+ "links": [
+  {
+   "rel": "self",
+   "href": "https://jpmc.fa.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions",
+   "name": "recruitingCEJobRequisitions",
+   "kind": "collection"
+  },
+  {
+   "rel": "action",
+   "href": "https://jpmc.fa.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions/action/getRequisitionsLocationCoordinates",
+   "name": "getRequisitionsLocationCoordinates",
+   "kind": "other"
+  },
+  {
+   "rel": "action",
+   "href": "https://jpmc.fa.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions/action/getRequisitionDetailsForMap",
+   "name": "getRequisitionDetailsForMap",
+   "kind": "other"
+  }
+ ]
+}

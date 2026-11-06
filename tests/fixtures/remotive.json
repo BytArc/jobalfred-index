@@ -1,0 +1,10 @@
+{"_note": "Hand-written from Remotive's documented response shape. remotive.com/robots.txt disallows /api/*, so the live API is not called.",
+ "job-count": 2,
+ "jobs": [
+  {"id": 1, "url": "https://remotive.com/remote-jobs/software-dev/senior-backend-engineer-1", "title": "Senior Backend Engineer",
+   "company_name": "Acme Remote", "category": "Software Development", "job_type": "full_time",
+   "publication_date": "2026-11-04T10:00:00", "candidate_required_location": "Europe"},
+  {"id": 2, "url": "https://remotive.com/remote-jobs/marketing/growth-marketer-2", "title": "Growth Marketer",
+   "company_name": "Beta GmbH", "category": "Marketing", "job_type": "full_time",
+   "publication_date": "2025-01-02T10:00:00", "candidate_required_location": "Worldwide"}
+ ]}

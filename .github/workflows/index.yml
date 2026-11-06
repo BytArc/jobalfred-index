@@ -1,0 +1,51 @@
+name: Build job index
+
+on:
+  schedule:
+    - cron: "17 3 * * *"   # daily, 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write           # create and update the index-latest release
+
+concurrency:
+  group: index
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 295     # hard stop under five hours; the run itself is time-boxed to 270 minutes
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests
+
+      - name: Restore the tenant list from the last release
+        run: |
+          mkdir -p data
+          gh release download index-latest --pattern tenants.json.gz --dir data --clobber || echo "no earlier tenant list; starting from data/seeds.json"
+
+      - name: Build the index
+        run: python -u -m jobalfred_index run --minutes 270 --discover-minutes 40 --crawls 4 --out dist
+
+      - name: Publish release assets
+        run: bash scripts/publish_release.sh dist data/tenants.json.gz work
+
+      - name: Keep the run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-report
+          path: work/report-*.json
+          if-no-files-found: ignore

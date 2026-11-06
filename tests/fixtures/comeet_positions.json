@@ -1,0 +1,5 @@
+[{"_note": "Hand-written from Comeet's documented careers API shape.", "uid": "A1.111", "name": "Product Manager", "department": "Product",
+  "location": {"name": "Tel Aviv, Israel", "country": "IL", "city": "Tel Aviv", "is_remote": false},
+  "url_active_page": "https://www.comeet.com/jobs/example/AA.111/product-manager/A1.111", "time_updated": "2026-11-03T12:00:00Z"},
+ {"uid": "A2.222", "name": "Remote Support Engineer", "location": {"name": "Remote", "country": "PT", "is_remote": true},
+  "url_active_page": "https://www.comeet.com/jobs/example/AA.111/support/A2.222", "time_updated": "2026-11-01T12:00:00Z"}]

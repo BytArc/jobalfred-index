@@ -1,0 +1,67 @@
+{
+ "apiVersion": "2.2.19",
+ "documentationUrl": "https://jobi.cy/apidocs",
+ "friendlyNotice": "Thanks for using Jobicy API! Please ensure Jobicy is clearly credited with a direct link to the source, and all application buttons redirect to the original job URL provided in this feed. That\u2019s all! You might be building something amazing, we wish you the best of luck!",
+ "jobCount": 3,
+ "lastUpdate": "2026-11-05T20:06:17+00:00",
+ "nextCursor": "AgAAAABq7TPgAAAAAGrs4bUAAAAAAAJt85GStyjVOt7ULMvdFdHp_0xjGsH--7hP_G6cSgT0AUpI404vpkeMM_Q4rjI_2s_ayACcZnnKfPvpA2YiCbge-MA",
+ "hasMore": true,
+ "appliedFilters": {
+  "count": 3
+ },
+ "jobs": [
+  {
+   "id": 159221,
+   "url": "https://jobicy.com/jobs/159221-english-to-french-france-linguist-for-life-sciences",
+   "jobSlug": "159221-english-to-french-france-linguist-for-life-sciences",
+   "jobTitle": "English to French (France) Linguist for Life Sciences",
+   "companyName": "Welo Global",
+   "companyLogo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/06/83c40f94-221.webp",
+   "jobIndustry": [
+    "Content & Editorial"
+   ],
+   "jobType": [
+    "Contract"
+   ],
+   "jobGeo": "Europe",
+   "jobLevel": "Any",
+   "pubDate": "2026-11-05T20:06:17+00:00"
+  },
+  {
+   "id": 159220,
+   "url": "https://jobicy.com/jobs/159220-english-to-estonian-review-lead-for-ui-marketing-product-content",
+   "jobSlug": "159220-english-to-estonian-review-lead-for-ui-marketing-product-content",
+   "jobTitle": "English to Estonian Review Lead for UI, Marketing & Product Content",
+   "companyName": "Welo Global",
+   "companyLogo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/06/83c40f94-221.webp",
+   "jobIndustry": [
+    "QA & Testing"
+   ],
+   "jobType": [
+    "Contract"
+   ],
+   "jobGeo": "Argentina,  Australia,  Austria,  Belgium,  Brazil,  Bulgaria,  Canada,  China,  Costa Rica,  Croatia,  Czechia,  Denmark,  Finland,  France,  Germany,  Greece,  Hong Kong,  Hungary,  Ireland,  Israel,  Italy,  Japan,  Lithuania,  Malaysia,  Mexico,  Netherlands,  New Zealand,  Norway,  Philippines,  Poland,  Portugal,  Romania,  Singapore,  South Korea,  Spain,  Sweden,  Switzerland,  Thailand,  T\u00fcrkiye,  UAE,  UK,  USA,  Vietnam",
+   "jobLevel": "Senior",
+   "pubDate": "2026-11-05T20:06:15+00:00"
+  },
+  {
+   "id": 159219,
+   "url": "https://jobicy.com/jobs/159219-english-to-estonian-linguist-for-life-sciences",
+   "jobSlug": "159219-english-to-estonian-linguist-for-life-sciences",
+   "jobTitle": "English to Estonian Linguist for Life Sciences",
+   "companyName": "Welo Global",
+   "companyLogo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/06/83c40f94-221.webp",
+   "jobIndustry": [
+    "Content & Editorial"
+   ],
+   "jobType": [
+    "Contract"
+   ],
+   "jobGeo": "Europe",
+   "jobLevel": "Any",
+   "pubDate": "2026-11-05T20:06:13+00:00"
+  }
+ ],
+ "statusCode": 200,
+ "success": true
+}

@@ -1,0 +1,110 @@
+{
+ "page": 1,
+ "page_count": 20651,
+ "items_per_page": 20,
+ "took": 45,
+ "timed_out": false,
+ "total": 413020,
+ "results": [
+  {
+   "name": "Sr Corporate Paralegal",
+   "type": "external",
+   "publication_date": "2026-10-29T20:22:07Z",
+   "short_name": "sr-corporate-paralegal-ae5cff",
+   "model_type": "jobs",
+   "id": 22309819,
+   "locations": [
+    {
+     "name": "San Francisco, CA"
+    }
+   ],
+   "categories": [],
+   "levels": [
+    {
+     "name": "Senior Level",
+     "short_name": "senior"
+    }
+   ],
+   "tags": [
+    {
+     "name": "Fast Growing Companies",
+     "short_name": "fast-growing-companies"
+    }
+   ],
+   "refs": {
+    "landing_page": "https://www.themuse.com/jobs/sunrun/sr-corporate-paralegal-ae5cff"
+   },
+   "company": {
+    "id": 1484,
+    "short_name": "sunrun",
+    "name": "Sunrun"
+   }
+  },
+  {
+   "name": "Account Executive- Swedish speaker",
+   "type": "external",
+   "publication_date": "2025-03-19T23:37:39Z",
+   "short_name": "account-executive-swedish-speaker",
+   "model_type": "jobs",
+   "id": 18256005,
+   "locations": [
+    {
+     "name": "Madrid, Spain"
+    }
+   ],
+   "categories": [
+    {
+     "name": "Sales"
+    }
+   ],
+   "levels": [
+    {
+     "name": "Mid Level",
+     "short_name": "mid"
+    }
+   ],
+   "tags": [],
+   "refs": {
+    "landing_page": "https://www.themuse.com/jobs/celonis/account-executive-swedish-speaker"
+   },
+   "company": {
+    "id": 15000205,
+    "short_name": "celonis",
+    "name": "Celonis"
+   }
+  },
+  {
+   "name": "Software Engineer II",
+   "type": "external",
+   "publication_date": "2026-10-22T02:42:41Z",
+   "short_name": "software-engineer-ii-d06435",
+   "model_type": "jobs",
+   "id": 22278977,
+   "locations": [
+    {
+     "name": "San Francisco, CA"
+    },
+    {
+     "name": "Sunnyvale, CA"
+    }
+   ],
+   "categories": [],
+   "levels": [
+    {
+     "name": "Mid Level",
+     "short_name": "mid"
+    }
+   ],
+   "tags": [],
+   "refs": {
+    "landing_page": "https://www.themuse.com/jobs/uber/software-engineer-ii-d06435"
+   },
+   "company": {
+    "id": 61,
+    "short_name": "uber",
+    "name": "Uber"
+   }
+  }
+ ],
+ "aggregations": {}
+}

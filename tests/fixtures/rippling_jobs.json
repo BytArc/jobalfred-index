@@ -1,0 +1,41 @@
+[
+ {
+  "uuid": "83f3e630-9191-478a-b3d3-0b86be1b8685",
+  "name": "Store Associate",
+  "department": {
+   "id": "S&B Store Operations",
+   "label": "S&B Store Operations"
+  },
+  "url": "https://ats.rippling.com/kindthread/jobs/83f3e630-9191-478a-b3d3-0b86be1b8685",
+  "workLocation": {
+   "label": "Rochester, MN",
+   "id": "Rochester, MN"
+  }
+ },
+ {
+  "uuid": "0f7926da-58f7-4b2c-bcf3-014b7008b264",
+  "name": "Assistant Manager (Full Time)",
+  "department": {
+   "id": "S&B Store Operations",
+   "label": "S&B Store Operations"
+  },
+  "url": "https://ats.rippling.com/kindthread/jobs/0f7926da-58f7-4b2c-bcf3-014b7008b264",
+  "workLocation": {
+   "label": "Portage, MI",
+   "id": "Portage, MI"
+  }
+ },
+ {
+  "uuid": "0f7926da-58f7-4b2c-bcf3-014b7008b264",
+  "name": "Assistant Manager (Full Time)",
+  "department": {
+   "id": "S&B Store Operations",
+   "label": "S&B Store Operations"
+  },
+  "url": "https://ats.rippling.com/kindthread/jobs/0f7926da-58f7-4b2c-bcf3-014b7008b264",
+  "workLocation": {
+   "label": "Madison, WI",
+   "id": "Madison, WI"
+  }
+ }
+]

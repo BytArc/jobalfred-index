@@ -1,0 +1,91 @@
+[
+ {
+  "id": "fe15856f4460",
+  "friendly_id": "fe15856f4460-1-demo-testing-position-clone-12-18-2014",
+  "name": "1 Demo/Testing Position - Clone 12/18/2014",
+  "url": "https://breezy-hr.breezy.hr/p/fe15856f4460-1-demo-testing-position-clone-12-18-2014",
+  "published_date": "2026-11-05T20:23:19.328Z",
+  "type": {
+   "id": "temporary",
+   "name": "Temporary"
+  },
+  "location": {
+   "id": "008ccbabeb47",
+   "country": {
+    "id": "worldwide",
+    "name": "Worldwide"
+   },
+   "primary": true,
+   "is_remote": true,
+   "remote_details": {
+    "value": "hybrid",
+    "label": "Hybrid (Some remote, some in person)"
+   },
+   "name": "Worldwide"
+  },
+  "department": "",
+  "salary": "$21 / hour",
+  "company": {
+   "name": "AB Test",
+   "logo_url": null,
+   "friendly_id": "breezy-hr",
+   "isMultipleLocationsEnabled": true
+  },
+  "locations": [
+   {
+    "id": "008ccbabeb47",
+    "country": {
+     "id": "worldwide",
+     "name": "Worldwide"
+    },
+    "primary": true,
+    "is_remote": true,
+    "remote_details": {
+     "value": "hybrid",
+     "label": "Hybrid (Some remote, some in person)"
+    },
+    "name": "Worldwide"
+   }
+  ]
+ },
+ {
+  "id": "7d9febf89180",
+  "friendly_id": "7d9febf89180-sift-walrmart-caroline-cdla-driver",
+  "name": "[sift walrmart caroline] cdla driver",
+  "url": "https://breezy-hr.breezy.hr/p/7d9febf89180-sift-walrmart-caroline-cdla-driver",
+  "published_date": "2026-10-21T19:50:14.960Z",
+  "type": {
+   "id": "fullTime",
+   "name": "Full-Time"
+  },
+  "location": {
+   "country": {
+    "name": "United States",
+    "id": "US"
+   },
+   "primary": true,
+   "is_remote": false,
+   "name": "United States"
+  },
+  "department": "Test",
+  "salary": "",
+  "company": {
+   "name": "AB Test",
+   "logo_url": null,
+   "friendly_id": "breezy-hr",
+   "isMultipleLocationsEnabled": true
+  },
+  "locations": [
+   {
+    "country": {
+     "name": "United States",
+     "id": "US"
+    },
+    "primary": true,
+    "is_remote": false,
+    "name": "United States",
+    "id": "ab69eb0c151a"
+   }
+  ]
+ }
+]

@@ -1,0 +1,10 @@
+{"_note": "Hand-written from SmartRecruiters' documented Posting API shape. api.smartrecruiters.com/robots.txt disallows crawlers, so the live API is not called.",
+ "offset": 0, "limit": 100, "totalFound": 2,
+ "content": [
+  {"id": "743999000000001", "name": "Data Analyst", "uuid": "a1", "releasedDate": "2026-11-03T09:00:00.000Z",
+   "company": {"identifier": "ExampleCo", "name": "Example Co"},
+   "location": {"city": "Lisbon", "region": "Lisboa", "country": "pt", "remote": false}},
+  {"id": "743999000000002", "name": "Support Specialist (Remote)", "uuid": "a2", "releasedDate": "2026-10-20T09:00:00.000Z",
+   "company": {"identifier": "ExampleCo", "name": "Example Co"},
+   "location": {"city": "Madrid", "country": "es", "remote": true}}
+ ]}

@@ -1,0 +1,7 @@
+{"_note": "Hand-written from Pinpoint's public postings.json shape. *.pinpointhq.com/robots.txt says Disallow: /, so the live feed is not read.",
+ "data": [
+  {"id": "1", "title": "Customer Success Manager", "url": "https://example.pinpointhq.com/en/postings/abc", "workplace_type": "hybrid",
+   "location": {"city": "London", "name": "London, UK", "province": "England"}, "compensation_minimum": 55000, "compensation_maximum": 65000,
+   "compensation_currency": "GBP", "compensation_frequency": "yearly", "created_at": "2026-11-01T10:00:00Z"},
+  {"id": "2", "title": "Designer", "url": "https://example.pinpointhq.com/en/postings/def", "workplace_type": "remote",
+   "location": {"name": "Remote"}, "created_at": "2026-10-15T10:00:00Z"}]}

@@ -1,0 +1,8 @@
+{"_note": "Hand-written from the response shape used by the extension's Uber scraper. uber.com/robots.txt disallows */api/, so the live API is not called.",
+ "status": "success",
+ "data": {"totalResults": {"low": 2}, "results": [
+  {"id": 140001, "title": "Software Engineer II", "creationDate": "2026-11-01T00:00:00.000Z",
+   "allLocations": [{"city": "Amsterdam", "countryName": "Netherlands"}]},
+  {"id": 140002, "title": "Operations Associate", "creationDate": "2026-10-29T00:00:00.000Z",
+   "allLocations": [{"city": "Sao Paulo", "countryName": "Brazil"}]}
+ ]}}
