@@ -16,7 +16,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import names, shards
+from . import names, seniority, shards
 
 FIELDS = shards.FIELDS + ["d"]
 BASIS = ("A company is listed when it is headquartered in Europe and backed by venture investors: shown on an investor's "
@@ -48,7 +48,10 @@ def build(state, doc: dict, out: Path, log=print) -> dict:
             seen.add(k)
             if r[1] not in cache:
                 cache[r[1]] = names.polish(r[1], slug, urls) or c.get("name") or r[1]
-            r = list(r[:len(shards.FIELDS)])
+            r = list(r)
+            if len(r) < len(shards.FIELDS):          # rows stored before the seniority label existed
+                r.extend(seniority.label(r[0]))
+            r = r[:len(shards.FIELDS)]
             r[1] = cache[r[1]]
             rows.append(r + [c["domain"]])
             per_company[c["domain"]] = per_company.get(c["domain"], 0) + 1

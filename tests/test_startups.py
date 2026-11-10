@@ -170,7 +170,7 @@ class TestJoin(unittest.TestCase):
         self.assertEqual(jobs[0].company, "JOIN")
         self.assertEqual([j.cc for j in jobs], ["DE", "ES"])
         self.assertTrue(jobs[0].url.startswith("https://join.com/companies/join/"))
-        self.assertEqual(len(jobs[0].row()), 11)
+        self.assertEqual(len(jobs[0].row()), len(shards.FIELDS))
 
     def test_classify_and_detect(self):
         self.assertEqual(list(classify("https://join.com/companies/acme-gmbh/123-engineer")), [("join", "acme-gmbh", {})])
@@ -215,8 +215,15 @@ class TestVcEu(unittest.TestCase):
             self.assertTrue(head["built"].endswith("Z"))
             self.assertNotIn("stage", body["companies"][0])
 
-    def test_main_shards_keep_their_format(self):
-        self.assertEqual(shards.FIELDS, ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur"])
+    def test_old_rows_get_the_current_shard_fields_then_d(self):
+        with tempfile.TemporaryDirectory() as d:
+            st = State(Path(d) / "s.db", "r1")
+            st.add_tenant("greenhouse", "acme", {}, "startup")
+            st.save_result("greenhouse", "acme", [self.row("https://acme.example/jobs/9", title="Senior Engineer")])
+            vceu.build(st, self.doc(), Path(d) / "v.gz", log=lambda m: None)
+            body = json.loads(gzip.decompress((Path(d) / "v.gz").read_bytes()))
+            self.assertEqual(len(body["rows"][0]), len(body["f"]))
+            self.assertEqual(body["rows"][0][-1], "acme.example")
 
     def test_startup_tenants_load_first(self):
         with tempfile.TemporaryDirectory() as d:
