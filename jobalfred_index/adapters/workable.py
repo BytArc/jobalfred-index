@@ -22,7 +22,8 @@ def parse(data: dict, tenant: dict) -> list:
             locs = [", ".join(x for x in (j.get("city"), j.get("state"), j.get("country")) if x)]
         url = j.get("url") or j.get("shortlink") or ""
         job = make(ATS, j.get("title"), company, locs, url, j.get("published_on") or j.get("created_at"),
-                   workplace="remote" if j.get("telecommuting") else "")
+                   workplace="remote" if j.get("telecommuting") else "",
+                   native=[j.get("experience"), "intern" if "intern" in str(j.get("employment_type", "")).lower() else ""])
         if job:
             out.append(job)
     return out

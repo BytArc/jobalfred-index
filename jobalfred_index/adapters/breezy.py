@@ -21,7 +21,9 @@ def parse(data: list, tenant: dict) -> list:
         workplace = "remote" if loc.get("is_remote") and rd != "hybrid" else rd
         company = (j.get("company") or {}).get("name") or tenant.get("name") or slug_title(tenant["key"])
         job = make(ATS, j.get("name"), company, locs, j.get("url"), j.get("published_date"),
-                   cc_hint=country if len(country) == 2 else "", workplace=workplace)
+                   cc_hint=country if len(country) == 2 else "", workplace=workplace,
+                   native=(j.get("type") or {}).get("id") if "intern" in str((j.get("type") or {}).get("id", "")) else None,
+                   desc=j.get("description") or "")
         if job:
             out.append(job)
     return out

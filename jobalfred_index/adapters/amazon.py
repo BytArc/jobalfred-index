@@ -38,13 +38,23 @@ def _cc(j: dict) -> str:
     return ""
 
 
+def _native(j: dict):
+    """Amazon flags interns and people managers on the posting itself."""
+    if j.get("is_intern"):
+        return "intern"
+    if j.get("is_manager"):
+        return "manager"
+    return None
+
+
 def parse(data: dict, tenant=None) -> list:
     out = []
     for j in (data or {}).get("jobs", []):
         title = j.get("title")
         job = make(ATS, title, "AWS" if j.get("business_category") == "aws" else "Amazon", [j.get("location") or ""],
                    f"https://www.amazon.jobs{j['job_path']}" if j.get("job_path") else "", j.get("posted_date"),
-                   cc_hint=_cc(j))
+                   cc_hint=_cc(j), native=_native(j),
+                   desc=" ".join(str(j.get(k) or "") for k in ("basic_qualifications", "description_short", "description")))
         if job:
             out.append(job)
     return out

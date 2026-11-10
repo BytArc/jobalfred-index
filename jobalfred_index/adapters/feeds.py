@@ -22,7 +22,7 @@ def remotive_parse(d: dict, tenant=None) -> list:
     out = []
     for j in (d or {}).get("jobs", []):
         job = make("remotive", j.get("title"), j.get("company_name"), [j.get("candidate_required_location") or ""],
-                   j.get("url"), j.get("publication_date"), remote_hint=True)
+                   j.get("url"), j.get("publication_date"), remote_hint=True, desc=j.get("description") or "")
         if job:
             out.append(job)
     return out
@@ -36,7 +36,7 @@ def arbeitnow_parse(d: dict, tenant=None) -> list:
     out = []
     for j in (d or {}).get("data", []):
         job = make("arbeitnow", j.get("title"), j.get("company_name"), [j.get("location") or ""],
-                   j.get("url"), j.get("created_at"), remote_hint=bool(j.get("remote")))
+                   j.get("url"), j.get("created_at"), remote_hint=bool(j.get("remote")), desc=j.get("description") or "")
         if job:
             out.append(job)
     return out
@@ -60,7 +60,7 @@ def remoteok_parse(d: list, tenant=None) -> list:
             continue
         job = make("remoteok", j.get("position"), j.get("company"), [j.get("location") or ""], j.get("url") or j.get("apply_url"),
                    j.get("date"), remote_hint=True, smin=j.get("salary_min") or None, smax=j.get("salary_max") or None,
-                   cur="USD" if j.get("salary_min") else "")
+                   cur="USD" if j.get("salary_min") else "", desc=j.get("description") or "")
         if job:
             out.append(job)
     return out
@@ -77,7 +77,7 @@ def himalayas_parse(d: dict, tenant=None) -> list:
         job = make("himalayas", j.get("title"), j.get("companyName"), list(j.get("locationRestrictions") or []),
                    j.get("applicationLink") or j.get("guid"), j.get("pubDate"), remote_hint=True,
                    smin=j.get("minSalary") if annual else None, smax=j.get("maxSalary") if annual else None,
-                   cur=j.get("currency") or "")
+                   cur=j.get("currency") or "", native=j.get("seniority"), desc=j.get("excerpt") or "")
         if job:
             out.append(job)
     return out
@@ -104,7 +104,7 @@ def jobicy_parse(d: dict, tenant=None) -> list:
         geo = j.get("jobGeo") or ""
         job = make("jobicy", j.get("jobTitle"), j.get("companyName"), [geo], j.get("url"), j.get("pubDate"),
                    remote_hint=True, smin=j.get("salaryMin") if annual else None, smax=j.get("salaryMax") if annual else None,
-                   cur=j.get("salaryCurrency") or "")
+                   cur=j.get("salaryCurrency") or "", native=j.get("jobLevel"), desc=j.get("jobDescription") or "")
         if job:
             out.append(job)
     return out
@@ -120,7 +120,7 @@ def muse_parse(d: dict, tenant=None) -> list:
     for j in (d or {}).get("results", []):
         locs = [l.get("name") or "" for l in j.get("locations") or []]
         url = (j.get("refs") or {}).get("landing_page")
-        job = make("themuse", j.get("name"), (j.get("company") or {}).get("name"), locs, url, j.get("publication_date"))
+        job = make("themuse", j.get("name"), (j.get("company") or {}).get("name"), locs, url, j.get("publication_date"), native=[l.get("name") for l in j.get("levels") or []], desc=j.get("contents") or "")
         if job:
             out.append(job)
     return out
@@ -146,7 +146,7 @@ def wwr_parse(text: str, tenant=None) -> list:
             company, role = "", title
         region = txt(it, "region")
         job = make("weworkremotely", role, company, [region or txt(it, "country")], txt(it, "link"), txt(it, "pubDate"),
-                   remote_hint=True)
+                   remote_hint=True, desc=txt(it, "description"))
         if job:
             out.append(job)
     return out

@@ -30,7 +30,7 @@ def parse(html: str, tenant: dict) -> list:
         wt = str(wp.get("workplaceType", "")).lower()
         workplace = "remote" if wt == "remote" else ("hybrid" if wt == "hybrid" else "")
         job = make(ATS, j.get("title"), company, locs, f"https://{tenant['key']}.gupy.io/jobs/{j.get('id')}",
-                   j.get("publishedDate") or "", workplace=workplace, cc_hint="BR" if str(a.get("country", "")).lower() in ("brasil", "brazil") else "")
+                   j.get("publishedDate") or "", workplace=workplace, cc_hint="BR" if str(a.get("country", "")).lower() in ("brasil", "brazil") else "", native=j.get("type"))
         if job:
             out.append(job)
     return out

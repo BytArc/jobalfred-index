@@ -20,7 +20,8 @@ def parse(data: dict, tenant: dict) -> list:
         wt = str(j.get("locationType", ""))
         workplace = "remote" if (j.get("isRemote") or wt == "1") else ("hybrid" if wt == "2" else "")
         job = make(ATS, j.get("jobOpeningName"), tenant.get("name") or slug_title(tenant["key"]), locs,
-                   f"https://{tenant['key']}.bamboohr.com/careers/{j.get('id')}", "", workplace=workplace)
+                   f"https://{tenant['key']}.bamboohr.com/careers/{j.get('id')}", "", workplace=workplace,
+                   native=j.get("employmentStatusLabel") if "intern" in str(j.get("employmentStatusLabel", "")).lower() else None)
         if job:
             out.append(job)
     return out

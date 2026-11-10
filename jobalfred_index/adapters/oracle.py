@@ -26,7 +26,8 @@ def parse(data: dict, tenant: dict) -> list:
             workplace = "remote" if "remote" in wt else ("hybrid" if "hybrid" in wt else "")
             job = make(ATS, j.get("Title"), company, locs,
                        f"https://{host}/hcmUI/CandidateExperience/en/sites/{site}/job/{j.get('Id')}",
-                       j.get("PostedDate"), cc_hint=j.get("PrimaryLocationCountry") or "", workplace=workplace)
+                       j.get("PostedDate"), cc_hint=j.get("PrimaryLocationCountry") or "", workplace=workplace,
+                       desc=j.get("ShortDescriptionStr") or "")
             if job:
                 out.append(job)
     return out

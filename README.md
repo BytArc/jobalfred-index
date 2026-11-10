@@ -69,6 +69,31 @@ appears twice, one row is kept, and an employer's own ATS row wins over a feed r
 - Workday gives a site or facility name instead of a country for many roles, so those land in shard `XX`.
 - Posted dates on Workday are relative ("Posted 30+ Days Ago") and therefore approximate.
 
+## Seniority label
+
+Every row carries two fields, `lv` and `ls`, added at the end of the row. Readers map fields by name (the shard header lists them in `f`).
+
+| `lv` | level | | `ls` | where it came from |
+|---|---|---|---|---|
+| 0 | not stated | | `n` | the source's own level tag (Himalayas seniority, The Muse levels, Jobicy jobLevel, Comeet experience_level, Workable experience, Gupy vacancy type, Amazon intern and manager flags, Ashby and BambooHR intern type) |
+| 1 | intern or trainee | | `t` | words in the title |
+| 2 | entry or junior | | `d` | the description: years of experience asked for, "no experience needed" |
+| 3 | mid | | `""` | not stated |
+| 4 | senior | | | |
+| 5 | lead, staff or principal | | | |
+| 6 | manager | | | |
+| 7 | director, head of, VP, chief | | | |
+
+Rules only, no AI, no extra requests: `jobalfred_index/seniority.py`. Titles are read in English, Portuguese, Spanish, French, German,
+Italian and Dutch. The description is read only where the source already returns it in the same request (Lever, Ashby, Google, Amazon,
+Oracle's short text, The Muse, Jobicy, Arbeitnow, RemoteOK, We Work Remotely, Breezy) and is never stored. A weak signal stays 0: "Product
+Manager" says nothing, two years of experience sits on the border of junior and mid, and a posting that lists several levels is left alone.
+
+The rules were tuned on random samples of untagged roles: each was labelled by the rules, then the real job page was read and the true
+level decided from years, scope and title (`scripts/seniority_sample.py`, `scripts/seniority_score.py`; the labelled cases, without page text,
+are in `data/seniority/labels-r*.jsonl`). Round 5 was a fresh sample of 231 roles, labelled before looking at the rules' answers: 91.7% of
+the roles the rules labelled were right (92.9% from the title alone), and 47% of roles got a label.
+
 ## Run
 
 ```

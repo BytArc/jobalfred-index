@@ -22,6 +22,7 @@ def _t(block: str, tag: str) -> str:
 def parse(text: str, tenant=None) -> list:
     out = []
     for m in re.finditer(r"<job>(.*?)</job>", text, re.S):
+        dm = re.search(r"<description>(.*?)</description>", m.group(1), re.S)
         b = re.sub(r"<description>.*?</description>", "", m.group(1), flags=re.S)
         locs, cc = [], ""
         for lb in re.findall(r"<location>(.*?)</location>", b, re.S):
@@ -31,7 +32,7 @@ def parse(text: str, tenant=None) -> list:
         cc = CC.get(cc, cc)
         workplace = "remote" if _t(b, "isRemote") == "Yes" else ("hybrid" if _t(b, "isHybrid") == "Yes" else "")
         job = make(ATS, _t(b, "title"), _t(b, "employer") or "Google", locs, _t(b, "url"), _t(b, "published"),
-                   cc_hint=cc if len(cc) == 2 else "", workplace=workplace)
+                   cc_hint=cc if len(cc) == 2 else "", workplace=workplace, desc=dm.group(1) if dm else "")
         if job:
             out.append(job)
     return out

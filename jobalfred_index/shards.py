@@ -1,6 +1,7 @@
 """Turn stored rows into the shard files and manifest the extension reads."""
 from __future__ import annotations
 
+import collections
 import gzip
 import json
 import math
@@ -8,9 +9,13 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+from . import seniority
 from .adapters import FEED_NAMES
 
-FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur"]
+FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls"]
+# lv: seniority level 0 not stated, 1 intern, 2 junior, 3 mid, 4 senior, 5 lead/staff/principal, 6 manager, 7 director and above.
+# ls: where it came from: "n" the source's own tag, "t" the title, "d" the description, "" not stated. Readers map fields by name.
+LV, LS = FIELDS.index("lv"), FIELDS.index("ls")
 MAX_GZ = 8 * 1024 * 1024
 TARGET_GZ = 6 * 1024 * 1024
 _SUFFIX = re.compile(r"\b(inc|incorporated|ltd|limited|llc|gmbh|corp|corporation|co|sa|ag|bv|plc|pty|sarl|srl|sas|oy|ab|as)\b\.?")
@@ -133,7 +138,12 @@ def build(rows_iter, out_dir: Path, log=print) -> dict:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     from .names import clean_company
-    rows, dropped = dedupe(rows_iter)
+    def labelled(it):
+        for r in it:
+            if len(r) < len(FIELDS):          # rows stored before the label existed: label them from the title
+                r.extend(seniority.label(r[0]))
+            yield r
+    rows, dropped = dedupe(labelled(rows_iter))
     for r in rows:   # strip page words ("Careers", "Career Opportunities") that some APIs leave in company names
         c = clean_company(r[1])
         if c and c != r[1] and len(c) >= 2:
@@ -179,5 +189,8 @@ def build(rows_iter, out_dir: Path, log=print) -> dict:
     tmp = out_dir / "manifest.json.tmp"
     tmp.write_text(json.dumps(manifest, separators=(",", ":")))
     tmp.replace(out_dir / "manifest.json")
+    levels = {seniority.NAMES[k]: v for k, v in sorted(collections.Counter(r[LV] for r in rows).items())}
+    dropped["levels"] = levels
+    dropped["level_source"] = dict(collections.Counter(r[LS] or "none" for r in rows))
     log(f"build: {len(rows)} rows in {len(manifest_shards)} shards; dropped {dropped}")
     return {"manifest": manifest, "dropped": dropped}

@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 
-from . import geo
+from . import geo, seniority
 
 # Not real roles: evergreen forms that only collect CVs.
 NOT_A_ROLE = re.compile(
@@ -38,10 +38,12 @@ class Job:
     smin: float | None = None
     smax: float | None = None
     cur: str = ""
+    lv: int = 0          # seniority level, see seniority.py
+    ls: str = ""         # where the level came from: n native tag, t title, d description, "" not stated
 
     def row(self) -> list:
         return [self.title, self.company, self.location, self.cc, self.remote, self.url,
-                self.posted, self.ats, self.smin, self.smax, self.cur or None]
+                self.posted, self.ats, self.smin, self.smax, self.cur or None, self.lv, self.ls]
 
 
 def clean(s) -> str:
@@ -102,7 +104,7 @@ def money(v) -> float | None:
 
 
 def make(ats: str, title, company, locs, url, posted="", *, cc_hint="", workplace="", remote_hint: bool | None = None,
-         smin=None, smax=None, cur="") -> Job | None:
+         smin=None, smax=None, cur="", native=None, desc=None) -> Job | None:
     """Build a Job, or None when the row is not a usable role."""
     title = clean(title)
     url = (url or "").strip()
@@ -129,5 +131,6 @@ def make(ats: str, title, company, locs, url, posted="", *, cc_hint="", workplac
     smin, smax = money(smin), money(smax)
     if smin and smax and smin > smax:
         smin, smax = smax, smin
+    lv, ls = seniority.label(title, native, desc)     # the description is read here and never stored
     return Job(title[:200], company[:120], location[:200], cc, remote, url, posted, ats, smin, smax,
-               (cur or "")[:3].upper() if (smin or smax) else "")
+               (cur or "")[:3].upper() if (smin or smax) else "", lv, ls)

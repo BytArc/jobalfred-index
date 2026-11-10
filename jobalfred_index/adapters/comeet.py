@@ -26,7 +26,8 @@ def parse(data: list, tenant: dict) -> list:
         locs = [loc.get("name") or ", ".join(x for x in (loc.get("city"), loc.get("country")) if x)]
         job = make(ATS, j.get("name"), tenant.get("name") or slug_title(tenant["slug"]), locs,
                    j.get("url_active_page") or j.get("url_comeet_hosted_page"), j.get("time_updated"),
-                   cc_hint=loc.get("country") or "", remote_hint=bool(loc.get("is_remote")))
+                   cc_hint=loc.get("country") or "", remote_hint=bool(loc.get("is_remote")),
+                   native=j.get("experience_level"))
         if job:
             out.append(job)
     return out

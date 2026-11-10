@@ -31,7 +31,8 @@ def parse(data: dict, tenant: dict) -> list:
         job = make(ATS, j.get("title"), tenant.get("name") or slug_title(tenant["key"]), locs, j.get("jobUrl"),
                    j.get("publishedAt"), cc_hint=addr.get("addressCountry") or "",
                    workplace=j.get("workplaceType") or "", remote_hint=bool(j.get("isRemote")) and
-                   str(j.get("workplaceType", "")).lower() != "hybrid", smin=smin, smax=smax, cur=cur)
+                   str(j.get("workplaceType", "")).lower() != "hybrid", smin=smin, smax=smax, cur=cur, native=("intern" if str(j.get("employmentType", "")).lower() == "intern" else None),
+                   desc=j.get("descriptionPlain") or "")
         if job:
             out.append(job)
     return out

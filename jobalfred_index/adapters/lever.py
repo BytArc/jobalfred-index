@@ -23,7 +23,8 @@ def parse(data: list, tenant: dict) -> list:
         job = make(ATS, j.get("text"), tenant.get("name") or slug_title(tenant["key"]), locs, j.get("hostedUrl"),
                    j.get("createdAt"), cc_hint=j.get("country") or "", workplace=j.get("workplaceType") or "",
                    smin=sal.get("min") if yearly else None, smax=sal.get("max") if yearly else None,
-                   cur=sal.get("currency") or "")
+                   cur=sal.get("currency") or "",
+                   desc=(j.get("descriptionPlain") or j.get("descriptionBodyPlain") or ""))
         if job:
             out.append(job)
     return out
