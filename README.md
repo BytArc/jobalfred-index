@@ -22,7 +22,26 @@ Sources:
 4. **Generic career sites** that publish schema.org `JobPosting` JSON-LD in a sitemap (used for iCIMS career sites).
 
 How employers are found: Common Crawl's public index and web graph, certificate transparency (crt.sh), a few seed lists,
-and company names seen elsewhere in the index. Found employers are saved in `data/tenants.json.gz` so the list only grows.
+company names seen elsewhere in the index, and, for European startups, each company's own website (below). Found
+employers are saved in `data/tenants.json.gz` so the list only grows.
+
+### European startups
+
+`scripts/startups_eu.py` takes a list of European startups (the owner's Seedtable connector, Y Combinator's public
+company directory, and the public portfolio pages of about 50 European investors), reads each company's own homepage
+and careers page (robots.txt obeyed, one honest User-Agent, polite pacing) and records the applicant-tracking system the
+page links to or embeds. Career pages that carry schema.org `JobPosting` markup and no known ATS are read page by page.
+LinkedIn links are noted and never followed; aggregators and VC portfolio job boards are never read.
+
+Careers pages that load their roles with JavaScript name no ATS in the served HTML; for those, the company's likely
+board names are tried on the public Greenhouse, Lever, Ashby, Recruitee, Teamtailor, JOIN and Workable endpoints, and a
+board is kept only when it names the company itself.
+
+The result is committed as `data/startups_eu.json` (companies with name, domain, headquarters country, the evidence that
+venture investors back them, and their careers systems) and loaded by every main run (startup tenants are fetched first
+within each source). `.github/workflows/vc-eu.yml` re-reads those careers systems twice a day and publishes
+`vc-eu.json.gz`; on Sundays it first refreshes the company list from public sources. No funding stage or other field
+from a paid database is published; that stays in `work/`.
 A tenant is dropped after three separate runs that answered 404 or 410.
 
 ## What it never touches
@@ -55,7 +74,15 @@ The bot identifies itself as `JobAlfredBot/1.0 (+https://jobalfred.com/bot)` on 
 ```
 manifest.json  {"version":1,"built":"ISO","total":N,"base":"","shards":[{"id":"PT","country":"PT","file":"PT.json.gz","count":123,"bytes":456}],"sources":{"greenhouse":123}}
 shard          {"v":1,"f":["t","c","l","cc","r","u","p","a","smin","smax","cur"],"rows":[[...]]}
+vc-eu.json.gz  {"v":1,"built":"ISO","basis":"...","counts":{...},"f":[shard fields...,"d"],"rows":[[...]],
+                "companies":[{"name","domain","country","evidence":[url or "Seedtable"],"boards":[[ats,key]],"roles":N}]}
+startups-eu.json  the refreshed company list (same shape as data/startups_eu.json), when the weekly refresh has run
 ```
+
+`vc-eu.json.gz` holds the roles of VC-backed startups headquartered in Europe, one row per role in the shard layout plus
+`d`, the company's domain, which joins a row to `companies`. `counts` says how many companies were checked, how many
+have a careers system we read, how many have roles, and why the rest are missing. `boards` lets a reader re-read a
+company's board live. The main shards do not change.
 
 `r` is 0 on site, 1 hybrid, 2 remote. Remote roles are in shard `REMOTE`; roles with no readable country are in `XX`.
 A shard over 8 MB gzipped is split (`US-1`, `US-2`, ...). Roles posted over a year ago are dropped. When the same posting
@@ -102,6 +129,8 @@ python -m unittest discover -s tests
 python -u -m jobalfred_index run --minutes 270     # discover, fetch, build; state in work/, output in dist/
 python -m jobalfred_index names                    # fill company names for known tenants
 python -m jobalfred_index build                    # rebuild shards from stored rows
+python scripts/startups_eu.py companies|measure|probe|guess|publish|roles|report   # European startups, see the script
+python -m jobalfred_index vceu --minutes 60         # re-read the startups' boards, write dist-vc/vc-eu.json.gz
 ```
 
 `.github/workflows/index.yml` runs this daily and publishes the release assets with the built-in `GITHUB_TOKEN`; it needs no secret.

@@ -1,4 +1,5 @@
-"""Teamtailor career-site RSS: https://{company}.teamtailor.com/jobs.rss"""
+"""Teamtailor career-site RSS: https://{company}.teamtailor.com/jobs.rss, or https://{host}/jobs.rss when the
+career site is served on the employer's own domain (tenant data {"host": ...})."""
 from __future__ import annotations
 
 from ..model import make
@@ -29,8 +30,13 @@ def parse(text: str, tenant: dict) -> list:
     return out
 
 
+def feed_url(tenant: dict) -> str:
+    host = tenant.get("host")
+    return f"https://{host}/jobs.rss" if host else URL.format(key=tenant["key"])
+
+
 def fetch(client, tenant: dict) -> list:
-    r = check(client.get(URL.format(key=tenant["key"])), f"teamtailor/{tenant['key']}")
+    r = check(client.get(feed_url(tenant)), f"teamtailor/{tenant['key']}")
     try:
         return parse(r.text, tenant)
     except Exception as e:  # malformed feed

@@ -45,7 +45,7 @@ _NOISE = re.compile(r"(saas|faprod|prod\d*|preprod|\bwd\d+\b|^wd\d+$|\bfa\b|\bhc
 ATS_HOSTS = ("myworkdayjobs.com", "oraclecloud.com", "greenhouse.io", "lever.co", "ashbyhq.com", "workable.com", "recruitee.com",
              "bamboohr.com", "breezy.hr", "teamtailor.com", "icims.com", "smartrecruiters.com", "applytojob.com", "gupy.io",
              "comeet.com", "comeet.co", "rippling.com", "personio.de", "personio.com", "pinpointhq.com", "jobs2web.com",
-             "successfactors.com", "successfactors.eu", "taleo.net", "jobvite.com", "linkedin.com", "indeed.com")
+             "successfactors.com", "successfactors.eu", "taleo.net", "jobvite.com", "linkedin.com", "indeed.com", "join.com")
 _SLD2 = {"co.uk", "com.br", "com.au", "co.in", "co.jp", "com.mx", "co.za", "com.sg", "com.tr", "com.ar", "com.co", "co.nz", "org.uk"}
 
 

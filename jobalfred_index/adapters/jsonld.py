@@ -153,7 +153,58 @@ def collect_urls(client, sitemaps: list[str], include: str | None, limit: int) -
     return [u for u, _ in chosen[:limit]]
 
 
+HREF = re.compile(r"""href\s*=\s*["']([^"'#][^"']*)["']""", re.I)
+PAGES_MAX = 120
+
+
+def job_links(html: str, page_url: str, limit: int) -> list[str]:
+    """Links on a careers page to single job pages on the same host."""
+    from urllib.parse import urljoin
+    host = (urlsplit(page_url).hostname or "").lower()
+    out: list[str] = []
+    for href in HREF.findall(html or ""):
+        u = urljoin(page_url, href.strip()).split("#", 1)[0]
+        sp = urlsplit(u)
+        if (sp.hostname or "").lower() != host or u.rstrip("/") == page_url.rstrip("/"):
+            continue
+        if JOBLIKE.search(sp.path) and not SKIP_PAGE.search(sp.path) and u not in out:
+            out.append(u)
+            if len(out) >= limit:
+                break
+    return out
+
+
+def fetch_pages(client, tenant: dict) -> list:
+    """Careers page mode (tenant data {"host", "pages": [careers page]}): JobPosting markup on the careers page itself
+    and on the job pages it links to. Used for a startup's own careers page that no ATS adapter covers."""
+    rows, urls = [], []
+    gone = 0
+    for start in tenant.get("pages") or []:
+        r = client.get(start)
+        if r.status in (404, 410):
+            gone += 1
+            continue
+        if r.status != 200:
+            raise Failed(f"jsonld/{tenant['key']}: HTTP {r.status} {r.reason}".strip())
+        page_url = r.url or start
+        rows.extend(parse(r.text, page_url, tenant))
+        urls.extend(u for u in job_links(r.text, page_url, int(tenant.get("max") or PAGES_MAX)) if u not in urls)
+    if gone and gone == len(tenant.get("pages") or []):
+        raise Gone(f"jsonld/{tenant['key']}: careers page gone")
+
+    def one(u):
+        r = client.get(u)
+        return parse(r.text, r.url or u, tenant) if r.status == 200 else []
+
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        for part in ex.map(one, urls):
+            rows.extend(part)
+    return rows
+
+
 def fetch(client, tenant: dict) -> list:
+    if tenant.get("pages"):
+        return fetch_pages(client, tenant)
     sitemaps = tenant.get("sitemaps") or []
     if not tenant.get("host"):
         suffix = {"icims": "icims.com", "jobs2web": "jobs2web.com"}.get(tenant.get("_ats", ""), "")

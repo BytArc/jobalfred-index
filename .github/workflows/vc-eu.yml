@@ -1,0 +1,57 @@
+name: VC-backed startups in Europe
+
+# Re-reads the careers systems of the European VC-backed startups in data/startups_eu.json and republishes
+# vc-eu.json.gz on release index-latest. The main shards are neither read nor written. Twice a day, away from the
+# main build at 03:17 UTC. A newer company list published on the release as startups-eu.json is used when present.
+
+on:
+  schedule:
+    - cron: "41 1,13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write           # upload release assets
+
+concurrency:
+  group: vc-eu
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests
+
+      - name: Use the newest company list (the weekly refresh publishes it as a release asset)
+        run: |
+          mkdir -p work
+          if gh release download index-latest --pattern startups-eu.json --output work/startups-eu.release.json 2>/dev/null; then
+            python scripts/startups_eu.py newest work/startups-eu.release.json
+          fi
+
+      - name: Read every listed company's careers system and build vc-eu.json.gz
+        run: python -u -m jobalfred_index vceu --minutes 60
+
+      - name: Publish (refuses a file far smaller than the last one; a failed run keeps the last good file)
+        run: bash scripts/publish_vc_eu.sh dist-vc/vc-eu.json.gz
+
+      - name: Keep the run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vc-eu-report
+          path: work/report-vceu-*.json
+          if-no-files-found: ignore

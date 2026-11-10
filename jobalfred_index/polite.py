@@ -203,7 +203,7 @@ class Client:
 
     # -- requests ---------------------------------------------------------
     def request(self, method: str, url: str, *, params=None, json=None, headers=None, data=None,
-                robots: bool = True, timeout: float | None = None) -> Resp:
+                robots: bool = True, timeout: float | None = None, max_bytes: int | None = None) -> Resp:
         sp = urlsplit(url)
         host = sp.hostname or ""
         if self.deadline and time.time() > self.deadline:
@@ -226,7 +226,16 @@ class Client:
                 self.stats["requests"] += 1
                 try:
                     r = self._session().request(method, url, params=params, json=json, data=data,
-                                                headers=headers, timeout=timeout or self.timeout, allow_redirects=True)
+                                                headers=headers, timeout=timeout or self.timeout, allow_redirects=True,
+                                                stream=bool(max_bytes))
+                    if max_bytes:   # read at most max_bytes (a homepage can be megabytes); the rest is never downloaded
+                        buf = bytearray()
+                        for chunk in r.iter_content(65536):
+                            buf += chunk
+                            if len(buf) >= max_bytes:
+                                break
+                        r.close()
+                        r._content = bytes(buf[:max_bytes])
                 except requests.RequestException as e:
                     last = Resp(0, reason=type(e).__name__, url=url)
                     time.sleep(min(2 ** attempt, 8))

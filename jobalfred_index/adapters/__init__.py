@@ -4,7 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Callable
 
-from . import (amazon, apple, ashby, bamboohr, breezy, comeet, eightfold, feeds, google, greenhouse, gupy, jsonld,
+from . import (amazon, apple, ashby, bamboohr, breezy, comeet, eightfold, feeds, google, greenhouse, gupy, join, jsonld,
                lever, oracle, personio, pinpoint, recruitee, rippling, jazzhr, smartrecruiters, teamtailor, uber, workable,
                workday)
 
@@ -30,7 +30,7 @@ for _n, _m in [("greenhouse", greenhouse), ("lever", lever), ("ashby", ashby), (
                ("workable", workable), ("recruitee", recruitee), ("teamtailor", teamtailor),
                ("personio", personio), ("bamboohr", bamboohr), ("breezy", breezy), ("rippling", rippling),
                ("pinpoint", pinpoint), ("jazzhr", jazzhr), ("smartrecruiters", smartrecruiters), ("comeet", comeet), ("gupy", gupy),
-               ("oracle", oracle), ("eightfold", eightfold), ("jsonld", jsonld), ("amazon", amazon),
+               ("oracle", oracle), ("eightfold", eightfold), ("jsonld", jsonld), ("join", join), ("amazon", amazon),
                ("google", google), ("apple", apple), ("uber", uber)]:
     SOURCES[_n] = _mod(_n, _m)
 SOURCES["lever-eu"] = _mod("lever-eu", lever, out="lever")

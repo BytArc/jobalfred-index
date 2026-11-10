@@ -1,4 +1,5 @@
-"""Recruitee public offers API: https://{company}.recruitee.com/api/offers/"""
+"""Recruitee public offers API: https://{company}.recruitee.com/api/offers/, or https://{host}/api/offers/ when the
+career site is served on the employer's own domain (tenant data {"host": ...})."""
 from __future__ import annotations
 
 from ..model import make
@@ -33,5 +34,10 @@ def parse(data: dict, tenant: dict) -> list:
     return out
 
 
+def api_url(tenant: dict) -> str:
+    host = tenant.get("host")
+    return f"https://{host}/api/offers/" if host else URL.format(key=tenant["key"])
+
+
 def fetch(client, tenant: dict) -> list:
-    return parse(get_json(client, URL.format(key=tenant["key"]), f"recruitee/{tenant['key']}"), tenant)
+    return parse(get_json(client, api_url(tenant), f"recruitee/{tenant['key']}"), tenant)

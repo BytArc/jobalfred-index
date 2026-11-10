@@ -63,6 +63,7 @@ class State:
         q = "SELECT key,data,last_ok,n_jobs FROM tenants WHERE ats=?"
         if not include_dead:
             q += " AND status!='dead'"
+        q += " ORDER BY CASE WHEN source='startup' THEN 0 ELSE 1 END, rowid"
         with self.lock:
             rows = self.db.execute(q, (ats,)).fetchall()
         cutoff = time.time() - max_age_hours * 3600 if max_age_hours else None

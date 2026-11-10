@@ -14,7 +14,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import discovery, pipeline, probe, shards
+from . import discovery, pipeline, probe, shards, startups
 from .polite import Client
 from .state import State
 
@@ -28,7 +28,7 @@ def log(msg: str) -> None:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="jobalfred_index")
-    ap.add_argument("command", choices=["run", "discover", "fetch", "build", "stats", "names"])
+    ap.add_argument("command", choices=["run", "discover", "fetch", "build", "stats", "names", "vceu"])
     ap.add_argument("--state", default=str(ROOT / "work" / "index.db"))
     ap.add_argument("--tenants", default=str(ROOT / "data" / "tenants.json.gz"), help="persistent tenant list (read and rewritten)")
     ap.add_argument("--seeds", default=str(ROOT / "data" / "seeds.json"))
@@ -44,6 +44,11 @@ def main(argv=None) -> int:
     ap.add_argument("--no-crtsh", action="store_true")
     ap.add_argument("--probe-max", type=int, default=20000, help="candidate slugs per ATS family from known company names (0 = off)")
     a = ap.parse_args(argv)
+    if a.command == "vceu":   # its own state and output, so the main index is never touched
+        if a.state == ap.get_default("state"):
+            a.state = str(ROOT / "work" / "vceu.db")
+        if a.out == ap.get_default("out"):
+            a.out = str(ROOT / "dist-vc")
 
     run_id = time.strftime("%Y%m%d-%H%M%S")
     state = State(a.state, run_id)
@@ -63,9 +68,29 @@ def main(argv=None) -> int:
         print(json.dumps(state.tenant_counts(), indent=1))
         return 0
 
+    if a.command == "vceu":
+        # only the startups' own boards; the main tenant list and shards are not read or written
+        from . import vceu
+        su = startups.load()
+        startups.add_tenants(state, su)
+        client.configure_host("join.com", gap=0.5, inflight=2)
+        mine = startups.company_keys(su)
+        names_ = sorted({ats for ats, _ in mine})
+        report["fetch"] = pipeline.run_fetch(state, client, max(60, a.minutes * 60 - 300), names_, a.max_age_hours, out_dir,
+                                             10 ** 9, log, a.limit or None)
+        report["vceu"] = vceu.build(state, su, out_dir / "vc-eu.json.gz", log)["counts"]
+        report["elapsed_seconds"] = round(time.time() - T0)
+        rp = ROOT / "work" / f"report-vceu-{run_id}.json"
+        rp.parent.mkdir(parents=True, exist_ok=True)
+        rp.write_text(json.dumps(report, indent=1, default=str))
+        return 0
+
     n = state.import_tenants(a.tenants)
     pipeline.ensure_seeds(state)
     log(f"imported {n} tenants from {a.tenants}")
+    su = startups.load()
+    log(f"startups: {startups.add_tenants(state, su)} new tenants from data/startups_eu.json "
+        f"({len(su.get('tenants', []))} listed, {len(su.get('companies', []))} companies)")
 
     budget = a.minutes * 60
     if a.extra_tenants and Path(a.extra_tenants).exists():
