@@ -213,6 +213,7 @@ def cmd_measure() -> dict:
 
 # -- 3. probe -----------------------------------------------------------------------------------------------------
 def cmd_probe(workers: int = 64, limit: int = 0) -> None:
+    """Companies not yet in the probe file are read; delete an entry to have it read again."""
     from jobalfred_index.polite import Client
     doc = json.load(open(COMPANIES))
     done = json.load(open(PROBE)) if PROBE.exists() else {}
@@ -264,6 +265,9 @@ def cmd_guess(minutes: float = 100, only: str = "", gap: float = 0.0) -> None:
     lock = threading.Lock()
     client = Client(timeout=20, retries=1)
     client.configure_host("apply.workable.com", gap=max(2.5, gap), inflight=1)
+    if gap:   # a gentler pace for the subdomain platforms, which answered 429 at the default family pace
+        for fam in (".recruitee.com", ".teamtailor.com"):
+            client.configure_host(fam, gap=gap, inflight=2)
     client.deadline = time.time() + minutes * 60
     use = [a for a in startups.GUESS_ATS if not only or a in only.split(",")]
     plan: dict[str, list] = {a: [] for a in startups.GUESS_ATS}
@@ -331,7 +335,7 @@ def cmd_publish() -> dict:
     if ROLES.exists():
         gone = {(t["ats"], t["key"]) for t in json.load(open(ROLES))["tenants"] if t.get("gone") and not t["ok"]}
     tenants: dict[tuple[str, str], dict] = {}
-    companies, private = [], []
+    companies, private, checked = [], [], []
     status, waiting = collections.Counter(), collections.Counter()
     for r in doc["companies"]:
         p = dict(probe.get(r["domain"]) or {})
@@ -340,7 +344,7 @@ def cmd_publish() -> dict:
             for sl, verdict in slugs.items():
                 weak = sl == r["domain"].split(".")[0] and len(sl) < 5 and sl != startups._fold(r.get("name") or "")
                 if verdict == "yes" and not weak and not any(t["ats"] == ats for t in p.get("tenants", [])):
-                    p["tenants"] = list(p.get("tenants", [])) + [{"ats": ats, "key": sl, "data": {}}]
+                    p["tenants"] = list(p.get("tenants", [])) + [{"ats": ats, "key": sl, "data": {}, "named": True}]
                     found_by = found_by or "name"
                     break
         for name, key in (p.get("other") or {}).items():      # found as detect-only, adapter built since
@@ -352,17 +356,22 @@ def cmd_publish() -> dict:
             p["status"] = "ats"
         for t in ts:
             tenants.setdefault((t["ats"], t["key"]), t.get("data") or {})
-        if ts:
-            companies.append({"name": r.get("name"), "domain": r["domain"], "country": r.get("country") or "",
-                              "evidence": vc_evidence(r) or ["Seedtable"],
-                              "tenants": [[t["ats"], t["key"]] for t in ts]})
+        if ts and r["domain"] not in startups.EXCLUDE_DOMAINS:
+            entry = {"name": r.get("name"), "domain": r["domain"], "country": r.get("country") or "",
+                     "evidence": vc_evidence(r) or ["Seedtable"], "tenants": [[t["ats"], t["key"]] for t in ts]}
+            named = [[t["ats"], t["key"]] for t in ts if t.get("named")]
+            if named:
+                entry["named"] = named
+            companies.append(entry)
         allt = p.get("tenants", [])
         if allt and not ts:
             for t in allt:
                 if t["ats"] in ROBOTS_BLOCKED_ATS:
                     waiting[t["ats"]] += 1
                     break
-        status[("readable" if ts else p.get("status") or "not_probed")] += 1
+        st_ = "readable" if ts else (p.get("status") or "not_probed")
+        status[st_] += 1
+        checked.append([r["domain"], st_])
         private.append({k: r.get(k) for k in ("domain", "name", "country", "city", "stage", "last_round", "total_funding",
                                               "seedtable_id", "sources", "investors", "hq_from")} |
                        {"probe": p.get("status"), "found_by": found_by if ts else "",
@@ -379,6 +388,7 @@ def cmd_publish() -> dict:
                    "waiting_on_permission": dict(waiting)},
         "tenants": [{"ats": a, "key": k, "data": d} for (a, k), d in sorted(tenants.items())],
         "companies": sorted(companies, key=lambda e: e["domain"]),
+        "checked": sorted(checked),
     }
     startups.DATA.write_text(json.dumps(public, ensure_ascii=False, separators=(",", ":")) + "\n")
     PRIVATE.write_text(json.dumps({"note": "PRIVATE: Seedtable-derived fields. Never publish.", "companies": private},
@@ -483,6 +493,186 @@ def cmd_report() -> dict:
     return out
 
 
+# -- weekly refresh from public sources only (runs in CI: no Seedtable, no private files) --------------------------
+def cmd_refresh(minutes: float = 60) -> None:
+    """Grow data/startups_eu.json from Y Combinator's directory (work/yc_companies.json) and investors' portfolio pages
+    (work/vc_portfolios.json), and look again at every checked company we cannot read yet. Companies already listed
+    keep their entry; a new public evidence URL is added to it."""
+    from jobalfred_index.polite import Client
+    pub = startups.load()
+    checked = {d: st for d, st in pub.get("checked", [])}
+    comp = {c["domain"]: c for c in pub.get("companies", [])}
+    tenants = {(t["ats"], t["key"]): t for t in pub.get("tenants", [])}
+    found: dict[str, dict] = {}            # domain -> {name, country, evidence}
+    yc_path, pf_path = WORK / "yc_companies.json", WORK / "vc_portfolios.json"
+    if yc_path.exists():
+        for slug, c in json.load(open(yc_path))["companies"].items():
+            d = site_domain(c.get("website"))
+            if d and c.get("country") in EUROPE and c.get("ycdc_status") == "Active":
+                found.setdefault(d, {"name": c.get("name"), "country": c.get("country"), "evidence": []})["evidence"].append(
+                    f"https://www.ycombinator.com/companies/{slug}")
+    if pf_path.exists():
+        for inv, rec in json.load(open(pf_path)).items():
+            page = (rec.get("pages") or [inv])[0]
+            for d in rec.get("domains", []):
+                if NOT_A_SITE.match(d) or NEWSY.search(d.split(".")[0]):
+                    continue
+                tld = d.rsplit(".", 1)[-1]
+                if d not in checked and d not in found and tld not in EU_TLD:
+                    continue                     # HQ unknown and not a European domain: not added
+                e = found.setdefault(d, {"name": d.split(".")[0].replace("-", " ").title(), "country": EU_TLD.get(tld, ""),
+                                         "evidence": []})
+                if page not in e["evidence"]:
+                    e["evidence"].append(page)
+    for d, e in found.items():                   # better evidence for companies already listed
+        if d in comp:
+            ev = [x for x in comp[d].get("evidence", []) if x != "Seedtable"]
+            comp[d]["evidence"] = list(dict.fromkeys(ev + e["evidence"])) or ["Seedtable"]
+    new = [d for d in found if d not in checked]
+    again = [d for d, st in checked.items() if st != "readable"]
+    todo = new + again
+    print(f"refresh: {len(found)} companies from public sources, {len(new)} new; {len(again)} unreadable ones looked at again",
+          flush=True)
+    client = Client(timeout=15, retries=1)
+    client.deadline = time.time() + minutes * 60
+    results: dict[str, dict] = {}
+
+    def one(d):
+        try:
+            return d, startups.probe_company(client, f"https://{d}/")
+        except Exception as e:
+            return d, {"status": "probe_error", "tenants": [], "note": type(e).__name__}
+
+    with ThreadPoolExecutor(48) as ex:
+        for d, res in ex.map(one, todo):
+            if res.get("note") == "run time box reached" or (res.get("note") or "").startswith("HTTP -2"):
+                continue                         # not reached this week: keep what we knew
+            results[d] = res
+    # name check for new companies only (the checked ones had theirs)
+    for d in new:
+        res = results.get(d) or {}
+        if res.get("status") not in GUESS_STATUSES or time.time() > client.deadline:
+            continue
+        for ats in ("greenhouse", "ashby", "lever", "teamtailor", "recruitee", "join"):
+            hit = next((sl for sl in startups.guess_slugs(found[d]["name"] or "", d)[:2]
+                        if startups.verify_board(client, ats, sl, found[d]["name"] or "", d) == "yes"), None)
+            if hit:
+                res.setdefault("tenants", []).append({"ats": ats, "key": hit, "data": {}, "named": True})
+                break
+    became = 0
+    for d, res in results.items():
+        ts = [t for t in res.get("tenants", []) if t["ats"] not in ROBOTS_BLOCKED_ATS]
+        for name, key in (res.get("other") or {}).items():
+            if name in ADAPTED and not ts:
+                ts.append(adapted_tenant(name, key))
+        if ts:
+            info = found.get(d) or {}
+            c = comp.setdefault(d, {"name": info.get("name") or d.split(".")[0].replace("-", " ").title(), "domain": d,
+                                    "country": info.get("country") or "", "evidence": info.get("evidence") or ["Seedtable"],
+                                    "tenants": []})
+            for t in ts:
+                tenants.setdefault((t["ats"], t["key"]), {k: v for k, v in t.items() if k != "named"})
+                if [t["ats"], t["key"]] not in c["tenants"]:
+                    c["tenants"].append([t["ats"], t["key"]])
+                    if t.get("named"):
+                        c.setdefault("named", []).append([t["ats"], t["key"]])
+            became += checked.get(d) != "readable"
+            checked[d] = "readable"
+        else:
+            checked[d] = res.get("status") or "not_probed"
+    status = collections.Counter(checked.values())
+    pub["built"] = time.strftime("%Y-%m-%d", time.gmtime())
+    pub["counts"] = {**pub.get("counts", {}), "companies_checked": len(checked), "by_status": dict(status.most_common()),
+                     "refreshed": {"new_companies": len(new), "looked_at_again": len(again), "became_readable": became}}
+    pub["tenants"] = [tenants[k] for k in sorted(tenants)]
+    pub["companies"] = sorted(comp.values(), key=lambda c: c["domain"])
+    pub["checked"] = sorted([d, st] for d, st in checked.items())
+    startups.DATA.write_text(json.dumps(pub, ensure_ascii=False, separators=(",", ":")) + "\n")
+    print(f"refresh: {became} companies became readable; {len(pub['companies'])} companies, {len(checked)} checked")
+
+
+# -- coverage: a random sample, re-read live ---------------------------------------------------------------------
+NOT_READABLE_PAGE = {"careers_no_ats", "ats_no_adapter", "ats_robots_blocked", "linkedin_only", "ats"}
+NO_PAGE = {"no_careers_page"}
+SITE_CLOSED = {"site_robots", "site_blocked", "site_unreachable", "no_website", "not_probed"}
+
+
+def coverage(doc: dict, vc_file: Path, n: int = 200, seed: str = "") -> dict:
+    """Sample n checked companies. For each one we read, read its boards again now and compare the count with the file.
+    For the rest, say why it is not covered. Plain counts, no estimate beyond the sample."""
+    import random
+    from jobalfred_index.adapters import SOURCES
+    from jobalfred_index.model import Failed, Gone
+    from jobalfred_index.polite import Client
+    body = json.loads(gzip.decompress(vc_file.read_bytes()))
+    in_file = {c["domain"]: c for c in body["companies"]}
+    readable = {d: {"tenants": c["boards"]} for d, c in in_file.items()}     # the boards the file actually uses
+    checked = doc.get("checked") or [[d, "readable"] for d in readable]
+    rnd = random.Random(seed or body["built"][:10])
+    sample = rnd.sample(checked, min(n, len(checked)))
+    client = Client(timeout=30, retries=1)
+    client.configure_host("apply.workable.com", gap=2.5, inflight=1)
+    out = collections.Counter()
+    diffs = []
+
+    def live(dom):
+        total, failed = 0, False
+        for ats, key in readable[dom]["tenants"]:
+            t = next((x for x in doc["tenants"] if x["ats"] == ats and x["key"] == key), {"data": {}})
+            try:
+                total += len(SOURCES[ats].fetch(client, {**(t.get("data") or {}), "key": key, "_ats": ats}))
+            except Gone:
+                pass
+            except (Failed, Exception):
+                failed = True
+        return dom, total, failed
+
+    rd = [d for d, st in sample if d in readable]
+    with ThreadPoolExecutor(6) as ex:
+        res = list(ex.map(live, rd))
+    for dom, now, failed in res:
+        had = (in_file.get(dom) or {}).get("roles", 0)
+        if failed:
+            out["read_failed_now"] += 1
+            continue
+        out["read_with_roles" if had else "read_no_roles"] += 1
+        if now == had:
+            out["count_same_now"] += 1
+        elif had and abs(now - had) <= max(1, 0.1 * max(now, had)):
+            out["count_within_10pct"] += 1
+        else:
+            out["count_differs"] += 1
+            diffs.append([dom, had, now])
+    for dom, st in sample:
+        if dom in readable:
+            continue
+        if st == "readable":            # its board was rejected at build time (another company's, a platform, a namesake)
+            out["board_rejected"] += 1
+            continue
+        out["careers_page_not_readable" if st in NOT_READABLE_PAGE else
+            "no_careers_page_found" if st in NO_PAGE else "site_not_readable"] += 1
+    read = out["read_with_roles"] + out["read_no_roles"] + out["read_failed_now"]
+    known_page = read + out["careers_page_not_readable"] + out["board_rejected"]
+    res = {"sample": len(sample), "seed": seed or body["built"][:10], **dict(out),
+           "pct_sample_read": round(100 * read / max(1, len(sample)), 1),
+           "pct_of_known_careers_pages_read": round(100 * read / max(1, known_page), 1),
+           "pct_counts_match_live": round(100 * (out["count_same_now"] + out["count_within_10pct"]) /
+                                          max(1, read - out["read_failed_now"]), 1),
+           "differs": diffs[:20]}
+    return res
+
+
+def cmd_coverage(vc_path: str, n: int = 200) -> None:
+    """Measure on a sample and write the result into the vc-eu file's counts (and work/coverage-*.json)."""
+    path = Path(vc_path)
+    res = coverage(startups.load(), path, n)
+    body = json.loads(gzip.decompress(path.read_bytes()))
+    body["counts"]["coverage_sample"] = {k: v for k, v in res.items() if k != "differs"}
+    path.write_bytes(gzip.compress(json.dumps(body, ensure_ascii=False, separators=(",", ":")).encode(), 9, mtime=0))
+    (WORK / f"coverage-{res['seed']}.json").write_text(json.dumps(res, indent=1))
+    print(json.dumps(res, indent=1))
+
+
 def cmd_newest(path: str) -> None:
     """Use a company list published on the release (by the weekly refresh) when it is newer than the committed one
     and not much smaller."""
@@ -515,6 +705,10 @@ if __name__ == "__main__":
         cmd_publish()
     elif cmd == "newest":
         cmd_newest(arg)
+    elif cmd == "refresh":
+        cmd_refresh(float(arg or 60))
+    elif cmd == "coverage":
+        cmd_coverage(arg or "dist-vc/vc-eu.json.gz", int(sys.argv[3]) if len(sys.argv) > 3 else 200)
     elif cmd == "roles":
         cmd_roles(float(arg or 60), skip=(sys.argv[3] if len(sys.argv) > 3 else ""), only=(sys.argv[4] if len(sys.argv) > 4 else ""))
     elif cmd == "report":

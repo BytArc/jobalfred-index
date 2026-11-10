@@ -356,12 +356,15 @@ def probe_company(client, website: str, max_pages: int = 4) -> dict:
     return res
 
 
+# Job boards and job platforms: listed as startups, but their boards carry other employers' roles.
+EXCLUDE_DOMAINS = {"jobgether.com"}
+
 # -- the committed list and the vc mark ---------------------------------------------------------------------------
 DATA = Path(__file__).resolve().parent.parent / "data" / "startups_eu.json"
 
 
-def load(path: str | Path = DATA) -> dict:
-    p = Path(path)
+def load(path: str | Path | None = None) -> dict:
+    p = Path(path or DATA)
     if not p.exists():
         return {"v": 1, "tenants": [], "companies": []}
     return json.loads(p.read_text())
@@ -384,9 +387,12 @@ def company_keys(doc: dict) -> set[tuple[str, str]]:
 # Many careers pages load their roles with JavaScript, so the page as served names no ATS. For those companies we
 # try the board names the company would most likely use (its domain label, its name run together or hyphenated) on
 # the public endpoints of the ATSs we read, and keep a board only when the board itself names the company.
+_TRANSLIT = str.maketrans({"æ": "ae", "Æ": "AE", "ø": "o", "Ø": "O", "ß": "ss", "œ": "oe", "Œ": "OE", "đ": "d", "ł": "l", "Ł": "L"})
+
+
 def _fold(s: str) -> str:
     import unicodedata
-    s = unicodedata.normalize("NFKD", s or "")
+    s = unicodedata.normalize("NFKD", (s or "").translate(_TRANSLIT))
     s = "".join(ch for ch in s if not unicodedata.combining(ch)).lower()
     s = re.sub(r"\b(inc|ltd|limited|gmbh|ag|sa|sas|sarl|bv|nv|ab|as|oy|aps|plc|llc|srl|spa|se|holding|group|hq|the)\b\.?", " ", s)
     return re.sub(r"[^a-z0-9]+", "", s)

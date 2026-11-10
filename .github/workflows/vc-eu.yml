@@ -2,12 +2,20 @@ name: VC-backed startups in Europe
 
 # Re-reads the careers systems of the European VC-backed startups in data/startups_eu.json and republishes
 # vc-eu.json.gz on release index-latest. The main shards are neither read nor written. Twice a day, away from the
-# main build at 03:17 UTC. A newer company list published on the release as startups-eu.json is used when present.
+# main build at 03:17 UTC. On Sunday afternoons (or on request) the company list is first refreshed from public sources
+# (Y Combinator's directory, investors' own portfolio pages), every company we cannot read yet is looked at again, and
+# the list is published on the release as startups-eu.json; later runs use the newest list. Every run measures coverage
+# on a random sample of 200 companies and writes it into the file.
 
 on:
   schedule:
     - cron: "41 1,13 * * *"
   workflow_dispatch:
+    inputs:
+      refresh:
+        description: "Refresh the company list from public sources first"
+        type: boolean
+        default: false
 
 permissions:
   contents: write           # upload release assets
@@ -42,8 +50,26 @@ jobs:
             python scripts/startups_eu.py newest work/startups-eu.release.json
           fi
 
+      - name: Refresh the company list from public sources (Sunday 13:41 run, or on request)
+        if: ${{ inputs.refresh || github.event.schedule == '41 13 * * *' }}
+        run: |
+          if [ "${{ inputs.refresh }}" = "true" ] || [ "$(date -u +%u)" = "7" ]; then
+            python -u scripts/yc_directory.py --gap 0.7 > work/yc.log 2>&1 &
+            python -u scripts/vc_portfolios.py > work/portfolios.log 2>&1 &
+            wait
+            tail -3 work/yc.log work/portfolios.log
+            python -u scripts/startups_eu.py refresh 45
+            cp data/startups_eu.json work/startups-eu.json
+            gh release upload index-latest work/startups-eu.json --clobber
+          else
+            echo "Not Sunday: the company list is unchanged."
+          fi
+
       - name: Read every listed company's careers system and build vc-eu.json.gz
         run: python -u -m jobalfred_index vceu --minutes 60
+
+      - name: Measure coverage on a random sample of 200 companies (written into the file)
+        run: python -u scripts/startups_eu.py coverage dist-vc/vc-eu.json.gz 200
 
       - name: Publish (refuses a file far smaller than the last one; a failed run keeps the last good file)
         run: bash scripts/publish_vc_eu.sh dist-vc/vc-eu.json.gz
@@ -53,5 +79,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: vc-eu-report
-          path: work/report-vceu-*.json
+          path: |
+            work/report-vceu-*.json
+            work/coverage-*.json
           if-no-files-found: ignore

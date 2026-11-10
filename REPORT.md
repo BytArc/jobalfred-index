@@ -1,4 +1,114 @@
-# JobAlfred index: report after company names and host-graph discovery
+# JobAlfred index: VC-backed startups in Europe (10 Nov 2026)
+
+Every number is from real runs on this Mac and on GitHub Actions on 10 Nov 2026. "Collected" means read from the
+employer's own careers system; it is not the same as confirmed open. File: `vc-eu.json.gz` on release `index-latest`
+(https://github.com/BytArc/jobalfred-index/releases/download/index-latest/vc-eu.json.gz).
+
+## 1. Headline
+- Companies checked: 11,236 European startups, deduplicated by website domain (6 added last are not probed yet).
+- Careers system found and read: 2,428 companies (21.6%). Roles collected: 23,126, from 1,671 companies; the other 757
+  had an empty board when read.
+- Before this work, measured first: 1,218 of the 10,743 Seedtable company domains matched a tenant already in the index
+  by host, board name or company name (an estimate, 11.3%). Exact, after reading the sites: of the 1,776 companies whose
+  own site named a careers system we read, 575 (32%) were already in the index and 1,201 were new.
+- Measured coverage, random sample of 200 checked companies (seed 2026-11-10): 37 read (18.5%); 29.1% of the sampled
+  companies that have a careers page or system we know of; for the read ones, the role count matched the live board in
+  34 of 35 (97.1%). Every scheduled run re-measures on a new sample and writes the result into `counts.coverage_sample`.
+
+## 2. The company list
+- Seedtable (the owner's connector; headquarters continent Europe, USD 1M or more raised, one query per funding stage
+  from pre-seed to growth): 11,188 companies, 10,743 with a website domain (424 have none, 21 share a domain).
+- Y Combinator's public directory: 6,392 company pages read one at a time (robots.txt allows /companies/<slug>);
+  535 headquartered in Europe, 421 of them active.
+- Investors' own public portfolio pages: 49 tried, 45 gave company domains, 5,273 domains in all (list in
+  `scripts/vc_portfolios.py`). Pages drawn only by JavaScript were read through the company pages in the investor's
+  sitemap. A domain is kept when it is already on the list or has a European country domain (215 added that way);
+  4,090 links to companies with no European signal were not added. Not read: Atomico (HTTP 429 twice), EQT Ventures
+  (robots.txt disallows); Plural and Global Founders Capital served no company links.
+- Not used: Getro, Consider and other portfolio job boards; funding-announcement feeds (not built).
+
+## 3. How a careers system is found
+1. The company's homepage, then its careers page (a link whose words or path say careers, in 15 languages, or /careers
+   and /jobs), robots.txt obeyed, JobAlfredBot User-Agent, polite pacing, at most 1.5 MB read per page.
+2. ATS links, embeds and API calls in those pages (Greenhouse, Lever, Ashby, Workable, Recruitee, Teamtailor, BambooHR,
+   Breezy, JOIN, Personio, SmartRecruiters, Pinpoint, Workday, iCIMS and others), Teamtailor and Recruitee career sites
+   on the company's own domain, and Welcome Kit career sites.
+3. Careers pages with schema.org JobPosting markup and no known ATS: read page by page.
+4. Careers pages that load their roles with JavaScript: the company's likely board names were tried on the public
+   Greenhouse, Lever, Ashby, Recruitee, Teamtailor, JOIN and Workable endpoints; a board is kept only when it names the
+   company itself (board name, or the postings' text for Lever and Ashby). Short domain labels alone are not accepted.
+5. Checks when the file is built (so they also run on GitHub): a board whose roles name another company is dropped
+   (98, mostly acquired startups whose site now leads to the buyer's careers site); a board with many employers is
+   dropped (7, job platforms); a board found by name only, or an enterprise board with no employer name, whose roles
+   are mostly outside Europe is dropped (11 likely namesakes, 3 likely acquirers). Jobgether, a job aggregator listed
+   as a startup, is excluded.
+
+Read companies by how their system was found: their own pages 1,692; the name check 736.
+Careers systems (a company can have two): Teamtailor 562, Ashby 527, JOIN 345, Greenhouse 223, JSON-LD careers pages
+210, Workable 185, Recruitee 167, BambooHR 119, Lever 90, Breezy 33, iCIMS 22, Workday 21, Rippling 6, JazzHR 5,
+Comeet 3, SuccessFactors 2, Oracle 1.
+
+Roles by source: Ashby 8,830; Greenhouse 5,104; Teamtailor 3,653; Lever 1,282; Workable 1,040; Recruitee 870;
+Workday 863; JSON-LD 636; BambooHR 340; JOIN 331; Breezy 94; iCIMS 29; Comeet 16; Oracle 15; Rippling 13; JazzHR 10.
+Roles by country (top): UK 4,169; Germany 3,791; US 3,217; France 2,210; Spain 1,115; Netherlands 977; Sweden 757;
+no readable country 719. Companies with roles by headquarters: UK 535, Germany 249, France 206, Netherlands 111,
+Sweden 106, Switzerland 83.
+
+## 4. What is missing and why (companies, of 11,236 on the list)
+| Reason | Companies |
+|---|---|
+| Careers page found, no ATS named in the served page and no board found by name (roles drawn by JavaScript from a source we cannot see, email applications, or no roles) | 3,220 |
+| No careers page linked from the homepage, and /careers and /jobs not found | 3,115 |
+| The company's own robots.txt disallows us | 675 |
+| An ATS with no adapter (Notion pages 256, Welcome to the Jungle 162, which answers our bot with 403, HiBob 42, whose job API answers 401 without its app's headers, Homerun 29, Factorial 13, others) | 582 |
+| Uses Personio (354), Pinpoint (21) or SmartRecruiters (13), whose robots.txt disallows us: waiting on the owner's permission emails | 386 |
+| The site answers 403, 429 or a bot check; never worked around | 309 |
+| Careers link goes to LinkedIn only (never read) | 165 |
+| A board was found but answered 404 when read | 118 |
+| Site unreachable | 115 |
+| Board dropped at build time (section 3.5) | 117 |
+| Not probed yet | 6 |
+
+Workable allowed about 55 board-name checks per IP before answering 429, so about 3,400 Workable name checks are
+unanswered, and Lever and JOIN name checks were cut by the time box (6,306 and 1,348 not asked). Workable boards
+linked from the companies' own pages are read normally.
+
+## 5. Freshness and self-update
+- `.github/workflows/vc-eu.yml` re-reads every listed board at 01:41 and 13:41 UTC (about 8 minutes on GitHub; the
+  first run read every board and published), measures coverage on 200 random companies, and publishes `vc-eu.json.gz`
+  through `scripts/publish_vc_eu.sh`. That script refuses a file under 70% of the roles already published, refuses when
+  it cannot read the published file, and uploads nothing on a failed run, so the last good file stays. The cleanup in
+  section 3.5 took the file from 33,938 to 23,126 roles; that one publish used `FORCE_PUBLISH=1` on purpose.
+- Sundays at 13:41 UTC (or on request) the run first refreshes the company list from public sources: Y Combinator's
+  directory and the investors' portfolio pages, a fresh look at every checked company we cannot read yet, and a name
+  check for new companies. The list is published as `startups-eu.json`; later runs use it when it is newer and not
+  smaller than 90% of the committed list. Seedtable is not re-queried automatically (it is the owner's connector).
+- The main daily index (03:17 UTC) also loads `data/startups_eu.json`, so these boards reach the country shards,
+  fetched first within each source. This work does not change the main shard format.
+- Each company in the file lists its boards, so a reader can re-read a company live at search time.
+
+## 6. Data rules
+- No funding stage is published. Seedtable's terms could not be read (/terms 404, /terms-of-service 403, nothing on
+  /api), so stage and funding data stay in `work/` (gitignored). The public file says where the evidence for
+  "VC-backed" comes from: an investor's own portfolio page (512 companies) or Y Combinator page (108), else "Seedtable"
+  (1,808).
+- No AI, no paid API besides the owner's Seedtable connector, no CAPTCHA or bot-check work-around, no LinkedIn, Indeed,
+  Glassdoor or other aggregators, no portfolio job boards. Every page read obeyed robots.txt.
+- A network outage on this Mac (about 20:00 to 22:07 local time) cut off 217 Y Combinator pages and part of the name
+  check; all were asked again, none counted as "no roles".
+
+## 7. Next
+- Permission from Personio, Pinpoint and SmartRecruiters would add up to 388 companies.
+- Adapters worth building next, if their terms allow: HiBob (42, needs a documented public endpoint), Homerun (29),
+  Factorial (13). Welcome to the Jungle refuses the bot (162).
+- The 3,220 JavaScript careers pages: the weekly re-check catches companies that move to a readable system; reading the
+  rest would need a browser, which this index does not use.
+- Funding announcements and more investor pages (Atomico, Creandum, LocalGlobe, Cherry and Lakestar show their
+  companies only through JavaScript or refused us) would widen the list.
+
+---
+
+# Earlier: report after company names and host-graph discovery (6 Nov 2026)
 
 Every number is from real runs on this Mac on 6 Nov 2026. "Collected" means read from the employer's own system. "Confirmed open" means re-checked in a sample.
 

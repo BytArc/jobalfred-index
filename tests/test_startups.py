@@ -209,11 +209,28 @@ class TestVcEu(unittest.TestCase):
             self.assertEqual(len(body["rows"]), 1)                      # the same posting twice is kept once
             self.assertEqual(body["rows"][0][-1], "acme.example")
             self.assertEqual(body["counts"], {"companies_checked": 3, "companies_with_careers_system": 2,
-                                              "companies_with_roles": 1, "roles": 1})
+                                              "companies_with_roles": 1, "roles": 1, "boards_dropped": {}})
             self.assertEqual([c["roles"] for c in body["companies"]], [1, 0])
             self.assertEqual(body["companies"][1]["evidence"], ["Seedtable"])
             self.assertTrue(head["built"].endswith("Z"))
             self.assertNotIn("stage", body["companies"][0])
+
+    def test_boards_of_other_companies_platforms_and_namesakes_are_dropped(self):
+        c = {"name": "Calipsa", "domain": "calipsa.io"}
+        row = lambda co, cc="GB", r=0: ["Engineer", co, "x", cc, r, "https://e.example/1", "", "workday"]
+        self.assertIn("another company", vceu.board_problem(c, False, [row("Motorola Solutions")] * 3))
+        self.assertEqual(vceu.board_problem(c, False, [row("Calipsa")] * 3), "")
+        self.assertEqual(vceu.board_problem(c, False, [row("Undisclosed employer")] * 3), "")
+        mixed = [row(f"Hospital {i}") for i in range(8)]
+        self.assertIn("job platform", vceu.board_problem(c, False, mixed))
+        okta = {"name": "OKTA", "domain": "okta-elpe.com"}
+        us = [row("Okta", "US")] * 30
+        self.assertIn("namesake", vceu.board_problem(okta, True, us))
+        self.assertEqual(vceu.board_problem(okta, False, us), "")        # linked from its own site: trusted
+        self.assertTrue(vceu.same_company("VÆRIDION", {"name": "Vaeridion", "domain": "vaeridion.com"}))
+        nameless = [row("Undisclosed employer", "US")] * 30
+        self.assertIn("acquirer", vceu.board_problem(c, False, nameless, "workday"))
+        self.assertEqual(vceu.board_problem(c, False, nameless, "ashby"), "")
 
     def test_old_rows_get_the_current_shard_fields_then_d(self):
         with tempfile.TemporaryDirectory() as d:
@@ -238,3 +255,42 @@ class TestVcEu(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestCoverageAndNewest(unittest.TestCase):
+    def setUp(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("startups_eu", Path(__file__).parent.parent / "scripts" / "startups_eu.py")
+        self.se = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(self.se)
+
+    def test_sample_of_unreadable_companies_says_why(self):
+        doc = {"companies": [], "tenants": [],
+               "checked": [["a.example", "careers_no_ats"], ["b.example", "no_careers_page"], ["c.example", "site_robots"],
+                           ["d.example", "ats_robots_blocked"]]}
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "v.gz"
+            f.write_bytes(gzip.compress(json.dumps({"built": "2026-11-10T00:00:00Z", "companies": [], "counts": {}}).encode()))
+            res = self.se.coverage(doc, f, n=4)
+        self.assertEqual(res["sample"], 4)
+        self.assertEqual(res["careers_page_not_readable"], 2)
+        self.assertEqual(res["no_careers_page_found"], 1)
+        self.assertEqual(res["site_not_readable"], 1)
+        self.assertEqual(res["pct_sample_read"], 0.0)
+
+    def test_newest_list_only_when_newer_and_not_much_smaller(self):
+        with tempfile.TemporaryDirectory() as d:
+            old_data = startups.DATA
+            startups.DATA = Path(d) / "startups_eu.json"
+            try:
+                startups.DATA.write_text(json.dumps({"built": "2026-11-10", "companies": [{"domain": str(i)} for i in range(10)]}))
+                small = Path(d) / "small.json"
+                small.write_text(json.dumps({"built": "2026-11-15", "companies": [{"domain": "1"}]}))
+                self.se.cmd_newest(str(small))
+                self.assertEqual(json.loads(startups.DATA.read_text())["built"], "2026-11-10")
+                good = Path(d) / "good.json"
+                good.write_text(json.dumps({"built": "2026-11-15", "companies": [{"domain": str(i)} for i in range(11)]}))
+                self.se.cmd_newest(str(good))
+                self.assertEqual(json.loads(startups.DATA.read_text())["built"], "2026-11-15")
+            finally:
+                startups.DATA = old_data
