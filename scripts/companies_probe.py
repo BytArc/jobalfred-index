@@ -28,6 +28,7 @@ sys.path.insert(0, str(root / "scripts"))
 from companies_refresh import clean_name
 
 EXCLUDED = ("linkedin.", "indeed.", "glassdoor.", "naukri.")
+MIN_PAGE_ROLES = 3     # a careers page that shows one or two role-like links is a page about careers, not a list of roles
 # a careers page about people, stories or culture lists people, not roles
 NOT_A_JOBS_PAGE = re.compile(r"(?i)stor(?:y|ies)|people|team|culture|life-at|blog|news|events?/")
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
@@ -57,8 +58,17 @@ for code in args:
         jobs.append((code, name, display, m.get("domain", "")))
 
 
+def in_country(ats, slug, display, hq) -> bool:
+    try:
+        return any(j.cc == hq for j in SOURCES[ats].fetch(client, {"key": slug, "name": display, "_ats": ats}))
+    except Exception:
+        return False
+
+
 def one(job):
     code, name, display, domain = job
+    curated = lists[code]["curated"]
+    hq = next((m.get("hq") or lists[code].get("hq", "") for m in lists[code]["members"] if m["name"] == name), "")
     if not domain:
         return code, name, display, "", {"status": "no_website_found", "tenants": []}
     if any(x in domain for x in EXCLUDED):
@@ -72,6 +82,9 @@ def one(job):
         # or Greenhouse also matches unrelated small firms called Meta or Bain, and a big firm must never get another firm's roles
         for slug in startups.guess_slugs(display, domain):
             hit = next((a for a in ("lever", "ashby") if startups.verify_board(client, a, slug, display, domain) == "yes"), None)
+            if hit and not curated and hq and not in_country(hit, slug, display, hq):
+                res["note"] = f"{hit} board '{slug}' names {display} but has no role in {hq}: a namesake, not kept"
+                hit = None
             if hit:
                 res["tenants"] = list(res.get("tenants", [])) + [{"ats": hit, "key": slug, "data": {}}]
                 res["status"], res["note"] = "ats", "board name checked against the postings"
@@ -118,7 +131,7 @@ for code, name, display, domain, res in results:
 with ThreadPoolExecutor(threads) as ex:
     reads = list(ex.map(lambda ud: [read_board(t, ud[1]) for t in ud[0]], [(u, r[2]) for u, r in zip(picked, results)]))
 for (code, name, display, domain, res), usable0, read in zip(results, picked, reads):
-    usable = [t for t, (n, err) in zip(usable0, read) if not err]
+    usable = [t for t, (n, err) in zip(usable0, read) if not err and not (t["ats"] in ("pagelist", "jsonld") and n < MIN_PAGE_ROLES)]
     status = res.get("status") or ""
     if status in ("ats", "jsonld", "careers_page_list") and not usable:
         errs = [err for _, err in read if err]
