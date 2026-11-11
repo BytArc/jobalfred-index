@@ -32,6 +32,10 @@ class TestMembership(unittest.TestCase):
         d = Path(self.tmp.name)
         (d / "curated.json").write_text(json.dumps(CURATED))
         (d / "indices.json").write_text(json.dumps(INDICES))
+        (d / "tenants.json").write_text(json.dumps({"tenants": [{"ats": "workday", "key": "jci.wd5|jci", "data": {"name": "Johnson Controls"},
+                                                                  "source": "companies:sp500"},
+                                                                 {"ats": "workable", "key": "huggingface", "data": {"name": "Anthropic"},
+                                                                  "source": "companies:ailab"}]}))
         self.old = companies.DATA
         companies.DATA = d
         companies.reset()
@@ -64,6 +68,13 @@ class TestMembership(unittest.TestCase):
 
     def test_own_website_without_a_name_match(self):
         self.assertEqual(self.co("JCI Careers", "https://jobs.johnsoncontrols.com/job/1", "jsonld"), "sp500")
+
+    def test_board_found_by_the_probe(self):
+        self.assertEqual(self.co("Johnson Controls International plc", "https://jci.wd5.myworkdayjobs.com/JCI/job/1", "workday"), "sp500")
+
+    def test_workable_short_links(self):
+        self.assertEqual(self.co("Anthropic", "https://apply.workable.com/j/81B46579FE", "workable"), "ailab")   # a board the probe found
+        self.assertEqual(self.co("Target", "https://apply.workable.com/j/19A136F8E2", "workable"), "")
 
     def test_index_member_namesake_abroad(self):
         self.assertEqual(self.co("Orion", "https://boards.greenhouse.io/orion/jobs/1", "greenhouse", "US"), "")

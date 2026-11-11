@@ -105,7 +105,18 @@ def index() -> dict:
                 names.setdefault(n, gid)
             for d in g["domains"]:
                 domains.setdefault(d, gid)
-        _idx.update(names=names, domains=domains, groups=out_groups)
+        # boards the probe found for a member (data/companies/tenants.json, each carrying the member's name): their rows belong to the
+        # member whatever name the careers system shows ("Johnson Controls International" on jci.wd5.myworkdayjobs.com)
+        boards = {}
+        tp = DATA / "tenants.json"
+        if tp.exists():
+            for t in json.loads(tp.read_text()).get("tenants", []):
+                ats = {"lever-eu": "lever"}.get(t["ats"], t["ats"])
+                gid = names.get(norm((t.get("data") or {}).get("name") or ""))
+                if gid is not None and ats not in ("jsonld", "pagelist", "careers-page"):
+                    boards[(ats, norm(t["key"].split("|")[0].split(".")[0].split("/")[0]))] = gid
+                    boards[(ats, "=" + norm(t["data"]["name"]))] = gid      # for postings whose URL does not name the board
+        _idx.update(names=names, domains=domains, groups=out_groups, boards=boards)
         return _idx
 
 
@@ -124,6 +135,8 @@ def board_of(url: str) -> tuple[str, str]:
     if host in PATH_HOSTS:
         if host == "join.com" and len(segs) > 1:
             return norm(segs[1]), ""
+        if host == "apply.workable.com" and segs and segs[0] == "j":
+            return "", ""                     # a short link (apply.workable.com/j/ID) does not name the board
         return (norm(segs[0]) if segs else ""), ""
     if host.endswith("comeet.com") and len(segs) > 1:
         return norm(segs[1]), ""
@@ -146,6 +159,10 @@ def match(name: str, url: str = "", ats: str = "", cc: str = "") -> int | None:
     """The company group a row's employer belongs to, or None."""
     ix = index()
     key, dom = board_of(url)
+    if (ats, key) in ix["boards"]:
+        return ix["boards"][(ats, key)]
+    if not key and (ats, "=" + norm(name)) in ix["boards"]:
+        return ix["boards"][(ats, "=" + norm(name))]
     gid = ix["names"].get(norm(name))
     if gid is not None:
         g = ix["groups"][gid]
