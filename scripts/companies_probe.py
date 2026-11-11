@@ -1,6 +1,6 @@
 """Find the careers systems of list members that have no roles in the index yet, reusing the VC session's probe (startups.probe_company).
 
-Usage: companies_probe.py LIST [LIST ...] [--limit N] [--again]
+Usage: companies_probe.py LIST [LIST ...] [--limit N] [--again] [--threads N]
        e.g. bigtech ailab   then   sp500 psi20 big4 consulting   then the other indexes by GDP rank
 For each member that work/companies_coverage.json lists as missing (scripts/companies_coverage.py), and that was not probed before
 (data/companies/probed.json; --again probes them anyway):
@@ -34,6 +34,10 @@ if "--limit" in sys.argv:
     limit = int(sys.argv[sys.argv.index("--limit") + 1])
     args = [a for a in args if a != str(limit)]
 again = "--again" in sys.argv
+threads = 12
+if "--threads" in sys.argv:
+    threads = int(sys.argv[sys.argv.index("--threads") + 1])
+    args = [a for a in args if a != str(threads)]
 cov = json.loads((root / "work" / "companies_coverage.json").read_text())
 lists = companies.lists()
 D = root / "data" / "companies"
@@ -73,15 +77,23 @@ def one(job):
     return code, name, display, domain, res
 
 
+def own_board(t, display, domain) -> bool:
+    """A small-business board linked from a member's site must carry the member's own name (kkr.com links a board called "stage")."""
+    if t["ats"] in companies.ENTERPRISE_ATS or t["ats"] in ("jsonld", "pagelist", "jobs2web", "careers-page"):
+        return True
+    labels = {companies.norm(display), companies._label(domain)}
+    return companies._key_matches(companies.norm(t["key"].split("|")[0].split(".")[0]), labels)
+
+
 t0 = time.time()
-with ThreadPoolExecutor(12) as ex:
+with ThreadPoolExecutor(threads) as ex:          # one member per thread; the client paces every host on its own
     results = list(ex.map(one, jobs))
 have = {(t["ats"], t["key"]): t for t in tenants["tenants"]}
 added = 0
 today = time.strftime("%Y-%m-%d")
 for code, name, display, domain, res in results:
     usable = [t for t in res.get("tenants", []) if t["ats"] in SOURCES and t["ats"] not in ROBOTS_BLOCKED_ATS
-              and not (t["ats"] == "pagelist" and NOT_A_JOBS_PAGE.search(t["key"]))]
+              and not (t["ats"] == "pagelist" and NOT_A_JOBS_PAGE.search(t["key"])) and own_board(t, display, domain)]
     status = res.get("status") or ""
     if status == "careers_page_list" and not usable:
         status = "careers_no_ats"

@@ -146,10 +146,16 @@ def board_of(url: str) -> tuple[str, str]:
     return _label(dom), dom
 
 
+KEY_TAIL = re.compile(r"(?:corporation|corp|inc|group|careers|career|jobs|global|usa|us|hq|holdings|holding|company|co)$")
+
+
 def _key_matches(key: str, labels: set[str]) -> bool:
     if not key:
         return False
+    keys = {key, KEY_TAIL.sub("", key)}                  # "eqtcorporation" is EQT's board
     for x in labels:
+        if x and x in keys:
+            return True
         if key == x or (len(x) >= 4 and (key.startswith(x) or x.startswith(key)) and abs(len(key) - len(x)) <= 4):
             return True
     return False
