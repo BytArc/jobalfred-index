@@ -381,17 +381,28 @@ MEDIA = re.compile(r"(?i)^(axios|bizjournals|fortune|forbes|bloomberg|reuters|ws
 
 
 _BIG: dict | None = None
+NOT_STARTUPS = Path(__file__).resolve().parent.parent / "data" / "not_startups.json"
 
 
-def big_listed(domain: str) -> str:
-    """The list code (a stock index such as sp500, or big tech, Big 4, consulting; data/companies) when the company is
-    a listed or large company rather than a startup. AI labs are not counted: most are VC-backed startups."""
+def not_startup(domain: str) -> str:
+    """Why the company is not a startup, or '': on a stock-index, big-tech, Big 4 or consulting list (data/companies;
+    AI labs not counted, most are VC-backed startups), or in data/not_startups.json (its Wikipedia infobox says listed,
+    owned or acquired; its homepage now redirects to its buyer; or checked by hand)."""
     global _BIG
     if _BIG is None:
         from . import companies
         _BIG = {m["domain"]: code for code, v in companies.lists().items() if code != "ailab"
                 for m in v["members"] if m.get("domain")}
+        if NOT_STARTUPS.exists():
+            doc = json.loads(NOT_STARTUPS.read_text())
+            for d, v in doc.get("companies", {}).items():
+                _BIG.setdefault(d, f"{v.get('source')}:{v.get('reason')}")
+            for d in doc.get("startups_by_hand", {}):      # checked by hand: a startup despite a rule above
+                _BIG.pop(d, None)
     return _BIG.get(domain, "")
+
+
+big_listed = not_startup
 
 
 def excluded(domain: str) -> bool:

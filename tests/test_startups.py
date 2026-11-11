@@ -343,6 +343,9 @@ class TestCoverageAndNewest(unittest.TestCase):
         self.assertEqual(rec["name"], "Acme")                       # a title that does not name the company is not used
         self.assertEqual(self.se.big_listed("nvidia.com"), "sp500")    # a listed company is not a startup
         self.assertEqual(self.se.big_listed("openai.com"), "")         # AI labs are counted as startups
+        self.assertEqual(self.se.moved("kumo.ai", {"url": "https://www.nvidia.com/en-us/contact/"}), "nvidia.com")
+        self.assertEqual(self.se.moved("getpiana.com", {"url": "https://www.piana.com/contact"}), "")   # same name
+        self.assertEqual(self.se.moved("olema.com", {"url": "https://olema.com/"}), "")
 
     def test_an_investor_keeps_only_its_own_boards(self):
         own = self.se.investor_own_board

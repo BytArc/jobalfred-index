@@ -24,6 +24,10 @@ class TestHq(unittest.TestCase):
         self.assertEqual(hq.from_text("News 23.03.2026 Paris The Board met")[3], [])          # a date, not a postcode
         self.assertEqual(hq.from_text("© 2026 Paris Saint-Germain fan site")[3], [])
 
+    def test_a_registered_agents_address_is_not_a_headquarters(self):
+        self.assertEqual(hq.from_text("Hashnode Inc., 8 The Green, Ste 300, Dover, DE 19901")[3], [])
+        self.assertEqual(hq.from_text("Acme LLC, 30 N Gould St, Sheridan, WY 82801")[3], [])
+
     def test_someone_elses_address_is_ignored(self):
         t = hq.from_text("Our EU representative: Acme GmbH, Colmantstraße 15\n53115 Bonn Germany\nContact us\n"
                          "Acme Inc., 1550 Bryant St, San Francisco, CA 94103")

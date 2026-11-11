@@ -1,0 +1,1660 @@
+{
+ "companies": {
+  "1worldsync.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on syndigo.com",
+   "url": "https://syndigo.com/1worldsync?utm_source=1WS-Redirect&utm_content=1worldsync.com/contact-us"
+  },
+  "acceleronpharma.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on merck.com",
+   "url": "https://www.merck.com/contact-us/"
+  },
+  "activeeon.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on bestfootforward.com",
+   "url": "https://bestfootforward.com/"
+  },
+  "actuate.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on opentext.com",
+   "url": "https://www.opentext.com/about/legal/website-terms-of-use"
+  },
+  "adaptiveinsights.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on workday.com",
+   "url": "https://www.workday.com/en-us/company/about-workday/contact-us.html"
+  },
+  "aetherflux.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cowboyspace.com",
+   "url": "https://www.cowboyspace.com/privacy"
+  },
+  "aetion.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on datavant.com",
+   "url": "https://www.datavant.com/contact"
+  },
+  "agaveapi.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on useagave.com",
+   "url": "https://useagave.com/privacy"
+  },
+  "agentdesks.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on radiusagent.com",
+   "url": "https://www.radiusagent.com/"
+  },
+  "alimerasciences.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on anipharmaceuticals.com",
+   "url": "https://www.anipharmaceuticals.com/about-locations.php"
+  },
+  "allscripts.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on veradigm.com",
+   "url": "https://veradigm.com:443/?modal=allscripts"
+  },
+  "alpha.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on enersys.com",
+   "url": "https://www.enersys.com/en/sales-services/"
+  },
+  "altareturn.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on allvuesystems.com",
+   "url": "https://www.allvuesystems.com"
+  },
+  "amigo.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on concurrence.com",
+   "url": "https://www.concurrence.com/"
+  },
+  "amplitude.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : AMPL",
+   "url": "https://en.wikipedia.org/wiki/Amplitude_(company)",
+   "name": "Amplitude",
+   "roles_when_checked": 54
+  },
+  "antimatter.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on databricks.com",
+   "url": "https://www.databricks.com/legal/modern-slavery-policy-statement"
+  },
+  "appmakr.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on appypie.com",
+   "url": "https://www.appypie.com/"
+  },
+  "arcsight.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on opentext.com",
+   "url": "https://www.opentext.com/about/legal/website-terms-of-use"
+  },
+  "barefootnetworks.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on intel.com",
+   "url": "https://www.intel.com/content/www/us/en/legal/terms-of-use.html"
+  },
+  "bbn.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on rtx.com",
+   "url": "https://www.rtx.com/what-we-do/bbn-technologies"
+  },
+  "bcanalog.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tenstorrent.com",
+   "url": "https://tenstorrent.com/privacy"
+  },
+  "bedrocksystems.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on bluerock.io",
+   "url": "https://www.bluerock.io/"
+  },
+  "bionic.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on crowdstrike.com",
+   "url": "https://www.crowdstrike.com/en-us/legal/privacy-notice/"
+  },
+  "bisontrails.co": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on coinbase.com",
+   "url": "https://www.coinbase.com/pt-pt/legal/privacy"
+  },
+  "bitgo.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: NYSE : BTGO",
+   "url": "https://en.wikipedia.org/wiki/BitGo",
+   "name": "BitGo",
+   "roles_when_checked": 51
+  },
+  "blameless.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on firehydrant.com",
+   "url": "https://firehydrant.com/privacy-policy/"
+  },
+  "brighthealthplan.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on neuehealth.com",
+   "url": "https://www.neuehealth.com/bhc/brighthealthcare"
+  },
+  "bucket.co": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on reflag.com",
+   "url": "https://reflag.com/"
+  },
+  "buddybuild.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on apple.com",
+   "url": "https://www.apple.com/legal/internet-services/terms/site.html"
+  },
+  "bulldozair.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on mezzoteam.fr",
+   "url": "https://www.mezzoteam.fr/en"
+  },
+  "calypsoai.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on f5.com",
+   "url": "https://www.f5.com/company/contact"
+  },
+  "candidco.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on candidpro.com",
+   "url": "https://www.candidpro.com/legal/privacy-statement-california"
+  },
+  "captio.net": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on emburse.com",
+   "url": "https://legal.emburse.com/"
+  },
+  "caredox.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on schoolcare.com",
+   "url": "https://schoolcare.com"
+  },
+  "caselawanalytics.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on lexisnexis.com",
+   "url": "https://www.lexisnexis.com/fr-fr/produits/case-law-analytics"
+  },
+  "catalogdna.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on biomemory.com",
+   "url": "https://www.biomemory.com"
+  },
+  "causal.app": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on lucanet.com",
+   "url": "https://www.lucanet.com/en/contact/"
+  },
+  "ccpgames.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on fenris.com",
+   "url": "https://fenris.com/company"
+  },
+  "centrify.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on delinea.com",
+   "url": "https://delinea.com/centrify"
+  },
+  "clari.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on salesloft.com",
+   "url": "https://www.salesloft.com/legal/cookie-policy"
+  },
+  "clearcareonline.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on wellsky.com",
+   "url": "https://wellsky.com/about-us/contact/"
+  },
+  "cloudlock.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cisco.com",
+   "url": "https://www.cisco.com/site/us/en/about/legal/privacy.html"
+  },
+  "codersclan.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on airfleet.co",
+   "url": "https://www.airfleet.co/careers/?source=codersclan_com"
+  },
+  "comtravo.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on navan.com",
+   "url": "https://navan.com/about"
+  },
+  "conductorone.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on c1.ai",
+   "url": "https://www.c1.ai/privacy-policy"
+  },
+  "conduittech.co": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on getconduit.com",
+   "url": "https://getconduit.com/privacy"
+  },
+  "coreos.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on redhat.com",
+   "url": "https://www.redhat.com/en/contact/customer-service"
+  },
+  "credifi.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on actovia.com",
+   "url": "https://actovia.com/contact-us/"
+  },
+  "cumulusnetworks.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on nvidia.com",
+   "url": "https://www.nvidia.com/en-us/contact/"
+  },
+  "cure.fit": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cult.fit",
+   "url": "https://www.cult.fit/"
+  },
+  "cvrx.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on barostim.com",
+   "url": "https://www.barostim.com/"
+  },
+  "cypherd.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cypherhq.io",
+   "url": "https://cypherhq.io"
+  },
+  "dashbot.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on dimensionlabs.io",
+   "url": "https://www.dimensionlabs.io/"
+  },
+  "datafleets.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on liveramp.com",
+   "url": "https://liveramp.com/about"
+  },
+  "decisionlink.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on xfactor.io",
+   "url": "https://www.xfactor.io/privacy-policy/"
+  },
+  "deliveroo.co.uk": {
+   "source": "wikipedia",
+   "reason": "owned",
+   "detail": "Parent: DoorDash",
+   "url": "https://en.wikipedia.org/wiki/Deliveroo",
+   "name": "Deliveroo",
+   "roles_when_checked": 200
+  },
+  "delphix.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on perforce.com",
+   "url": "https://www.perforce.com/company"
+  },
+  "demisto.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on paloaltonetworks.com",
+   "url": "https://www.paloaltonetworks.com/legal-notices/privacy"
+  },
+  "diffuse.ly": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on carcutter.com",
+   "url": "https://www.carcutter.com/imprint/"
+  },
+  "directlayer.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on aqqi.com",
+   "url": "https://aqqi.com/"
+  },
+  "disperse.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on openspace.ai",
+   "url": "https://www.openspace.ai/products/progress-tracking/?ref=disperse"
+  },
+  "dominion-dynamics.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on defendthedominion.com",
+   "url": "https://www.defendthedominion.com/"
+  },
+  "drift.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on salesloft.com",
+   "url": "https://www.salesloft.com/legal/cookie-policy"
+  },
+  "element3health.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on hellogrouper.com",
+   "url": "https://hellogrouper.com:443/"
+  },
+  "elemental.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on amazon.com",
+   "url": "https://aws.amazon.com/privacy/"
+  },
+  "elements.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on circle.com",
+   "url": "https://www.circle.com/legal/licenses"
+  },
+  "elevateapp.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on themindcompany.com",
+   "url": "https://themindcompany.com/terms-and-conditions"
+  },
+  "endgame.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on elastic.co",
+   "url": "https://www.elastic.co/contact"
+  },
+  "endologix.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on rheveramed.com",
+   "url": "https://rheveramed.com/about-us/contact-us"
+  },
+  "enfore.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on newpos.ai",
+   "url": "https://www.newpos.ai/us"
+  },
+  "entelo.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on rival-hr.com",
+   "url": "https://www.rival-hr.com/about/about-rival"
+  },
+  "enviance.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cority.com",
+   "url": "https://www.cority.com/"
+  },
+  "ermetic.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tenable.com",
+   "url": "https://www.tenable.com/about-tenable/contact-tenable"
+  },
+  "excelero.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on nvidia.com",
+   "url": "https://www.nvidia.com/en-us/contact/"
+  },
+  "finmark.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on bill.com",
+   "url": "https://www.bill.com:443/contact-us"
+  },
+  "fivestars.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sumup.com",
+   "url": "https://www.sumup.com/en-us/legal/"
+  },
+  "flatlooker.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on manda.fr",
+   "url": "https://www.manda.fr/"
+  },
+  "forterausa.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on forteraglobal.com",
+   "url": "https://forteraglobal.com/"
+  },
+  "fortyseveninc.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on gilead.com",
+   "url": "https://www.gilead.com/"
+  },
+  "freescale.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on nxp.com",
+   "url": "https://www.nxp.com/company/about-nxp/contact-us:CONTACTUS"
+  },
+  "fundingcircle.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: LSE : FCH",
+   "url": "https://en.wikipedia.org/wiki/Funding_Circle",
+   "name": "Funding Circle",
+   "note": "article found by exact title in a hand review; infobox website is this domain"
+  },
+  "fyusion.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on coxautoinc.com",
+   "url": "https://www.coxautoinc.com/contact-us/"
+  },
+  "gamasutra.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on gamedeveloper.com",
+   "url": "https://www.gamedeveloper.com/"
+  },
+  "garrison.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on everfox.com",
+   "url": "https://www.everfox.com/"
+  },
+  "gene.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : DNA",
+   "url": "https://en.wikipedia.org/wiki/Genentech",
+   "name": "Genentech",
+   "roles_when_checked": 230
+  },
+  "genomichealth.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on exactsciences.com",
+   "url": "https://www.exactsciences.com/about/contact"
+  },
+  "getdivvy.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on bill.com",
+   "url": "https://www.bill.com/contact-us"
+  },
+  "getgarner.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on garnerhealth.com",
+   "url": "https://garnerhealth.com/contact"
+  },
+  "getmati.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on metamap.com",
+   "url": "https://www.metamap.com/global-privacy-policy/"
+  },
+  "getsemaphore.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on topograph.co",
+   "url": "https://www.topograph.co/privacy-policy"
+  },
+  "glycomimetics.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on crescentbiopharma.com",
+   "url": "https://www.crescentbiopharma.com/"
+  },
+  "gobonfire.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on eunasolutions.com",
+   "url": "https://eunasolutions.com/solutions/procurement/?utm_source=redirect&utm_medium=referral&utm_content=bonfire"
+  },
+  "govini.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on air.ai",
+   "url": "https://air.ai/"
+  },
+  "granulate.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on intel.com",
+   "url": "https://www.intel.com/content/www/us/en/legal/terms-of-use.html"
+  },
+  "gretel.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on nvidia.com",
+   "url": "https://www.nvidia.com/en-us/contact/"
+  },
+  "guardhat.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on aatmunn.com",
+   "url": "https://aatmunn.com/"
+  },
+  "gymlib.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on egym-wellpass.com",
+   "url": "https://fr.egym-wellpass.com/fr-fr/cgv-wellpass"
+  },
+  "healthsage.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on coforix.ai",
+   "url": "https://coforix.ai/company/contact-us"
+  },
+  "highfive.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on dialpad.com",
+   "url": "https://www.dialpad.com/highfive/"
+  },
+  "horizontherapeutics.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on amgen.com",
+   "url": "https://www.amgen.com/about"
+  },
+  "humio.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on crowdstrike.com",
+   "url": "https://www.crowdstrike.com/en-us/legal/privacy-notice/"
+  },
+  "inherentlaboratories.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on inherentlabs.ai",
+   "url": "https://inherentlabs.ai/privacy"
+  },
+  "invisionapp.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on miro.com",
+   "url": "https://miro.com/legal/terms-of-service/"
+  },
+  "ionq.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: NYSE : IONQ",
+   "url": "https://en.wikipedia.org/wiki/IonQ",
+   "name": "IonQ",
+   "note": "article found by exact title in a hand review; infobox website is this domain"
+  },
+  "istraresearch.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on istrallc.com",
+   "url": "https://istrallc.com/contact-us/"
+  },
+  "jask.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sumologic.com",
+   "url": "https://www.sumologic.com:443/"
+  },
+  "jeeng.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on openweb.com",
+   "url": "https://www.openweb.com/#contact-us"
+  },
+  "jet.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on walmart.com",
+   "url": "https://corporate.walmart.com/privacy-security/walmart-privacy-notice"
+  },
+  "jivesoftware.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on ignitetech.ai",
+   "url": "https://ignitetech.ai/software-library/jive/"
+  },
+  "join-real.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cakhiazam.tv",
+   "url": "https://cakhiazam.tv/"
+  },
+  "joindeed.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on bonterratech.com",
+   "url": "https://www.bonterratech.com/product/deed?utm_source=joindeed&utm_medium=redirect"
+  },
+  "kawa.coffee": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tanat.coffee",
+   "url": "https://tanat.coffee/mentions-legales/"
+  },
+  "kennasecurity.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cisco.com",
+   "url": "https://www.cisco.com/c/en/us/about/legal/terms-conditions.html"
+  },
+  "kheironmed.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on deephealth.com",
+   "url": "https://deephealth.com/kheiron-medical-technologies/"
+  },
+  "knoetic.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cpohq.com",
+   "url": "https://cpohq.com/terms-of-use"
+  },
+  "koi.security": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on paloaltonetworks.com",
+   "url": "https://www.paloaltonetworks.com/legal-notices/privacy"
+  },
+  "kumo.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on nvidia.com",
+   "url": "https://www.nvidia.com/en-us/contact/"
+  },
+  "leanplum.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on clevertap.com",
+   "url": "https://clevertap.com/contact-us/"
+  },
+  "lendingclub.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on happen.com",
+   "url": "https://www.happen.com/?b=lc"
+  },
+  "letsventure.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on lvxventures.com",
+   "url": "https://lvxventures.com/"
+  },
+  "lifesize.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on enghousevideo.com",
+   "url": "https://www.enghousevideo.com/company/contact-us"
+  },
+  "lightforceortho.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on lf.co",
+   "url": "https://lf.co/legal/hipaa"
+  },
+  "lindushealth.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on lindustx.com",
+   "url": "https://www.lindustx.com/privacy-policy-us"
+  },
+  "liquidm.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on equativ.com",
+   "url": "https://www.equativ.com:443/legal-mentions"
+  },
+  "livongo.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on teladochealth.com",
+   "url": "https://www.teladochealth.com/legal"
+  },
+  "logentries.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on rapid7.com",
+   "url": "https://www.rapid7.com/contact/"
+  },
+  "lumere.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on ghx.com",
+   "url": "https://www.ghx.com/value-analysis-providers/"
+  },
+  "marblemedia.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on blueantmedia.com",
+   "url": "https://blueantmedia.com/about-us/board-of-directors/"
+  },
+  "martechadvisor.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on spiceworks.com",
+   "url": "https://www.spiceworks.com"
+  },
+  "masergy.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on comcast.com",
+   "url": "https://business.comcast.com/privacy/masergy-privacy-policy"
+  },
+  "meipharma.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on litestrategy.com",
+   "url": "https://litestrategy.com/"
+  },
+  "mensabrands.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on brndme.in",
+   "url": "https://brndme.in/"
+  },
+  "mersana.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on dayonebio.com",
+   "url": "https://www.dayonebio.com/our-company/mission-strategy/"
+  },
+  "microfocus.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on opentext.com",
+   "url": "https://www.opentext.com/about/legal/website-terms-of-use"
+  },
+  "mobilecoin.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sentz.com",
+   "url": "https://www.sentz.com/legal/cookie-policy"
+  },
+  "mobstac.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on uniqode.com",
+   "url": "https://www.uniqode.com"
+  },
+  "modria.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tylertech.com",
+   "url": "https://www.tylertech.com/about-us/about-tyler"
+  },
+  "moneytap.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on freo.money",
+   "url": "https://freo.money/privacy-policy/"
+  },
+  "mosaic.tech": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on hibob.com",
+   "url": "https://www.hibob.com/privacy/modern-slavery-statement/"
+  },
+  "naborly.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on singlekey.com",
+   "url": "https://www.singlekey.com/en-ca/"
+  },
+  "natera.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : NTRA Russell 1000 component",
+   "url": "https://en.wikipedia.org/wiki/Natera",
+   "name": "Natera",
+   "roles_when_checked": 212
+  },
+  "nauto.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on empiricearth.com",
+   "url": "https://empiricearth.com/legal/products-and-services"
+  },
+  "netography.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on vectra.ai",
+   "url": "https://www.vectra.ai/platform/network-observability"
+  },
+  "neuralmagic.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on redhat.com",
+   "url": "https://www.redhat.com/en/contact/customer-service"
+  },
+  "nextident.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on endeem.ai",
+   "url": "https://endeem.ai/"
+  },
+  "nginx.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on f5.com",
+   "url": "https://www.f5.com/company/contact"
+  },
+  "noke.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on janusintl.com",
+   "url": "https://www.janusintl.com/products/noke"
+  },
+  "numary.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on formance.com",
+   "url": "https://www.formance.com/privacy-policy"
+  },
+  "numerify.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on digital.ai",
+   "url": "https://digital.ai/products/intelligence/change-risk-prediction/"
+  },
+  "oanda.com": {
+   "source": "wikipedia",
+   "reason": "owned",
+   "detail": "Parent: FTMO",
+   "url": "https://en.wikipedia.org/wiki/OANDA",
+   "name": "OANDA",
+   "note": "article found by exact title in a hand review; infobox website is this domain"
+  },
+  "oatly.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : OTLY",
+   "url": "https://en.wikipedia.org/wiki/Oatly",
+   "name": "Oatly",
+   "note": "article found by exact title in a hand review; infobox website is this domain"
+  },
+  "obseva.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on 90phutzaz.tv",
+   "url": "https://90phutzaz.tv/"
+  },
+  "octopus-realestate.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on octopus-capital.com",
+   "url": "https://octopus-capital.com/contact/"
+  },
+  "ogsystems.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on parsons.com",
+   "url": "https://www.parsons.com/contact-us/"
+  },
+  "okera.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on databricks.com",
+   "url": "https://www.databricks.com/legal/modern-slavery-policy-statement"
+  },
+  "one.fit": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on urbansportsclub.com",
+   "url": "https://urbansportsclub.com/nl/impressum"
+  },
+  "openphone.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on quo.com",
+   "url": "https://www.quo.com/llm-info"
+  },
+  "opsgenie.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on atlassian.com",
+   "url": "https://www.atlassian.com/company/contact"
+  },
+  "optimedica.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on jnjvisionpro.com",
+   "url": "https://www.jnjvisionpro.com/en-us/contact-us/"
+  },
+  "orbitalmaterials.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on orbitalindustries.com",
+   "url": "https://www.orbitalindustries.com/legal/privacy-policy"
+  },
+  "otterize.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cyera.com",
+   "url": "https://www.cyera.com/contact-us"
+  },
+  "overops.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on harness.io",
+   "url": "https://www.harness.io:443/products/ai-sre"
+  },
+  "oysterpointrx.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on viatris.com",
+   "url": "https://www.viatris.com:443/"
+  },
+  "pacerevenue.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on flyrhospitality.com",
+   "url": "https://www.flyrhospitality.com/legal/website-privacy-policy"
+  },
+  "pacificbiosciences.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on pacb.com",
+   "url": "https://www.pacb.com/legal-and-trademarks/"
+  },
+  "parsable.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on caisoft.com",
+   "url": "https://caisoft.com/contact-us/"
+  },
+  "patientping.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on bamboohealth.com",
+   "url": "https://bamboohealth.com/contact/"
+  },
+  "percolate.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on seismic.com",
+   "url": "https://www.seismic.com/legal/policies/privacy-policy/"
+  },
+  "pilot.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on syntiant.com",
+   "url": "https://www.syntiant.com/sales-support/sales-contacts/"
+  },
+  "platohq.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on substack.com",
+   "url": "https://substack.com/privacy"
+  },
+  "playbrush.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sunstargum.com",
+   "url": "https://www.sunstargum.com/de-de/rechtlich/impressum.html"
+  },
+  "playtoast.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on topdog.games",
+   "url": "https://topdog.games/privacy-policy/"
+  },
+  "ponotech.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on covalt.eu",
+   "url": "https://www.covalt.eu/legal-and-gdpr-information"
+  },
+  "privitar.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on informatica.com",
+   "url": "https://www.informatica.com"
+  },
+  "progression.co": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on careerminds.com",
+   "url": "https://careerminds.com/privacy-policy"
+  },
+  "promisepay.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on hellozai.com",
+   "url": "https://www.hellozai.com/about-us"
+  },
+  "proofpoint.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : PFPT",
+   "url": "https://en.wikipedia.org/wiki/Proofpoint",
+   "name": "Proofpoint",
+   "roles_when_checked": 138
+  },
+  "propertypartner.co": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on londonhouseexchange.com",
+   "url": "https://www.londonhouseexchange.com/"
+  },
+  "prowebce.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on edenred.fr",
+   "url": "https://solutionscse.edenred.fr/mentions-legales"
+  },
+  "purestorage.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on everpuredata.com",
+   "url": "https://www.everpuredata.com/"
+  },
+  "pursway.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on omnicommedia.com",
+   "url": "https://omnicommedia.com/"
+  },
+  "qognify.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on octave.com",
+   "url": "https://www.octave.com/legal/privacy"
+  },
+  "qsrautomations.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on crunchtime.com",
+   "url": "https://www.crunchtime.com/"
+  },
+  "qualys.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : QLYS S&P 400 component",
+   "url": "https://en.wikipedia.org/wiki/Qualys",
+   "name": "Qualys",
+   "roles_when_checked": 188
+  },
+  "quanta-computing.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on centreon.com",
+   "url": "https://www.centreon.com:443/centreon-experience-monitoring/"
+  },
+  "quantive.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on workboard.com",
+   "url": "https://www.workboard.com/legal/privacy-policy"
+  },
+  "quantumcircuits.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on dwavequantum.com",
+   "url": "https://www.dwavequantum.com/quantum-circuits-part-of-d-wave-contact-us/?utm_source=qci&utm_medium=redirect&utm_campaign=qcitransition&utm_content=d-waveContactUs"
+  },
+  "quincetx.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on irulya.com",
+   "url": "https://irulya.com/"
+  },
+  "rackspace.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : RXT",
+   "url": "https://en.wikipedia.org/wiki/Rackspace",
+   "name": "Rackspace",
+   "roles_when_checked": 79
+  },
+  "rambus.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : RMBS S&P 400 component",
+   "url": "https://en.wikipedia.org/wiki/Rambus",
+   "name": "Rambus",
+   "roles_when_checked": 71
+  },
+  "rapt.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on gsk.com",
+   "url": "https://www.gsk.com/en-gb/"
+  },
+  "raytheon.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on rtx.com",
+   "url": "https://www.rtx.com"
+  },
+  "reachfive.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on purse.eu",
+   "url": "https://purse.eu/fr"
+  },
+  "redoxblox.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tempoenergy.com",
+   "url": "https://tempoenergy.com/company/"
+  },
+  "ringcentral.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: NYSE : RNG (Class A) Russell 1000 component S&P 600 component",
+   "url": "https://en.wikipedia.org/wiki/Ringcentral",
+   "name": "RingCentral: The Voice of Your Business",
+   "roles_when_checked": 83
+  },
+  "rocketlabusa.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on rocketlabcorp.com",
+   "url": "https://rocketlabcorp.com/about/about-us/"
+  },
+  "roguewave.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on perforce.com",
+   "url": "https://www.perforce.com/company"
+  },
+  "safetyculture.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on mitti.com",
+   "url": "https://mitti.com/"
+  },
+  "seagen.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on pfizer.com",
+   "url": "https://www.pfizer.com/contact"
+  },
+  "sectionschool.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sectionai.com",
+   "url": "https://www.sectionai.com/legal/privacy-policy"
+  },
+  "sedonasys.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cisco.com",
+   "url": "https://www.cisco.com/c/en/us/about/legal/terms-conditions.html"
+  },
+  "seene.co": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on snap.com",
+   "url": "https://www.snap.com/terms"
+  },
+  "selinaadvance.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on selinafinance.co.uk",
+   "url": "https://www.selinafinance.co.uk/"
+  },
+  "sendgrid.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on twilio.com",
+   "url": "https://www.twilio.com/en-us/legal/impressum-germany"
+  },
+  "shapesecurity.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on f5.com",
+   "url": "https://www.f5.com/company/contact"
+  },
+  "sheeld.market": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on aplo.io",
+   "url": "https://www.aplo.io/privacy-policy/"
+  },
+  "signinenterprise.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on signinsolutions.com",
+   "url": "https://signinsolutions.com/terms-and-conditions"
+  },
+  "singlehop.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on horizoniq.com",
+   "url": "https://www.horizoniq.com/contact-us/"
+  },
+  "sitime.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : SITM S&P 400 component",
+   "url": "https://en.wikipedia.org/wiki/SiTime",
+   "name": "SiTime",
+   "note": "article found by exact title in a hand review; infobox website is this domain"
+  },
+  "smash.fit": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on noa.fit",
+   "url": "https://n.noa.fit/privacy"
+  },
+  "snaproute.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on infoblox.com",
+   "url": "https://www.infoblox.com/"
+  },
+  "socialbakers.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on emplifi.io",
+   "url": "https://emplifi.io?utm_source=socialbakers.com"
+  },
+  "somite.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cellularintelligence.com",
+   "url": "https://www.cellularintelligence.com/website-privacy-notice"
+  },
+  "sonos.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : SONO S&P 600 component",
+   "url": "https://en.wikipedia.org/wiki/Sonos",
+   "name": "Sonos",
+   "roles_when_checked": 53
+  },
+  "sophos.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: LSE : SOPH (2015–2020)",
+   "url": "https://en.wikipedia.org/wiki/Sophos",
+   "name": "SOC.OS",
+   "roles_when_checked": 78
+  },
+  "sourcefire.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on cisco.com",
+   "url": "https://www.cisco.com/site/us/en/about/contact-cisco/index.html"
+  },
+  "spaceapegames.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on supercell.com",
+   "url": "https://supercell.com"
+  },
+  "sprinklr.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: NYSE : CXM S&P 600 Component",
+   "url": "https://en.wikipedia.org/wiki/Sprinklr",
+   "name": "Sprinklr",
+   "roles_when_checked": 67
+  },
+  "squareup.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sqcapitallicenses.com",
+   "url": "https://sqcapitallicenses.com/us/en/legal/capital/capital-licenses?host_name=squareup.com"
+  },
+  "stackbit.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on netlify.com",
+   "url": "https://www.netlify.com/"
+  },
+  "statsig.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on amplitude.com",
+   "url": "https://amplitude.com/privacy"
+  },
+  "strattic.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on elementor.com",
+   "url": "https://elementor.com/hosting/"
+  },
+  "strongdm.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on delinea.com",
+   "url": "https://delinea.com/strongdm"
+  },
+  "sugarcrm.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sugarai.com",
+   "url": "https://sugarai.com/contact/contact-us"
+  },
+  "sunrun.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : RUN S&P 600 component",
+   "url": "https://en.wikipedia.org/wiki/Sunrun",
+   "name": "Sunrun",
+   "roles_when_checked": 241
+  },
+  "superconductive.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on greatexpectations.io",
+   "url": "https://greatexpectations.io/privacy-policy/"
+  },
+  "surveynuts.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on suncake.com",
+   "url": "https://suncake.com/terms"
+  },
+  "syrup.tech": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on anaplan.com",
+   "url": "https://www.anaplan.com/"
+  },
+  "talon-sec.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on paloaltonetworks.com",
+   "url": "https://www.paloaltonetworks.com/legal-notices/privacy"
+  },
+  "tamebay.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on channelx.world",
+   "url": "https://channelx.world/privacy-policy/"
+  },
+  "taxscouts.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on taxfix.com",
+   "url": "https://taxfix.com/en-uk/legal-notice/"
+  },
+  "tecton.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on databricks.com",
+   "url": "https://www.databricks.com/legal/modern-slavery-policy-statement"
+  },
+  "tessian.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on proofpoint.com",
+   "url": "https://www.proofpoint.com/us/tessian-is-now-proofpoint"
+  },
+  "thearenagroup.net": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on paradium.ai",
+   "url": "https://paradium.ai/privacy-policy/index.html"
+  },
+  "theengineering.company": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on flowengineering.com",
+   "url": "https://www.flowengineering.com/privacy-and-cookie-policy"
+  },
+  "thetileapp.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on life360.com",
+   "url": "https://www.life360.com/en-eu"
+  },
+  "tidelift.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sonarsource.com",
+   "url": "https://www.sonarsource.com/solutions/security/?tidelift=tidelift-redirect"
+  },
+  "timeular.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on timetac.com",
+   "url": "https://www.timetac.com/en/company/imprint/"
+  },
+  "tradeking.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on ally.com",
+   "url": "https://www.ally.com/contact-us"
+  },
+  "transbnk.co.in": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tbx.co.in",
+   "url": "https://www.tbx.co.in/"
+  },
+  "traxcn.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tracxn.com",
+   "url": "https://tracxn.com/"
+  },
+  "trifacta.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on alteryx.com",
+   "url": "https://www.alteryx.com/contact-us"
+  },
+  "truex.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on infillion.com",
+   "url": "https://infillion.com/company/"
+  },
+  "trussle.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on better.co.uk",
+   "url": "https://better.co.uk/"
+  },
+  "trymarble.ai": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on marblecognition.com",
+   "url": "https://marblecognition.com/"
+  },
+  "trytrellis.co": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on destockage-grossiste.com",
+   "url": "https://destockage-grossiste.com/"
+  },
+  "uipath.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: NYSE : PATH (Class A) S&P 400 component",
+   "url": "https://en.wikipedia.org/wiki/UiPath",
+   "name": "UiPath",
+   "roles_when_checked": 98
+  },
+  "unitedwardrobe.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on vinted.com",
+   "url": "https://www.vinted.com/about"
+  },
+  "useindio.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on appliedsystems.com",
+   "url": "https://www1.appliedsystems.com:443/en-us/contact-us"
+  },
+  "userleap.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on sprig.com",
+   "url": "https://sprig.com/"
+  },
+  "vertica.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on rocketsoftware.com",
+   "url": "https://www.rocketsoftware.com/en-us/products/vertica"
+  },
+  "vexata.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on farmhousela.com",
+   "url": "https://farmhousela.com/"
+  },
+  "viant.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on claritev.com",
+   "url": "https://www.claritev.com/contact/"
+  },
+  "virtualinstruments.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on virtana.com",
+   "url": "https://www.virtana.com/"
+  },
+  "visly.app": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on figma.com",
+   "url": "https://www.figma.com/legal/impressum/"
+  },
+  "volleythat.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on weekend.com",
+   "url": "https://www.weekend.com/privacy-policy"
+  },
+  "vulcan.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tenable.com",
+   "url": "https://www.tenable.com"
+  },
+  "waldo.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on tricentis.com",
+   "url": "https://www.tricentis.com"
+  },
+  "wandera.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on jamf.com",
+   "url": "https://www.jamf.com/"
+  },
+  "welii.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on najar.ai",
+   "url": "https://najar.ai/"
+  },
+  "wenabi.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on komeet.cc",
+   "url": "https://www.komeet.cc/demo"
+  },
+  "wildsense.co": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on eq-earth.com",
+   "url": "https://www.eq-earth.com/contact"
+  },
+  "withjour.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on alan.com",
+   "url": "https://alan.com/"
+  },
+  "xebialabs.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on digital.ai",
+   "url": "https://digital.ai"
+  },
+  "yokoy.io": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on perk.com",
+   "url": "https://www.perk.com/"
+  },
+  "zayo.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: NYSE : ZAYO (2014–2020)",
+   "url": "https://en.wikipedia.org/wiki/Zayo",
+   "name": "Zayo.com",
+   "roles_when_checked": 245
+  },
+  "zigguratum.com": {
+   "source": "moved",
+   "reason": "moved",
+   "detail": "its pages now live on ziggiz.ai",
+   "url": "https://www.ziggiz.ai/"
+  },
+  "zynga.com": {
+   "source": "wikipedia",
+   "reason": "listed",
+   "detail": "Traded as: Nasdaq : ZNGA (2011–2022)",
+   "url": "https://en.wikipedia.org/wiki/Zynga",
+   "name": "Zynga",
+   "roles_when_checked": 45
+  }
+ },
+ "about": "Companies that are not startups, so never listed as VC-backed startups: their homepage now redirects to another company (source moved), their English Wikipedia article's infobox, whose website is their domain, says listed on a stock exchange, owned by another company or acquired (source wikipedia), or checked by hand (source hand). url is the evidence.",
+ "startups_by_hand": {
+  "slate.auto": "Wikipedia names Re:Build Manufacturing (a private incubator) as parent; Slate Auto is a VC-backed startup"
+ }
+}

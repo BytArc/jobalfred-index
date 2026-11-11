@@ -25,6 +25,7 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -153,7 +154,7 @@ def cmd_companies() -> dict:
                 if rec is None:
                     tld = d.rsplit(".", 1)[-1]
                     h = hq_seen.get(d) or {}
-                    if h.get("country") in EUROPE and not big_listed(d) and not startups.excluded(d):
+                    if h.get("country") in EUROPE and not big_listed(d) and not startups.excluded(d) and not moved(d, h):
                         rec = out.setdefault(d, site_hq_record(d, h))      # its own site says where it is
                         counts["portfolio_new_european_by_site"] += 1
                     elif tld not in EU_TLD:
@@ -220,10 +221,14 @@ def cmd_world(countries: list[str]) -> dict:
         have[d] = rec
         added[c["country"]] += 1
     hq_seen = hq_known()
+    for d in [d for d, r in have.items() if r.get("hq_from") == "site"]:   # read again since: still headquartered here?
+        h = hq_seen.get(d) or {}
+        if h.get("country") not in countries or moved(d, h) or startups.not_startup(d):
+            del have[d]
     for d, pages in fund_only_domains(set(have)).items():
         h = hq_seen.get(d) or {}
-        if h.get("country") not in countries:
-            continue
+        if h.get("country") not in countries or moved(d, h):
+            continue                                   # elsewhere, or its pages now live on its buyer's site
         rec = site_hq_record(d, h)
         rec["sources"] = ["portfolio"]
         rec["investors"] = sorted({inv for inv, _ in pages})
@@ -317,6 +322,58 @@ def cmd_hq(minutes: float = 90) -> None:
         known.update(got)
         HQ_CACHE.write_text(json.dumps(known, indent=0, ensure_ascii=False))
         print(f"hq: {len(known)} read; " + json.dumps(collections.Counter(v.get("status") for v in known.values())), flush=True)
+
+
+def moved(d: str, h: dict) -> str:
+    """The other company's site when this company's own pages now live there (its homepage redirects to its buyer)."""
+    host = registrable(urlsplit(h.get("url") or "").hostname or "") if h.get("url") else ""
+    if host and host != d and startups._fold(host.split(".")[0]) not in startups._fold(d.split(".")[0]) \
+            and startups._fold(d.split(".")[0]) not in startups._fold(host.split(".")[0]):
+        return host
+    return ""
+
+
+def cmd_notstartups(min_roles: int = 40) -> None:
+    """Fill data/not_startups.json: companies whose homepage now redirects to another company, and companies with at
+    least `min_roles` roles whose Wikipedia infobox (website = their domain) says listed, owned or acquired."""
+    from jobalfred_index import wikicheck
+    from jobalfred_index.polite import Client
+    path = startups.NOT_STARTUPS
+    doc = json.load(open(path)) if path.exists() else {"companies": {}}
+    doc["about"] = ("Companies that are not startups, so never listed as VC-backed startups: their homepage now redirects "
+                    "to another company (source moved), their English Wikipedia article's infobox, whose website is their "
+                    "domain, says listed on a stock exchange, owned by another company or acquired (source wikipedia), "
+                    "or checked by hand (source hand). url is the evidence.")
+    out = doc["companies"]
+    hqs = json.load(open(HQ_CACHE)) if HQ_CACHE.exists() else {}
+    for d, h in hqs.items():
+        other = moved(d, h)
+        if other and d not in out:
+            out[d] = {"source": "moved", "reason": "moved", "detail": f"its pages now live on {other}", "url": h.get("url")}
+    seen_p = WORK / "wikicheck.json"
+    seen = json.load(open(seen_p)) if seen_p.exists() else {}
+    body = json.loads(gzip.decompress((ROOT / "dist-vc" / "vc-world.json.gz").read_bytes()))
+    todo = [c for c in body["companies"] if c["roles"] >= min_roles and c.get("kind") != "investor"
+            and c["domain"] not in seen and c["domain"] not in out]
+    print(f"not-startups: {len(todo)} companies with {min_roles}+ roles to look up on Wikipedia", flush=True)
+    client = Client(timeout=20, retries=1)
+    client.configure_host("en.wikipedia.org", gap=1.0, inflight=1)
+    hq_names = {d: h.get("name") for d, h in hqs.items()}
+    for i, c in enumerate(sorted(todo, key=lambda c: -c["roles"]), 1):
+        res = wikicheck.check(client, c.get("name") or "", c["domain"])
+        if res["status"] == "no_article" and hq_names.get(c["domain"]) and hq_names[c["domain"]] != c.get("name"):
+            res = wikicheck.check(client, hq_names[c["domain"]], c["domain"])
+        seen[c["domain"]] = res
+        if res["status"] == "not_startup":
+            out[c["domain"]] = {"source": "wikipedia", "reason": res["reason"], "detail": res["detail"], "url": res["url"],
+                                "name": c.get("name"), "roles_when_checked": c["roles"]}
+            print(f"  {c.get('name')} ({c['roles']} roles): {res['reason']}, {res['detail'][:70]}", flush=True)
+        if i % 25 == 0:
+            seen_p.write_text(json.dumps(seen, indent=0))
+    seen_p.write_text(json.dumps(seen, indent=0))
+    doc["companies"] = dict(sorted(out.items()))
+    path.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
+    print("not-startups: " + json.dumps(collections.Counter(v["source"] + ":" + v["reason"] for v in out.values())))
 
 
 def cmd_investors() -> dict:
@@ -584,9 +641,11 @@ def cmd_publish() -> dict:
                                        for m in me)]
         if ts and p.get("status") in ("ats_no_adapter", "linkedin_only", "careers_no_ats", "no_careers_page"):
             p["status"] = "ats"
-        for t in ts:
+        listed_here = bool(ts) and not startups.excluded(r["domain"]) and (r.get("kind") == "investor"
+                                                                        or not startups.not_startup(r["domain"]))
+        for t in (ts if listed_here else []):          # only the boards of companies we list are read daily
             tenants.setdefault((t["ats"], t["key"]), t.get("data") or {})
-        if ts and not startups.excluded(r["domain"]):
+        if listed_here:
             entry = {"name": r.get("name"), "domain": r["domain"], "country": r.get("country") or "",
                      "evidence": vc_evidence(r) or ["Seedtable"], "tenants": [[t["ats"], t["key"]] for t in ts],
                      "backing": "listed" if r.get("backing") == "listed" and not vc_evidence(r) else "vc"}
@@ -606,7 +665,7 @@ def cmd_publish() -> dict:
                 if t["ats"] in ROBOTS_BLOCKED_ATS:
                     waiting[t["ats"]] += 1
                     break
-        st_ = "readable" if ts else (p.get("status") or "not_probed")
+        st_ = "readable" if listed_here else ("not_a_startup" if ts else (p.get("status") or "not_probed"))
         status[st_] += 1
         checked.append([r["domain"], st_])
         private.append({k: r.get(k) for k in ("domain", "name", "country", "city", "stage", "last_round", "total_funding",
@@ -770,7 +829,8 @@ def cmd_refresh(minutes: float = 60) -> None:
                     continue
                 tld = d.rsplit(".", 1)[-1]
                 site = hq_map.get(d) or {}
-                by_site = site.get("country") in region and not big_listed(d) and not startups.excluded(d)
+                by_site = (site.get("country") in region and not big_listed(d) and not startups.excluded(d)
+                           and not moved(d, site))
                 if REGION == "world":
                     if d not in checked and d not in found and yc_country.get(d) not in region and not by_site:
                         if d not in hq_map and d not in yc_country:
@@ -799,7 +859,7 @@ def cmd_refresh(minutes: float = 60) -> None:
               f"{sum(1 for h in got.values() if h.get('country') in region)} in this region (added next run)", flush=True)
     pub["hq"] = {d: h.get("country") or "" for d, h in sorted(hq_map.items())}
     new = [d for d in found if d not in checked]
-    again = [d for d, st in checked.items() if st != "readable"]
+    again = [d for d, st in checked.items() if st not in ("readable", "not_a_startup")]
     todo = new + again
     print(f"refresh: {len(found)} companies from public sources, {len(new)} new; {len(again)} unreadable ones looked at again",
           flush=True)
@@ -831,6 +891,9 @@ def cmd_refresh(minutes: float = 60) -> None:
                 break
     became = 0
     for d, res in results.items():
+        if startups.not_startup(d) or startups.excluded(d):
+            checked[d] = "not_a_startup"               # listed, owned, acquired or moved (data/not_startups.json)
+            continue
         ts = [t for t in res.get("tenants", []) if t["ats"] not in ROBOTS_BLOCKED_ATS]
         for name, key in (res.get("other") or {}).items():
             if name in ADAPTED and not ts:
@@ -975,6 +1038,8 @@ if __name__ == "__main__":
                   gap=float(sys.argv[4]) if len(sys.argv) > 4 else 0.0)
     elif cmd == "publish":
         cmd_publish()
+    elif cmd == "notstartups":
+        cmd_notstartups(int(arg or 40))
     elif cmd == "hq":
         cmd_hq(float(arg or 90))
     elif cmd == "investors":

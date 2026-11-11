@@ -40,6 +40,9 @@ _HQ_WORD = (r"(?:headquartered|head-quartered|hq'?d)\s+(?:in|at)|(?:global |corp
 _HQ = re.compile(rf"(?i)\b(?:{_HQ_WORD})\s*(?P<p>[^\n.;|]{{2,140}})")
 _US_ADDR = re.compile(r"\b(?P<p>[A-Z][A-Za-z.'\- ]{1,30},\s*(?:" + "|".join(sorted(geo.US_STATES)) +
                       r")\.?\s+\d{5}(?:-\d{4})?)\b")
+# towns where registered agents sit: an address there says where the company is incorporated, not where it works
+_AGENT_TOWN = re.compile(r"(?i)\b(dover|wilmington|lewes|newark|middletown|camden|claymont),?\s+DE\b|"
+                         r"\b(sheridan|cheyenne|casper),?\s+WY\b")
 _UK_ADDR = re.compile(r"\b(?P<p>(?:London|Manchester|Edinburgh|Cambridge|Oxford|Bristol|Leeds|Glasgow|Birmingham|"
                       r"Belfast|Cardiff|Brighton)\b[ ,]{1,3}[A-Z]{1,2}\d[A-Z\d]?\s?\d[ABD-HJLNP-UW-Z]{2})\b")
 _EU_ADDR = re.compile(r"(?<![\d./©-])(?<!© )\b(?P<p>\d{4,5}\s+(?P<city>[A-ZÄÖÜÉ][\wäöüßéèàçñ\-]{2,25}))\b")
@@ -134,7 +137,7 @@ def from_text(text: str) -> dict[int, list[tuple[str, str]]]:
         if c:
             out[2].append((c, _snip(text, m)))
     for m in _US_ADDR.finditer(text):
-        if not _for_others(text, m):
+        if not _for_others(text, m) and not _AGENT_TOWN.search(m.group("p")):
             out[3].append(("US", _snip(text, m)))
     for m in _UK_ADDR.finditer(text):
         if not _for_others(text, m):
