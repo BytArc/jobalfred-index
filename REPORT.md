@@ -18,10 +18,10 @@
 - Backer tags (`gi`, never the firm itself on a firm's own roles): 16,564 world rows and 9,828 Europe rows name at least one backer from public evidence; new US
   fund pages read (Sequoia, NEA, Bessemer, Greylock, Redpoint, Felicis, Kleiner Perkins, Khosla and others).
 - Fixes: a company page that links news coverage keeps only the site named like the page (Battery's pages had linked
-  Axios, Fortune and others; re-read pending); news and data sites are never companies (bbc.co.uk had been listed as a
+  Axios, Fortune and others; re-read: 342 company sites, 10 Europe and 8 world companies tagged); news and data sites are never companies (bbc.co.uk had been listed as a
   Dawn Capital company); a non-European company's board found by name is judged against its HQ country, not Europe.
 - Open: US companies known only from fund pages (not YC) have no public HQ source yet, so they are not in the world
-  list; Battery Ventures' evidence returns with the next weekly refresh.
+  list.
 
 ## Update, 11 Nov 2026
 - File now: 23,541 roles from 1,729 companies; 2,517 companies with a careers system we read (11,236 checked).
