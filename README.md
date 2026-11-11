@@ -154,6 +154,22 @@ the cached homepage title and meta description and up to 10 job titles, never an
 (default 50). `scripts/industry_topup.py` does the same for a small batch of recent companies, monthly or on demand, never in the nightly run. The key is read from
 `ANTHROPIC_API_KEY` in the environment of the person running them; the nightly Action needs no secret.
 
+## Company lists (co) and language (lr, lq)
+
+Three more fields close every shard row, after `ft`: `co`, `lr`, `lq`. `companies.json` beside the manifest maps each list code to its label, source and
+retrieval date.
+
+**`co`**: the well-known lists the employer is on, codes joined by commas ("sp500,bigtech"), empty when none. Lists are versioned data: `data/companies/curated.json`
+(big tech, AI labs, Big 4, top consultancies; edited by hand) and `data/companies/indices.json` (stock-index constituents read from Wikipedia with source URL and date by
+`scripts/companies_refresh.py`, refreshed monthly by `.github/workflows/companies.yml`; S&P 500, PSI 20, DAX, CAC 40, FTSE 100, IBEX 35, FTSE MIB, AEX, SMI, OMXS30, KOSPI 200,
+ASX 200, TSX 60 and more). A row matches a member by normalised name, alias, or the domain its postings live on. Members that have no roles yet are probed for a careers
+system with the VC session's probe (`scripts/companies_coverage.py`, then `scripts/companies_probe.py`); the boards it verifies go to `data/companies/tenants.json`, which the
+nightly run loads with `--extra-tenants`. A bare name match on Workable or Greenhouse is not accepted, since it also matches unrelated small firms called Meta or Bain.
+
+**`lr`, `lq`**: `lr` is the languages a role asks for as ISO 639-1 codes ("de,en"). `lq` is `s` when the description states them ("fluent German", "native Portuguese", "C1 French",
+"inglês fluente", "Deutschkenntnisse", "français courant"; `jobalfred_index/language.py`, deterministic, 7 cue families in 30 languages), or `i` when nothing is stated and the national
+language of the company's head-office country (list members) or of the role's country is used instead. The description is read where the source already returns it and is never stored.
+
 ## Run
 
 ```

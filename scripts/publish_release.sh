@@ -20,6 +20,7 @@ gh release upload "$TAG" "$DIST"/*.json.gz "$TENANTS" --clobber
 # the code-to-label map for the industry field, and the homepage cache so the next nightly run starts from it
 [ -f "$DIST/industries.json" ] && gh release upload "$TAG" "$DIST/industries.json" --clobber
 [ -f "$DIST/functions.json" ] && gh release upload "$TAG" "$DIST/functions.json" --clobber
+[ -f "$DIST/companies.json" ] && gh release upload "$TAG" "$DIST/companies.json" --clobber
 [ -f data/industry/homepages.json.gz ] && gh release upload "$TAG" data/industry/homepages.json.gz --clobber
 gh release upload "$TAG" "$DIST/manifest.json" --clobber
 # remove shard assets that the new manifest no longer lists

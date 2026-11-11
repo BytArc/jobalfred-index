@@ -9,16 +9,18 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import function, industry, seniority
+from . import companies, function, industry, seniority
 from .adapters import FEED_NAMES
 
-FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft"]
+FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft", "co", "lr", "lq"]
 # lv: seniority level 0 not stated, 1 intern, 2 junior, 3 mid, 4 senior, 5 lead/staff/principal, 6 manager, 7 director and above.
 # ls: where it came from: "n" the source's own tag, "t" the title, "d" the description, "" not stated. Readers map fields by name.
 # in: industry code, see data/industry/taxonomy.json (published beside the manifest as industries.json). Every row has one; "oth" when the signal is weak.
 # fn: job function code (data/function/rules.json, published beside the manifest as functions.json); "oth" when the title names none.
 # ft: sub-role code within the function, "" when none. Both are read from the title only.
-LV, LS, IND, FN, FT = (FIELDS.index(k) for k in ("lv", "ls", "in", "fn", "ft"))
+# co: codes of the well-known lists the company is on, joined by commas ("sp500,bigtech"), "" when none; map published as companies.json.
+# lr: ISO 639-1 codes of the languages the role asks for, joined by commas; lq: "s" stated in the description, "i" inferred from the HQ or role country.
+LV, LS, IND, FN, FT, CO, LR, LQ = (FIELDS.index(k) for k in ("lv", "ls", "in", "fn", "ft", "co", "lr", "lq"))
 
 
 def complete(r: list) -> list:
@@ -162,6 +164,7 @@ def build(rows_iter, out_dir: Path, log=print, homepages=None) -> dict:
     dropped["country_corrected_to_US"] = fix_us_collisions(rows)
     dropped["country_filled_from_employer"] = fill_country(rows)
     dropped["industry"] = industry.assign(rows, homepages, log=log)        # a company is labelled once; its rows share the label
+    dropped["companies"] = companies.assign(rows, log=log)                 # list membership (co) and languages (lr, lq)
     groups: dict[str, tuple[str, list[list]]] = {}
     for r in rows:
         sid, cc = shard_id(r)
@@ -200,6 +203,8 @@ def build(rows_iter, out_dir: Path, log=print, homepages=None) -> dict:
                 "base": "", "shards": manifest_shards, "sources": dict(sorted(sources.items(), key=lambda kv: -kv[1]))}
     (out_dir / "industries.json").write_text(json.dumps(industry.taxonomy(), ensure_ascii=False, indent=1))
     (out_dir / "functions.json").write_text(json.dumps(function.maps(), ensure_ascii=False, indent=1))
+    (out_dir / "companies.json").write_text(json.dumps({c: {"label": l["label"], "source": l.get("source", ""), "retrieved": l.get("retrieved", ""),
+                                                          "members": len(l["members"])} for c, l in companies.lists().items()}, ensure_ascii=False, indent=1))
     tmp = out_dir / "manifest.json.tmp"
     tmp.write_text(json.dumps(manifest, separators=(",", ":")))
     tmp.replace(out_dir / "manifest.json")

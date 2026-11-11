@@ -66,7 +66,7 @@ class TestDedupeAndShards(unittest.TestCase):
             ids = {s["id"] for s in m["shards"]}
             self.assertEqual(ids, {"PT", "REMOTE"})
             doc = json.loads(gzip.decompress((Path(d) / "PT.json.gz").read_bytes()))
-            self.assertEqual(doc["f"], ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft"])
+            self.assertEqual(doc["f"], ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft", "co", "lr", "lq"])
             self.assertEqual(doc["v"], 1)
 
     def test_split_large_shard(self):

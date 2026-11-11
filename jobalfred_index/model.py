@@ -9,6 +9,7 @@ from datetime import date, datetime, timedelta, timezone
 from . import geo, seniority
 from .industry import from_native as industry_from_native
 from .function import label as function_label
+from . import language
 
 # Not real roles: evergreen forms that only collect CVs.
 NOT_A_ROLE = re.compile(
@@ -43,10 +44,12 @@ class Job:
     lv: int = 0          # seniority level, see seniority.py
     ls: str = ""         # where the level came from: n native tag, t title, d description, "" not stated
     ind: str = ""        # industry code when the source itself names the industry; otherwise filled in at build (industry.py)
+    lr: str = ""         # languages the description asks for, ISO codes joined by commas (language.py); filled by inference at build when empty
+    lq: str = ""         # s stated in the description, i inferred from the country, "" unknown
 
     def row(self) -> list:
         return [self.title, self.company, self.location, self.cc, self.remote, self.url,
-                self.posted, self.ats, self.smin, self.smax, self.cur or None, self.lv, self.ls, self.ind, *function_label(self.title)]
+                self.posted, self.ats, self.smin, self.smax, self.cur or None, self.lv, self.ls, self.ind, *function_label(self.title), "", self.lr, self.lq]
 
 
 def clean(s) -> str:
@@ -135,5 +138,7 @@ def make(ats: str, title, company, locs, url, posted="", *, cc_hint="", workplac
     if smin and smax and smin > smax:
         smin, smax = smax, smin
     lv, ls = seniority.label(title, native, desc)     # the description is read here and never stored
+    langs = language.detect(desc)
     return Job(title[:200], company[:120], location[:200], cc, remote, url, posted, ats, smin, smax,
-               (cur or "")[:3].upper() if (smin or smax) else "", lv, ls, industry_from_native(industry))
+               (cur or "")[:3].upper() if (smin or smax) else "", lv, ls, industry_from_native(industry),
+               ",".join(langs), "s" if langs else "")

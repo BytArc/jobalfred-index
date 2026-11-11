@@ -25,7 +25,7 @@ class Basics:
         self.assertTrue(j.url.startswith("http"))
         self.assertEqual(j.ats, ats)
         self.assertIn(j.remote, (0, 1, 2))
-        self.assertEqual(len(j.row()), 16)
+        self.assertEqual(len(j.row()), 19)
 
 
 class TestGreenhouse(unittest.TestCase, Basics):
