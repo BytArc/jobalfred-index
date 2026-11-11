@@ -207,7 +207,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
             evidence = round_urls[c["domain"]][:2]      # a public article on its funding round replaces "Seedtable"
         entry = {"name": c.get("name"), "domain": c["domain"], "country": c.get("country") or "", "hq_country": c.get("country") or "",
                  "evidence": evidence, "boards": boards, "roles": per_company.get(c["domain"], 0),
-                 "backing": c.get("backing") if c.get("kind") == "investor" else (c.get("backing") or "vc"),
+                 "backing": "" if c.get("kind") == "investor" else (c.get("backing") or "vc"),
                  "kind": c.get("kind") or "startup"}
         if fund.get(c["domain"]):
             entry["funding"] = fund[c["domain"]]

@@ -3,6 +3,7 @@ import gzip
 import json
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 from jobalfred_index import shards, startups, vceu
@@ -235,6 +236,25 @@ class TestVcEu(unittest.TestCase):
             self.assertEqual(body["companies"][1]["evidence"], ["Seedtable"])
             self.assertTrue(head["built"].endswith("Z"))
             self.assertNotIn("stage", body["companies"][0])
+
+    def test_a_vc_firm_is_kind_investor_with_no_backers(self):
+        """The site keys its "VC firm" tag on kind == "investor" exactly; a firm is never its own backer."""
+        doc = {"counts": {}, "companies": [{"name": "Acme Ventures", "domain": "acme.example", "country": "", "kind": "investor",
+                                            "evidence": ["https://acme.example/"], "tenants": [["greenhouse", "acme"]],
+                                            "named": [["greenhouse", "acme"]]}]}
+        rows = [self.row(f"https://acme.example/jobs/{i}", company="Acme Ventures") + [] for i in range(25)]
+        rows = [r[:2] + ["Menlo Park, CA", "US"] + r[4:] for r in rows]       # outside Europe and named: still kept
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(vceu, "investor_hosts", return_value={"acme.example": "Acme Ventures"}):
+            st = State(Path(d) / "s.db", "r1")
+            st.add_tenant("greenhouse", "acme", {}, "startup")
+            st.save_result("greenhouse", "acme", rows)
+            vceu.build(st, doc, Path(d) / "v.gz", log=lambda m: None)
+            body = json.loads(gzip.decompress((Path(d) / "v.gz").read_bytes()))
+        c = body["companies"][0]
+        self.assertEqual((c["kind"], c["backing"], c.get("backers", [])), ("investor", "", []))
+        self.assertEqual(len(body["rows"]), 25)
+        self.assertEqual({r[body["f"].index("gi")] for r in body["rows"]}, {""})
+        self.assertEqual(body["counts"]["investor_firms"], {"with_careers_system": 1, "with_roles": 1, "roles": 25})
 
     def test_boards_of_other_companies_platforms_and_namesakes_are_dropped(self):
         c = {"name": "Calipsa", "domain": "calipsa.io"}
