@@ -287,6 +287,9 @@ class TestCoverageAndNewest(unittest.TestCase):
         spec = importlib.util.spec_from_file_location("startups_eu", Path(__file__).parent.parent / "scripts" / "startups_eu.py")
         self.se = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(self.se)
+        spec = importlib.util.spec_from_file_location("vc_portfolios", Path(__file__).parent.parent / "scripts" / "vc_portfolios.py")
+        self.vp = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(self.vp)
 
     def test_sample_of_unreadable_companies_says_why(self):
         doc = {"companies": [], "tenants": [],
@@ -301,6 +304,16 @@ class TestCoverageAndNewest(unittest.TestCase):
         self.assertEqual(res["no_careers_page_found"], 1)
         self.assertEqual(res["site_not_readable"], 1)
         self.assertEqual(res["pct_sample_read"], 0.0)
+
+    def test_news_sites_linked_from_fund_pages_are_not_companies(self):
+        for d in ("bbc.co.uk", "fortune.com", "axios.com", "time.com", "jobgether.com"):
+            self.assertTrue(startups.excluded(d), d)
+        for d in ("x.ai", "timely.com", "incident.io", "stripe.com", "ftmo.com", "time.ly"):
+            self.assertFalse(startups.excluded(d), d)
+        page = self.vp.page_company
+        self.assertEqual(page("https://www.battery.com/companies/affirm/", {"affirm.com", "axios.com"}), {"affirm.com"})
+        self.assertEqual(page("https://www.battery.com/companies/acme/", {"axios.com", "orange.com"}), set())
+        self.assertEqual(page("https://sequoiacap.com/companies/stripe/", {"stripe.com"}), {"stripe.com"})
 
     def test_an_investor_keeps_only_its_own_boards(self):
         own = self.se.investor_own_board

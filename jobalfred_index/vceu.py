@@ -137,7 +137,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     owner: dict[tuple[str, str], dict] = {}
     named = set()
     for c in doc.get("companies", []):
-        if c["domain"] in startups.EXCLUDE_DOMAINS:
+        if startups.excluded(c["domain"]):
             continue
         for ats, key in c.get("tenants", []):
             owner.setdefault((ats, key), c)
@@ -197,7 +197,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     companies = []
     for c in doc.get("companies", []):
         boards = [b for b in c.get("tenants", []) if tuple(b) not in dropped_boards]
-        if c["domain"] in startups.EXCLUDE_DOMAINS or not boards:
+        if startups.excluded(c["domain"]) or not boards:
             continue
         evidence = c.get("evidence") or ["Seedtable"]
         if evidence == ["Seedtable"] and round_urls.get(c["domain"]):

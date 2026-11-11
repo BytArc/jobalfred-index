@@ -20,6 +20,7 @@ from urllib.parse import urljoin, urlsplit
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from jobalfred_index.polite import Client  # noqa: E402
+from jobalfred_index import startups  # noqa: E402
 from jobalfred_index.startups import registrable, host_of  # noqa: E402
 
 OUT = ROOT / "work" / "vc_portfolios.json"
@@ -53,7 +54,7 @@ def domains_on(html: str, page_url: str, own: str) -> set[str]:
         u = urljoin(page_url, u)
         h = host_of(u)
         d = registrable(h)
-        if not d or d == own or SKIP_HOSTS.search(d) or SKIP_HOSTS.search(h):
+        if not d or d == own or SKIP_HOSTS.search(d) or SKIP_HOSTS.search(h) or startups.excluded(d):
             continue
         if re.search(r"\.(png|jpe?g|svg|gif|webp|css|js|pdf|woff2?)$", urlsplit(u).path, re.I):
             continue
@@ -93,16 +94,28 @@ def from_details(client, inv: str, host: str, pattern: str) -> tuple[set[str], i
         return domains_on(r.text, r.url or u, own) if r.status == 200 else None
 
     with ThreadPoolExecutor(3) as ex:
-        found = [d for d in ex.map(one, pages) if d is not None]
+        found = [(u, d) for u, d in zip(pages, ex.map(one, pages)) if d is not None]
     freq: dict[str, int] = {}
-    for d in found:
+    for _, d in found:
         for x in d:
             freq[x] = freq.get(x, 0) + 1
     common = {x for x, n in freq.items() if len(found) >= 10 and n >= max(3, len(found) * 0.2)}
     out = set()
-    for d in found:
-        out |= d - common
+    for u, d in found:
+        out |= page_company(u, d - common)
     return out, len(pages), len(found)
+
+
+def page_company(url: str, doms: set[str]) -> set[str]:
+    """The company's own site among a company page's outside links. One link: that one. Several (news coverage,
+    an acquirer, partners): only those named like the page (/companies/affirm -> affirm.com); none when unclear."""
+    if len(doms) <= 1:
+        return set(doms)
+    slug = startups._fold(urlsplit(url).path.rstrip("/").rsplit("/", 1)[-1])
+    def named(d):
+        label = startups._fold(d.split(".")[0])
+        return len(label) >= 3 and len(slug) >= 3 and (label in slug or slug in label)
+    return {d for d in doms if named(d)}
 
 
 def main() -> int:

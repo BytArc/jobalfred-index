@@ -369,6 +369,20 @@ def probe_company(client, website: str, max_pages: int = 4) -> dict:
 
 # Job boards and job platforms: listed as startups, but their boards carry other employers' roles.
 EXCLUDE_DOMAINS = {"jobgether.com"}
+# news and data sites an investor's company pages link as coverage: never a portfolio company
+MEDIA = re.compile(r"(?i)^(axios|bizjournals|fortune|forbes|bloomberg|reuters|wsj|nytimes|nypost|washingtonpost|businesswire|"
+                   r"prnewswire|globenewswire|accesswire|newswire|prweb|venturebeat|wired|zdnet|cnbc|cnn|bbc|theverge|ft|"
+                   r"economist|yahoo|msn|medium|substack|crunchbase|cbinsights|tracxn|pitchbook|dealroom|glassdoor|linkedin|"
+                   r"builtin|geekwire|siliconangle|businessinsider|insider|time|inc|entrepreneur|fastcompany|marketwatch|"
+                   r"theinformation|sifted|eu-startups|techcrunch|theguardian|guardian|thetimes|telegraph|independent|"
+                   r"adweek|adage|adexchanger|crn|computerweekly|datanami|cmswire|pymnts|finextra|thefintechtimes|"
+                   r"fiercehealthcare|freightwaves|marketscreener|pehub|bostonglobe|latimes|ajc|usatoday|cbsnews|"
+                   r"techradar|engadget|mashable|wikipedia|youtube|apple|google|github|twitter|x|facebook|instagram)\.(com|co\.uk|org|net|eu)$")
+
+
+def excluded(domain: str) -> bool:
+    """Never listed as a startup: a job platform we were wrongly pointed to, or a news or data site."""
+    return domain in EXCLUDE_DOMAINS or bool(MEDIA.match(domain or ""))
 
 # -- the committed list and the vc mark ---------------------------------------------------------------------------
 DATA = Path(__file__).resolve().parent.parent / "data" / "startups_eu.json"

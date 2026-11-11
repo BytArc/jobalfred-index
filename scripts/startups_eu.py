@@ -464,7 +464,8 @@ def cmd_publish() -> dict:
             p["other"] = rp["other"]
         for ats, slugs in (guess.get(r["domain"]) or {}).items():
             for sl, verdict in slugs.items():
-                weak = sl == r["domain"].split(".")[0] and len(sl) < 5 and sl != startups._fold(r.get("name") or "")
+                weak = (sl == r["domain"].split(".")[0] and len(sl) < 5 and sl != startups._fold(r.get("name") or "")
+                        and r.get("kind") != "investor")        # investors' guessed boards were each checked by hand
                 has = [t for t in p.get("tenants", []) if t["ats"] == ats and (r.get("kind") != "investor" or investor_own_board(t, r))]
                 if verdict == "yes" and not weak and not has:
                     p["tenants"] = list(p.get("tenants", [])) + [{"ats": ats, "key": sl, "data": {}, "named": True}]
@@ -487,7 +488,7 @@ def cmd_publish() -> dict:
             p["status"] = "ats"
         for t in ts:
             tenants.setdefault((t["ats"], t["key"]), t.get("data") or {})
-        if ts and r["domain"] not in startups.EXCLUDE_DOMAINS:
+        if ts and not startups.excluded(r["domain"]):
             entry = {"name": r.get("name"), "domain": r["domain"], "country": r.get("country") or "",
                      "evidence": vc_evidence(r) or ["Seedtable"], "tenants": [[t["ats"], t["key"]] for t in ts],
                      "backing": "listed" if r.get("backing") == "listed" and not vc_evidence(r) else "vc"}
