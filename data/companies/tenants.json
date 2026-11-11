@@ -614,6 +614,17 @@
 "source": "companies:ftsemib"
 },
 {
+"ats": "pagelist",
+"key": "www.hanglung.com/en-us/careers/internship-program",
+"data": {
+"pages": [
+"https://www.hanglung.com/en-us/careers/internship-program"
+],
+"name": "Hang Lung Properties"
+},
+"source": "companies:hsi"
+},
+{
 "ats": "workday",
 "key": "cairnhomes.wd502|external",
 "data": {
@@ -623,6 +634,40 @@
 "name": "Cairn Homes"
 },
 "source": "companies:iseq20"
+},
+{
+"ats": "jsonld",
+"key": "www.mondigroup.com/careers",
+"data": {
+"host": "www.mondigroup.com",
+"pages": [
+"https://www.mondigroup.com/careers/"
+],
+"name": "Mondi"
+},
+"source": "companies:jse40"
+},
+{
+"ats": "workday",
+"key": "absa.wd3|absacareersite",
+"data": {
+"tenant": "absa",
+"wd": "wd3",
+"site": "ABSAcareersite",
+"name": "Absa"
+},
+"source": "companies:jse40"
+},
+{
+"ats": "workday",
+"key": "oldmutual.wd3|old_mutual_careers",
+"data": {
+"tenant": "oldmutual",
+"wd": "wd3",
+"site": "Old_Mutual_Careers",
+"name": "Old Mutual"
+},
+"source": "companies:jse40"
 },
 {
 "ats": "eightfold",
@@ -672,6 +717,147 @@
 "source": "companies:nikkei225"
 },
 {
+"ats": "workable",
+"key": "vista-group",
+"data": {
+"name": "Vista"
+},
+"source": "companies:nzx50"
+},
+{
+"ats": "workday",
+"key": "heartland.wd3|external",
+"data": {
+"tenant": "heartland",
+"wd": "wd3",
+"site": "External",
+"name": "Heartland"
+},
+"source": "companies:nzx50"
+},
+{
+"ats": "workday",
+"key": "walwil.wd3|walleniuswilhelmsen",
+"data": {
+"tenant": "walwil",
+"wd": "wd3",
+"site": "WalleniusWilhelmsen",
+"name": "Wallenius Wilhelmsen"
+},
+"source": "companies:obx"
+},
+{
+"ats": "workday",
+"key": "flsmidth.wd3|fls_global",
+"data": {
+"tenant": "flsmidth",
+"wd": "wd3",
+"site": "FLS_Global",
+"name": "FLSmidth"
+},
+"source": "companies:omxc25"
+},
+{
+"ats": "workday",
+"key": "gn.wd3|gn-careers",
+"data": {
+"tenant": "gn",
+"wd": "wd3",
+"site": "GN-Careers",
+"name": "GN Store Nord"
+},
+"source": "companies:omxc25"
+},
+{
+"ats": "workday",
+"key": "gngroup.wd502|gn-careers",
+"data": {
+"tenant": "gngroup",
+"wd": "wd502",
+"site": "GN-Careers",
+"name": "GN Store Nord"
+},
+"source": "companies:omxc25"
+},
+{
+"ats": "jsonld",
+"key": "konecranes.careers",
+"data": {
+"host": "konecranes.careers",
+"pages": [
+"https://konecranes.careers"
+],
+"name": "Konecranes"
+},
+"source": "companies:omxh25"
+},
+{
+"ats": "pagelist",
+"key": "careers.outokumpu.com/search",
+"data": {
+"pages": [
+"https://careers.outokumpu.com/search/?locale=en_US&amp;utm_source=careersite"
+],
+"name": "Outokumpu"
+},
+"source": "companies:omxh25"
+},
+{
+"ats": "workday",
+"key": "huhtamaki.wd103|directsexternal",
+"data": {
+"tenant": "huhtamaki",
+"wd": "wd103",
+"site": "DirectsExternal",
+"name": "Huhtamäki"
+},
+"source": "companies:omxh25"
+},
+{
+"ats": "workday",
+"key": "huhtamaki.wd103|external",
+"data": {
+"tenant": "huhtamaki",
+"wd": "wd103",
+"site": "External",
+"name": "Huhtamäki"
+},
+"source": "companies:omxh25"
+},
+{
+"ats": "workday",
+"key": "kone.wd3|careers",
+"data": {
+"tenant": "kone",
+"wd": "wd3",
+"site": "Careers",
+"name": "KONE"
+},
+"source": "companies:omxh25"
+},
+{
+"ats": "workday",
+"key": "upm.wd103|careers",
+"data": {
+"tenant": "upm",
+"wd": "wd103",
+"site": "Careers",
+"name": "UPM-Kymmene"
+},
+"source": "companies:omxh25"
+},
+{
+"ats": "workday",
+"key": "valmet.wd103|external",
+"data": {
+"tenant": "valmet",
+"wd": "wd103",
+"site": "External",
+"name": "Valmet"
+},
+"source": "companies:omxh25"
+},
+{
 "ats": "pagelist",
 "key": "www.atlascopcogroup.com/en/careers/jobs/recruitment-process",
 "data": {
@@ -692,6 +878,28 @@
 "name": "Boliden"
 },
 "source": "companies:omxs30"
+},
+{
+"ats": "pagelist",
+"key": "puregold.com.ph/index.php/careers",
+"data": {
+"pages": [
+"https://puregold.com.ph/index.php/careers"
+],
+"name": "Puregold"
+},
+"source": "companies:psei"
+},
+{
+"ats": "workday",
+"key": "globe.wd3|glb_careers",
+"data": {
+"tenant": "globe",
+"wd": "wd3",
+"site": "GLB_Careers",
+"name": "Globe Telecom"
+},
+"source": "companies:psei"
 },
 {
 "ats": "pagelist",

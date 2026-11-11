@@ -15545,5 +15545,4744 @@
    "read": [],
    "checked": "2026-11-11"
   }
+ },
+ "set50": {
+  "Advanced Info Service": {
+   "status": "no_careers_page",
+   "website": "ais.th",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Airports of Thailand": {
+   "status": "careers_no_ats",
+   "website": "airportthai.co.th",
+   "careers": "https://www.airportthai.co.th/en/jobs-at-aot/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Asset World Corp": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Banpu": {
+   "status": "site_robots",
+   "website": "banpu.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bangkok Bank": {
+   "status": "site_robots",
+   "website": "bangkokbank.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bangchak Corporation": {
+   "status": "no_careers_page",
+   "website": "bangchak.co.th",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bangkok Dusit Medical Service": {
+   "status": "no_careers_page",
+   "website": "bdms.co.th",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bangkok Expressway and Metro": {
+   "status": "careers_no_ats",
+   "website": "bemplc.co.th",
+   "careers": "https://recruitment.bemplc.co.th/Career",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bumrungrad International Hospital": {
+   "status": "no_careers_page",
+   "website": "bumrungrad.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Berli Jucker": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "BTS Group Holdings": {
+   "status": "careers_no_ats",
+   "website": "btsgroup.co.th",
+   "careers": "https://www.btsgroup.co.th/en/career/why-bts-group",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Carabao Group": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Cal-Comp Electronics (Thailand)": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Com Seven": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "CP All": {
+   "status": "site_blocked",
+   "website": "cpall.co.th",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Charoen Pokphand Foods": {
+   "status": "no_careers_page",
+   "website": "cpfworldwide.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Central Pattana": {
+   "status": "careers_no_ats",
+   "website": "centralpattana.co.th",
+   "careers": "https://www.centralpattana.co.th/en/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Central Retail Corporation": {
+   "status": "careers_no_ats",
+   "website": "centralgroup.com",
+   "careers": "https://careers.centralgroup.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Delta Electronics (Thailand)": {
+   "status": "linkedin_only",
+   "website": "deltaww.com",
+   "careers": "https://www.deltaww.com/en-US/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Electricity Generating": {
+   "status": "site_unreachable",
+   "website": "egat.co.th",
+   "careers": "",
+   "note": "HTTP 421",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Global Power Synergy": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Gulf Development": {
+   "status": "site_robots",
+   "website": "gulf.co.th",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Home Product Center": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Indorama Ventures": {
+   "status": "ats_no_adapter",
+   "website": "indoramaventures.com",
+   "careers": "https://jobs.indoramaventures.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "indoramaveP2"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kasikornbank": {
+   "status": "site_robots",
+   "website": "kasikornbank.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "KCE Electronics": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kiatnakin Phatra Bank": {
+   "status": "site_blocked",
+   "website": "kiatnakin.co.th",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Krungthai Bank": {
+   "status": "site_blocked",
+   "website": "krungthai.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Krungthai Card": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Land and Houses": {
+   "status": "careers_no_ats",
+   "website": "lh.co.th",
+   "careers": "https://www.lh.co.th/th/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Muangthai Capital": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PTT Oil and Retail Business": {
+   "status": "site_robots",
+   "website": "pttplc.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PTT": {
+   "status": "site_robots",
+   "website": "pttplc.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PTT Exploration and Production": {
+   "status": "ats_no_adapter",
+   "website": "pttep.com",
+   "careers": "https://careers.pttep.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "PTTEP"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PTT Global Chemical": {
+   "status": "careers_no_ats",
+   "website": "pttgcgroup.com",
+   "careers": "https://careers.pttgcgroup.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ratch Group": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Siam Commercial Bank": {
+   "status": "site_blocked",
+   "website": "scb.co.th",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Siam Cement Group": {
+   "status": "ats_no_adapter",
+   "website": "scg.com",
+   "careers": "https://career.scg.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "SCG Packaging": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Thanachart Capital": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tidlor Holdings": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tisco Financial Group": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Thai Life Insurance": {
+   "status": "careers_no_ats",
+   "website": "thailife.com",
+   "careers": "https://www.thailife.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "careers.thailife.com"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Thai Oil": {
+   "status": "careers_no_ats",
+   "website": "thaioilgroup.com",
+   "careers": "https://careers.thaioilgroup.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "TRUE Corporation": {
+   "status": "careers_no_ats",
+   "website": "true.th",
+   "careers": "https://www.true.th/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "TMBThanachart Bank": {
+   "status": "careers_no_ats",
+   "website": "ttbbank.com",
+   "careers": "https://www.ttbbank.com/th/career",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Thai Union Group": {
+   "status": "linkedin_only",
+   "website": "thaiunion.com",
+   "careers": "https://www.thaiunion.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "VGI": {
+   "status": "careers_no_ats",
+   "website": "btsgroup.co.th",
+   "careers": "https://www.btsgroup.co.th/en/career/why-bts-group",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "WHA Corporation": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "obx": {
+  "Aker BP": {
+   "status": "careers_no_ats",
+   "website": "akerbp.com",
+   "careers": "https://akerbp.com/karriere/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "BW LPG": {
+   "status": "ats_no_adapter",
+   "website": "bw-group.com",
+   "careers": "https://bw-group.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "greenhouse",
+     "bwessmanagementgmbh"
+    ],
+    [
+     "workable",
+     "bw-energy"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "DNB Bank": {
+   "status": "careers_no_ats",
+   "website": "dnb.no",
+   "careers": "https://dnb.no/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Frontline": {
+   "status": "no_careers_page",
+   "website": "frontline.bm",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Gjensidige Forsikring": {
+   "status": "careers_no_ats",
+   "website": "gjensidige.com",
+   "careers": "https://jobs.gjensidige.com/?locale=en_US",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Golden Ocean Group": {
+   "status": "site_robots",
+   "website": "goldenocean.bm",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hafnia Limited": {
+   "status": "ats_no_adapter",
+   "website": "bw-group.com",
+   "careers": "https://bw-group.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "greenhouse",
+     "bwessmanagementgmbh"
+    ],
+    [
+     "workable",
+     "bw-energy"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Höegh Autoliners ASA": {
+   "status": "no_careers_page",
+   "website": "hoegh.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kongsberg Gruppen": {
+   "status": "careers_no_ats",
+   "website": "kongsberg.com",
+   "careers": "https://www.kongsberg.com/careers/vacancies/",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.kongsberg.com/careers"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mowi": {
+   "status": "careers_no_ats",
+   "website": "mowi.com",
+   "careers": "https://mowi.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "mowi.com/careers"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "MPC Container Ships": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Nordic Semiconductor": {
+   "status": "site_blocked",
+   "website": "nordicsemi.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Norsk Hydro": {
+   "status": "careers_no_ats",
+   "website": "hydro.com",
+   "careers": "https://www.hydro.com/en/global/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Norwegian Air Shuttle": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Orkla": {
+   "status": "ats_no_adapter",
+   "website": "orkla.com",
+   "careers": "https://careers.orkla.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "C0001151091P"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "SalMar": {
+   "status": "careers_no_ats",
+   "website": "salmar.no",
+   "careers": "https://www.salmar.no/karriere/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Subsea 7": {
+   "status": "careers_no_ats",
+   "website": "subsea7.com",
+   "careers": "https://www.subsea7.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "TGS ASA": {
+   "status": "careers_no_ats",
+   "website": "tgs.com",
+   "careers": "https://www.tgs.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tomra Systems": {
+   "status": "careers_no_ats",
+   "website": "tomra.com",
+   "careers": "https://www.tomra.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.tomra.com/careers/employee-stories"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Vår Energi ASA": {
+   "status": "careers_no_ats",
+   "website": "varenergi.no",
+   "careers": "https://jobs.varenergi.no/go/All-locations/8580555/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Wallenius Wilhelmsen": {
+   "status": "ats",
+   "website": "walleniuswilhelmsen.com",
+   "careers": "https://walwil.wd3.myworkdayjobs.com/WalleniusWilhelmsen",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "walwil.wd3|walleniuswilhelmsen"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "walwil.wd3|walleniuswilhelmsen",
+     66
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Yara International": {
+   "status": "careers_no_ats",
+   "website": "yara.com",
+   "careers": "https://www.yara.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.yara.com/careers"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "psei": {
+  "Aboitiz Equity Ventures": {
+   "status": "no_careers_page",
+   "website": "aboitiz.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "ACEN Corporation": {
+   "status": "careers_no_ats",
+   "website": "acenrenewables.com",
+   "careers": "https://careers.acenrenewables.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "AREIT, Inc.": {
+   "status": "site_robots",
+   "website": "areit.com.ph",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ayala Corporation": {
+   "status": "careers_no_ats",
+   "website": "ayala.com",
+   "careers": "https://ayala.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ayala Land": {
+   "status": "linkedin_only",
+   "website": "ayalaland.com.ph",
+   "careers": "https://ayalaland.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Banco de Oro": {
+   "status": "site_robots",
+   "website": "bdo.com.ph",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bank of the Philippine Islands": {
+   "status": "linkedin_only",
+   "website": "bpi.com.ph",
+   "careers": "https://www.bpi.com.ph/about-bpi/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Chinabank": {
+   "status": "site_robots",
+   "website": "chinabank.ph",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Century Pacific Food": {
+   "status": "careers_no_ats",
+   "website": "centurypacific.com.ph",
+   "careers": "https://www.centurypacific.com.ph/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "DigiPlus Interactive": {
+   "status": "no_careers_page",
+   "website": "digiplus.com.ph",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "DMCI Holdings": {
+   "status": "careers_no_ats",
+   "website": "dmcihomes.com",
+   "careers": "https://www.dmcihomes.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Emperador, Inc.": {
+   "status": "site_robots",
+   "website": "allianceglobalinc.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Globe Telecom": {
+   "status": "ats",
+   "website": "globe.com.ph",
+   "careers": "https://www.globe.com.ph/about-us/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "globe.wd3|glb_careers"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "globe.wd3|glb_careers",
+     287
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "GT Capital": {
+   "status": "site_robots",
+   "website": "gtcapital.com.ph",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "International Container Terminal Services": {
+   "status": "no_careers_page",
+   "website": "ictsi.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "JG Summit Holdings": {
+   "status": "careers_no_ats",
+   "website": "jgsummit.com.ph",
+   "careers": "https://www.jgsummit.com.ph/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Jollibee Foods Corporation": {
+   "status": "careers_no_ats",
+   "website": "jollibeegroup.com",
+   "careers": "https://www.jollibeegroup.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "LT Group": {
+   "status": "careers_no_ats",
+   "website": "ltg.com.ph",
+   "careers": "https://jobs.com.ph/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Maynilad": {
+   "status": "site_robots",
+   "website": "mayniladwater.com.ph",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Meralco": {
+   "status": "site_robots",
+   "website": "meralco.com.ph",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Metrobank": {
+   "status": "ats_no_adapter",
+   "website": "metrobank.com.ph",
+   "careers": "https://careers.metrobank.com.ph/job/Taguig-PRODUCT-MANAGER-Tagu/1356764966/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "MBTCHCM"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Monde Nissin": {
+   "status": "careers_no_ats",
+   "website": "mondenissin.com",
+   "careers": "https://mondenissin.com/careers-and-opportunities/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PLDT": {
+   "status": "careers_no_ats",
+   "website": "main.pldt.com",
+   "careers": "https://main.pldt.com/jobs",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Puregold": {
+   "status": "careers_page_list",
+   "website": "puregold.com.ph",
+   "careers": "https://puregold.com.ph/index.php/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "puregold.com.ph/index.php/careers"
+    ]
+   ],
+   "read": [
+    [
+     "pagelist",
+     "puregold.com.ph/index.php/careers",
+     6
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "RL Commercial REIT": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "San Miguel Corporation": {
+   "status": "careers_no_ats",
+   "website": "sanmiguel.com.ph",
+   "careers": "https://www.sanmiguel.com.ph/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Semirara Mining and Power Corporation": {
+   "status": "no_careers_page",
+   "website": "semiraramining.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "SM Investments": {
+   "status": "site_blocked",
+   "website": "sminvestments.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "SM Prime Holdings": {
+   "status": "site_blocked",
+   "website": "smprime.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Universal Robina": {
+   "status": "careers_no_ats",
+   "website": "urc.com.ph",
+   "careers": "https://www.urc.com.ph/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "omxc25": {
+  "A.P. Møller-Mærsk (class A)": {
+   "status": "careers_no_ats",
+   "website": "maersk.com",
+   "careers": "https://www.maersk.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ambu": {
+   "status": "careers_no_ats",
+   "website": "ambu.com",
+   "careers": "https://www.ambu.com/corporate-info/careers/life-at-ambu",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Carlsberg Group": {
+   "status": "ats_no_adapter",
+   "website": "carlsberggroup.com",
+   "careers": "https://careers.carlsberg.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "carlsbergg"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Coloplast": {
+   "status": "site_blocked",
+   "website": "coloplast.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Danske Bank": {
+   "status": "careers_no_ats",
+   "website": "danskebank.com",
+   "careers": "https://danskebank.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "danskebank.com/careers/apply"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Demant": {
+   "status": "ats_no_adapter",
+   "website": "demant.com",
+   "careers": "https://careers.demant.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "DGS"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "FLSmidth & Co.": {
+   "status": "ats",
+   "website": "flsmidth.com",
+   "careers": "https://fls.com/en/company/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "flsmidth.wd3|fls_global"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "flsmidth.wd3|fls_global",
+     127
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Genmab": {
+   "status": "careers_no_ats",
+   "website": "genmab.com",
+   "careers": "https://www.genmab.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "GN Store Nord": {
+   "status": "ats",
+   "website": "gn.com",
+   "careers": "https://www.gn.com/Working-with-us",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "gngroup.wd502|gn-careers"
+    ],
+    [
+     "workday",
+     "gn.wd3|gn-careers"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "gngroup.wd502|gn-careers",
+     16
+    ],
+    [
+     "workday",
+     "gn.wd3|gn-careers",
+     31
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Jyske Bank": {
+   "status": "site_blocked",
+   "website": "jyskebank.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "NKT": {
+   "status": "ats_no_adapter",
+   "website": "nkt.com",
+   "careers": "https://www.nkt.com/career",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "nktcablesg"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Nordea Bank Abp": {
+   "status": "careers_no_ats",
+   "website": "nordea.com",
+   "careers": "https://www.nordea.com/en/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.nordea.com/en/careers/employee-benefits"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Novo Nordisk": {
+   "status": "ats_no_adapter",
+   "website": "novonordisk.com",
+   "careers": "https://www.novonordisk.com/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "novonordisk"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Novonesis": {
+   "status": "careers_no_ats",
+   "website": "novonesis.com",
+   "careers": "https://www.novonesis.com/en/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pandora": {
+   "status": "careers_no_ats",
+   "website": "pandoragroup.com",
+   "careers": "https://careers.pandoragroup.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Royal Unibrew": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tryg": {
+   "status": "careers_no_ats",
+   "website": "tryg.com",
+   "careers": "https://tryg.com/en/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Vestas Wind Systems": {
+   "status": "ats_gone",
+   "website": "vestas.com",
+   "careers": "https://careers.vestas.com/",
+   "note": "",
+   "boards": [
+    [
+     "jobs2web",
+     "rmk-map-12"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ørsted": {
+   "status": "site_blocked",
+   "website": "orsted.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "klci": {
+  "99 SPEED MART RETAIL HOLDINGS BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "AXIATA GROUP BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "CELCOMDIGI BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "GAMUDA BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "HONG LEONG BANK BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "HONG LEONG FINANCIAL GROUP BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "IHH HEALTHCARE BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "IOI CORPORATION BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "KUALA LUMPUR KEPONG BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Malayan Banking Berhad": {
+   "status": "site_robots",
+   "website": "maybank.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "MAXIS BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "MISC BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "MR D.I.Y. GROUP (M) BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "NESTLE (M) BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PETRONAS CHEMICALS GROUP BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PETRONAS DAGANGAN BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PETRONAS GAS BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PPB GROUP BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PRESS METAL ALUMINIUM HOLDINGS BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PUBLIC BANK BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "QL RESOURCES BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "RHB BANK BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "SIME DARBY BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "SD GUTHRIE BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "SUNWAY BERHAD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "TELEKOM MALAYSIA BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tenaga Nasional": {
+   "status": "site_robots",
+   "website": "tnb.com.my",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "YTL CORPORATION BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "YTL POWER INTERNATIONAL BHD": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "colcap": {
+  "Banco de Bogotá": {
+   "status": "site_blocked",
+   "website": "bancodebogota.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bancolombia": {
+   "status": "careers_no_ats",
+   "website": "bancolombia.com",
+   "careers": "https://www.bancolombia.com/acerca-de/trabaja-con-nosotros",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Canacol Energy": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Celsia": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Cementos Argos": {
+   "status": "site_blocked",
+   "website": "grupoargos.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Colombia Stock Exchange": {
+   "status": "site_blocked",
+   "website": "bvc.com.co",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Corficolombiana": {
+   "status": "site_robots",
+   "website": "corficolombiana.com.co",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Davivienda": {
+   "status": "site_blocked",
+   "website": "davivienda.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ecopetrol": {
+   "status": "ats_no_adapter",
+   "website": "ecopetrol.com.co",
+   "careers": "https://jobs.ecopetrol.com.co/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "EcopetrolP"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Grupo Energía Bogotá": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Grupo Argos": {
+   "status": "site_blocked",
+   "website": "grupoargos.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Grupo Aval": {
+   "status": "site_robots",
+   "website": "grupoaval.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Grupo Nutresa": {
+   "status": "site_blocked",
+   "website": "gruponutresa.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Grupo Sura": {
+   "status": "no_careers_page",
+   "website": "gruposura.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Grupo Bolivar": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Interconexión Eléctrica": {
+   "status": "careers_no_ats",
+   "website": "isa.co",
+   "careers": "https://jobs.isa.co/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Terpel": {
+   "status": "careers_no_ats",
+   "website": "terpel.com",
+   "careers": "https://trabajos.terpel.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "ETB": {
+   "status": "careers_no_ats",
+   "website": "etb.com",
+   "careers": "https://etb.com/mantenimiento/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mineros": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Promigas": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "hsi": {
+  "HSBC Holdings plc": {
+   "status": "careers_no_ats",
+   "website": "hsbc.com",
+   "careers": "https://www.hsbc.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Construction Bank": {
+   "status": "site_robots",
+   "website": "ccb.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Industrial and Commercial Bank of China": {
+   "status": "site_robots",
+   "website": "icbc.com.cn",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ping An Insurance": {
+   "status": "no_careers_page",
+   "website": "pingan.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "BOC Hong Kong (Holdings) Ltd": {
+   "status": "site_robots",
+   "website": "bochk.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Life": {
+   "status": "careers_no_ats",
+   "website": "chinalife.com.cn",
+   "careers": "https://www.chinalife.com.cn/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Merchants Bank": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bank of China Ltd": {
+   "status": "site_robots",
+   "website": "boc.cn",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hong Kong and China Gas Company Limited": {
+   "status": "site_robots",
+   "website": "towngas.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Power Assets Holdings Limited": {
+   "status": "site_robots",
+   "website": "powerassets.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Resources Power": {
+   "status": "site_robots",
+   "website": "cr-power.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "ENN Energy": {
+   "status": "no_careers_page",
+   "website": "ir.ennenergy.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Henderson Land Development Company Limited": {
+   "status": "no_careers_page",
+   "website": "hld.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sun Hung Kai Properties Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hang Lung Properties Limited": {
+   "status": "careers_page_list",
+   "website": "hanglung.com",
+   "careers": "https://www.hanglung.com/en-us/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.hanglung.com/en-us/careers/internship-program"
+    ]
+   ],
+   "read": [
+    [
+     "pagelist",
+     "www.hanglung.com/en-us/careers/internship-program",
+     3
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "China Overseas Land & Investment Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Link REIT": {
+   "status": "careers_no_ats",
+   "website": "linkreit.com",
+   "careers": "https://www.linkreit.com/en/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Longfor Properties": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "CK Asset Holdings": {
+   "status": "careers_no_ats",
+   "website": "ckah.com",
+   "careers": "https://ckah.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Resources Mixc Lifestyle": {
+   "status": "site_robots",
+   "website": "crmixclifestyle.com.cn",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Wharf Real Estate Investment Company Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Galaxy Entertainment Group Ltd.": {
+   "status": "careers_no_ats",
+   "website": "galaxyentertainment.com",
+   "careers": "https://www.mygalaxycareer.com/?locale=en_US",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Alibaba Health": {
+   "status": "site_robots",
+   "website": "alihealth.cn",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "CITIC Limited": {
+   "status": "site_robots",
+   "website": "citic.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "WH Group": {
+   "status": "site_blocked",
+   "website": "wh-group.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Orient Overseas (International) Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tingyi": {
+   "status": "site_robots",
+   "website": "masterkong.com.cn",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sinopec Corp": {
+   "status": "site_robots",
+   "website": "sinopecgroup.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Techtronic Industries": {
+   "status": "careers_no_ats",
+   "website": "ttigroup.com",
+   "careers": "https://www.ttigroup.com/careers/global",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tencent Holdings Limited": {
+   "status": "site_robots",
+   "website": "tencent.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Unicom": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PetroChina Company Limited": {
+   "status": "site_robots",
+   "website": "petrochina.com.cn",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Xinyi Glass": {
+   "status": "site_robots",
+   "website": "xinyiglass.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Zhongsheng Group": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "CNOOC Limited": {
+   "status": "site_robots",
+   "website": "cnoocltd.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Mobile Ltd": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Xinyi Solar": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Semiconductor Manufacturing International Corporation": {
+   "status": "site_blocked",
+   "website": "smics.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Lenovo": {
+   "status": "site_blocked",
+   "website": "lenovo.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kuaishou": {
+   "status": "site_robots",
+   "website": "kuaishou.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hengan International Group Co. Ltd": {
+   "status": "site_robots",
+   "website": "hengan.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Shenhua Energy": {
+   "status": "site_robots",
+   "website": "csec.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "CSPC Pharmaceutical Group": {
+   "status": "site_robots",
+   "website": "e-cspc.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sinopharm Group": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sino Biopharm": {
+   "status": "no_careers_page",
+   "website": "sbpgroup.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "China Hongqiao Group": {
+   "status": "site_robots",
+   "website": "hongqiaochina.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Xiaomi": {
+   "status": "site_blocked",
+   "website": "mi.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Budweiser Brewing Company APAC": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sands China": {
+   "status": "no_careers_page",
+   "website": "sandschina.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Chow Tai Fook": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Li Auto": {
+   "status": "site_robots",
+   "website": "liauto.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Anta Sports": {
+   "status": "careers_no_ats",
+   "website": "anta.com",
+   "careers": "https://jobs.anta.com/social-recruitment/antahr/146041/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "ZTO Express": {
+   "status": "careers_no_ats",
+   "website": "zto.com",
+   "careers": "https://www.zto.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "WuXi Biologics": {
+   "status": "site_robots",
+   "website": "wuxibiologics.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Shenzhou International": {
+   "status": "site_robots",
+   "website": "shenzhouintl.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mengniu Dairy": {
+   "status": "site_robots",
+   "website": "mengniu.com.cn",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Li-Ning": {
+   "status": "careers_no_ats",
+   "website": "lining.com",
+   "careers": "https://lining.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sunny Optical": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Zijin Mining": {
+   "status": "site_robots",
+   "website": "zijinmining.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Meituan": {
+   "status": "site_robots",
+   "website": "meituan.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hansoh Pharmaceutical Group": {
+   "status": "site_robots",
+   "website": "hspharm.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "JD Health": {
+   "status": "no_careers_page",
+   "website": "ir.jdhealth.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Haidilao": {
+   "status": "site_robots",
+   "website": "haidilao.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "JD.com": {
+   "status": "careers_no_ats",
+   "website": "jd.com",
+   "careers": "https://global.jd.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Nongfu Spring": {
+   "status": "site_robots",
+   "website": "nongfuspring.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Baidu": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Trip.com Group": {
+   "status": "careers_no_ats",
+   "website": "trip.com",
+   "careers": "https://careers.trip.com/?locale=en-XX&amp;curr=USD",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Alibaba Group": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pop Mart": {
+   "status": "careers_no_ats",
+   "website": "popmart.com",
+   "careers": "https://www.popmart.com/es/jobs",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "NetEase": {
+   "status": "no_careers_page",
+   "website": "163.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "jse40": {
+  "Absa Group": {
+   "status": "ats",
+   "website": "absa.africa",
+   "careers": "https://www.absa.africa/careers/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "absa.wd3|absacareersite"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "absa.wd3|absacareersite",
+     70
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Anglo American": {
+   "status": "site_blocked",
+   "website": "angloamerican.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Anglogold Ashanti": {
+   "status": "careers_no_ats",
+   "website": "anglogoldashanti.com",
+   "careers": "https://www.anglogoldashanti.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "AB InBev": {
+   "status": "linkedin_only",
+   "website": "ab-inbev.com",
+   "careers": "https://www.ab-inbev.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Aspen Pharmacare": {
+   "status": "careers_no_ats",
+   "website": "aspenpharma.com",
+   "careers": "https://www.aspenpharma.com/careers-at-aspen/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "BHP": {
+   "status": "site_blocked",
+   "website": "bhp.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bidcorp": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bidvest Group": {
+   "status": "careers_no_ats",
+   "website": "bidvest.com",
+   "careers": "https://bidvest.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "BAT": {
+   "status": "site_blocked",
+   "website": "bat.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Capitec": {
+   "status": "site_blocked",
+   "website": "capitecbank.co.za",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Clicks": {
+   "status": "no_careers_page",
+   "website": "clicks.co.za",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Discovery": {
+   "status": "ats_no_adapter",
+   "website": "discovery.co.za",
+   "careers": "https://careers.discovery.co.za/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "discoveryhP"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Exxaro": {
+   "status": "careers_no_ats",
+   "website": "exxaro.com",
+   "careers": "https://www.exxaro.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "FirstRand": {
+   "status": "site_robots",
+   "website": "firstrand.co.za",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Glencore": {
+   "status": "careers_no_ats",
+   "website": "glencore.com",
+   "careers": "https://www.glencore.com/en/careers/jobs",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Gold Fields": {
+   "status": "site_robots",
+   "website": "goldfields.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Growthpoint Properties": {
+   "status": "careers_no_ats",
+   "website": "growthpoint.co.za",
+   "careers": "https://growthpoint.co.za/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Implats": {
+   "status": "no_careers_page",
+   "website": "implats.co.za",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Investec Ltd": {
+   "status": "no_careers_page",
+   "website": "investec.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mondi": {
+   "status": "jsonld",
+   "website": "mondigroup.com",
+   "careers": "https://www.mondigroup.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "jsonld",
+     "www.mondigroup.com/careers"
+    ]
+   ],
+   "read": [
+    [
+     "jsonld",
+     "www.mondigroup.com/careers",
+     268
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "MultiChoice": {
+   "status": "careers_no_ats",
+   "website": "multichoice.com",
+   "careers": "https://www.multichoice.com/careers/index.php",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Naspers": {
+   "status": "site_blocked",
+   "website": "naspers.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Nedbank": {
+   "status": "ats_no_adapter",
+   "website": "nedbank.co.za",
+   "careers": "https://group.nedbank.co.za/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "C0001228596P"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "NEPI Rockcastle": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Northam Platinum": {
+   "status": "careers_no_ats",
+   "website": "northam.co.za",
+   "careers": "https://northam.co.za/careers-at-northam",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Old Mutual": {
+   "status": "ats",
+   "website": "oldmutual.com",
+   "careers": "https://oldmutual.wd3.myworkdayjobs.com/Old_Mutual_Careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "oldmutual.wd3|old_mutual_careers"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "oldmutual.wd3|old_mutual_careers",
+     570
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Reinet Investments": {
+   "status": "site_robots",
+   "website": "reinet.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Remgro": {
+   "status": "no_careers_page",
+   "website": "remgro.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "RMH": {
+   "status": "no_careers_page",
+   "website": "rmh.co.za",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sanlam": {
+   "status": "careers_no_ats",
+   "website": "sanlam.co.za",
+   "careers": "https://www.sanlamonline.co.za/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sasol": {
+   "status": "ats_no_adapter",
+   "website": "sasol.com",
+   "careers": "https://sasol.com/index.php/careers",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "SASOLINTPROD"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Shoprite": {
+   "status": "site_blocked",
+   "website": "shopriteholdings.co.za",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Standard Bank": {
+   "status": "careers_no_ats",
+   "website": "standardbank.com",
+   "careers": "https://www.standardbank.com/sbg/standard-bank-group/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Valterra Platinum": {
+   "status": "no_careers_page",
+   "website": "valterraplatinum.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Vodacom": {
+   "status": "careers_no_ats",
+   "website": "vodacom.com",
+   "careers": "https://vodacom.com/careers.php",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Woolworths Holdings": {
+   "status": "careers_no_ats",
+   "website": "woolworthsholdings.co.za",
+   "careers": "https://www.woolworthsholdings.co.za/join-the-plant-based-revolution-with-woolworths/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "kse100": {
+  "Adamjee Insurance": {
+   "status": "no_careers_page",
+   "website": "nishatmillsltd.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "AGP Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Air Link Communication": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Allied Bank": {
+   "status": "careers_no_ats",
+   "website": "abl.com",
+   "careers": "https://www.abl.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Arif Habib Corp": {
+   "status": "careers_no_ats",
+   "website": "arifhabib.com.pk",
+   "careers": "https://jobs.com.pk/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Askari Bank": {
+   "status": "site_blocked",
+   "website": "askaribank.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Atlas Honda": {
+   "status": "careers_no_ats",
+   "website": "atlashonda.com.pk",
+   "careers": "https://www.atlashonda.com.pk/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Attock Petroleum": {
+   "status": "careers_no_ats",
+   "website": "apl.com.pk",
+   "careers": "https://jobs.com.pk/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Attock Refinery": {
+   "status": "careers_no_ats",
+   "website": "arl.com.pk",
+   "careers": "https://jobs.arl.com.pk/view_jobs.php",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bank AL Habib": {
+   "status": "careers_no_ats",
+   "website": "bankalhabib.com",
+   "careers": "https://www.bankalhabib.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bank Alfalah": {
+   "status": "careers_no_ats",
+   "website": "bankalfalah.com",
+   "careers": "https://bankalfalah.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bank of Punjab": {
+   "status": "site_blocked",
+   "website": "bop.com.pk",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bannu Woollen Mills": {
+   "status": "careers_no_ats",
+   "website": "bibojee.com.pk",
+   "careers": "https://jobs.com.pk/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Bestway Cement": {
+   "status": "careers_no_ats",
+   "website": "bestway.com.pk",
+   "careers": "https://www.bestway.com.pk/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Cherat Cement": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Citi Pharma": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Cnergyico": {
+   "status": "no_careers_page",
+   "website": "cnergyico.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Colgate-Palmolive Pakistan": {
+   "status": "careers_no_ats",
+   "website": "colgate.com.pk",
+   "careers": "https://colgate.com.pk/work-with-us/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "DG Cement": {
+   "status": "careers_no_ats",
+   "website": "dgcement.com",
+   "careers": "https://dgcement.com/career.html",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "DH": {
+   "status": "site_robots",
+   "website": "engro.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Dolmen City": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Engro Holdings": {
+   "status": "site_robots",
+   "website": "engro.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Engro Fertilizers": {
+   "status": "site_robots",
+   "website": "engrofertilizers.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Fatima Fertilizer Company": {
+   "status": "careers_no_ats",
+   "website": "fatima-group.com",
+   "careers": "https://www.fatima-group.com/join-us/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Fauji Cement": {
+   "status": "careers_no_ats",
+   "website": "fccl.com.pk",
+   "careers": "https://fccl.com.pk/eng/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Fauji Fertilizer Company": {
+   "status": "site_blocked",
+   "website": "ffc.com.pk",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Fauji Foods": {
+   "status": "careers_no_ats",
+   "website": "faujifoods.com",
+   "careers": "https://www.faujifoods.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Faysal Bank": {
+   "status": "site_blocked",
+   "website": "faysalbank.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Haleon Pakistan": {
+   "status": "careers_no_ats",
+   "website": "haleon.com",
+   "careers": "https://www.haleon.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "First Habib Modarba": {
+   "status": "no_careers_page",
+   "website": "hoh.net",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Gadoon Textile Mills": {
+   "status": "careers_no_ats",
+   "website": "lucky-cement.com",
+   "careers": "https://lucky-cement.com/en/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ghandhara Automobiles": {
+   "status": "careers_no_ats",
+   "website": "ghandharaautomobiles.com.pk",
+   "careers": "https://ghandharaautomobiles.com.pk/page-careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ghandhara Industries": {
+   "status": "site_blocked",
+   "website": "gil.com.pk",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ghani Glass": {
+   "status": "careers_no_ats",
+   "website": "ghanigroup.com.pk",
+   "careers": "https://ghanigroup.com.pk/career-opportunities-in-agriculture-real-estate-construction/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "HBL": {
+   "status": "careers_no_ats",
+   "website": "hbl.com",
+   "careers": "https://www.hbl.com/company/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "HabibMetro": {
+   "status": "careers_no_ats",
+   "website": "habibmetro.com",
+   "careers": "https://www.habibmetro.com/careers-at-hmb/explore-hmb-opportunities/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "HBL Growth Fund": {
+   "status": "careers_no_ats",
+   "website": "hbl.com",
+   "careers": "https://www.hbl.com/company/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Highnoon": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Honda Atlas": {
+   "status": "site_blocked",
+   "website": "honda.com.pk",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hubco": {
+   "status": "careers_no_ats",
+   "website": "hubpower.com",
+   "careers": "https://hubpower.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hum Network": {
+   "status": "careers_no_ats",
+   "website": "humnetwork.tv",
+   "careers": "https://humnetwork.tv/hr/index.html",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ibrahim Fibre": {
+   "status": "careers_no_ats",
+   "website": "psx.com.pk",
+   "careers": "https://www.psx.com.pk/psx/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "JDW Sugar Mills": {
+   "status": "no_careers_page",
+   "website": "jahangirktareen.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Indus Motor": {
+   "status": "careers_no_ats",
+   "website": "toyota-indus.com",
+   "careers": "https://toyota-indus.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Interloop Limited": {
+   "status": "no_careers_page",
+   "website": "interloop-pk.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "International Industries Limited": {
+   "status": "careers_no_ats",
+   "website": "isl.com.pk",
+   "careers": "https://isl.com.pk/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "International Steels Limited": {
+   "status": "careers_no_ats",
+   "website": "isl.com.pk",
+   "careers": "https://isl.com.pk/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Javedan": {
+   "status": "careers_no_ats",
+   "website": "jcl.com.pk",
+   "careers": "https://jobs.com.pk/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "K-Electric": {
+   "status": "site_unreachable",
+   "website": "ke.com.pk",
+   "careers": "",
+   "note": "HTTP 404",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kohat Cement": {
+   "status": "careers_no_ats",
+   "website": "psx.com.pk",
+   "careers": "https://www.psx.com.pk/psx/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kohinoor Textile": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kot Addu Power": {
+   "status": "careers_no_ats",
+   "website": "kapco.com.pk",
+   "careers": "https://www.kapco.com.pk/?page_id=38",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Lotte Chemical": {
+   "status": "careers_no_ats",
+   "website": "lottechem.pk",
+   "careers": "https://www.lottechem.pk/career-growth-with-lcpl/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Lucky Cement": {
+   "status": "careers_no_ats",
+   "website": "lucky-cement.com",
+   "careers": "https://lucky-cement.com/en/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Lucky Core Industries": {
+   "status": "ats_no_adapter",
+   "website": "luckycore.com",
+   "careers": "https://luckycore.com/en/our-people/join-us",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "icipakistaP"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Maple Leaf Cement": {
+   "status": "no_careers_page",
+   "website": "kmlg.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mari Energies": {
+   "status": "site_blocked",
+   "website": "marienergies.com.pk",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "MCB Bank": {
+   "status": "careers_no_ats",
+   "website": "mcb.com.pk",
+   "careers": "https://www.mcb.com.pk/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.mcb.com.pk/careers"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Meezan Bank": {
+   "status": "site_blocked",
+   "website": "meezanbank.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mehmood Textile Mills": {
+   "status": "careers_no_ats",
+   "website": "psx.com.pk",
+   "careers": "https://www.psx.com.pk/psx/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Millat Tractors": {
+   "status": "no_careers_page",
+   "website": "millat.com.pk",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Murree Brewery": {
+   "status": "no_careers_page",
+   "website": "murreebrewery.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "National Bank": {
+   "status": "careers_no_ats",
+   "website": "nbp.com.pk",
+   "careers": "https://nbp.com.pk/careers/index.aspx",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "nbp.com.pk/careers/index.aspx"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "National Foods": {
+   "status": "site_blocked",
+   "website": "nfoods.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Nestlé Pakistan": {
+   "status": "site_blocked",
+   "website": "nestle.pk",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "OGDC": {
+   "status": "site_blocked",
+   "website": "ogdcl.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Packages Limited": {
+   "status": "careers_no_ats",
+   "website": "packages.com.pk",
+   "careers": "https://www.packages.com.pk/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PEL": {
+   "status": "careers_no_ats",
+   "website": "pel.com.pk",
+   "careers": "https://pel.com.pk/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pak-Gulf Leasing": {
+   "status": "careers_no_ats",
+   "website": "psx.com.pk",
+   "careers": "https://www.psx.com.pk/psx/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pakistan Aluminium Beverage Cans": {
+   "status": "careers_no_ats",
+   "website": "psx.com.pk",
+   "careers": "https://www.psx.com.pk/psx/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PIBTL": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Power Cement": {
+   "status": "careers_no_ats",
+   "website": "arifhabib.com.pk",
+   "careers": "https://jobs.com.pk/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pakistan Oilfields": {
+   "status": "site_robots",
+   "website": "pakoil.com.pk",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pakistan Petroleum": {
+   "status": "site_robots",
+   "website": "ppl.com.pk",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pakistan Services": {
+   "status": "careers_no_ats",
+   "website": "pchotels.com",
+   "careers": "https://pchotels.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pakistan State Oil": {
+   "status": "careers_no_ats",
+   "website": "psopk.com",
+   "careers": "https://psopk.com/en/career",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pakistan Stock Exchange": {
+   "status": "careers_no_ats",
+   "website": "psx.com.pk",
+   "careers": "https://www.psx.com.pk/psx/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PTCL": {
+   "status": "site_robots",
+   "website": "ptcl.com.pk",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pakistan Tobacco Company": {
+   "status": "site_blocked",
+   "website": "ptc.com.pk",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pioneer Cement": {
+   "status": "no_careers_page",
+   "website": "kmlg.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Rafhan Maize": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sazgar": {
+   "status": "no_careers_page",
+   "website": "sazgarautos.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Searle": {
+   "status": "site_robots",
+   "website": "searlecompany.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Servis": {
+   "status": "careers_no_ats",
+   "website": "servisgroup.com",
+   "careers": "https://serviscareers.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Shifa": {
+   "status": "careers_no_ats",
+   "website": "shifa.com.pk",
+   "careers": "https://careers.shifa.com.pk/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Wafi": {
+   "status": "careers_no_ats",
+   "website": "shell.com.pk",
+   "careers": "https://jobs.com.pk/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Standard Chartered": {
+   "status": "site_blocked",
+   "website": "sc.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sui Northern": {
+   "status": "site_robots",
+   "website": "sngpl.com.pk",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sui Southern": {
+   "status": "site_robots",
+   "website": "ssgc.com.pk",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tariq Glass": {
+   "status": "careers_no_ats",
+   "website": "psx.com.pk",
+   "careers": "https://www.psx.com.pk/psx/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Thal Limited": {
+   "status": "no_careers_page",
+   "website": "hoh.net",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "TRG Pakistan": {
+   "status": "careers_no_ats",
+   "website": "trg.com.pk",
+   "careers": "https://jobs.com.pk/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Unilever Foods": {
+   "status": "site_blocked",
+   "website": "unilever.pk",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Yousuf Weaving Mills": {
+   "status": "careers_no_ats",
+   "website": "psx.com.pk",
+   "careers": "https://www.psx.com.pk/psx/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "omxh25": {
+  "Elisa": {
+   "status": "careers_no_ats",
+   "website": "elisa.com",
+   "careers": "https://elisa.com/corporate/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Fortum": {
+   "status": "site_robots",
+   "website": "fortum.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hiab": {
+   "status": "careers_no_ats",
+   "website": "hiabgroup.com",
+   "careers": "https://www.hiabgroup.com/en/career/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Huhtamäki": {
+   "status": "ats",
+   "website": "huhtamaki.com",
+   "careers": "https://www.huhtamaki.com/en/careers/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "huhtamaki.wd103|external"
+    ],
+    [
+     "workday",
+     "huhtamaki.wd103|directsexternal"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "huhtamaki.wd103|external",
+     19
+    ],
+    [
+     "workday",
+     "huhtamaki.wd103|directsexternal",
+     52
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Kalmar  B": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kemira": {
+   "status": "ats_no_adapter",
+   "website": "kemira.com",
+   "careers": "https://www.kemira.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "kemira"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kesko B": {
+   "status": "ats_no_adapter",
+   "website": "kesko.fi",
+   "careers": "https://www.kesko.fi/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kojamo": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "KONE": {
+   "status": "ats",
+   "website": "kone.com",
+   "careers": "https://kone.wd3.myworkdayjobs.com/en-US/Careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "kone.wd3|careers"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "kone.wd3|careers",
+     936
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Konecranes": {
+   "status": "jsonld",
+   "website": "konecranes.com",
+   "careers": "https://konecranes.careers",
+   "note": "",
+   "boards": [
+    [
+     "jsonld",
+     "konecranes.careers"
+    ]
+   ],
+   "read": [
+    [
+     "jsonld",
+     "konecranes.careers",
+     3
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Metso": {
+   "status": "ats_no_adapter",
+   "website": "metso.com",
+   "careers": "https://www.metso.com/corporate/careers/open-jobs/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "C0001225248P"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Neste": {
+   "status": "careers_no_ats",
+   "website": "neste.com",
+   "careers": "https://www.neste.com/about-neste/people-and-careers/work-with-us",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Nokian Tyres": {
+   "status": "careers_no_ats",
+   "website": "nokiantyres.com",
+   "careers": "https://company.nokiantyres.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Nordea": {
+   "status": "careers_no_ats",
+   "website": "nordea.com",
+   "careers": "https://www.nordea.com/en/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.nordea.com/en/careers/employee-benefits"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Outokumpu": {
+   "status": "careers_page_list",
+   "website": "outokumpu.com",
+   "careers": "https://careers.outokumpu.com/search/?locale=en_US&amp;utm_source=careersite",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "careers.outokumpu.com/search"
+    ]
+   ],
+   "read": [
+    [
+     "pagelist",
+     "careers.outokumpu.com/search",
+     15
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Qt Group": {
+   "status": "careers_no_ats",
+   "website": "qt.io",
+   "careers": "https://www.qt.io/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sampo A": {
+   "status": "careers_no_ats",
+   "website": "sampo.com",
+   "careers": "https://www.sampo.com/404/?epslanguage=en",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Stora Enso R": {
+   "status": "site_blocked",
+   "website": "storaenso.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "TietoEVRY": {
+   "status": "ats_robots_blocked",
+   "website": "tieto.com",
+   "careers": "https://careers.tieto.com/",
+   "note": "",
+   "boards": [
+    [
+     "smartrecruiters",
+     "my-applications"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "UPM-Kymmene": {
+   "status": "ats",
+   "website": "upm.com",
+   "careers": "https://upm.wd103.myworkdayjobs.com/Careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "upm.wd103|careers"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "upm.wd103|careers",
+     56
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Valmet": {
+   "status": "ats",
+   "website": "valmet.com",
+   "careers": "https://www.valmet.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "valmet.wd103|external"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "valmet.wd103|external",
+     185
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Wärtsilä": {
+   "status": "ats_no_adapter",
+   "website": "wartsila.com",
+   "careers": "https://www.wartsila.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "Wartsila"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "nzx50": {
+  "Auckland International Airport Limited": {
+   "status": "site_blocked",
+   "website": "aucklandairport.co.nz",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Air New Zealand Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "ANZ Group Holdings Limited": {
+   "status": "careers_no_ats",
+   "website": "anz.com.au",
+   "careers": "https://www.anz.com.au/careers/",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.anz.com.au/careers"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Argosy Property Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "The a2 Milk Company Limited": {
+   "status": "careers_no_ats",
+   "website": "thea2milkcompany.com",
+   "careers": "https://careers.thea2milkcompany.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Briscoe Group Limited": {
+   "status": "careers_no_ats",
+   "website": "briscoegroup.co.nz",
+   "careers": "https://www.briscoegroup.co.nz/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Contact Energy Limited": {
+   "status": "careers_no_ats",
+   "website": "contact.co.nz",
+   "careers": "https://contact.co.nz/about-us/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Channel Infrastructure NZ Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Chorus Limited": {
+   "status": "careers_no_ats",
+   "website": "chorus.co.nz",
+   "careers": "https://company.chorus.co.nz/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ebos Group Limited": {
+   "status": "site_blocked",
+   "website": "ebosgroup.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Fletcher Building Limited": {
+   "status": "careers_no_ats",
+   "website": "fletcherbuilding.com",
+   "careers": "https://fletcherbuilding.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Fisher & Paykel Healthcare Corporation Limited": {
+   "status": "ats_no_adapter",
+   "website": "fphcare.com",
+   "careers": "https://careers.fphcare.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "fphcPRD"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Freightways Group Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Fonterra Shareholders' Fund": {
+   "status": "site_robots",
+   "website": "fonterra.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Genesis Energy Limited": {
+   "status": "careers_no_ats",
+   "website": "genesisenergy.co.nz",
+   "careers": "https://www.genesisenergy.co.nz/about/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Goodman NZ Ltd & Goodman Property Services Ltd": {
+   "status": "site_blocked",
+   "website": "goodman.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Gentrack Group Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Heartland Group Holdings Limited": {
+   "status": "ats",
+   "website": "heartland.co.nz",
+   "careers": "https://www.heartland.co.nz/about-us/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "heartland.wd3|external"
+    ]
+   ],
+   "read": [
+    [
+     "workday",
+     "heartland.wd3|external",
+     10
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Hallenstein Glasson Holdings Limited": {
+   "status": "careers_no_ats",
+   "website": "hallensteinglasson.co.nz",
+   "careers": "https://www.hallensteinglasson.co.nz/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Infratil Limited": {
+   "status": "no_careers_page",
+   "website": "infratil.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Investore Property Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "KMD Brands Limited": {
+   "status": "careers_no_ats",
+   "website": "kmdbrands.com",
+   "careers": "https://www.kmdbrands.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Kiwi Property Group Limited": {
+   "status": "careers_no_ats",
+   "website": "kp.co.nz",
+   "careers": "https://www.kiwiproperty.com/about-us/careers-and-culture",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mercury NZ Limited": {
+   "status": "careers_no_ats",
+   "website": "mercury.co.nz",
+   "careers": "https://www.mercury.co.nz/about-us/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Meridian Energy Limited": {
+   "status": "careers_no_ats",
+   "website": "meridianenergy.co.nz",
+   "careers": "https://www.meridianenergy.co.nz/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mainfreight Limited": {
+   "status": "site_blocked",
+   "website": "mainfreight.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Napier Port Holdings Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "NZX Limited": {
+   "status": "no_careers_page",
+   "website": "nzx.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Oceania Healthcare Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Precinct Properties NZ & Precinct Properties Investments Ltd": {
+   "status": "careers_no_ats",
+   "website": "precinct.co.nz",
+   "careers": "https://www.precinct.co.nz/people/work-with-us",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Property for Industry Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Port of Tauranga Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ryman Healthcare Limited": {
+   "status": "no_careers_page",
+   "website": "rymanhealthcare.co.nz",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Scales Corporation Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "SkyCity Entertainment Group Limited": {
+   "status": "careers_no_ats",
+   "website": "skycityentertainmentgroup.com",
+   "careers": "https://skycityentertainmentgroup.com/careers/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Skellerup Holdings Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Serko Limited": {
+   "status": "careers_no_ats",
+   "website": "serko.com",
+   "careers": "https://www.serko.com/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sky Network Television Limited": {
+   "status": "careers_no_ats",
+   "website": "sky.co.nz",
+   "careers": "https://www.sky.co.nz/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Stride Property Ltd & Stride Investment Management Ltd": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Spark New Zealand Limited": {
+   "status": "site_blocked",
+   "website": "spark.co.nz",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Summerset Group Holdings Limited": {
+   "status": "careers_no_ats",
+   "website": "summerset.co.nz",
+   "careers": "https://www.careers.summerset.co.nz/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tourism Holdings Limited": {
+   "status": "linkedin_only",
+   "website": "thlonline.com",
+   "careers": "https://www.thlonline.com:443/work",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Turners Automotive Group Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Tower Limited": {
+   "status": "no_careers_page",
+   "website": "tower.co.nz",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Vector Limited": {
+   "status": "ats_robots_blocked",
+   "website": "vector.co.nz",
+   "careers": "https://vector.co.nz/about-us/careers",
+   "note": "ashby board 'vector' names Vector but has no role in NZ: a namesake, not kept",
+   "boards": [
+    [
+     "smartrecruiters",
+     "VectorLimited"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Vista Group International Limited": {
+   "status": "ats",
+   "website": "vista.co",
+   "careers": "https://apply.workable.com/vista-group/",
+   "note": "",
+   "boards": [
+    [
+     "workable",
+     "vista-group"
+    ]
+   ],
+   "read": [
+    [
+     "workable",
+     "vista-group",
+     3
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Vital Healthcare Property Trust": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Vulcan Steel Limited": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "athex": {
+  "Aegean Airlines": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Jumbo": {
+   "status": "site_blocked",
+   "website": "e-jumbo.gr",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Cenergy Holdings": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Coca-Cola HBC AG": {
+   "status": "ats_robots_blocked",
+   "website": "coca-colahellenic.com",
+   "careers": "https://www.coca-colahellenic.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "careers.coca-colahellenic.com/en_US/careers"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ellaktor": {
+   "status": "site_robots",
+   "website": "ellaktor.gr",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "ElvalHalcor": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Hellenic Petroleum": {
+   "status": "careers_no_ats",
+   "website": "helpe.gr",
+   "careers": "https://www.helpe.gr/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "National Bank of Greece": {
+   "status": "no_careers_page",
+   "website": "nbg.gr",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Eurobank Ergasias": {
+   "status": "site_blocked",
+   "website": "eurobankholdings.gr",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "EYDAP": {
+   "status": "site_robots",
+   "website": "eydap.gr",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "GEK Terna": {
+   "status": "site_robots",
+   "website": "gekterna.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "OTE": {
+   "status": "site_robots",
+   "website": "telekom.gr",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Lamda Development": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Motor Oil Hellas": {
+   "status": "ats_no_adapter",
+   "website": "moh.gr",
+   "careers": "https://careers.moh.gr/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "motoroilhe"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Mytilineos Holdings": {
+   "status": "careers_no_ats",
+   "website": "metlen.com",
+   "careers": "https://careers.metlen.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "OPAP": {
+   "status": "site_robots",
+   "website": "opap.gr",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Autohellas": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Public Power Corporation": {
+   "status": "no_careers_page",
+   "website": "dei.gr",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Quest Holdings": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Gr. Sarantis S.A.": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Terna Energy": {
+   "status": "no_careers_page",
+   "website": "terna-energy.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Titan Cement": {
+   "status": "ats_robots_blocked",
+   "website": "titan-cement.com",
+   "careers": "https://www.titanmaterials.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "icims",
+     "globalcareers-titancement"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Piraeus Bank": {
+   "status": "no_careers_page",
+   "website": "piraeusbank.gr",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Viohalco": {
+   "status": "site_blocked",
+   "website": "viohalco.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "bux": {
+  "4iG": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "ALTEO": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "ANY Security Printing": {
+   "status": "careers_no_ats",
+   "website": "any.hu",
+   "careers": "https://www.any.hu",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Appeninn Asset Management": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "AutoWallis": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Budapest Real Estate": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "CIG Pannonia": {
+   "status": "careers_no_ats",
+   "website": "cigpannonia.hu",
+   "careers": "https://www.cigpannonia.hu/careers",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Delta Technologies": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Graphisoft": {
+   "status": "careers_no_ats",
+   "website": "graphisoft.com",
+   "careers": "https://careers.graphisoft.com/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Masterplast": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "MOL Group": {
+   "status": "ats_no_adapter",
+   "website": "molgroup.info",
+   "careers": "https://career.molgroup.info/en",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Magyar Telekom": {
+   "status": "no_careers_page",
+   "website": "telekom.hu",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Opus Global": {
+   "status": "no_careers_page",
+   "website": "opusglobal.hu",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "OTP Bank": {
+   "status": "careers_no_ats",
+   "website": "otpbank.hu",
+   "careers": "https://www.otpbank.hu/portal/hu/maganszemelyek",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "PannErgy": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Gedeon Richter": {
+   "status": "site_robots",
+   "website": "gedeonrichter.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Waberer's International": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
  }
 }
