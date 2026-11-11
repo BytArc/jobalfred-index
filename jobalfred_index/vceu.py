@@ -16,7 +16,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import names, seniority, shards, startups
+from . import industry, names, seniority, shards, startups
 
 EUROPE = set("AL AD AT BY BE BA BG HR CY CZ DK EE FI FR DE GR HU IS IE IT XK LV LI LT LU MT MD MC ME NL MK NO PL PT RO RU SM "
              "RS SK SI ES SE CH TR UA GB VA GI IM JE GG FO".split())
@@ -76,7 +76,7 @@ BASIS = ("A company is listed when it is headquartered in Europe and backed by v
          "Roles are read from each company's own careers system; collected is not the same as confirmed open.")
 
 
-def build(state, doc: dict, out: Path, log=print) -> dict:
+def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     """Rows of every listed company's boards from `state`, deduplicated, written gzipped to `out`. Returns the document
     without its rows (for logs and guards)."""
     owner: dict[tuple[str, str], dict] = {}
@@ -119,13 +119,12 @@ def build(state, doc: dict, out: Path, log=print) -> dict:
                 nm = names.polish(r[1], slug, urls)
                 cache[r[1]] = c.get("name") or r[1] if (not nm or nm == names.UNDISCLOSED) else nm
             r = list(r)
-            if len(r) < len(shards.FIELDS):          # rows stored before the seniority label existed
-                r.extend(seniority.label(r[0]))
-            r = r[:len(shards.FIELDS)]
+            r = shards.complete(r)[:len(shards.FIELDS)]   # stored rows lacking newer label columns get them; industry is filled below
             r[1] = cache[r[1]]
             rows.append(r + [c["domain"]] + ftail(c["domain"]))
             per_company[c["domain"]] = per_company.get(c["domain"], 0) + 1
     rows.sort(key=lambda r: (shards.norm(r[1]), r[0].lower(), r[5]))
+    industry.assign(rows, homepages, log=log)      # same model as the main index; first-seen companies are fetched when a Homepages is given
     companies = []
     for c in doc.get("companies", []):
         boards = [b for b in c.get("tenants", []) if tuple(b) not in dropped_boards]
