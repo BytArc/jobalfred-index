@@ -22,7 +22,8 @@ STAGES = [("pre_seed", r"pre[- ]?seed"), ("seed", r"\bseed\b"), ("series_a", r"s
           ("series_c", r"series[- ]c\b"), ("series_d", r"series[- ]d\b"), ("series_e_plus", r"series[- ][e-h]\b"),
           ("growth", r"growth (?:round|equity|funding)")]
 NOT_EQUITY = re.compile(r"(?i)valuation|debt|loan|credit facility|venture debt|grant|subsid|acquir|acquisition|merger|fund i|"
-                        r"first close|final close|new fund|launches .{0,20}fund")
+                        r"first close|final close|new fund|launches .{0,20}fund|\bprojects?\b|\bBESS\b|portfolio financ|"
+                        r"asset[- ]backed|asset financ|project financ|warehouse facility|bond")
 TOTAL = re.compile(r"(?i)(?:bring(?:s|ing)?|tak(?:es|ing)|total(?:s|ling)?)\s+(?:its|the company.s|their)?\s*(?:total\s+)?"
                    r"(?:funding|capital raised|investment|amount raised)?\s*(?:raised\s+)?(?:to date\s+)?(?:to|of)\s+"
                    r"(?:over\s+|more than\s+|nearly\s+|around\s+)?(?P<cur>€|\$|£|CHF|EUR|USD|GBP)\s?(?P<num>\d{1,4}(?:[.,]\d{1,3})?)\s?"
@@ -74,9 +75,18 @@ def parse_article(page: str, url: str) -> dict:
     art = re.search(r'<div class="td-post-content[^"]*">(.*?)<footer', page or "", re.S)
     body_html = art.group(1) if art else page or ""
     first = _text(body_html)[:3000]
-    stage = next((k for k, rx in STAGES if re.search(rx, title, re.I)), "") or \
-        next((k for k, rx in STAGES if re.search(rx + r"(?:\s+(?:funding|investment|financing|extension))?\s+round", first, re.I)), "")
     amt = TEXT_AMOUNT.search(title)
+    stage, stage_ctx = next(((k, title) for k, rx in STAGES if re.search(rx, title, re.I)), ("", ""))
+    if not stage and amt:
+        # a stage named in the text counts only next to this round's amount ("a €12 million Series A round"),
+        # so an earlier round mentioned further down is not taken for this one
+        num = re.escape(amt.group("num"))
+        for m in re.finditer(num + r"\s?(?:million|m\b|billion|bn\b|k\b)", first, re.I):
+            win = first[max(0, m.start() - 120): m.end() + 120]
+            hit = next((k for k, rx in STAGES if re.search(rx, win, re.I)), "")
+            if hit:
+                stage, stage_ctx = hit, win
+                break
     tot = TOTAL.search(first)
     own = registrable(url)
     doms = []
@@ -89,7 +99,8 @@ def parse_article(page: str, url: str) -> dict:
             "currency": CUR.get(amt.group("cur").lower(), amt.group("cur").upper()) if amt else "",
             "total": _money(tot.group("num"), tot.group("unit")) if tot else None,
             "total_currency": CUR.get(tot.group("cur").lower(), tot.group("cur").upper()) if tot else "",
-            "not_equity": bool(NOT_EQUITY.search(title)), "domains": doms, "body_len": len(body)}
+            "not_equity": bool(NOT_EQUITY.search(title)), "domains": doms, "body_len": len(body),
+            "stage_ctx": stage_ctx[:300], "total_ctx": first[max(0, tot.start() - 80): tot.end() + 40] if tot else ""}
 
 
 def summarise(rounds: list[dict]) -> dict:

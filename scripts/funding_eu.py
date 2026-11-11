@@ -53,6 +53,11 @@ def candidates(urls, idx) -> list[tuple[str, dict, dict]]:
 
 def confirm(client, items, doc) -> int:
     seen = set(doc.get("seen", []))
+    # rounds read before the stricter rules (no stored context) are read again and replaced
+    for dom, lst in doc.get("rounds", {}).items():
+        for r in lst:
+            if "stage_ctx" not in r:
+                seen.discard(f"{r['url']}|{dom}")
     todo = [(u, c, s) for u, c, s in items if f"{u}|{c['domain']}" not in seen]
     # companies whose only evidence of VC backing is "Seedtable" first (a confirmed article gives public evidence), newest first
     todo.sort(key=lambda x: ((x[1].get("evidence") or ["Seedtable"]) == ["Seedtable"],
@@ -76,11 +81,22 @@ def confirm(client, items, doc) -> int:
             rnd = {"url": u, "date": art["date"] or re.search(r"/(20\d\d/\d\d)/", u).group(1).replace("/", "-") + "-01",
                    "stage": art["stage"] or s["stage"], "amount": art["amount"] or s["amount"],
                    "currency": art["currency"] or s["currency"], "total": art["total"],
-                   "total_currency": art["total_currency"], "title": art["title"][:200]}
+                   "total_currency": art["total_currency"], "title": art["title"][:200],
+                   "stage_ctx": art["stage_ctx"], "total_ctx": art["total_ctx"]}
+            if not art["stage"]:
+                rnd["stage"] = s["stage"]                  # a stage in the URL's own words still counts
             lst = doc["rounds"].setdefault(c["domain"], [])
-            if all(x["url"] != u for x in lst):
+            old = [x for x in lst if x["url"] == u]
+            if old:
+                lst[lst.index(old[0])] = rnd               # re-read under the current rules
+            else:
                 lst.append(rnd)
                 added += 1
+        elif art:
+            lst = doc["rounds"].get(c["domain"], [])
+            doc["rounds"][c["domain"]] = [x for x in lst if x["url"] != u]   # no longer counts (e.g. project finance)
+            if not doc["rounds"][c["domain"]]:
+                doc["rounds"].pop(c["domain"], None)
     doc["seen"] = sorted(seen)
     return added
 
