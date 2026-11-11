@@ -1,0 +1,450 @@
+{"key": "c:dollargeneral", "name": "Dollar General", "ind": "ret", "rows": 20000, "set": "top450"}
+{"key": "c:dollartree", "name": "Dollartree", "ind": "ret", "rows": 19161, "set": "top450"}
+{"key": "c:oreillyauto", "name": "Oreillyauto", "ind": "ret", "rows": 19110, "set": "top450"}
+{"key": "c:amazon", "name": "Amazon", "ind": "ret", "rows": 13657, "set": "top450"}
+{"key": "c:loweshomecenters", "name": "Lowe's Home Centers", "ind": "ret", "rows": 12959, "set": "top450"}
+{"key": "c:macys", "name": "Macy's", "ind": "ret", "rows": 11825, "set": "top450"}
+{"key": "c:marriott", "name": "Marriott", "ind": "hos", "rows": 10135, "set": "top450"}
+{"key": "c:autozone", "name": "AutoZone", "ind": "ret", "rows": 10000, "set": "top450"}
+{"key": "c:thekroger", "name": "The Kroger", "ind": "ret", "rows": 10000, "set": "top450"}
+{"key": "c:albertsonscompanies", "name": "Albertsons Companies", "ind": "ret", "rows": 8648, "set": "top450"}
+{"key": "c:jpmorganchase", "name": "JPMorgan Chase", "ind": "fin", "rows": 6984, "set": "top450"}
+{"key": "c:pwcparaguayservicios", "name": "PwC Paraguay Servicios", "ind": "pro", "rows": 5086, "set": "top450"}
+{"key": "c:apple", "name": "Apple", "ind": "hw", "rows": 4911, "set": "top450"}
+{"key": "c:jobgether", "name": "Jobgether", "ind": "hr", "rows": 4466, "set": "top450"}
+{"key": "c:hilton", "name": "Hilton", "ind": "hos", "rows": 4287, "set": "top450"}
+{"key": "c:whataburger", "name": "Whataburger", "ind": "hos", "rows": 4257, "set": "top450"}
+{"key": "c:mcdonaldsrestaurantearcosdorados", "name": "McDonald's Restaurante - Arcos Dorados", "ind": "hos", "rows": 4068, "set": "top450"}
+{"key": "c:aogarciaagency", "name": "AO Garcia Agency", "ind": "oth", "rows": 3820, "set": "top450"}
+{"key": "c:tmobile", "name": "T-MOBILE", "ind": "tel", "rows": 3739, "set": "top450"}
+{"key": "c:ascension", "name": "Ascension", "ind": "hlt", "rows": 3643, "set": "top450"}
+{"key": "c:lifepointhealth", "name": "Lifepoint Health", "ind": "hlt", "rows": 3633, "set": "top450"}
+{"key": "c:assaatacadista", "name": "Assaí Atacadista", "ind": "ret", "rows": 3510, "set": "top450"}
+{"key": "c:milehighadjustershoustoninc", "name": "Milehighadjustershoustoninc", "ind": "fin", "rows": 3450, "set": "top450"}
+{"key": "c:tatacapital", "name": "Tata Capital", "ind": "fin", "rows": 3392, "set": "top450"}
+{"key": "c:sitiodeoportunidadesempleogrupocoppel", "name": "Sitio de Oportunidades Empleo Grupo Coppel", "ind": "ret", "rows": 3309, "set": "top450"}
+{"key": "c:trctotalrenalcare", "name": "TRC Total Renal Care", "ind": "hlt", "rows": 3239, "set": "top450"}
+{"key": "c:patheonsoftgels", "name": "Patheon Softgels", "ind": "bio", "rows": 3203, "set": "top450"}
+{"key": "c:bjak", "name": "Bjak", "ind": "fin", "rows": 3164, "set": "top450"}
+{"key": "c:tenethealthcare", "name": "Tenet Healthcare", "ind": "hlt", "rows": 3148, "set": "top450"}
+{"key": "c:farinspections", "name": "Farinspections", "ind": "pro", "rows": 3139, "set": "top450"}
+{"key": "c:spacex", "name": "SpaceX", "ind": "aer", "rows": 2901, "set": "top450"}
+{"key": "c:micron", "name": "Micron", "ind": "hw", "rows": 2882, "set": "top450"}
+{"key": "c:panerabread", "name": "Panerabread", "ind": "hos", "rows": 2858, "set": "top450"}
+{"key": "c:google", "name": "Google", "ind": "sw", "rows": 2837, "set": "top450"}
+{"key": "c:sterlingjewelers", "name": "Sterling Jewelers", "ind": "ret", "rows": 2802, "set": "top450"}
+{"key": "c:westfiresudamerica", "name": "Westfire Sudamerica", "ind": "mfg", "rows": 2791, "set": "top450"}
+{"key": "c:afstores", "name": "A&F Stores", "ind": "ret", "rows": 2607, "set": "top450"}
+{"key": "c:acosta", "name": "Acosta", "ind": "pro", "rows": 2501, "set": "top450"}
+{"key": "c:clevelandclinic", "name": "Cleveland Clinic", "ind": "hlt", "rows": 2434, "set": "top450"}
+{"key": "c:andurilindustries", "name": "Anduril Industries", "ind": "aer", "rows": 2412, "set": "top450"}
+{"key": "c:ochsner", "name": "Ochsner", "ind": "hlt", "rows": 2371, "set": "top450"}
+{"key": "c:accenture", "name": "Accenture", "ind": "pro", "rows": 2370, "set": "top450"}
+{"key": "c:gevernovaexecutive", "name": "GE Vernova Executive", "ind": "ene", "rows": 2354, "set": "top450"}
+{"key": "c:vertiv", "name": "Vertiv", "ind": "hw", "rows": 2305, "set": "top450"}
+{"key": "c:microsoft", "name": "Microsoft", "ind": "sw", "rows": 2268, "set": "top450"}
+{"key": "c:tsmg", "name": "TSMG", "ind": "pro", "rows": 2261, "set": "top450"}
+{"key": "c:sherwinwilliams", "name": "Sherwin-Williams", "ind": "mfg", "rows": 2243, "set": "top450"}
+{"key": "c:next", "name": "Next", "ind": "ret", "rows": 2176, "set": "top450"}
+{"key": "c:gevernova", "name": "Gevernova", "ind": "ene", "rows": 2170, "set": "top450"}
+{"key": "c:atkinsralis", "name": "AtkinsRéalis", "ind": "pro", "rows": 2168, "set": "top450"}
+{"key": "c:maurices", "name": "Maurices", "ind": "ret", "rows": 2153, "set": "top450"}
+{"key": "c:cecentertainment", "name": "CEC Entertainment", "ind": "hos", "rows": 2147, "set": "top450"}
+{"key": "c:healthcareersinsaskca", "name": "HealthCareersInSask.ca", "ind": "hlt", "rows": 2145, "set": "top450"}
+{"key": "c:questdiagnostics", "name": "Quest Diagnostics", "ind": "hlt", "rows": 2133, "set": "top450"}
+{"key": "c:providence", "name": "Providence", "ind": "hlt", "rows": 2113, "set": "top450"}
+{"key": "c:meijer", "name": "Meijer", "ind": "ret", "rows": 2105, "set": "top450"}
+{"key": "c:capitalone", "name": "Capitalone", "ind": "fin", "rows": 2053, "set": "top450"}
+{"key": "c:learningcaregroup", "name": "Learning Care Group", "ind": "edu", "rows": 2048, "set": "top450"}
+{"key": "c:target", "name": "Target", "ind": "ret", "rows": 2034, "set": "top450"}
+{"key": "c:phhpeakhealthholdings", "name": "PHH Peak Health Holdings", "ind": "hlt", "rows": 2011, "set": "top450"}
+{"key": "c:abbott", "name": "Abbott", "ind": "bio", "rows": 2009, "set": "top450"}
+{"key": "c:adventhealth", "name": "Adventhealth", "ind": "hlt", "rows": 2006, "set": "top450"}
+{"key": "c:dickssportinggoods", "name": "DICK'S Sporting Goods", "ind": "ret", "rows": 2001, "set": "top450"}
+{"key": "c:minor", "name": "Minor", "ind": "hos", "rows": 2000, "set": "top450"}
+{"key": "c:bridgestoneretailoperations", "name": "Bridgestone Retail Operations", "ind": "aut", "rows": 2000, "set": "top450"}
+{"key": "c:nvidia", "name": "NVIDIA", "ind": "hw", "rows": 2000, "set": "top450"}
+{"key": "c:coachnetherlandsbvtaiwanbranch", "name": "Coach Netherlands B.V. - Taiwan Branch", "ind": "ret", "rows": 2000, "set": "top450"}
+{"key": "c:boozallenhamiltonunitedstates", "name": "Booz Allen Hamilton_United States", "ind": "pro", "rows": 2000, "set": "top450"}
+{"key": "c:kohls", "name": "Kohl's", "ind": "ret", "rows": 2000, "set": "top450"}
+{"key": "c:leidos", "name": "Leidos", "ind": "aer", "rows": 2000, "set": "top450"}
+{"key": "c:advanceauto", "name": "Advanceauto", "ind": "ret", "rows": 2000, "set": "top450"}
+{"key": "c:carlislellc", "name": "Carlislellc", "ind": "hos", "rows": 2000, "set": "top450"}
+{"key": "c:sanford", "name": "Sanford", "ind": "hlt", "rows": 2000, "set": "top450"}
+{"key": "c:eiffage", "name": "Eiffage", "ind": "re", "rows": 2000, "set": "top450"}
+{"key": "c:crackerbarreloldcountrystore", "name": "Cracker Barrel Old Country Store", "ind": "hos", "rows": 2000, "set": "top450"}
+{"key": "c:massgeneralbrigham", "name": "Massgeneralbrigham", "ind": "hlt", "rows": 2000, "set": "top450"}
+{"key": "c:northeastprofessionalregistryofnurses", "name": "Northeast Professional Registry Of Nurses", "ind": "hlt", "rows": 2000, "set": "top450"}
+{"key": "c:corewellhealth", "name": "Corewell Health", "ind": "hlt", "rows": 2000, "set": "top450"}
+{"key": "c:lanebryantbrandsopco", "name": "Lane Bryant Brands Opco", "ind": "ret", "rows": 2000, "set": "top450"}
+{"key": "c:petcoanimalsuppliesstores", "name": "Petco Animal Supplies Stores", "ind": "ret", "rows": 2000, "set": "top450"}
+{"key": "c:oheohnhemp", "name": "OHE OHNH EMP", "ind": "hlt", "rows": 2000, "set": "top450"}
+{"key": "c:fivebelow", "name": "Five Below", "ind": "ret", "rows": 2000, "set": "top450"}
+{"key": "c:ckcirclekstores", "name": "CK Circle K Stores", "ind": "ret", "rows": 1999, "set": "top450"}
+{"key": "c:mhmsupportservices", "name": "MHM Support Services", "ind": "hlt", "rows": 1999, "set": "top450"}
+{"key": "c:sentara", "name": "Sentara", "ind": "hlt", "rows": 1999, "set": "top450"}
+{"key": "c:hitachirail", "name": "Hitachi Rail", "ind": "mfg", "rows": 1998, "set": "top450"}
+{"key": "c:jabil", "name": "Jabil", "ind": "hw", "rows": 1998, "set": "top450"}
+{"key": "c:uhaul", "name": "U-Haul", "ind": "log", "rows": 1998, "set": "top450"}
+{"key": "c:upsjobscom", "name": "upsjobs.com", "ind": "log", "rows": 1997, "set": "top450"}
+{"key": "c:medicaluniversityhospitalauthoritymuha", "name": "Medical University Hospital Authority (MUHA)", "ind": "hlt", "rows": 1996, "set": "top450"}
+{"key": "c:jikintegral", "name": "JIK-Integral", "ind": "re", "rows": 1994, "set": "top450"}
+{"key": "c:recambioscolncatarroja", "name": "Recambios Colón Catarroja", "ind": "ret", "rows": 1993, "set": "top450"}
+{"key": "c:omnicom", "name": "Omnicom", "ind": "med", "rows": 1993, "set": "top450"}
+{"key": "c:louisvilleeastpostacutelouisvilleeastpostacute", "name": "(Louisville East Post Acute) Louisville East Post Acute", "ind": "hlt", "rows": 1992, "set": "top450"}
+{"key": "c:pncbankna", "name": "PNC Bank NA", "ind": "fin", "rows": 1991, "set": "top450"}
+{"key": "c:renaladvantage", "name": "Renal Advantage", "ind": "hlt", "rows": 1991, "set": "top450"}
+{"key": "c:wmtfulfillmentservice", "name": "WMT Fulfillment Service", "ind": "ret", "rows": 1991, "set": "top450"}
+{"key": "c:idsarmcsaintalphonsushealthsystem", "name": "ID_SARMC Saint Alphonsus Health System", "ind": "hlt", "rows": 1989, "set": "top450"}
+{"key": "c:cushmanwakefieldreconsultants", "name": "Cushman & Wakefield RE Consultants", "ind": "re", "rows": 1981, "set": "top450"}
+{"key": "c:rededor", "name": "Rede D'Or", "ind": "hlt", "rows": 1980, "set": "top450"}
+{"key": "c:guycarpentermexicointermediariodereasegurosadecv", "name": "Guy Carpenter Mexico Intermediario de Reaseguro, S.A. de C.V", "ind": "fin", "rows": 1969, "set": "top450"}
+{"key": "c:nellcorpuritanbennettirelandunlimitedcompany", "name": "Nellcor Puritan Bennett Ireland Unlimited Company", "ind": "hlt", "rows": 1969, "set": "top450"}
+{"key": "c:walmart", "name": "Walmart", "ind": "ret", "rows": 1957, "set": "top450"}
+{"key": "c:genpact", "name": "Genpact", "ind": "pro", "rows": 1938, "set": "top450"}
+{"key": "c:sunriseseniorlivingmgmt", "name": "Sunrise Senior Living Mgmt", "ind": "hlt", "rows": 1930, "set": "top450"}
+{"key": "c:amadaseniorcarenorthshore", "name": "Amadaseniorcarenorthshore", "ind": "hlt", "rows": 1920, "set": "top450"}
+{"key": "c:westpennalleghenyhealthsystem", "name": "West Penn Allegheny Health System", "ind": "hlt", "rows": 1917, "set": "top450"}
+{"key": "c:flooranddecoroutletsofamerica", "name": "Floor and Decor Outlets of America", "ind": "ret", "rows": 1911, "set": "top450"}
+{"key": "c:takeda", "name": "Takeda", "ind": "bio", "rows": 1907, "set": "top450"}
+{"key": "c:innovex", "name": "Innovex", "ind": "bio", "rows": 1901, "set": "top450"}
+{"key": "c:blueoriginpersonnel", "name": "Blue Origin Personnel", "ind": "aer", "rows": 1883, "set": "top450"}
+{"key": "c:rdsadefarmcias", "name": "RD Saúde - Farmácias", "ind": "ret", "rows": 1881, "set": "top450"}
+{"key": "c:aspendental", "name": "Aspendental", "ind": "hlt", "rows": 1878, "set": "top450"}
+{"key": "c:thepennsylvaniastateuniversity", "name": "The Pennsylvania State University", "ind": "edu", "rows": 1878, "set": "top450"}
+{"key": "c:ryder", "name": "Ryder", "ind": "log", "rows": 1866, "set": "top450"}
+{"key": "c:brookshiregrocerycompany", "name": "Brookshire Grocery Company", "ind": "ret", "rows": 1862, "set": "top450"}
+{"key": "c:globalmontellogroup", "name": "Global Montello Group", "ind": "ret", "rows": 1839, "set": "top450"}
+{"key": "c:centerwell", "name": "CenterWell", "ind": "hlt", "rows": 1829, "set": "top450"}
+{"key": "c:racetrac", "name": "Racetrac", "ind": "ret", "rows": 1828, "set": "top450"}
+{"key": "c:adventisthealth", "name": "Adventist Health", "ind": "hlt", "rows": 1812, "set": "top450"}
+{"key": "c:cacifederal", "name": "CACI, INC.-FEDERAL", "ind": "aer", "rows": 1788, "set": "top450"}
+{"key": "c:brookdaleseniorliving", "name": "Brookdale Senior Living", "ind": "hlt", "rows": 1781, "set": "top450"}
+{"key": "c:skechers", "name": "Skechers", "ind": "ret", "rows": 1757, "set": "top450"}
+{"key": "c:bassprooutdoorworld", "name": "Bass Pro Outdoor World", "ind": "ret", "rows": 1752, "set": "top450"}
+{"key": "c:americanincomelifeaokevinblomquist", "name": "Americanincomelifeaokevinblomquist", "ind": "fin", "rows": 1731, "set": "top450"}
+{"key": "c:sbmmanagementservices", "name": "SBM Management Services", "ind": "re", "rows": 1720, "set": "top450"}
+{"key": "c:mangoluxembourgsrl", "name": "MANGO LUXEMBOURG S.à.r.l", "ind": "ret", "rows": 1657, "set": "top450"}
+{"key": "c:eqindustrialservices", "name": "EQ INDUSTRIAL SERVICES", "ind": "mfg", "rows": 1654, "set": "top450"}
+{"key": "c:rochester", "name": "Rochester", "ind": "hlt", "rows": 1654, "set": "top450"}
+{"key": "c:hyvee", "name": "Hy-Vee", "ind": "ret", "rows": 1644, "set": "top450"}
+{"key": "c:papajohns", "name": "Papajohns", "ind": "hos", "rows": 1634, "set": "top450"}
+{"key": "c:wherepurposeand", "name": "Where Purpose and", "ind": "aut", "rows": 1634, "set": "top450"}
+{"key": "c:stantec", "name": "Stantec", "ind": "pro", "rows": 1631, "set": "top450"}
+{"key": "c:astrazenecapharmcompany", "name": "AstraZeneca Pharm Pty Ltd Company", "ind": "bio", "rows": 1601, "set": "top450"}
+{"key": "c:mssmithbarney", "name": "MS Smith Barney", "ind": "fin", "rows": 1594, "set": "top450"}
+{"key": "c:fielmann", "name": "Fielmann", "ind": "ret", "rows": 1577, "set": "top450"}
+{"key": "c:teamgeorgia", "name": "Team Georgia", "ind": "edu", "rows": 1562, "set": "top450"}
+{"key": "c:salesforce", "name": "Salesforce", "ind": "sw", "rows": 1550, "set": "top450"}
+{"key": "c:penske", "name": "Penske", "ind": "log", "rows": 1549, "set": "top450"}
+{"key": "c:kpmgglobalservices", "name": "KPMG Global Services", "ind": "pro", "rows": 1534, "set": "top450"}
+{"key": "c:rihrhodeislandhospital", "name": "RIH Rhode Island Hospital", "ind": "hlt", "rows": 1520, "set": "top450"}
+{"key": "c:searchfor", "name": "Search for", "ind": "hlt", "rows": 1519, "set": "top450"}
+{"key": "c:bhsbaptisthealthcaresystem", "name": "BHS Baptist Healthcare System", "ind": "hlt", "rows": 1493, "set": "top450"}
+{"key": "c:concentrixcvg", "name": "Concentrix CVG", "ind": "pro", "rows": 1484, "set": "top450"}
+{"key": "c:enterprisemobility", "name": "Enterprise Mobility", "ind": "aut", "rows": 1483, "set": "top450"}
+{"key": "c:americanlogisticsauthority", "name": "American Logistics Authority", "ind": "log", "rows": 1482, "set": "top450"}
+{"key": "c:pvhbrands", "name": "PVH Brands", "ind": "ret", "rows": 1477, "set": "top450"}
+{"key": "c:jeffersonuniversityphysicians", "name": "Jefferson University Physicians", "ind": "hlt", "rows": 1477, "set": "top450"}
+{"key": "c:galileo", "name": "Galileo", "ind": "edu", "rows": 1474, "set": "top450"}
+{"key": "c:ciscosystems", "name": "Cisco Systems", "ind": "hw", "rows": 1465, "set": "top450"}
+{"key": "c:heartsinetechnologies", "name": "HeartSine Technologies", "ind": "hlt", "rows": 1450, "set": "top450"}
+{"key": "c:leicamicrosystems", "name": "Leica Microsystems", "ind": "hw", "rows": 1446, "set": "top450"}
+{"key": "c:greystarmanagementservices", "name": "Greystar Management Services", "ind": "re", "rows": 1435, "set": "top450"}
+{"key": "c:theboeingcompany", "name": "The Boeing Company", "ind": "aer", "rows": 1433, "set": "top450"}
+{"key": "c:baptist", "name": "Baptist", "ind": "hlt", "rows": 1433, "set": "top450"}
+{"key": "c:multicare", "name": "MultiCare", "ind": "hlt", "rows": 1426, "set": "top450"}
+{"key": "c:cadburyconfecmy", "name": "Cadbury Confec MY", "ind": "cpg", "rows": 1410, "set": "top450"}
+{"key": "c:levistrauss", "name": "Levi Strauss &", "ind": "cpg", "rows": 1408, "set": "top450"}
+{"key": "c:bannerhealthcorporate", "name": "Banner Health Corporate", "ind": "hlt", "rows": 1405, "set": "top450"}
+{"key": "c:oosmanagement", "name": "OOS Management", "ind": "hlt", "rows": 1404, "set": "top450"}
+{"key": "c:bhccbrighthorizonschildrenscenters", "name": "BHCC Bright Horizons Children's Centers", "ind": "edu", "rows": 1401, "set": "top450"}
+{"key": "c:truist", "name": "Truist", "ind": "fin", "rows": 1401, "set": "top450"}
+{"key": "c:houstonmethodist", "name": "Houstonmethodist", "ind": "hlt", "rows": 1395, "set": "top450"}
+{"key": "c:boydgroup", "name": "Boyd Group", "ind": "aut", "rows": 1389, "set": "top450"}
+{"key": "c:unityhospitalofrochester", "name": "Unity Hospital of Rochester", "ind": "hlt", "rows": 1373, "set": "top450"}
+{"key": "c:mayo", "name": "Mayo", "ind": "hlt", "rows": 1373, "set": "top450"}
+{"key": "c:homedepot", "name": "Homedepot", "ind": "ret", "rows": 1366, "set": "top450"}
+{"key": "c:gcgeisingerclinic", "name": "GC Geisinger Clinic", "ind": "hlt", "rows": 1363, "set": "top450"}
+{"key": "c:honeywell", "name": "Honeywell", "ind": "mfg", "rows": 1360, "set": "top450"}
+{"key": "c:novartis", "name": "Novartis", "ind": "bio", "rows": 1358, "set": "top450"}
+{"key": "c:postbankfilialvertrieb", "name": "Postbank Filialvertrieb", "ind": "fin", "rows": 1358, "set": "top450"}
+{"key": "c:bjswholesaleclub", "name": "BJ's Wholesale Club", "ind": "ret", "rows": 1355, "set": "top450"}
+{"key": "c:paloaltonetworksgeo", "name": "Palo Alto Networks (GEO)", "ind": "sec", "rows": 1345, "set": "top450"}
+{"key": "c:cleanharbors", "name": "Clean Harbors", "ind": "ene", "rows": 1332, "set": "top450"}
+{"key": "c:gdinformationtechnology", "name": "GD Information Technology", "ind": "aer", "rows": 1320, "set": "top450"}
+{"key": "c:sanofi", "name": "Sanofi", "ind": "bio", "rows": 1309, "set": "top450"}
+{"key": "c:nordstrom", "name": "Nordstrom", "ind": "ret", "rows": 1298, "set": "top450"}
+{"key": "c:usbank", "name": "Usbank", "ind": "fin", "rows": 1285, "set": "top450"}
+{"key": "c:clubcorp", "name": "ClubCorp", "ind": "hos", "rows": 1283, "set": "top450"}
+{"key": "c:tpcanada", "name": "TP Canada", "ind": "pro", "rows": 1281, "set": "top450"}
+{"key": "c:monro", "name": "Monro", "ind": "aut", "rows": 1277, "set": "top450"}
+{"key": "c:dxctechnology", "name": "Dxctechnology", "ind": "sw", "rows": 1276, "set": "top450"}
+{"key": "c:pointquest", "name": "Point Quest", "ind": "hlt", "rows": 1275, "set": "top450"}
+{"key": "c:arcadis", "name": "Arcadis", "ind": "pro", "rows": 1272, "set": "top450"}
+{"key": "c:redrobin", "name": "Red Robin", "ind": "hos", "rows": 1272, "set": "top450"}
+{"key": "c:benchmarkwestpalmbeach", "name": "Benchmark West Palm Beach", "ind": "hos", "rows": 1270, "set": "top450"}
+{"key": "c:caesarsentertainment", "name": "Caesars Entertainment", "ind": "hos", "rows": 1267, "set": "top450"}
+{"key": "c:dtlr", "name": "DTLR", "ind": "ret", "rows": 1266, "set": "top450"}
+{"key": "c:centriaautism", "name": "Centria Autism", "ind": "hlt", "rows": 1263, "set": "top450"}
+{"key": "c:scisharedservices", "name": "SCI Shared Services", "ind": "oth", "rows": 1252, "set": "top450"}
+{"key": "c:ocbcbank", "name": "OCBC Bank", "ind": "fin", "rows": 1250, "set": "top450"}
+{"key": "c:lojasgpa", "name": "Lojas - GPA", "ind": "ret", "rows": 1249, "set": "top450"}
+{"key": "c:securitassecurityservices", "name": "Securitas Security Services", "ind": "pro", "rows": 1242, "set": "top450"}
+{"key": "c:tysonfoods", "name": "Tyson Foods", "ind": "cpg", "rows": 1212, "set": "top450"}
+{"key": "c:jcrewstoresashedcgraceholmes", "name": "JCrew Stores / Ashe DC Grace Holmes", "ind": "ret", "rows": 1211, "set": "top450"}
+{"key": "c:agencycontractoranduspreferentialrehire", "name": "Agency Contractor and US Preferential Rehire", "ind": "oth", "rows": 1209, "set": "top450"}
+{"key": "c:livenationmusic", "name": "Live Nation (Music)", "ind": "med", "rows": 1209, "set": "top450"}
+{"key": "c:cummins", "name": "Cummins", "ind": "mfg", "rows": 1204, "set": "top450"}
+{"key": "c:ptmaersklogistics", "name": "PT Maersk Logistics", "ind": "log", "rows": 1201, "set": "top450"}
+{"key": "c:pfchangschinabistro", "name": "P.F. Chang's China Bistro", "ind": "hos", "rows": 1201, "set": "top450"}
+{"key": "c:heinz", "name": "Heinz", "ind": "cpg", "rows": 1196, "set": "top450"}
+{"key": "c:emerson", "name": "Emerson", "ind": "mfg", "rows": 1194, "set": "top450"}
+{"key": "c:carcarmaxautosuperstores", "name": "CAR CarMax Auto Superstores", "ind": "aut", "rows": 1186, "set": "top450"}
+{"key": "c:brinks", "name": "Brinks", "ind": "log", "rows": 1183, "set": "top450"}
+{"key": "c:upstreamrehabilitation", "name": "Upstream Rehabilitation", "ind": "hlt", "rows": 1176, "set": "top450"}
+{"key": "c:spartannashassociates", "name": "SpartanNash Associates", "ind": "ret", "rows": 1171, "set": "top450"}
+{"key": "c:davebusters", "name": "Dave & Buster's", "ind": "hos", "rows": 1167, "set": "top450"}
+{"key": "c:statestreet", "name": "Statestreet", "ind": "fin", "rows": 1165, "set": "top450"}
+{"key": "c:veterinaryemergencygroupveg", "name": "Veterinary Emergency Group (VEG)", "ind": "hlt", "rows": 1163, "set": "top450"}
+{"key": "c:cxqafoxrehabptct", "name": "CXQA Fox Rehab PT CT", "ind": "hlt", "rows": 1162, "set": "top450"}
+{"key": "c:belk", "name": "Belk", "ind": "ret", "rows": 1162, "set": "top450"}
+{"key": "c:universityofsoutherncaliforniahs", "name": "University of Southern California- HS", "ind": "edu", "rows": 1159, "set": "top450"}
+{"key": "c:trucking", "name": "Trucking", "ind": "log", "rows": 1159, "set": "top450"}
+{"key": "c:redlobster", "name": "Red Lobster", "ind": "hos", "rows": 1153, "set": "top450"}
+{"key": "c:thrivecounseling", "name": "Thrive Counseling", "ind": "hlt", "rows": 1149, "set": "top450"}
+{"key": "c:kpjsentosaklspecialisthospital", "name": "KPJ Sentosa KL Specialist Hospital", "ind": "hlt", "rows": 1142, "set": "top450"}
+{"key": "c:terracon", "name": "Terracon", "ind": "pro", "rows": 1121, "set": "top450"}
+{"key": "c:hiltongrandvacations", "name": "Hilton Grand Vacations", "ind": "hos", "rows": 1117, "set": "top450"}
+{"key": "c:williamssonoma", "name": "Williams-Sonoma", "ind": "ret", "rows": 1111, "set": "top450"}
+{"key": "c:avera", "name": "Avera", "ind": "hlt", "rows": 1108, "set": "top450"}
+{"key": "c:nttamerica", "name": "NTT America", "ind": "tel", "rows": 1107, "set": "top450"}
+{"key": "c:hospicecom", "name": "Hospicecom", "ind": "hlt", "rows": 1101, "set": "top450"}
+{"key": "c:tamarkincompany", "name": "Tamarkin Company", "ind": "ret", "rows": 1098, "set": "top450"}
+{"key": "c:attmobilityservices", "name": "AT&T Mobility Services", "ind": "tel", "rows": 1096, "set": "top450"}
+{"key": "c:stlukeshospital", "name": "St. Lukes Hospital", "ind": "hlt", "rows": 1091, "set": "top450"}
+{"key": "c:matbusny", "name": "MAT Bus Corp (NY)", "ind": "log", "rows": 1082, "set": "top450"}
+{"key": "c:carters", "name": "Carter's", "ind": "ret", "rows": 1075, "set": "top450"}
+{"key": "c:bloomingdales", "name": "Bloomingdale's", "ind": "ret", "rows": 1075, "set": "top450"}
+{"key": "c:staples", "name": "Staples", "ind": "ret", "rows": 1074, "set": "top450"}
+{"key": "c:ohiohealth", "name": "OhioHealth", "ind": "hlt", "rows": 1066, "set": "top450"}
+{"key": "c:gehealthcare", "name": "GE HealthCare", "ind": "hlt", "rows": 1065, "set": "top450"}
+{"key": "c:bankofmontreal", "name": "Bank of Montreal", "ind": "fin", "rows": 1064, "set": "top450"}
+{"key": "c:relx", "name": "RELX", "ind": "med", "rows": 1062, "set": "top450"}
+{"key": "c:theapexgroup", "name": "Theapexgroup", "ind": "fin", "rows": 1059, "set": "top450"}
+{"key": "c:saic", "name": "SAIC", "ind": "aer", "rows": 1058, "set": "top450"}
+{"key": "c:adani", "name": "Adani", "ind": "oth", "rows": 1053, "set": "top450"}
+{"key": "c:theohiostateuniversity", "name": "The Ohio State University", "ind": "edu", "rows": 1045, "set": "top450"}
+{"key": "c:einsteinnoahrestaurantgroup", "name": "Einstein Noah Restaurant Group", "ind": "hos", "rows": 1044, "set": "top450"}
+{"key": "c:flextronics", "name": "Flextronics", "ind": "hw", "rows": 1037, "set": "top450"}
+{"key": "c:wood", "name": "Wood", "ind": "pro", "rows": 1036, "set": "top450"}
+{"key": "c:santander", "name": "Santander", "ind": "fin", "rows": 1034, "set": "top450"}
+{"key": "c:cencorapatientservices", "name": "Cencora Patient Services", "ind": "hlt", "rows": 1033, "set": "top450"}
+{"key": "c:sicredi", "name": "Sicredi", "ind": "fin", "rows": 1026, "set": "top450"}
+{"key": "c:hungryjacks", "name": "Hungry Jack's", "ind": "hos", "rows": 1025, "set": "top450"}
+{"key": "c:equipmentshare", "name": "EquipmentShare", "ind": "re", "rows": 1025, "set": "top450"}
+{"key": "c:sunbeltrentals", "name": "Sunbelt Rentals", "ind": "re", "rows": 1023, "set": "top450"}
+{"key": "c:littlecaesars", "name": "Little Caesars", "ind": "hos", "rows": 1021, "set": "top450"}
+{"key": "c:uobgroup", "name": "Uobgroup", "ind": "fin", "rows": 1020, "set": "top450"}
+{"key": "c:weismarkets", "name": "Weis Markets", "ind": "ret", "rows": 1019, "set": "top450"}
+{"key": "c:wncwnc", "name": "(WNC) WNC", "ind": "hw", "rows": 1018, "set": "top450"}
+{"key": "c:ltalandtransportauthority", "name": "LTA Land Transport Authority", "ind": "pub", "rows": 1017, "set": "top450"}
+{"key": "c:ivyrehab", "name": "Ivyrehab", "ind": "hlt", "rows": 1015, "set": "top450"}
+{"key": "c:coolitsystems", "name": "CoolIT Systems", "ind": "hw", "rows": 1005, "set": "top450"}
+{"key": "c:ukhuniversityofkansashospitalauthority", "name": "UKH University of Kansas Hospital Authority", "ind": "hlt", "rows": 1004, "set": "top450"}
+{"key": "c:ichikohindustries", "name": "Ichikoh Industries", "ind": "aut", "rows": 998, "set": "top450"}
+{"key": "c:fifththirdbanknationalassociation", "name": "Fifth Third Bank, National Association", "ind": "fin", "rows": 983, "set": "top450"}
+{"key": "c:championpetfoodsshanghai", "name": "Champion Petfoods (Shanghai)", "ind": "cpg", "rows": 976, "set": "top450"}
+{"key": "c:memphisshelbycountyschools", "name": "Memphis Shelby County Schools", "ind": "edu", "rows": 972, "set": "top450"}
+{"key": "c:transperfect", "name": "TransPerfect", "ind": "pro", "rows": 966, "set": "top450"}
+{"key": "c:market", "name": "Market", "ind": "oth", "rows": 963, "set": "top450"}
+{"key": "c:lithia", "name": "Lithia", "ind": "aut", "rows": 963, "set": "top450"}
+{"key": "c:vanderbiltuniversitymedicalcenter", "name": "Vanderbilt University Medical Center", "ind": "hlt", "rows": 952, "set": "top450"}
+{"key": "c:seminolehardrocktampa", "name": "Seminole Hard Rock Tampa", "ind": "hos", "rows": 949, "set": "top450"}
+{"key": "c:mastercard", "name": "Mastercard", "ind": "fin", "rows": 942, "set": "top450"}
+{"key": "c:thirdchannel", "name": "ThirdChannel", "ind": "pro", "rows": 935, "set": "top450"}
+{"key": "c:warbyparker", "name": "Warby Parker", "ind": "ret", "rows": 931, "set": "top450"}
+{"key": "c:koneasansorsanvetica", "name": "KONE Asansor San ve Tic A", "ind": "mfg", "rows": 930, "set": "top450"}
+{"key": "c:startek", "name": "Startek®", "ind": "pro", "rows": 927, "set": "top450"}
+{"key": "c:atlantichealthsystem", "name": "Atlantic Health System", "ind": "hlt", "rows": 927, "set": "top450"}
+{"key": "c:expleo", "name": "Expleo", "ind": "pro", "rows": 922, "set": "top450"}
+{"key": "c:asterdmhealthcare", "name": "Aster DM Healthcare", "ind": "hlt", "rows": 921, "set": "top450"}
+{"key": "c:kyndryl", "name": "Kyndryl", "ind": "sw", "rows": 914, "set": "top450"}
+{"key": "c:parkviewhealth", "name": "Parkview Health", "ind": "hlt", "rows": 913, "set": "top450"}
+{"key": "c:healthpartners", "name": "HealthPartners", "ind": "hlt", "rows": 910, "set": "top450"}
+{"key": "c:noodlescompany", "name": "Noodles & Company", "ind": "hos", "rows": 908, "set": "top450"}
+{"key": "c:maersklogisticsservices", "name": "Maersk Logistics & Services", "ind": "log", "rows": 907, "set": "top450"}
+{"key": "c:lcmchealth", "name": "LCMC Health", "ind": "hlt", "rows": 903, "set": "top450"}
+{"key": "c:texasinstruments", "name": "Texas Instruments", "ind": "hw", "rows": 900, "set": "top450"}
+{"key": "c:privateequityinsights", "name": "Private Equity Insights", "ind": "med", "rows": 898, "set": "top450"}
+{"key": "c:glaxosmithklinesae", "name": "GlaxoSmithKline S.A.E", "ind": "bio", "rows": 895, "set": "top450"}
+{"key": "c:gillettedivsfop", "name": "Gillette Divsf Op", "ind": "cpg", "rows": 887, "set": "top450"}
+{"key": "c:uwhealth", "name": "UW Health", "ind": "hlt", "rows": 886, "set": "top450"}
+{"key": "c:northwesternmutual", "name": "Northwestern Mutual", "ind": "fin", "rows": 883, "set": "top450"}
+{"key": "c:fordblueovalcitytevc", "name": "Ford BlueOvalCity/TEVC", "ind": "aut", "rows": 881, "set": "top450"}
+{"key": "c:californiafinewinespirits", "name": "California Fine Wine & Spirits", "ind": "ret", "rows": 876, "set": "top450"}
+{"key": "c:thejointchiropractic", "name": "Thejointchiropractic", "ind": "hlt", "rows": 873, "set": "top450"}
+{"key": "c:dentalcorphealthservices", "name": "Dentalcorp Health Services", "ind": "hlt", "rows": 872, "set": "top450"}
+{"key": "c:travelleisureresortdevelopment", "name": "Travel Leisure Resort Development", "ind": "hos", "rows": 869, "set": "top450"}
+{"key": "c:finda", "name": "Find a", "ind": "re", "rows": 865, "set": "top450"}
+{"key": "c:esfitness", "name": "EōS Fitness", "ind": "oth", "rows": 865, "set": "top450"}
+{"key": "c:globalfoundries", "name": "GLOBALFOUNDRIES", "ind": "hw", "rows": 864, "set": "top450"}
+{"key": "c:coherent", "name": "Coherent", "ind": "hw", "rows": 864, "set": "top450"}
+{"key": "c:motorolasolutions", "name": "Motorolasolutions", "ind": "hw", "rows": 863, "set": "top450"}
+{"key": "c:carreiraslojasrenner", "name": "CARREIRAS LOJAS RENNER", "ind": "ret", "rows": 858, "set": "top450"}
+{"key": "c:intel", "name": "Intel", "ind": "hw", "rows": 858, "set": "top450"}
+{"key": "c:cardinalhealth", "name": "Cardinalhealth", "ind": "hlt", "rows": 857, "set": "top450"}
+{"key": "c:hertz", "name": "Hertz", "ind": "aut", "rows": 857, "set": "top450"}
+{"key": "c:fidelitybrokerageservices", "name": "Fidelity Brokerage Services", "ind": "fin", "rows": 857, "set": "top450"}
+{"key": "c:moffitt", "name": "Moffitt", "ind": "hlt", "rows": 856, "set": "top450"}
+{"key": "c:thetexasamuniversitysystem", "name": "The Texas A&M University System", "ind": "edu", "rows": 854, "set": "top450"}
+{"key": "c:riversidehospital", "name": "Riverside Hospital", "ind": "hlt", "rows": 853, "set": "top450"}
+{"key": "c:karriere", "name": "Karriere", "ind": "fin", "rows": 850, "set": "top450"}
+{"key": "c:morrisons", "name": "Morrisons", "ind": "ret", "rows": 849, "set": "top450"}
+{"key": "c:leonardo", "name": "Leonardo", "ind": "aer", "rows": 847, "set": "top450"}
+{"key": "c:crunchfitness", "name": "Crunchfitness", "ind": "oth", "rows": 845, "set": "top450"}
+{"key": "c:galderma", "name": "Galderma", "ind": "bio", "rows": 841, "set": "top450"}
+{"key": "c:visa", "name": "Visa", "ind": "fin", "rows": 838, "set": "top450"}
+{"key": "c:thesalvationarmyvicprptytrustatfsocialwork", "name": "The Salvation Army (VIC) Prpty Trust atf Social Work", "ind": "pub", "rows": 837, "set": "top450"}
+{"key": "c:localiza", "name": "Localiza&Co", "ind": "aut", "rows": 837, "set": "top450"}
+{"key": "c:manufacturersandtraderstrust", "name": "Manufacturers and Traders Trust", "ind": "fin", "rows": 834, "set": "top450"}
+{"key": "c:allstateinsurance", "name": "Allstate Insurance", "ind": "fin", "rows": 828, "set": "top450"}
+{"key": "c:guidehouse", "name": "Guidehouse", "ind": "pro", "rows": 828, "set": "top450"}
+{"key": "c:stateofnorthcarolina", "name": "State of North Carolina", "ind": "pub", "rows": 826, "set": "top450"}
+{"key": "c:rosshomehealthofenid", "name": "Ross Home Health of Enid", "ind": "hlt", "rows": 823, "set": "top450"}
+{"key": "c:fmolhealth", "name": "FMOL Health", "ind": "hlt", "rows": 817, "set": "top450"}
+{"key": "c:uber", "name": "Uber", "ind": "aut", "rows": 814, "set": "top450"}
+{"key": "c:impactkids", "name": "Impactkids", "ind": "edu", "rows": 811, "set": "top450"}
+{"key": "c:showami", "name": "Showami", "ind": "re", "rows": 808, "set": "top450"}
+{"key": "c:allina", "name": "Allina", "ind": "hlt", "rows": 807, "set": "top450"}
+{"key": "c:gartner", "name": "Gartner", "ind": "pro", "rows": 806, "set": "top450"}
+{"key": "c:freudenbergperformancematerials", "name": "Freudenberg Performance Materials", "ind": "mfg", "rows": 801, "set": "top450"}
+{"key": "c:analogdevices", "name": "Analogdevices", "ind": "hw", "rows": 801, "set": "top450"}
+{"key": "c:essentiahealth", "name": "Essentia Health", "ind": "hlt", "rows": 801, "set": "top450"}
+{"key": "c:nl9anlbestindustrial", "name": "NL9A NL Best Industrial", "ind": "mfg", "rows": 800, "set": "top450"}
+{"key": "c:carrefour", "name": "Carrefour", "ind": "ret", "rows": 800, "set": "top450"}
+{"key": "c:allieduniversal", "name": "Allied Universal", "ind": "pro", "rows": 800, "set": "top450"}
+{"key": "c:uhauniversityhealthassociates", "name": "UHA University Health Associates", "ind": "hlt", "rows": 791, "set": "top450"}
+{"key": "c:caicoxautomotivesvcs", "name": "CAI Cox Automotive Corp Svcs", "ind": "aut", "rows": 791, "set": "top450"}
+{"key": "c:howmetaerospace", "name": "Howmet Aerospace", "ind": "aer", "rows": 790, "set": "top450"}
+{"key": "c:jdlogistics", "name": "JD LOGISTICS", "ind": "log", "rows": 789, "set": "top450"}
+{"key": "c:peopleandbaby", "name": "PEOPLE AND BABY", "ind": "edu", "rows": 786, "set": "top450"}
+{"key": "c:regencyintegratedhealthservices", "name": "Regency Integrated Health Services", "ind": "hlt", "rows": 780, "set": "top450"}
+{"key": "c:dentsu", "name": "dentsu", "ind": "med", "rows": 777, "set": "top450"}
+{"key": "c:wppmedia", "name": "WPP Media", "ind": "med", "rows": 777, "set": "top450"}
+{"key": "c:heidelbergmaterialsbetonde", "name": "Heidelberg Materials Beton DE", "ind": "mfg", "rows": 776, "set": "top450"}
+{"key": "c:mortenson", "name": "Mortenson", "ind": "re", "rows": 776, "set": "top450"}
+{"key": "c:academy", "name": "Academy", "ind": "ret", "rows": 776, "set": "top450"}
+{"key": "c:openai", "name": "OpenAI", "ind": "sw", "rows": 775, "set": "top450"}
+{"key": "c:dinebrands", "name": "Dine Brands", "ind": "hos", "rows": 775, "set": "top450"}
+{"key": "c:methodisthealthsystem", "name": "Methodisthealthsystem", "ind": "hlt", "rows": 775, "set": "top450"}
+{"key": "c:aerospace", "name": "Aerospace", "ind": "aer", "rows": 771, "set": "top450"}
+{"key": "c:teledynebrownengineering", "name": "Teledyne Brown Engineering", "ind": "aer", "rows": 768, "set": "top450"}
+{"key": "c:sana", "name": "Sana", "ind": "hlt", "rows": 767, "set": "top450"}
+{"key": "c:universityofarkansasformedicalsciences", "name": "University of Arkansas for Medical Sciences", "ind": "hlt", "rows": 767, "set": "top450"}
+{"key": "c:ezpawnflorida", "name": "EZPAWN Florida", "ind": "fin", "rows": 763, "set": "top450"}
+{"key": "c:aegistherapies", "name": "Aegistherapies", "ind": "hlt", "rows": 763, "set": "top450"}
+{"key": "c:onepoint", "name": "ONEPOINT", "ind": "pro", "rows": 762, "set": "top450"}
+{"key": "c:pdqmanufacturing", "name": "PDQ Manufacturing", "ind": "mfg", "rows": 759, "set": "top450"}
+{"key": "c:bmcap", "name": "BMCAP", "ind": "hlt", "rows": 755, "set": "top450"}
+{"key": "c:fortis", "name": "Fortis", "ind": "hlt", "rows": 755, "set": "top450"}
+{"key": "c:marmon", "name": "Marmon", "ind": "mfg", "rows": 750, "set": "top450"}
+{"key": "c:albuslaundryservices", "name": "Albus Laundry Services", "ind": "hlt", "rows": 749, "set": "top450"}
+{"key": "c:sally", "name": "Sally", "ind": "ret", "rows": 749, "set": "top450"}
+{"key": "c:stripe", "name": "Stripe", "ind": "fin", "rows": 748, "set": "top450"}
+{"key": "c:bciacrylic", "name": "Bciacrylic", "ind": "re", "rows": 747, "set": "top450"}
+{"key": "c:deloitteconseil", "name": "Deloitte Conseil", "ind": "pro", "rows": 746, "set": "top450"}
+{"key": "c:databricks", "name": "Databricks", "ind": "sw", "rows": 745, "set": "top450"}
+{"key": "c:monumenthealthrapidcityhospital", "name": "Monument Health Rapid City Hospital", "ind": "hlt", "rows": 745, "set": "top450"}
+{"key": "c:freedomroads", "name": "FreedomRoads", "ind": "aut", "rows": 743, "set": "top450"}
+{"key": "c:bgis", "name": "BGIS", "ind": "re", "rows": 741, "set": "top450"}
+{"key": "c:primorisrenewableenergy", "name": "Primoris Renewable Energy", "ind": "ene", "rows": 740, "set": "top450"}
+{"key": "c:virtuamedicalgrouppa", "name": "Virtua Medical Group, PA", "ind": "hlt", "rows": 739, "set": "top450"}
+{"key": "c:phsorg", "name": "Phsorg", "ind": "hlt", "rows": 739, "set": "top450"}
+{"key": "c:aptiv", "name": "APTIV", "ind": "aut", "rows": 738, "set": "top450"}
+{"key": "c:chubb", "name": "Chubb", "ind": "fin", "rows": 730, "set": "top450"}
+{"key": "c:synnex", "name": "SYNNEX", "ind": "hw", "rows": 729, "set": "top450"}
+{"key": "c:rakutengroup", "name": "Rakuten Group", "ind": "ret", "rows": 726, "set": "top450"}
+{"key": "c:nikeretail", "name": "NIKE Retail", "ind": "cpg", "rows": 725, "set": "top450"}
+{"key": "c:onsemi", "name": "onsemi", "ind": "hw", "rows": 722, "set": "top450"}
+{"key": "c:arcelormittalrecommended", "name": "ArcelorMittal - Recommended", "ind": "mfg", "rows": 717, "set": "top450"}
+{"key": "c:driver", "name": "Driver", "ind": "log", "rows": 713, "set": "top450"}
+{"key": "c:topgolf", "name": "TOPGOLF", "ind": "hos", "rows": 713, "set": "top450"}
+{"key": "c:lesschwabwarehousecenterlegalentity", "name": "Les Schwab Warehouse Center, LLC Legal Entity", "ind": "aut", "rows": 713, "set": "top450"}
+{"key": "c:clarendalearcadia", "name": "Clarendale Arcadia", "ind": "hlt", "rows": 712, "set": "top450"}
+{"key": "c:rallyhouse", "name": "Rallyhouse", "ind": "ret", "rows": 711, "set": "top450"}
+{"key": "c:ucsf", "name": "UCSF", "ind": "hlt", "rows": 711, "set": "top450"}
+{"key": "c:nanyangtechnologicaluniversity", "name": "Nanyang Technological University", "ind": "edu", "rows": 711, "set": "top450"}
+{"key": "c:cajunoperatingcompany", "name": "Cajun Operating Company", "ind": "hos", "rows": 711, "set": "top450"}
+{"key": "c:ppgindustries", "name": "PPG Industries", "ind": "mfg", "rows": 708, "set": "top450"}
+{"key": "c:shield", "name": "Shield", "ind": "oth", "rows": 705, "set": "top450"}
+{"key": "c:accenturefederalservices", "name": "Accenture Federal Services", "ind": "pro", "rows": 703, "set": "top450"}
+{"key": "c:centrostudialexandria", "name": "Centro Studi Alexandria", "ind": "edu", "rows": 702, "set": "top450"}
+{"key": "c:mufgbank", "name": "MUFG Bank", "ind": "fin", "rows": 702, "set": "top450"}
+{"key": "c:michaelkors", "name": "Michael Kors", "ind": "ret", "rows": 701, "set": "top450"}
+{"key": "c:puma", "name": "PUMA", "ind": "cpg", "rows": 700, "set": "top450"}
+{"key": "c:drdemo", "name": "Drdemo", "ind": "oth", "rows": 700, "set": "top450"}
+{"key": "c:generalmotors", "name": "General Motors", "ind": "aut", "rows": 699, "set": "top450"}
+{"key": "c:baptistmedicalcentersouth", "name": "Baptist Medical Center South", "ind": "hlt", "rows": 699, "set": "top450"}
+{"key": "c:comcastccofwillowgrove", "name": "Comcast (CC) of Willow Grove", "ind": "tel", "rows": 695, "set": "top450"}
+{"key": "c:wesco", "name": "Wesco", "ind": "mfg", "rows": 693, "set": "top450"}
+{"key": "c:swarovski", "name": "Swarovski", "ind": "ret", "rows": 693, "set": "top450"}
+{"key": "c:inova", "name": "Inova", "ind": "hlt", "rows": 693, "set": "top450"}
+{"key": "c:cadence", "name": "Cadence", "ind": "sw", "rows": 692, "set": "top450"}
+{"key": "c:albanymedicalcenter", "name": "Albany Medical Center", "ind": "hlt", "rows": 690, "set": "top450"}
+{"key": "c:huntington", "name": "Huntington", "ind": "fin", "rows": 690, "set": "top450"}
+{"key": "c:memorialhermannhealthsystem", "name": "Memorial Hermann Health System", "ind": "hlt", "rows": 689, "set": "top450"}
+{"key": "c:capco", "name": "Capco", "ind": "pro", "rows": 688, "set": "top450"}
+{"key": "c:bluelightconsulting", "name": "Bluelight Consulting", "ind": "pro", "rows": 685, "set": "top450"}
+{"key": "c:sedgwickclaimsmanagementservices", "name": "Sedgwick Claims Management Services", "ind": "fin", "rows": 684, "set": "top450"}
+{"key": "c:refinitivindiasharedservices", "name": "Refinitiv India Shared Services", "ind": "fin", "rows": 681, "set": "top450"}
+{"key": "c:ouihelp", "name": "Ouihelp", "ind": "hlt", "rows": 679, "set": "top450"}
+{"key": "c:vitashealthcare", "name": "VITAS Healthcare", "ind": "hlt", "rows": 677, "set": "top450"}
+{"key": "c:vdkgroep", "name": "VDK Groep", "ind": "re", "rows": 676, "set": "top450"}
+{"key": "c:scrstclairemedicalcenter", "name": "SCR St. Claire Medical Center", "ind": "hlt", "rows": 673, "set": "top450"}
+{"key": "c:wasteconnections", "name": "Waste Connections", "ind": "ene", "rows": 672, "set": "top450"}
+{"key": "c:experienced", "name": "Experienced", "ind": "oth", "rows": 671, "set": "top450"}
+{"key": "c:workherematterseverywhere", "name": "Work Here Matters Everywhere", "ind": "bio", "rows": 670, "set": "top450"}
+{"key": "c:mckesson", "name": "McKesson", "ind": "hlt", "rows": 669, "set": "top450"}
+{"key": "c:universityofottawa", "name": "University of Ottawa", "ind": "edu", "rows": 668, "set": "top450"}
+{"key": "c:michelin", "name": "Michelin", "ind": "aut", "rows": 665, "set": "top450"}
+{"key": "c:gordonfoodservice", "name": "Gordon Food Service", "ind": "cpg", "rows": 665, "set": "top450"}
+{"key": "c:shakeshackenterprises", "name": "Shake Shack Enterprises", "ind": "hos", "rows": 665, "set": "top450"}
+{"key": "c:integrishealth", "name": "INTEGRIS Health", "ind": "hlt", "rows": 662, "set": "top450"}
+{"key": "c:medline", "name": "Medline", "ind": "hlt", "rows": 661, "set": "top450"}
+{"key": "c:rollsroyce", "name": "Rollsroyce", "ind": "aer", "rows": 661, "set": "top450"}
+{"key": "c:fujifilm", "name": "Fujifilm", "ind": "mfg", "rows": 659, "set": "top450"}
+{"key": "c:bakerhughes", "name": "Bakerhughes", "ind": "ene", "rows": 658, "set": "top450"}
+{"key": "c:corporate", "name": "Corporate", "ind": "fin", "rows": 656, "set": "top450"}
+{"key": "c:rhahealthservices", "name": "RHA Health Services", "ind": "hlt", "rows": 656, "set": "top450"}
+{"key": "c:memorialregionalsouth", "name": "Memorial Regional South", "ind": "hlt", "rows": 656, "set": "top450"}
+{"key": "c:goddardcateringgroupparaguaysaassociate", "name": "Goddard Catering Group Paraguay S.A. - Associate", "ind": "hos", "rows": 654, "set": "top450"}
+{"key": "c:theuniversityoftexasataustinstaff", "name": "The University of Texas at Austin Staff", "ind": "edu", "rows": 651, "set": "top450"}
+{"key": "c:shieldai", "name": "Shield AI", "ind": "aer", "rows": 650, "set": "top450"}
+{"key": "c:nexstarmedia", "name": "Nexstar Media", "ind": "med", "rows": 650, "set": "top450"}
+{"key": "c:canadianimperialbankofcommerce", "name": "Canadian Imperial Bank of Commerce", "ind": "ret", "rows": 650, "set": "top450"}
+{"key": "c:aceretailgroup", "name": "Ace Retail Group", "ind": "fin", "rows": 649, "set": "top450"}
+{"key": "c:anthropic", "name": "Anthropic", "ind": "sw", "rows": 642, "set": "top450"}
+{"key": "c:delimamarsh", "name": "Delima Marsh", "ind": "pro", "rows": 641, "set": "top450"}
+{"key": "c:foxrentacar", "name": "Fox Rent A Car", "ind": "aut", "rows": 640, "set": "top450"}
+{"key": "c:ermcertificationandverificationservices", "name": "ERM Certification and Verification Services", "ind": "pro", "rows": 638, "set": "top450"}
+{"key": "c:centurytheatres", "name": "Century Theatres", "ind": "med", "rows": 638, "set": "top450"}
+{"key": "c:seamar", "name": "Sea Mar", "ind": "hlt", "rows": 637, "set": "top450"}
+{"key": "c:coupang", "name": "Coupang", "ind": "ret", "rows": 637, "set": "top450"}
+{"key": "c:zachrygroup", "name": "Zachry Group", "ind": "re", "rows": 635, "set": "top450"}
+{"key": "c:samsungaustinsemiconductor", "name": "Samsung Austin Semiconductor", "ind": "hw", "rows": 631, "set": "top450"}
+{"key": "c:rsmussvltdadecv", "name": "RSM US SV, Ltda. De C.V", "ind": "pro", "rows": 631, "set": "top450"}
+{"key": "c:regeneron", "name": "Regeneron", "ind": "bio", "rows": 626, "set": "top450"}
+{"key": "c:bristolmyerssquibb", "name": "Bristolmyerssquibb", "ind": "bio", "rows": 624, "set": "top450"}
+{"key": "c:optimindhealth", "name": "OptiMindHealth", "ind": "hlt", "rows": 624, "set": "top450"}
+{"key": "c:bupa", "name": "Bupa", "ind": "hlt", "rows": 623, "set": "top450"}
+{"key": "c:httpsladgovcomjobopenings", "name": "Httpsladgovcomjobopenings", "ind": "edu", "rows": 623, "set": "top450"}
+{"key": "c:dermafix", "name": "Dermafix", "ind": "hlt", "rows": 623, "set": "top450"}
+{"key": "c:hubinternational", "name": "Hubinternational", "ind": "fin", "rows": 620, "set": "top450"}
+{"key": "c:cratebarrelcb2", "name": "Crate & Barrel | CB2", "ind": "ret", "rows": 619, "set": "top450"}
+{"key": "c:ccsfacilityservices", "name": "CCS Facility Services", "ind": "re", "rows": 619, "set": "top450"}
+{"key": "c:keystoneautomotiveindustries", "name": "Keystone Automotive Industries", "ind": "aut", "rows": 617, "set": "top450"}
+{"key": "c:saintfrancishospital", "name": "Saint Francis Hospital", "ind": "hlt", "rows": 617, "set": "top450"}
+{"key": "c:barclays", "name": "Barclays", "ind": "fin", "rows": 616, "set": "top450"}
+{"key": "c:wcmwhitecapmanagement", "name": "WCM White Cap Management", "ind": "ret", "rows": 614, "set": "top450"}
+{"key": "c:usfoods", "name": "US Foods", "ind": "cpg", "rows": 614, "set": "top450"}

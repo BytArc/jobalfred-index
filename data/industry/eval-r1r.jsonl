@@ -1,0 +1,80 @@
+{"key": "c:ateme", "name": "ATEME", "ind": "sw", "rows": 30, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:altopharmacy", "name": "Alto Pharmacy", "ind": "hlt", "rows": 40, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:beehiiv", "name": "beehiiv", "ind": "sw", "rows": 13, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:undisclosedemployer", "name": "Undisclosed employer", "ind": "oth", "rows": 175800, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:bluehydrogenindustrialgasescompany", "name": "Blue Hydrogen Industrial Gases Company", "ind": "mfg", "rows": 409, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:stmarchesupermercadoslojasecd", "name": "St. Marche Supermercados - Lojas e CD", "ind": "ret", "rows": 359, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:idexxoperations", "name": "IDEXX Operations", "ind": "hlt", "rows": 221, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:asphaltbuyerii", "name": "Asphalt Buyer II", "ind": "aut", "rows": 208, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:deltamedicalsystems", "name": "Delta Medical Systems", "ind": "hlt", "rows": 5, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:kobiemarketing", "name": "Kobie Marketing", "ind": "med", "rows": 29, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:huaweird", "name": "Huawei R&D", "ind": "hw", "rows": 45, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:arlosolutions", "name": "Arlo Solutions", "ind": "sec", "rows": 49, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:roofmartontario", "name": "Roofmart Ontario", "ind": "re", "rows": 63, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:naturalgrocers", "name": "Natural Grocers", "ind": "ret", "rows": 339, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:bluelinkwirelessanauthorizedretailerofatt", "name": "Blue Link Wireless an Authorized Retailer of AT&T", "ind": "ret", "rows": 152, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:crashchampions", "name": "Crash Champions", "ind": "aut", "rows": 422, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:casadoconstrutor", "name": "Casa do Construtor", "ind": "re", "rows": 75, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:eastersealssoutherncalifornia", "name": "Easter Seals Southern California", "ind": "hlt", "rows": 149, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:damarservices", "name": "Damar Services", "ind": "hlt", "rows": 57, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:dyson", "name": "Dyson", "ind": "cpg", "rows": 414, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:oslretailservices", "name": "OSL Retail Services", "ind": "ret", "rows": 400, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:vitrolifegroup", "name": "Vitrolife Group", "ind": "bio", "rows": 29, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:acharkansaschildrenshospital", "name": "ACH Arkansas Children's Hospital", "ind": "hlt", "rows": 242, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:smischnuckmarkets", "name": "SMI Schnuck Markets", "ind": "ret", "rows": 254, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:lyrahealth", "name": "Lyra Health", "ind": "hlt", "rows": 476, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:envista", "name": "Envista", "ind": "hlt", "rows": 290, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:provident", "name": "Provident", "ind": "fin", "rows": 169, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:ehc", "name": "EHC", "ind": "hlt", "rows": 1858, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:bavariannordicberna", "name": "Bavarian Nordic Berna", "ind": "bio", "rows": 31, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:cmfglifeinsurancecompany", "name": "CMFG Life Insurance Company", "ind": "fin", "rows": 29, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:jdi", "name": "JDI", "ind": "oth", "rows": 680, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:ascensusglobalservices", "name": "Ascensus Global Services", "ind": "fin", "rows": 52, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:fictiv", "name": "Fictiv", "ind": "mfg", "rows": 95, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:aeo", "name": "AEO", "ind": "ret", "rows": 3456, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:legora", "name": "Legora", "ind": "sw", "rows": 321, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:loop", "name": "Loop", "ind": "sw", "rows": 8, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:transitmanagementcompany", "name": "Transit Management Company", "ind": "log", "rows": 37, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:vhchealth", "name": "VHC Health", "ind": "hlt", "rows": 399, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:axiomspace", "name": "Axiom Space", "ind": "aer", "rows": 170, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:inovasade", "name": "INOVA SAÚDE", "ind": "hlt", "rows": 41, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:nidecmotor", "name": "Nidec Motor", "ind": "mfg", "rows": 366, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:delanassociates", "name": "Delan Associates", "ind": "pro", "rows": 377, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:ceiservices", "name": "CEI Services", "ind": "re", "rows": 148, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:sew", "name": "SEW", "ind": "mfg", "rows": 138, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:nsggroup", "name": "NSG Group", "ind": "mfg", "rows": 28, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:knowitgroup", "name": "Knowit Group", "ind": "pro", "rows": 95, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:ashememorialhospital", "name": "Ashe Memorial Hospital", "ind": "hlt", "rows": 36, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:jfretailservices", "name": "JF Retail Services", "ind": "ret", "rows": 550, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:inmobi", "name": "InMobi", "ind": "sw", "rows": 74, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:buildingblockresolutions", "name": "Building Block Resolutions", "ind": "hlt", "rows": 16, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:op", "name": "Co-op", "ind": "ret", "rows": 897, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:magnera", "name": "Magnera", "ind": "mfg", "rows": 233, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:board", "name": "BOARD", "ind": "sw", "rows": 132, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:newagegroup", "name": "Newagegroup", "ind": "sec", "rows": 10, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:anindependentfranchiseeofplanetfitness", "name": "An Independent Franchisee of Planet Fitness", "ind": "oth", "rows": 339, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:themedservgroup", "name": "Themedservgroup", "ind": "hlt", "rows": 193, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:deepl", "name": "DeepL", "ind": "sw", "rows": 8, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:palazzopapadopolihotel", "name": "Palazzo Papadopoli Hotel &", "ind": "hos", "rows": 153, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:koppers", "name": "Koppers", "ind": "mfg", "rows": 40, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:epicgames", "name": "Epic Games", "ind": "gam", "rows": 128, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:muybridge", "name": "Muybridge", "ind": "hw", "rows": 4, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:vca", "name": "VCA", "ind": "hlt", "rows": 4863, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:marvell", "name": "Marvell", "ind": "hw", "rows": 387, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:nokia", "name": "Nokia", "ind": "tel", "rows": 578, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:duolingo", "name": "Duolingo", "ind": "edu", "rows": 65, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:terzoenterprises", "name": "Terzo Enterprises", "ind": "mfg", "rows": 70, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:solsticeadvancedmaterials", "name": "Solstice Advanced Materials", "ind": "mfg", "rows": 121, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:synapticpediatrictherapies", "name": "Synaptic Pediatric Therapies", "ind": "hlt", "rows": 25, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:proactivemd", "name": "Proactivemd", "ind": "hlt", "rows": 28, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:orthopride", "name": "Orthopride", "ind": "hlt", "rows": 37, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:wsp", "name": "WSP", "ind": "pro", "rows": 4391, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:private", "name": "Private", "ind": "fin", "rows": 41, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:okc", "name": "OKC", "ind": "pub", "rows": 29, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:aws", "name": "AWS", "ind": "sw", "rows": 6748, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:exl", "name": "EXL", "ind": "pro", "rows": 2044, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:thechristhospitalhealthnetwork", "name": "The Christ Hospital Health Network", "ind": "hlt", "rows": 474, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:dannemann", "name": "Dannemann", "ind": "pro", "rows": 11, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:tjx", "name": "TJX", "ind": "ret", "rows": 10678, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:richemont", "name": "Richemont", "ind": "ret", "rows": 507, "mode": "rows", "set": "eval-r1r"}
+{"key": "c:ip", "name": "IP", "ind": "mfg", "rows": 472, "mode": "rows", "set": "eval-r1r"}

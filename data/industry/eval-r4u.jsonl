@@ -1,0 +1,120 @@
+{"key": "c:cedarcourt", "name": "Cedarcourt", "ind": "hos", "rows": 5, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:wellpowerall", "name": "WellPower - All", "ind": "hlt", "rows": 35, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:bergerspartnersteuerberaterwirtschaftsprferpartgmbb", "name": "Bergers Partner Steuerberater Wirtschaftsprüfer PartG mbB", "ind": "pro", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:optimapartners", "name": "Optima Partners", "ind": "sw", "rows": 6, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:cityofclaremore", "name": "Cityofclaremore", "ind": "pub", "rows": 7, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:mentalis", "name": "mentalis", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:thechilddevelopmentcentre", "name": "The Child Development Centre", "ind": "hlt", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:lamprynearson", "name": "Lamp Rynearson", "ind": "pro", "rows": 12, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:chesenlasereyecenter", "name": "Chesen Laser Eye Center", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:housebuyersofamerica", "name": "House Buyers of America", "ind": "re", "rows": 512, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:dfbookingrecruitmentservices", "name": "Dfbooking Recruitment Services", "ind": "hr", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:essenseofaustralia", "name": "Essense of Australia", "ind": "cpg", "rows": 15, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:joineryhotelpittsburghcuriocollectionbyhilton", "name": "Joinery Hotel Pittsburgh, Curio Collection by Hilton", "ind": "hos", "rows": 10, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:centra", "name": "Centra", "ind": "sw", "rows": 5, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:tiamat", "name": "TIAMAT", "ind": "ene", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:teamworxsecurity", "name": "TeamWorx Security", "ind": "sec", "rows": 10, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:prosus", "name": "Prosus", "ind": "sw", "rows": 14, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:final", "name": "Final", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:rdsadecorporativo", "name": "RD Saúde - Corporativo", "ind": "ret", "rows": 45, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:gfbi", "name": "GFBI", "ind": "edu", "rows": 7, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:aiopsgroup", "name": "AIOPSGROUP", "ind": "sw", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:humanevethospital", "name": "Humane Vet Hospital", "ind": "hlt", "rows": 2, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:martiancraft", "name": "MartianCraft", "ind": "sw", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:skelar", "name": "SKELAR", "ind": "sw", "rows": 117, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:bedbathbeyond", "name": "Bed Bath & Beyond", "ind": "ret", "rows": 70, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:appliedbusinesscommunicationsabcom", "name": "Applied Business Communications (ABcom)", "ind": "re", "rows": 9, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:paycotheclearinghousepaymentscompany", "name": "PAYCO The Clearing House Payments Company", "ind": "fin", "rows": 41, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:reanimagiants", "name": "Reanima® Giants", "ind": "hlt", "rows": 2, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:keyrussa", "name": "KeyrusSA", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:ferocia", "name": "Ferocia", "ind": "sw", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:nrnbergerwachundschliegesellschaftmbh", "name": "Nürnberger Wach- und Schließgesellschaft mbH", "ind": "oth", "rows": 48, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:teamwass", "name": "Teamwass", "ind": "med", "rows": 126, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:deezer", "name": "Deezer", "ind": "med", "rows": 24, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:anrok", "name": "Anrok", "ind": "sw", "rows": 14, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:lgelectronicsdobrasil", "name": "LG Electronics do Brasil", "ind": "hw", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:hexium", "name": "Hexium", "ind": "ene", "rows": 4, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:syzygyintegration", "name": "Syzygyintegration", "ind": "sw", "rows": 8, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:apollo", "name": "Apollo", "ind": "fin", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:wwfaustralia", "name": "WWF-Australia", "ind": "pub", "rows": 2, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:blitzy", "name": "Blitzy", "ind": "sw", "rows": 45, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:indianwalkveterinarycenter", "name": "Indian Walk Veterinary Center", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:pearsonsadeanimal", "name": "Pearson Saúde Animal", "ind": "bio", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:purpleinnovation", "name": "Purple Innovation", "ind": "cpg", "rows": 98, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:dhvaj", "name": "DHVAJ", "ind": "hlt", "rows": 11, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:industrade", "name": "Industrade", "ind": "mfg", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:puregym", "name": "PureGym", "ind": "hos", "rows": 29, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:purplesalessolutions", "name": "Purple Sales Solutions", "ind": "pro", "rows": 6, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:environmentalintellect", "name": "Environmentalintellect", "ind": "pub", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:neat", "name": "Neat", "ind": "hw", "rows": 18, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:ryancompanies", "name": "Ryan Companies", "ind": "re", "rows": 234, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:crexi", "name": "Crexi", "ind": "re", "rows": 17, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:bellatrx", "name": "BellatRx", "ind": "mfg", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:nine", "name": "Nine", "ind": "med", "rows": 16, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:klsearthworks", "name": "KLS Earthworks", "ind": "re", "rows": 8, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:eraneosiberia", "name": "Eraneos Iberia", "ind": "pro", "rows": 6, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:cubiclefugitive", "name": "Cubicle Fugitive", "ind": "med", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:montanaaleworks", "name": "Montana Ale Works", "ind": "hos", "rows": 10, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:downtowndentalsyracuse", "name": "Downtown Dental Syracuse", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:heart", "name": "Heart", "ind": "med", "rows": 13, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:voicesforgeorgiaschildren", "name": "Voices for Georgia's Children", "ind": "pub", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:lokalise", "name": "Lokalise", "ind": "sw", "rows": 4, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:ymcaofcentraltexas", "name": "YMCA of Central Texas", "ind": "pub", "rows": 91, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:codra", "name": "Codra", "ind": "sw", "rows": 6, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:ttigroup", "name": "TTi Group", "ind": "mfg", "rows": 103, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:newrivercommunityandtechnicalcollege", "name": "New River Community and Technical College", "ind": "edu", "rows": 19, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:third", "name": "Third", "ind": "hw", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:syniversetechnologies", "name": "Syniverse Technologies", "ind": "tel", "rows": 13, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:curifylabs", "name": "CurifyLabs", "ind": "bio", "rows": 6, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:unicasamoveis", "name": "Unicasamoveis", "ind": "mfg", "rows": 15, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:catupiry", "name": "Catupiry®", "ind": "cpg", "rows": 8, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:fanatics", "name": "Fanatics", "ind": "ret", "rows": 13, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:tylko", "name": "Tylko", "ind": "ret", "rows": 16, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:flyntmanagementgroup", "name": "Flynt Management Group", "ind": "re", "rows": 5, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:jfeshojipowercanada", "name": "Jfeshojipowercanada", "ind": "mfg", "rows": 10, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:usengineering", "name": "Usengineering", "ind": "re", "rows": 68, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:glenwoodcityveterinaryclinic", "name": "Glenwood City Veterinary Clinic", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:therapia", "name": "Therapia", "ind": "hlt", "rows": 21, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:codeminders", "name": "Codeminders", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:aerdf", "name": "Aerdf", "ind": "oth", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:itpartners", "name": "ITPartners+", "ind": "sw", "rows": 5, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:atchleyaircoolingheatingplumbingelectrical", "name": "Atchley Air Cooling, Heating, Plumbing & Electrical", "ind": "re", "rows": 2, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:mountainairconditioningandheating", "name": "Mountain Air Conditioning and Heating", "ind": "re", "rows": 5, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:familypromiseofspokane", "name": "Family Promise of Spokane", "ind": "pub", "rows": 5, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:lynchconsultantsllc", "name": "Lynchconsultantsllc", "ind": "pro", "rows": 7, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:harriswilliams", "name": "Harris Williams", "ind": "fin", "rows": 14, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:known", "name": "Known", "ind": "sw", "rows": 15, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:artesianhospitality", "name": "Artesian Hospitality", "ind": "hos", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:christchurchcitymission", "name": "Christchurch City Mission", "ind": "pub", "rows": 7, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:deutschetelekomitsolutions", "name": "Deutsche Telekom IT Solutions", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:lanternaeducation", "name": "Lanterna Education", "ind": "edu", "rows": 2, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:bxcivilconstruction", "name": "BX Civil & Construction", "ind": "re", "rows": 6, "mode": "uniform", "set": "eval-r4u"}
+{"key": "~ehnn.fa.us2.oraclecloud.com", "name": "Undisclosed employer", "ind": "hr", "rows": 86, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:carolinatherapeutics", "name": "Carolina Therapeutics", "ind": "hlt", "rows": 21, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:paireyewear", "name": "Pair Eyewear", "ind": "cpg", "rows": 5, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:keith", "name": "Keith", "ind": "pro", "rows": 27, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:familyserviceswindsoressex", "name": "Family Services Windsor-Essex", "ind": "pub", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:ourassistants", "name": "OurAssistants", "ind": "hr", "rows": 43, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:stcatherinehospitalgardencity", "name": "St Catherine Hospital Garden City", "ind": "hlt", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:modoenergy", "name": "Modo Energy", "ind": "ene", "rows": 2, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:cybalinksolutions", "name": "Cybalink Solutions", "ind": "pro", "rows": 15, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:politico", "name": "Politico", "ind": "med", "rows": 42, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:apremiumhealthcaresolution", "name": "APremium Healthcare Solution", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:menteerobotics", "name": "Mentee Robotics", "ind": "hw", "rows": 11, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:olympusproperty", "name": "Olympus Property", "ind": "re", "rows": 41, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:cleverdigitalmarketing", "name": "Clever Digital Marketing", "ind": "med", "rows": 2, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:telmac", "name": "Telmac", "ind": "oth", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:casesdaily", "name": "CasesDaily", "ind": "med", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:jbentonconstruction", "name": "J Benton Construction", "ind": "re", "rows": 30, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:charcoalblue", "name": "Charcoalblue", "ind": "pro", "rows": 7, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:rubensteinlaw", "name": "Rubensteinlaw", "ind": "pro", "rows": 10, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:vertex", "name": "Vertex", "ind": "sw", "rows": 43, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:lakridsbyblow", "name": "LAKRIDS BY BÜLOW", "ind": "cpg", "rows": 8, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:avertium", "name": "Avertium", "ind": "sec", "rows": 4, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:childrensresearchtriangle", "name": "Children's Research Triangle", "ind": "hlt", "rows": 3, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:endterengineering", "name": "endter engineering", "ind": "mfg", "rows": 1, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:lifescienceinnovationsinc", "name": "Lifescienceinnovationsinc", "ind": "bio", "rows": 6, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:dbgroup", "name": "db Group", "ind": "hos", "rows": 47, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:strosedominicansiena", "name": "St. Rose Dominican Siena", "ind": "hlt", "rows": 6, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:senecaresourcescompany", "name": "Seneca Resources Company", "ind": "ene", "rows": 8, "mode": "uniform", "set": "eval-r4u"}
+{"key": "c:cottonwoodseniorliving", "name": "Cottonwood Senior Living", "ind": "hlt", "rows": 2, "mode": "uniform", "set": "eval-r4u"}

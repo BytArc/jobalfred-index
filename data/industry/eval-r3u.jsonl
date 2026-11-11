@@ -1,0 +1,120 @@
+{"key": "c:decagon", "name": "Decagon", "ind": "sw", "rows": 125, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:norwichspringshealthcampus", "name": "Norwich Springs Health Campus", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:acumen", "name": "Acumen", "ind": "pro", "rows": 6, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:communityradiofornortherncolorado", "name": "Communityradiofornortherncolorado", "ind": "med", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:insta", "name": "Insta", "ind": "mfg", "rows": 5, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:crisbarros", "name": "CRIS BARROS", "ind": "ret", "rows": 7, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:siteminder", "name": "SiteMinder", "ind": "sw", "rows": 21, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:agenticdream", "name": "Agentic Dream", "ind": "sw", "rows": 14, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:vintureswineexperiencesllc", "name": "Vintureswineexperiencesllc", "ind": "cpg", "rows": 4, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:bayflatslodge", "name": "Bay Flats Lodge", "ind": "hos", "rows": 11, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:yego", "name": "YEGO", "ind": "aut", "rows": 4, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:interdigital", "name": "Interdigital", "ind": "tel", "rows": 31, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:usadonaldsoncompany", "name": "USA Donaldson Company", "ind": "mfg", "rows": 165, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:redejspeas", "name": "REDE JS PEÇAS", "ind": "ret", "rows": 21, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:grefusa", "name": "Grefusa", "ind": "cpg", "rows": 6, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:ballerinafarm", "name": "Ballerina Farm", "ind": "cpg", "rows": 9, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:vitaplanninglandscapearchitecture", "name": "VITA Planning & Landscape Architecture", "ind": "pro", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:landformprofessionalservices", "name": "Landform Professional Services", "ind": "pro", "rows": 4, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:tradesmenelectric", "name": "Tradesmenelectric", "ind": "re", "rows": 6, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:externalonlyblueprinttechnologies", "name": "External Only | Blueprint Technologies", "ind": "sw", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:omroepgelderland", "name": "Omroep Gelderland", "ind": "med", "rows": 12, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:patterson", "name": "Patterson", "ind": "hlt", "rows": 120, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:constructoruniversitybremenggmbh", "name": "Constructor University Bremen gGmbH", "ind": "edu", "rows": 11, "mode": "uniform", "set": "eval-r3u"}
+{"key": "~job-boards.eu.greenhouse.io/imc", "name": "IMC", "ind": "fin", "rows": 134, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:disruptiveadvertising", "name": "Disruptive Advertising", "ind": "med", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:dinrekryteringspartneriume", "name": "Din Rekryteringspartner i Umeå", "ind": "hr", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:autoriteitfinancielemarkten", "name": "Autoriteit Financiele Markten", "ind": "pub", "rows": 12, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:qpsworks", "name": "QPS Works", "ind": "mfg", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:vamonosit", "name": "Vamonos IT", "ind": "sw", "rows": 13, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:colusaindiancommunitycouncil", "name": "Colusa Indian Community Council", "ind": "pub", "rows": 25, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:ascendrehabservices", "name": "Ascendrehabservices", "ind": "hlt", "rows": 36, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:cornerstonebuildingbrands", "name": "Cornerstone Building Brands", "ind": "mfg", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:ashteadtechnology", "name": "Ashtead Technology", "ind": "ene", "rows": 19, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:luxdecorcollection", "name": "Lux Decor Collection", "ind": "ret", "rows": 21, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:folia", "name": "Folia", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:cguclaremontgraduateuniversity", "name": "CGU Claremont Graduate University", "ind": "edu", "rows": 5, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:racinetratores", "name": "Racine Tratores", "ind": "ret", "rows": 8, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:hospitalsofrancisco", "name": "Hospital São Francisco", "ind": "hlt", "rows": 47, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:henryjlyons", "name": "Henry J Lyons", "ind": "pro", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:advantage", "name": "Advantage", "ind": "hlt", "rows": 95, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:synapseanalytics", "name": "Synapse Analytics", "ind": "sw", "rows": 10, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:massimogelato", "name": "Massimo Gelato", "ind": "hos", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:joya", "name": "Joya", "ind": "hlt", "rows": 203, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:bosselmanpumppantry", "name": "Bosselman Pump & Pantry", "ind": "ret", "rows": 81, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:keyes", "name": "KEYES", "ind": "sw", "rows": 25, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:jana", "name": "JANA", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:unitedcontractorsroofing", "name": "United Contractors Roofing", "ind": "re", "rows": 5, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:innovativephysicaltherapyandsportsrehab", "name": "Innovative Physical Therapy and Sports Rehab", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:islandfinance", "name": "Island Finance", "ind": "fin", "rows": 21, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:theinfinitegroup", "name": "the Infinite Group", "ind": "sw", "rows": 6, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:holidaybyatrianiagaravillage", "name": "Holiday by Atria - Niagara Village", "ind": "hlt", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:atriaseniorlivingmerrimackplace", "name": "Atria Senior Living - Merrimack Place", "ind": "hlt", "rows": 9, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:spark", "name": "SPARK", "ind": "aut", "rows": 8, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:vechterhomesolutions", "name": "Vechter Home Solutions", "ind": "re", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:definedai", "name": "Definedai", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:platinumdermatologypartnersadvancedpracticeproviders", "name": "Platinum Dermatology Partners - Advanced Practice Providers", "ind": "hlt", "rows": 7, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:clamedlojas", "name": "CLAMED Lojas", "ind": "ret", "rows": 311, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:geekson", "name": "Geeks on", "ind": "oth", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:wonder", "name": "Wonder", "ind": "hos", "rows": 98, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:nutrium", "name": "Nutrium", "ind": "sw", "rows": 7, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:wcgclinical", "name": "WCG Clinical", "ind": "bio", "rows": 9, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:courtyardlittlerock", "name": "Courtyard Little Rock", "ind": "hos", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:pivotphysicaltherapy", "name": "Pivot Physical Therapy", "ind": "hlt", "rows": 164, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:sprchrgr", "name": "SPRCHRGR", "ind": "pro", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:fusemachines", "name": "Fusemachines", "ind": "sw", "rows": 7, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:rethink", "name": "Rethink", "ind": "med", "rows": 37, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:reliablerobotics", "name": "Reliable Robotics", "ind": "aer", "rows": 61, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:zelp", "name": "ZELP", "ind": "cpg", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:asianeyeinstitute", "name": "Asian Eye Institute", "ind": "hlt", "rows": 27, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:opendorse", "name": "Opendorse", "ind": "med", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:phonely", "name": "Phonely", "ind": "sw", "rows": 17, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:travtus", "name": "Travtus", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:brph", "name": "BRPH", "ind": "re", "rows": 73, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:consultant", "name": "Consultant", "ind": "pro", "rows": 100, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:blossomonlopez", "name": "Blossom on Lopez", "ind": "ret", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:riversidefm", "name": "riverside.fm", "ind": "sw", "rows": 17, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:customsoftwaresystems", "name": "Custom Software Systems", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:mclaughlingormleyking", "name": "MCLAUGHLIN GORMLEY KING", "ind": "mfg", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:recargapay", "name": "RecargaPay", "ind": "fin", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:dugtechnology", "name": "DUG Technology", "ind": "ene", "rows": 5, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:sherwooddesignengineers", "name": "Sherwooddesignengineers", "ind": "pro", "rows": 18, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:marandbuilders", "name": "Marandbuilders", "ind": "re", "rows": 27, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:innercrowd", "name": "Innercrowd", "ind": "sw", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:washington", "name": "Washington &", "ind": "pro", "rows": 8, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:keystonetreatmentcentercanton", "name": "Keystone Treatment Center - Canton", "ind": "hlt", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:dispersoltechnologiesllc", "name": "Dispersoltechnologiesllc", "ind": "bio", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:grupocarburgo", "name": "Grupo Carburgo", "ind": "aut", "rows": 28, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:comhardgesellschaftfrbildungundpersonalentwicklungmbh", "name": "Comhard Gesellschaft für Bildung und Personalentwicklung mbH", "ind": "edu", "rows": 9, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:harrismountainwestogden", "name": "Harris Mountain West, LLC (Ogden)", "ind": "re", "rows": 137, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:stmichaels", "name": "St. Michael's", "ind": "hlt", "rows": 6, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:drsumannconsulting", "name": "Dr. Sußmann Consulting", "ind": "med", "rows": 4, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:humansource", "name": "Human Source", "ind": "hr", "rows": 13, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:flagshipamsterdam", "name": "Flagship Amsterdam", "ind": "hos", "rows": 20, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:whitetech", "name": "WhiteTech", "ind": "fin", "rows": 9, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:hunterhealthcare", "name": "Hunter Healthcare", "ind": "hlt", "rows": 4, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:weisstechnik", "name": "Weiss Technik", "ind": "mfg", "rows": 5, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:pamhealthrehabilitationhospitalofbeaumont", "name": "PAM Health Rehabilitation Hospital of Beaumont", "ind": "hlt", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:paguemenoseextrafarma", "name": "Pague Menos e Extrafarma", "ind": "ret", "rows": 30, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:sansumdiabetesresearchinstitute", "name": "Sansum Diabetes Research Institute", "ind": "hlt", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:stringfellowtechnologygroup", "name": "Stringfellow Technology Group", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:knightscope", "name": "Knightscope", "ind": "sec", "rows": 26, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:benfranklintransit", "name": "Ben Franklin Transit", "ind": "pub", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:relaytherapeutics", "name": "Relay Therapeutics", "ind": "bio", "rows": 12, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:bernhoeftgrt", "name": "Bernhoeft GRT", "ind": "sw", "rows": 6, "mode": "uniform", "set": "eval-r3u"}
+{"key": "~fa-epuh-saasfaprod1.fa.ocs.oraclecloud.com", "name": "Undisclosed employer", "ind": "aut", "rows": 948, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:probar", "name": "PROBAR", "ind": "cpg", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:obramates", "name": "OBRAMAT ES", "ind": "ret", "rows": 100, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:samcotechnologies", "name": "Samco Technologies", "ind": "oth", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:stvincentscareservices", "name": "St Vincent's Care Services", "ind": "hlt", "rows": 273, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:elitevirtualassistants", "name": "Elitevirtualassistants", "ind": "hr", "rows": 3, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:refab", "name": "re:fab", "ind": "mfg", "rows": 1, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:novelislincolnshiremanufacturingfacility", "name": "Novelis Lincolnshire Manufacturing Facility", "ind": "mfg", "rows": 4, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:swish", "name": "Swish", "ind": "fin", "rows": 2, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:cadencesolutions", "name": "Cadence Solutions", "ind": "sw", "rows": 20, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:wakapi", "name": "Wakapi", "ind": "sw", "rows": 9, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:scotts", "name": "Scotts", "ind": "cpg", "rows": 148, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:blueridgecommunityaction", "name": "Blue Ridge Community Action", "ind": "pub", "rows": 8, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:lumos", "name": "Lumos", "ind": "sec", "rows": 10, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:kiwico", "name": "KiwiCo", "ind": "cpg", "rows": 5, "mode": "uniform", "set": "eval-r3u"}
+{"key": "c:xelix", "name": "Xelix", "ind": "sw", "rows": 24, "mode": "uniform", "set": "eval-r3u"}

@@ -17,12 +17,17 @@ if [ "${FORCE_PUBLISH:-0}" != "1" ] && [ "$old_total" -gt 0 ] && [ "$new_total" 
 fi
 # upload shards first and the manifest last, so a reader never sees a manifest that points at missing files
 gh release upload "$TAG" "$DIST"/*.json.gz "$TENANTS" --clobber
+# the code-to-label map for the industry field, and the homepage cache so the next nightly run starts from it
+[ -f "$DIST/industries.json" ] && gh release upload "$TAG" "$DIST/industries.json" --clobber
+[ -f "$DIST/functions.json" ] && gh release upload "$TAG" "$DIST/functions.json" --clobber
+[ -f data/industry/homepages.json.gz ] && gh release upload "$TAG" data/industry/homepages.json.gz --clobber
+[ -f data/industry/ai-labels.json.gz ] && gh release upload "$TAG" data/industry/ai-labels.json.gz --clobber
 gh release upload "$TAG" "$DIST/manifest.json" --clobber
 # remove shard assets that the new manifest no longer lists
 keep=$(python3 -c "import json,sys; m=json.load(open('$DIST/manifest.json')); print('\n'.join(s['file'] for s in m['shards']))")
 for name in $(gh release view "$TAG" --json assets --jq '.assets[].name'); do
   case "$name" in
-    manifest.json|tenants.json.gz|vc-eu.json.gz) ;;   # vc-eu.json.gz is published by vc-eu.yml
+    manifest.json|tenants.json.gz|vc-eu.json.gz|homepages.json.gz|ai-labels.json.gz) ;;   # vc-eu.json.gz is published by vc-eu.yml
     *.json.gz) echo "$keep" | grep -qx "$name" || gh release delete-asset "$TAG" "$name" --yes ;;
   esac
 done

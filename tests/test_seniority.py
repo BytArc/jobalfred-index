@@ -96,8 +96,8 @@ class TestPipeline(unittest.TestCase):
         jobs = feeds.himalayas_parse(json.loads((F / "himalayas.json").read_text()))
         self.assertEqual((jobs[0].lv, jobs[0].ls), (D, "n"))
         row = jobs[0].row()
-        self.assertEqual(len(row), 13)
-        self.assertEqual(row[11:], [D, "n"])
+        self.assertEqual(len(row), 16)
+        self.assertEqual(row[11:13], [D, "n"])
 
     def test_description_is_read_but_never_stored(self):
         xml = ("<jobs><job><published>2026-11-01T00:00:00Z</published><jobid>1</jobid><title>Data Analyst</title>"

@@ -125,6 +125,31 @@ level decided from years, scope and title (`scripts/seniority_sample.py`, `scrip
 are in `data/seniority/labels-r*.jsonl`). Round 5 was a fresh sample of 231 roles, labelled before looking at the rules' answers: 91.7% of
 the roles the rules labelled were right (92.9% from the title alone), and 47% of roles got a label.
 
+## Industry, function and sub-role labels
+
+Three more fields close every shard row, after `ls`: `in` (industry), `fn` (job function) and `ft` (sub-role). Readers map fields by name;
+the code-to-label maps are published beside the manifest as `industries.json` and `functions.json` (`{"fn": {code: label}, "ft": {code: [fn, label]}}`).
+`0` always means Not stated. VC rows carry the same three fields, before `d`.
+
+**Function (`fn`) and sub-role (`ft`)** are read from the title by ordered rules in `data/function/rules.json` (`jobalfred_index/function.py`, no model, no network):
+13 functions plus `oth` (the title names no office function: nurse, cook, driver) and 59 sub-roles. A rule that was not accurate enough on labelled titles is
+flagged by `scripts/function_calibrate.py` and publishes `fn` `0` (or no `ft`). Fresh sample of 260 titles labelled by hand before looking at the rules
+(`data/function/eval-r9.jsonl`): `fn` right on 97.3% of the non-Other titles it published (65% of non-Other titles got a function; counting Other titles that were
+given a function as errors, 88.7%); `ft` right on 88.6% of the sub-roles it published (31% of non-Other titles got one). Other: 91% of Other titles stayed Other.
+
+**Industry (`in`)**, 22 codes plus `oth` and `0`, one label per company copied to its rows. Order: a hand label (1,239 companies a reader labelled by looking at them,
+`data/industry/overrides.json`) always wins; then the language-model label (below) when its confidence is at least `ailabel.MIN_CONFIDENCE`; then the rules model
+(naive Bayes on name, domain, homepage text and job titles, `data/industry/model.json`, published only at confidence 0.9 or more); else `0`.
+Rules model on a fresh sample of 240 companies (`data/industry/eval-r4*.jsonl`): at the 0.9 cutoff 62 companies (26%, 15% of the sample's rows) were published, 88.7% right
+per company and 95.7% weighted by rows; below it the model is right too rarely to publish (53.8% overall).
+
+**Language-model labels.** `jobalfred_index/ailabel.py` asks `claude-haiku-5-5` (structured output: one code plus a confidence) once per company, keyed by the employer's
+domain, else its normalised name. It sends only the company name, its own domain, the cached homepage title and meta description and up to 10 job titles, never anything about
+a user. Labels are data in `data/industry/ai-labels.json.gz` (restored from and published to the release with the homepage cache). Bulk runs use the Message Batches API
+(`scripts/industry_ai.py estimate|submit|collect`); the nightly run labels only companies it has not seen, at most 2,000, and any failure (no key, API error, cap) leaves the
+company to the rules model. The key is read from `ANTHROPIC_API_KEY` in the environment only: for the Action it is the repository secret `ANTHROPIC_API_KEY`, passed to the
+build step.
+
 ## Run
 
 ```

@@ -14,7 +14,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import discovery, pipeline, probe, shards, startups
+from . import discovery, industry, pipeline, probe, shards, startups
 from .polite import Client
 from .state import State
 
@@ -42,6 +42,7 @@ def main(argv=None) -> int:
     ap.add_argument("--limit", type=int, default=0, help="max tenants per source (testing)")
     ap.add_argument("--extra-tenants", default="", help="JSON file of extra tenants to add before fetching")
     ap.add_argument("--no-crtsh", action="store_true")
+    ap.add_argument("--industry-budget", type=int, default=1500, help="new company homepages to fetch for the industry label per run (0 = cache only)")
     ap.add_argument("--probe-max", type=int, default=20000, help="candidate slugs per ATS family from known company names (0 = off)")
     a = ap.parse_args(argv)
     if a.command == "vceu":   # its own state and output, so the main index is never touched
@@ -78,7 +79,7 @@ def main(argv=None) -> int:
         names_ = sorted({ats for ats, _ in mine})
         report["fetch"] = pipeline.run_fetch(state, client, max(60, a.minutes * 60 - 300), names_, a.max_age_hours, out_dir,
                                              10 ** 9, log, a.limit or None)
-        report["vceu"] = vceu.build(state, su, out_dir / "vc-eu.json.gz", log)["counts"]
+        report["vceu"] = vceu.build(state, su, out_dir / "vc-eu.json.gz", log, homepages=industry.Homepages(client=client if a.industry_budget else None, budget=a.industry_budget, log=log))["counts"]
         report["elapsed_seconds"] = round(time.time() - T0)
         rp = ROOT / "work" / f"report-vceu-{run_id}.json"
         rp.parent.mkdir(parents=True, exist_ok=True)
@@ -186,7 +187,8 @@ def main(argv=None) -> int:
 
     if a.command in ("run", "fetch", "build", "names"):
         log("== build")
-        res = shards.build(pipeline.iter_rows(state), out_dir, log)
+        homepages = industry.Homepages(client=client if a.industry_budget else None, budget=a.industry_budget, log=log)
+        res = shards.build(pipeline.iter_rows(state), out_dir, log, homepages=homepages)
         report["manifest"] = {k: res["manifest"][k] for k in ("total", "sources")}
         report["shards"] = [{k: s[k] for k in ("id", "count", "bytes")} for s in res["manifest"]["shards"]]
         report["dedupe"] = res["dropped"]

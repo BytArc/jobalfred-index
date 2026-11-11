@@ -1,0 +1,80 @@
+{"key": "c:lakeendo", "name": "Lake Endo", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:rhythm", "name": "Rhythm", "ind": "ret", "rows": 8, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:miravoice", "name": "Miravoice", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:kruecksexton", "name": "Kruecksexton", "ind": "pro", "rows": 2, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:sesco", "name": "SESCO", "ind": "mfg", "rows": 5, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:valenceintel", "name": "Valenceintel", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:allenlundcompany", "name": "Allenlundcompany", "ind": "log", "rows": 52, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:sodalis", "name": "Sodalis", "ind": "sw", "rows": 4, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:nuancelabs", "name": "Nuance Labs", "ind": "sw", "rows": 6, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:emergenceai", "name": "Emergence AI", "ind": "sw", "rows": 10, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:pauktuutit", "name": "Pauktuutit", "ind": "pub", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:jenachoctawpines", "name": "Jena Choctaw Pines", "ind": "hos", "rows": 20, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:phizenix", "name": "Phizenix", "ind": "sw", "rows": 17, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:insolution", "name": "InSolution", "ind": "mfg", "rows": 2, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:modall", "name": "Modall", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:vertexservicepartners", "name": "Vertex Service Partners", "ind": "re", "rows": 5, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:colgioranieri", "name": "Colégio Ranieri", "ind": "edu", "rows": 3, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:columbiacityveterinaryhospital", "name": "Columbia City Veterinary Hospital", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:landmarkbuildersinc", "name": "Landmarkbuildersinc", "ind": "re", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:carebrook", "name": "Carebrook", "ind": "hos", "rows": 43, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:algolia", "name": "Algolia", "ind": "sw", "rows": 26, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:theriponveterinaryclinic", "name": "The Ripon Veterinary Clinic", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:sistemafiemssesisenaiiel", "name": "Sistema FIEMS | Sesi | Senai | Iel", "ind": "edu", "rows": 9, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:programadeestgioahead", "name": "Programa de Estágio AHEAD", "ind": "pro", "rows": 4, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:almeidasantosadvogados", "name": "Almeida Santos Advogados", "ind": "pro", "rows": 4, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:zeni", "name": "Zeni", "ind": "fin", "rows": 5, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:ccs", "name": "CCS", "ind": "hlt", "rows": 24, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:knauf", "name": "Knauf", "ind": "mfg", "rows": 78, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:metropolitancommunitycollegekansascity", "name": "Metropolitan Community College, Kansas City", "ind": "edu", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:terntravel", "name": "Tern Travel", "ind": "hos", "rows": 6, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:hugheshubbardreed", "name": "Hughes Hubbard & Reed", "ind": "pro", "rows": 4, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:offworld", "name": "Offworld", "ind": "mfg", "rows": 10, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:sunayu", "name": "Sunayu", "ind": "pro", "rows": 33, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:barriostechnology", "name": "Barrios Technology", "ind": "aer", "rows": 81, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:nearsourcetechnologies", "name": "NearSource Technologies", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:rljamesexteriors", "name": "RL James Exteriors", "ind": "re", "rows": 14, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:naffco", "name": "NAFFCO", "ind": "mfg", "rows": 100, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:hmlgroup", "name": "HML Group", "ind": "log", "rows": 3, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:loupbasinpublichealthdepartment", "name": "Loup Basin Public Health Department", "ind": "pub", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:invivyd", "name": "Invivyd", "ind": "bio", "rows": 12, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:dhpace", "name": "DH Pace", "ind": "mfg", "rows": 388, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:blueantstudiosvancouver", "name": "Blue Ant Studios (Vancouver)", "ind": "med", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:garibaldiglass", "name": "Garibaldiglass", "ind": "mfg", "rows": 2, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:dibtravel", "name": "Dib Travel", "ind": "hos", "rows": 5, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:securserv", "name": "Securserv", "ind": "sec", "rows": 21, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:aprio", "name": "Aprio", "ind": "pro", "rows": 2, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:southernairnola", "name": "Southern Air NOLA", "ind": "re", "rows": 8, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:medsien", "name": "Medsien", "ind": "hlt", "rows": 29, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:hrspecialist", "name": "HRSpecialist", "ind": "hr", "rows": 106, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:idt", "name": "IDT", "ind": "tel", "rows": 58, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:world4you", "name": "world4you", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:madrigal", "name": "Madrigal", "ind": "bio", "rows": 59, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:courtyardatlanticcity", "name": "Courtyard Atlantic City", "ind": "hos", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:kiniksapharmaceuticals", "name": "Kiniksa Pharmaceuticals", "ind": "bio", "rows": 37, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:mirantis", "name": "Mirantis", "ind": "sw", "rows": 8, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:carilionclinic", "name": "Carilion Clinic", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:unifique", "name": "Unifique", "ind": "tel", "rows": 104, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:cloudbeds", "name": "Cloudbeds", "ind": "sw", "rows": 31, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:americanbureauofshipping", "name": "American Bureau of Shipping", "ind": "pro", "rows": 122, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:monterro", "name": "Monterro", "ind": "fin", "rows": 7, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:ugoo", "name": "Ugoo", "ind": "pro", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:indstriadealimentos", "name": "Indústria de Alimentos", "ind": "cpg", "rows": 4, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:napakiakventures", "name": "Napakiakventures", "ind": "pro", "rows": 17, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:bearaesthetic", "name": "Bearaesthetic", "ind": "oth", "rows": 5, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:comparefoods", "name": "Compare Foods", "ind": "ret", "rows": 3, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:firstdescents", "name": "Firstdescents", "ind": "pub", "rows": 2, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:atlashxm", "name": "Atlas HXM", "ind": "hr", "rows": 25, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:venator", "name": "Venator", "ind": "mfg", "rows": 3, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:grupomariposa", "name": "Grupo Mariposa", "ind": "cpg", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:volunteerschangegrowlive", "name": "Volunteers Changegrowlive", "ind": "pub", "rows": 93, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:kalcoconstruction", "name": "Kalco Construction", "ind": "re", "rows": 6, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:retellai", "name": "Retell AI", "ind": "sw", "rows": 16, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:unitedhealthservices", "name": "United Health Services", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:amp", "name": "AMP", "ind": "fin", "rows": 18, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:dubakelectrical", "name": "Dubak Electrical", "ind": "re", "rows": 23, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:bnders", "name": "Bönders", "ind": "log", "rows": 16, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:ergo", "name": "ERGO", "ind": "fin", "rows": 35, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:cognisys", "name": "Cognisys", "ind": "sec", "rows": 5, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:tempaid", "name": "Temp Aid", "ind": "mfg", "rows": 1, "mode": "uniform", "set": "eval-r1u"}
+{"key": "c:angeheuert", "name": "ANGEHEUERT", "ind": "hr", "rows": 175, "mode": "uniform", "set": "eval-r1u"}

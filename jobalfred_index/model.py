@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 
 from . import geo, seniority
+from .industry import from_native as industry_from_native
+from .function import label as function_label
 
 # Not real roles: evergreen forms that only collect CVs.
 NOT_A_ROLE = re.compile(
@@ -40,10 +42,11 @@ class Job:
     cur: str = ""
     lv: int = 0          # seniority level, see seniority.py
     ls: str = ""         # where the level came from: n native tag, t title, d description, "" not stated
+    ind: str = ""        # industry code when the source itself names the industry; otherwise filled in at build (industry.py)
 
     def row(self) -> list:
         return [self.title, self.company, self.location, self.cc, self.remote, self.url,
-                self.posted, self.ats, self.smin, self.smax, self.cur or None, self.lv, self.ls]
+                self.posted, self.ats, self.smin, self.smax, self.cur or None, self.lv, self.ls, self.ind, *function_label(self.title)]
 
 
 def clean(s) -> str:
@@ -104,7 +107,7 @@ def money(v) -> float | None:
 
 
 def make(ats: str, title, company, locs, url, posted="", *, cc_hint="", workplace="", remote_hint: bool | None = None,
-         smin=None, smax=None, cur="", native=None, desc=None) -> Job | None:
+         smin=None, smax=None, cur="", native=None, desc=None, industry=None) -> Job | None:
     """Build a Job, or None when the row is not a usable role."""
     title = clean(title)
     url = (url or "").strip()
@@ -133,4 +136,4 @@ def make(ats: str, title, company, locs, url, posted="", *, cc_hint="", workplac
         smin, smax = smax, smin
     lv, ls = seniority.label(title, native, desc)     # the description is read here and never stored
     return Job(title[:200], company[:120], location[:200], cc, remote, url, posted, ats, smin, smax,
-               (cur or "")[:3].upper() if (smin or smax) else "", lv, ls)
+               (cur or "")[:3].upper() if (smin or smax) else "", lv, ls, industry_from_native(industry))

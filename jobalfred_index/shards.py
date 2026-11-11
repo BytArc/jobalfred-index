@@ -9,13 +9,26 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import seniority
+from . import function, industry, seniority
 from .adapters import FEED_NAMES
 
-FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls"]
+FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft"]
 # lv: seniority level 0 not stated, 1 intern, 2 junior, 3 mid, 4 senior, 5 lead/staff/principal, 6 manager, 7 director and above.
 # ls: where it came from: "n" the source's own tag, "t" the title, "d" the description, "" not stated. Readers map fields by name.
-LV, LS = FIELDS.index("lv"), FIELDS.index("ls")
+# in: industry code, see data/industry/taxonomy.json (published beside the manifest as industries.json). Every row has one; "oth" when the signal is weak.
+# fn: job function code (data/function/rules.json, published beside the manifest as functions.json); "oth" when the title names none.
+# ft: sub-role code within the function, "" when none. Both are read from the title only.
+LV, LS, IND, FN, FT = (FIELDS.index(k) for k in ("lv", "ls", "in", "fn", "ft"))
+
+
+def complete(r: list) -> list:
+    """Bring a stored row up to the current fields: seniority for the oldest rows, the function from the title, an empty industry."""
+    if len(r) < LS + 1:
+        r[LV:] = seniority.label(r[0])
+    r += [""] * (len(FIELDS) - len(r))
+    if not r[FN]:
+        r[FN], r[FT] = function.label(r[0])
+    return r
 MAX_GZ = 8 * 1024 * 1024
 TARGET_GZ = 6 * 1024 * 1024
 _SUFFIX = re.compile(r"\b(inc|incorporated|ltd|limited|llc|gmbh|corp|corporation|co|sa|ag|bv|plc|pty|sarl|srl|sas|oy|ab|as)\b\.?")
@@ -134,15 +147,13 @@ def _gz(rows: list[list]) -> bytes:
     return gzip.compress(doc, 9, mtime=0)
 
 
-def build(rows_iter, out_dir: Path, log=print) -> dict:
+def build(rows_iter, out_dir: Path, log=print, homepages=None) -> dict:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     from .names import clean_company
     def labelled(it):
         for r in it:
-            if len(r) < len(FIELDS):          # rows stored before the label existed: label them from the title
-                r.extend(seniority.label(r[0]))
-            yield r
+            yield complete(r)
     rows, dropped = dedupe(labelled(rows_iter))
     for r in rows:   # strip page words ("Careers", "Career Opportunities") that some APIs leave in company names
         c = clean_company(r[1])
@@ -150,6 +161,7 @@ def build(rows_iter, out_dir: Path, log=print) -> dict:
             r[1] = c
     dropped["country_corrected_to_US"] = fix_us_collisions(rows)
     dropped["country_filled_from_employer"] = fill_country(rows)
+    dropped["industry"] = industry.assign(rows, homepages, log=log)        # a company is labelled once; its rows share the label
     groups: dict[str, tuple[str, list[list]]] = {}
     for r in rows:
         sid, cc = shard_id(r)
@@ -186,11 +198,14 @@ def build(rows_iter, out_dir: Path, log=print) -> dict:
         sources[r[7]] = sources.get(r[7], 0) + 1
     manifest = {"version": 1, "built": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "total": len(rows),
                 "base": "", "shards": manifest_shards, "sources": dict(sorted(sources.items(), key=lambda kv: -kv[1]))}
+    (out_dir / "industries.json").write_text(json.dumps(industry.taxonomy(), ensure_ascii=False, indent=1))
+    (out_dir / "functions.json").write_text(json.dumps(function.maps(), ensure_ascii=False, indent=1))
     tmp = out_dir / "manifest.json.tmp"
     tmp.write_text(json.dumps(manifest, separators=(",", ":")))
     tmp.replace(out_dir / "manifest.json")
     levels = {seniority.NAMES[k]: v for k, v in sorted(collections.Counter(r[LV] for r in rows).items())}
     dropped["levels"] = levels
+    dropped["industries"] = dict(collections.Counter(r[IND] for r in rows).most_common())
     dropped["level_source"] = dict(collections.Counter(r[LS] or "none" for r in rows))
     log(f"build: {len(rows)} rows in {len(manifest_shards)} shards; dropped {dropped}")
     return {"manifest": manifest, "dropped": dropped}

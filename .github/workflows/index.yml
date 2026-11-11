@@ -35,8 +35,12 @@ jobs:
         run: |
           mkdir -p data
           gh release download index-latest --pattern tenants.json.gz --dir data --clobber || echo "no earlier tenant list; starting from data/seeds.json"
+          gh release download index-latest --pattern homepages.json.gz --dir data/industry --clobber || echo "no earlier homepage cache; using the committed one"
+          gh release download index-latest --pattern ai-labels.json.gz --dir data/industry --clobber || echo "no earlier AI labels; using the committed ones"
 
       - name: Build the index
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # optional repository secret; without it the rules model labels industries. Never echoed.
         run: python -u -m jobalfred_index run --minutes 270 --discover-minutes 40 --crawls 4 --out dist
 
       - name: Publish release assets

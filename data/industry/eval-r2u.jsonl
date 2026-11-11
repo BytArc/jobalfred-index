@@ -1,0 +1,110 @@
+{"key": "c:kpsnacks", "name": "KP Snacks", "ind": "cpg", "rows": 18, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:fiteventures", "name": "Fite Ventures", "ind": "re", "rows": 5, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:fittosmiledentalpartners", "name": "Fit to Smile Dental Partners", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:latigobio", "name": "Latigo Bio", "ind": "bio", "rows": 19, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:pamhealthspecialtyhospitaloflasvegas", "name": "PAM Health Specialty Hospital of Las Vegas", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:ourlatest", "name": "Our latest", "ind": "hlt", "rows": 7, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:olsonspesttechnicians", "name": "Olson's Pest Technicians", "ind": "oth", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:starbridge", "name": "Starbridge", "ind": "hlt", "rows": 4, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:latentengineeringfirm", "name": "Latent Engineering Firm", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:sfjazz", "name": "SFJAZZ", "ind": "med", "rows": 4, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:tippingpointsolutions", "name": "TIPPING POINT SOLUTIONS", "ind": "pro", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:blastone", "name": "BlastOne", "ind": "mfg", "rows": 11, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:harness", "name": "Harness", "ind": "sw", "rows": 66, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:planethomegroup", "name": "PlanetHome Group", "ind": "re", "rows": 57, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:avalonfamilyvet", "name": "Avalon Family Vet", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:gvrdental", "name": "GVR Dental", "ind": "hlt", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:viarapososp", "name": "VIA RAPOSO SP", "ind": "mfg", "rows": 5, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:beonesolutions", "name": "Beonesolutions", "ind": "sw", "rows": 6, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:avyka", "name": "Avyka", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:backblaze", "name": "Backblaze", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:colegiouirapuru", "name": "Colegiouirapuru", "ind": "edu", "rows": 4, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:horshamclinic", "name": "Horsham Clinic", "ind": "hlt", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:doubleasolutions", "name": "Double A Solutions", "ind": "oth", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:integratedsolutions", "name": "Integrated Solutions", "ind": "sec", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:acronis", "name": "Acronis", "ind": "sec", "rows": 40, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:truthcollective", "name": "Truth Collective", "ind": "med", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:warrior", "name": "Warrior", "ind": "cpg", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:rockvillecentrefordentistry", "name": "Rockville Centre for Dentistry", "ind": "hlt", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:icewarpservicessro", "name": "IceWarp Services, s.r.o", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "~atiinc.bamboohr.com", "name": "ATI", "ind": "pro", "rows": 20, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:petvalu", "name": "PetValu", "ind": "ret", "rows": 456, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:argentenergy", "name": "Argent Energy", "ind": "ene", "rows": 9, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:lightwelllearningsociety", "name": "Lightwell Learning Society", "ind": "edu", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:matera", "name": "Matera", "ind": "sw", "rows": 14, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:fnzglobalmanagement", "name": "FNZ Global Management", "ind": "fin", "rows": 88, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:lifttorise", "name": "Lift To Rise", "ind": "pub", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:fiducialcommunications", "name": "Fiducial Communications", "ind": "med", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:cuera", "name": "Cuera", "ind": "cpg", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:boxflow", "name": "Boxflow", "ind": "log", "rows": 67, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:cunninghamlegal", "name": "CunninghamLegal", "ind": "pro", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:pizzeriaportofino", "name": "Pizzeria Portofino", "ind": "hos", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:qevlarai", "name": "Qevlar AI", "ind": "sw", "rows": 19, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:hearcomin", "name": "Hear.com IN", "ind": "hlt", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:aroundtheworldcurrentopenpositions", "name": "Around the World - Current Open Positions", "ind": "med", "rows": 10, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:nexusintegritymanagement", "name": "Nexus Integrity Management", "ind": "ene", "rows": 8, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:betsol", "name": "BETSOL", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:billups", "name": "billups", "ind": "med", "rows": 11, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:lewisenergygroup", "name": "Lewis Energy Group", "ind": "ene", "rows": 35, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:songtradr", "name": "Songtradr", "ind": "med", "rows": 4, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:achievers", "name": "Achievers", "ind": "sw", "rows": 13, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:hamiltonlaneadvisors", "name": "Hamilton Lane Advisors", "ind": "fin", "rows": 50, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:themedicalspecialistgroup", "name": "The Medical Specialist Group", "ind": "hlt", "rows": 5, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:organovo", "name": "Organovo", "ind": "bio", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "~sou.wd1.myworkdayjobs.com", "name": "SOU", "ind": "edu", "rows": 29, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:chargerenergyservices", "name": "Charger Energy Services", "ind": "ene", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:cmsderksstarbusmann", "name": "CMS Derks Star Busmann", "ind": "pro", "rows": 12, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:digicosolutions", "name": "Digico Solutions", "ind": "sw", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:descartesunderwriting", "name": "Descartes Underwriting", "ind": "fin", "rows": 7, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:ustanationalheadquarters", "name": "USTA National Headquarters", "ind": "pub", "rows": 29, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:ecoelectricplumbing", "name": "Ecoelectricplumbing", "ind": "re", "rows": 12, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:nationswell", "name": "NationSwell", "ind": "pro", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:approvepayments", "name": "Approve Payments", "ind": "fin", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:lawofficeofcameronhawkins", "name": "Law Office of Cameron Hawkins", "ind": "pro", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:sawtoothmining", "name": "Sawtooth Mining", "ind": "mfg", "rows": 5, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:cbinsights", "name": "CB Insights", "ind": "sw", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:specialtycoffeeassociation", "name": "Specialty Coffee Association", "ind": "pub", "rows": 3, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:pittmanconstruction", "name": "Pittman Construction", "ind": "re", "rows": 16, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:centerforhumanisticchangeofnj", "name": "Center for Humanistic Change of NJ", "ind": "hlt", "rows": 21, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:georgejon", "name": "Georgejon", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:wiley", "name": "Wiley", "ind": "med", "rows": 66, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:optimusinformation", "name": "Optimus Information", "ind": "sw", "rows": 11, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:daintta", "name": "DAINTTA", "ind": "sw", "rows": 26, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:ripplecompanies", "name": "Ripple Companies", "ind": "fin", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:fundamentalhospitality", "name": "Fundamental Hospitality", "ind": "hos", "rows": 28, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:rbuckheatingcoolingplumbingelectrical", "name": "R Buck Heating Cooling Plumbing & Electrical", "ind": "re", "rows": 6, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:wilhelmsenshipmanagement", "name": "Wilhelmsen Ship Management", "ind": "log", "rows": 71, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:casumo", "name": "Casumo", "ind": "gam", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:thecrossingsattellicovillage", "name": "The Crossings at Tellico Village", "ind": "hlt", "rows": 9, "mode": "uniform", "set": "eval-r2u"}
+{"key": "~ncnu.wd1.myworkdayjobs.com", "name": "AAA", "ind": "aut", "rows": 109, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:sprinto", "name": "Sprinto", "ind": "sec", "rows": 5, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:nationalarchives", "name": "National Archives", "ind": "pub", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:sifive", "name": "SiFive", "ind": "hw", "rows": 132, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:xendit", "name": "Xendit", "ind": "fin", "rows": 17, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:primarygoal", "name": "Primarygoal", "ind": "sw", "rows": 6, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:nordiskaytskiktsbolaget", "name": "Nordiska Ytskiktsbolaget", "ind": "re", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:valkai", "name": "Valkai", "ind": "sw", "rows": 13, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:khrsgroup", "name": "Kährs Group", "ind": "mfg", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:quorso", "name": "Quorso", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:cogresearchfoundation", "name": "COG Research Foundation", "ind": "bio", "rows": 5, "mode": "uniform", "set": "eval-r2u"}
+{"key": "~cbcz.fa.us2.oraclecloud.com", "name": "Undisclosed employer", "ind": "cpg", "rows": 48, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:onboardexperiential", "name": "On Board Experiential", "ind": "med", "rows": 15, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:tegraincorporadora", "name": "Tegra Incorporadora", "ind": "re", "rows": 4, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:thebartonpartnership", "name": "Thebartonpartnership", "ind": "hr", "rows": 9, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:hamiltonpointehealthandrehabilitation", "name": "Hamilton Pointe Health and Rehabilitation", "ind": "hlt", "rows": 11, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:benzingersclothingcare", "name": "Benzinger's Clothing Care", "ind": "oth", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:eecacquisition", "name": "EEC Acquisition", "ind": "mfg", "rows": 174, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:amcham", "name": "Amcham", "ind": "pub", "rows": 18, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:teckpert", "name": "Teckpert", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:centari", "name": "Centari", "ind": "sw", "rows": 7, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:dovefamilydentistrywhitehaven", "name": "Dove Family Dentistry - Whitehaven", "ind": "hlt", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:heathrow", "name": "Heathrow", "ind": "log", "rows": 19, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:reploidgroup", "name": "REPLOID Group", "ind": "mfg", "rows": 25, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:rainierscholars", "name": "Rainier Scholars", "ind": "edu", "rows": 2, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:shootsmart", "name": "Shoot Smart", "ind": "oth", "rows": 12, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:beutlerairconditioningplumbing", "name": "Beutler Air Conditioning & Plumbing", "ind": "re", "rows": 7, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:confitec", "name": "Confitec", "ind": "sw", "rows": 1, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:coinmarketcap", "name": "Coin Market Cap", "ind": "fin", "rows": 7, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:globalmarinegroup", "name": "Global Marine Group", "ind": "tel", "rows": 4, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:blulevereducation", "name": "BluLever Education", "ind": "edu", "rows": 11, "mode": "uniform", "set": "eval-r2u"}
+{"key": "c:viceriseidor", "name": "Viceri SEIDOR", "ind": "sw", "rows": 2, "mode": "uniform", "set": "eval-r2u"}

@@ -1,0 +1,1674 @@
+{
+"functions": {
+"sal": "Sales",
+"mkt": "Marketing",
+"hrp": "HR and people",
+"rec": "Recruiting",
+"fin": "Finance",
+"ops": "Operations",
+"prd": "Product",
+"des": "Design",
+"dat": "Data",
+"eng": "Engineering",
+"cus": "Customer and support",
+"leg": "Legal",
+"pm": "Project management",
+"oth": "Other"
+},
+"subroles": {
+"ae": [
+"sal",
+"Account Executive"
+],
+"sdr": [
+"sal",
+"SDR / BDR"
+],
+"acm": [
+"sal",
+"Account Manager"
+],
+"smg": [
+"sal",
+"Sales Manager / Director"
+],
+"ptn": [
+"sal",
+"Partnerships"
+],
+"sen": [
+"sal",
+"Sales Engineer"
+],
+"rep": [
+"sal",
+"Sales Representative"
+],
+"grw": [
+"mkt",
+"Growth and performance"
+],
+"cnt": [
+"mkt",
+"Content and social"
+],
+"brd": [
+"mkt",
+"Brand and communications"
+],
+"pmm": [
+"mkt",
+"Product marketing"
+],
+"mko": [
+"mkt",
+"Marketing operations and CRM"
+],
+"mkm": [
+"mkt",
+"Marketing Manager / Director"
+],
+"hbp": [
+"hrp",
+"HR Business Partner"
+],
+"hro": [
+"hrp",
+"HR and people operations"
+],
+"hld": [
+"hrp",
+"Learning and development"
+],
+"rcr": [
+"rec",
+"Recruiter"
+],
+"src": [
+"rec",
+"Sourcer"
+],
+"acc": [
+"fin",
+"Accountant"
+],
+"fpa": [
+"fin",
+"FP&A and analysis"
+],
+"ctl": [
+"fin",
+"Controller / finance leader"
+],
+"aud": [
+"fin",
+"Audit"
+],
+"tax": [
+"fin",
+"Tax"
+],
+"opm": [
+"ops",
+"Operations manager"
+],
+"scm": [
+"ops",
+"Supply chain and procurement"
+],
+"biz": [
+"ops",
+"Business operations"
+],
+"adm": [
+"ops",
+"Administrative and assistants"
+],
+"gmg": [
+"ops",
+"General manager"
+],
+"pdm": [
+"prd",
+"Product Manager"
+],
+"pdo": [
+"prd",
+"Product Owner"
+],
+"pdh": [
+"prd",
+"Head / Director of Product"
+],
+"uxd": [
+"des",
+"UX and product design"
+],
+"gfx": [
+"des",
+"Graphic and visual design"
+],
+"dsm": [
+"des",
+"Design leader"
+],
+"dsc": [
+"dat",
+"Data Scientist"
+],
+"dan": [
+"dat",
+"Data / BI Analyst"
+],
+"den": [
+"dat",
+"Data Engineer"
+],
+"mle": [
+"dat",
+"ML / AI Engineer"
+],
+"fe": [
+"eng",
+"Frontend"
+],
+"be": [
+"eng",
+"Backend"
+],
+"fst": [
+"eng",
+"Full stack"
+],
+"mob": [
+"eng",
+"Mobile"
+],
+"dvo": [
+"eng",
+"DevOps / SRE / cloud"
+],
+"qa": [
+"eng",
+"QA and test"
+],
+"emb": [
+"eng",
+"Embedded and hardware"
+],
+"sec": [
+"eng",
+"Security"
+],
+"emg": [
+"eng",
+"Engineering leader"
+],
+"swe": [
+"eng",
+"Software engineer"
+],
+"ing": [
+"eng",
+"Other engineering"
+],
+"sad": [
+"eng",
+"Systems, IT and architecture"
+],
+"csm": [
+"cus",
+"Customer Success"
+],
+"sup": [
+"cus",
+"Support and service"
+],
+"tse": [
+"cus",
+"Technical support"
+],
+"lwy": [
+"leg",
+"Lawyer / counsel"
+],
+"par": [
+"leg",
+"Paralegal and legal assistant"
+],
+"cmp": [
+"leg",
+"Compliance and privacy"
+],
+"pjm": [
+"pm",
+"Project Manager"
+],
+"pgm": [
+"pm",
+"Program Manager"
+],
+"scr": [
+"pm",
+"Scrum and delivery"
+]
+},
+"rules": [
+{
+"fn": "oth",
+"ft": "",
+"any": [
+"assistant branch manager",
+"banqueting",
+"ballkid",
+"communications operator",
+"dispatcher",
+"financial aid",
+"access center",
+"scheduling coordinator",
+"medical receptionist",
+"medical office",
+"customer assistant",
+"seasonal associate",
+"holiday associate",
+"christmas",
+"chief engineer",
+"engineering supervisor",
+"mission engineer",
+"marine engineer",
+"4th engineer",
+"design studio",
+"home stylist",
+"stylist",
+"sales and distribution",
+"sap sd",
+"revenue cycle",
+"assistant general manager",
+"front of house",
+"expeditor",
+"nursing",
+"patient care",
+"patient outcomes",
+"handler",
+"rooms controller",
+"air traffic controller",
+"quality controller",
+"seasonal operations",
+"registered nurse",
+"rn bsn",
+"ent clinic",
+"front end register",
+"register salesfloor",
+"engineering technician",
+"real estate developer",
+"property developer",
+"data center technician",
+"datacenter technician",
+"data centre technician"
+]
+},
+{
+"fn": "sal",
+"ft": "rep",
+"any": [
+"sales support"
+]
+},
+{
+"fn": "cus",
+"ft": "tse",
+"any": [
+"technical support",
+"developer support",
+"software support",
+"network analyst",
+"support engineer",
+"customer support engineer",
+"technical account manager",
+"it support",
+"help desk",
+"helpdesk",
+"service desk",
+"desktop support",
+"application support"
+]
+},
+{
+"fn": "sal",
+"ft": "sen",
+"any": [
+"ingenieur commercial",
+"ingenieur d affaires",
+"sales engineer",
+"solutions engineer",
+"solution engineer",
+"solutions consultant",
+"solution consultant",
+"presales",
+"pre sales",
+"customer engineer"
+]
+},
+{
+"fn": "oth",
+"ft": "",
+"any": [
+"technician",
+"technologist",
+"mechanic",
+"clerk",
+"driver",
+"cashier",
+"therapist",
+"operator"
+]
+},
+{
+"fn": "mkt",
+"ft": "pmm",
+"any": [
+"product marketing",
+"product marketer"
+]
+},
+{
+"fn": "eng",
+"ft": "fe",
+"any": [
+"frontend",
+"front end",
+"react developer",
+"angular developer",
+"vue developer",
+"ui engineer",
+"ux engineer",
+"web developer",
+"javascript developer",
+"typescript developer",
+"desenvolvedor front",
+"desarrollador frontend"
+]
+},
+{
+"fn": "eng",
+"ft": "be",
+"any": [
+"backend",
+"back end",
+"java developer",
+"python developer",
+"golang",
+"go developer",
+"node developer",
+"nodejs",
+"php developer",
+"php",
+"ruby developer",
+"rails",
+"dotnet",
+"net developer",
+"c# developer",
+"scala developer",
+"rust developer",
+"api developer",
+"java engineer",
+"python engineer",
+"desenvolvedor back"
+]
+},
+{
+"fn": "eng",
+"ft": "fst",
+"any": [
+"full stack",
+"fullstack",
+"desenvolvedor full",
+"desarrollador full"
+]
+},
+{
+"fn": "eng",
+"ft": "mob",
+"any": [
+"ios",
+"android",
+"mobile developer",
+"mobile engineer",
+"react native",
+"flutter",
+"swift developer",
+"desenvolvedor mobile"
+]
+},
+{
+"fn": "eng",
+"ft": "ing",
+"any": [
+"sprinkler designer",
+"substation",
+"electrical designer",
+"mechanical designer",
+"hvac designer",
+"piping designer",
+"cad designer",
+"cadd designer"
+]
+},
+{
+"fn": "eng",
+"ft": "swe",
+"any": [
+"applications development",
+"application development",
+"software engineer",
+"software developer",
+"software engineering"
+]
+},
+{
+"fn": "eng",
+"ft": "emg",
+"any": [
+"manager software engineering",
+"manager engineering",
+"engineering manager",
+"engineering director",
+"head of engineering",
+"vp engineering",
+"vp of engineering",
+"director of engineering",
+"engineering lead",
+"cto",
+"chief technology",
+"software development manager",
+"head of technology",
+"head of it",
+"it applications",
+"it manager",
+"it director",
+"gerente de engenharia",
+"gerente de ti",
+"diretor de tecnologia",
+"coordenador de ti"
+]
+},
+{
+"fn": "dat",
+"ft": "mle",
+"any": [
+"machine learning",
+"ml engineer",
+"ai engineer",
+"applied scientist",
+"research scientist",
+"deep learning",
+"mlops",
+"nlp engineer",
+"computer vision",
+"llm",
+"ai researcher",
+"aprendizado de maquina"
+]
+},
+{
+"fn": "dat",
+"ft": "den",
+"any": [
+"data engineer",
+"analytics engineer",
+"data platform",
+"data architect",
+"etl",
+"big data",
+"data engineering",
+"engenheiro de dados",
+"ingeniero de datos",
+"dataops"
+]
+},
+{
+"fn": "dat",
+"ft": "dsc",
+"any": [
+"data scientist",
+"data science",
+"cientista de dados",
+"cientifico de datos"
+]
+},
+{
+"fn": "dat",
+"ft": "dan",
+"any": [
+"data analyst",
+"data analist",
+"data analytics",
+"analytics",
+"business intelligence",
+"business analytics",
+"bi analyst",
+"bi developer",
+"bi engineer",
+"business analyst",
+"insights analyst",
+"reporting analyst",
+"analista de dados",
+"analista de datos",
+"analista de bi",
+"data manager",
+"head of data",
+"data lead",
+"chief data",
+"data owner",
+"data governance",
+"data steward",
+"quantitative analyst",
+"analytics manager"
+]
+},
+{
+"fn": "ops",
+"ft": "adm",
+"any": [
+"data entry",
+"sales order",
+"order entry",
+"order management",
+"office clerk",
+"clerical",
+"service administrator",
+"system administrator assistant",
+"executive assistant",
+"administrative assistant",
+"personal assistant",
+"office manager",
+"receptionist",
+"secretary",
+"administrative",
+"administrativo",
+"administrativa",
+"assistente administrativo",
+"auxiliar administrativo",
+"verwaltung",
+"office administrator",
+"operations administrator",
+"admin assistant",
+"administration",
+"assistant to"
+]
+},
+{
+"fn": "des",
+"ft": "gfx",
+"any": [
+"communication designer",
+"visual communication",
+"visual designer",
+"brand designer"
+]
+},
+{
+"fn": "des",
+"ft": "dsm",
+"any": [
+"design manager",
+"design director",
+"head of design",
+"design lead",
+"creative director",
+"art director"
+]
+},
+{
+"fn": "des",
+"ft": "uxd",
+"any": [
+"ux",
+"ui",
+"user experience",
+"user interface",
+"product designer",
+"interaction designer",
+"design researcher",
+"service designer",
+"web designer",
+"product design",
+"ux designer",
+"ui designer"
+]
+},
+{
+"fn": "rec",
+"ft": "src",
+"any": [
+"sourcer",
+"talent sourcer"
+]
+},
+{
+"fn": "rec",
+"ft": "rcr",
+"any": [
+"recruiter",
+"recruiting",
+"recruitment",
+"talent acquisition",
+"talent partner",
+"talent manager",
+"recrutador",
+"recrutadora",
+"reclutador",
+"reclutadora",
+"reclutamiento",
+"recrutamento",
+"headhunter",
+"talent scout",
+"personalberater",
+"recruteur",
+"recrutement"
+]
+},
+{
+"fn": "eng",
+"ft": "emg",
+"any": [
+"tech lead",
+"technical lead"
+]
+},
+{
+"fn": "sal",
+"ft": "ae",
+"any": [
+"account executive",
+"enterprise account executive",
+"ae",
+"sales executive",
+"key account executive",
+"executive de contas",
+"ejecutivo de cuentas"
+]
+},
+{
+"fn": "sal",
+"ft": "acm",
+"any": [
+"account manager",
+"key account",
+"account director",
+"gestor de contas",
+"gestor de conta",
+"gerente de contas",
+"kam",
+"relationship manager",
+"client partner",
+"client manager",
+"strategic account",
+"customer executive",
+"gestor comercial",
+"gerente de negocios",
+"responsable de cuentas",
+"account management",
+"account representative"
+]
+},
+{
+"fn": "hrp",
+"ft": "hbp",
+"any": [
+"hrbp",
+"hr partner",
+"hr business partner",
+"people partner",
+"people business partner"
+]
+},
+{
+"fn": "hrp",
+"ft": "hld",
+"any": [
+"learning and development",
+"training and development",
+"talent development",
+"people development",
+"global mobility",
+"corporate trainer",
+"training manager",
+"instructional designer",
+"learning designer"
+]
+},
+{
+"fn": "hrp",
+"ft": "hro",
+"any": [
+"hr",
+"human resource",
+"people operations",
+"people ops",
+"people and culture",
+"people team",
+"head of people",
+"vp people",
+"chief people",
+"payroll",
+"compensation",
+"benefits specialist",
+"benefits manager",
+"benefits administrator",
+"benefits analyst",
+"total reward",
+"employee experience",
+"recursos humanos",
+"rh",
+"rrhh",
+"personalwesen",
+"personalreferent",
+"talent management",
+"gestao de pessoas",
+"gestor de pessoas"
+]
+},
+{
+"fn": "leg",
+"ft": "par",
+"any": [
+"paralegal",
+"legal assistant",
+"legal secretary",
+"assistente juridico"
+]
+},
+{
+"fn": "leg",
+"ft": "cmp",
+"any": [
+"compliance",
+"privacy",
+"data protection",
+"regulatory affairs",
+"regulatory",
+"aml",
+"kyc",
+"dpo",
+"conformidade",
+"cumplimiento"
+]
+},
+{
+"fn": "leg",
+"ft": "lwy",
+"any": [
+"lawyer",
+"counsel",
+"attorney",
+"solicitor",
+"advogado",
+"advogada",
+"abogado",
+"abogada",
+"avocat",
+"rechtsanwalt",
+"jurist",
+"juridico",
+"juridica",
+"legal",
+"litigation"
+]
+},
+{
+"fn": "fin",
+"ft": "aud",
+"any": [
+"auditor",
+"audit",
+"auditoria"
+]
+},
+{
+"fn": "fin",
+"ft": "tax",
+"any": [
+"transfer pricing",
+"tax",
+"impuestos",
+"impostos",
+"steuer",
+"fiscal"
+]
+},
+{
+"fn": "fin",
+"ft": "ctl",
+"any": [
+"controller",
+"financial controller",
+"controlling",
+"head of finance",
+"finance director",
+"cfo",
+"vp finance",
+"chief financial"
+]
+},
+{
+"fn": "fin",
+"ft": "fpa",
+"any": [
+"fp and a",
+"fpa",
+"financial analyst",
+"finance analyst",
+"financial planning",
+"financial reporting",
+"finance business partner",
+"investment analyst"
+]
+},
+{
+"fn": "fin",
+"ft": "acc",
+"any": [
+"accountant",
+"accounting",
+"accounts payable",
+"accounts receivable",
+"ap ar",
+"biller",
+"asset management",
+"client advisor",
+"banking operations",
+"payable",
+"receivable",
+"bookkeeper",
+"bookkeeping",
+"contabilista",
+"contabilidade",
+"contable",
+"contabilidad",
+"cost manager",
+"cost accountant",
+"cost control",
+"chargeback",
+"analista de credito",
+"investment consultant",
+"risk consultant",
+"family office",
+"financial solutions advisor",
+"relationship banker",
+"private client",
+"wealth",
+"buchhalter",
+"comptable",
+"billing",
+"collection"
+]
+},
+{
+"fn": "fin",
+"ft": "",
+"any": [
+"finance",
+"financial",
+"financas",
+"financeiro",
+"financeira",
+"financiero",
+"financiera",
+"treasury",
+"tesorero",
+"finanzas",
+"finanzen",
+"banker",
+"loan officer",
+"underwriter",
+"mortgage",
+"wealth",
+"financial advisor",
+"actuarial",
+"actuary",
+"risk analyst",
+"credit analyst",
+"credit risk",
+"fraud",
+"investimentos",
+"investment advisor",
+"investment advisory",
+"investment manager",
+"investor",
+"private equity",
+"venture capital",
+"assurance intern",
+"risk advisory",
+"capital markets",
+"investment operations",
+"fund accounting",
+"private banking",
+"bank relations"
+]
+},
+{
+"fn": "sal",
+"ft": "sdr",
+"any": [
+"sdr",
+"bdr",
+"sales development",
+"business development representative",
+"business development rep",
+"inside sales",
+"lead generation",
+"prospecting",
+"outbound sales"
+]
+},
+{
+"fn": "mkt",
+"ft": "mko",
+"any": [
+"marketing operations",
+"marketing ops",
+"marketing automation",
+"crm manager",
+"crm",
+"lifecycle",
+"email marketing",
+"marketing analyst",
+"marketing technologist",
+"martech"
+]
+},
+{
+"fn": "mkt",
+"ft": "grw",
+"any": [
+"growth",
+"performance marketing",
+"paid media",
+"paid social",
+"paid search",
+"paid digital",
+"ads marketing",
+"ads manager",
+"sem",
+"seo",
+"demand generation",
+"demand gen",
+"acquisition marketing",
+"ppc",
+"media buyer",
+"media planner",
+"media manager",
+"user acquisition",
+"campaign manager",
+"trafego pago",
+"affiliate",
+"ecommerce",
+"e commerce",
+"web commerce",
+"digital commerce",
+"media activation",
+"retail search",
+"search marketing"
+]
+},
+{
+"fn": "mkt",
+"ft": "cnt",
+"any": [
+"content",
+"social media",
+"community manager",
+"copywriter",
+"copy writer",
+"influencer",
+"redator",
+"redatora",
+"redactor",
+"storytelling",
+"editor",
+"video producer",
+"podcast"
+]
+},
+{
+"fn": "mkt",
+"ft": "brd",
+"any": [
+"brand",
+"communications",
+"communication",
+"comms",
+"public relations",
+"pr manager",
+"pr specialist",
+"press",
+"comunicacao",
+"comunicacion",
+"comunicaciones",
+"kommunikation",
+"relations publiques",
+"publicidade",
+"publicidad",
+"advertising",
+"event marketing",
+"event manager",
+"events manager",
+"event coordinator",
+"event execution",
+"event specialist",
+"sponsorship",
+"brand ambassador"
+]
+},
+{
+"fn": "mkt",
+"ft": "mkm",
+"any": [
+"marketing manager",
+"marketing director",
+"head of marketing",
+"vp marketing",
+"cmo",
+"chief marketing",
+"marketing lead",
+"marketing coordinator",
+"marketing specialist",
+"marketing associate",
+"marketing",
+"marketer",
+"marketeer",
+"mercadeo",
+"marketing executive",
+"gestor de marketing",
+"mercadotecnia"
+]
+},
+{
+"fn": "pm",
+"ft": "scr",
+"any": [
+"scrum master",
+"agile coach",
+"delivery manager",
+"delivery lead",
+"release manager"
+]
+},
+{
+"fn": "pm",
+"ft": "pgm",
+"any": [
+"program manager",
+"programme manager",
+"program lead",
+"program director",
+"programme director",
+"program management",
+"technical program manager",
+"tpm",
+"pmo"
+]
+},
+{
+"fn": "pm",
+"ft": "pjm",
+"any": [
+"program project",
+"project manager",
+"project executive",
+"engagement manager",
+"project controls",
+"project management",
+"project lead",
+"project coordinator",
+"project director",
+"project officer",
+"project specialist",
+"project administrator",
+"gestor de projeto",
+"gestora de projeto",
+"gestor de projecto",
+"gerente de projeto",
+"jefe de proyecto",
+"chef de projet",
+"projektleiter",
+"projektmanager",
+"coordenador de projeto",
+"project controller",
+"project planner"
+]
+},
+{
+"fn": "prd",
+"ft": "pdh",
+"any": [
+"head of product",
+"director of product",
+"vp product",
+"vp of product",
+"chief product officer",
+"product director",
+"group product manager",
+"product lead",
+"cpo"
+]
+},
+{
+"fn": "prd",
+"ft": "pdo",
+"any": [
+"product owner"
+]
+},
+{
+"fn": "prd",
+"ft": "pdm",
+"any": [
+"product manager",
+"product management",
+"product development manager",
+"product capabilities",
+"gestor de produto",
+"gerente de produto",
+"responsable de producto",
+"produktmanager",
+"chef de produit",
+"associate product manager",
+"technical product manager",
+"product operations",
+"product analyst"
+]
+},
+{
+"fn": "cus",
+"ft": "csm",
+"any": [
+"customer success",
+"client success",
+"csm",
+"customer onboarding",
+"customer implementation",
+"implementation manager",
+"implementation consultant",
+"onboarding specialist",
+"customer experience"
+]
+},
+{
+"fn": "cus",
+"ft": "sup",
+"any": [
+"customer support",
+"customer service",
+"client service",
+"client support",
+"customer care",
+"complaints",
+"policy enrollment",
+"customer operations",
+"call center",
+"call centre",
+"contact center",
+"support specialist",
+"support agent",
+"support representative",
+"support analyst",
+"atendimento ao cliente",
+"apoio ao cliente",
+"atencion al cliente",
+"servicio al cliente",
+"service client",
+"kundenservice",
+"kundenbetreuer",
+"customer advocate",
+"care advocate",
+"escalation",
+"member services",
+"member support",
+"teleoperador",
+"client relationship"
+]
+},
+{
+"fn": "eng",
+"ft": "sec",
+"any": [
+"security engineer",
+"cybersecurity engineer",
+"application security",
+"appsec",
+"security architect",
+"security analyst",
+"soc analyst",
+"penetration tester",
+"pentester",
+"information security",
+"information system security",
+"isso",
+"network security",
+"infosec",
+"cyber security",
+"cybersecurity",
+"security researcher",
+"analista de seguranca",
+"seguranca da informacao"
+]
+},
+{
+"fn": "eng",
+"ft": "dvo",
+"any": [
+"devsecops",
+"devops",
+"sre",
+"site reliability",
+"platform engineer",
+"infrastructure engineer",
+"cloud engineer",
+"cloud architect",
+"release engineer",
+"build engineer",
+"kubernetes",
+"terraform",
+"aws engineer",
+"azure engineer",
+"reliability engineer",
+"network engineer",
+"noc engineer"
+]
+},
+{
+"fn": "eng",
+"ft": "qa",
+"any": [
+"qa",
+"quality assurance",
+"test engineer",
+"tester",
+"sdet",
+"test automation",
+"automation engineer",
+"software tester",
+"automation testing",
+"manual testing",
+"analista de testes",
+"analista de qa"
+]
+},
+{
+"fn": "eng",
+"ft": "emb",
+"any": [
+"embedded",
+"firmware",
+"hardware developer",
+"digital design",
+"fpga",
+"asic",
+"hardware engineer",
+"rtl",
+"verification engineer",
+"design verification",
+"physical design",
+"analog",
+"pcb",
+"vlsi",
+"electronics engineer",
+"controls engineer",
+"robotics",
+"mechatronics",
+"cpu",
+"electronic hardware",
+"rf design",
+"rf engineer",
+"validation engineer",
+"formal verification",
+"formal validation",
+"dft",
+"atpg",
+"rf systems"
+]
+},
+{
+"fn": "eng",
+"ft": "ing",
+"any": [
+"drafter",
+"draftsman"
+]
+},
+{
+"fn": "eng",
+"ft": "sad",
+"any": [
+"sap",
+"analista de redes",
+"network architect",
+"cloud infra",
+"systemes d information",
+"sistemas de informacao",
+"sistemas de informacion",
+"information systems",
+"ai architect"
+]
+},
+{
+"fn": "eng",
+"ft": "sad",
+"any": [
+"system administrator",
+"sysadmin",
+"network administrator",
+"database administrator",
+"dba",
+"solutions architect",
+"solution architect",
+"enterprise architect",
+"technical architect",
+"it architect",
+"software architect",
+"systems analyst",
+"analista de sistemas",
+"it specialist",
+"it administrator",
+"it engineer",
+"it consultant",
+"sap consultant",
+"it governance",
+"disaster recovery",
+"technology coordinator",
+"it analyst",
+"cloud administrator",
+"windows administrator"
+]
+},
+{
+"fn": "sal",
+"ft": "smg",
+"any": [
+"gtm",
+"sales vice president",
+"vice president sales",
+"sales vp",
+"sales supervisor",
+"territory manager",
+"sales manager",
+"sales director",
+"head of sales",
+"vp sales",
+"vp of sales",
+"chief revenue officer",
+"cro",
+"commercial director",
+"commercial manager",
+"commercial lead",
+"commercial operations",
+"commercial strategy",
+"regional sales",
+"area sales manager",
+"sales lead",
+"sales team lead",
+"district manager",
+"director of sales",
+"diretor comercial",
+"gerente comercial",
+"gerente de vendas",
+"diretor de vendas",
+"directeur commercial",
+"vertriebsleiter",
+"country sales"
+]
+},
+{
+"fn": "sal",
+"ft": "ptn",
+"any": [
+"partnerships",
+"partnership",
+"partner manager",
+"channel",
+"alliances",
+"alliance",
+"partner development",
+"business development",
+"bizdev",
+"desenvolvimento de negocio",
+"desarrollo de negocio",
+"geschaeftsentwicklung",
+"business developer"
+]
+},
+{
+"fn": "sal",
+"ft": "rep",
+"any": [
+"sales",
+"vendas",
+"ventas",
+"ventes",
+"vertrieb",
+"comercial",
+"vendedor",
+"vendedora",
+"territory",
+"revenue operations",
+"revenue manager",
+"revenue director",
+"revops",
+"vendeur",
+"vendeuse",
+"verkaeufer",
+"verkauf",
+"representante comercial",
+"consultor comercial",
+"consultora comercial",
+"consultor de vendas",
+"telesales",
+"telemarketing",
+"insurance agent",
+"insurance advisor",
+"pharma rep",
+"account rep",
+"insurance producer",
+"salesperson",
+"salespeople",
+"verkaufer",
+"canvasser",
+"medical representative",
+"medical rep"
+]
+},
+{
+"fn": "ops",
+"ft": "scm",
+"any": [
+"supply chain",
+"category management",
+"category manager",
+"fulfillment",
+"procurement",
+"purchasing",
+"logistics",
+"logistica",
+"buyer",
+"comprador",
+"compras",
+"sourcing manager",
+"demand planner",
+"supply planner",
+"production planner",
+"inventory",
+"warehouse manager",
+"distribution manager",
+"import export",
+"trade compliance",
+"approvisionnement",
+"einkauf"
+]
+},
+{
+"fn": "ops",
+"ft": "biz",
+"any": [
+"strategist",
+"strategy",
+"change manager",
+"s and op",
+"strategy analyst",
+"strategy manager",
+"strategic analyst",
+"chief of staff",
+"bizops",
+"business operations",
+"strategy and operations",
+"strategic operations",
+"business transformation",
+"operations strategy"
+]
+},
+{
+"fn": "ops",
+"ft": "gmg",
+"any": [
+"branch manager",
+"general manager",
+"country manager",
+"managing director",
+"regional manager"
+]
+},
+{
+"fn": "ops",
+"ft": "opm",
+"any": [
+"incident management",
+"operational excellence",
+"melhoria continua",
+"melhoria continuada",
+"occupancy planner",
+"planning assistant",
+"production planner",
+"excellence operationnelle",
+"process manager",
+"prozessmanager",
+"process improvement",
+"continuous improvement",
+"tenant coordination",
+"property manager",
+"plant manager",
+"operations",
+"operation",
+"ops",
+"operacoes",
+"operaciones",
+"coo",
+"chief operating",
+"gestor de operacoes",
+"responsable de operaciones",
+"facility manager",
+"facilities manager",
+"office coordinator"
+]
+},
+{
+"fn": "eng",
+"ft": "swe",
+"any": [
+"software",
+"developer",
+"programmer",
+"programador",
+"programadora",
+"desenvolvedor",
+"desenvolvedora",
+"desarrollador",
+"desarrolladora",
+"entwickler",
+"developpeur",
+"softwareentwickler",
+"swe",
+"sde",
+"application developer"
+]
+},
+{
+"fn": "eng",
+"ft": "ing",
+"any": [
+"engineer",
+"engineering",
+"engenheiro",
+"engenheira",
+"ingeniero",
+"ingeniera",
+"ingenieur",
+"ingenieure",
+"ingenieria",
+"engenharia"
+]
+},
+{
+"fn": "des",
+"ft": "gfx",
+"any": [
+"graphic",
+"designer",
+"design",
+"illustrator",
+"fx artist",
+"3d artist",
+"concept artist",
+"game artist",
+"vfx",
+"video editor",
+"motion designer",
+"diseñador",
+"diseñadora",
+"grafiker",
+"mediengestalter",
+"visual designer",
+"brand designer"
+]
+}
+],
+"flags": {
+"2": "ft",
+"3": "ft",
+"6": "ft",
+"7": "t",
+"8": "t",
+"11": "t",
+"13": "t",
+"16": "ft",
+"17": "ft",
+"22": "t",
+"23": "ft",
+"24": "t",
+"25": "t",
+"27": "t",
+"30": "ft",
+"32": "ft",
+"34": "ft",
+"36": "t",
+"40": "t",
+"41": "ft",
+"42": "ft",
+"43": "t",
+"45": "ft",
+"47": "ft",
+"51": "ft",
+"54": "ft",
+"55": "t",
+"57": "ft",
+"58": "t",
+"59": "ft",
+"60": "ft",
+"62": "ft",
+"63": "ft",
+"65": "ft",
+"66": "ft",
+"67": "t",
+"68": "ft"
+}
+}
