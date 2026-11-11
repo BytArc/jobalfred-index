@@ -140,6 +140,7 @@ def cmd_companies() -> dict:
             rec["yc"] = {"slug": slug, "batch": c.get("batch"), "country": c.get("country")}
             rec.setdefault("evidence", []).append(f"https://www.ycombinator.com/companies/{slug}")
     pf_path = WORK / "vc_portfolios.json"
+    hq_seen = hq_known()
     if pf_path.exists():
         pf = json.load(open(pf_path))
         for inv, rec_inv in pf.items():
@@ -151,12 +152,18 @@ def cmd_companies() -> dict:
                 rec = out.get(d)
                 if rec is None:
                     tld = d.rsplit(".", 1)[-1]
-                    if tld not in EU_TLD:
+                    h = hq_seen.get(d) or {}
+                    if h.get("country") in EUROPE and not big_listed(d) and not startups.excluded(d):
+                        rec = out.setdefault(d, site_hq_record(d, h))      # its own site says where it is
+                        counts["portfolio_new_european_by_site"] += 1
+                    elif tld not in EU_TLD:
                         counts["portfolio_domain_not_known_european"] += 1
                         continue
-                    rec = out.setdefault(d, {"domain": d, "name": d.split(".")[0].replace("-", " ").title(), "website": f"https://{d}/",
-                                             "sources": [], "country": EU_TLD[tld], "hq_from": "cctld"})
-                    counts["portfolio_new_european_by_cctld"] += 1
+                    else:
+                        rec = out.setdefault(d, {"domain": d, "name": d.split(".")[0].replace("-", " ").title(),
+                                                 "website": f"https://{d}/", "sources": [], "country": EU_TLD[tld],
+                                                 "hq_from": "cctld"})
+                        counts["portfolio_new_european_by_cctld"] += 1
                 if "portfolio" not in rec["sources"]:
                     rec["sources"].append("portfolio")
                 rec.setdefault("investors", [])
@@ -212,6 +219,17 @@ def cmd_world(countries: list[str]) -> dict:
                 rec["sources"].append("portfolio")
         have[d] = rec
         added[c["country"]] += 1
+    hq_seen = hq_known()
+    for d, pages in fund_only_domains(set(have)).items():
+        h = hq_seen.get(d) or {}
+        if h.get("country") not in countries:
+            continue
+        rec = site_hq_record(d, h)
+        rec["sources"] = ["portfolio"]
+        rec["investors"] = sorted({inv for inv, _ in pages})
+        rec["evidence"] = list(dict.fromkeys(page for _, page in pages))
+        have[d] = rec
+        added[h["country"] + " (own site)"] += 1
     doc["companies"] = sorted(have.values(), key=lambda r: r["domain"])
     doc["batches"] = list(dict.fromkeys((doc.get("batches") or []) + countries))
     doc["built"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -219,6 +237,86 @@ def cmd_world(countries: list[str]) -> dict:
     COMPANIES.write_text(json.dumps(doc, indent=0, ensure_ascii=False))
     print(f"world list: +{sum(added.values())} companies {dict(added)}; {len(doc['companies'])} in all; batches {doc['batches']}")
     return doc
+
+
+# -- 1c. companies known only from investors' pages: headquarters from their own sites (jobalfred_index/hq.py) ----------
+HQ_CACHE = WORK / "hq_sites.json"
+HQ_PER_RUN = 400            # company sites read for their headquarters per weekly refresh
+big_listed = startups.big_listed
+
+
+def hq_known() -> dict:
+    """domain -> HQ record ({"country": "" } when the site states none) from this Mac's reads and the published lists."""
+    out: dict = {}
+    for path in (ROOT / "data" / "startups_eu.json", ROOT / "data" / "startups_world.json"):
+        if path.exists():
+            for d, c in (json.load(open(path)).get("hq") or {}).items():
+                out.setdefault(d, {"country": c})
+    if HQ_CACHE.exists():
+        out.update(json.load(open(HQ_CACHE)))
+    return out
+
+
+def site_hq_record(d: str, h: dict) -> dict:
+    """A company list entry for a company known from investors' pages whose own site gives its headquarters."""
+    name = (h.get("name") or "").strip()
+    label, fn = startups._fold(d.split(".")[0]), startups._fold(name)
+    if not name or len(name) > 40 or not fn or not (label in fn or (len(fn) >= 3 and fn in label)):
+        name = d.split(".")[0].replace("-", " ").title()        # the site's title does not name the company
+    return {"domain": d, "name": name, "website": f"https://{d}/", "sources": [], "country": h["country"], "hq_from": "site",
+            "hq_url": h.get("url") or f"https://{d}/", "hq_text": (h.get("evidence") or "")[:160]}
+
+
+def fund_only_domains(listed: set[str]) -> dict[str, list]:
+    """domain -> [(investor, page)] for investors' portfolio links that are not listed yet and could be a company."""
+    pf = json.load(open(WORK / "vc_portfolios.json")) if (WORK / "vc_portfolios.json").exists() else {}
+    out: dict[str, list] = {}
+    for inv, rec in pf.items():
+        page = (rec.get("pages") or [inv])[0]
+        for d in rec.get("domains", []):
+            if d in listed or NOT_A_SITE.match(d) or NEWSY.search(d.split(".")[0]) or startups.excluded(d) or big_listed(d):
+                continue
+            out.setdefault(d, []).append((inv, page))
+    return out
+
+
+def read_hq(domains: list[str], minutes: float, log=print, workers: int = 40) -> dict:
+    """Read each company's own site for its headquarters (hq.read); returns {domain: record}."""
+    from jobalfred_index import hq
+    from jobalfred_index.polite import Client
+    client = Client(timeout=15, retries=1)
+    client.deadline = time.time() + minutes * 60
+    out: dict = {}
+
+    def one(d):
+        if time.time() > client.deadline:
+            return d, None
+        try:
+            return d, hq.read(client, d)
+        except Exception as e:
+            return d, {"domain": d, "status": "error", "note": type(e).__name__}
+
+    with ThreadPoolExecutor(workers) as ex:
+        for i, (d, r) in enumerate(ex.map(one, domains), 1):
+            if r is not None and r.get("status") not in ("error",) and "run time box" not in (r.get("note") or ""):
+                out[d] = {k: v for k, v in r.items() if k != "pages"}
+            if i % 250 == 0:
+                log(f"hq: {i}/{len(domains)} read, {sum(1 for x in out.values() if x.get('country'))} with a country")
+    return out
+
+
+def cmd_hq(minutes: float = 90) -> None:
+    listed = {c["domain"] for f in ("vc_eu_companies.json", "vc_world_companies.json") if (WORK / f).exists()
+              for c in json.load(open(WORK / f))["companies"]}
+    known = json.load(open(HQ_CACHE)) if HQ_CACHE.exists() else {}
+    todo = sorted(d for d in fund_only_domains(listed) if d not in known)
+    print(f"hq: {len(todo)} companies known only from investors' pages to read", flush=True)
+    chunk = 500
+    for i in range(0, len(todo), chunk):
+        got = read_hq(todo[i:i + chunk], minutes, log=lambda m: print(m, flush=True))
+        known.update(got)
+        HQ_CACHE.write_text(json.dumps(known, indent=0, ensure_ascii=False))
+        print(f"hq: {len(known)} read; " + json.dumps(collections.Counter(v.get("status") for v in known.values())), flush=True)
 
 
 def cmd_investors() -> dict:
@@ -496,6 +594,8 @@ def cmd_publish() -> dict:
                 entry["kind"], entry["backing"] = "investor", ""
             if (r.get("yc") or {}).get("batch"):
                 entry["yc_batch"] = r["yc"]["batch"]       # public, from the company's YC page
+            if r.get("hq_from") == "site":
+                entry["hq_url"] = r.get("hq_url")          # the company's own page that says where it is
             named = [[t["ats"], t["key"]] for t in ts if t.get("named")]
             if named:
                 entry["named"] = named
@@ -519,6 +619,7 @@ def cmd_publish() -> dict:
         "about": ("European VC-backed startups and the careers systems they publish roles on, found from each company's own "
                   "website (homepage and careers page, robots.txt obeyed) or by its name on the ATS's public board. "
                   "evidence: the investor's own public portfolio page or Y Combinator page, else 'Seedtable'. "
+                  "hq_url: for a company known only from investors' pages, its own page that gives its headquarters. "
                   "No funding stage is published."),
         "built": time.strftime("%Y-%m-%d", time.gmtime()),
         "counts": {"companies_checked": len(doc["companies"]), "by_status": dict(status.most_common()),
@@ -527,6 +628,8 @@ def cmd_publish() -> dict:
         "tenants": [{"ats": a, "key": k, "data": d} for (a, k), d in sorted(tenants.items())],
         "companies": sorted(companies, key=lambda e: e["domain"]),
         "checked": sorted(checked),
+        # every company site read for its headquarters (hq.py): country, or "" when the site states none
+        "hq": {d: h.get("country") or "" for d, h in sorted(hq_known().items())},
     }
     if REGION == "world":
         public["batches"] = doc.get("batches") or []
@@ -655,6 +758,10 @@ def cmd_refresh(minutes: float = 60) -> None:
             if d and c.get("country") in region and c.get("ycdc_status") == "Active":
                 found.setdefault(d, {"name": c.get("name"), "country": c.get("country"), "evidence": []})["evidence"].append(
                     f"https://www.ycombinator.com/companies/{slug}")
+    hq_map = {d: {"country": c} for d, c in (pub.get("hq") or {}).items()}
+    if HQ_CACHE.exists():
+        hq_map.update(json.load(open(HQ_CACHE)))
+    to_read: set[str] = set()
     if pf_path.exists():
         for inv, rec in json.load(open(pf_path)).items():
             page = (rec.get("pages") or [inv])[0]
@@ -662,19 +769,35 @@ def cmd_refresh(minutes: float = 60) -> None:
                 if NOT_A_SITE.match(d) or NEWSY.search(d.split(".")[0]):
                     continue
                 tld = d.rsplit(".", 1)[-1]
+                site = hq_map.get(d) or {}
+                by_site = site.get("country") in region and not big_listed(d) and not startups.excluded(d)
                 if REGION == "world":
-                    if d not in checked and d not in found and yc_country.get(d) not in region:
-                        continue                 # outside Europe, a company is added only where YC confirms its headquarters
-                elif d not in checked and d not in found and tld not in EU_TLD:
+                    if d not in checked and d not in found and yc_country.get(d) not in region and not by_site:
+                        if d not in hq_map and d not in yc_country:
+                            to_read.add(d)       # its own site may say where it is: read below, added next week
+                        continue                 # outside Europe: added where YC or its own site confirms its headquarters
+                elif d not in checked and d not in found and tld not in EU_TLD and not by_site:
+                    if d not in hq_map:
+                        to_read.add(d)
                     continue                     # HQ unknown and not a European domain: not added
-                e = found.setdefault(d, {"name": d.split(".")[0].replace("-", " ").title(), "country": EU_TLD.get(tld, ""),
-                                         "evidence": []})
+                e = found.setdefault(d, ({k: v for k, v in site_hq_record(d, site).items() if k in ("name", "country", "hq_from",
+                                                                                                   "hq_url", "hq_text")}
+                                         if by_site and d not in checked else
+                                         {"name": d.split(".")[0].replace("-", " ").title(), "country": EU_TLD.get(tld, "")}))
+                e.setdefault("evidence", [])
                 if page not in e["evidence"]:
                     e["evidence"].append(page)
     for d, e in found.items():                   # better evidence for companies already listed
         if d in comp:
             ev = [x for x in comp[d].get("evidence", []) if x != "Seedtable"]
             comp[d]["evidence"] = list(dict.fromkeys(ev + e["evidence"])) or ["Seedtable"]
+    if to_read:
+        got = read_hq(sorted(to_read)[:HQ_PER_RUN], minutes=min(20, minutes / 3))
+        for d, h in got.items():
+            hq_map[d] = h
+        print(f"refresh: headquarters read on {len(got)} companies' own sites, "
+              f"{sum(1 for h in got.values() if h.get('country') in region)} in this region (added next run)", flush=True)
+    pub["hq"] = {d: h.get("country") or "" for d, h in sorted(hq_map.items())}
     new = [d for d in found if d not in checked]
     again = [d for d, st in checked.items() if st != "readable"]
     todo = new + again
@@ -717,6 +840,8 @@ def cmd_refresh(minutes: float = 60) -> None:
             c = comp.setdefault(d, {"name": info.get("name") or d.split(".")[0].replace("-", " ").title(), "domain": d,
                                     "country": info.get("country") or "", "evidence": info.get("evidence") or ["Seedtable"],
                                     "tenants": []})
+            if info.get("hq_from") == "site" and "hq_url" not in c:
+                c["hq_url"] = info.get("hq_url")
             for t in ts:
                 tenants.setdefault((t["ats"], t["key"]), {k: v for k, v in t.items() if k != "named"})
                 if [t["ats"], t["key"]] not in c["tenants"]:
@@ -850,6 +975,8 @@ if __name__ == "__main__":
                   gap=float(sys.argv[4]) if len(sys.argv) > 4 else 0.0)
     elif cmd == "publish":
         cmd_publish()
+    elif cmd == "hq":
+        cmd_hq(float(arg or 90))
     elif cmd == "investors":
         cmd_investors()
     elif cmd == "world":

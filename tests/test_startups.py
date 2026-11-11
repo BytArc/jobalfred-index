@@ -335,6 +335,15 @@ class TestCoverageAndNewest(unittest.TestCase):
         self.assertEqual(page("https://www.battery.com/companies/acme/", {"axios.com", "orange.com"}), set())
         self.assertEqual(page("https://sequoiacap.com/companies/stripe/", {"stripe.com"}), {"stripe.com"})
 
+    def test_a_company_known_from_fund_pages_gets_its_hq_from_its_own_site(self):
+        rec = self.se.site_hq_record("olema.com", {"country": "US", "name": "Olema Oncology", "url": "https://olema.com/",
+                                                   "evidence": "Olema is headquartered in San Francisco, California"})
+        self.assertEqual((rec["country"], rec["hq_from"], rec["hq_url"], rec["name"]), ("US", "site", "https://olema.com/", "Olema Oncology"))
+        rec = self.se.site_hq_record("acme.ai", {"country": "GB", "name": "Home | The leading platform for teams"})
+        self.assertEqual(rec["name"], "Acme")                       # a title that does not name the company is not used
+        self.assertEqual(self.se.big_listed("nvidia.com"), "sp500")    # a listed company is not a startup
+        self.assertEqual(self.se.big_listed("openai.com"), "")         # AI labs are counted as startups
+
     def test_an_investor_keeps_only_its_own_boards(self):
         own = self.se.investor_own_board
         gc = {"name": "General Catalyst", "domain": "generalcatalyst.com"}

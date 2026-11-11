@@ -377,7 +377,21 @@ MEDIA = re.compile(r"(?i)^(axios|bizjournals|fortune|forbes|bloomberg|reuters|ws
                    r"theinformation|sifted|eu-startups|techcrunch|theguardian|guardian|thetimes|telegraph|independent|"
                    r"adweek|adage|adexchanger|crn|computerweekly|datanami|cmswire|pymnts|finextra|thefintechtimes|"
                    r"fiercehealthcare|freightwaves|marketscreener|pehub|bostonglobe|latimes|ajc|usatoday|cbsnews|"
-                   r"techradar|engadget|mashable|wikipedia|youtube|apple|google|github|twitter|x|facebook|instagram)\.(com|co\.uk|org|net|eu)$")
+                   r"techradar|engadget|mashable|wikipedia|youtube|apple|google|github|twitter|x|facebook|instagram|bcorporation|bcorp)\.(com|co\.uk|org|net|eu)$")
+
+
+_BIG: dict | None = None
+
+
+def big_listed(domain: str) -> str:
+    """The list code (a stock index such as sp500, or big tech, Big 4, consulting; data/companies) when the company is
+    a listed or large company rather than a startup. AI labs are not counted: most are VC-backed startups."""
+    global _BIG
+    if _BIG is None:
+        from . import companies
+        _BIG = {m["domain"]: code for code, v in companies.lists().items() if code != "ailab"
+                for m in v["members"] if m.get("domain")}
+    return _BIG.get(domain, "")
 
 
 def excluded(domain: str) -> bool:

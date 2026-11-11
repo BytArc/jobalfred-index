@@ -113,7 +113,8 @@ BASIS = ("A company is listed when it is headquartered in Europe and backed by v
 BASIS_WORLD = ("A company is listed when it is backed by venture investors: shown on Y Combinator's public directory or an investor's "
                "own public portfolio page (the evidence URL is given), or, in Europe, listed in Seedtable's startup database with a "
                "disclosed round from pre-seed to growth and USD 1M or more raised (evidence 'Seedtable'). hq_country is where it is "
-               "headquartered. kind 'investor' marks a VC firm's own roles. Roles are read from each company's own careers system; "
+               "headquartered: from Y Combinator's page, or for a company known only from investors' pages, from its own site "
+               "(hq_url). Companies on stock-index or big-tech lists are not listed. kind 'investor' marks a VC firm's own roles. Roles are read from each company's own careers system; "
                "collected is not the same as confirmed open.")
 
 
@@ -137,8 +138,8 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     owner: dict[tuple[str, str], dict] = {}
     named = set()
     for c in doc.get("companies", []):
-        if startups.excluded(c["domain"]):
-            continue
+        if startups.excluded(c["domain"]) or (c.get("kind") != "investor" and startups.big_listed(c["domain"])):
+            continue                                   # not a startup: a job platform, a news site, a listed company
         for ats, key in c.get("tenants", []):
             owner.setdefault((ats, key), c)
         named |= {(a, k) for a, k in c.get("named", [])}
@@ -200,7 +201,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     companies = []
     for c in doc.get("companies", []):
         boards = [b for b in c.get("tenants", []) if tuple(b) not in dropped_boards]
-        if startups.excluded(c["domain"]) or not boards:
+        if startups.excluded(c["domain"]) or not boards or (c.get("kind") != "investor" and startups.big_listed(c["domain"])):
             continue
         evidence = c.get("evidence") or ["Seedtable"]
         if evidence == ["Seedtable"] and round_urls.get(c["domain"]):
@@ -209,6 +210,8 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
                  "evidence": evidence, "boards": boards, "roles": per_company.get(c["domain"], 0),
                  "backing": "" if c.get("kind") == "investor" else (c.get("backing") or "vc"),
                  "kind": c.get("kind") or "startup"}
+        if c.get("hq_url"):
+            entry["hq_url"] = c["hq_url"]                 # its own page that says where it is headquartered
         if fund.get(c["domain"]):
             entry["funding"] = fund[c["domain"]]
         if vcin.get(c["domain"]):
