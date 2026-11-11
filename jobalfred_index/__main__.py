@@ -73,13 +73,22 @@ def main(argv=None) -> int:
         # only the startups' own boards; the main tenant list and shards are not read or written
         from . import vceu
         su = startups.load()
-        startups.add_tenants(state, su)
+        su["region"] = "europe"
+        world_p = ROOT / "data" / "startups_world.json"
+        world = startups.load(world_p) if world_p.exists() else None
+        if world:
+            world["region"] = "world"
+        both = vceu.union([su] + ([world] if world else []))
+        startups.add_tenants(state, both)
         client.configure_host("join.com", gap=0.5, inflight=2)
-        mine = startups.company_keys(su)
+        mine = startups.company_keys(both)
         names_ = sorted({ats for ats, _ in mine})
         report["fetch"] = pipeline.run_fetch(state, client, max(60, a.minutes * 60 - 300), names_, a.max_age_hours, out_dir,
                                              10 ** 9, log, a.limit or None)
-        report["vceu"] = vceu.build(state, su, out_dir / "vc-eu.json.gz", log, homepages=industry.Homepages(client=client if a.industry_budget else None, budget=a.industry_budget, log=log))["counts"]
+        hp = industry.Homepages(client=client if a.industry_budget else None, budget=a.industry_budget, log=log)
+        report["vceu"] = vceu.build(state, su, out_dir / "vc-eu.json.gz", log, homepages=hp)["counts"]
+        if world:   # every region in one file (Europe included), from the same fetch
+            report["vcworld"] = vceu.build(state, both, out_dir / "vc-world.json.gz", log, homepages=hp)["counts"]
         report["elapsed_seconds"] = round(time.time() - T0)
         rp = ROOT / "work" / f"report-vceu-{run_id}.json"
         rp.parent.mkdir(parents=True, exist_ok=True)

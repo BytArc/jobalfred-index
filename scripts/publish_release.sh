@@ -26,7 +26,7 @@ gh release upload "$TAG" "$DIST/manifest.json" --clobber
 keep=$(python3 -c "import json,sys; m=json.load(open('$DIST/manifest.json')); print('\n'.join(s['file'] for s in m['shards']))")
 for name in $(gh release view "$TAG" --json assets --jq '.assets[].name'); do
   case "$name" in
-    manifest.json|tenants.json.gz|vc-eu.json.gz|homepages.json.gz) ;;   # vc-eu.json.gz is published by vc-eu.yml
+    manifest.json|tenants.json.gz|vc-eu.json.gz|vc-world.json.gz|homepages.json.gz) ;;   # vc-eu and vc-world are published by vc-eu.yml
     *.json.gz) echo "$keep" | grep -qx "$name" || gh release delete-asset "$TAG" "$name" --yes ;;
   esac
 done

@@ -77,3 +77,26 @@ class TestNoModelCalls(unittest.TestCase):
             ailabel.make_client = old
             if os.environ.get("ANTHROPIC_API_KEY") == "present-but-unused":
                 del os.environ["ANTHROPIC_API_KEY"]
+
+
+class TestWorld(unittest.TestCase):
+    def test_union_keeps_each_company_once_and_counts_per_region(self):
+        from jobalfred_index import vceu
+        eu = {"region": "europe", "counts": {"companies_checked": 2},
+              "companies": [{"domain": "a.eu", "name": "A", "country": "DE", "tenants": [["ashby", "a"]]}],
+              "tenants": [{"ats": "ashby", "key": "a", "data": {}}]}
+        world = {"region": "world", "counts": {"companies_checked": 3},
+                 "companies": [{"domain": "b.com", "name": "B", "country": "US", "tenants": [["greenhouse", "b"]]},
+                               {"domain": "a.eu", "name": "A again", "country": "DE", "tenants": [["ashby", "a"]]}],
+                 "tenants": [{"ats": "greenhouse", "key": "b", "data": {}}, {"ats": "ashby", "key": "a", "data": {}}]}
+        u = vceu.union([eu, world])
+        self.assertEqual([c["domain"] for c in u["companies"]], ["a.eu", "b.com"])
+        self.assertEqual(len(u["tenants"]), 2)
+        self.assertEqual(set(u["counts"]["by_region"]), {"europe", "world"})
+        self.assertIn("hq_country", u["basis"])
+
+    def test_both_files_survive_the_main_publish(self):
+        src = (ROOT / "scripts" / "publish_release.sh").read_text()
+        keep = [l for l in src.splitlines() if "manifest.json|tenants.json.gz" in l][0]
+        self.assertIn("vc-eu.json.gz", keep)
+        self.assertIn("vc-world.json.gz", keep)

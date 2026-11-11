@@ -76,6 +76,26 @@ BASIS = ("A company is listed when it is headquartered in Europe and backed by v
          "Roles are read from each company's own careers system; collected is not the same as confirmed open.")
 
 
+BASIS_WORLD = ("A company is listed when it is backed by venture investors: shown on Y Combinator's public directory or an investor's "
+               "own public portfolio page (the evidence URL is given), or, in Europe, listed in Seedtable's startup database with a "
+               "disclosed round from pre-seed to growth and USD 1M or more raised (evidence 'Seedtable'). hq_country is where it is "
+               "headquartered. Roles are read from each company's own careers system; collected is not the same as confirmed open.")
+
+
+def union(docs: list[dict]) -> dict:
+    """One list from several (Europe and the world batches), for vc-world.json.gz. Counts kept per region."""
+    seen, companies, tenants = set(), [], {}
+    for d in docs:
+        for t in d.get("tenants", []):
+            tenants.setdefault((t["ats"], t["key"]), t)
+        for c in d.get("companies", []):
+            if c["domain"] not in seen:
+                seen.add(c["domain"])
+                companies.append(c)
+    return {"companies": companies, "tenants": list(tenants.values()), "basis": BASIS_WORLD,
+            "counts": {"by_region": {d.get("region", str(i)): d.get("counts") or {} for i, d in enumerate(docs)}}}
+
+
 def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     """Rows of every listed company's boards from `state`, deduplicated, written gzipped to `out`. Returns the document
     without its rows (for logs and guards)."""
@@ -144,7 +164,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
         evidence = c.get("evidence") or ["Seedtable"]
         if evidence == ["Seedtable"] and round_urls.get(c["domain"]):
             evidence = round_urls[c["domain"]][:2]      # a public article on its funding round replaces "Seedtable"
-        entry = {"name": c.get("name"), "domain": c["domain"], "country": c.get("country") or "",
+        entry = {"name": c.get("name"), "domain": c["domain"], "country": c.get("country") or "", "hq_country": c.get("country") or "",
                  "evidence": evidence, "boards": boards, "roles": per_company.get(c["domain"], 0)}
         if fund.get(c["domain"]):
             entry["funding"] = fund[c["domain"]]
@@ -162,7 +182,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
                    "evidence_seedtable_only": sum(1 for c in companies if c["evidence"] == ["Seedtable"]),
                    "companies_with_stage": sum(1 for c in companies if (c.get("funding") or {}).get("stage")),
                    "companies_with_total": sum(1 for c in companies if (c.get("funding") or {}).get("total"))})
-    head = {"v": 1, "built": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "basis": BASIS, "counts": counts,
+    head = {"v": 1, "built": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "basis": doc.get("basis") or BASIS, "counts": counts,
             "f": FIELDS}
     body = {**head, "rows": rows, "companies": companies}
     out = Path(out)

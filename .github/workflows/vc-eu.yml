@@ -49,6 +49,9 @@ jobs:
           if gh release download index-latest --pattern startups-eu.json --output work/startups-eu.release.json 2>/dev/null; then
             python scripts/startups_eu.py newest work/startups-eu.release.json
           fi
+          if gh release download index-latest --pattern startups-world.json --output work/startups-world.release.json 2>/dev/null; then
+            REGION=world python scripts/startups_eu.py newest work/startups-world.release.json
+          fi
 
       - name: Refresh the company list from public sources (Sunday 13:41 run, or on request)
         if: ${{ inputs.refresh || github.event.schedule == '41 13 * * *' }}
@@ -61,6 +64,11 @@ jobs:
             python -u scripts/startups_eu.py refresh 45
             cp data/startups_eu.json work/startups-eu.json
             gh release upload index-latest work/startups-eu.json --clobber
+            if [ -f data/startups_world.json ]; then
+              REGION=world python -u scripts/startups_eu.py refresh 30
+              cp data/startups_world.json work/startups-world.json
+              gh release upload index-latest work/startups-world.json --clobber
+            fi
           else
             echo "Not Sunday: the company list is unchanged."
           fi
@@ -82,11 +90,15 @@ jobs:
       - name: Read every listed company's careers system and build vc-eu.json.gz
         run: python -u -m jobalfred_index vceu --minutes 60
 
-      - name: Measure coverage on a random sample of 200 companies (written into the file)
-        run: python -u scripts/startups_eu.py coverage dist-vc/vc-eu.json.gz 200
+      - name: Measure coverage on a random sample of 200 companies (written into each file)
+        run: |
+          python -u scripts/startups_eu.py coverage dist-vc/vc-eu.json.gz 200
+          if [ -f dist-vc/vc-world.json.gz ]; then REGION=world python -u scripts/startups_eu.py coverage dist-vc/vc-world.json.gz 200; fi
 
       - name: Publish (refuses a file far smaller than the last one; a failed run keeps the last good file)
-        run: bash scripts/publish_vc_eu.sh dist-vc/vc-eu.json.gz
+        run: |
+          bash scripts/publish_vc_eu.sh dist-vc/vc-eu.json.gz
+          if [ -f dist-vc/vc-world.json.gz ]; then bash scripts/publish_vc_eu.sh dist-vc/vc-world.json.gz; fi
 
       - name: Keep the run report
         if: always()

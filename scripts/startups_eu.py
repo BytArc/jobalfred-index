@@ -37,6 +37,15 @@ PROBE = WORK / "startups_probe.json"
 PRIVATE = WORK / "startups_eu_private.json"
 ROLES = WORK / "startups_roles.json"
 RELEASE_TENANTS = WORK / "release" / "tenants.json.gz"
+# REGION=world: the rest of the world, added in country batches (cmd_world); its own company list and public file,
+# sharing the probe, name-check and roles caches with Europe (a domain's careers system does not depend on the region)
+import os as _os
+REGION = _os.environ.get("REGION", "eu")
+if REGION == "world":
+    COMPANIES = WORK / "vc_world_companies.json"
+    PRIVATE = WORK / "startups_world_private.json"
+    startups.DATA = ROOT / "data" / "startups_world.json"
+JOBS_COV = WORK / ("coverage-jobs-latest.json" if REGION != "world" else "coverage-jobs-latest-world.json")
 ADAPTED = {"join", "welcomekit", "gem"}   # recognised as detect-only by the probe, read by an adapter now
 
 
@@ -149,6 +158,46 @@ def cmd_companies() -> dict:
            "companies": sorted(out.values(), key=lambda r: r["domain"])}
     COMPANIES.write_text(json.dumps(doc, indent=0, ensure_ascii=False))
     print(json.dumps(dict(counts), indent=1))
+    return doc
+
+
+# -- 1b. the rest of the world, a batch of countries at a time (public sources only) ---------------------------------
+def cmd_world(countries: list[str]) -> dict:
+    """Add the startups headquartered in `countries` (ISO codes) to the world list: Y Combinator's directory (its page
+    gives the headquarters), plus the investors' portfolio pages for companies whose headquarters YC confirms.
+    Europe stays in its own list. Existing entries are kept, so batches accumulate."""
+    countries = [c.upper() for c in countries if c.upper() not in EUROPE]
+    doc = json.load(open(COMPANIES)) if COMPANIES.exists() else {"companies": [], "batches": []}
+    have = {r["domain"]: r for r in doc["companies"]}
+    yc = json.load(open(WORK / "yc_companies.json"))["companies"]
+    pf = json.load(open(WORK / "vc_portfolios.json")) if (WORK / "vc_portfolios.json").exists() else {}
+    by_dom: dict[str, list] = {}
+    for inv, rec in pf.items():
+        for d in rec.get("domains", []):
+            by_dom.setdefault(d, []).append((inv, (rec.get("pages") or [inv])[0]))
+    added = collections.Counter()
+    for slug, c in yc.items():
+        if c.get("country") not in countries or c.get("ycdc_status") != "Active":
+            continue
+        d = site_domain(c.get("website"))
+        if not d or d in have:
+            continue
+        rec = {"domain": d, "name": c.get("name"), "website": c.get("website"), "country": c["country"], "sources": ["yc"],
+               "hq_from": "yc", "yc": {"slug": slug, "batch": c.get("batch"), "country": c["country"], "tags": c.get("tags")},
+               "evidence": [f"https://www.ycombinator.com/companies/{slug}"]}
+        for inv, page in by_dom.get(d, []):
+            rec.setdefault("investors", []).append(inv)
+            rec["evidence"].append(page)
+            if "portfolio" not in rec["sources"]:
+                rec["sources"].append("portfolio")
+        have[d] = rec
+        added[c["country"]] += 1
+    doc["companies"] = sorted(have.values(), key=lambda r: r["domain"])
+    doc["batches"] = list(dict.fromkeys((doc.get("batches") or []) + countries))
+    doc["built"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    doc["counts"] = {"companies": len(doc["companies"]), "by_country": dict(collections.Counter(r["country"] for r in doc["companies"]))}
+    COMPANIES.write_text(json.dumps(doc, indent=0, ensure_ascii=False))
+    print(f"world list: +{sum(added.values())} companies {dict(added)}; {len(doc['companies'])} in all; batches {doc['batches']}")
     return doc
 
 
@@ -403,12 +452,13 @@ def cmd_publish() -> dict:
         "built": time.strftime("%Y-%m-%d", time.gmtime()),
         "counts": {"companies_checked": len(doc["companies"]), "by_status": dict(status.most_common()),
                    "waiting_on_permission": dict(waiting),
-                   **({"coverage_jobs": json.load(open(WORK / "coverage-jobs-latest.json"))}
-                      if (WORK / "coverage-jobs-latest.json").exists() else {})},
+                   **({"coverage_jobs": json.load(open(JOBS_COV))} if JOBS_COV.exists() else {})},
         "tenants": [{"ats": a, "key": k, "data": d} for (a, k), d in sorted(tenants.items())],
         "companies": sorted(companies, key=lambda e: e["domain"]),
         "checked": sorted(checked),
     }
+    if REGION == "world":
+        public["batches"] = doc.get("batches") or []
     startups.DATA.write_text(json.dumps(public, ensure_ascii=False, separators=(",", ":")) + "\n")
     PRIVATE.write_text(json.dumps({"note": "PRIVATE: Seedtable-derived fields. Never publish.", "companies": private},
                                   ensure_ascii=False))
@@ -524,10 +574,14 @@ def cmd_refresh(minutes: float = 60) -> None:
     tenants = {(t["ats"], t["key"]): t for t in pub.get("tenants", [])}
     found: dict[str, dict] = {}            # domain -> {name, country, evidence}
     yc_path, pf_path = WORK / "yc_companies.json", WORK / "vc_portfolios.json"
+    region = EUROPE if REGION != "world" else set(pub.get("batches") or [])
+    yc_country = {}
     if yc_path.exists():
         for slug, c in json.load(open(yc_path))["companies"].items():
             d = site_domain(c.get("website"))
-            if d and c.get("country") in EUROPE and c.get("ycdc_status") == "Active":
+            if d:
+                yc_country[d] = c.get("country")
+            if d and c.get("country") in region and c.get("ycdc_status") == "Active":
                 found.setdefault(d, {"name": c.get("name"), "country": c.get("country"), "evidence": []})["evidence"].append(
                     f"https://www.ycombinator.com/companies/{slug}")
     if pf_path.exists():
@@ -537,7 +591,10 @@ def cmd_refresh(minutes: float = 60) -> None:
                 if NOT_A_SITE.match(d) or NEWSY.search(d.split(".")[0]):
                     continue
                 tld = d.rsplit(".", 1)[-1]
-                if d not in checked and d not in found and tld not in EU_TLD:
+                if REGION == "world":
+                    if d not in checked and d not in found and yc_country.get(d) not in region:
+                        continue                 # outside Europe, a company is added only where YC confirms its headquarters
+                elif d not in checked and d not in found and tld not in EU_TLD:
                     continue                     # HQ unknown and not a European domain: not added
                 e = found.setdefault(d, {"name": d.split(".")[0].replace("-", " ").title(), "country": EU_TLD.get(tld, ""),
                                          "evidence": []})
@@ -722,6 +779,8 @@ if __name__ == "__main__":
                   gap=float(sys.argv[4]) if len(sys.argv) > 4 else 0.0)
     elif cmd == "publish":
         cmd_publish()
+    elif cmd == "world":
+        cmd_world(arg.split(","))
     elif cmd == "newest":
         cmd_newest(arg)
     elif cmd == "refresh":
