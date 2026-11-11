@@ -15,7 +15,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 295     # hard stop under five hours; the run itself is time-boxed to 270 minutes
+    # GitHub stops a hosted job at 360 minutes. The run is time-boxed to 315: fetching stops 5 minutes before that, in-flight sources get
+    # 3 more, then carry-over and the final build (about 10 minutes for 2 million rows) and the publish (about 5) still fit under 355.
+    timeout-minutes: 355
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -37,8 +39,16 @@ jobs:
           gh release download index-latest --pattern tenants.json.gz --dir data --clobber || echo "no earlier tenant list; starting from data/seeds.json"
           gh release download index-latest --pattern homepages.json.gz --dir data/industry --clobber || echo "no earlier homepage cache; using the committed one"
 
+      - name: Download the published index (the roles of tenants this run does not reach are kept from it)
+        run: |
+          mkdir -p prev
+          gh release download index-latest --pattern manifest.json --pattern "*.json.gz" --dir prev --clobber || echo "no published index; nothing to carry over"
+
+      # --checkpoint-minutes: no snapshot builds while fetching; each one labelled every row on the main thread and slowed the fetch
       - name: Build the index
-        run: python -u -m jobalfred_index run --minutes 270 --discover-minutes 40 --crawls 4 --out dist --extra-tenants data/companies/tenants.json
+        run: >-
+          python -u -m jobalfred_index run --minutes 315 --discover-minutes 40 --crawls 4 --out dist --checkpoint-minutes 100000
+          --extra-tenants data/companies/tenants.json --carry-over prev --carry-days 3
 
       - name: Publish release assets
         run: bash scripts/publish_release.sh dist data/tenants.json.gz work
