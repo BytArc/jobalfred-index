@@ -132,9 +132,10 @@ NOT_LANGUAGE = re.compile(r"\s*-?\s*(?:market|customer|client|compan|law|legal|t
                           r"healthcare|hospital|stock|capital|real estate|retail|food|cuisine|cars?(?![a-z])|automotive|oriental|airline|airways|speaking (?:market|region|"
                           r"countr|area|territor|client|customer|europe|world)|mercado|cliente|marche|markt|mittelstand|unternehmen)")
 # "Italian is a plus", "German would be an advantage": nice to have, not required
-PLUS = re.compile(r"(?<![a-z])(?:plus|nice[- ]to[- ]have|preferred|preferably|advantage|advantageous|desirable|bonus|beneficial|"
+PLUS = re.compile(r"(?<![a-z])(?:(?:a|an|big|strong|huge|great|definite|added|real|nice|considered|is|are|be|un|en)\s+plus|plus point|nice[- ]to[- ]have|preferred|preferably|advantage|advantageous|desirable|bonus|beneficial|"
                   r"wunschenswert|von vorteil|un atout|un plus|vantagem|valorizad[oa]|se valorara|valorable|deseable|pluspunt|"
                   r"een pre|gradit[oa]|costituira titolo|mile widziana|eduksi)(?![a-z])")
+ADJACENT = re.compile(r"(?<![a-z])(?:good|very good|excellent|solid|perfect|sehr gute[sn]?|gute[sn]?|bon|bonne|buen[oa]?|bom|boa|ottim[oa]|goede?)\s*$")
 SPEAKING_PLACE = re.compile(r"\s*-?\s*speaking\s*-?\s*(?:team|market|region|countr|area|territor|client|customer|europe|world|"
                             r"compan|office|switzerland|belgium|canada|part|cantons?|communit|population|audience)")
 CLAUSE = re.compile(r"[.;!?\n\r<>|•]|\s-\s|\s{3,}")
@@ -192,7 +193,8 @@ def detect(text: str | None) -> list[str]:
         if SPEAKING_PLACE.match(after):          # "German-speaking team", "the Dutch-speaking market": a place or a group, not a requirement
             continue
         speaking = re.match(r"\s*-?\s*speaking", after)
-        if not (speaking or CUE_BEFORE.search(before) or CUE_AFTER.search(after)):
+        right_before = ADJACENT.search(before)        # "good English", "excellent German": only right before the name
+        if not (speaking or right_before or CUE_BEFORE.search(before) or CUE_AFTER.search(after)):
             continue
         if _is_a_plus(t, m.end()):
             continue

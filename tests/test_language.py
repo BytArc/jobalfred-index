@@ -67,3 +67,8 @@ class TestPlusAndCompanyLanguage(unittest.TestCase):
         self.assertEqual(L.detect("Our company language is English."), ["en"])
         self.assertEqual(L.detect("Excellent reading, listening, and writing skills in English"), ["en"])
         self.assertEqual(L.detect("Inglês: intermediário"), ["en"])
+
+    def test_plus_as_and(self):
+        self.assertEqual(L.detect("Fluent English plus fluent German, with confidence at executive level"), ["en", "de"])
+        self.assertEqual(L.detect("Good English"), ["en"])
+        self.assertEqual(L.detect("Strong German engineering market"), [])
