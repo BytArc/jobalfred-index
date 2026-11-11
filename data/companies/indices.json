@@ -1,0 +1,5006 @@
+{
+ "version": 1,
+ "lists": {
+  "sp500": {
+   "label": "S&P 500",
+   "hq": "US",
+   "source": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "3M"
+    },
+    {
+     "name": "A. O. Smith"
+    },
+    {
+     "name": "Abbott Laboratories"
+    },
+    {
+     "name": "AbbVie"
+    },
+    {
+     "name": "Accenture"
+    },
+    {
+     "name": "Adobe Inc."
+    },
+    {
+     "name": "Advanced Micro Devices"
+    },
+    {
+     "name": "AES Corporation"
+    },
+    {
+     "name": "Aflac"
+    },
+    {
+     "name": "Agilent Technologies"
+    },
+    {
+     "name": "Air Products"
+    },
+    {
+     "name": "Airbnb"
+    },
+    {
+     "name": "Akamai Technologies"
+    },
+    {
+     "name": "Albemarle Corporation"
+    },
+    {
+     "name": "Alexandria Real Estate Equities"
+    },
+    {
+     "name": "Align Technology"
+    },
+    {
+     "name": "Allegion"
+    },
+    {
+     "name": "Alliant Energy"
+    },
+    {
+     "name": "Allstate"
+    },
+    {
+     "name": "Alphabet Inc. (Class A)"
+    },
+    {
+     "name": "Alphabet Inc. (Class C)"
+    },
+    {
+     "name": "Altria"
+    },
+    {
+     "name": "Amazon"
+    },
+    {
+     "name": "Amcor"
+    },
+    {
+     "name": "Ameren"
+    },
+    {
+     "name": "American Electric Power"
+    },
+    {
+     "name": "American Express"
+    },
+    {
+     "name": "American International Group"
+    },
+    {
+     "name": "American Tower"
+    },
+    {
+     "name": "American Water Works"
+    },
+    {
+     "name": "Ameriprise Financial"
+    },
+    {
+     "name": "Ametek"
+    },
+    {
+     "name": "Amgen"
+    },
+    {
+     "name": "Amphenol"
+    },
+    {
+     "name": "Analog Devices"
+    },
+    {
+     "name": "Aon plc"
+    },
+    {
+     "name": "APA Corporation"
+    },
+    {
+     "name": "Apollo Global Management"
+    },
+    {
+     "name": "Apple Inc."
+    },
+    {
+     "name": "Applied Materials"
+    },
+    {
+     "name": "AppLovin"
+    },
+    {
+     "name": "Aptiv"
+    },
+    {
+     "name": "Arch Capital Group"
+    },
+    {
+     "name": "Archer Daniels Midland"
+    },
+    {
+     "name": "Ares Management"
+    },
+    {
+     "name": "Arista Networks"
+    },
+    {
+     "name": "Arthur J. Gallagher & Co."
+    },
+    {
+     "name": "Assurant"
+    },
+    {
+     "name": "AT&T"
+    },
+    {
+     "name": "Atmos Energy"
+    },
+    {
+     "name": "Autodesk"
+    },
+    {
+     "name": "Automatic Data Processing"
+    },
+    {
+     "name": "AutoZone"
+    },
+    {
+     "name": "Avery Dennison"
+    },
+    {
+     "name": "Axon Enterprise"
+    },
+    {
+     "name": "Baker Hughes"
+    },
+    {
+     "name": "Ball Corporation"
+    },
+    {
+     "name": "Bank of America"
+    },
+    {
+     "name": "Baxter International"
+    },
+    {
+     "name": "Becton Dickinson"
+    },
+    {
+     "name": "Berkshire Hathaway"
+    },
+    {
+     "name": "Best Buy"
+    },
+    {
+     "name": "Bio-Techne"
+    },
+    {
+     "name": "Biogen"
+    },
+    {
+     "name": "BlackRock"
+    },
+    {
+     "name": "Blackstone Inc."
+    },
+    {
+     "name": "Block, Inc."
+    },
+    {
+     "name": "Bloom Energy"
+    },
+    {
+     "name": "BNY Mellon"
+    },
+    {
+     "name": "Boeing"
+    },
+    {
+     "name": "Booking Holdings"
+    },
+    {
+     "name": "Boston Scientific"
+    },
+    {
+     "name": "Bristol Myers Squibb"
+    },
+    {
+     "name": "Broadcom"
+    },
+    {
+     "name": "Broadridge Financial Solutions"
+    },
+    {
+     "name": "Brown & Brown"
+    },
+    {
+     "name": "Brown–Forman"
+    },
+    {
+     "name": "Bunge Global"
+    },
+    {
+     "name": "BXP, Inc."
+    },
+    {
+     "name": "C.H. Robinson"
+    },
+    {
+     "name": "Cadence Design Systems"
+    },
+    {
+     "name": "Camden Property Trust"
+    },
+    {
+     "name": "Capital One"
+    },
+    {
+     "name": "Cardinal Health"
+    },
+    {
+     "name": "Carnival Corporation"
+    },
+    {
+     "name": "Carrier Global"
+    },
+    {
+     "name": "Carvana"
+    },
+    {
+     "name": "Casey's"
+    },
+    {
+     "name": "Caterpillar Inc."
+    },
+    {
+     "name": "Cboe Global Markets"
+    },
+    {
+     "name": "CBRE Group"
+    },
+    {
+     "name": "CDW Corporation"
+    },
+    {
+     "name": "Cencora"
+    },
+    {
+     "name": "Centene Corporation"
+    },
+    {
+     "name": "CenterPoint Energy"
+    },
+    {
+     "name": "CF Industries"
+    },
+    {
+     "name": "Charles River Laboratories"
+    },
+    {
+     "name": "Charles Schwab Corporation"
+    },
+    {
+     "name": "Charter Communications"
+    },
+    {
+     "name": "Chevron Corporation"
+    },
+    {
+     "name": "Chipotle Mexican Grill"
+    },
+    {
+     "name": "Chubb Limited"
+    },
+    {
+     "name": "Church & Dwight"
+    },
+    {
+     "name": "Ciena"
+    },
+    {
+     "name": "Cigna"
+    },
+    {
+     "name": "Cincinnati Financial"
+    },
+    {
+     "name": "Cintas"
+    },
+    {
+     "name": "Cisco"
+    },
+    {
+     "name": "Citigroup"
+    },
+    {
+     "name": "Citizens Financial Group"
+    },
+    {
+     "name": "Clorox"
+    },
+    {
+     "name": "CME Group"
+    },
+    {
+     "name": "CMS Energy"
+    },
+    {
+     "name": "Coca-Cola Company (The)"
+    },
+    {
+     "name": "Cognizant"
+    },
+    {
+     "name": "Coherent Corp."
+    },
+    {
+     "name": "Coinbase"
+    },
+    {
+     "name": "Colgate-Palmolive"
+    },
+    {
+     "name": "Comcast"
+    },
+    {
+     "name": "Comfort Systems USA"
+    },
+    {
+     "name": "ConocoPhillips"
+    },
+    {
+     "name": "Consolidated Edison"
+    },
+    {
+     "name": "Constellation Brands"
+    },
+    {
+     "name": "Constellation Energy"
+    },
+    {
+     "name": "Cooper Companies (The)"
+    },
+    {
+     "name": "Copart"
+    },
+    {
+     "name": "Corning Inc."
+    },
+    {
+     "name": "Corpay"
+    },
+    {
+     "name": "CoStar Group"
+    },
+    {
+     "name": "Costco"
+    },
+    {
+     "name": "CRH plc"
+    },
+    {
+     "name": "CrowdStrike"
+    },
+    {
+     "name": "Crown Castle"
+    },
+    {
+     "name": "CSX Corporation"
+    },
+    {
+     "name": "Cummins"
+    },
+    {
+     "name": "CVS Health"
+    },
+    {
+     "name": "Danaher Corporation"
+    },
+    {
+     "name": "Darden Restaurants"
+    },
+    {
+     "name": "Datadog"
+    },
+    {
+     "name": "DaVita"
+    },
+    {
+     "name": "Deckers Brands"
+    },
+    {
+     "name": "Deere & Company"
+    },
+    {
+     "name": "Dell Technologies"
+    },
+    {
+     "name": "Delta Air Lines"
+    },
+    {
+     "name": "Devon Energy"
+    },
+    {
+     "name": "Dexcom"
+    },
+    {
+     "name": "Diamondback Energy"
+    },
+    {
+     "name": "Digital Realty"
+    },
+    {
+     "name": "Dollar General"
+    },
+    {
+     "name": "Dollar Tree"
+    },
+    {
+     "name": "Dominion Energy"
+    },
+    {
+     "name": "Domino's"
+    },
+    {
+     "name": "DoorDash"
+    },
+    {
+     "name": "Dover Corporation"
+    },
+    {
+     "name": "Dow Inc."
+    },
+    {
+     "name": "D. R. Horton"
+    },
+    {
+     "name": "DTE Energy"
+    },
+    {
+     "name": "Duke Energy"
+    },
+    {
+     "name": "DuPont"
+    },
+    {
+     "name": "Eaton Corporation"
+    },
+    {
+     "name": "eBay Inc."
+    },
+    {
+     "name": "EchoStar"
+    },
+    {
+     "name": "Ecolab"
+    },
+    {
+     "name": "Edison International"
+    },
+    {
+     "name": "Edwards Lifesciences"
+    },
+    {
+     "name": "Elevance Health"
+    },
+    {
+     "name": "Emcor"
+    },
+    {
+     "name": "Emerson Electric"
+    },
+    {
+     "name": "Entergy"
+    },
+    {
+     "name": "EOG Resources"
+    },
+    {
+     "name": "EQT Corporation"
+    },
+    {
+     "name": "Equifax"
+    },
+    {
+     "name": "Equinix"
+    },
+    {
+     "name": "Erie Indemnity"
+    },
+    {
+     "name": "Essex Property Trust"
+    },
+    {
+     "name": "Estée Lauder Companies (The)"
+    },
+    {
+     "name": "Everest Group"
+    },
+    {
+     "name": "Evergy"
+    },
+    {
+     "name": "Everpure"
+    },
+    {
+     "name": "Eversource Energy"
+    },
+    {
+     "name": "Exelon"
+    },
+    {
+     "name": "Expand Energy"
+    },
+    {
+     "name": "Expedia Group"
+    },
+    {
+     "name": "Expeditors International"
+    },
+    {
+     "name": "Extra Space Storage"
+    },
+    {
+     "name": "ExxonMobil"
+    },
+    {
+     "name": "F5, Inc."
+    },
+    {
+     "name": "FactSet"
+    },
+    {
+     "name": "Fair Isaac"
+    },
+    {
+     "name": "Fastenal"
+    },
+    {
+     "name": "Federal Realty Investment Trust"
+    },
+    {
+     "name": "FedEx"
+    },
+    {
+     "name": "FedEx Freight"
+    },
+    {
+     "name": "Ferguson Enterprises"
+    },
+    {
+     "name": "Fidelity National Information Services"
+    },
+    {
+     "name": "Fifth Third Bancorp"
+    },
+    {
+     "name": "First Solar"
+    },
+    {
+     "name": "FirstEnergy"
+    },
+    {
+     "name": "Fiserv"
+    },
+    {
+     "name": "Flex Ltd."
+    },
+    {
+     "name": "Ford Motor Company"
+    },
+    {
+     "name": "Fortinet"
+    },
+    {
+     "name": "Fortive"
+    },
+    {
+     "name": "Fox Corporation (Class A)"
+    },
+    {
+     "name": "Fox Corporation (Class B)"
+    },
+    {
+     "name": "Franklin Resources"
+    },
+    {
+     "name": "Freeport-McMoRan"
+    },
+    {
+     "name": "Garmin"
+    },
+    {
+     "name": "Gartner"
+    },
+    {
+     "name": "GE Aerospace"
+    },
+    {
+     "name": "GE HealthCare"
+    },
+    {
+     "name": "GE Vernova"
+    },
+    {
+     "name": "Gen Digital"
+    },
+    {
+     "name": "Generac"
+    },
+    {
+     "name": "General Dynamics"
+    },
+    {
+     "name": "General Mills"
+    },
+    {
+     "name": "General Motors"
+    },
+    {
+     "name": "Genuine Parts Company"
+    },
+    {
+     "name": "Gilead Sciences"
+    },
+    {
+     "name": "Global Payments"
+    },
+    {
+     "name": "Globe Life"
+    },
+    {
+     "name": "GoDaddy"
+    },
+    {
+     "name": "Goldman Sachs"
+    },
+    {
+     "name": "Halliburton"
+    },
+    {
+     "name": "Hartford (The)"
+    },
+    {
+     "name": "Hasbro"
+    },
+    {
+     "name": "HCA Healthcare"
+    },
+    {
+     "name": "Healthpeak Properties"
+    },
+    {
+     "name": "Henry Schein"
+    },
+    {
+     "name": "Hershey Company (The)"
+    },
+    {
+     "name": "Hewlett Packard Enterprise"
+    },
+    {
+     "name": "Hilton Worldwide"
+    },
+    {
+     "name": "Home Depot (The)"
+    },
+    {
+     "name": "Honeywell Aerospace"
+    },
+    {
+     "name": "Honeywell Technologies"
+    },
+    {
+     "name": "Hormel Foods"
+    },
+    {
+     "name": "Host Hotels & Resorts"
+    },
+    {
+     "name": "Howmet Aerospace"
+    },
+    {
+     "name": "HP Inc."
+    },
+    {
+     "name": "Hubbell Incorporated"
+    },
+    {
+     "name": "Humana"
+    },
+    {
+     "name": "Huntington Bancshares"
+    },
+    {
+     "name": "Huntington Ingalls Industries"
+    },
+    {
+     "name": "IBM"
+    },
+    {
+     "name": "IDEX Corporation"
+    },
+    {
+     "name": "Idexx Laboratories"
+    },
+    {
+     "name": "Illinois Tool Works"
+    },
+    {
+     "name": "Illumina, Inc."
+    },
+    {
+     "name": "Incyte"
+    },
+    {
+     "name": "Ingersoll Rand"
+    },
+    {
+     "name": "Insulet Corporation"
+    },
+    {
+     "name": "Intel"
+    },
+    {
+     "name": "Interactive Brokers"
+    },
+    {
+     "name": "Intercontinental Exchange"
+    },
+    {
+     "name": "International Flavors & Fragrances"
+    },
+    {
+     "name": "International Paper"
+    },
+    {
+     "name": "Intuit"
+    },
+    {
+     "name": "Intuitive Surgical"
+    },
+    {
+     "name": "Invesco"
+    },
+    {
+     "name": "Invitation Homes"
+    },
+    {
+     "name": "IQVIA"
+    },
+    {
+     "name": "Iron Mountain"
+    },
+    {
+     "name": "J.B. Hunt"
+    },
+    {
+     "name": "Jabil"
+    },
+    {
+     "name": "Jack Henry & Associates"
+    },
+    {
+     "name": "Jacobs Solutions"
+    },
+    {
+     "name": "Johnson & Johnson"
+    },
+    {
+     "name": "Johnson Controls"
+    },
+    {
+     "name": "JPMorgan Chase"
+    },
+    {
+     "name": "Keurig Dr Pepper"
+    },
+    {
+     "name": "KeyCorp"
+    },
+    {
+     "name": "Keysight Technologies"
+    },
+    {
+     "name": "Kimberly-Clark"
+    },
+    {
+     "name": "Kimco Realty"
+    },
+    {
+     "name": "Kinder Morgan"
+    },
+    {
+     "name": "KKR & Co."
+    },
+    {
+     "name": "KLA Corporation"
+    },
+    {
+     "name": "Kraft Heinz"
+    },
+    {
+     "name": "Kroger"
+    },
+    {
+     "name": "L3Harris"
+    },
+    {
+     "name": "Labcorp"
+    },
+    {
+     "name": "Lam Research"
+    },
+    {
+     "name": "Las Vegas Sands"
+    },
+    {
+     "name": "Leidos"
+    },
+    {
+     "name": "Lennar"
+    },
+    {
+     "name": "Lennox International"
+    },
+    {
+     "name": "Lilly (Eli)"
+    },
+    {
+     "name": "Linde plc"
+    },
+    {
+     "name": "Live Nation Entertainment"
+    },
+    {
+     "name": "Lockheed Martin"
+    },
+    {
+     "name": "Loews Corporation"
+    },
+    {
+     "name": "Lowe's"
+    },
+    {
+     "name": "Lululemon Athletica"
+    },
+    {
+     "name": "Lumentum"
+    },
+    {
+     "name": "LyondellBasell"
+    },
+    {
+     "name": "M&T Bank"
+    },
+    {
+     "name": "Marathon Petroleum"
+    },
+    {
+     "name": "Marriott International"
+    },
+    {
+     "name": "Marsh McLennan"
+    },
+    {
+     "name": "Martin Marietta Materials"
+    },
+    {
+     "name": "Marvell Technology"
+    },
+    {
+     "name": "Masco"
+    },
+    {
+     "name": "Mastercard"
+    },
+    {
+     "name": "McCormick & Company"
+    },
+    {
+     "name": "McDonald's"
+    },
+    {
+     "name": "McKesson"
+    },
+    {
+     "name": "Medtronic"
+    },
+    {
+     "name": "Merck & Co."
+    },
+    {
+     "name": "Meta Platforms"
+    },
+    {
+     "name": "MetLife"
+    },
+    {
+     "name": "Mettler Toledo"
+    },
+    {
+     "name": "MGM Resorts"
+    },
+    {
+     "name": "Microchip Technology"
+    },
+    {
+     "name": "Micron Technology"
+    },
+    {
+     "name": "Microsoft"
+    },
+    {
+     "name": "Mid-America Apartment Communities"
+    },
+    {
+     "name": "Moderna"
+    },
+    {
+     "name": "Mondelez International"
+    },
+    {
+     "name": "Monolithic Power Systems"
+    },
+    {
+     "name": "Monster Beverage"
+    },
+    {
+     "name": "Moody's Corporation"
+    },
+    {
+     "name": "Morgan Stanley"
+    },
+    {
+     "name": "Mosaic Company (The)"
+    },
+    {
+     "name": "Motorola Solutions"
+    },
+    {
+     "name": "MSCI"
+    },
+    {
+     "name": "Nasdaq, Inc."
+    },
+    {
+     "name": "NetApp"
+    },
+    {
+     "name": "Netflix"
+    },
+    {
+     "name": "Newmont"
+    },
+    {
+     "name": "News Corp (Class A)"
+    },
+    {
+     "name": "News Corp (Class B)"
+    },
+    {
+     "name": "NextEra Energy"
+    },
+    {
+     "name": "Nike, Inc."
+    },
+    {
+     "name": "NiSource"
+    },
+    {
+     "name": "Nordson Corporation"
+    },
+    {
+     "name": "Norfolk Southern"
+    },
+    {
+     "name": "Northern Trust"
+    },
+    {
+     "name": "Northrop Grumman"
+    },
+    {
+     "name": "Norwegian Cruise Line Holdings"
+    },
+    {
+     "name": "NRG Energy"
+    },
+    {
+     "name": "Nucor"
+    },
+    {
+     "name": "Nvidia"
+    },
+    {
+     "name": "NVR, Inc."
+    },
+    {
+     "name": "NXP Semiconductors"
+    },
+    {
+     "name": "O'Reilly Automotive"
+    },
+    {
+     "name": "Occidental Petroleum"
+    },
+    {
+     "name": "Okta, Inc."
+    },
+    {
+     "name": "Old Dominion"
+    },
+    {
+     "name": "Omnicom Group"
+    },
+    {
+     "name": "ON Semiconductor"
+    },
+    {
+     "name": "Oneok"
+    },
+    {
+     "name": "Oracle Corporation"
+    },
+    {
+     "name": "Otis Worldwide"
+    },
+    {
+     "name": "Paccar"
+    },
+    {
+     "name": "Packaging Corporation of America"
+    },
+    {
+     "name": "Palantir Technologies"
+    },
+    {
+     "name": "Palo Alto Networks"
+    },
+    {
+     "name": "Parker Hannifin"
+    },
+    {
+     "name": "Paychex"
+    },
+    {
+     "name": "PayPal"
+    },
+    {
+     "name": "Pentair"
+    },
+    {
+     "name": "PepsiCo"
+    },
+    {
+     "name": "Pfizer"
+    },
+    {
+     "name": "PG&E Corporation"
+    },
+    {
+     "name": "Philip Morris International"
+    },
+    {
+     "name": "Phillips 66"
+    },
+    {
+     "name": "Pinnacle West Capital"
+    },
+    {
+     "name": "PNC Financial Services"
+    },
+    {
+     "name": "PPG Industries"
+    },
+    {
+     "name": "PPL Corporation"
+    },
+    {
+     "name": "Principal Financial Group"
+    },
+    {
+     "name": "Procter & Gamble"
+    },
+    {
+     "name": "Progressive Corporation"
+    },
+    {
+     "name": "Prologis"
+    },
+    {
+     "name": "Prudential Financial"
+    },
+    {
+     "name": "PTC Inc."
+    },
+    {
+     "name": "Public Service Enterprise Group"
+    },
+    {
+     "name": "Public Storage"
+    },
+    {
+     "name": "PulteGroup"
+    },
+    {
+     "name": "Qnity Electronics"
+    },
+    {
+     "name": "Qualcomm"
+    },
+    {
+     "name": "Quanta Services"
+    },
+    {
+     "name": "Quest Diagnostics"
+    },
+    {
+     "name": "Ralph Lauren Corporation"
+    },
+    {
+     "name": "Raymond James Financial"
+    },
+    {
+     "name": "Reddit"
+    },
+    {
+     "name": "Realty Income"
+    },
+    {
+     "name": "Regency Centers"
+    },
+    {
+     "name": "Regeneron Pharmaceuticals"
+    },
+    {
+     "name": "Regions Financial Corporation"
+    },
+    {
+     "name": "Republic Services"
+    },
+    {
+     "name": "ResMed"
+    },
+    {
+     "name": "Revvity"
+    },
+    {
+     "name": "Robinhood Markets"
+    },
+    {
+     "name": "Rockwell Automation"
+    },
+    {
+     "name": "Rollins, Inc."
+    },
+    {
+     "name": "Roper Technologies"
+    },
+    {
+     "name": "Ross Stores"
+    },
+    {
+     "name": "Royal Caribbean Group"
+    },
+    {
+     "name": "RTX Corporation"
+    },
+    {
+     "name": "S&P Global"
+    },
+    {
+     "name": "Salesforce"
+    },
+    {
+     "name": "Sandisk"
+    },
+    {
+     "name": "SBA Communications"
+    },
+    {
+     "name": "Schlumberger"
+    },
+    {
+     "name": "Seagate Technology"
+    },
+    {
+     "name": "Sempra"
+    },
+    {
+     "name": "ServiceNow"
+    },
+    {
+     "name": "Sherwin-Williams"
+    },
+    {
+     "name": "Simon Property Group"
+    },
+    {
+     "name": "Skydance"
+    },
+    {
+     "name": "Skyworks Solutions"
+    },
+    {
+     "name": "J.M. Smucker Company (The)"
+    },
+    {
+     "name": "Smurfit Westrock"
+    },
+    {
+     "name": "Snap-on"
+    },
+    {
+     "name": "Solventum"
+    },
+    {
+     "name": "Southern Company"
+    },
+    {
+     "name": "Southwest Airlines"
+    },
+    {
+     "name": "Stanley Black & Decker"
+    },
+    {
+     "name": "Starbucks"
+    },
+    {
+     "name": "State Street Corporation"
+    },
+    {
+     "name": "Steel Dynamics"
+    },
+    {
+     "name": "Steris"
+    },
+    {
+     "name": "Stryker Corporation"
+    },
+    {
+     "name": "Supermicro"
+    },
+    {
+     "name": "Synchrony Financial"
+    },
+    {
+     "name": "Synopsys"
+    },
+    {
+     "name": "Sysco"
+    },
+    {
+     "name": "T-Mobile US"
+    },
+    {
+     "name": "T. Rowe Price"
+    },
+    {
+     "name": "Take-Two Interactive"
+    },
+    {
+     "name": "Tapestry, Inc."
+    },
+    {
+     "name": "Targa Resources"
+    },
+    {
+     "name": "Target Corporation"
+    },
+    {
+     "name": "TE Connectivity"
+    },
+    {
+     "name": "Teledyne Technologies"
+    },
+    {
+     "name": "Teradyne"
+    },
+    {
+     "name": "Tesla, Inc."
+    },
+    {
+     "name": "Texas Instruments"
+    },
+    {
+     "name": "Texas Pacific Land Corporation"
+    },
+    {
+     "name": "Textron"
+    },
+    {
+     "name": "Thermo Fisher Scientific"
+    },
+    {
+     "name": "TJX Companies"
+    },
+    {
+     "name": "TKO Group Holdings"
+    },
+    {
+     "name": "Tractor Supply"
+    },
+    {
+     "name": "Trane Technologies"
+    },
+    {
+     "name": "TransDigm Group"
+    },
+    {
+     "name": "Travelers Companies (The)"
+    },
+    {
+     "name": "Trimble Inc."
+    },
+    {
+     "name": "Truist Financial"
+    },
+    {
+     "name": "Twilio"
+    },
+    {
+     "name": "Tyler Technologies"
+    },
+    {
+     "name": "Tyson Foods"
+    },
+    {
+     "name": "U.S. Bancorp"
+    },
+    {
+     "name": "Uber"
+    },
+    {
+     "name": "UDR, Inc."
+    },
+    {
+     "name": "Ulta Beauty"
+    },
+    {
+     "name": "Union Pacific Corporation"
+    },
+    {
+     "name": "United Airlines Holdings"
+    },
+    {
+     "name": "United Parcel Service"
+    },
+    {
+     "name": "United Rentals"
+    },
+    {
+     "name": "UnitedHealth Group"
+    },
+    {
+     "name": "Universal Health Services"
+    },
+    {
+     "name": "Valero Energy"
+    },
+    {
+     "name": "Veeva Systems"
+    },
+    {
+     "name": "Ventas"
+    },
+    {
+     "name": "Veralto"
+    },
+    {
+     "name": "Verisign"
+    },
+    {
+     "name": "Verisk Analytics"
+    },
+    {
+     "name": "Verizon"
+    },
+    {
+     "name": "Vertex Pharmaceuticals"
+    },
+    {
+     "name": "Vertiv"
+    },
+    {
+     "name": "Viatris"
+    },
+    {
+     "name": "Vici Properties"
+    },
+    {
+     "name": "Visa Inc."
+    },
+    {
+     "name": "Vistra Corp."
+    },
+    {
+     "name": "Vivmark Residential"
+    },
+    {
+     "name": "Vulcan Materials Company"
+    },
+    {
+     "name": "Vylor"
+    },
+    {
+     "name": "W. R. Berkley Corporation"
+    },
+    {
+     "name": "W. W. Grainger"
+    },
+    {
+     "name": "Wabtec"
+    },
+    {
+     "name": "Walmart"
+    },
+    {
+     "name": "Walt Disney Company (The)"
+    },
+    {
+     "name": "Waste Management"
+    },
+    {
+     "name": "Waters Corporation"
+    },
+    {
+     "name": "WEC Energy Group"
+    },
+    {
+     "name": "Wells Fargo"
+    },
+    {
+     "name": "Welltower"
+    },
+    {
+     "name": "West Pharmaceutical Services"
+    },
+    {
+     "name": "Western Digital"
+    },
+    {
+     "name": "Weyerhaeuser"
+    },
+    {
+     "name": "Williams-Sonoma, Inc."
+    },
+    {
+     "name": "Williams Companies"
+    },
+    {
+     "name": "Willis Towers Watson"
+    },
+    {
+     "name": "Workday, Inc."
+    },
+    {
+     "name": "Wynn Resorts"
+    },
+    {
+     "name": "Xcel Energy"
+    },
+    {
+     "name": "Xylem Inc."
+    },
+    {
+     "name": "Yum! Brands"
+    },
+    {
+     "name": "Zebra Technologies"
+    },
+    {
+     "name": "Zimmer Biomet"
+    },
+    {
+     "name": "Zoetis"
+    }
+   ]
+  },
+  "psi20": {
+   "label": "PSI 20",
+   "hq": "PT",
+   "source": "https://en.wikipedia.org/wiki/PSI-20",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Altri"
+    },
+    {
+     "name": "Banco Comercial Português"
+    },
+    {
+     "name": "Corticeira Amorim"
+    },
+    {
+     "name": "CTT Correios de Portugal"
+    },
+    {
+     "name": "EDP Renováveis"
+    },
+    {
+     "name": "Energias de Portugal"
+    },
+    {
+     "name": "Galp Energia"
+    },
+    {
+     "name": "Ibersol"
+    },
+    {
+     "name": "Jerónimo Martins"
+    },
+    {
+     "name": "Mota-Engil"
+    },
+    {
+     "name": "NOS"
+    },
+    {
+     "name": "Novabase"
+    },
+    {
+     "name": "Pharol"
+    },
+    {
+     "name": "Redes Energéticas Nacionais"
+    },
+    {
+     "name": "Semapa"
+    },
+    {
+     "name": "Sonae"
+    },
+    {
+     "name": "Sonae Capital"
+    },
+    {
+     "name": "The Navigator Company"
+    }
+   ]
+  },
+  "dax": {
+   "label": "DAX",
+   "hq": "DE",
+   "source": "https://en.wikipedia.org/wiki/DAX",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Adidas"
+    },
+    {
+     "name": "Airbus"
+    },
+    {
+     "name": "Allianz"
+    },
+    {
+     "name": "BASF"
+    },
+    {
+     "name": "Bayer"
+    },
+    {
+     "name": "Beiersdorf"
+    },
+    {
+     "name": "BMW"
+    },
+    {
+     "name": "Brenntag"
+    },
+    {
+     "name": "Commerzbank"
+    },
+    {
+     "name": "Continental"
+    },
+    {
+     "name": "Daimler Truck"
+    },
+    {
+     "name": "Deutsche Bank"
+    },
+    {
+     "name": "Deutsche Börse"
+    },
+    {
+     "name": "Deutsche Post"
+    },
+    {
+     "name": "Deutsche Telekom"
+    },
+    {
+     "name": "E.ON"
+    },
+    {
+     "name": "Fresenius"
+    },
+    {
+     "name": "Fresenius Medical Care"
+    },
+    {
+     "name": "GEA Group"
+    },
+    {
+     "name": "Hannover Re"
+    },
+    {
+     "name": "Heidelberg Materials"
+    },
+    {
+     "name": "Henkel"
+    },
+    {
+     "name": "Infineon Technologies"
+    },
+    {
+     "name": "Mercedes-Benz Group"
+    },
+    {
+     "name": "Merck"
+    },
+    {
+     "name": "MTU Aero Engines"
+    },
+    {
+     "name": "Munich Re"
+    },
+    {
+     "name": "Porsche SE"
+    },
+    {
+     "name": "Qiagen"
+    },
+    {
+     "name": "Rheinmetall"
+    },
+    {
+     "name": "RWE"
+    },
+    {
+     "name": "SAP"
+    },
+    {
+     "name": "Scout24"
+    },
+    {
+     "name": "Siemens"
+    },
+    {
+     "name": "Siemens Energy"
+    },
+    {
+     "name": "Siemens Healthineers"
+    },
+    {
+     "name": "Symrise"
+    },
+    {
+     "name": "Volkswagen Group"
+    },
+    {
+     "name": "Vonovia"
+    },
+    {
+     "name": "Zalando"
+    }
+   ]
+  },
+  "cac40": {
+   "label": "CAC 40",
+   "hq": "FR",
+   "source": "https://en.wikipedia.org/wiki/CAC_40",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Accor"
+    },
+    {
+     "name": "Air Liquide"
+    },
+    {
+     "name": "Airbus"
+    },
+    {
+     "name": "ArcelorMittal"
+    },
+    {
+     "name": "Axa"
+    },
+    {
+     "name": "BNP Paribas"
+    },
+    {
+     "name": "Bouygues"
+    },
+    {
+     "name": "Bureau Veritas"
+    },
+    {
+     "name": "Capgemini"
+    },
+    {
+     "name": "Carrefour"
+    },
+    {
+     "name": "Crédit Agricole"
+    },
+    {
+     "name": "Danone"
+    },
+    {
+     "name": "Dassault Systèmes"
+    },
+    {
+     "name": "Eiffage"
+    },
+    {
+     "name": "Engie"
+    },
+    {
+     "name": "EssilorLuxottica"
+    },
+    {
+     "name": "Eurofins Scientific"
+    },
+    {
+     "name": "Euronext"
+    },
+    {
+     "name": "Hermès"
+    },
+    {
+     "name": "Kering"
+    },
+    {
+     "name": "L'Oréal"
+    },
+    {
+     "name": "Legrand"
+    },
+    {
+     "name": "LVMH"
+    },
+    {
+     "name": "Michelin"
+    },
+    {
+     "name": "Orange"
+    },
+    {
+     "name": "Pernod Ricard"
+    },
+    {
+     "name": "Publicis"
+    },
+    {
+     "name": "Renault"
+    },
+    {
+     "name": "Safran"
+    },
+    {
+     "name": "Saint-Gobain"
+    },
+    {
+     "name": "Sanofi"
+    },
+    {
+     "name": "Schneider Electric"
+    },
+    {
+     "name": "Société Générale"
+    },
+    {
+     "name": "Stellantis"
+    },
+    {
+     "name": "STMicroelectronics"
+    },
+    {
+     "name": "Thales"
+    },
+    {
+     "name": "TotalEnergies"
+    },
+    {
+     "name": "Unibail-Rodamco-Westfield"
+    },
+    {
+     "name": "Veolia"
+    },
+    {
+     "name": "Vinci"
+    }
+   ]
+  },
+  "ftse100": {
+   "label": "FTSE 100",
+   "hq": "GB",
+   "source": "https://en.wikipedia.org/wiki/FTSE_100_Index",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "3i"
+    },
+    {
+     "name": "Aberdeen Group"
+    },
+    {
+     "name": "Admiral Group"
+    },
+    {
+     "name": "Airtel Africa"
+    },
+    {
+     "name": "Alliance Witan"
+    },
+    {
+     "name": "Anglo American plc"
+    },
+    {
+     "name": "Antofagasta plc"
+    },
+    {
+     "name": "Associated British Foods"
+    },
+    {
+     "name": "AstraZeneca"
+    },
+    {
+     "name": "Autotrader Group"
+    },
+    {
+     "name": "Aviva"
+    },
+    {
+     "name": "Babcock International"
+    },
+    {
+     "name": "BAE Systems"
+    },
+    {
+     "name": "Balfour Beatty"
+    },
+    {
+     "name": "Barclays"
+    },
+    {
+     "name": "Barratt Redrow"
+    },
+    {
+     "name": "BP"
+    },
+    {
+     "name": "British American Tobacco"
+    },
+    {
+     "name": "British Land"
+    },
+    {
+     "name": "BT Group"
+    },
+    {
+     "name": "Bunzl"
+    },
+    {
+     "name": "Burberry Group"
+    },
+    {
+     "name": "Centrica"
+    },
+    {
+     "name": "Coca-Cola Europacific Partners"
+    },
+    {
+     "name": "Coca-Cola HBC"
+    },
+    {
+     "name": "Compass Group"
+    },
+    {
+     "name": "Computacenter"
+    },
+    {
+     "name": "Convatec"
+    },
+    {
+     "name": "Croda International"
+    },
+    {
+     "name": "DCC Energy"
+    },
+    {
+     "name": "Diageo"
+    },
+    {
+     "name": "Diploma"
+    },
+    {
+     "name": "EasyJet"
+    },
+    {
+     "name": "Endeavour Mining"
+    },
+    {
+     "name": "Experian"
+    },
+    {
+     "name": "F & C Investment Trust"
+    },
+    {
+     "name": "Fresnillo plc"
+    },
+    {
+     "name": "Games Workshop"
+    },
+    {
+     "name": "Glencore"
+    },
+    {
+     "name": "GSK plc"
+    },
+    {
+     "name": "Haleon"
+    },
+    {
+     "name": "Halma plc"
+    },
+    {
+     "name": "Hiscox"
+    },
+    {
+     "name": "Howdens Joinery"
+    },
+    {
+     "name": "HSBC"
+    },
+    {
+     "name": "ICG"
+    },
+    {
+     "name": "IG Group"
+    },
+    {
+     "name": "IHG Hotels & Resorts"
+    },
+    {
+     "name": "IMI"
+    },
+    {
+     "name": "Imperial Brands"
+    },
+    {
+     "name": "Informa"
+    },
+    {
+     "name": "International Airlines Group"
+    },
+    {
+     "name": "Intertek"
+    },
+    {
+     "name": "Investec"
+    },
+    {
+     "name": "Ithaca Energy"
+    },
+    {
+     "name": "JD Sports"
+    },
+    {
+     "name": "Lion Finance Group"
+    },
+    {
+     "name": "Kingfisher plc"
+    },
+    {
+     "name": "Land Securities"
+    },
+    {
+     "name": "Legal & General"
+    },
+    {
+     "name": "Lloyds Banking Group"
+    },
+    {
+     "name": "LondonMetric Property"
+    },
+    {
+     "name": "London Stock Exchange Group"
+    },
+    {
+     "name": "M&G"
+    },
+    {
+     "name": "Marks & Spencer"
+    },
+    {
+     "name": "Melrose Industries"
+    },
+    {
+     "name": "Metlen Energy & Metals"
+    },
+    {
+     "name": "National Grid plc"
+    },
+    {
+     "name": "NatWest Group"
+    },
+    {
+     "name": "Next plc"
+    },
+    {
+     "name": "Pearson plc"
+    },
+    {
+     "name": "Pershing Square Holdings"
+    },
+    {
+     "name": "Polar Capital Technology Trust"
+    },
+    {
+     "name": "Prudential plc"
+    },
+    {
+     "name": "Reckitt"
+    },
+    {
+     "name": "RELX"
+    },
+    {
+     "name": "Rentokil Initial"
+    },
+    {
+     "name": "Rio Tinto"
+    },
+    {
+     "name": "Rolls-Royce Holdings"
+    },
+    {
+     "name": "Sage Group"
+    },
+    {
+     "name": "Sainsbury's"
+    },
+    {
+     "name": "Scottish Mortgage Investment Trust"
+    },
+    {
+     "name": "Segro"
+    },
+    {
+     "name": "Severn Trent"
+    },
+    {
+     "name": "Shell plc"
+    },
+    {
+     "name": "Smiths Group"
+    },
+    {
+     "name": "Smith & Nephew"
+    },
+    {
+     "name": "Spirax Group"
+    },
+    {
+     "name": "SSE plc"
+    },
+    {
+     "name": "Standard Chartered"
+    },
+    {
+     "name": "Standard Life"
+    },
+    {
+     "name": "St. James's Place"
+    },
+    {
+     "name": "Tesco"
+    },
+    {
+     "name": "Tritax Big Box REIT"
+    },
+    {
+     "name": "Unilever"
+    },
+    {
+     "name": "United Utilities"
+    },
+    {
+     "name": "Vodafone Group"
+    },
+    {
+     "name": "Weir"
+    },
+    {
+     "name": "Whitbread"
+    },
+    {
+     "name": "WPP"
+    }
+   ]
+  },
+  "ibex35": {
+   "label": "IBEX 35",
+   "hq": "ES",
+   "source": "https://en.wikipedia.org/wiki/IBEX_35",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "ACS"
+    },
+    {
+     "name": "Acerinox"
+    },
+    {
+     "name": "Amadeus IT Group"
+    },
+    {
+     "name": "Acciona"
+    },
+    {
+     "name": "Acciona Energía"
+    },
+    {
+     "name": "BBVA"
+    },
+    {
+     "name": "Bankinter"
+    },
+    {
+     "name": "CaixaBank"
+    },
+    {
+     "name": "Cellnex Telecom"
+    },
+    {
+     "name": "Inmobiliaria Colonial"
+    },
+    {
+     "name": "AENA"
+    },
+    {
+     "name": "Endesa"
+    },
+    {
+     "name": "Enagás"
+    },
+    {
+     "name": "Fluidra"
+    },
+    {
+     "name": "Ferrovial"
+    },
+    {
+     "name": "Grifols"
+    },
+    {
+     "name": "International Airlines Group"
+    },
+    {
+     "name": "Iberdrola"
+    },
+    {
+     "name": "Indra"
+    },
+    {
+     "name": "Inditex"
+    },
+    {
+     "name": "Logista"
+    },
+    {
+     "name": "Mapfre"
+    },
+    {
+     "name": "Merlin Properties"
+    },
+    {
+     "name": "ArcelorMittal"
+    },
+    {
+     "name": "Naturgy"
+    },
+    {
+     "name": "Puig"
+    },
+    {
+     "name": "Redeia Corporación"
+    },
+    {
+     "name": "Repsol"
+    },
+    {
+     "name": "Laboratorios Rovi"
+    },
+    {
+     "name": "Banco Sabadell"
+    },
+    {
+     "name": "Santander"
+    },
+    {
+     "name": "Sacyr"
+    },
+    {
+     "name": "Solaria"
+    },
+    {
+     "name": "Telefónica"
+    },
+    {
+     "name": "Unicaja"
+    }
+   ]
+  },
+  "ftsemib": {
+   "label": "FTSE MIB",
+   "hq": "IT",
+   "source": "https://en.wikipedia.org/wiki/FTSE_MIB",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "A2A"
+    },
+    {
+     "name": "Amplifon"
+    },
+    {
+     "name": "Avio"
+    },
+    {
+     "name": "Azimut"
+    },
+    {
+     "name": "Banca Mediolanum"
+    },
+    {
+     "name": "Banca Monte dei Paschi di Siena"
+    },
+    {
+     "name": "Banco BPM"
+    },
+    {
+     "name": "BPER Banca"
+    },
+    {
+     "name": "Brunello Cucinelli"
+    },
+    {
+     "name": "Buzzi"
+    },
+    {
+     "name": "Campari"
+    },
+    {
+     "name": "Enel"
+    },
+    {
+     "name": "Eni"
+    },
+    {
+     "name": "Ferrari"
+    },
+    {
+     "name": "Fincantieri"
+    },
+    {
+     "name": "FinecoBank"
+    },
+    {
+     "name": "Generali"
+    },
+    {
+     "name": "Hera"
+    },
+    {
+     "name": "Intesa Sanpaolo"
+    },
+    {
+     "name": "INWIT"
+    },
+    {
+     "name": "Italgas"
+    },
+    {
+     "name": "Iveco"
+    },
+    {
+     "name": "Leonardo"
+    },
+    {
+     "name": "Lottomatica Group"
+    },
+    {
+     "name": "Mediobanca"
+    },
+    {
+     "name": "Moncler"
+    },
+    {
+     "name": "Nexi"
+    },
+    {
+     "name": "Poste italiane"
+    },
+    {
+     "name": "Prysmian"
+    },
+    {
+     "name": "Recordati"
+    },
+    {
+     "name": "Saipem"
+    },
+    {
+     "name": "Snam"
+    },
+    {
+     "name": "Stellantis"
+    },
+    {
+     "name": "STMicroelectronics"
+    },
+    {
+     "name": "Technoprobe"
+    },
+    {
+     "name": "Telecom Italia"
+    },
+    {
+     "name": "Tenaris"
+    },
+    {
+     "name": "Terna"
+    },
+    {
+     "name": "UniCredit"
+    },
+    {
+     "name": "Unipol"
+    }
+   ]
+  },
+  "aex": {
+   "label": "AEX",
+   "hq": "NL",
+   "source": "https://en.wikipedia.org/wiki/AEX_index",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "ABN AMRO"
+    },
+    {
+     "name": "Adyen"
+    },
+    {
+     "name": "Aegon"
+    },
+    {
+     "name": "Ahold Delhaize"
+    },
+    {
+     "name": "AkzoNobel"
+    },
+    {
+     "name": "ArcelorMittal"
+    },
+    {
+     "name": "ASM International"
+    },
+    {
+     "name": "ASML Holding"
+    },
+    {
+     "name": "ASR Nederland"
+    },
+    {
+     "name": "BE Semiconductors"
+    },
+    {
+     "name": "DSM Firmenich AG"
+    },
+    {
+     "name": "Exor"
+    },
+    {
+     "name": "Heineken"
+    },
+    {
+     "name": "IMCD"
+    },
+    {
+     "name": "ING Group"
+    },
+    {
+     "name": "KPN"
+    },
+    {
+     "name": "NN Group"
+    },
+    {
+     "name": "Philips"
+    },
+    {
+     "name": "Prosus"
+    },
+    {
+     "name": "Randstad"
+    },
+    {
+     "name": "RELX"
+    },
+    {
+     "name": "Shell plc"
+    },
+    {
+     "name": "Universal Music Group"
+    },
+    {
+     "name": "Unilever"
+    },
+    {
+     "name": "Wolters Kluwer"
+    }
+   ]
+  },
+  "smi": {
+   "label": "SMI",
+   "hq": "CH",
+   "source": "https://en.wikipedia.org/wiki/Swiss_Market_Index",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Novartis International AG"
+    },
+    {
+     "name": "Roche Holding AG"
+    },
+    {
+     "name": "Nestlé SA"
+    },
+    {
+     "name": "ABB Ltd"
+    },
+    {
+     "name": "UBS Group AG"
+    },
+    {
+     "name": "Compagnie Financière Richemont SA"
+    },
+    {
+     "name": "Zurich Insurance Group AG"
+    },
+    {
+     "name": "Holcim Limited"
+    },
+    {
+     "name": "Swiss Reinsurance Company Ltd"
+    },
+    {
+     "name": "Lonza Group AG"
+    },
+    {
+     "name": "Sandoz"
+    },
+    {
+     "name": "Givaudan SA"
+    },
+    {
+     "name": "Alcon Inc"
+    },
+    {
+     "name": "Sika AG"
+    },
+    {
+     "name": "Amrize AG"
+    },
+    {
+     "name": "Swiss Life Holding AG"
+    },
+    {
+     "name": "Galderma"
+    },
+    {
+     "name": "Geberit AG"
+    },
+    {
+     "name": "Partners Group Holding AG"
+    },
+    {
+     "name": "Logitech International SA"
+    }
+   ]
+  },
+  "omxs30": {
+   "label": "OMXS30",
+   "hq": "SE",
+   "source": "https://en.wikipedia.org/wiki/OMX_Stockholm_30",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "ABB Ltd"
+    },
+    {
+     "name": "Addtech B"
+    },
+    {
+     "name": "Alfa Laval"
+    },
+    {
+     "name": "Assa Abloy B"
+    },
+    {
+     "name": "AstraZeneca"
+    },
+    {
+     "name": "Atlas Copco A"
+    },
+    {
+     "name": "Boliden"
+    },
+    {
+     "name": "Epiroc A"
+    },
+    {
+     "name": "EQT"
+    },
+    {
+     "name": "Ericsson B"
+    },
+    {
+     "name": "Essity B"
+    },
+    {
+     "name": "Evolution"
+    },
+    {
+     "name": "Handelsbanken A"
+    },
+    {
+     "name": "Hennes & Mauritz B"
+    },
+    {
+     "name": "Hexagon B"
+    },
+    {
+     "name": "Industrivärden C"
+    },
+    {
+     "name": "Investor B"
+    },
+    {
+     "name": "Lifco B"
+    },
+    {
+     "name": "Nibe Industrier B"
+    },
+    {
+     "name": "Nordea Bank Abp"
+    },
+    {
+     "name": "Saab B"
+    },
+    {
+     "name": "Sandvik"
+    },
+    {
+     "name": "SCA B"
+    },
+    {
+     "name": "SEB A"
+    },
+    {
+     "name": "Skanska B"
+    },
+    {
+     "name": "SKF B"
+    },
+    {
+     "name": "Swedbank A"
+    },
+    {
+     "name": "Tele2 B"
+    },
+    {
+     "name": "Telia Company"
+    },
+    {
+     "name": "Volvo B"
+    }
+   ]
+  },
+  "kospi200": {
+   "label": "KOSPI 200",
+   "hq": "KR",
+   "source": "https://en.wikipedia.org/wiki/KOSPI_200",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Amorepacific"
+    },
+    {
+     "name": "Amorepacific Holdings"
+    },
+    {
+     "name": "APR"
+    },
+    {
+     "name": "Asia Holdings"
+    },
+    {
+     "name": "BGF Retail"
+    },
+    {
+     "name": "BNK Financial"
+    },
+    {
+     "name": "Celltrion"
+    },
+    {
+     "name": "Cheil Worldwide"
+    },
+    {
+     "name": "Chong Kun Dang"
+    },
+    {
+     "name": "CJ"
+    },
+    {
+     "name": "CJ CheilJedang"
+    },
+    {
+     "name": "CJ Logistics"
+    },
+    {
+     "name": "Cosmax"
+    },
+    {
+     "name": "Cosmo Chemical"
+    },
+    {
+     "name": "Coway"
+    },
+    {
+     "name": "CS Wind"
+    },
+    {
+     "name": "d'Alba Global"
+    },
+    {
+     "name": "Daesang"
+    },
+    {
+     "name": "Daewoo E&C"
+    },
+    {
+     "name": "Daewoong"
+    },
+    {
+     "name": "Daewoong Pharmaceutical"
+    },
+    {
+     "name": "DB HiTek"
+    },
+    {
+     "name": "DB Insurance"
+    },
+    {
+     "name": "DL"
+    },
+    {
+     "name": "DL E&C"
+    },
+    {
+     "name": "DN Automotive"
+    },
+    {
+     "name": "Dongsuh"
+    },
+    {
+     "name": "Dongwon Industries"
+    },
+    {
+     "name": "Dongwon Systems"
+    },
+    {
+     "name": "Doosan"
+    },
+    {
+     "name": "Doosan Bobcat"
+    },
+    {
+     "name": "Doosan Enerbility"
+    },
+    {
+     "name": "Doosan Robotics"
+    },
+    {
+     "name": "DoubleU Games"
+    },
+    {
+     "name": "Ecopro Materials"
+    },
+    {
+     "name": "Emart"
+    },
+    {
+     "name": "F&F"
+    },
+    {
+     "name": "Foosung"
+    },
+    {
+     "name": "Green Cross"
+    },
+    {
+     "name": "GS"
+    },
+    {
+     "name": "GS Retail"
+    },
+    {
+     "name": "Hana Financial"
+    },
+    {
+     "name": "Hanall Biopharma"
+    },
+    {
+     "name": "Hanil Cement"
+    },
+    {
+     "name": "Hanjin KAL"
+    },
+    {
+     "name": "Hankook"
+    },
+    {
+     "name": "Hankook & Company"
+    },
+    {
+     "name": "Hanmi Pharm"
+    },
+    {
+     "name": "Hanmi Science"
+    },
+    {
+     "name": "Hanmi Semiconductor"
+    },
+    {
+     "name": "Hanon Systems"
+    },
+    {
+     "name": "Hansol Chemical"
+    },
+    {
+     "name": "Hanssem"
+    },
+    {
+     "name": "Hanwha"
+    },
+    {
+     "name": "Hanwha Aerospace"
+    },
+    {
+     "name": "Hanwha Engine"
+    },
+    {
+     "name": "Hanwha Life"
+    },
+    {
+     "name": "Hanwha Ocean"
+    },
+    {
+     "name": "Hanwha Solutions"
+    },
+    {
+     "name": "Hanwha Systems"
+    },
+    {
+     "name": "HD Construction Equipment"
+    },
+    {
+     "name": "HD Hyundai"
+    },
+    {
+     "name": "HD Hyundai Electric"
+    },
+    {
+     "name": "HD Hyundai Heavy Industries"
+    },
+    {
+     "name": "HD Hyundai Marine Engine"
+    },
+    {
+     "name": "HD Hyundai Marine Solution"
+    },
+    {
+     "name": "HD KSOE"
+    },
+    {
+     "name": "Hankuk Carbon"
+    },
+    {
+     "name": "HiteJinro"
+    },
+    {
+     "name": "HL Mando"
+    },
+    {
+     "name": "HMM"
+    },
+    {
+     "name": "Hotel Shilla"
+    },
+    {
+     "name": "HS Hyosung Advanced Materials"
+    },
+    {
+     "name": "Hybe"
+    },
+    {
+     "name": "Hyosung Heavy Industries"
+    },
+    {
+     "name": "Hyosung TNC"
+    },
+    {
+     "name": "Hyundai AutoEver"
+    },
+    {
+     "name": "Hyundai Department Store"
+    },
+    {
+     "name": "Hyundai E&C"
+    },
+    {
+     "name": "Hyundai Elevator"
+    },
+    {
+     "name": "Hyundai Glovis"
+    },
+    {
+     "name": "Hyundai Marine & Fire"
+    },
+    {
+     "name": "Hyundai Mobis"
+    },
+    {
+     "name": "Hyundai Motor"
+    },
+    {
+     "name": "Hyundai Rotem"
+    },
+    {
+     "name": "Hyundai Steel"
+    },
+    {
+     "name": "Hyundai WIA"
+    },
+    {
+     "name": "IM Financial"
+    },
+    {
+     "name": "Industrial Bank of Korea"
+    },
+    {
+     "name": "Isu Petasys"
+    },
+    {
+     "name": "Isu Specialty Chemical"
+    },
+    {
+     "name": "JB Financial"
+    },
+    {
+     "name": "Kakao"
+    },
+    {
+     "name": "KakaoBank"
+    },
+    {
+     "name": "KakaoPay"
+    },
+    {
+     "name": "Kangwon Land"
+    },
+    {
+     "name": "KB Financial"
+    },
+    {
+     "name": "KCC"
+    },
+    {
+     "name": "KEPCO"
+    },
+    {
+     "name": "KEPCO E&C"
+    },
+    {
+     "name": "KEPCO KPS"
+    },
+    {
+     "name": "Kia"
+    },
+    {
+     "name": "Kiwoom Securities"
+    },
+    {
+     "name": "Kolmar Korea"
+    },
+    {
+     "name": "Kolon Industries"
+    },
+    {
+     "name": "Korea Aerospace"
+    },
+    {
+     "name": "Korea District Heating"
+    },
+    {
+     "name": "Korea Gas"
+    },
+    {
+     "name": "Korea Investment"
+    },
+    {
+     "name": "Korea Petrochemical"
+    },
+    {
+     "name": "Korea Zinc"
+    },
+    {
+     "name": "Korean Air"
+    },
+    {
+     "name": "Krafton"
+    },
+    {
+     "name": "KT"
+    },
+    {
+     "name": "KT&G"
+    },
+    {
+     "name": "Kumho Petrochemical"
+    },
+    {
+     "name": "Kumho Tire"
+    },
+    {
+     "name": "L&F"
+    },
+    {
+     "name": "LG"
+    },
+    {
+     "name": "LG Chem"
+    },
+    {
+     "name": "LG CNS"
+    },
+    {
+     "name": "LG Display"
+    },
+    {
+     "name": "LG Electronics"
+    },
+    {
+     "name": "LG Energy Solution"
+    },
+    {
+     "name": "LG H&H"
+    },
+    {
+     "name": "LG Innotek"
+    },
+    {
+     "name": "LG Uplus"
+    },
+    {
+     "name": "LIG Nex1"
+    },
+    {
+     "name": "Lotte"
+    },
+    {
+     "name": "Lotte Chemical"
+    },
+    {
+     "name": "Lotte Chilsung"
+    },
+    {
+     "name": "Lotte Fine Chemical"
+    },
+    {
+     "name": "Lotte Shopping"
+    },
+    {
+     "name": "Lotte Wellfood"
+    },
+    {
+     "name": "LS"
+    },
+    {
+     "name": "LS Electric"
+    },
+    {
+     "name": "Meritz Financial"
+    },
+    {
+     "name": "Mirae Asset Securities"
+    },
+    {
+     "name": "Misto"
+    },
+    {
+     "name": "Miwon Commercial"
+    },
+    {
+     "name": "Miwon Specialty Chemical"
+    },
+    {
+     "name": "Naver"
+    },
+    {
+     "name": "NC"
+    },
+    {
+     "name": "Netmarble"
+    },
+    {
+     "name": "NH Investment & Securities"
+    },
+    {
+     "name": "Nongshim"
+    },
+    {
+     "name": "OCI"
+    },
+    {
+     "name": "OCI Holdings"
+    },
+    {
+     "name": "Orion"
+    },
+    {
+     "name": "Orion Holdings"
+    },
+    {
+     "name": "Ottogi"
+    },
+    {
+     "name": "Pan Ocean"
+    },
+    {
+     "name": "Paradise"
+    },
+    {
+     "name": "Poongsan"
+    },
+    {
+     "name": "POSCO"
+    },
+    {
+     "name": "POSCO DX"
+    },
+    {
+     "name": "POSCO Future M"
+    },
+    {
+     "name": "POSCO International"
+    },
+    {
+     "name": "S-1"
+    },
+    {
+     "name": "Sanil Electric"
+    },
+    {
+     "name": "Samsung Biologics"
+    },
+    {
+     "name": "Samsung C&T"
+    },
+    {
+     "name": "Samsung Card"
+    },
+    {
+     "name": "Samsung E&A"
+    },
+    {
+     "name": "Samsung Electro-Mechanics"
+    },
+    {
+     "name": "Samsung Electronics"
+    },
+    {
+     "name": "Samsung Epis"
+    },
+    {
+     "name": "Samsung Fire & Marine"
+    },
+    {
+     "name": "Samsung Heavy Industries"
+    },
+    {
+     "name": "Samsung Life"
+    },
+    {
+     "name": "Samsung SDI"
+    },
+    {
+     "name": "Samsung SDS"
+    },
+    {
+     "name": "Samsung Securities"
+    },
+    {
+     "name": "Samyang Foods"
+    },
+    {
+     "name": "SD Biosensor"
+    },
+    {
+     "name": "Seah Besteel"
+    },
+    {
+     "name": "Seah Steel Holdings"
+    },
+    {
+     "name": "Shinhan Financial"
+    },
+    {
+     "name": "Shinsegae"
+    },
+    {
+     "name": "SK"
+    },
+    {
+     "name": "SK Biopharm"
+    },
+    {
+     "name": "SK Bioscience"
+    },
+    {
+     "name": "SK Chemicals"
+    },
+    {
+     "name": "SK Hynix"
+    },
+    {
+     "name": "SK IE Technology"
+    },
+    {
+     "name": "SK Innovation"
+    },
+    {
+     "name": "SK Square"
+    },
+    {
+     "name": "SK Telecom"
+    },
+    {
+     "name": "SKC"
+    },
+    {
+     "name": "SL"
+    },
+    {
+     "name": "S-Oil"
+    },
+    {
+     "name": "Taekwang Industrial"
+    },
+    {
+     "name": "Taihan Cable & Solution"
+    },
+    {
+     "name": "TKG Huchems"
+    },
+    {
+     "name": "Woori Financial"
+    },
+    {
+     "name": "Youlchon Chemical"
+    },
+    {
+     "name": "Young Poong"
+    },
+    {
+     "name": "Youngone"
+    },
+    {
+     "name": "Youngone Holdings"
+    },
+    {
+     "name": "Yuhan"
+    }
+   ]
+  },
+  "asx200": {
+   "label": "S&P/ASX 200",
+   "hq": "AU",
+   "source": "https://en.wikipedia.org/wiki/S%26P/ASX_200",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Life360"
+    },
+    {
+     "name": "4DMedical"
+    },
+    {
+     "name": "a2 Milk Company"
+    },
+    {
+     "name": "Alcoa"
+    },
+    {
+     "name": "Australian Foundation Investment Company"
+    },
+    {
+     "name": "AGL Energy"
+    },
+    {
+     "name": "Auckland International Airport Limited"
+    },
+    {
+     "name": "Ampol"
+    },
+    {
+     "name": "Alkane Resources"
+    },
+    {
+     "name": "Aristocrat Leisure"
+    },
+    {
+     "name": "ALS"
+    },
+    {
+     "name": "Atlas Arteria"
+    },
+    {
+     "name": "Amcor"
+    },
+    {
+     "name": "AMP"
+    },
+    {
+     "name": "Ansell"
+    },
+    {
+     "name": "Australia & New Zealand Banking Group"
+    },
+    {
+     "name": "APA Group"
+    },
+    {
+     "name": "Eagers Automotive"
+    },
+    {
+     "name": "ARB Corporation"
+    },
+    {
+     "name": "Argo Investments"
+    },
+    {
+     "name": "Austal"
+    },
+    {
+     "name": "Abacus Storage King"
+    },
+    {
+     "name": "ASX"
+    },
+    {
+     "name": "AUB Group"
+    },
+    {
+     "name": "Aurizon"
+    },
+    {
+     "name": "Bendigo & Adelaide Bank"
+    },
+    {
+     "name": "BSP Financial Group"
+    },
+    {
+     "name": "Bega Cheese"
+    },
+    {
+     "name": "Bellevue Gold"
+    },
+    {
+     "name": "BHP"
+    },
+    {
+     "name": "Bank of Queensland"
+    },
+    {
+     "name": "Beach Energy"
+    },
+    {
+     "name": "Breville Group"
+    },
+    {
+     "name": "BlueScope"
+    },
+    {
+     "name": "BWP Trust"
+    },
+    {
+     "name": "Brambles"
+    },
+    {
+     "name": "CAR Group"
+    },
+    {
+     "name": "Commonwealth Bank"
+    },
+    {
+     "name": "Codan"
+    },
+    {
+     "name": "Contact Energy"
+    },
+    {
+     "name": "Challenger"
+    },
+    {
+     "name": "Charter Hall"
+    },
+    {
+     "name": "Champion Iron"
+    },
+    {
+     "name": "Centuria Industrial REIT"
+    },
+    {
+     "name": "Charter Hall Long WALE REIT"
+    },
+    {
+     "name": "Capricorn Metals"
+    },
+    {
+     "name": "Chorus"
+    },
+    {
+     "name": "Cochlear"
+    },
+    {
+     "name": "Coles Group"
+    },
+    {
+     "name": "Computershare"
+    },
+    {
+     "name": "Charter Hall Retail REIT"
+    },
+    {
+     "name": "Capstone Copper"
+    },
+    {
+     "name": "CSL"
+    },
+    {
+     "name": "Corporate Travel Management"
+    },
+    {
+     "name": "Cleanaway"
+    },
+    {
+     "name": "Catalyst Metals"
+    },
+    {
+     "name": "Dalrymple Bay Infrastructure"
+    },
+    {
+     "name": "Dyno Nobel"
+    },
+    {
+     "name": "Downer Group"
+    },
+    {
+     "name": "Droneshield"
+    },
+    {
+     "name": "Deterra Royalties"
+    },
+    {
+     "name": "Dexus"
+    },
+    {
+     "name": "Deep Yellow"
+    },
+    {
+     "name": "EBOS Group"
+    },
+    {
+     "name": "Endeavour Group"
+    },
+    {
+     "name": "Emerald Resources"
+    },
+    {
+     "name": "Electro Optic Systems Holdings"
+    },
+    {
+     "name": "Evolution Mining"
+    },
+    {
+     "name": "EVT"
+    },
+    {
+     "name": "Fletcher Building"
+    },
+    {
+     "name": "Flight Centre Travel Group"
+    },
+    {
+     "name": "Fortescue"
+    },
+    {
+     "name": "Fisher & Paykel Healthcare"
+    },
+    {
+     "name": "Freightways Group"
+    },
+    {
+     "name": "Generation Development Group"
+    },
+    {
+     "name": "Greatland Resources"
+    },
+    {
+     "name": "Genesis Minerals"
+    },
+    {
+     "name": "Goodman Group"
+    },
+    {
+     "name": "Genesis Energy"
+    },
+    {
+     "name": "GPT Group"
+    },
+    {
+     "name": "GQG Partners"
+    },
+    {
+     "name": "HomeCo Daily Needs REIT"
+    },
+    {
+     "name": "HUB24"
+    },
+    {
+     "name": "Harvey Norman"
+    },
+    {
+     "name": "Insurance Australia Group"
+    },
+    {
+     "name": "Insignia Financial"
+    },
+    {
+     "name": "Infratil"
+    },
+    {
+     "name": "IGO"
+    },
+    {
+     "name": "Iluka Resources"
+    },
+    {
+     "name": "IMDEX"
+    },
+    {
+     "name": "JB Hi-Fi"
+    },
+    {
+     "name": "James Hardie"
+    },
+    {
+     "name": "L1 Group"
+    },
+    {
+     "name": "Lendlease"
+    },
+    {
+     "name": "Light & Wonder"
+    },
+    {
+     "name": "Lovisa"
+    },
+    {
+     "name": "L1 Long Short Fund"
+    },
+    {
+     "name": "Liontown Resources"
+    },
+    {
+     "name": "Lynas Rare Earths"
+    },
+    {
+     "name": "Mercury NZ"
+    },
+    {
+     "name": "Meridian Energy"
+    },
+    {
+     "name": "MFF Capital Investments"
+    },
+    {
+     "name": "Magellan Financial Group"
+    },
+    {
+     "name": "Mirvac"
+    },
+    {
+     "name": "Mineral Resources"
+    },
+    {
+     "name": "Monadelphous Group"
+    },
+    {
+     "name": "Medibank"
+    },
+    {
+     "name": "Macquarie Group"
+    },
+    {
+     "name": "Mesoblast"
+    },
+    {
+     "name": "Metcash"
+    },
+    {
+     "name": "Metrics Master Income Trust"
+    },
+    {
+     "name": "National Australia Bank"
+    },
+    {
+     "name": "Newmont"
+    },
+    {
+     "name": "New Hope"
+    },
+    {
+     "name": "Nib"
+    },
+    {
+     "name": "Nickel Industries"
+    },
+    {
+     "name": "National Storage"
+    },
+    {
+     "name": "Northern Star Resources"
+    },
+    {
+     "name": "NRW Holdings"
+    },
+    {
+     "name": "Netwealth Group"
+    },
+    {
+     "name": "News Corp Class B"
+    },
+    {
+     "name": "Nexgen Energy"
+    },
+    {
+     "name": "NextDC"
+    },
+    {
+     "name": "Ora Banda Mining"
+    },
+    {
+     "name": "Orora"
+    },
+    {
+     "name": "Origin Energy"
+    },
+    {
+     "name": "Orica"
+    },
+    {
+     "name": "Predictive Discovery"
+    },
+    {
+     "name": "Paladin Energy"
+    },
+    {
+     "name": "PLS Group"
+    },
+    {
+     "name": "Pro Medicus"
+    },
+    {
+     "name": "Premier Investments"
+    },
+    {
+     "name": "Pinnacle Investment Management"
+    },
+    {
+     "name": "Perpetual"
+    },
+    {
+     "name": "Perenti"
+    },
+    {
+     "name": "Perseus Mining"
+    },
+    {
+     "name": "Pexa Group"
+    },
+    {
+     "name": "Qantas"
+    },
+    {
+     "name": "QBE Insurance"
+    },
+    {
+     "name": "Qube Holdings"
+    },
+    {
+     "name": "Redox"
+    },
+    {
+     "name": "REA Group"
+    },
+    {
+     "name": "Regis Healthcare"
+    },
+    {
+     "name": "Reece Group"
+    },
+    {
+     "name": "Region Group"
+    },
+    {
+     "name": "Ramsay Health Care"
+    },
+    {
+     "name": "Rio Tinto"
+    },
+    {
+     "name": "ResMed"
+    },
+    {
+     "name": "Ramelius Resources"
+    },
+    {
+     "name": "Regis Resources"
+    },
+    {
+     "name": "Resolute Mining"
+    },
+    {
+     "name": "Reliance Worldwide Corporation"
+    },
+    {
+     "name": "Ryman Healthcare"
+    },
+    {
+     "name": "South32"
+    },
+    {
+     "name": "Scentre Group"
+    },
+    {
+     "name": "Steadfast Group"
+    },
+    {
+     "name": "Seek"
+    },
+    {
+     "name": "Sandfire Resources"
+    },
+    {
+     "name": "SGH"
+    },
+    {
+     "name": "Sims Metal"
+    },
+    {
+     "name": "Stockland"
+    },
+    {
+     "name": "Sonic Healthcare"
+    },
+    {
+     "name": "Sigma Healthcare"
+    },
+    {
+     "name": "Stanmore Resources"
+    },
+    {
+     "name": "Summerset Group Holdings"
+    },
+    {
+     "name": "Soul Patts"
+    },
+    {
+     "name": "Spark New Zealand"
+    },
+    {
+     "name": "Santos"
+    },
+    {
+     "name": "Super Retail Group"
+    },
+    {
+     "name": "Suncorp"
+    },
+    {
+     "name": "Tabcorp"
+    },
+    {
+     "name": "Transurban"
+    },
+    {
+     "name": "The Lottery Corporation"
+    },
+    {
+     "name": "Telstra"
+    },
+    {
+     "name": "Telix Pharmaceuticals"
+    },
+    {
+     "name": "TechnologyOne"
+    },
+    {
+     "name": "TPG Telecom"
+    },
+    {
+     "name": "Tuas"
+    },
+    {
+     "name": "Treasury Wine Estates"
+    },
+    {
+     "name": "Vault Minerals"
+    },
+    {
+     "name": "Vicinity Centres"
+    },
+    {
+     "name": "Viva Energy"
+    },
+    {
+     "name": "Virgin Australia Holdings"
+    },
+    {
+     "name": "Ventia Services Group"
+    },
+    {
+     "name": "West African Resources"
+    },
+    {
+     "name": "WAM Capital"
+    },
+    {
+     "name": "Westpac"
+    },
+    {
+     "name": "Woodside Energy Group"
+    },
+    {
+     "name": "Wesfarmers"
+    },
+    {
+     "name": "Westgold Resources"
+    },
+    {
+     "name": "Whitehaven Coal"
+    },
+    {
+     "name": "WAM Leaders"
+    },
+    {
+     "name": "Worley"
+    },
+    {
+     "name": "Woolworths Group"
+    },
+    {
+     "name": "Wisetech Global"
+    },
+    {
+     "name": "Xero"
+    },
+    {
+     "name": "Block, Inc."
+    },
+    {
+     "name": "Yancoal Australia"
+    },
+    {
+     "name": "Zimplats Holdings"
+    },
+    {
+     "name": "Zip"
+    }
+   ]
+  },
+  "tsx60": {
+   "label": "S&P/TSX 60",
+   "hq": "CA",
+   "source": "https://en.wikipedia.org/wiki/S%26P/TSX_60",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Agnico Eagle Mines Limited"
+    },
+    {
+     "name": "Alimentation Couche-Tard Inc."
+    },
+    {
+     "name": "Bank of Montreal"
+    },
+    {
+     "name": "Bank of Nova Scotia"
+    },
+    {
+     "name": "Barrick Mining Corporation"
+    },
+    {
+     "name": "BCE Inc."
+    },
+    {
+     "name": "Brookfield Asset Management Ltd."
+    },
+    {
+     "name": "Brookfield Corporation"
+    },
+    {
+     "name": "Brookfield Infrastructure Partners L.P."
+    },
+    {
+     "name": "CAE Inc."
+    },
+    {
+     "name": "Cameco Corporation"
+    },
+    {
+     "name": "Canadian Imperial Bank of Commerce"
+    },
+    {
+     "name": "Canadian National Railway Company"
+    },
+    {
+     "name": "Canadian Natural Resources Limited"
+    },
+    {
+     "name": "Canadian Pacific Kansas City Limited"
+    },
+    {
+     "name": "Canadian Tire Corporation Limited"
+    },
+    {
+     "name": "CCL Industries Inc."
+    },
+    {
+     "name": "Celestica Inc."
+    },
+    {
+     "name": "Cenovus Energy Inc."
+    },
+    {
+     "name": "CGI Inc."
+    },
+    {
+     "name": "Constellation Software Inc."
+    },
+    {
+     "name": "Dollarama Inc."
+    },
+    {
+     "name": "Emera Incorporated"
+    },
+    {
+     "name": "Enbridge Inc."
+    },
+    {
+     "name": "Fairfax Financial Holdings Limited"
+    },
+    {
+     "name": "First Quantum Minerals Ltd."
+    },
+    {
+     "name": "FirstService Corporation"
+    },
+    {
+     "name": "Fortis Inc."
+    },
+    {
+     "name": "Franco-Nevada Corporation"
+    },
+    {
+     "name": "George Weston Limited"
+    },
+    {
+     "name": "Gildan Activewear Inc."
+    },
+    {
+     "name": "Hydro One Limited"
+    },
+    {
+     "name": "Imperial Oil Limited"
+    },
+    {
+     "name": "Intact Financial Corporation"
+    },
+    {
+     "name": "Kinross Gold Corporation"
+    },
+    {
+     "name": "Loblaw Companies Limited"
+    },
+    {
+     "name": "Magna International Inc."
+    },
+    {
+     "name": "Manulife Financial Corporation"
+    },
+    {
+     "name": "Metro Inc."
+    },
+    {
+     "name": "National Bank of Canada"
+    },
+    {
+     "name": "Nutrien Ltd."
+    },
+    {
+     "name": "Open Text Corporation"
+    },
+    {
+     "name": "Pembina Pipeline Corporation"
+    },
+    {
+     "name": "Power Corporation of Canada"
+    },
+    {
+     "name": "Restaurant Brands International Inc."
+    },
+    {
+     "name": "Rogers Communications Inc."
+    },
+    {
+     "name": "Royal Bank of Canada"
+    },
+    {
+     "name": "Saputo Inc."
+    },
+    {
+     "name": "Shopify Inc."
+    },
+    {
+     "name": "Sun Life Financial Inc."
+    },
+    {
+     "name": "Suncor Energy Inc."
+    },
+    {
+     "name": "TC Energy Corporation"
+    },
+    {
+     "name": "Teck Resources Limited"
+    },
+    {
+     "name": "Telus Corporation"
+    },
+    {
+     "name": "Thomson Reuters Corporation"
+    },
+    {
+     "name": "Toronto-Dominion Bank"
+    },
+    {
+     "name": "Tourmaline Oil Corp."
+    },
+    {
+     "name": "Waste Connections Inc."
+    },
+    {
+     "name": "Wheaton Precious Metals Corp."
+    },
+    {
+     "name": "WSP Global Inc."
+    }
+   ]
+  },
+  "omxc25": {
+   "label": "OMX Copenhagen 25",
+   "hq": "DK",
+   "source": "https://en.wikipedia.org/wiki/OMX_Copenhagen_25",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "A.P. Møller-Mærsk (class A)"
+    },
+    {
+     "name": "A.P. Møller-Mærsk (class B)"
+    },
+    {
+     "name": "AL Sydbank"
+    },
+    {
+     "name": "Ambu"
+    },
+    {
+     "name": "Carlsberg Group"
+    },
+    {
+     "name": "Coloplast"
+    },
+    {
+     "name": "Danske Bank"
+    },
+    {
+     "name": "Demant"
+    },
+    {
+     "name": "DSV"
+    },
+    {
+     "name": "FLSmidth & Co."
+    },
+    {
+     "name": "Genmab"
+    },
+    {
+     "name": "GN Store Nord"
+    },
+    {
+     "name": "ISS"
+    },
+    {
+     "name": "Jyske Bank"
+    },
+    {
+     "name": "NKT"
+    },
+    {
+     "name": "Nordea Bank Abp"
+    },
+    {
+     "name": "Novo Nordisk"
+    },
+    {
+     "name": "Novonesis"
+    },
+    {
+     "name": "Pandora"
+    },
+    {
+     "name": "Rockwool International"
+    },
+    {
+     "name": "Royal Unibrew"
+    },
+    {
+     "name": "Tryg"
+    },
+    {
+     "name": "Vestas Wind Systems"
+    },
+    {
+     "name": "Zealand Pharma"
+    },
+    {
+     "name": "Ørsted"
+    }
+   ]
+  },
+  "obx": {
+   "label": "OBX",
+   "hq": "NO",
+   "source": "https://en.wikipedia.org/wiki/OBX_Index",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Aker BP"
+    },
+    {
+     "name": "BW LPG"
+    },
+    {
+     "name": "DNB Bank"
+    },
+    {
+     "name": "Equinor"
+    },
+    {
+     "name": "Frontline"
+    },
+    {
+     "name": "Gjensidige Forsikring"
+    },
+    {
+     "name": "Golden Ocean Group"
+    },
+    {
+     "name": "Hafnia Limited"
+    },
+    {
+     "name": "Höegh Autoliners ASA"
+    },
+    {
+     "name": "Kongsberg Gruppen"
+    },
+    {
+     "name": "Mowi"
+    },
+    {
+     "name": "MPC Container Ships"
+    },
+    {
+     "name": "Nordic Semiconductor"
+    },
+    {
+     "name": "Norsk Hydro"
+    },
+    {
+     "name": "Norwegian Air Shuttle"
+    },
+    {
+     "name": "Orkla"
+    },
+    {
+     "name": "SalMar"
+    },
+    {
+     "name": "Storebrand"
+    },
+    {
+     "name": "Subsea 7"
+    },
+    {
+     "name": "Telenor"
+    },
+    {
+     "name": "TGS ASA"
+    },
+    {
+     "name": "Tomra Systems"
+    },
+    {
+     "name": "Vår Energi ASA"
+    },
+    {
+     "name": "Wallenius Wilhelmsen"
+    },
+    {
+     "name": "Yara International"
+    }
+   ]
+  },
+  "omxh25": {
+   "label": "OMX Helsinki 25",
+   "hq": "FI",
+   "source": "https://en.wikipedia.org/wiki/OMX_Helsinki_25",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Elisa"
+    },
+    {
+     "name": "Fortum"
+    },
+    {
+     "name": "Hiab"
+    },
+    {
+     "name": "Huhtamäki"
+    },
+    {
+     "name": "Kalmar  B"
+    },
+    {
+     "name": "Kemira"
+    },
+    {
+     "name": "Kesko B"
+    },
+    {
+     "name": "Kojamo"
+    },
+    {
+     "name": "KONE"
+    },
+    {
+     "name": "Konecranes"
+    },
+    {
+     "name": "Mandatum"
+    },
+    {
+     "name": "Metso"
+    },
+    {
+     "name": "Neste"
+    },
+    {
+     "name": "Nokia"
+    },
+    {
+     "name": "Nokian Tyres"
+    },
+    {
+     "name": "Nordea"
+    },
+    {
+     "name": "Orion"
+    },
+    {
+     "name": "Outokumpu"
+    },
+    {
+     "name": "Qt Group"
+    },
+    {
+     "name": "Sampo A"
+    },
+    {
+     "name": "Stora Enso R"
+    },
+    {
+     "name": "TietoEVRY"
+    },
+    {
+     "name": "UPM-Kymmene"
+    },
+    {
+     "name": "Valmet"
+    },
+    {
+     "name": "Wärtsilä"
+    }
+   ]
+  },
+  "ise100": {
+   "label": "ISEQ 20",
+   "hq": "IE",
+   "source": "https://en.wikipedia.org/wiki/ISEQ_20",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "AIB Group"
+    },
+    {
+     "name": "Bank of Ireland"
+    },
+    {
+     "name": "Cairn Homes"
+    },
+    {
+     "name": "Donegal investment group"
+    },
+    {
+     "name": "FBD Holdings"
+    },
+    {
+     "name": "Glanbia"
+    },
+    {
+     "name": "Glenveagh Properties"
+    },
+    {
+     "name": "Greencoat Renewables"
+    },
+    {
+     "name": "Hammerson plc"
+    },
+    {
+     "name": "Irish Continental Group"
+    },
+    {
+     "name": "Irish Residential Properties REIT"
+    },
+    {
+     "name": "Kenmare Resources"
+    },
+    {
+     "name": "Kerry Group"
+    },
+    {
+     "name": "Kingspan Group"
+    },
+    {
+     "name": "Malin Corp."
+    },
+    {
+     "name": "Mincon group"
+    },
+    {
+     "name": "Origin Enterprises"
+    },
+    {
+     "name": "Permanent TSB"
+    },
+    {
+     "name": "Ryanair Holdings"
+    },
+    {
+     "name": "Uniphar"
+    }
+   ]
+  },
+  "hsi": {
+   "label": "Hang Seng Index",
+   "hq": "HK",
+   "source": "https://en.wikipedia.org/wiki/Hang_Seng_Index",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "HSBC Holdings plc"
+    },
+    {
+     "name": "HKEx Limited"
+    },
+    {
+     "name": "China Construction Bank"
+    },
+    {
+     "name": "AIA Group Limited"
+    },
+    {
+     "name": "Industrial and Commercial Bank of China"
+    },
+    {
+     "name": "Ping An Insurance"
+    },
+    {
+     "name": "BOC Hong Kong (Holdings) Ltd"
+    },
+    {
+     "name": "China Life"
+    },
+    {
+     "name": "China Merchants Bank"
+    },
+    {
+     "name": "Bank of China Ltd"
+    },
+    {
+     "name": "CLP Holdings Limited"
+    },
+    {
+     "name": "Hong Kong and China Gas Company Limited"
+    },
+    {
+     "name": "Power Assets Holdings Limited"
+    },
+    {
+     "name": "China Resources Power"
+    },
+    {
+     "name": "Cheung Kong Infrastructure Holdings Limited"
+    },
+    {
+     "name": "ENN Energy"
+    },
+    {
+     "name": "Henderson Land Development Company Limited"
+    },
+    {
+     "name": "Sun Hung Kai Properties Limited"
+    },
+    {
+     "name": "Hang Lung Properties Limited"
+    },
+    {
+     "name": "China Overseas Land & Investment Limited"
+    },
+    {
+     "name": "Link REIT"
+    },
+    {
+     "name": "Longfor Properties"
+    },
+    {
+     "name": "China Resources Land Limited"
+    },
+    {
+     "name": "CK Asset Holdings"
+    },
+    {
+     "name": "China Resources Mixc Lifestyle"
+    },
+    {
+     "name": "Wharf Real Estate Investment Company Limited"
+    },
+    {
+     "name": "CK Hutchison Holdings Limited"
+    },
+    {
+     "name": "Galaxy Entertainment Group Ltd."
+    },
+    {
+     "name": "MTR Corporation Ltd"
+    },
+    {
+     "name": "Geely Auto"
+    },
+    {
+     "name": "Alibaba Health"
+    },
+    {
+     "name": "CITIC Limited"
+    },
+    {
+     "name": "BYD Electronics"
+    },
+    {
+     "name": "WH Group"
+    },
+    {
+     "name": "China Resources Beer"
+    },
+    {
+     "name": "Midea Group"
+    },
+    {
+     "name": "Orient Overseas (International) Limited"
+    },
+    {
+     "name": "Tingyi"
+    },
+    {
+     "name": "Sinopec Corp"
+    },
+    {
+     "name": "Techtronic Industries"
+    },
+    {
+     "name": "Tencent Holdings Limited"
+    },
+    {
+     "name": "China Unicom"
+    },
+    {
+     "name": "PetroChina Company Limited"
+    },
+    {
+     "name": "Xinyi Glass"
+    },
+    {
+     "name": "Zhongsheng Group"
+    },
+    {
+     "name": "CNOOC Limited"
+    },
+    {
+     "name": "China Mobile Ltd"
+    },
+    {
+     "name": "Xinyi Solar"
+    },
+    {
+     "name": "Semiconductor Manufacturing International Corporation"
+    },
+    {
+     "name": "Lenovo"
+    },
+    {
+     "name": "Kuaishou"
+    },
+    {
+     "name": "Hengan International Group Co. Ltd"
+    },
+    {
+     "name": "China Shenhua Energy"
+    },
+    {
+     "name": "CSPC Pharmaceutical Group"
+    },
+    {
+     "name": "Sinopharm Group"
+    },
+    {
+     "name": "Sino Biopharm"
+    },
+    {
+     "name": "BYD Company"
+    },
+    {
+     "name": "China Hongqiao Group"
+    },
+    {
+     "name": "Xiaomi"
+    },
+    {
+     "name": "Budweiser Brewing Company APAC"
+    },
+    {
+     "name": "Sands China"
+    },
+    {
+     "name": "Chow Tai Fook"
+    },
+    {
+     "name": "Li Auto"
+    },
+    {
+     "name": "Anta Sports"
+    },
+    {
+     "name": "ZTO Express"
+    },
+    {
+     "name": "WuXi Biologics"
+    },
+    {
+     "name": "Shenzhou International"
+    },
+    {
+     "name": "Mengniu Dairy"
+    },
+    {
+     "name": "Li-Ning"
+    },
+    {
+     "name": "WuXi AppTec"
+    },
+    {
+     "name": "Sunny Optical"
+    },
+    {
+     "name": "JD Logistics"
+    },
+    {
+     "name": "Zijin Mining"
+    },
+    {
+     "name": "Meituan"
+    },
+    {
+     "name": "Hansoh Pharmaceutical Group"
+    },
+    {
+     "name": "JD Health"
+    },
+    {
+     "name": "Haier"
+    },
+    {
+     "name": "Haidilao"
+    },
+    {
+     "name": "JD.com"
+    },
+    {
+     "name": "Nongfu Spring"
+    },
+    {
+     "name": "Baidu"
+    },
+    {
+     "name": "Trip.com Group"
+    },
+    {
+     "name": "Alibaba Group"
+    },
+    {
+     "name": "Pop Mart"
+    },
+    {
+     "name": "NetEase"
+    }
+   ]
+  },
+  "sti": {
+   "label": "Straits Times Index",
+   "hq": "SG",
+   "source": "https://en.wikipedia.org/wiki/Straits_Times_Index",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "CapitaLand Ascendas REIT"
+    },
+    {
+     "name": "CapitaLand Integrated Commercial Trust"
+    },
+    {
+     "name": "CapitaLand Investment"
+    },
+    {
+     "name": "City Developments Limited"
+    },
+    {
+     "name": "DBS Group Holdings"
+    },
+    {
+     "name": "DFI Retail Group Holdings Limited"
+    },
+    {
+     "name": "Frasers Centrepoint Trust"
+    },
+    {
+     "name": "Frasers Logistics & Commercial Trust"
+    },
+    {
+     "name": "Genting Singapore PLC"
+    },
+    {
+     "name": "Hongkong Land Holdings"
+    },
+    {
+     "name": "Jardine Matheson Holdings Limited"
+    },
+    {
+     "name": "Keppel Corporation"
+    },
+    {
+     "name": "Keppel DC Reit"
+    },
+    {
+     "name": "Mapletree Industrial Trust"
+    },
+    {
+     "name": "Mapletree Logistics Trust"
+    },
+    {
+     "name": "Mapletree Pan Asia Commercial Trust"
+    },
+    {
+     "name": "OCBC Bank"
+    },
+    {
+     "name": "SATS"
+    },
+    {
+     "name": "Seatrium Limited"
+    },
+    {
+     "name": "Sembcorp Industries"
+    },
+    {
+     "name": "Singapore Airlines"
+    },
+    {
+     "name": "Singapore Exchange"
+    },
+    {
+     "name": "Singtel"
+    },
+    {
+     "name": "Singapore Technologies Engineering"
+    },
+    {
+     "name": "Thai Beverages"
+    },
+    {
+     "name": "United Overseas Bank"
+    },
+    {
+     "name": "UOL Group"
+    },
+    {
+     "name": "Venture Corporation"
+    },
+    {
+     "name": "Wilmar International"
+    },
+    {
+     "name": "Yangzijiang Shipbuilding Holdings"
+    }
+   ]
+  },
+  "sse50": {
+   "label": "SSE 50",
+   "hq": "CN",
+   "source": "https://en.wikipedia.org/wiki/SSE_50_Index",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "China Petroleum & Chemical Corporation"
+    },
+    {
+     "name": "CITIC Securities"
+    },
+    {
+     "name": "Sany Heavy Industries"
+    },
+    {
+     "name": "China Merchants Bank"
+    },
+    {
+     "name": "Poly Real Estate"
+    },
+    {
+     "name": "China United Network Communications Limited"
+    },
+    {
+     "name": "TBEA Co., Ltd."
+    },
+    {
+     "name": "SAIC Motor"
+    },
+    {
+     "name": "China Northern Rare Earth"
+    },
+    {
+     "name": "China CSSC Holdings Limited"
+    },
+    {
+     "name": "Jiangsu Hengrui Pharmaceuticals"
+    },
+    {
+     "name": "Wanhua Chemical Group"
+    },
+    {
+     "name": "NARI Technology"
+    },
+    {
+     "name": "Zhangzhou Pientzehuang Pharmaceutical"
+    },
+    {
+     "name": "Tongwei Company"
+    },
+    {
+     "name": "Kweichow Moutai"
+    },
+    {
+     "name": "Haier Smart Home"
+    },
+    {
+     "name": "Shanxi Xinghuacun Fen Wine Factory"
+    },
+    {
+     "name": "Yili Group"
+    },
+    {
+     "name": "AECC Aviation Power"
+    },
+    {
+     "name": "China Yangtze Power"
+    },
+    {
+     "name": "China Three Gorges Renewables"
+    },
+    {
+     "name": "LONGi Green Energy Technology"
+    },
+    {
+     "name": "China Shenhua Energy"
+    },
+    {
+     "name": "Industrial Bank"
+    },
+    {
+     "name": "Shaanxi Coal Industry"
+    },
+    {
+     "name": "Agricultural Bank of China"
+    },
+    {
+     "name": "Ping An Insurance"
+    },
+    {
+     "name": "China Railway Group Limited"
+    },
+    {
+     "name": "Industrial and Commercial Bank of China"
+    },
+    {
+     "name": "China Pacific Insurance Company"
+    },
+    {
+     "name": "China Life Insurance"
+    },
+    {
+     "name": "Great Wall Motor Company"
+    },
+    {
+     "name": "China State Construction Engineering"
+    },
+    {
+     "name": "Power Construction Corporation of China"
+    },
+    {
+     "name": "China Telecom"
+    },
+    {
+     "name": "PetroChina"
+    },
+    {
+     "name": "China Tourism Group Duty Free Corporation"
+    },
+    {
+     "name": "Zijin Mining Group"
+    },
+    {
+     "name": "Cosco Shipping"
+    },
+    {
+     "name": "Bank of China"
+    },
+    {
+     "name": "WuXi AppTec"
+    },
+    {
+     "name": "Foshan Haitian Flavouring & Food Co"
+    },
+    {
+     "name": "Will Semiconductor"
+    },
+    {
+     "name": "Zhejiang Huayou Cobalt"
+    },
+    {
+     "name": "GigaDevice"
+    },
+    {
+     "name": "Beijing Kingsoft Office Software"
+    },
+    {
+     "name": "Hygon Information Technology"
+    },
+    {
+     "name": "Trina Solar"
+    },
+    {
+     "name": "Semiconductor Manufacturing International Corporation"
+    }
+   ]
+  },
+  "jse40": {
+   "label": "FTSE/JSE Top 40",
+   "hq": "ZA",
+   "source": "https://en.wikipedia.org/wiki/FTSE/JSE_Top_40_Index",
+   "retrieved": "2026-11-11",
+   "members": [
+    {
+     "name": "Absa Group"
+    },
+    {
+     "name": "Anglo American"
+    },
+    {
+     "name": "Anglogold Ashanti"
+    },
+    {
+     "name": "AB InBev"
+    },
+    {
+     "name": "Aspen Pharmacare"
+    },
+    {
+     "name": "BHP"
+    },
+    {
+     "name": "Bidcorp"
+    },
+    {
+     "name": "Bidvest Group"
+    },
+    {
+     "name": "BAT"
+    },
+    {
+     "name": "Capitec"
+    },
+    {
+     "name": "Clicks"
+    },
+    {
+     "name": "Discovery"
+    },
+    {
+     "name": "Exxaro"
+    },
+    {
+     "name": "FirstRand"
+    },
+    {
+     "name": "Glencore"
+    },
+    {
+     "name": "Gold Fields"
+    },
+    {
+     "name": "Growthpoint Properties"
+    },
+    {
+     "name": "Implats"
+    },
+    {
+     "name": "Investec Ltd"
+    },
+    {
+     "name": "Investec PLC"
+    },
+    {
+     "name": "Mondi"
+    },
+    {
+     "name": "Mr Price Group"
+    },
+    {
+     "name": "MTN Group"
+    },
+    {
+     "name": "MultiChoice"
+    },
+    {
+     "name": "Naspers"
+    },
+    {
+     "name": "Nedbank"
+    },
+    {
+     "name": "NEPI Rockcastle"
+    },
+    {
+     "name": "Northam Platinum"
+    },
+    {
+     "name": "Old Mutual"
+    },
+    {
+     "name": "Prosus"
+    },
+    {
+     "name": "Reinet Investments"
+    },
+    {
+     "name": "Remgro"
+    },
+    {
+     "name": "RMH"
+    },
+    {
+     "name": "Sanlam"
+    },
+    {
+     "name": "Sasol"
+    },
+    {
+     "name": "Shoprite"
+    },
+    {
+     "name": "Standard Bank"
+    },
+    {
+     "name": "Valterra Platinum"
+    },
+    {
+     "name": "Vodacom"
+    },
+    {
+     "name": "Woolworths Holdings"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,31 @@
+name: Refresh company lists
+
+# Monthly: re-read the stock-index constituent lists from Wikipedia (source URL and retrieval date are stored with each list)
+# and commit data/companies/indices.json if it changed. No secrets beyond the workflow token.
+on:
+  schedule:
+    - cron: "41 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Read the lists
+        run: python -u scripts/companies_refresh.py
+      - name: Commit if changed
+        run: |
+          git config user.name "jobalfred-index"
+          git config user.email "211906206+tomasbb0@users.noreply.github.com"
+          git add data/companies/indices.json
+          git diff --cached --quiet || (git commit -m "Refresh company lists (monthly)" && git push)
