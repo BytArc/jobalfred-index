@@ -1,18 +1,20 @@
 """Refresh the stock-index constituent lists into data/companies/indices.json, with source URL and retrieval date per list.
 
-Usage: companies_refresh.py [CODE ...] [--dry] [--no-articles]
+Usage: companies_refresh.py [CODE ...] [--dry] [--no-articles] [--aliases-only]
   CODE           only these lists (all configured lists when none given)
   --dry          print what each page gives, write nothing
   --no-articles  do not read the members' own Wikipedia articles (website and head-office country)
+  --aliases-only recompute the cleaned-name aliases offline, read nothing
 
 Read from Wikipedia /wiki/ pages only, which robots.txt allows for our user agent (its /w/ API and the Wikidata query service are
-disallowed, so they are not used), one request every 1.5 seconds with our honest User-Agent. For each member the list page links
+disallowed, so they are not used), one request every 2.5 seconds with our honest User-Agent. For each member the list page links
 to, its article's infobox gives the official website (the domain used to find its careers system) and the head-office country (the
 language inferred when a posting states none). A member keeps what an earlier refresh found, so a monthly run only reads new members.
 Lists are ordered by the country's GDP, richest first (IMF World Economic Outlook, nominal, 2025), so batches roll out in that order.
 Curated lists (big tech, AI labs, Big 4, consultancies) live in data/companies/curated.json and are edited by hand.
 """
 import json, re, sys, time
+from html import unescape as html_unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -20,7 +22,7 @@ from urllib.parse import unquote, urlsplit
 root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(root))
 from jobalfred_index import geo
-from jobalfred_index.polite import Client
+from jobalfred_index.polite import CHALLENGE, Client
 
 WIKI = "https://en.wikipedia.org/wiki/"
 # code, label, country, Wikipedia page, expected size range. Ordered by the country's nominal GDP, richest first.
@@ -84,10 +86,10 @@ LEGAL = re.compile(r"(?i)[\s,]+(?:\((?:class|series|ser\.?)\s*[a-z]\)|class [a-z
 
 def clean_name(n: str) -> str:
     n = re.sub(r"\[.*?\]", "", n).strip()
-    n = re.sub(r"^the\s+", "", n, flags=re.I)
+    n = re.sub(r"^the\s+|\s*\(the\)$", "", n, flags=re.I)
     prev = None
     while prev != n:
-        prev, n = n, LEGAL.sub("", n).strip(" ,.")
+        prev, n = n, re.sub(r"\s*&$", "", LEGAL.sub("", n).strip(" ,."))
     return n
 
 
@@ -110,7 +112,7 @@ class Tables(HTMLParser):
         elif tag in ("sup", "style", "script") and self._cell is not None:
             self._skip += 1
         elif tag == "a" and self._cell is not None and self._link is None and not self._skip:
-            href = re.sub(r"^https://en\.wikipedia\.org", "", dict(attrs).get("href") or "")
+            href = re.sub(r"^https://en\.wikipedia\.org", "", html_unescape(dict(attrs).get("href") or ""))
             if href.startswith("/wiki/") and ":" not in href[6:] and "?" not in href:     # red links have no article
                 self._link = unquote(href[6:].split("#")[0])
 
@@ -163,7 +165,7 @@ def _section_list(html: str) -> list[tuple[str, str | None]]:
     m = SECTION.search(html)
     if not m:
         return []
-    return [(TAGS.sub("", text).strip(), unquote(link)) for link, text in LI_LINK.findall(m.group(1))]
+    return [(html_unescape(TAGS.sub("", text)).strip(), unquote(html_unescape(link))) for link, text in LI_LINK.findall(m.group(1))]
 
 
 def members_from_html(html: str, lo: int = 0, hi: int = 10 ** 6) -> list[dict]:
@@ -216,10 +218,25 @@ def infobox(html: str) -> dict:
     return out
 
 
+def realias(doc: dict) -> None:
+    """Every member's cleaned name as an alias ("Coca-Cola" for "Coca-Cola Company (The)"); offline, also run alone with --aliases-only."""
+    for lst in doc["lists"].values():
+        for m in lst["members"]:
+            alias = clean_name(m["name"])
+            if alias and alias.lower() != m["name"].lower():
+                m["aliases"] = sorted(set(m.get("aliases", [])) | {alias})
+
+
 def main():
     want = {a for a in sys.argv[1:] if not a.startswith("--")}
+    if "--aliases-only" in sys.argv:
+        out_path = root / "data" / "companies" / "indices.json"
+        doc = json.loads(out_path.read_text())
+        realias(doc)
+        out_path.write_text(json.dumps(doc, ensure_ascii=False, indent=1))
+        return
     dry, articles = "--dry" in sys.argv, "--no-articles" not in sys.argv
-    client = Client(default_gap=1.5, inflight=1)
+    client = Client(default_gap=2.5, inflight=1)
     out_path = root / "data" / "companies" / "indices.json"
     doc = json.loads(out_path.read_text()) if out_path.exists() else {"version": 1, "lists": {}}
     doc["basis"] = ("Constituents read from the English Wikipedia list or index article (source per list); website and head-office country "
@@ -248,6 +265,12 @@ def main():
                 m["aliases"] = sorted(set(m.get("aliases", [])) | {alias})
             if articles and m.get("wiki") and "checked" not in m:
                 a = client.get(WIKI + m["wiki"])
+                if a.status != 200:
+                    print(f"   {m['wiki']}: HTTP {a.status} {a.reason}")
+                    if a.reason == "bot challenge":
+                        head = (a.content or b"")[:6000]
+                        hit = re.search(rb".{0,80}(?:" + CHALLENGE.pattern + rb").{0,40}", head, re.I | re.S)
+                        print("   matched:", hit.group(0)[:200] if hit else None)
                 if a.status == 200:
                     info = infobox(a.text)
                     for k in ("domain", "hq"):
@@ -262,6 +285,7 @@ def main():
         print(f"   {found}/{len(members)} with a website, {sum(1 for m in members if m.get('hq'))} with a head-office country")
         out_path.write_text(json.dumps(doc, ensure_ascii=False, indent=1))
     if not dry:
+        realias(doc)
         doc["lists"] = dict(sorted(doc["lists"].items(), key=lambda kv: kv[1].get("gdp_rank", 999)))
         out_path.write_text(json.dumps(doc, ensure_ascii=False, indent=1))
     print("http", dict(client.stats), "blocked", client.blocked)
