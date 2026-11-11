@@ -137,18 +137,22 @@ flagged by `scripts/function_calibrate.py` and publishes `fn` `0` (or no `ft`). 
 (`data/function/eval-r9.jsonl`): `fn` right on 97.3% of the non-Other titles it published (65% of non-Other titles got a function; counting Other titles that were
 given a function as errors, 88.7%); `ft` right on 88.6% of the sub-roles it published (31% of non-Other titles got one). Other: 91% of Other titles stayed Other.
 
-**Industry (`in`)**, 22 codes plus `oth` and `0`, one label per company copied to its rows. Order: a hand label (1,239 companies a reader labelled by looking at them,
-`data/industry/overrides.json`) always wins; then the language-model label (below) when its confidence is at least `ailabel.MIN_CONFIDENCE`; then the rules model
-(naive Bayes on name, domain, homepage text and job titles, `data/industry/model.json`, published only at confidence 0.9 or more); else `0`.
-Rules model on a fresh sample of 240 companies (`data/industry/eval-r4*.jsonl`): at the 0.9 cutoff 62 companies (26%, 15% of the sample's rows) were published, 88.7% right
-per company and 95.7% weighted by rows; below it the model is right too rarely to publish (53.8% overall).
+**Industry (`in`)**, 22 codes plus `oth` and `0`, one label per company copied to its rows. Order: a hand label (a company a reader labelled by looking at it,
+`data/industry/overrides.json`) always wins; then the label a language model gave the company once (`data/industry/ai-labels.json.gz`, below); then the free local
+model (`jobalfred_index/localclf.py`) when its confidence is at least `localclf.MIN_CONFIDENCE`; else `0`. The nightly run uses no API and no key: the local model is
+plain Python reading `data/industry/local-model.json.gz`, and a company seen for the first time has its homepage fetched and cached in the same run.
 
-**Language-model labels.** `jobalfred_index/ailabel.py` asks `claude-haiku-5-5` (structured output: one code plus a confidence) once per company, keyed by the employer's
-domain, else its normalised name. It sends only the company name, its own domain, the cached homepage title and meta description and up to 10 job titles, never anything about
-a user. Labels are data in `data/industry/ai-labels.json.gz` (restored from and published to the release with the homepage cache). Bulk runs use the Message Batches API
-(`scripts/industry_ai.py estimate|submit|collect`); the nightly run labels only companies it has not seen, at most 2,000, and any failure (no key, API error, cap) leaves the
-company to the rules model. The key is read from `ANTHROPIC_API_KEY` in the environment only: for the Action it is the repository secret `ANTHROPIC_API_KEY`, passed to the
-build step.
+**Local model.** TF-IDF of the company name (words and 4-letter pieces), its own domain words, the homepage title and meta description, and the words of its job titles,
+into a logistic regression. Trained offline by `scripts/industry_train_local.py` (scikit-learn, `requirements-labelling.txt`) from hand labels and the language-model
+labels; the weights are the versioned data file, so retraining is a commit. Baseline trained on 1,004 hand labels only, measured on 240 companies it never saw
+(`data/industry/eval-r4*.jsonl`, `scripts/industry_score_local.py`): 51.7% right overall; at confidence 0.7, 25% of companies (14% of the sample's rows) were published,
+90.0% right per company and 85.8% weighted by rows. The earlier rules model (naive Bayes, `data/industry/model.json`) scored 53.8% overall and 88.7% at its 0.9 cutoff.
+
+**Language-model labels, once.** `scripts/label_industry_bulk.py` asks `claude-haiku-5-5` (structured output: one code plus a confidence) once per company through the
+Message Batches API, keyed by the employer's domain, else its normalised name, then retrains the local model on the result. It sends only the company name, its own domain,
+the cached homepage title and meta description and up to 10 job titles, never anything about a user. It prints the cost estimate first and refuses above `--max-usd`
+(default 50). `scripts/industry_topup.py` does the same for a small batch of recent companies, monthly or on demand, never in the nightly run. The key is read from
+`ANTHROPIC_API_KEY` in the environment of the person running them; the nightly Action needs no secret.
 
 ## Run
 

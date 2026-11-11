@@ -386,7 +386,7 @@ def hand_label(key: str) -> str | None:
     return _load("overrides.json").get(key[2:]) if key.startswith("c:") and USE_OVERRIDES else None
 
 
-def assign(rows: list[list], homepages: Homepages | None = None, threads: int = 12, log=print, ai=None, ai_client=None, ai_cap: int | None = None) -> dict:
+def assign(rows: list[list], homepages: Homepages | None = None, threads: int = 12, log=print, ai=None) -> dict:
     """Give every row an industry code (row[IN]). A company is labelled once and the label is copied to its rows.
     A company seen for the first time gets its homepage fetched and cached in this run (within the budget and the polite client's
     pacing); if the fetch fails, the name, domain and title signals decide. Rows that already carry a code from their source keep it."""
@@ -401,30 +401,29 @@ def assign(rows: list[list], homepages: Homepages | None = None, threads: int = 
             list(ex.map(lambda kg: homepages.ensure(kg[0], kg[1]["name"], own_domain(kg[1]["urls"])), todo))
         log(f"industry: {homepages.fetched} homepages fetched for {len(todo)} companies without a fresh one, {int(time.time() - t0)}s")
         homepages.save()
-    from . import ailabel
+    from . import ailabel, localclf
     ai = ai if ai is not None else ailabel.AiLabels()
-    keys: dict[str, str] = {}
-    units = []
+    local = localclf.load()
+    label: dict[str, str] = {}
+    source = {"hand": 0, "ai": 0, "local": 0, "rules": 0, "none": 0}
     for k, g in groups.items():
         entry = homepages.get(k) if k.startswith("c:") else None
-        g["entry"] = entry
-        g["domain"] = own_domain(g["urls"]) or (entry or {}).get("d", "")
-        keys[k] = ailabel.unit_key(k, g["domain"])
-        if hand_label(k) is None and ai.get(keys[k]) is None and ai.get(k) is None:
-            units.append({"key": keys[k], "rows": g["rows"], "text": ailabel.user_text(g["name"], g["domain"], entry, g["titles"])})
-    if units and ai_cap != 0:
-        ailabel.label_new(ai, units, cap=ai_cap if ai_cap is not None else ailabel.NIGHTLY_CAP, log=log, client=ai_client)
-    label: dict[str, str] = {}
-    source = {"hand": 0, "ai": 0, "rules": 0}
-    for k, g in groups.items():
-        code = hand_label(k)
+        domain = own_domain(g["urls"]) or (entry or {}).get("d", "")
+        code = hand_label(k)                                  # 1. a reader's label always wins
         src = "hand"
-        if code is None:
-            got = ai.get(keys[k]) or ai.get(k)
+        if code is None:                                      # 2. the labels a language model gave this company once (never asked again at night)
+            got = ai.get(ailabel.unit_key(k, domain)) or ai.get(k)
             if got and got[1] >= ailabel.MIN_CONFIDENCE:
                 code, src = got[0], "ai"
+        if code is None and local:                            # 3. the free local model, published only above its cutoff
+            c, conf = localclf.classify(g["name"], domain, (entry or {}).get("t", ""), (entry or {}).get("m", ""), g["words"], g["ats"], g["cc"], local)
+            if conf >= localclf.MIN_CONFIDENCE:
+                code, src = c, "local"
+        if code is None and not local:                        # no local model file: the older rules model
+            c = classify(g["name"], g["words"], home_text(entry), domain, row_meta(g["ats"], g["cc"]))[0]
+            code, src = c, "rules"
         if code is None:
-            code, src = classify(g["name"], g["words"], home_text(g["entry"]), g["domain"], row_meta(g["ats"], g["cc"]))[0], "rules"
+            code, src = NOT_STATED, "none"
         label[k] = code
         source[src] += g["rows"]
     tagged = 0

@@ -122,31 +122,34 @@ class FakeAI:
 
 
 class TestAiLabels(unittest.TestCase):
-    def assign(self, ai_client, name="Qwxz Robotics", titles=("Engineer",)):
+    def assign(self, preset=None, name="Qwxz Robotics", titles=("Engineer",)):
         from jobalfred_index import ailabel
         tmp = Path(tempfile.mkdtemp())
         ai = ailabel.AiLabels(tmp / "ai.json.gz")
+        for key, (code, conf) in (preset or {}).items():
+            ai.put(key, code, conf)
         rows = rows_for(name, list(titles))
-        I.assign(rows, I.Homepages(path=tmp / "h.json.gz", client=None), log=lambda m: None, ai=ai, ai_client=ai_client)
-        return rows, ai
+        I.assign(rows, I.Homepages(path=tmp / "h.json.gz", client=None), log=lambda m: None, ai=ai)
+        return rows
 
-    def test_new_company_gets_the_ai_label_and_it_is_kept(self):
-        fake = FakeAI("sw", 0.95)
-        rows, ai = self.assign(fake)
-        self.assertEqual({r[I.IN] for r in rows}, {"sw"})
-        self.assertEqual(len(fake.asked), 1)
-        self.assertIn("Company: Qwxz Robotics", fake.asked[0])
-        self.assertTrue(ai.path.exists())
+    def test_a_stored_ai_label_is_used(self):
+        self.assertEqual({r[I.IN] for r in self.assign({"c:" + I.norm("Qwxz Robotics"): ("hw", 0.95)})}, {"hw"})
 
-    def test_low_confidence_is_not_published(self):
-        rows, _ = self.assign(FakeAI("sw", 0.4), "Qwxz Co", ["Thing"])
-        self.assertNotIn("sw", {r[I.IN] for r in rows})       # the AI's guess is not published; the rules model (or Not stated) decides
+    def test_a_low_confidence_ai_label_is_not_published(self):
+        rows = self.assign({"c:" + I.norm("Qwxz Co"): ("sw", 0.4)}, "Qwxz Co", ["Thing"])
+        self.assertNotIn("sw", {r[I.IN] for r in rows})
 
-    def test_api_failure_never_breaks_the_build_and_falls_back_to_rules(self):
-        rows, _ = self.assign(FakeAI(fail=True), "Zenith Cardiac Care", ["Registered Nurse", "Cardiac Technician"])
+    def test_the_nightly_run_never_calls_the_api(self):
+        from jobalfred_index import ailabel
+        old = ailabel.make_client
+        ailabel.make_client = lambda *a, **k: (_ for _ in ()).throw(AssertionError("the nightly run must not use the API"))
+        try:
+            rows = self.assign(name="Brand New Cardiac Clinic", titles=["Nurse"])
+        finally:
+            ailabel.make_client = old
         self.assertTrue(all(r[I.IN] for r in rows))
 
-    def test_no_key_means_no_call(self):
+    def test_no_key_means_no_client(self):
         import os
         from jobalfred_index import ailabel
         old = os.environ.pop("ANTHROPIC_API_KEY", None)
@@ -157,12 +160,10 @@ class TestAiLabels(unittest.TestCase):
                 os.environ["ANTHROPIC_API_KEY"] = old
 
     def test_hand_label_wins_over_ai(self):
-        fake = FakeAI("sw", 0.99)
-        rows, _ = self.assign(fake, "Cleveland Clinic", ["Nurse"])
+        rows = self.assign({"c:" + I.norm("Cleveland Clinic"): ("sw", 0.99)}, "Cleveland Clinic", ["Nurse"])
         self.assertEqual({r[I.IN] for r in rows}, {"hlt"})
-        self.assertEqual(fake.asked, [])
 
-    def test_cap_is_respected(self):
+    def test_top_up_cap_is_respected(self):
         from jobalfred_index import ailabel
         tmp = Path(tempfile.mkdtemp())
         ai = ailabel.AiLabels(tmp / "ai.json.gz")
@@ -176,6 +177,25 @@ class TestAiLabels(unittest.TestCase):
         t = ailabel.user_text("Acme", "acme.com", {"t": "Acme - cloud", "m": "We build"}, ["A", "B"] + ["T%d" % i for i in range(20)])
         self.assertEqual(t.count(";") + 1, ailabel.MAX_TITLES)
         self.assertNotIn("@", t)
+
+
+class TestLocalModel(unittest.TestCase):
+    def test_model_is_versioned_data_and_covers_the_taxonomy(self):
+        from jobalfred_index import localclf
+        m = localclf.load()
+        self.assertTrue(m)
+        self.assertTrue(set(m["classes"]) <= set(I.taxonomy()))
+
+    def test_a_brand_new_clinic_is_read_from_its_words(self):
+        from jobalfred_index import localclf
+        code, conf = localclf.classify("Zenith Cardiac Care", "", "Zenith Cardiac Care | Hospitals and heart clinics", "Our nurses and physicians care for patients",
+                                       {"nurse": 30, "physician": 8, "technician": 5})
+        self.assertEqual(code, "hlt")
+
+    def test_nothing_to_go_on_is_not_stated_or_low_confidence(self):
+        from jobalfred_index import localclf
+        code, conf = localclf.classify("Qwxz", "", "", "", {})
+        self.assertTrue(conf < localclf.MIN_CONFIDENCE or code == I.NOT_STATED)
 
 
 class TestBuiltInExamples(unittest.TestCase):
