@@ -76,6 +76,9 @@ jobs:
           python -u scripts/funding_eu.py rss || true
           cp data/funding_eu.json work/funding-eu.json && gh release upload index-latest work/funding-eu.json --clobber || true
 
+      - name: Use the latest company-homepage cache for the industry label (read only; the main run keeps it)
+        run: gh release download index-latest --pattern homepages.json.gz --dir data/industry --clobber || echo "using the committed homepage cache"
+
       - name: Read every listed company's careers system and build vc-eu.json.gz
         run: python -u -m jobalfred_index vceu --minutes 60
 
