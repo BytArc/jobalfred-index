@@ -13,7 +13,7 @@ For each member that work/companies_coverage.json lists as missing (scripts/comp
 Boards we have an adapter for go to data/companies/tenants.json (loaded by the nightly run with --extra-tenants) carrying the member's
 name, so its rows are labelled with it. Every member's outcome goes to data/companies/probed.json (status, website, boards, date).
 """
-import collections, json, sys, time
+import collections, json, re, sys, time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 root = Path(__file__).resolve().parent.parent
@@ -26,6 +26,8 @@ sys.path.insert(0, str(root / "scripts"))
 from companies_refresh import clean_name
 
 EXCLUDED = ("linkedin.", "indeed.", "glassdoor.", "naukri.")
+# a careers page about people, stories or culture lists people, not roles
+NOT_A_JOBS_PAGE = re.compile(r"(?i)stor(?:y|ies)|people|team|culture|life-at|blog|news|events?/")
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 limit = 10 ** 9
 if "--limit" in sys.argv:
@@ -78,8 +80,11 @@ have = {(t["ats"], t["key"]): t for t in tenants["tenants"]}
 added = 0
 today = time.strftime("%Y-%m-%d")
 for code, name, display, domain, res in results:
-    usable = [t for t in res.get("tenants", []) if t["ats"] in SOURCES and t["ats"] not in ROBOTS_BLOCKED_ATS]
+    usable = [t for t in res.get("tenants", []) if t["ats"] in SOURCES and t["ats"] not in ROBOTS_BLOCKED_ATS
+              and not (t["ats"] == "pagelist" and NOT_A_JOBS_PAGE.search(t["key"]))]
     status = res.get("status") or ""
+    if status == "careers_page_list" and not usable:
+        status = "careers_no_ats"
     if status == "ats" and not usable:
         status = "ats_no_adapter"
     probed.setdefault(code, {})[name] = {"status": status, "website": domain, "careers": res.get("careers", ""), "note": res.get("note", ""),
