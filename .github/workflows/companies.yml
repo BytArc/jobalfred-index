@@ -1,7 +1,9 @@
 name: Refresh company lists
 
-# Monthly: re-read the stock-index constituent lists from Wikipedia (source URL and retrieval date are stored with each list)
-# and commit data/companies/indices.json if it changed. No secrets beyond the workflow token.
+# Monthly: re-read the stock-index constituent lists from Wikipedia (source URL and retrieval date are stored with each list, and each new
+# member's website and head-office country from its own article), then look for the careers systems of members that have no roles in the
+# published index yet and were never probed. Commits data/companies/ when it changed; the nightly build reads it. No AI, no secrets beyond
+# the workflow token.
 on:
   schedule:
     - cron: "41 5 1 * *"
@@ -10,10 +12,16 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: companies
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 240
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,9 +31,16 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Read the lists
         run: python -u scripts/companies_refresh.py
+      - name: Which members have no roles yet
+        run: |
+          mkdir -p work/release
+          gh release download index-latest --pattern "*.json.gz" --pattern manifest.json --dir work/release --clobber
+          python -u scripts/companies_coverage.py work/release
+      - name: Probe members never probed, in GDP order
+        run: python -u scripts/companies_probe.py $(python -c "import sys; sys.path.insert(0, '.'); from jobalfred_index import companies; print(' '.join(companies.lists()))")
       - name: Commit if changed
         run: |
           git config user.name "jobalfred-index"
           git config user.email "211906206+tomasbb0@users.noreply.github.com"
-          git add data/companies/indices.json
-          git diff --cached --quiet || (git commit -m "Refresh company lists (monthly)" && git push)
+          git add data/companies/
+          git diff --cached --quiet || (git commit -m "Refresh company lists and probe new members (monthly)" && git pull --rebase && git push)

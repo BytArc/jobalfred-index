@@ -156,19 +156,37 @@ the cached homepage title and meta description and up to 10 job titles, never an
 
 ## Company lists (co) and language (lr, lq)
 
-Three more fields close every shard row, after `ft`: `co`, `lr`, `lq`. `companies.json` beside the manifest maps each list code to its label, source and
-retrieval date.
+Three more fields close every shard row, after `ft`: `co`, `lr`, `lq`. All three are plain strings, so a row stays a flat array (the site's streaming
+reader relies on that). `companies.json` beside the manifest maps each list code to its label, kind (curated or index), country, source, retrieval date
+and member count. Readers map fields by name; nothing before `co` moved.
 
-**`co`**: the well-known lists the employer is on, codes joined by commas ("sp500,bigtech"), empty when none. Lists are versioned data: `data/companies/curated.json`
-(big tech, AI labs, Big 4, top consultancies; edited by hand) and `data/companies/indices.json` (stock-index constituents read from Wikipedia with source URL and date by
-`scripts/companies_refresh.py`, refreshed monthly by `.github/workflows/companies.yml`; S&P 500, PSI 20, DAX, CAC 40, FTSE 100, IBEX 35, FTSE MIB, AEX, SMI, OMXS30, KOSPI 200,
-ASX 200, TSX 60 and more). A row matches a member by normalised name, alias, or the domain its postings live on. Members that have no roles yet are probed for a careers
-system with the VC session's probe (`scripts/companies_coverage.py`, then `scripts/companies_probe.py`); the boards it verifies go to `data/companies/tenants.json`, which the
-nightly run loads with `--extra-tenants`. A bare name match on Workable or Greenhouse is not accepted, since it also matches unrelated small firms called Meta or Bain.
+**`co`**: the well-known lists the employer is on, codes joined by commas ("bigtech,sp500"), curated lists first, then indexes by GDP rank; empty when none.
+Lists are versioned data:
+- `data/companies/curated.json`, edited by hand: `bigtech`, `ailab`, `big4`, `consulting`.
+- `data/companies/indices.json`, read by `scripts/companies_refresh.py` from English Wikipedia `/wiki/` pages (robots.txt allows them; the `/w/` API and the
+  Wikidata query service are disallowed and not used), with source URL and retrieval date per list, ordered by the country's nominal GDP, richest first:
+  `sp500`, `sse50`, `dax`, `nikkei225`, `nifty50`, `ftse100`, `cac40`, `ftsemib`, `tsx60`, `ibex35`, `kospi200`, `asx200`, `lq45`, `aex`, `smi`, `bel20`,
+  `omxs30`, `iseq20`, `ta35`, `atx`, `sti`, `set50`, `obx`, `psei`, `omxc25`, `klci`, `colcap`, `hsi`, `jse40`, `kse100`, `psi20`, `omxh25`, `nzx50`,
+  `athex`, `bux`. Each member's website and head-office country come from its own article's infobox.
+- `.github/workflows/companies.yml` refreshes both monthly and probes members it has not probed before.
 
-**`lr`, `lq`**: `lr` is the languages a role asks for as ISO 639-1 codes ("de,en"). `lq` is `s` when the description states them ("fluent German", "native Portuguese", "C1 French",
-"inglês fluente", "Deutschkenntnisse", "français courant"; `jobalfred_index/language.py`, deterministic, 7 cue families in 30 languages), or `i` when nothing is stated and the national
-language of the company's head-office country (list members) or of the role's country is used instead. The description is read where the source already returns it and is never stored.
+One company on several lists is one company: members that share a name, an alias or a website are joined (Google in `bigtech` is Alphabet in `sp500`).
+A row's employer is a member when its name or alias matches and the posting is on a feed, on an enterprise careers system (Workday, Oracle,
+SuccessFactors, Eightfold, iCIMS, the big tech feeds), or on a board named after the member (`boards.greenhouse.io/anthropic`, not
+`targetitalia.teamtailor.com` for Target); or when its postings live on the member's own website. For an index member a small-business board must also be
+in the member's head-office country. Websites are only ever the curated or Wikipedia ones, never a guess.
+
+Members with no roles yet are probed (`scripts/companies_coverage.py SHARD_DIR`, then `scripts/companies_probe.py LIST ...`) with the VC session's
+`startups.probe_company`: polite client, robots.txt obeyed, bot checks and 403s never worked around, no logins, LinkedIn, Indeed, Glassdoor and Naukri never
+read. The boards it finds go to `data/companies/tenants.json` carrying the member's name, and the nightly run loads them with `--extra-tenants`; every
+member's outcome (read, no careers page, blocked, no adapter, no website) is kept in `data/companies/probed.json`.
+
+**`lr`, `lq`**: `lr` is the languages a role asks for, ISO 639-1 codes in order of appearance ("de,en"). `lq` is `s` when the description states them, `i`
+when nothing is stated and the national language of the company's head-office country (list members) or of the role's country is used instead, `""`
+when neither is known. `jobalfred_index/language.py` is deterministic: a language name in the same clause as a requirement cue ("fluent German",
+"native Portuguese speaker", "French (C1)", "inglês fluente", "Deutschkenntnisse", "français courant", "Nederlandstalig", "ビジネスレベルの英語"); not when
+the name describes a market, clients or a team ("the German market", "German-speaking team"), and not when the posting calls it a plus. The description
+is read only where the source already returns it in the same request (Lever, Ashby, Amazon, Google, Oracle, Breezy, Gem and the feeds) and is never stored.
 
 ## Run
 
