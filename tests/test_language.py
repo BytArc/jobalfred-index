@@ -54,3 +54,16 @@ class TestDetect(unittest.TestCase):
         self.assertEqual(L.national("PT"), ["pt"])
         self.assertEqual(L.national("CH"), ["de", "fr", "it"])
         self.assertEqual(L.national("XX"), [])
+
+
+class TestPlusAndCompanyLanguage(unittest.TestCase):
+    def test_plus_belongs_to_the_later_languages(self):
+        t = "Strong written and verbal communication in English with additional knowledge of either German, French, Spanish or Italian considered a plus."
+        self.assertEqual(L.detect(t), ["en"])
+        self.assertEqual(L.detect("English (C1) required, German (B2) a plus"), ["en"])
+        self.assertEqual(L.detect("You are fluent in Danish. If you speak Norwegian fluently that's a plus!"), ["da"])
+
+    def test_company_language_and_levels(self):
+        self.assertEqual(L.detect("Our company language is English."), ["en"])
+        self.assertEqual(L.detect("Excellent reading, listening, and writing skills in English"), ["en"])
+        self.assertEqual(L.detect("Inglês: intermediário"), ["en"])

@@ -109,7 +109,8 @@ _C = r"(?<![a-z0-9])(?:{})"
 CUE_BEFORE = re.compile(_C.format("|".join([
     r"fluen(?:t|cy|tly)", r"(?<!cloud[- ])(?<!react )native", r"mother[- ]tongue", r"proficien(?:t|cy)", r"bilingual", r"business[- ]level",
     r"business[- ]fluent", r"working knowledge", r"knowledge of", r"command of", r"speak(?:s|ing)?", r"spoken", r"written",
-    r"verbal", r"[bc][12]", r"level", r"languages?\s*:", r"language skills", r"conversational",
+    r"verbal", r"[bc][12]", r"level", r"languages?\s*:", r"language skills", r"conversational", r"writing", r"reading", r"skills in",
+    r"communication in", r"(?:working|company|operating|business|official|main) language(?:s)?(?: is| are)?", r"communicate in",
     # pt es it fr de nl pl sv da fi cs hu
     r"fluente", r"fluencia", r"fluidez", r"fluido", r"nativ[oa]", r"dominio", r"conhecimentos? (?:de|em)", r"conocimientos? de",
     r"nivel", r"idiomas?\s*:", r"lingua madre", r"madrelingua", r"conoscenza", r"padronanza", r"courant", r"maitrise", r"maitriser",
@@ -121,7 +122,7 @@ CUE_AFTER = re.compile(_C.format("|".join([
     r"fluen(?:t|cy)", r"native", r"speak(?:er|ers|ing)", r"(?:language )?skills", r"proficien(?:t|cy)", r"(?:\(\s*)?[bc][12]",
     r"level", r"required", r"mandatory", r"essential", r"a must", r"must", r"is needed", r"needed", r"(?:written|verbal|spoken)",
     r"fluente", r"nativ[oa]", r"obrigatorio", r"imprescindi\w+", r"indispensa\w+", r"requerido", r"necessario", r"obligatoire",
-    r"requis", r"courant", r"(?:in )?(?:wort und schrift)", r"fliessend\w*", r"kenntnis\w*", r"zwingend", r"erforderlich",
+    r"requis", r"courant", r"(?:upper[- ])?intermedi\w*", r"basic[oa]?", r"basique", r"is (?:our|the) (?:\w+ )?(?:\w+ )?language", r"(?:in )?(?:wort und schrift)", r"fliessend\w*", r"kenntnis\w*", r"zwingend", r"erforderlich",
     r"vereist", r"vloeiend\w*", r"madrelingua", r"fluido", r"avanzad[oa]", r"avancad[oa]", r"avance", r"flytande", r"flydende",
 ])))
 # The name is a nationality adjective, not a language: the next word is what it describes
@@ -151,11 +152,27 @@ def _clause(t: str, start: int, end: int, width: int = 38) -> tuple[str, str]:
     return before, after
 
 
-def _after_long(t: str, end: int) -> str:
-    """The rest of the clause after the name, for the "is a plus" check (a little longer than the cue window)."""
-    rest = t[end:end + 70]
-    m = re.search(r"[,(]|" + CLAUSE.pattern, rest)        # "Français courant, anglais un atout": the plus is about the next one
-    return rest[:m.start()] if m else rest
+REQUIRED = re.compile(r"(?<![a-z])(?:required|requirement|mandatory|essential|a must|must|needed|necessary|exige|exigee|obligatoire|requis|"
+                      r"obrigatori[oa]|imprescindi\w+|indispensa\w+|requerid[oa]|necessari[oa]|erforderlich|zwingend|vorausgesetzt|vereist|"
+                      r"richiest[oa]|wymagan\w*|krav)(?![a-z])")
+
+
+def _is_a_plus(t: str, end: int) -> bool:
+    """The posting calls this language a plus: a plus phrase later in the clause, with no requirement word and no new cue-led
+    language before it ("English with additional knowledge of German or French considered a plus": the plus is about German and French)."""
+    rest = t[end:end + 160]
+    m = CLAUSE.search(rest)
+    rest = rest[:m.start()] if m else rest
+    p = PLUS.search(rest)
+    if not p:
+        return False
+    between = rest[:p.start()]
+    if REQUIRED.search(between):
+        return False
+    c = CUE_BEFORE.search(between)
+    if c and WORD.search(between, c.end()) and any(_NAME.get(w.group(0)) for w in WORD.finditer(between, c.end())):
+        return False
+    return True
 
 
 def detect(text: str | None) -> list[str]:
@@ -177,12 +194,12 @@ def detect(text: str | None) -> list[str]:
         speaking = re.match(r"\s*-?\s*speaking", after)
         if not (speaking or CUE_BEFORE.search(before) or CUE_AFTER.search(after)):
             continue
-        if PLUS.search(_after_long(t, m.end())):
+        if _is_a_plus(t, m.end()):
             continue
         found.append((m.start(), code))
     for m in COMPOUND.finditer(t):
         code = _NAME.get(m.group(1))
-        if code and not PLUS.search(_after_long(t, m.end())):
+        if code and not _is_a_plus(t, m.end()):
             found.append((m.start(), code))
     if NON_LATIN.search(raw):
         low = raw.lower()
