@@ -138,7 +138,7 @@ for (code, name, display, domain, res), usable0, read in zip(results, picked, re
         status = errs[0] if errs else ("careers_no_ats" if status != "ats" else "ats_no_adapter")
     probed.setdefault(code, {})[name] = {"status": status, "website": domain, "careers": res.get("careers", ""), "note": res.get("note", ""),
                                          "boards": [[t["ats"], t["key"]] for t in res.get("tenants", [])],
-                                         "read": [[t["ats"], t["key"], n] for t, (n, err) in zip(usable0, read) if not err], "checked": today}
+                                         "read": [[t["ats"], t["key"], n] for t, (n, err) in zip(usable0, read) if t in usable], "checked": today}
     for t in usable:
         k = (t["ats"], t["key"])
         if k in have:
