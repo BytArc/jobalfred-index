@@ -10,6 +10,8 @@ For each member that work/companies_coverage.json lists as missing (scripts/comp
      (robots.txt, bot check, LinkedIn only, no adapter). Polite client, robots.txt obeyed, 403/429 and bot checks never worked around,
      no logins. LinkedIn, Indeed, Glassdoor and Naukri are never read.
   3. when the pages name no board: the member's own name tried on Lever and Ashby, kept only when the postings name the member.
+  4. every board found is read once with the index's own adapter, as the nightly run will; a board that answers 403, is closed by
+     robots.txt, no longer exists or does not fit the adapter is recorded with that status and not kept.
 Boards we have an adapter for go to data/companies/tenants.json (loaded by the nightly run with --extra-tenants) carrying the member's
 name, so its rows are labelled with it. Every member's outcome goes to data/companies/probed.json (status, website, boards, date).
 """
@@ -77,6 +79,23 @@ def one(job):
     return code, name, display, domain, res
 
 
+def read_board(t: dict, display: str) -> tuple[int, str]:
+    """Read a found board once with the index's own adapter, as the nightly run will: (roles, "") or (0, why it cannot be read)."""
+    src = SOURCES[t["ats"]]
+    try:
+        jobs = src.fetch(client, {"key": t["key"], **(t.get("data") or {}), "name": display, "_ats": t["ats"]})
+        return len(jobs), ""
+    except Exception as e:                                         # Failed and Gone carry the reason; anything else is an adapter mismatch
+        msg = str(e)
+        if "robots" in msg:
+            return 0, "ats_robots_blocked"
+        if "403" in msg or "forbidden" in msg or "challenge" in msg or "429" in msg:
+            return 0, "ats_blocked"
+        if type(e).__name__ in ("Gone",) or "no such site" in msg or "422" in msg or "404" in msg:
+            return 0, "ats_gone"
+        return 0, "ats_no_adapter"
+
+
 def own_board(t, display, domain) -> bool:
     """A small-business board linked from a member's site must carry the member's own name (kkr.com links a board called "stage")."""
     if t["ats"] in companies.ENTERPRISE_ATS or t["ats"] in ("jsonld", "pagelist", "jobs2web", "careers-page"):
@@ -91,16 +110,22 @@ with ThreadPoolExecutor(threads) as ex:          # one member per thread; the cl
 have = {(t["ats"], t["key"]): t for t in tenants["tenants"]}
 added = 0
 today = time.strftime("%Y-%m-%d")
+picked = []
 for code, name, display, domain, res in results:
     usable = [t for t in res.get("tenants", []) if t["ats"] in SOURCES and t["ats"] not in ROBOTS_BLOCKED_ATS
               and not (t["ats"] == "pagelist" and NOT_A_JOBS_PAGE.search(t["key"])) and own_board(t, display, domain)]
+    picked.append(usable)
+with ThreadPoolExecutor(threads) as ex:
+    reads = list(ex.map(lambda ud: [read_board(t, ud[1]) for t in ud[0]], [(u, r[2]) for u, r in zip(picked, results)]))
+for (code, name, display, domain, res), usable0, read in zip(results, picked, reads):
+    usable = [t for t, (n, err) in zip(usable0, read) if not err]
     status = res.get("status") or ""
-    if status == "careers_page_list" and not usable:
-        status = "careers_no_ats"
-    if status == "ats" and not usable:
-        status = "ats_no_adapter"
+    if status in ("ats", "jsonld", "careers_page_list") and not usable:
+        errs = [err for _, err in read if err]
+        status = errs[0] if errs else ("careers_no_ats" if status != "ats" else "ats_no_adapter")
     probed.setdefault(code, {})[name] = {"status": status, "website": domain, "careers": res.get("careers", ""), "note": res.get("note", ""),
-                                         "boards": [[t["ats"], t["key"]] for t in res.get("tenants", [])], "checked": today}
+                                         "boards": [[t["ats"], t["key"]] for t in res.get("tenants", [])],
+                                         "read": [[t["ats"], t["key"], n] for t, (n, err) in zip(usable0, read) if not err], "checked": today}
     for t in usable:
         k = (t["ats"], t["key"])
         if k in have:
