@@ -6,7 +6,8 @@
    "careers": "",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   }
  },
  "ailab": {
@@ -16,7 +17,8 @@
    "careers": "https://mistral.ai/careers/",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "xAI": {
    "status": "ats",
@@ -29,7 +31,14 @@
      "xai"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "greenhouse",
+     "xai",
+     272
+    ]
+   ]
   },
   "Hugging Face": {
    "status": "ats",
@@ -42,7 +51,14 @@
      "huggingface"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workable",
+     "huggingface",
+     5
+    ]
+   ]
   },
   "Safe Superintelligence": {
    "status": "ats",
@@ -55,7 +71,14 @@
      "ssi"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "ashby",
+     "ssi",
+     0
+    ]
+   ]
   },
   "Thinking Machines Lab": {
    "status": "ats",
@@ -68,7 +91,14 @@
      "ThinkingMachines"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "ashby",
+     "ThinkingMachines",
+     56
+    ]
+   ]
   },
   "AI21 Labs": {
    "status": "careers_page_list",
@@ -81,7 +111,14 @@
      "www.ai21.com/careers"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "pagelist",
+     "www.ai21.com/careers",
+     5
+    ]
+   ]
   },
   "Sakana AI": {
    "status": "careers_no_ats",
@@ -89,7 +126,8 @@
    "careers": "https://sakana.ai/careers/",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   }
  },
  "big4": {
@@ -99,7 +137,8 @@
    "careers": "https://www.ey.com/pt_pt/careers",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   }
  },
  "consulting": {
@@ -109,7 +148,8 @@
    "careers": "",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "Boston Consulting Group": {
    "status": "ats",
@@ -122,7 +162,14 @@
      "bcg"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "eightfold",
+     "bcg",
+     148
+    ]
+   ]
   },
   "Bain & Company": {
    "status": "careers_no_ats",
@@ -130,7 +177,8 @@
    "careers": "https://www.bain.com/careers/",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "Oliver Wyman": {
    "status": "careers_no_ats",
@@ -138,7 +186,8 @@
    "careers": "https://www.oliverwyman.com/careers.html",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "Kearney": {
    "status": "careers_page_list",
@@ -151,7 +200,14 @@
      "www.kearney.com/careers/opportunities"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "pagelist",
+     "www.kearney.com/careers/opportunities",
+     1
+    ]
+   ]
   },
   "Roland Berger": {
    "status": "careers_no_ats",
@@ -159,7 +215,8 @@
    "careers": "https://www.rolandberger.com/en/Join/All-Jobs/",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "Capgemini": {
    "status": "careers_no_ats",
@@ -167,7 +224,8 @@
    "careers": "https://www.capgemini.com/careers/",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "Strategy&": {
    "status": "no_website_found",
@@ -175,7 +233,8 @@
    "careers": "",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "L.E.K. Consulting": {
    "status": "careers_no_ats",
@@ -183,7 +242,8 @@
    "careers": "https://www.lek.com/careers",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "Simon-Kucher": {
    "status": "careers_no_ats",
@@ -196,7 +256,8 @@
      "www.simon-kucher.com/en/careers/people-stories"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "Alvarez & Marsal": {
    "status": "site_robots",
@@ -204,7 +265,8 @@
    "careers": "",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
   },
   "Booz Allen Hamilton": {
    "status": "ats",
@@ -217,7 +279,14 @@
      "bah.wd1|bah_jobs"
     ]
    ],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "bah.wd1|bah_jobs",
+     2000
+    ]
+   ]
   },
   "Monitor Deloitte": {
    "status": "no_website_found",
@@ -225,7 +294,3639 @@
    "careers": "",
    "note": "",
    "boards": [],
-   "checked": "2026-11-11"
+   "checked": "2026-11-11",
+   "read": []
+  }
+ },
+ "sp500": {
+  "3M": {
+   "status": "site_blocked",
+   "website": "3m.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "A. O. Smith": {
+   "status": "ats_no_adapter",
+   "website": "aosmith.com",
+   "careers": "https://www.aosmith.com/about-us/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "aosmith"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Abbott Laboratories": {
+   "status": "ats",
+   "website": "abbott.com",
+   "careers": "https://www.abbott.com/en-us/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "abbott.wd5|abbottcareers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "abbott.wd5|abbottcareers",
+     1999
+    ]
+   ]
+  },
+  "Adobe Inc.": {
+   "status": "careers_no_ats",
+   "website": "adobe.com",
+   "careers": "https://www.adobe.com/careers.html",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Advanced Micro Devices": {
+   "status": "site_robots",
+   "website": "amd.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "AES Corporation": {
+   "status": "ats",
+   "website": "aes.com",
+   "careers": "https://www.aes.com/about-us/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "aes.wd1|aes_us"
+    ],
+    [
+     "workday",
+     "aes.wd1|aes_andes"
+    ],
+    [
+     "workday",
+     "aes.wd1|aes_mcac"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "aes.wd1|aes_us",
+     125
+    ],
+    [
+     "workday",
+     "aes.wd1|aes_andes",
+     9
+    ],
+    [
+     "workday",
+     "aes.wd1|aes_mcac",
+     3
+    ]
+   ]
+  },
+  "Aflac": {
+   "status": "ats_no_adapter",
+   "website": "aflac.com",
+   "careers": "https://careers.aflac.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "aflacP"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Air Products": {
+   "status": "site_blocked",
+   "website": "airproducts.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Alexandria Real Estate Equities": {
+   "status": "site_blocked",
+   "website": "are.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Align Technology": {
+   "status": "ats_robots_blocked",
+   "website": "aligntech.com",
+   "careers": "https://jobs.aligntech.com",
+   "note": "",
+   "boards": [
+    [
+     "pinpoint",
+     "jobs-aligntech"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Alliant Energy": {
+   "status": "site_blocked",
+   "website": "alliantenergy.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Allstate": {
+   "status": "site_robots",
+   "website": "allstate.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Altria": {
+   "status": "site_robots",
+   "website": "altria.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Amcor": {
+   "status": "careers_no_ats",
+   "website": "amcor.com",
+   "careers": "https://www.amcor.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ameren": {
+   "status": "site_blocked",
+   "website": "ameren.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "American Electric Power": {
+   "status": "site_robots",
+   "website": "aep.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "American Water Works": {
+   "status": "site_blocked",
+   "website": "amwater.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ameriprise Financial": {
+   "status": "ats",
+   "website": "ameriprise.com",
+   "careers": "https://www.ameriprise.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "ameriprise.wd5|ameriprise"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "ameriprise.wd5|ameriprise",
+     226
+    ]
+   ]
+  },
+  "Ametek": {
+   "status": "site_blocked",
+   "website": "ametek.com",
+   "careers": "",
+   "note": "HTTP 429 rate limited",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Amphenol": {
+   "status": "site_blocked",
+   "website": "amphenol.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "APA Corporation": {
+   "status": "careers_no_ats",
+   "website": "apacorp.com",
+   "careers": "https://apacorp.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Apollo Global Management": {
+   "status": "ats",
+   "website": "apollo.com",
+   "careers": "https://www.apollo.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "athene.wd5|apollo_careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "athene.wd5|apollo_careers",
+     56
+    ]
+   ]
+  },
+  "Applied Materials": {
+   "status": "site_blocked",
+   "website": "appliedmaterials.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Archer Daniels Midland": {
+   "status": "careers_no_ats",
+   "website": "adm.com",
+   "careers": "https://www.adm.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ares Management": {
+   "status": "site_blocked",
+   "website": "aresmgmt.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Arista Networks": {
+   "status": "careers_no_ats",
+   "website": "arista.com",
+   "careers": "https://www.arista.com/en/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Arthur J. Gallagher & Co.": {
+   "status": "site_blocked",
+   "website": "ajg.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "AT&T": {
+   "status": "no_careers_page",
+   "website": "att.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Automatic Data Processing": {
+   "status": "site_unreachable",
+   "website": "adp.com",
+   "careers": "",
+   "note": "HTTP 502 HTTP 502",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Avery Dennison": {
+   "status": "ats_robots_blocked",
+   "website": "averydennison.com",
+   "careers": "https://www.averydennison.com/en/home/careers/overview.html",
+   "note": "",
+   "boards": [
+    [
+     "smartrecruiters",
+     "external-referrals"
+    ],
+    [
+     "smartrecruiters",
+     "AveryDennison"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Axon Enterprise": {
+   "status": "site_blocked",
+   "website": "axon.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ball Corporation": {
+   "status": "site_blocked",
+   "website": "ball.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Bank of America": {
+   "status": "ats",
+   "website": "bankofamerica.com",
+   "careers": "https://careers.bankofamerica.com/en-us",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "ghr.wd1|lateral-us"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "ghr.wd1|lateral-us",
+     2000
+    ]
+   ]
+  },
+  "Becton Dickinson": {
+   "status": "ats",
+   "website": "bd.com",
+   "careers": "https://jobs.bd.com/en",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "bdx.wd1|external_career_site_usa"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "bdx.wd1|external_career_site_usa",
+     577
+    ]
+   ]
+  },
+  "Berkshire Hathaway": {
+   "status": "no_careers_page",
+   "website": "berkshirehathaway.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Biogen": {
+   "status": "ats",
+   "website": "biogen.com",
+   "careers": "https://www.biogen.com/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "biibhr.wd3|external"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "biibhr.wd3|external",
+     266
+    ]
+   ]
+  },
+  "BNY Mellon": {
+   "status": "ats",
+   "website": "bny.com",
+   "careers": "https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "eofe.fa.us2.oraclecloud.com|BNY"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "eofe.fa.us2.oraclecloud.com|BNY",
+     1249
+    ]
+   ]
+  },
+  "Booking Holdings": {
+   "status": "linkedin_only",
+   "website": "bookingholdings.com",
+   "careers": "https://www.bookingholdings.com/careers/about/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Boston Scientific": {
+   "status": "ats_blocked",
+   "website": "bostonscientific.com",
+   "careers": "https://www.bostonscientific.com/en-US/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "bostonscientific"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Broadridge Financial Solutions": {
+   "status": "ats",
+   "website": "broadridge.com",
+   "careers": "https://broadridge.wd5.myworkdayjobs.com/Careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "broadridge.wd5|careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "broadridge.wd5|careers",
+     313
+    ]
+   ]
+  },
+  "Brown–Forman": {
+   "status": "ats",
+   "website": "brown-forman.com",
+   "careers": "https://careers.brown-forman.com/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "bf.wd5|usa_canada"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "bf.wd5|usa_canada",
+     21
+    ]
+   ]
+  },
+  "Bunge Global": {
+   "status": "careers_no_ats",
+   "website": "bunge.com",
+   "careers": "https://bunge.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Cadence Design Systems": {
+   "status": "ats",
+   "website": "cadence.com",
+   "careers": "https://www.cadence.com/en_US/home/company/life-at-cadence/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "cadence.wd1|external_careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "cadence.wd1|external_careers",
+     689
+    ]
+   ]
+  },
+  "Camden Property Trust": {
+   "status": "ats",
+   "website": "camdenliving.com",
+   "careers": "https://ehap.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "ehap.fa.us2.oraclecloud.com|CX"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "ehap.fa.us2.oraclecloud.com|CX",
+     57
+    ]
+   ]
+  },
+  "Carrier Global": {
+   "status": "careers_no_ats",
+   "website": "corporate.carrier.com",
+   "careers": "https://jobs.carrier.com/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Carvana": {
+   "status": "site_blocked",
+   "website": "carvana.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Casey's": {
+   "status": "site_blocked",
+   "website": "caseys.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Caterpillar Inc.": {
+   "status": "site_robots",
+   "website": "caterpillar.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Cboe Global Markets": {
+   "status": "careers_no_ats",
+   "website": "cboe.com",
+   "careers": "https://careers.cboe.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Cencora": {
+   "status": "careers_no_ats",
+   "website": "cencora.com",
+   "careers": "https://careers.cencora.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "CenterPoint Energy": {
+   "status": "ats_no_adapter",
+   "website": "centerpointenergy.com",
+   "careers": "https://careers.centerpointenergy.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "centerpoin"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "CF Industries": {
+   "status": "site_robots",
+   "website": "cfindustries.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Charles River Laboratories": {
+   "status": "site_blocked",
+   "website": "criver.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Charles Schwab Corporation": {
+   "status": "site_blocked",
+   "website": "aboutschwab.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Charter Communications": {
+   "status": "site_blocked",
+   "website": "charter.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Chipotle Mexican Grill": {
+   "status": "careers_no_ats",
+   "website": "chipotle.com",
+   "careers": "https://jobs.chipotle.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Cigna": {
+   "status": "ats",
+   "website": "thecignagroup.com",
+   "careers": "https://jobs.thecignagroup.com/us/en",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "cigna.wd5|cignacareers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "cigna.wd5|cignacareers",
+     556
+    ]
+   ]
+  },
+  "Cincinnati Financial": {
+   "status": "ats_no_adapter",
+   "website": "cinfin.com",
+   "careers": "https://www.cinfin.com/cincinnati-insurance-careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Cintas": {
+   "status": "careers_no_ats",
+   "website": "cintas.com",
+   "careers": "https://www.cintas.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Citigroup": {
+   "status": "no_careers_page",
+   "website": "citigroup.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Citizens Financial Group": {
+   "status": "site_blocked",
+   "website": "citizensbank.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Clorox": {
+   "status": "careers_no_ats",
+   "website": "thecloroxcompany.com",
+   "careers": "https://www.thecloroxcompany.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "CME Group": {
+   "status": "site_robots",
+   "website": "cmegroup.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "CMS Energy": {
+   "status": "site_robots",
+   "website": "cmsenergy.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Coca-Cola Company (The)": {
+   "status": "ats",
+   "website": "coca-colacompany.com",
+   "careers": "https://www.coca-colacompany.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "coke.wd1|coca-cola-careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "coke.wd1|coca-cola-careers",
+     249
+    ]
+   ]
+  },
+  "Colgate-Palmolive": {
+   "status": "no_careers_page",
+   "website": "colgatepalmolive.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Comcast": {
+   "status": "site_blocked",
+   "website": "comcast.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Comfort Systems USA": {
+   "status": "ats",
+   "website": "comfortsystemsusa.com",
+   "careers": "https://comfortsystemsusa.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "comfortsystemsusa.wd1|corpcareers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "comfortsystemsusa.wd1|corpcareers",
+     159
+    ]
+   ]
+  },
+  "Consolidated Edison": {
+   "status": "ats",
+   "website": "coned.com",
+   "careers": "https://www.coned.com/en/about-us/careers",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "ejcu.fa.us6.oraclecloud.com|CX_1033"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "ejcu.fa.us6.oraclecloud.com|CX_1033",
+     60
+    ]
+   ]
+  },
+  "Constellation Brands": {
+   "status": "site_blocked",
+   "website": "cbrands.com",
+   "careers": "",
+   "note": "HTTP 429 rate limited",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Cooper Companies (The)": {
+   "status": "ats",
+   "website": "coopercos.com",
+   "careers": "https://www.coopercos.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "hcjy.fa.us2.oraclecloud.com|CX_1"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "hcjy.fa.us2.oraclecloud.com|CX_1",
+     192
+    ]
+   ]
+  },
+  "Corning Inc.": {
+   "status": "site_blocked",
+   "website": "corning.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "CoStar Group": {
+   "status": "site_blocked",
+   "website": "costargroup.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Costco": {
+   "status": "careers_no_ats",
+   "website": "costco.com",
+   "careers": "https://www.costco.com/f/-/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "CRH plc": {
+   "status": "careers_no_ats",
+   "website": "crh.com",
+   "careers": "https://www.crh.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Crown Castle": {
+   "status": "careers_no_ats",
+   "website": "crowncastle.com",
+   "careers": "https://www.crowncastle.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Darden Restaurants": {
+   "status": "site_robots",
+   "website": "darden.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "DaVita": {
+   "status": "careers_no_ats",
+   "website": "davita.com",
+   "careers": "https://careers.davita.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Deckers Brands": {
+   "status": "ats",
+   "website": "deckers.com",
+   "careers": "https://deckers.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "deckers.wd5|deckers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "deckers.wd5|deckers",
+     355
+    ]
+   ]
+  },
+  "Deere & Company": {
+   "status": "ats_blocked",
+   "website": "deere.com",
+   "careers": "https://www.deere.com/en-us/our-company/careers",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "johndeere"
+    ],
+    [
+     "successfactors",
+     "1161975P"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Dell Technologies": {
+   "status": "careers_no_ats",
+   "website": "dell.com",
+   "careers": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Delta Air Lines": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Devon Energy": {
+   "status": "site_robots",
+   "website": "devonenergy.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Dominion Energy": {
+   "status": "ats_no_adapter",
+   "website": "dominionenergy.com",
+   "careers": "https://careers.dominionenergy.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "dominionreP3"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Domino's": {
+   "status": "ats_robots_blocked",
+   "website": "dominos.com",
+   "careers": "",
+   "note": "",
+   "boards": [
+    [
+     "personio",
+     "dominospizzaportugal"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Dover Corporation": {
+   "status": "site_blocked",
+   "website": "dovercorporation.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "D. R. Horton": {
+   "status": "site_robots",
+   "website": "drhorton.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "DTE Energy": {
+   "status": "ats_no_adapter",
+   "website": "dteenergy.com",
+   "careers": "https://www.dteenergy.com/us/en/residential/about-dte/careers/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "DTEENERGYCO"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Duke Energy": {
+   "status": "site_robots",
+   "website": "duke-energy.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "eBay Inc.": {
+   "status": "site_blocked",
+   "website": "ebay.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "EchoStar": {
+   "status": "ats_robots_blocked",
+   "website": "echostar.com",
+   "careers": "https://echostar.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "icims",
+     "attract-careers1-dish"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Edison International": {
+   "status": "no_careers_page",
+   "website": "edison.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Emcor": {
+   "status": "ats",
+   "website": "emcorgroup.com",
+   "careers": "https://emcorgroup.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "icims",
+     "careers-emcorgroup"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "icims",
+     "careers-emcorgroup",
+     395
+    ]
+   ]
+  },
+  "Emerson Electric": {
+   "status": "ats",
+   "website": "emerson.com",
+   "careers": "https://www.emerson.com/en/corporate/careers",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "hdjq.fa.us2.oraclecloud.com|CX_1"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "hdjq.fa.us2.oraclecloud.com|CX_1",
+     1204
+    ]
+   ]
+  },
+  "Entergy": {
+   "status": "careers_no_ats",
+   "website": "entergy.com",
+   "careers": "https://jobs.entergy.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "EOG Resources": {
+   "status": "careers_no_ats",
+   "website": "eogresources.com",
+   "careers": "https://www.eogresources.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "EQT Corporation": {
+   "status": "ats",
+   "website": "eqt.com",
+   "careers": "https://www.eqt.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "greenhouse",
+     "eqtcorporation"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "greenhouse",
+     "eqtcorporation",
+     51
+    ]
+   ]
+  },
+  "Erie Indemnity": {
+   "status": "ats_no_adapter",
+   "website": "erieinsurance.com",
+   "careers": "https://www.erieinsurance.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "ERIEPROD"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Essex Property Trust": {
+   "status": "site_blocked",
+   "website": "essexapartmenthomes.com",
+   "careers": "",
+   "note": "HTTP 429 rate limited",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Estée Lauder Companies (The)": {
+   "status": "site_blocked",
+   "website": "elcompanies.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Evergy": {
+   "status": "site_blocked",
+   "website": "evergy.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Everpure": {
+   "status": "careers_no_ats",
+   "website": "everpuredata.com",
+   "careers": "https://www.everpuredata.com/company/careers.html",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Eversource Energy": {
+   "status": "jsonld",
+   "website": "eversource.com",
+   "careers": "https://jobs.eversource.com/",
+   "note": "",
+   "boards": [
+    [
+     "jsonld",
+     "jobs.eversource.com"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "jsonld",
+     "jobs.eversource.com",
+     5
+    ]
+   ]
+  },
+  "Exelon": {
+   "status": "site_robots",
+   "website": "exeloncorp.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Expand Energy": {
+   "status": "site_unreachable",
+   "website": "expandenergy.com",
+   "careers": "",
+   "note": "HTTP 500 HTTP 500",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Expeditors International": {
+   "status": "careers_no_ats",
+   "website": "expeditors.com",
+   "careers": "https://www.expeditors.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Extra Space Storage": {
+   "status": "site_blocked",
+   "website": "extraspace.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "ExxonMobil": {
+   "status": "ats_no_adapter",
+   "website": "exxonmobil.com",
+   "careers": "https://corporate.exxonmobil.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "exxonmobilP"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "F5, Inc.": {
+   "status": "ats",
+   "website": "f5.com",
+   "careers": "https://www.f5.com/company/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "ffive.wd5|f5jobs"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "ffive.wd5|f5jobs",
+     289
+    ]
+   ]
+  },
+  "Fifth Third Bancorp": {
+   "status": "careers_no_ats",
+   "website": "53.com",
+   "careers": "https://www.53.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ford Motor Company": {
+   "status": "jsonld",
+   "website": "ford.com",
+   "careers": "https://www.careers.ford.com/en",
+   "note": "",
+   "boards": [
+    [
+     "jsonld",
+     "www.careers.ford.com/en"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "jsonld",
+     "www.careers.ford.com/en",
+     4
+    ]
+   ]
+  },
+  "Franklin Resources": {
+   "status": "careers_no_ats",
+   "website": "franklintempleton.com",
+   "careers": "https://www.franklintempleton.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Freeport-McMoRan": {
+   "status": "careers_no_ats",
+   "website": "fcx.com",
+   "careers": "https://fcx.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Garmin": {
+   "status": "careers_no_ats",
+   "website": "garmin.com",
+   "careers": "https://www.garmin.com/pt-PT/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Gen Digital": {
+   "status": "ats",
+   "website": "gendigital.com",
+   "careers": "https://www.gendigital.com/us/en/life-gen/",
+   "note": "",
+   "boards": [
+    [
+     "ashby",
+     "gen-digital"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "ashby",
+     "gen-digital",
+     95
+    ]
+   ]
+  },
+  "Generac": {
+   "status": "careers_no_ats",
+   "website": "generac.com",
+   "careers": "https://careers.generac.com/en/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "General Dynamics": {
+   "status": "careers_page_list",
+   "website": "gd.com",
+   "careers": "https://www.gd.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.gd.com/careers/interns"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "pagelist",
+     "www.gd.com/careers/interns",
+     1
+    ]
+   ]
+  },
+  "GoDaddy": {
+   "status": "site_blocked",
+   "website": "godaddy.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Goldman Sachs": {
+   "status": "site_blocked",
+   "website": "goldmansachs.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Halliburton": {
+   "status": "ats_no_adapter",
+   "website": "halliburton.com",
+   "careers": "https://careers.halliburton.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "HALprod"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Hartford (The)": {
+   "status": "site_robots",
+   "website": "thehartford.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "HCA Healthcare": {
+   "status": "no_careers_page",
+   "website": "hcahealthcare.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Healthpeak Properties": {
+   "status": "ats",
+   "website": "healthpeak.com",
+   "careers": "https://healthpeak.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "jazzhr",
+     "healthpeak"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "jazzhr",
+     "healthpeak",
+     27
+    ]
+   ]
+  },
+  "Hershey Company (The)": {
+   "status": "ats_no_adapter",
+   "website": "thehersheycompany.com",
+   "careers": "https://careers.thehersheycompany.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "Hersheys"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Hewlett Packard Enterprise": {
+   "status": "site_robots",
+   "website": "hpe.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Hilton Worldwide": {
+   "status": "site_blocked",
+   "website": "hilton.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Home Depot (The)": {
+   "status": "site_blocked",
+   "website": "homedepot.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Honeywell Aerospace": {
+   "status": "ats",
+   "website": "honeywellaerospace.com",
+   "careers": "https://www.honeywellaerospace.com/us/en/company/careers",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "icfcjb.fa.ocs.oraclecloud.com|Aerospace"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "icfcjb.fa.ocs.oraclecloud.com|Aerospace",
+     780
+    ]
+   ]
+  },
+  "Honeywell Technologies": {
+   "status": "ats",
+   "website": "honeywell.com",
+   "careers": "https://www.honeywell.com/us/en/careers",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "ibqbjb.fa.ocs.oraclecloud.com|Honeywell"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "ibqbjb.fa.ocs.oraclecloud.com|Honeywell",
+     1344
+    ]
+   ]
+  },
+  "Hormel Foods": {
+   "status": "ats",
+   "website": "hormelfoods.com",
+   "careers": "https://www.hormelfoods.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "ekkh.fa.us2.oraclecloud.com|CX_2002"
+    ],
+    [
+     "oracle",
+     "ekkh.fa.us2.oraclecloud.com|CX"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "ekkh.fa.us2.oraclecloud.com|CX_2002",
+     220
+    ],
+    [
+     "oracle",
+     "ekkh.fa.us2.oraclecloud.com|CX",
+     220
+    ]
+   ]
+  },
+  "Host Hotels & Resorts": {
+   "status": "site_robots",
+   "website": "hosthotels.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Hubbell Incorporated": {
+   "status": "ats_gone",
+   "website": "hubbell.com",
+   "careers": "https://careers.hubbell.com/",
+   "note": "",
+   "boards": [
+    [
+     "jobs2web",
+     "rmk-map"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Huntington Bancshares": {
+   "status": "site_blocked",
+   "website": "huntington.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "IBM": {
+   "status": "careers_no_ats",
+   "website": "ibm.com",
+   "careers": "https://www.ibm.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Idexx Laboratories": {
+   "status": "careers_no_ats",
+   "website": "idexx.com",
+   "careers": "https://careers.idexx.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Illinois Tool Works": {
+   "status": "careers_no_ats",
+   "website": "itw.com",
+   "careers": "https://careers.itw.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ingersoll Rand": {
+   "status": "site_blocked",
+   "website": "irco.com",
+   "careers": "",
+   "note": "HTTP 429 rate limited",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Interactive Brokers": {
+   "status": "careers_no_ats",
+   "website": "interactivebrokers.com",
+   "careers": "https://www.interactivebrokers.com/en/general/about/careers-splash.php",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Intercontinental Exchange": {
+   "status": "careers_no_ats",
+   "website": "ice.com",
+   "careers": "https://www.ice.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "International Flavors & Fragrances": {
+   "status": "site_blocked",
+   "website": "iff.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "International Paper": {
+   "status": "ats",
+   "website": "internationalpaper.com",
+   "careers": "https://www.internationalpaper.com/working-ip",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "dssmith.wd3|careers"
+    ],
+    [
+     "oracle",
+     "iazbqy.fa.ocs.oraclecloud.com|CX_1"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "dssmith.wd3|careers",
+     183
+    ],
+    [
+     "oracle",
+     "iazbqy.fa.ocs.oraclecloud.com|CX_1",
+     467
+    ]
+   ]
+  },
+  "Intuit": {
+   "status": "careers_no_ats",
+   "website": "intuit.com",
+   "careers": "https://www.intuit.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Intuitive Surgical": {
+   "status": "site_blocked",
+   "website": "intuitive.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Invitation Homes": {
+   "status": "ats",
+   "website": "invitationhomes.com",
+   "careers": "https://careers.invitationhomes.com/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "invitationhomes.wd503|invh"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "invitationhomes.wd503|invh",
+     58
+    ]
+   ]
+  },
+  "J.B. Hunt": {
+   "status": "ats",
+   "website": "jbhunt.com",
+   "careers": "https://careers.jbhunt.com/careers/equipment-maintenance",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "jbhunt.wd501|careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "jbhunt.wd501|careers",
+     442
+    ]
+   ]
+  },
+  "Jack Henry & Associates": {
+   "status": "careers_no_ats",
+   "website": "jackhenry.com",
+   "careers": "https://careers.jackhenry.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Jacobs Solutions": {
+   "status": "careers_no_ats",
+   "website": "jacobs.com",
+   "careers": "https://www.jacobs.com/careers-jacobs",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Johnson Controls": {
+   "status": "ats",
+   "website": "johnsoncontrols.com",
+   "careers": "https://jobs.johnsoncontrols.com/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "jci.wd5|jci"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "jci.wd5|jci",
+     2777
+    ]
+   ]
+  },
+  "Keurig Dr Pepper": {
+   "status": "ats_blocked",
+   "website": "keurigdrpepper.com",
+   "careers": "https://careers.keurigdrpepper.com/en",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "kdrp"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "KeyCorp": {
+   "status": "site_blocked",
+   "website": "key.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Keysight Technologies": {
+   "status": "site_blocked",
+   "website": "keysight.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Kimco Realty": {
+   "status": "site_blocked",
+   "website": "kimcorealty.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Kinder Morgan": {
+   "status": "ats_robots_blocked",
+   "website": "kindermorgan.com",
+   "careers": "https://careers.kindermorgan.com/careers-home/",
+   "note": "",
+   "boards": [
+    [
+     "icims",
+     "careers-kindermorgan"
+    ],
+    [
+     "icims",
+     "fieldcareers-kindermorgan"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "KKR & Co.": {
+   "status": "careers_no_ats",
+   "website": "kkr.com",
+   "careers": "https://www.kkr.com/careers",
+   "note": "the only board linked (greenhouse stage) is not KKR's own",
+   "boards": [
+    [
+     "greenhouse",
+     "stage"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "KLA Corporation": {
+   "status": "careers_no_ats",
+   "website": "kla.com",
+   "careers": "https://www.kla.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Kraft Heinz": {
+   "status": "careers_no_ats",
+   "website": "kraftheinzcompany.com",
+   "careers": "https://careers.kraftheinzcompany.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Kroger": {
+   "status": "no_careers_page",
+   "website": "thekrogerco.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "L3Harris": {
+   "status": "careers_no_ats",
+   "website": "l3harris.com",
+   "careers": "https://careers.l3harris.com/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Lam Research": {
+   "status": "ats_blocked",
+   "website": "lamresearch.com",
+   "careers": "https://careers.lamresearch.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "lamresearch"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Lennar": {
+   "status": "site_blocked",
+   "website": "lennar.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Lilly (Eli)": {
+   "status": "site_blocked",
+   "website": "lilly.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Linde plc": {
+   "status": "no_careers_page",
+   "website": "linde.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Live Nation Entertainment": {
+   "status": "ats",
+   "website": "livenationentertainment.com",
+   "careers": "https://www.livenationentertainment.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "livenation.wd503|lnexternalsite"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "livenation.wd503|lnexternalsite",
+     1203
+    ]
+   ]
+  },
+  "Loews Corporation": {
+   "status": "ats",
+   "website": "loews.com",
+   "careers": "https://loews.com/careers/default.aspx",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "loewscorp.wd1|loewscorp"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "loewscorp.wd1|loewscorp",
+     3
+    ]
+   ]
+  },
+  "Lowe's": {
+   "status": "site_blocked",
+   "website": "lowes.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Lululemon Athletica": {
+   "status": "site_robots",
+   "website": "shop.lululemon.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "LyondellBasell": {
+   "status": "ats_no_adapter",
+   "website": "lyondellbasell.com",
+   "careers": "https://www.lyondellbasell.com/en/careers/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "LBI"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Marathon Petroleum": {
+   "status": "site_blocked",
+   "website": "marathonpetroleum.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Marsh McLennan": {
+   "status": "careers_no_ats",
+   "website": "marsh.com",
+   "careers": "https://careers.marsh.com/eu/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Martin Marietta Materials": {
+   "status": "ats_no_adapter",
+   "website": "martinmarietta.com",
+   "careers": "https://www.martinmarietta.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "martinmarietta.wd5|martin_marietta_careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Marvell Technology": {
+   "status": "site_blocked",
+   "website": "marvell.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Masco": {
+   "status": "careers_no_ats",
+   "website": "masco.com",
+   "careers": "https://jobs.masco.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "McCormick & Company": {
+   "status": "no_careers_page",
+   "website": "mccormickcorporation.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "McDonald's": {
+   "status": "site_blocked",
+   "website": "mcdonalds.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Merck & Co.": {
+   "status": "ats",
+   "website": "merck.com",
+   "careers": "https://jobs.merck.com/us/en",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "msd.wd5|searchjobs"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "msd.wd5|searchjobs",
+     806
+    ]
+   ]
+  },
+  "Meta Platforms": {
+   "status": "no_careers_page",
+   "website": "meta.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "MetLife": {
+   "status": "ats",
+   "website": "metlife.com",
+   "careers": "",
+   "note": "board name checked against the postings",
+   "boards": [
+    [
+     "lever",
+     "metlife"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "lever",
+     "metlife",
+     0
+    ]
+   ]
+  },
+  "Mettler Toledo": {
+   "status": "site_unreachable",
+   "website": "mt.com",
+   "careers": "",
+   "note": "HTTP 406",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Microchip Technology": {
+   "status": "site_blocked",
+   "website": "microchip.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Micron Technology": {
+   "status": "ats_blocked",
+   "website": "micron.com",
+   "careers": "https://www.micron.com/about/careers",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "micron"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Mid-America Apartment Communities": {
+   "status": "careers_no_ats",
+   "website": "maac.com",
+   "careers": "https://careers.maac.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Mondelez International": {
+   "status": "careers_no_ats",
+   "website": "mondelezinternational.com",
+   "careers": "https://www.mondelezinternational.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Monolithic Power Systems": {
+   "status": "careers_no_ats",
+   "website": "monolithicpower.com",
+   "careers": "https://monolithicpower.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Monster Beverage": {
+   "status": "no_careers_page",
+   "website": "monsterbevcorp.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Moody's Corporation": {
+   "status": "ats_no_adapter",
+   "website": "moodys.com",
+   "careers": "https://careers.moodys.com/en",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "MoodysProd"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Morgan Stanley": {
+   "status": "site_robots",
+   "website": "morganstanley.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Mosaic Company (The)": {
+   "status": "ats",
+   "website": "mosaicco.com",
+   "careers": "https://mosaicco.com/Careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "mosaic.wd5|mosaic"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "mosaic.wd5|mosaic",
+     96
+    ]
+   ]
+  },
+  "Nasdaq, Inc.": {
+   "status": "site_robots",
+   "website": "nasdaq.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "NetApp": {
+   "status": "site_blocked",
+   "website": "netapp.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Newmont": {
+   "status": "careers_no_ats",
+   "website": "newmont.com",
+   "careers": "https://jobs.newmont.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "NextEra Energy": {
+   "status": "careers_no_ats",
+   "website": "nexteraenergy.com",
+   "careers": "https://www.nexteraenergy.com/careers/join-our-team.html",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Nike, Inc.": {
+   "status": "ats",
+   "website": "nike.com",
+   "careers": "https://careers.nike.com/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "nike.wd1|nke2"
+    ],
+    [
+     "workday",
+     "nike.wd1|nke"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "nike.wd1|nke2",
+     494
+    ],
+    [
+     "workday",
+     "nike.wd1|nke",
+     723
+    ]
+   ]
+  },
+  "NiSource": {
+   "status": "ats",
+   "website": "nisource.com",
+   "careers": "https://www.nisource.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "nisource.wd1|nisource"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "nisource.wd1|nisource",
+     31
+    ]
+   ]
+  },
+  "Nordson Corporation": {
+   "status": "site_blocked",
+   "website": "nordson.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Norfolk Southern": {
+   "status": "careers_no_ats",
+   "website": "norfolksouthern.com",
+   "careers": "https://norfolksouthern.com/en/careers/find-your-future",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Northern Trust": {
+   "status": "site_unreachable",
+   "website": "northerntrust.com",
+   "careers": "",
+   "note": "HTTP 0 ConnectionError",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Northrop Grumman": {
+   "status": "ats_blocked",
+   "website": "northropgrumman.com",
+   "careers": "https://www.northropgrumman.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "ngc"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Norwegian Cruise Line Holdings": {
+   "status": "no_careers_page",
+   "website": "nclhltd.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "NRG Energy": {
+   "status": "ats_no_adapter",
+   "website": "nrg.com",
+   "careers": "https://www.nrg.com/en/about/careers",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "C0004920031P"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Nucor": {
+   "status": "ats_no_adapter",
+   "website": "nucor.com",
+   "careers": "https://jobs.nucor.com/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "nucorcorpo"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "NVR, Inc.": {
+   "status": "no_careers_page",
+   "website": "nvrinc.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "NXP Semiconductors": {
+   "status": "ats_gone",
+   "website": "nxp.com",
+   "careers": "https://www.nxp.com/company/about-nxp/careers:CAREERS",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "nxp.wd3|careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "O'Reilly Automotive": {
+   "status": "site_blocked",
+   "website": "oreillyauto.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Occidental Petroleum": {
+   "status": "ats",
+   "website": "oxy.com",
+   "careers": "https://www.oxy.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "oxy.wd5|corporate"
+    ],
+    [
+     "workday",
+     "oxy.wd5|universityrelations"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "oxy.wd5|corporate",
+     53
+    ],
+    [
+     "workday",
+     "oxy.wd5|universityrelations",
+     20
+    ]
+   ]
+  },
+  "Old Dominion": {
+   "status": "ats",
+   "website": "odfl.com",
+   "careers": "https://www.odfl.com/us/en/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "odfl.wd1|odfl_careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "odfl.wd1|odfl_careers",
+     206
+    ]
+   ]
+  },
+  "Oracle Corporation": {
+   "status": "site_blocked",
+   "website": "oracle.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Otis Worldwide": {
+   "status": "site_blocked",
+   "website": "otis.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Paccar": {
+   "status": "site_blocked",
+   "website": "paccar.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Packaging Corporation of America": {
+   "status": "careers_no_ats",
+   "website": "packagingcorp.com",
+   "careers": "https://careers.packagingcorp.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Palantir Technologies": {
+   "status": "ats",
+   "website": "palantir.com",
+   "careers": "https://www.palantir.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "lever",
+     "palantir"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "lever",
+     "palantir",
+     123
+    ]
+   ]
+  },
+  "Parker Hannifin": {
+   "status": "site_blocked",
+   "website": "parker.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "PayPal": {
+   "status": "site_blocked",
+   "website": "paypal.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "PepsiCo": {
+   "status": "careers_no_ats",
+   "website": "pepsico.com",
+   "careers": "https://www.pepsico.com/en/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "PG&E Corporation": {
+   "status": "site_robots",
+   "website": "pgecorp.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Philip Morris International": {
+   "status": "careers_no_ats",
+   "website": "pmi.com",
+   "careers": "https://www.pmi.com/careers/overview",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Phillips 66": {
+   "status": "careers_no_ats",
+   "website": "phillips66.com",
+   "careers": "https://www.phillips66.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Pinnacle West Capital": {
+   "status": "site_robots",
+   "website": "pinnaclewest.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "PNC Financial Services": {
+   "status": "careers_no_ats",
+   "website": "pnc.com",
+   "careers": "https://careers.pnc.com/global/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Procter & Gamble": {
+   "status": "no_careers_page",
+   "website": "us.pg.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Progressive Corporation": {
+   "status": "no_careers_page",
+   "website": "progressive.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Prologis": {
+   "status": "site_unreachable",
+   "website": "prologis.com",
+   "careers": "",
+   "note": "HTTP 405",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Public Service Enterprise Group": {
+   "status": "site_blocked",
+   "website": "pseg.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Public Storage": {
+   "status": "no_careers_page",
+   "website": "publicstorage.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "PulteGroup": {
+   "status": "ats",
+   "website": "pultegroupinc.com",
+   "careers": "https://pultegroup.wd1.myworkdayjobs.com/PGI",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "pultegroup.wd1|pgi"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "pultegroup.wd1|pgi",
+     115
+    ]
+   ]
+  },
+  "Qnity Electronics": {
+   "status": "site_robots",
+   "website": "qnityelectronics.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Qualcomm": {
+   "status": "ats_blocked",
+   "website": "qualcomm.com",
+   "careers": "https://www.qualcomm.com/company/careers",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "qualcomm"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ralph Lauren Corporation": {
+   "status": "site_unreachable",
+   "website": "ralphlauren.com",
+   "careers": "",
+   "note": "HTTP 307",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Raymond James Financial": {
+   "status": "site_blocked",
+   "website": "raymondjames.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Regency Centers": {
+   "status": "careers_no_ats",
+   "website": "regencycenters.com",
+   "careers": "https://www.regencycenters.com/regency/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Regeneron Pharmaceuticals": {
+   "status": "site_blocked",
+   "website": "regeneron.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Revvity": {
+   "status": "site_blocked",
+   "website": "revvity.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Robinhood Markets": {
+   "status": "careers_no_ats",
+   "website": "robinhood.com",
+   "careers": "https://careers.robinhood.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Rollins, Inc.": {
+   "status": "ats_robots_blocked",
+   "website": "rollins.com",
+   "careers": "https://careers.rollins.com/rollins/",
+   "note": "",
+   "boards": [
+    [
+     "icims",
+     "bughouse-rollins"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Roper Technologies": {
+   "status": "site_robots",
+   "website": "ropertech.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ross Stores": {
+   "status": "linkedin_only",
+   "website": "rossstores.com",
+   "careers": "https://jobs.rossstores.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Royal Caribbean Group": {
+   "status": "careers_no_ats",
+   "website": "royalcaribbeangroup.com",
+   "careers": "https://careers.royalcaribbeangroup.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "S&P Global": {
+   "status": "site_blocked",
+   "website": "spglobal.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Sandisk": {
+   "status": "careers_no_ats",
+   "website": "sandisk.com",
+   "careers": "https://www.sandisk.com/careers/jobs-at-sandisk",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "SBA Communications": {
+   "status": "careers_no_ats",
+   "website": "sbasite.com",
+   "careers": "https://www.sbasite.com/company/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Schlumberger": {
+   "status": "site_blocked",
+   "website": "slb.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Seagate Technology": {
+   "status": "careers_no_ats",
+   "website": "seagate.com",
+   "careers": "https://www.seagate.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Sempra": {
+   "status": "careers_no_ats",
+   "website": "sempra.com",
+   "careers": "https://sempra.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Simon Property Group": {
+   "status": "site_unreachable",
+   "website": "simon.com",
+   "careers": "",
+   "note": "HTTP 307",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Skydance": {
+   "status": "ats",
+   "website": "skydance.com",
+   "careers": "https://www.skydance.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "lever",
+     "skydance"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "lever",
+     "skydance",
+     8
+    ]
+   ]
+  },
+  "Skyworks Solutions": {
+   "status": "ats_no_adapter",
+   "website": "skyworksinc.com",
+   "careers": "https://www.skyworksinc.com:443/Careers",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "skyworks"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "J.M. Smucker Company (The)": {
+   "status": "site_robots",
+   "website": "jmsmucker.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Smurfit Westrock": {
+   "status": "linkedin_only",
+   "website": "smurfitwestrock.com",
+   "careers": "https://www.smurfitwestrock.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Southwest Airlines": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Starbucks": {
+   "status": "ats_blocked",
+   "website": "starbucks.com",
+   "careers": "https://careers.starbucks.com/culture/",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "starbucks"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Steris": {
+   "status": "careers_no_ats",
+   "website": "steris.com",
+   "careers": "https://careers.steris.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Supermicro": {
+   "status": "careers_no_ats",
+   "website": "supermicro.com",
+   "careers": "https://www.supermicro.com/en/jobs",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Synchrony Financial": {
+   "status": "no_careers_page",
+   "website": "synchrony.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Synopsys": {
+   "status": "jsonld",
+   "website": "synopsys.com",
+   "careers": "https://careers.synopsys.com/",
+   "note": "",
+   "boards": [
+    [
+     "jsonld",
+     "careers.synopsys.com"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "jsonld",
+     "careers.synopsys.com",
+     4
+    ]
+   ]
+  },
+  "T-Mobile US": {
+   "status": "site_blocked",
+   "website": "t-mobile.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Take-Two Interactive": {
+   "status": "careers_no_ats",
+   "website": "take2games.com",
+   "careers": "https://careers.take2games.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Tapestry, Inc.": {
+   "status": "ats",
+   "website": "tapestry.com",
+   "careers": "https://www.tapestry.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "tapestry.wd108|tapestry_careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "tapestry.wd108|tapestry_careers",
+     2000
+    ]
+   ]
+  },
+  "Targa Resources": {
+   "status": "site_robots",
+   "website": "targaresources.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "TE Connectivity": {
+   "status": "careers_no_ats",
+   "website": "te.com",
+   "careers": "https://careers.te.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Teledyne Technologies": {
+   "status": "careers_no_ats",
+   "website": "teledyne.com",
+   "careers": "https://www.teledyne.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Teradyne": {
+   "status": "careers_no_ats",
+   "website": "teradyne.com",
+   "careers": "https://jobs.teradyne.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Tesla, Inc.": {
+   "status": "site_blocked",
+   "website": "tesla.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Texas Pacific Land Corporation": {
+   "status": "no_careers_page",
+   "website": "texaspacific.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Textron": {
+   "status": "ats_no_adapter",
+   "website": "textron.com",
+   "careers": "https://careers.textron.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Thermo Fisher Scientific": {
+   "status": "careers_no_ats",
+   "website": "thermofisher.com",
+   "careers": "https://jobs.thermofisher.com/global/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "TJX Companies": {
+   "status": "careers_no_ats",
+   "website": "tjx.com",
+   "careers": "https://www.tjx.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "TKO Group Holdings": {
+   "status": "ats",
+   "website": "tkogrp.com",
+   "careers": "https://wwecorp.wd5.myworkdayjobs.com/TKO",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "wwecorp.wd5|tko"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "wwecorp.wd5|tko",
+     61
+    ]
+   ]
+  },
+  "Tractor Supply": {
+   "status": "site_blocked",
+   "website": "tractorsupply.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Trane Technologies": {
+   "status": "ats_no_adapter",
+   "website": "tranetechnologies.com",
+   "careers": "https://www.tranetechnologies.com/en/index/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "tranetechnologies.wd12|trane_technologies_careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "TransDigm Group": {
+   "status": "no_careers_page",
+   "website": "transdigm.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Travelers Companies (The)": {
+   "status": "careers_no_ats",
+   "website": "travelers.com",
+   "careers": "https://careers.travelers.com/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Truist Financial": {
+   "status": "careers_no_ats",
+   "website": "truist.com",
+   "careers": "https://careers.truist.com/us/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Tyler Technologies": {
+   "status": "careers_no_ats",
+   "website": "tylertech.com",
+   "careers": "https://www.tylertech.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "UDR, Inc.": {
+   "status": "careers_no_ats",
+   "website": "udr.com",
+   "careers": "https://www.udr.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Ulta Beauty": {
+   "status": "ats_robots_blocked",
+   "website": "ulta.com",
+   "careers": "https://careers.ulta.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "icims",
+     "cdcmcareers-ulta"
+    ],
+    [
+     "icims",
+     "ulta"
+    ],
+    [
+     "icims",
+     "fdcnmcareers-ulta"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Union Pacific Corporation": {
+   "status": "careers_no_ats",
+   "website": "up.com",
+   "careers": "https://www.up.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "United Airlines Holdings": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "United Parcel Service": {
+   "status": "site_blocked",
+   "website": "ups.com",
+   "careers": "",
+   "note": "HTTP 200 bot challenge",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Universal Health Services": {
+   "status": "site_blocked",
+   "website": "uhs.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Valero Energy": {
+   "status": "ats_no_adapter",
+   "website": "valero.com",
+   "careers": "https://www.valero.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Veralto": {
+   "status": "careers_no_ats",
+   "website": "veralto.com",
+   "careers": "https://jobs.veralto.com/global/en",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Verisk Analytics": {
+   "status": "ats_no_adapter",
+   "website": "verisk.com",
+   "careers": "https://www.verisk.com/company/careers/",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com|CX_1"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Verizon": {
+   "status": "careers_page_list",
+   "website": "verizon.com",
+   "careers": "https://mycareer.verizon.com/",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "mycareer.verizon.com"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "pagelist",
+     "mycareer.verizon.com",
+     3
+    ]
+   ]
+  },
+  "Vici Properties": {
+   "status": "careers_no_ats",
+   "website": "viciproperties.com",
+   "careers": "https://viciproperties.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Vistra Corp.": {
+   "status": "ats",
+   "website": "vistracorp.com",
+   "careers": "https://vistracorp.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "vst.wd5|vistra_careers"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "vst.wd5|vistra_careers",
+     152
+    ]
+   ]
+  },
+  "Vivmark Residential": {
+   "status": "site_blocked",
+   "website": "vivmarkresidential.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Vulcan Materials Company": {
+   "status": "careers_no_ats",
+   "website": "vulcanmaterials.com",
+   "careers": "https://www.vulcanmaterials.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Vylor": {
+   "status": "ats_blocked",
+   "website": "corteva.com",
+   "careers": "https://careers.corteva.com/",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "corteva"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "W. R. Berkley Corporation": {
+   "status": "ats",
+   "website": "berkley.com",
+   "careers": "https://www.berkley.com/about-us/careers",
+   "note": "",
+   "boards": [
+    [
+     "icims",
+     "careers-berkley"
+    ],
+    [
+     "icims",
+     "careers-apac-berkley"
+    ],
+    [
+     "icims",
+     "careers-spain-berkley"
+    ],
+    [
+     "icims",
+     "careers-canada-berkley"
+    ],
+    [
+     "icims",
+     "careers-germany-berkley"
+    ],
+    [
+     "icims",
+     "careers-uknordicswitz-berkley"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "icims",
+     "careers-berkley",
+     235
+    ]
+   ]
+  },
+  "W. W. Grainger": {
+   "status": "careers_no_ats",
+   "website": "grainger.com",
+   "careers": "https://www.grainger.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Walt Disney Company (The)": {
+   "status": "no_careers_page",
+   "website": "thewaltdisneycompany.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Waste Management": {
+   "status": "ats",
+   "website": "wm.com",
+   "careers": "https://www.wm.com/us/en/inside-wm/careers",
+   "note": "",
+   "boards": [
+    [
+     "oracle",
+     "emcm.fa.us2.oraclecloud.com|WMCareers"
+    ],
+    [
+     "oracle",
+     "emcm.fa.us2.oraclecloud.com|CX_4001"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "oracle",
+     "emcm.fa.us2.oraclecloud.com|WMCareers",
+     1086
+    ],
+    [
+     "oracle",
+     "emcm.fa.us2.oraclecloud.com|CX_4001",
+     1086
+    ]
+   ]
+  },
+  "WEC Energy Group": {
+   "status": "careers_no_ats",
+   "website": "wecenergygroup.com",
+   "careers": "https://wecenergygroup.com/careers/index.htm",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Wells Fargo": {
+   "status": "no_careers_page",
+   "website": "wellsfargo.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "West Pharmaceutical Services": {
+   "status": "careers_no_ats",
+   "website": "westpharma.com",
+   "careers": "https://www.westpharma.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Western Digital": {
+   "status": "ats_robots_blocked",
+   "website": "westerndigital.com",
+   "careers": "https://www.westerndigital.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "smartrecruiters",
+     "WesternDigital"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Weyerhaeuser": {
+   "status": "ats_no_adapter",
+   "website": "weyerhaeuser.com",
+   "careers": "https://www.weyerhaeuser.com:443/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Williams Companies": {
+   "status": "ats",
+   "website": "williams.com",
+   "careers": "https://www.williams.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "williams.wd5|external"
+    ],
+    [
+     "workday",
+     "williams.wd5|powerexternal"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "williams.wd5|external",
+     127
+    ],
+    [
+     "workday",
+     "williams.wd5|powerexternal",
+     26
+    ]
+   ]
+  },
+  "Willis Towers Watson": {
+   "status": "site_blocked",
+   "website": "wtwco.com",
+   "careers": "",
+   "note": "HTTP 429 rate limited",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Wynn Resorts": {
+   "status": "site_blocked",
+   "website": "wynnresorts.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Xcel Energy": {
+   "status": "ats",
+   "website": "my.xcelenergy.com",
+   "careers": "https://jobs.xcelenergy.com/",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "xcelenergy.wd1|external"
+    ]
+   ],
+   "checked": "2026-11-11",
+   "read": [
+    [
+     "workday",
+     "xcelenergy.wd1|external",
+     115
+    ]
+   ]
+  },
+  "Xylem Inc.": {
+   "status": "site_blocked",
+   "website": "xylem.com",
+   "careers": "",
+   "note": "HTTP 403 forbidden",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Yum! Brands": {
+   "status": "site_robots",
+   "website": "yum.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
+  },
+  "Zimmer Biomet": {
+   "status": "careers_no_ats",
+   "website": "zimmerbiomet.com",
+   "careers": "https://careers.zimmerbiomet.com/us/en?utm_source=CorporateSite&utm_medium=Nav",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11",
+   "read": []
   }
  }
 }
