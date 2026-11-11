@@ -44,6 +44,9 @@ def main(argv=None) -> int:
     ap.add_argument("--no-crtsh", action="store_true")
     ap.add_argument("--industry-budget", type=int, default=1500, help="new company homepages to fetch for the industry label per run (0 = cache only)")
     ap.add_argument("--probe-max", type=int, default=20000, help="candidate slugs per ATS family from known company names (0 = off)")
+    ap.add_argument("--carry-over", default="", help="a downloaded copy of the published index (manifest.json and shards): the rows of "
+                                                     "tenants this run did not reach are kept from it (carryover.py)")
+    ap.add_argument("--carry-days", type=float, default=3, help="carry a tenant's rows only if they were read at most this many days ago")
     a = ap.parse_args(argv)
     if a.command == "vceu":   # its own state and output, so the main index is never touched
         if a.state == ap.get_default("state"):
@@ -197,7 +200,14 @@ def main(argv=None) -> int:
     if a.command in ("run", "fetch", "build", "names"):
         log("== build")
         homepages = industry.Homepages(client=client if a.industry_budget else None, budget=a.industry_budget, log=log)
-        res = shards.build(pipeline.iter_rows(state), out_dir, log, homepages=homepages)
+        rows_iter, meta = pipeline.iter_rows(state), {"fetched": time.strftime("%Y-%m-%d", time.gmtime(T0))}
+        if a.command == "run" and a.carry_over:
+            from itertools import chain
+            from . import carryover
+            carried, cstats = carryover.carry_over(state, Path(a.carry_over), T0, shards.FIELDS, log, a.carry_days)
+            rows_iter, meta["carried"] = chain(rows_iter, carried), cstats
+            report["carried"] = cstats
+        res = shards.build(rows_iter, out_dir, log, homepages=homepages, meta=meta)
         report["manifest"] = {k: res["manifest"][k] for k in ("total", "sources")}
         report["shards"] = [{k: s[k] for k in ("id", "count", "bytes")} for s in res["manifest"]["shards"]]
         report["dedupe"] = res["dropped"]

@@ -151,7 +151,8 @@ def _gz(rows: list[list]) -> bytes:
     return gzip.compress(doc, 9, mtime=0)
 
 
-def build(rows_iter, out_dir: Path, log=print, homepages=None) -> dict:
+def build(rows_iter, out_dir: Path, log=print, homepages=None, meta: dict | None = None) -> dict:
+    """meta: extra manifest fields (the nightly run adds "fetched", its own date, and "carried", what carry-over kept)."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     from .names import clean_company
@@ -203,6 +204,7 @@ def build(rows_iter, out_dir: Path, log=print, homepages=None) -> dict:
         sources[r[7]] = sources.get(r[7], 0) + 1
     manifest = {"version": 1, "built": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "total": len(rows),
                 "base": "", "shards": manifest_shards, "sources": dict(sorted(sources.items(), key=lambda kv: -kv[1]))}
+    manifest.update(meta or {})
     (out_dir / "industries.json").write_text(json.dumps(industry.taxonomy(), ensure_ascii=False, indent=1))
     (out_dir / "functions.json").write_text(json.dumps(function.maps(), ensure_ascii=False, indent=1))
     (out_dir / "companies.json").write_text(json.dumps(companies.published_map(), ensure_ascii=False, indent=1))

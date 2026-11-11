@@ -27,5 +27,7 @@ def rows():
 
 
 hp = industry.Homepages(client=Client() if budget else None, budget=budget)
-res = shards.build((shards.complete(r) for r in rows()), out, homepages=hp)
+# a relabel changes labels, not what was fetched: the crawl date (used to age carried-over rows) stays the source's
+meta = {"fetched": man.get("fetched") or man.get("built", "")[:10], "relabelled_from": man.get("built", "")}
+res = shards.build((shards.complete(r) for r in rows()), out, homepages=hp, meta=meta)
 print("rebuilt", res["manifest"]["total"], "rows; published total was", man["total"])
