@@ -48,13 +48,13 @@
     {"name": "Kearney", "aliases": ["A.T. Kearney"], "domain": "kearney.com", "hq": "US"},
     {"name": "Roland Berger", "domain": "rolandberger.com", "hq": "DE"},
     {"name": "Capgemini", "aliases": ["Capgemini Invent", "Capgemini Engineering"], "domain": "capgemini.com", "hq": "FR"},
-    {"name": "Strategy&", "domain": "strategyand.pwc.com", "hq": "US"},
+    {"name": "Strategy&", "hq": "US", "note": "part of PwC; matched by its own name only, so the parent's other roles are not tagged consulting"},
     {"name": "L.E.K. Consulting", "aliases": ["LEK Consulting"], "domain": "lek.com", "hq": "GB"},
     {"name": "Arthur D. Little", "aliases": ["Arthur D. Little Services"], "domain": "adlittle.com", "hq": "US"},
     {"name": "Simon-Kucher", "aliases": ["Simon-Kucher & Partners"], "domain": "simon-kucher.com", "hq": "DE"},
     {"name": "Alvarez & Marsal", "domain": "alvarezandmarsal.com", "hq": "US"},
     {"name": "FTI Consulting", "aliases": ["FTI Consulting Technology"], "domain": "fticonsulting.com", "hq": "US"},
     {"name": "Booz Allen Hamilton", "aliases": ["Booz Allen"], "domain": "boozallen.com", "hq": "US"},
-    {"name": "Monitor Deloitte", "domain": "deloitte.com", "hq": "US"}]}
+    {"name": "Monitor Deloitte", "hq": "US", "note": "part of Deloitte; matched by its own name only, so the parent's other roles are not tagged consulting"}]}
  }
 }

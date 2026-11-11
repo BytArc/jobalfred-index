@@ -203,8 +203,7 @@ def build(rows_iter, out_dir: Path, log=print, homepages=None) -> dict:
                 "base": "", "shards": manifest_shards, "sources": dict(sorted(sources.items(), key=lambda kv: -kv[1]))}
     (out_dir / "industries.json").write_text(json.dumps(industry.taxonomy(), ensure_ascii=False, indent=1))
     (out_dir / "functions.json").write_text(json.dumps(function.maps(), ensure_ascii=False, indent=1))
-    (out_dir / "companies.json").write_text(json.dumps({c: {"label": l["label"], "source": l.get("source", ""), "retrieved": l.get("retrieved", ""),
-                                                          "members": len(l["members"])} for c, l in companies.lists().items()}, ensure_ascii=False, indent=1))
+    (out_dir / "companies.json").write_text(json.dumps(companies.published_map(), ensure_ascii=False, indent=1))
     tmp = out_dir / "manifest.json.tmp"
     tmp.write_text(json.dumps(manifest, separators=(",", ":")))
     tmp.replace(out_dir / "manifest.json")
