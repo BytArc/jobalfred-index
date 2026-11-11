@@ -16,7 +16,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import industry, names, seniority, shards, startups
+from . import industry, names, seniority, shards, startups, vcindustry
 
 EUROPE = set("AL AD AT BY BE BA BG HR CY CZ DK EE FI FR DE GR HU IS IE IT XK LV LI LT LU MT MD MC ME NL MK NO PL PT RO RU SM "
              "RS SK SI ES SE CH TR UA GB VA GI IM JE GG FO".split())
@@ -124,6 +124,17 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
             rows.append(r + [c["domain"]] + ftail(c["domain"]))
             per_company[c["domain"]] = per_company.get(c["domain"], 0) + 1
     rows.sort(key=lambda r: (shards.norm(r[1]), r[0].lower(), r[5]))
+    # industry: a reader's hand label first, then public evidence (vcindustry: the funding article's description, YC tags),
+    # then industry.assign's own sources (stored labels, the local model above its cutoff), then Not stated
+    listed = [c for c in doc.get("companies", []) if c["domain"] in per_company or c.get("tenants")]
+    vcin = vcindustry.labels(listed)
+    di = len(shards.FIELDS)                        # the d column
+    vc_rows = 0
+    for r in rows:
+        lab = vcin.get(r[di])
+        if lab and not r[industry.IN] and industry.hand_label(industry.group_key(r[1], r[5])) is None:
+            r[industry.IN] = lab["code"]
+            vc_rows += 1
     industry.assign(rows, homepages, log=log)      # same model as the main index; first-seen companies are fetched when a Homepages is given
     companies = []
     for c in doc.get("companies", []):
@@ -137,12 +148,16 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
                  "evidence": evidence, "boards": boards, "roles": per_company.get(c["domain"], 0)}
         if fund.get(c["domain"]):
             entry["funding"] = fund[c["domain"]]
+        if vcin.get(c["domain"]):
+            entry["industry"] = vcin[c["domain"]]      # code, source, evidence phrase and its URL
         companies.append(entry)
     counts = dict(doc.get("counts") or {})
     counts.update({"companies_with_careers_system": len(companies),
                    "companies_with_roles": sum(1 for c in companies if c["roles"]),
                    "roles": len(rows), "boards_dropped": dropped,
                    "companies_with_funding": sum(1 for c in companies if c.get("funding")),
+                   "industry_rows_tagged": sum(1 for r in rows if r[industry.IN] not in ("", industry.OTHER, industry.NOT_STATED)),
+                   "industry_from_public_evidence": {"companies": sum(1 for c in companies if c.get("industry")), "rows": vc_rows},
                    "evidence_public": sum(1 for c in companies if c["evidence"] != ["Seedtable"]),
                    "evidence_seedtable_only": sum(1 for c in companies if c["evidence"] == ["Seedtable"]),
                    "companies_with_stage": sum(1 for c in companies if (c.get("funding") or {}).get("stage")),
