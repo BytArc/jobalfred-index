@@ -1,6 +1,29 @@
 {
 "tenants": [
 {
+"ats": "jsonld",
+"key": "careers.ing.com/en/search-jobs",
+"data": {
+"host": "careers.ing.com",
+"pages": [
+"https://careers.ing.com/en/search-jobs"
+],
+"name": "ING"
+},
+"source": "companies:aex"
+},
+{
+"ats": "pagelist",
+"key": "www.besi.com/careers/jobs",
+"data": {
+"pages": [
+"https://www.besi.com/careers/jobs/"
+],
+"name": "BE Semiconductors"
+},
+"source": "companies:aex"
+},
+{
 "ats": "ashby",
 "key": "ThinkingMachines",
 "data": {
@@ -44,21 +67,277 @@
 "source": "companies:ailab"
 },
 {
+"ats": "greenhouse",
+"key": "droneshield",
+"data": {
+"name": "Droneshield"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "oracle",
+"key": "ebpm.fa.us2.oraclecloud.com|CX_1",
+"data": {
+"host": "ebpm.fa.us2.oraclecloud.com",
+"site": "CX_1",
+"name": "Treasury Wine Estates"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "oracle",
+"key": "fa-ewlx-saasfaprod1.fa.ocs.oraclecloud.com|CX_1",
+"data": {
+"host": "fa-ewlx-saasfaprod1.fa.ocs.oraclecloud.com",
+"site": "CX_1",
+"name": "TPG Telecom"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "oracle",
+"key": "fa-ewlx-saasfaprod1.fa.ocs.oraclecloud.com|CX_2",
+"data": {
+"host": "fa-ewlx-saasfaprod1.fa.ocs.oraclecloud.com",
+"site": "CX_2",
+"name": "TPG Telecom"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "oracle",
+"key": "fa-exnj-saasfaprod1.fa.ocs.oraclecloud.com|TLC",
+"data": {
+"host": "fa-exnj-saasfaprod1.fa.ocs.oraclecloud.com",
+"site": "TLC",
+"name": "Lottery"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "pagelist",
+"key": "aurizon.com.au/careers/job-opportunities",
+"data": {
+"pages": [
+"https://aurizon.com.au/careers/job-opportunities"
+],
+"name": "Aurizon"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "pagelist",
+"key": "careers.mineralresources.com.au/jobs/search",
+"data": {
+"pages": [
+"https://careers.mineralresources.com.au/jobs/search"
+],
+"name": "Mineral Resources"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "pagelist",
+"key": "careers.qube.com.au/jobs/search",
+"data": {
+"pages": [
+"https://careers.qube.com.au/jobs/search"
+],
+"name": "Qube"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "pagelist",
+"key": "careers.woodside.com.au/go/Asia/9783766",
+"data": {
+"pages": [
+"https://careers.woodside.com.au/go/Asia/9783766/"
+],
+"name": "Woodside Energy"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "apa.wd105|apa-careers",
+"data": {
+"tenant": "apa",
+"wd": "wd105",
+"site": "APA-Careers",
+"name": "APA"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "aristocrat.wd3|aristocratexternalcareerssite",
+"data": {
+"tenant": "aristocrat",
+"wd": "wd3",
+"site": "AristocratExternalCareersSite",
+"name": "Aristocrat Leisure"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "asx.wd105|asx_careers",
+"data": {
+"tenant": "asx",
+"wd": "wd105",
+"site": "ASX_Careers",
+"name": "ASX"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "boq.wd3|careers-at-boqgroup",
+"data": {
+"tenant": "boq",
+"wd": "wd3",
+"site": "Careers-at-BOQGroup",
+"name": "Bank of Queensland"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "cba.wd3|commbank_careers",
+"data": {
+"tenant": "cba",
+"wd": "wd3",
+"site": "CommBank_Careers",
+"name": "Commonwealth Bank"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "charterhall.wd3|careers",
+"data": {
+"tenant": "charterhall",
+"wd": "wd3",
+"site": "Careers",
+"name": "Charter Hall"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "dexus.wd3|dexuscareers",
+"data": {
+"tenant": "dexus",
+"wd": "wd3",
+"site": "DexusCareers",
+"name": "Dexus"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "iluka.wd3|ilukacareers",
+"data": {
+"tenant": "iluka",
+"wd": "wd3",
+"site": "ilukacareers",
+"name": "Iluka Resources"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "lnw.wd5|lightwonderexternalcareers",
+"data": {
+"tenant": "lnw",
+"wd": "wd5",
+"site": "LightWonderExternalCareers",
+"name": "Light & Wonder"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "nib.wd105|careers",
+"data": {
+"tenant": "nib",
+"wd": "wd105",
+"site": "careers",
+"name": "Nib"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "perpetual.wd3|external",
+"data": {
+"tenant": "perpetual",
+"wd": "wd3",
+"site": "external",
+"name": "Perpetual"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "workday",
+"key": "vicinity.wd3|vicinityexternalcareers",
+"data": {
+"tenant": "vicinity",
+"wd": "wd3",
+"site": "VicinityExternalCareers",
+"name": "Vicinity Centres"
+},
+"source": "companies:asx200"
+},
+{
+"ats": "oracle",
+"key": "hdhy.fa.em3.oraclecloud.com|AperamCareerSite",
+"data": {
+"host": "hdhy.fa.em3.oraclecloud.com",
+"site": "AperamCareerSite",
+"name": "Aperam"
+},
+"source": "companies:bel20"
+},
+{
+"ats": "workday",
+"key": "hrhub.wd3|euronext_career_page",
+"data": {
+"tenant": "hrhub",
+"wd": "wd3",
+"site": "Euronext_Career_Page",
+"name": "Euronext"
+},
+"source": "companies:cac40"
+},
+{
+"ats": "workday",
+"key": "kering.wd3|kering",
+"data": {
+"tenant": "kering",
+"wd": "wd3",
+"site": "Kering",
+"name": "Kering"
+},
+"source": "companies:cac40"
+},
+{
+"ats": "workday",
+"key": "pernodricard.wd3|pernod-ricard",
+"data": {
+"tenant": "pernodricard",
+"wd": "wd3",
+"site": "pernod-ricard",
+"name": "Pernod Ricard"
+},
+"source": "companies:cac40"
+},
+{
 "ats": "eightfold",
 "key": "bcg",
 "data": {
 "name": "Boston Consulting Group"
-},
-"source": "companies:consulting"
-},
-{
-"ats": "pagelist",
-"key": "www.kearney.com/careers/opportunities",
-"data": {
-"pages": [
-"https://www.kearney.com/careers/opportunities"
-],
-"name": "Kearney"
 },
 "source": "companies:consulting"
 },
@@ -74,6 +353,347 @@
 "source": "companies:consulting"
 },
 {
+"ats": "jsonld",
+"key": "careers.munichre.com/en/munichre",
+"data": {
+"host": "careers.munichre.com",
+"pages": [
+"https://careers.munichre.com/en/munichre"
+],
+"name": "Munich Re"
+},
+"source": "companies:dax"
+},
+{
+"ats": "pagelist",
+"key": "jobs.siemens-energy.com/en_US/jobs",
+"data": {
+"pages": [
+"https://jobs.siemens-energy.com/en_US/jobs"
+],
+"name": "Siemens Energy"
+},
+"source": "companies:dax"
+},
+{
+"ats": "workday",
+"key": "ag.wd3|airbus",
+"data": {
+"tenant": "ag",
+"wd": "wd3",
+"site": "Airbus",
+"name": "Airbus"
+},
+"source": "companies:dax"
+},
+{
+"ats": "workday",
+"key": "freseniusmedicalcare.wd3|fme",
+"data": {
+"tenant": "freseniusmedicalcare",
+"wd": "wd3",
+"site": "fme",
+"name": "Fresenius Medical Care"
+},
+"source": "companies:dax"
+},
+{
+"ats": "workday",
+"key": "heidelbergmaterials.wd3|global_hm_career_site",
+"data": {
+"tenant": "heidelbergmaterials",
+"wd": "wd3",
+"site": "Global_HM_Career_Site",
+"name": "Heidelberg Materials"
+},
+"source": "companies:dax"
+},
+{
+"ats": "workday",
+"key": "heidelbergmaterials.wd3|hm_career_introduce_yourself",
+"data": {
+"tenant": "heidelbergmaterials",
+"wd": "wd3",
+"site": "hm_career_introduce_yourself",
+"name": "Heidelberg Materials"
+},
+"source": "companies:dax"
+},
+{
+"ats": "workday",
+"key": "onehealthineers.wd3|shsjb",
+"data": {
+"tenant": "onehealthineers",
+"wd": "wd3",
+"site": "SHSJB",
+"name": "Siemens Healthineers"
+},
+"source": "companies:dax"
+},
+{
+"ats": "jsonld",
+"key": "careers.legalandgeneral.com",
+"data": {
+"host": "careers.legalandgeneral.com",
+"pages": [
+"https://careers.legalandgeneral.com/"
+],
+"name": "Legal & General"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "oracle",
+"key": "fa-eqid-saasfaprod1.fa.ocs.oraclecloud.com|CX_1",
+"data": {
+"host": "fa-eqid-saasfaprod1.fa.ocs.oraclecloud.com",
+"site": "CX_1",
+"name": "Marks & Spencer"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "3i.wd103|intern_career",
+"data": {
+"tenant": "3i",
+"wd": "wd103",
+"site": "Intern_Career",
+"name": "3i"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "abrdn.wd3|abrdn",
+"data": {
+"tenant": "abrdn",
+"wd": "wd3",
+"site": "abrdn",
+"name": "Aberdeen"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "iaggbs.wd103|gti",
+"data": {
+"tenant": "iaggbs",
+"wd": "wd103",
+"site": "GTI",
+"name": "International Airlines"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "iaggbs.wd103|iaggbs",
+"data": {
+"tenant": "iaggbs",
+"wd": "wd103",
+"site": "IAGGBS",
+"name": "International Airlines"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "landsecurities.wd3|landseccareers",
+"data": {
+"tenant": "landsecurities",
+"wd": "wd3",
+"site": "Landseccareers",
+"name": "Land Securities"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "lseg.wd3|careers",
+"data": {
+"tenant": "lseg",
+"wd": "wd3",
+"site": "Careers",
+"name": "London Stock Exchange"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "prudential.wd3|prudential",
+"data": {
+"tenant": "prudential",
+"wd": "wd3",
+"site": "prudential",
+"name": "Prudential"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "shell.wd3|shellcareers",
+"data": {
+"tenant": "shell",
+"wd": "wd3",
+"site": "ShellCareers",
+"name": "Shell"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "smithnephew.wd5|external",
+"data": {
+"tenant": "smithnephew",
+"wd": "wd5",
+"site": "External",
+"name": "Smith & Nephew"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "workday",
+"key": "weir.wd3|weir_external_careers",
+"data": {
+"tenant": "weir",
+"wd": "wd3",
+"site": "Weir_External_Careers",
+"name": "Weir"
+},
+"source": "companies:ftse100"
+},
+{
+"ats": "oracle",
+"key": "fa-euqw-saasfaprod1.fa.ocs.oraclecloud.com|CX_2001",
+"data": {
+"host": "fa-euqw-saasfaprod1.fa.ocs.oraclecloud.com",
+"site": "CX_2001",
+"name": "INWIT"
+},
+"source": "companies:ftsemib"
+},
+{
+"ats": "oracle",
+"key": "fa-ewnv-saasfaprod1.fa.ocs.oraclecloud.com|BPER",
+"data": {
+"host": "fa-ewnv-saasfaprod1.fa.ocs.oraclecloud.com",
+"site": "BPER",
+"name": "BPER Banca"
+},
+"source": "companies:ftsemib"
+},
+{
+"ats": "oracle",
+"key": "hdbj.fa.em2.oraclecloud.com|CX_1",
+"data": {
+"host": "hdbj.fa.em2.oraclecloud.com",
+"site": "CX_1",
+"name": "Hera"
+},
+"source": "companies:ftsemib"
+},
+{
+"ats": "oracle",
+"key": "hdeh.fa.em3.oraclecloud.com|CX_1",
+"data": {
+"host": "hdeh.fa.em3.oraclecloud.com",
+"site": "CX_1",
+"name": "A2A"
+},
+"source": "companies:ftsemib"
+},
+{
+"ats": "pagelist",
+"key": "jobs.enel.com/en_US/careers",
+"data": {
+"pages": [
+"https://jobs.enel.com/en_US/careers"
+],
+"name": "Enel"
+},
+"source": "companies:ftsemib"
+},
+{
+"ats": "workday",
+"key": "cairnhomes.wd502|external",
+"data": {
+"tenant": "cairnhomes",
+"wd": "wd502",
+"site": "External",
+"name": "Cairn Homes"
+},
+"source": "companies:iseq20"
+},
+{
+"ats": "eightfold",
+"key": "vale",
+"data": {
+"name": "Vale Indonesia"
+},
+"source": "companies:lq45"
+},
+{
+"ats": "oracle",
+"key": "hcbt.fa.em2.oraclecloud.com|CX",
+"data": {
+"host": "hcbt.fa.em2.oraclecloud.com",
+"site": "CX",
+"name": "Kotak Mahindra Bank"
+},
+"source": "companies:nifty50"
+},
+{
+"ats": "oracle",
+"key": "hcbt.fa.em2.oraclecloud.com|CX_4001",
+"data": {
+"host": "hcbt.fa.em2.oraclecloud.com",
+"site": "CX_4001",
+"name": "Kotak Mahindra Bank"
+},
+"source": "companies:nifty50"
+},
+{
+"ats": "jobs2web",
+"key": "conaservices",
+"data": {
+"name": "Kirin"
+},
+"source": "companies:nikkei225"
+},
+{
+"ats": "workday",
+"key": "mizuho.wd1|mizuhoamericas",
+"data": {
+"tenant": "mizuho",
+"wd": "wd1",
+"site": "mizuhoamericas",
+"name": "Mizuho Financial"
+},
+"source": "companies:nikkei225"
+},
+{
+"ats": "pagelist",
+"key": "www.atlascopcogroup.com/en/careers/jobs/recruitment-process",
+"data": {
+"pages": [
+"https://www.atlascopcogroup.com/en/careers/jobs/recruitment-process"
+],
+"name": "Atlas Copco"
+},
+"source": "companies:omxs30"
+},
+{
+"ats": "workday",
+"key": "boliden.wd3|bolidenjobs",
+"data": {
+"tenant": "boliden",
+"wd": "wd3",
+"site": "BolidenJobs",
+"name": "Boliden"
+},
+"source": "companies:omxs30"
+},
+{
 "ats": "pagelist",
 "key": "careers.jeronimomartins.com/search",
 "data": {
@@ -83,6 +703,28 @@
 "name": "Jerónimo Martins"
 },
 "source": "companies:psi20"
+},
+{
+"ats": "pagelist",
+"key": "www.givaudan.com/careers",
+"data": {
+"pages": [
+"https://www.givaudan.com/careers"
+],
+"name": "Givaudan"
+},
+"source": "companies:smi"
+},
+{
+"ats": "workday",
+"key": "richemont.wd3|richemont",
+"data": {
+"tenant": "richemont",
+"wd": "wd3",
+"site": "richemont",
+"name": "Compagnie Financière Richemont"
+},
+"source": "companies:smi"
 },
 {
 "ats": "ashby",
@@ -157,14 +799,6 @@
 "https://www.careers.ford.com/en"
 ],
 "name": "Ford Motor"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "lever",
-"key": "metlife",
-"data": {
-"name": "MetLife"
 },
 "source": "companies:sp500"
 },
@@ -322,17 +956,6 @@
 "https://mycareer.verizon.com/"
 ],
 "name": "Verizon"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "pagelist",
-"key": "www.gd.com/careers/interns",
-"data": {
-"pages": [
-"https://www.gd.com/careers/interns/"
-],
-"name": "General Dynamics"
 },
 "source": "companies:sp500"
 },
@@ -775,6 +1398,125 @@
 "name": "Xcel Energy"
 },
 "source": "companies:sp500"
+},
+{
+"ats": "workday",
+"key": "capitaland.wd3|capitalandgroup",
+"data": {
+"tenant": "capitaland",
+"wd": "wd3",
+"site": "CapitaLandGroup",
+"name": "CapitaLand Ascendas"
+},
+"source": "companies:sti"
+},
+{
+"ats": "workday",
+"key": "seatrium.wd3|seatriumcareers",
+"data": {
+"tenant": "seatrium",
+"wd": "wd3",
+"site": "SeatriumCareers",
+"name": "Seatrium"
+},
+"source": "companies:sti"
+},
+{
+"ats": "workday",
+"key": "uobgroup.wd3|uobexternal",
+"data": {
+"tenant": "uobgroup",
+"wd": "wd3",
+"site": "UOBExternal",
+"name": "United Overseas Bank"
+},
+"source": "companies:sti"
+},
+{
+"ats": "comeet",
+"key": "enlightenergy/99.006",
+"data": {
+"slug": "enlightenergy",
+"uid": "99.006",
+"name": "Enlight Renewable Energy"
+},
+"source": "companies:ta35"
+},
+{
+"ats": "oracle",
+"key": "ehaa.fa.ca2.oraclecloud.com|CNRL",
+"data": {
+"host": "ehaa.fa.ca2.oraclecloud.com",
+"site": "CNRL",
+"name": "Canadian Natural Resources"
+},
+"source": "companies:tsx60"
+},
+{
+"ats": "workday",
+"key": "canadiantirecorporation.wd3|enterprise_external_careers_site",
+"data": {
+"tenant": "canadiantirecorporation",
+"wd": "wd3",
+"site": "Enterprise_External_Careers_Site",
+"name": "Canadian Tire"
+},
+"source": "companies:tsx60"
+},
+{
+"ats": "workday",
+"key": "enbridge.wd3|enbridge_careers",
+"data": {
+"tenant": "enbridge",
+"wd": "wd3",
+"site": "enbridge_careers",
+"name": "Enbridge"
+},
+"source": "companies:tsx60"
+},
+{
+"ats": "workday",
+"key": "firstquantum.wd3|first_quantum_careers",
+"data": {
+"tenant": "firstquantum",
+"wd": "wd3",
+"site": "First_Quantum_Careers",
+"name": "First Quantum Minerals"
+},
+"source": "companies:tsx60"
+},
+{
+"ats": "workday",
+"key": "saputo.wd5|saputo_external_careers",
+"data": {
+"tenant": "saputo",
+"wd": "wd5",
+"site": "Saputo_External_Careers",
+"name": "Saputo"
+},
+"source": "companies:tsx60"
+},
+{
+"ats": "workday",
+"key": "td.wd3|td_bank_careers",
+"data": {
+"tenant": "td",
+"wd": "wd3",
+"site": "TD_Bank_Careers",
+"name": "Toronto-Dominion Bank"
+},
+"source": "companies:tsx60"
+},
+{
+"ats": "workday",
+"key": "erstebp.wd502|kariera",
+"data": {
+"tenant": "erstebp",
+"wd": "wd502",
+"site": "Kariera",
+"name": "Erste Bank Polska"
+},
+"source": "companies:wig20"
 }
 ]
 }
