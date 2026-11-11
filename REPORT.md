@@ -1,4 +1,28 @@
-# JobAlfred index: VC-backed startups in Europe (10 Nov 2026)
+# JobAlfred index: VC-backed startups in Europe (updated 11 Nov 2026)
+
+## Update, 11 Nov 2026
+- File now: 23,541 roles from 1,729 companies; 2,517 companies with a careers system we read (11,236 checked).
+- Job-weighted coverage (`counts.coverage_jobs`), fresh sample of 200 companies (seed jobs-2026-11-11), measured
+  against the file as published that night: 482 of the 627 roles shown on the 177 companies we could see, 76.9%.
+  Roles seen: 492 on boards we read, 38 on boards we did not read yet, 70 job links on careers pages opened in a
+  browser, 27 counted by hand on 63 pages that list roles without links. 23 companies unknown and left out of both
+  sides (robots.txt 10, bot check or 403 7, unreachable 4, page error 2). For the companies we read, the role count
+  matched the live board for 95.5% (42 of 44 within 10%). The gains below came after this measurement.
+- Rendered discovery (`scripts/render_probe.py`, `scripts/render_discover.py`): about 2,900 of the 3,697 careers
+  pages that name no careers system in their served HTML were opened once in headless Chrome (robots.txt first, our
+  User-Agent, no images or fonts, bot checks left alone, hard time limit per page); 198 showed a careers system we read.
+  The daily runs still use no browser.
+- New adapter: Gem (public Job Board API).
+- Funding tags from public news (`jobalfred_index/funding.py`, `scripts/funding_eu.py`), columns gs, gt, gc, gl, gd,
+  gu after d: EU-Startups articles whose URL reads like a round for one of our companies, kept only when the article
+  links the company's own site. 109 companies have a round so far (62 with a stage; 12 totals stated "to date", 97
+  "at least"). Hand check of 30 random rounds: amount and currency 30 of 30, company 30 of 30, 1 project-finance
+  round (now excluded). EU-Startups shows a bot check to fast readers, so the archive is read at one article every
+  25 seconds; each CI run reads its feed.
+- Seedtable: its pricing page sells "commercial resale and embedding rights" only with its Data License, so its stage,
+  totals and industry stay unpublished; the owner chose to keep the Seedtable-sourced company list. A confirmed
+  EU-Startups round now replaces "Seedtable" as evidence (109 companies so far; 1,766 still "Seedtable" only).
+
 
 Every number is from real runs on this Mac and on GitHub Actions on 10 Nov 2026. "Collected" means read from the
 employer's own careers system; it is not the same as confirmed open. File: `vc-eu.json.gz` on release `index-latest`
