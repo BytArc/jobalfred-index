@@ -252,6 +252,9 @@ class TestVcEu(unittest.TestCase):
         nameless = [row("Undisclosed employer", "US")] * 30
         self.assertIn("acquirer", vceu.board_problem(c, False, nameless, "workday"))
         self.assertEqual(vceu.board_problem(c, False, nameless, "ashby"), "")
+        us_okta = {"name": "Okta", "domain": "okta.com", "country": "US"}     # a US startup is judged against the US
+        self.assertEqual(vceu.board_problem(us_okta, True, us), "")
+        self.assertIn("outside US", vceu.board_problem(us_okta, True, [row("Okta", "IN")] * 30))
 
     def test_old_rows_get_the_current_shard_fields_then_d(self):
         with tempfile.TemporaryDirectory() as d:
@@ -298,6 +301,21 @@ class TestCoverageAndNewest(unittest.TestCase):
         self.assertEqual(res["no_careers_page_found"], 1)
         self.assertEqual(res["site_not_readable"], 1)
         self.assertEqual(res["pct_sample_read"], 0.0)
+
+    def test_an_investor_keeps_only_its_own_boards(self):
+        own = self.se.investor_own_board
+        gc = {"name": "General Catalyst", "domain": "generalcatalyst.com"}
+        self.assertTrue(own({"ats": "greenhouse", "key": "generalcatalyst"}, gc))
+        self.assertFalse(own({"ats": "greenhouse", "key": "gostudent"}, gc))          # a portfolio company linked from the site
+        pa = {"name": "Project A", "domain": "project-a.com"}
+        self.assertTrue(own({"ats": "pagelist", "key": "www.project-a.vc/careers",
+                             "data": {"pages": ["https://www.project-a.vc/careers"]}}, pa))
+        fm = {"name": "firstminute capital", "domain": "firstminute.capital"}
+        self.assertFalse(own({"ats": "jsonld", "key": "jobs.firstminute.capital/jobs",
+                              "data": {"pages": ["https://jobs.firstminute.capital/jobs"]}}, fm))  # the portfolio job board
+        yc = {"name": "Y Combinator", "domain": "ycombinator.com"}
+        self.assertFalse(own({"ats": "pagelist", "key": "www.ycombinator.com/jobs",
+                              "data": {"pages": ["https://www.ycombinator.com/jobs"]}}, yc))
 
     def test_newest_list_only_when_newer_and_not_much_smaller(self):
         with tempfile.TemporaryDirectory() as d:

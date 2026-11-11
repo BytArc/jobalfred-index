@@ -221,6 +221,26 @@ def cmd_world(countries: list[str]) -> dict:
     return doc
 
 
+def cmd_investors() -> dict:
+    """Add the investors themselves (data/vc_investors.json) to the world list as kind "investor", so the roles VC firms
+    post on their own careers systems are read like a startup's. Evidence: the firm's own site."""
+    doc = json.load(open(COMPANIES)) if COMPANIES.exists() else {"companies": [], "batches": []}
+    have = {r["domain"]: r for r in doc["companies"]}
+    inv = json.loads((ROOT / "data" / "vc_investors.json").read_text())["investors"]
+    added = 0
+    for name, v in inv.items():
+        d = site_domain((v.get("pages") or [""])[0])
+        if not d or d in have:
+            continue
+        have[d] = {"domain": d, "name": name, "website": f"https://{d}/", "country": v.get("country", ""), "sources": ["investor"],
+                   "kind": "investor", "evidence": [f"https://{d}/"]}
+        added += 1
+    doc["companies"] = sorted(have.values(), key=lambda r: r["domain"])
+    COMPANIES.write_text(json.dumps(doc, indent=0, ensure_ascii=False))
+    print(f"investors added: {added}; world list {len(doc['companies'])}")
+    return doc
+
+
 # -- 2. overlap with the tenants we already have ------------------------------------------------------------------
 SLUG_ATS = {"greenhouse", "lever", "lever-eu", "ashby", "workable", "recruitee", "teamtailor", "bamboohr", "breezy", "personio",
             "smartrecruiters", "pinpoint", "jazzhr", "rippling", "gupy"}
@@ -389,6 +409,22 @@ def hq_in_europe(r: dict) -> bool:
     return (r.get("country") or "") in EUROPE or r.get("hq_from") == "seedtable" or (r.get("hq_from") == "cctld")
 
 
+def investor_own_board(t: dict, r: dict) -> bool:
+    """A board that is the investor's own: named like the firm (greenhouse/generalcatalyst, ashby/firstround), or a careers
+    page on the firm's own domain that is not a portfolio job board (jobs.<domain>, /jobs)."""
+    from urllib.parse import urlsplit
+    if t["ats"] in ("pagelist", "jsonld"):
+        page = ((t.get("data") or {}).get("pages") or ["https://" + t["key"]])[0]
+        sp = urlsplit(page)
+        own = registrable(sp.hostname or "")             # project-a.com's site moved to project-a.vc: same name counts
+        return ((own == r["domain"] or own.split(".")[0] == r["domain"].split(".")[0]) and not (sp.hostname or "").startswith("jobs.")
+                and not re.match(r"(?i)^/(jobs|portfolio-jobs|talent)", sp.path or "/"))
+    slug = startups._fold(t["key"].split("|")[0].split("/")[0].split(".")[0])
+    names_ = {startups._fold(r["domain"].split(".")[0])} | {startups._fold(w) for w in re.findall(r"[A-Za-z0-9]{3,}", r.get("name") or "")}
+    names_ -= {"", "capital", "ventures", "partners", "group", "fund", "the", "vc"}
+    return any(n and (n in slug or (len(slug) >= 4 and slug in n)) for n in names_)
+
+
 def startups_ats_ok() -> set[str]:
     from jobalfred_index.adapters import SOURCES
     return set(SOURCES) | set(ROBOTS_BLOCKED_ATS)
@@ -429,7 +465,8 @@ def cmd_publish() -> dict:
         for ats, slugs in (guess.get(r["domain"]) or {}).items():
             for sl, verdict in slugs.items():
                 weak = sl == r["domain"].split(".")[0] and len(sl) < 5 and sl != startups._fold(r.get("name") or "")
-                if verdict == "yes" and not weak and not any(t["ats"] == ats for t in p.get("tenants", [])):
+                has = [t for t in p.get("tenants", []) if t["ats"] == ats and (r.get("kind") != "investor" or investor_own_board(t, r))]
+                if verdict == "yes" and not weak and not has:
                     p["tenants"] = list(p.get("tenants", [])) + [{"ats": ats, "key": sl, "data": {}, "named": True}]
                     found_by = found_by or "name"
                     break
@@ -438,6 +475,14 @@ def cmd_publish() -> dict:
                 p["tenants"] = list(p.get("tenants", [])) + [adapted_tenant(name, key)]
                 found_by = found_by or "page"
         ts = [t for t in p.get("tenants", []) if t["ats"] not in ROBOTS_BLOCKED_ATS and (t["ats"], t["key"]) not in gone]
+        if r.get("kind") == "investor":
+            ts = [t for t in ts if investor_own_board(t, r)]   # a VC's site links its portfolio's boards: only its own count
+        if len(ts) > 5:
+            # a site that links many companies' job boards (a customer wall, a jobs directory) is not one careers system:
+            # keep only boards named like the company itself
+            me = {startups._fold(r.get("name") or ""), startups._fold(r["domain"].split(".")[0])} - {""}
+            ts = [t for t in ts if any(m and (m in startups._fold(t["key"]) or startups._fold(t["key"].split("|")[0].split(".")[0]) in m)
+                                       for m in me)]
         if ts and p.get("status") in ("ats_no_adapter", "linkedin_only", "careers_no_ats", "no_careers_page"):
             p["status"] = "ats"
         for t in ts:
@@ -446,6 +491,8 @@ def cmd_publish() -> dict:
             entry = {"name": r.get("name"), "domain": r["domain"], "country": r.get("country") or "",
                      "evidence": vc_evidence(r) or ["Seedtable"], "tenants": [[t["ats"], t["key"]] for t in ts],
                      "backing": "listed" if r.get("backing") == "listed" and not vc_evidence(r) else "vc"}
+            if r.get("kind") == "investor":
+                entry["kind"], entry["backing"] = "investor", ""
             if (r.get("yc") or {}).get("batch"):
                 entry["yc_batch"] = r["yc"]["batch"]       # public, from the company's YC page
             named = [[t["ats"], t["key"]] for t in ts if t.get("named")]
@@ -802,6 +849,8 @@ if __name__ == "__main__":
                   gap=float(sys.argv[4]) if len(sys.argv) > 4 else 0.0)
     elif cmd == "publish":
         cmd_publish()
+    elif cmd == "investors":
+        cmd_investors()
     elif cmd == "world":
         cmd_world(arg.split(","))
     elif cmd == "newest":

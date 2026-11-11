@@ -46,10 +46,12 @@ def board_problem(c: dict, named: bool, rows: list, ats: str = "") -> str:
     if not same_company(top, c):
         return "the board belongs to another company (often the buyer of an acquired startup)"
     if len(rows) > 20 and (named or (top == names.UNDISCLOSED and ats in ENTERPRISE)):
-        eu = sum(1 for r in rows if r[3] in EUROPE or r[4] == 2) / len(rows)
-        if eu < 0.25:
-            return ("found by name only and its roles are mostly outside Europe (likely a namesake)" if named else
-                    "an enterprise board with no employer name and roles mostly outside Europe (likely an acquirer)")
+        hq = (c.get("country") or "").upper()          # judged against the company's own region: Europe, or its HQ country
+        home, where = (EUROPE, "Europe") if (not hq or hq in EUROPE) else ({hq}, hq)
+        share = sum(1 for r in rows if r[3] in home or r[4] == 2) / len(rows)
+        if share < 0.25:
+            return (f"found by name only and its roles are mostly outside {where} (likely a namesake)" if named else
+                    f"an enterprise board with no employer name and roles mostly outside {where} (likely an acquirer)")
     return ""
 
 FIELDS = shards.FIELDS + ["d", "gs", "gt", "gc", "gl", "gd", "gu", "gi"]
@@ -111,7 +113,8 @@ BASIS = ("A company is listed when it is headquartered in Europe and backed by v
 BASIS_WORLD = ("A company is listed when it is backed by venture investors: shown on Y Combinator's public directory or an investor's "
                "own public portfolio page (the evidence URL is given), or, in Europe, listed in Seedtable's startup database with a "
                "disclosed round from pre-seed to growth and USD 1M or more raised (evidence 'Seedtable'). hq_country is where it is "
-               "headquartered. Roles are read from each company's own careers system; collected is not the same as confirmed open.")
+               "headquartered. kind 'investor' marks a VC firm's own roles. Roles are read from each company's own careers system; "
+               "collected is not the same as confirmed open.")
 
 
 def union(docs: list[dict]) -> dict:
@@ -201,7 +204,8 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
             evidence = round_urls[c["domain"]][:2]      # a public article on its funding round replaces "Seedtable"
         entry = {"name": c.get("name"), "domain": c["domain"], "country": c.get("country") or "", "hq_country": c.get("country") or "",
                  "evidence": evidence, "boards": boards, "roles": per_company.get(c["domain"], 0),
-                 "backing": c.get("backing") or "vc"}
+                 "backing": c.get("backing") if c.get("kind") == "investor" else (c.get("backing") or "vc"),
+                 "kind": c.get("kind") or "startup"}
         if fund.get(c["domain"]):
             entry["funding"] = fund[c["domain"]]
         if vcin.get(c["domain"]):
@@ -219,6 +223,9 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
                    "evidence_public": sum(1 for c in companies if c["evidence"] != ["Seedtable"]),
                    "companies_with_backers": sum(1 for c in companies if c.get("backers")),
                    "companies_listed_not_vc": sum(1 for c in companies if c.get("backing") == "listed"),
+                   "investor_firms": {"with_careers_system": sum(1 for c in companies if c.get("kind") == "investor"),
+                                      "with_roles": sum(1 for c in companies if c.get("kind") == "investor" and c["roles"]),
+                                      "roles": sum(c["roles"] for c in companies if c.get("kind") == "investor")},
                    "evidence_seedtable_only": sum(1 for c in companies if c["evidence"] == ["Seedtable"]),
                    "companies_with_stage": sum(1 for c in companies if (c.get("funding") or {}).get("stage")),
                    "companies_with_total": sum(1 for c in companies if (c.get("funding") or {}).get("total"))})
