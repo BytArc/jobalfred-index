@@ -165,16 +165,25 @@ Lists are versioned data:
 - `data/companies/curated.json`, edited by hand: `bigtech`, `ailab`, `big4`, `consulting`.
 - `data/companies/indices.json`, read by `scripts/companies_refresh.py` from English Wikipedia `/wiki/` pages (robots.txt allows them; the `/w/` API and the
   Wikidata query service are disallowed and not used), with source URL and retrieval date per list, ordered by the country's nominal GDP, richest first:
-  `sp500`, `sse50`, `dax`, `nikkei225`, `nifty50`, `ftse100`, `cac40`, `ftsemib`, `tsx60`, `ibex35`, `kospi200`, `asx200`, `lq45`, `aex`, `smi`, `bel20`,
-  `omxs30`, `iseq20`, `ta35`, `atx`, `sti`, `set50`, `obx`, `psei`, `omxc25`, `klci`, `colcap`, `hsi`, `jse40`, `kse100`, `psi20`, `omxh25`, `nzx50`,
-  `athex`, `bux`. Each member's website and head-office country come from its own article's infobox.
+  `sp500`, `sse50`, `dax`, `nikkei225`, `nifty50`, `ftse100`, `cac40`, `ftsemib`, `tsx60`, `ibex35`, `kospi200`, `asx200`, `lq45`, `aex`, `smi`,
+  `wig20`, `bel20`, `omxs30`, `iseq20`, `ta35`, `atx`, `sti`, `set50`, `obx`, `psei`, `omxc25`, `klci`, `colcap`, `hsi`, `jse40`, `kse100`, `psi20`,
+  `omxh25`, `nzx50`, `athex`, `bux` (38 indexes, 2,324 members, 11 Nov 2026). Each member's website and head-office country come from its own
+  article's infobox. Configured but not read, because Wikipedia has no constituent table for them: Ibovespa, MOEX, S&P/BMV IPC, BIST 30,
+  Taiwan 50, MERVAL, VN30, BET, EGX 30, IPSA, PX. Brand names a list does not give are added by hand in `data/companies/aliases.json`.
 - `.github/workflows/companies.yml` refreshes both monthly and probes members it has not probed before.
 
-One company on several lists is one company: members that share a name, an alias or a website are joined (Google in `bigtech` is Alphabet in `sp500`).
-A row's employer is a member when its name or alias matches and the posting is on a feed, on an enterprise careers system (Workday, Oracle,
-SuccessFactors, Eightfold, iCIMS, the big tech feeds), or on a board named after the member (`boards.greenhouse.io/anthropic`, not
-`targetitalia.teamtailor.com` for Target); or when its postings live on the member's own website. For an index member a small-business board must also be
-in the member's head-office country. Websites are only ever the curated or Wikipedia ones, never a guess.
+One company on several lists is one company: index members that share a Wikipedia article or (in the same head-office country) a website are
+joined, and a curated member joins by its hand-picked aliases (Google in `bigtech` is Alphabet in `sp500`); a name alone never joins two (Merck in
+the S&P 500 and Merck KGaA in the DAX stay apart). A row's employer is a member when
+- its postings are on a board the probe found from the member's own website, or on a board that carries the member's name for roles in the
+  member's head-office country (learned from the rows in the same build), whatever name each posting shows;
+- or its postings live on the member's own website;
+- or its name or alias matches and: on a feed or an enterprise careers system (Workday, Oracle, SuccessFactors, Eightfold, iCIMS, the big tech
+  feeds) the name is distinctive (two words, ten letters) or the role is in the member's own country ("Sanford" on Workday in the US is Sanford
+  Health); on a small-business board the board is named after the member (`boards.greenhouse.io/anthropic`, not `targetitalia.teamtailor.com` for
+  Target) and, for an index member, in its head-office country.
+A local listing of a foreign group (Abbott Laboratories Pakistan in the KSE 100) stays apart from the parent. Websites are only ever the curated or
+Wikipedia ones, never a guess, and registrable domains keep country-code second levels (`hkex.com.hk`, `hdfc.bank.in`).
 
 Members with no roles yet are probed (`scripts/companies_coverage.py SHARD_DIR`, then `scripts/companies_probe.py LIST ...`) with the VC session's
 `startups.probe_company`: polite client, robots.txt obeyed, bot checks and 403s never worked around, no logins, LinkedIn, Indeed, Glassdoor and Naukri never
