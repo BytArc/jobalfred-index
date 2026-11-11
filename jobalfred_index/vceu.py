@@ -16,7 +16,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import industry, names, seniority, shards, startups, vcindustry
+from . import companies as colists, industry, names, seniority, shards, startups, vcindustry
 
 EUROPE = set("AL AD AT BY BE BA BG HR CY CZ DK EE FI FR DE GR HU IS IE IT XK LV LI LT LU MT MD MC ME NL MK NO PL PT RO RU SM "
              "RS SK SI ES SE CH TR UA GB VA GI IM JE GG FO".split())
@@ -156,6 +156,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
             r[industry.IN] = lab["code"]
             vc_rows += 1
     industry.assign(rows, homepages, log=log)      # same model as the main index; first-seen companies are fetched when a Homepages is given
+    colists.assign(rows, log=log)                  # list membership (co) and languages (lr, lq), as in the main index
     companies = []
     for c in doc.get("companies", []):
         boards = [b for b in c.get("tenants", []) if tuple(b) not in dropped_boards]
