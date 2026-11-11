@@ -23,6 +23,8 @@ INDICES = {"lists": {
         {"name": "Airbus", "wiki": "Airbus", "domain": "airbus.com", "hq": "NL"}]},
     "cac40": {"label": "CAC 40", "hq": "FR", "gdp_rank": 7, "source": "x", "retrieved": "2026-11-11", "members": [
         {"name": "Airbus SE", "aliases": ["Airbus"], "wiki": "Airbus", "domain": "airbus.com", "hq": "NL"}]},
+    "kse100": {"label": "KSE 100", "hq": "PK", "gdp_rank": 40, "source": "x", "retrieved": "2026-11-11", "members": [
+        {"name": "Merck", "wiki": "Merck_&_Co.", "domain": "merck.com", "hq": "US"}]},
     "omxh25": {"label": "OMX Helsinki 25", "hq": "FI", "gdp_rank": 44, "source": "x", "retrieved": "2026-11-11",
                "members": [{"name": "Orion B", "aliases": ["Orion"], "hq": "FI"}]},
 }}
@@ -86,7 +88,25 @@ class TestMembership(unittest.TestCase):
         self.assertEqual(self.co("Merck", "https://msd.wd5.myworkdayjobs.com/SearchJobs/job/1", "workday", "US"), "sp500")
         self.assertEqual(self.co("Merck", "https://emdgroup.wd3.myworkdayjobs.com/x/job/1", "workday", "DE"), "dax")
         self.assertEqual(self.co("Merck", "https://x.wd3.myworkdayjobs.com/x/job/1", "workday", "FR"), "")
-        self.assertEqual(self.co("Airbus", "https://ag.wd3.myworkdayjobs.com/Airbus/job/1", "workday", "FR"), "dax,cac40")
+        self.assertEqual(self.co("Airbus", "https://ag.wd3.myworkdayjobs.com/Airbus/job/1", "workday", "NL"), "dax,cac40")   # one company, two lists
+        self.assertEqual(self.co("Airbus", "https://careers.airbus.com/job/1", "jsonld", "FR"), "dax,cac40")                  # its own website
+
+    def test_country_code_domains_are_not_one_company(self):
+        self.assertEqual(companies.reg_domain("www.hkex.com.hk"), "hkex.com.hk")
+        self.assertEqual(companies.reg_domain("hdfc.bank.in"), "hdfc.bank.in")
+        self.assertEqual(companies.reg_domain("careers.google.com"), "google.com")
+
+    def test_single_word_namesake_on_a_big_system(self):
+        self.assertEqual(self.co("Orion", "https://sanfordhealth.wd1.myworkdayjobs.com/x/job/1", "workday", "US"), "")
+        rows = [row("Orion", f"https://orion.wd3.myworkdayjobs.com/x/job/{i}", "workday", "FI") for i in range(3)] + \
+               [row("Orion", "https://orion.wd3.myworkdayjobs.com/x/job/9", "workday", "US")]
+        companies.assign(rows, log=lambda m: None)
+        self.assertEqual(rows[-1][companies.CO], "omxh25")      # its board, learned from its roles at home, carries its roles abroad
+        self.assertEqual(self.co("Orion", "https://x.wd3.myworkdayjobs.com/x/job/1", "workday", "FI"), "omxh25")         # its own country
+
+    def test_local_listing_of_a_foreign_group(self):
+        self.assertEqual(self.co("Merck & Co.", "https://msd.wd5.myworkdayjobs.com/x/job/1", "workday", "US"), "sp500")
+        self.assertEqual(self.co("Merck", "https://x.wd3.myworkdayjobs.com/x/job/1", "workday", "PK"), "kse100")
 
     def test_index_member_namesake_abroad(self):
         self.assertEqual(self.co("Orion", "https://boards.greenhouse.io/orion/jobs/1", "greenhouse", "US"), "")
@@ -100,5 +120,6 @@ class TestMembership(unittest.TestCase):
     def test_published_map(self):
         m = companies.published_map()
         self.assertEqual(list(m)[:3], ["bigtech", "ailab", "big4"])
+        self.assertEqual(m["kse100"]["country"], "PK")
         self.assertEqual(m["sp500"]["kind"], "index")
         self.assertEqual(m["sp500"]["members"], 4)

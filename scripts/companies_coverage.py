@@ -14,15 +14,18 @@ man = json.loads((src / "manifest.json").read_text())
 ix = companies.index()
 rows_per_group = collections.Counter()
 cache = {}
+rows = []
 for s in man["shards"]:
     d = json.loads(gzip.decompress((src / s["file"]).read_bytes()))
     at = {k: i for i, k in enumerate(d["f"])}
-    for r in d["rows"]:
-        key = (r[at["c"]], r[at["a"]], companies.board_of(r[at["u"]]), r[at["cc"]])
-        if key not in cache:
-            cache[key] = companies.match(r[at["c"]], r[at["u"]], r[at["a"]], r[at["cc"]])
-        if cache[key] is not None:
-            rows_per_group[cache[key]] += 1
+    rows += [(r[at["c"]], r[at["u"]], r[at["a"]], r[at["cc"]]) for r in d["rows"]]
+learned = companies.learn_boards(rows)
+for c, u, a, cc in rows:
+    key = (c, a, companies.board_of(u), cc)
+    if key not in cache:
+        cache[key] = companies.match(c, u, a, cc, learned)
+    if cache[key] is not None:
+        rows_per_group[cache[key]] += 1
 out = {}
 for code, lst in companies.lists().items():
     found, missing = {}, []

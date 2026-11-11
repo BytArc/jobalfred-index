@@ -50,10 +50,30 @@ def lists() -> dict:
     return out
 
 
+# second-level names under a country code that are public suffixes: "hkex.com.hk", "hdfc.bank.in", "sanford.co.nz" are three-label domains
+_SECOND = {"com", "co", "net", "org", "gov", "edu", "ac", "or", "ne", "go", "gob", "gouv", "bank", "ltd", "plc", "nic", "mil", "biz", "info",
+           "firm", "gen", "ind", "nom", "res", "web", "sch", "med", "asso"}
+
+
+def reg_domain(host: str) -> str:
+    """The registrable domain of a host, with country-code second levels kept ("www.hkex.com.hk" -> "hkex.com.hk")."""
+    parts = [x for x in (host or "").lower().strip(".").split(".") if x]
+    if len(parts) < 2:
+        return ""
+    keep = 3 if len(parts) >= 3 and len(parts[-1]) == 2 and (parts[-2] in _SECOND or ".".join(parts[-2:]) in industry._SLD2) else 2
+    return ".".join(parts[-keep:])
+
+
+def _row_domain(url: str) -> str:
+    host = (urlsplit(url or "").hostname or "").lower()
+    if not host or any(host == h or host.endswith("." + h) for h in industry.ATS_HOSTS):
+        return ""
+    return reg_domain(host)
+
+
 def _label(domain: str) -> str:
-    parts = (domain or "").lower().split(".")
-    keep = 3 if ".".join(parts[-2:]) in industry._SLD2 else 2
-    return norm(parts[-keep]) if len(parts) >= keep else ""
+    d = reg_domain(domain)
+    return norm(d.split(".")[0]) if d else ""
 
 
 def index() -> dict:
@@ -92,10 +112,17 @@ def index() -> dict:
             return {norm(n) for n in [m["name"]] + list(m.get("aliases") or []) if len(norm(n)) >= 2}
 
         def mdomain(m):
-            return industry.own_domain(["https://" + m["domain"] + "/"]) if m.get("domain") else ""
+            return reg_domain(m["domain"]) if m.get("domain") else ""
 
-        union((i, ({"w:" + m["wiki"]} if m.get("wiki") else set()) | ({"d:" + mdomain(m)} if mdomain(m) else set()))
-              for i, (code, m, cur, _) in enumerate(members))
+        # A local listing of a foreign group (Abbott Laboratories Pakistan in the KSE 100, whose list links the parent's article) is not the
+        # parent: when a member's article puts the head office abroad and that country's own index lists the same article, the member
+        # stays on its own, with its index's country as head office. A shared website joins members only in the same head-office country.
+        home_article = {(m.get("wiki"), lhq) for code, m, cur, lhq in members if m.get("wiki") and m.get("hq") == lhq}
+        local = {i for i, (code, m, cur, lhq) in enumerate(members)
+                 if m.get("wiki") and m.get("hq") and m["hq"] != lhq and (m["wiki"], m["hq"]) in home_article}
+        union((i, set() if i in local else (({"w:" + m["wiki"]} if m.get("wiki") else set()) |
+                                            ({"d:" + mdomain(m) + "@" + (m.get("hq") or lhq)} if mdomain(m) else set())))
+              for i, (code, m, cur, lhq) in enumerate(members))
         by_key: dict[str, set[int]] = {}
         for i, (code, m, cur, _) in enumerate(members):
             if not cur:
@@ -115,8 +142,10 @@ def index() -> dict:
             g["names"] |= mnames(m)
             if mdomain(m):
                 g["domains"].add(mdomain(m))
-            g["hq"] = g["hq"] or m.get("hq") or ""
+            g["hq"] = g["hq"] or (lhq if i in local else m.get("hq")) or ""
             g["lhq"] = g["lhq"] or lhq
+            if i in local:
+                g["domains"].discard(mdomain(m))         # the parent's website is the parent's
             g["curated"] = g["curated"] or cur
         out_groups, names, domains = [], {}, {}
         gid_of = {}
@@ -172,7 +201,7 @@ def board_of(url: str) -> tuple[str, str]:
         return norm(segs[1]), ""
     if any(host == h or host.endswith("." + h) for h in industry.ATS_HOSTS):
         return norm(host.split(".")[0]), ""
-    dom = industry.own_domain([url])
+    dom = _row_domain(url)
     return _label(dom), dom
 
 
@@ -191,12 +220,44 @@ def _key_matches(key: str, labels: set[str]) -> bool:
     return False
 
 
-def match(name: str, url: str = "", ats: str = "", cc: str = "") -> int | None:
-    """The company group a row's employer belongs to, or None."""
+def _distinctive(name: str) -> bool:
+    """Two words or more and ten letters or more: "Siemens Healthineers", "Fresenius Medical Care"; not "Sanford", "Next" or "Minor"."""
+    return len(re.findall(r"[A-Za-z0-9]+", name or "")) >= 2 and len(norm(name)) >= 10
+
+
+def learn_boards(rows, min_rows: int = 3) -> dict:
+    """Boards a member uses, read from the rows themselves: a board (careers system and tenant) that carries a member's name for roles in
+    the member's own head-office country is the member's, so its roles abroad are too (Novartis's Workday site lists roles in 60
+    countries). A namesake abroad has no roles in the member's country on its board (Sanford Health is not Sanford Limited).
+    rows: (company, url, ats, cc) tuples. Returns {(ats, board): group id}."""
+    ix = index()
+    votes: dict[tuple, dict[int, int]] = {}
+    for name, url, ats, cc in rows:
+        cands = ix["names"].get(norm(name))
+        if not cands or not cc:
+            continue
+        for g in cands:
+            if ix["groups"][g]["hq"] == cc:
+                key, _ = board_of(url)
+                if key:
+                    v = votes.setdefault((ats, key), {})
+                    v[g] = v.get(g, 0) + 1
+    out = {}
+    for b, v in votes.items():
+        g, n = max(v.items(), key=lambda kv: kv[1])
+        if n >= min_rows:
+            out[b] = g
+    return out
+
+
+def match(name: str, url: str = "", ats: str = "", cc: str = "", learned: dict | None = None) -> int | None:
+    """The company group a row's employer belongs to, or None. learned: boards from learn_boards over the same build."""
     ix = index()
     key, dom = board_of(url)
     if (ats, key) in ix["boards"]:
         return ix["boards"][(ats, key)]
+    if learned and (ats, key) in learned:
+        return learned[(ats, key)]
     if not key and (ats, "=" + norm(name)) in ix["boards"]:
         return ix["boards"][(ats, "=" + norm(name))]
     cands = ix["names"].get(norm(name), [])
@@ -206,18 +267,23 @@ def match(name: str, url: str = "", ats: str = "", cc: str = "") -> int | None:
     if gid is not None:
         g = ix["groups"][gid]
         from .adapters import FEED_NAMES
-        if ats in FEED_NAMES or ats in ENTERPRISE_ATS or (dom and dom in g["domains"]):
+        if dom and dom in g["domains"]:
             return gid
-        if _key_matches(key, g["labels"]) and (g["curated"] or not cc or not g["hq"] or cc == g["hq"]):
+        if ats in FEED_NAMES or ats in ENTERPRISE_ATS:
+            # a big careers system or a feed: the name is enough when it is distinctive or the role is in the company's own country;
+            # otherwise the board has to be the member's (above). "Sanford" on Workday in the US is Sanford Health, not Sanford Limited.
+            if g["curated"] or _distinctive(name) or (cc and cc == g["hq"]):
+                return gid
+        elif _key_matches(key, g["labels"]) and (g["curated"] or not cc or not g["hq"] or cc == g["hq"]):
             return gid
     if dom and dom in ix["domains"]:
         return ix["domains"][dom]
     return None
 
 
-def membership(name: str, url: str = "", ats: str = "", cc: str = "") -> tuple[list[str], str]:
+def membership(name: str, url: str = "", ats: str = "", cc: str = "", learned: dict | None = None) -> tuple[list[str], str]:
     """(codes, head-office country) for one row's employer; ([], "") when it is on no list."""
-    gid = match(name, url, ats, cc)
+    gid = match(name, url, ats, cc, learned)
     if gid is None:
         return [], ""
     g = index()["groups"][gid]
@@ -233,13 +299,14 @@ def assign(rows: list[list], log=print) -> dict:
     cache: dict[tuple, tuple[list[str], str]] = {}
     stated = inferred = unknown = listed = 0
     per_code: dict[str, int] = {}
+    learned = learn_boards((r[1], r[5], r[7], r[3]) for r in rows)
     for r in rows:
         if len(r) <= LQ:
             r.extend([""] * (LQ + 1 - len(r)))
         key, dom = board_of(r[5])
         k = (r[1], r[7], key, dom, r[3])
         if k not in cache:
-            cache[k] = membership(r[1], r[5], r[7], r[3])
+            cache[k] = membership(r[1], r[5], r[7], r[3], learned)
         codes, hq = cache[k]
         r[CO] = ",".join(codes)
         if codes:
