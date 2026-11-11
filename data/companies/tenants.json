@@ -1,27 +1,65 @@
 {
 "tenants": [
 {
+"ats": "ashby",
+"key": "ThinkingMachines",
+"data": {
+"name": "Thinking Machines Lab"
+},
+"source": "companies:ailab"
+},
+{
+"ats": "ashby",
+"key": "ssi",
+"data": {
+"name": "Safe Superintelligence"
+},
+"source": "companies:ailab"
+},
+{
 "ats": "greenhouse",
 "key": "xai",
-"data": {},
+"data": {
+"name": "xAI"
+},
+"source": "companies:ailab"
+},
+{
+"ats": "pagelist",
+"key": "www.ai21.com/careers",
+"data": {
+"pages": [
+"https://www.ai21.com/careers/"
+],
+"name": "AI21 Labs"
+},
 "source": "companies:ailab"
 },
 {
 "ats": "workable",
 "key": "huggingface",
-"data": {},
-"source": "companies:ailab"
+"data": {
+"name": "Hugging Face"
 },
-{
-"ats": "ashby",
-"key": "ThinkingMachines",
-"data": {},
 "source": "companies:ailab"
 },
 {
 "ats": "eightfold",
 "key": "bcg",
-"data": {},
+"data": {
+"name": "Boston Consulting Group"
+},
+"source": "companies:consulting"
+},
+{
+"ats": "pagelist",
+"key": "www.kearney.com/careers/opportunities",
+"data": {
+"pages": [
+"https://www.kearney.com/careers/opportunities"
+],
+"name": "Kearney"
+},
 "source": "companies:consulting"
 },
 {
@@ -30,304 +68,10 @@
 "data": {
 "tenant": "bah",
 "wd": "wd1",
-"site": "BAH_Jobs"
+"site": "BAH_Jobs",
+"name": "Booz Allen Hamilton"
 },
 "source": "companies:consulting"
-},
-{
-"ats": "successfactors",
-"key": "aosmith",
-"data": {
-"company": "aosmith"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "ghr.wd1|lateral-us",
-"data": {
-"tenant": "ghr",
-"wd": "wd1",
-"site": "lateral-us"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "biibhr.wd3|external",
-"data": {
-"tenant": "biibhr",
-"wd": "wd3",
-"site": "external"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "eightfold",
-"key": "bostonscientific",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "bf.wd5|usa_canada",
-"data": {
-"tenant": "bf",
-"wd": "wd5",
-"site": "USA_Canada"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "successfactors",
-"key": "centerpoin",
-"data": {
-"company": "centerpoin"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "cigna.wd5|cignacareers",
-"data": {
-"tenant": "cigna",
-"wd": "wd5",
-"site": "cignacareers"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "eightfold",
-"key": "citi",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "comfortsystemsusa.wd1|corpcareers",
-"data": {
-"tenant": "comfortsystemsusa",
-"wd": "wd1",
-"site": "Corpcareers"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "cbrands.wd5|cbi_external_careers",
-"data": {
-"tenant": "cbrands",
-"wd": "wd5",
-"site": "CBI_External_Careers"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "successfactors",
-"key": "DTEENERGYCO",
-"data": {
-"company": "DTEENERGYCO"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "icims",
-"key": "attract-careers1-dish",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "oracle",
-"key": "hdjq.fa.us2.oraclecloud.com|CX_1",
-"data": {
-"host": "hdjq.fa.us2.oraclecloud.com",
-"site": "CX_1"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "successfactors",
-"key": "exxonmobilP",
-"data": {
-"company": "exxonmobilP"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "jsonld",
-"key": "www.careers.ford.com/en",
-"data": {
-"host": "www.careers.ford.com",
-"pages": [
-"https://www.careers.ford.com/en"
-]
-},
-"source": "companies:sp500"
-},
-{
-"ats": "ashby",
-"key": "gen-digital",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "successfactors",
-"key": "HALprod",
-"data": {
-"company": "HALprod"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "oracle",
-"key": "icfcjb.fa.ocs.oraclecloud.com|Aerospace",
-"data": {
-"host": "icfcjb.fa.ocs.oraclecloud.com",
-"site": "Aerospace"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "oracle",
-"key": "ibqbjb.fa.ocs.oraclecloud.com|Honeywell",
-"data": {
-"host": "ibqbjb.fa.ocs.oraclecloud.com",
-"site": "Honeywell"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "oracle",
-"key": "ekkh.fa.us2.oraclecloud.com|CX_2002",
-"data": {
-"host": "ekkh.fa.us2.oraclecloud.com",
-"site": "CX_2002"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "oracle",
-"key": "ekkh.fa.us2.oraclecloud.com|CX",
-"data": {
-"host": "ekkh.fa.us2.oraclecloud.com",
-"site": "CX"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "dssmith.wd3|careers",
-"data": {
-"tenant": "dssmith",
-"wd": "wd3",
-"site": "careers"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "oracle",
-"key": "iazbqy.fa.ocs.oraclecloud.com|CX_1",
-"data": {
-"host": "iazbqy.fa.ocs.oraclecloud.com",
-"site": "CX_1"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "invitationhomes.wd503|invh",
-"data": {
-"tenant": "invitationhomes",
-"wd": "wd503",
-"site": "INVH"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "jbhunt.wd501|careers",
-"data": {
-"tenant": "jbhunt",
-"wd": "wd501",
-"site": "Careers"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "jci.wd5|jci",
-"data": {
-"tenant": "jci",
-"wd": "wd5",
-"site": "JCI"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "eightfold",
-"key": "kdrp",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "icims",
-"key": "careers-kindermorgan",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "icims",
-"key": "fieldcareers-kindermorgan",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "eightfold",
-"key": "lamresearch",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "icims",
-"key": "globalcareers-lennox",
-"data": {},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "livenation.wd503|lnexternalsite",
-"data": {
-"tenant": "livenation",
-"wd": "wd503",
-"site": "LNExternalSite"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "loewscorp.wd1|loewscorp",
-"data": {
-"tenant": "loewscorp",
-"wd": "wd1",
-"site": "loewscorp"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "workday",
-"key": "martinmarietta.wd5|martin_marietta_careers",
-"data": {
-"tenant": "martinmarietta",
-"wd": "wd5",
-"site": "Martin_Marietta_Careers"
-},
-"source": "companies:sp500"
-},
-{
-"ats": "lever",
-"key": "metlife",
-"data": {},
-"source": "companies:sp500"
 }
 ]
 }

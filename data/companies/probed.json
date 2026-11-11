@@ -1,0 +1,231 @@
+{
+ "bigtech": {
+  "Meta": {
+   "status": "no_careers_page",
+   "website": "meta.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "ailab": {
+  "Mistral AI": {
+   "status": "careers_no_ats",
+   "website": "mistral.ai",
+   "careers": "https://mistral.ai/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "xAI": {
+   "status": "ats",
+   "website": "x.ai",
+   "careers": "https://x.ai/careers",
+   "note": "",
+   "boards": [
+    [
+     "greenhouse",
+     "xai"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Hugging Face": {
+   "status": "ats",
+   "website": "huggingface.co",
+   "careers": "https://apply.workable.com/huggingface/",
+   "note": "",
+   "boards": [
+    [
+     "workable",
+     "huggingface"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Safe Superintelligence": {
+   "status": "ats",
+   "website": "ssi.inc",
+   "careers": "",
+   "note": "",
+   "boards": [
+    [
+     "ashby",
+     "ssi"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Thinking Machines Lab": {
+   "status": "ats",
+   "website": "thinkingmachines.ai",
+   "careers": "https://jobs.ashbyhq.com/ThinkingMachines",
+   "note": "",
+   "boards": [
+    [
+     "ashby",
+     "ThinkingMachines"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "AI21 Labs": {
+   "status": "careers_page_list",
+   "website": "ai21.com",
+   "careers": "https://www.ai21.com/careers/",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.ai21.com/careers"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Sakana AI": {
+   "status": "careers_no_ats",
+   "website": "sakana.ai",
+   "careers": "https://sakana.ai/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "big4": {
+  "EY": {
+   "status": "careers_no_ats",
+   "website": "ey.com",
+   "careers": "https://www.ey.com/pt_pt/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  }
+ },
+ "consulting": {
+  "McKinsey & Company": {
+   "status": "site_robots",
+   "website": "mckinsey.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "Boston Consulting Group": {
+   "status": "ats",
+   "website": "bcg.com",
+   "careers": "https://careers.bcg.com/global/en/",
+   "note": "",
+   "boards": [
+    [
+     "eightfold",
+     "bcg"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Bain & Company": {
+   "status": "careers_no_ats",
+   "website": "bain.com",
+   "careers": "https://www.bain.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "Oliver Wyman": {
+   "status": "careers_no_ats",
+   "website": "oliverwyman.com",
+   "careers": "https://www.oliverwyman.com/careers.html",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "Kearney": {
+   "status": "careers_page_list",
+   "website": "kearney.com",
+   "careers": "https://www.kearney.com/careers",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "www.kearney.com/careers/opportunities"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Roland Berger": {
+   "status": "careers_no_ats",
+   "website": "rolandberger.com",
+   "careers": "https://www.rolandberger.com/en/Join/All-Jobs/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "Capgemini": {
+   "status": "careers_no_ats",
+   "website": "capgemini.com",
+   "careers": "https://www.capgemini.com/careers/",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "Strategy&": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "L.E.K. Consulting": {
+   "status": "careers_no_ats",
+   "website": "lek.com",
+   "careers": "https://www.lek.com/careers",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "Simon-Kucher": {
+   "status": "careers_no_ats",
+   "website": "simon-kucher.com",
+   "careers": "https://www.simon-kucher.com/en/careers",
+   "note": "the only page found lists people stories, not roles",
+   "boards": [
+    [
+     "pagelist",
+     "www.simon-kucher.com/en/careers/people-stories"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Alvarez & Marsal": {
+   "status": "site_robots",
+   "website": "alvarezandmarsal.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  },
+  "Booz Allen Hamilton": {
+   "status": "ats",
+   "website": "boozallen.com",
+   "careers": "https://www.boozallen.com/careers.html",
+   "note": "",
+   "boards": [
+    [
+     "workday",
+     "bah.wd1|bah_jobs"
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Monitor Deloitte": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "checked": "2026-11-11"
+  }
+ }
+}
