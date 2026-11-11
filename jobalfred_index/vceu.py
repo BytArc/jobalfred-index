@@ -52,10 +52,40 @@ def board_problem(c: dict, named: bool, rows: list, ats: str = "") -> str:
                     "an enterprise board with no employer name and roles mostly outside Europe (likely an acquirer)")
     return ""
 
-FIELDS = shards.FIELDS + ["d", "gs", "gt", "gc", "gl", "gd", "gu"]
+FIELDS = shards.FIELDS + ["d", "gs", "gt", "gc", "gl", "gd", "gu", "gi"]
 # d: company domain. Funding of the company, from public news (data/funding_eu.json), copied onto each of its rows:
 # gs latest stage, gt total raised, gc its currency, gl 1 when the total is "at least" (summed from rounds found),
 # gd date of the latest round found, gu that article. Empty when no round was found.
+# gi: the company's backers named by public evidence (Y Combinator, investors' own portfolio pages), joined by "|".
+INVESTORS = Path(__file__).resolve().parent.parent / "data" / "vc_investors.json"
+
+
+def investor_hosts() -> dict[str, str]:
+    """registrable domain of an investor's site -> investor name (from data/vc_investors.json)."""
+    if not INVESTORS.exists():
+        return {}
+    out = {}
+    for name, v in json.loads(INVESTORS.read_text())["investors"].items():
+        for page in v.get("pages", []) + ([f"https://{v['detail'][0]}/"] if v.get("detail") else []):
+            d = startups.registrable(page)
+            if d:
+                out.setdefault(d, name)
+    return out
+
+
+def backers_of(c: dict, hosts: dict[str, str]) -> list[dict]:
+    """[{"name", "url"}] from the company's public evidence; Y Combinator carries its batch when known."""
+    out, seen = [], set()
+    for ev in c.get("evidence") or []:
+        name = hosts.get(startups.registrable(ev.split(" ")[0])) if ev.startswith("http") else None
+        if not name or name in seen:
+            continue
+        seen.add(name)
+        b = {"name": name, "url": ev.split(" ")[0]}
+        if name == "Y Combinator" and c.get("yc_batch"):
+            b["batch"] = c["yc_batch"]
+        out.append(b)
+    return out
 FUNDING = Path(__file__).resolve().parent.parent / "data" / "funding_eu.json"
 
 
@@ -73,7 +103,9 @@ def funding_of() -> tuple[dict, dict]:
 BASIS = ("A company is listed when it is headquartered in Europe and backed by venture investors: shown on an investor's "
          "own public portfolio page or Y Combinator's directory (the evidence URL is given), or listed in Seedtable's "
          "startup database with a disclosed round from pre-seed to growth and USD 1M or more raised (evidence 'Seedtable'). "
-         "Roles are read from each company's own careers system; collected is not the same as confirmed open.")
+         "Roles are read from each company's own careers system; collected is not the same as confirmed open. "
+         "Companies with backing 'listed' are startups Seedtable lists with no disclosed round: included for their roles, "
+         "not claimed as VC-backed.")
 
 
 BASIS_WORLD = ("A company is listed when it is backed by venture investors: shown on Y Combinator's public directory or an investor's "
@@ -111,6 +143,8 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     dropped_boards: set = set()
     per_company: dict[str, int] = {}
     fund, round_urls = funding_of()
+    hosts = investor_hosts()
+    backers = {c["domain"]: backers_of(c, hosts) for c in doc.get("companies", [])}
 
     def ftail(dom):
         f = fund.get(dom) or {}
@@ -141,7 +175,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
             r = list(r)
             r = shards.complete(r)[:len(shards.FIELDS)]   # stored rows lacking newer label columns get them; industry is filled below
             r[1] = cache[r[1]]
-            rows.append(r + [c["domain"]] + ftail(c["domain"]))
+            rows.append(r + [c["domain"]] + ftail(c["domain"]) + ["|".join(b["name"] for b in backers.get(c["domain"], []))])
             per_company[c["domain"]] = per_company.get(c["domain"], 0) + 1
     rows.sort(key=lambda r: (shards.norm(r[1]), r[0].lower(), r[5]))
     # industry: a reader's hand label first, then public evidence (vcindustry: the funding article's description, YC tags),
@@ -166,11 +200,14 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
         if evidence == ["Seedtable"] and round_urls.get(c["domain"]):
             evidence = round_urls[c["domain"]][:2]      # a public article on its funding round replaces "Seedtable"
         entry = {"name": c.get("name"), "domain": c["domain"], "country": c.get("country") or "", "hq_country": c.get("country") or "",
-                 "evidence": evidence, "boards": boards, "roles": per_company.get(c["domain"], 0)}
+                 "evidence": evidence, "boards": boards, "roles": per_company.get(c["domain"], 0),
+                 "backing": c.get("backing") or "vc"}
         if fund.get(c["domain"]):
             entry["funding"] = fund[c["domain"]]
         if vcin.get(c["domain"]):
             entry["industry"] = vcin[c["domain"]]      # code, source, evidence phrase and its URL
+        if backers.get(c["domain"]):
+            entry["backers"] = backers[c["domain"]]
         companies.append(entry)
     counts = dict(doc.get("counts") or {})
     counts.update({"companies_with_careers_system": len(companies),
@@ -180,6 +217,8 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
                    "industry_rows_tagged": sum(1 for r in rows if r[industry.IN] not in ("", industry.OTHER, industry.NOT_STATED)),
                    "industry_from_public_evidence": {"companies": sum(1 for c in companies if c.get("industry")), "rows": vc_rows},
                    "evidence_public": sum(1 for c in companies if c["evidence"] != ["Seedtable"]),
+                   "companies_with_backers": sum(1 for c in companies if c.get("backers")),
+                   "companies_listed_not_vc": sum(1 for c in companies if c.get("backing") == "listed"),
                    "evidence_seedtable_only": sum(1 for c in companies if c["evidence"] == ["Seedtable"]),
                    "companies_with_stage": sum(1 for c in companies if (c.get("funding") or {}).get("stage")),
                    "companies_with_total": sum(1 for c in companies if (c.get("funding") or {}).get("total"))})

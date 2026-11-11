@@ -100,3 +100,32 @@ class TestWorld(unittest.TestCase):
         keep = [l for l in src.splitlines() if "manifest.json|tenants.json.gz" in l][0]
         self.assertIn("vc-eu.json.gz", keep)
         self.assertIn("vc-world.json.gz", keep)
+
+
+class TestCareersPageList(unittest.TestCase):
+    PAGE = """<a href="https://docs.google.com/document/d/abc/edit"><p>AI Forward Deployed Engineer</p><div><p>Lisbon</p></div><p>Learn more</p></a>
+    <a href="https://docs.google.com/document/d/abc/edit"><p>AI Forward Deployed Engineer</p><div><p>Porto</p></div></a>
+    <a href="https://docs.google.com/document/d/xyz/edit"><p>Head of Private Equity</p><p>London</p></a>
+    <a href="/features/driver-app">Driver App</a><a href="/apps/lcm/">License and Contracts Manager</a>
+    <a href="/careers">Careers</a><a href="/partners/">Partner Program</a>
+    <a href="https://careers.example.co/jobs/1-pmm"><span>Product Marketing Manager | Marketing | London</span></a>"""
+
+    def test_roles_found_and_product_links_ignored(self):
+        from jobalfred_index.adapters import pagelist
+        es = pagelist.entries(self.PAGE, "https://www.example.ai/careers")
+        got = {(e["title"], tuple(e["locs"])) for e in es}
+        self.assertEqual(got, {("AI Forward Deployed Engineer", ("Lisbon", "Porto")), ("Head of Private Equity", ("London",)),
+                               ("Product Marketing Manager", ("London",))})
+        jobs = pagelist.parse(self.PAGE, "https://www.example.ai/careers", {"key": "example.ai/careers", "name": "Example"})
+        self.assertEqual({j.cc for j in jobs}, {"PT", "GB"})
+
+
+class TestBackers(unittest.TestCase):
+    def test_backers_from_evidence(self):
+        from jobalfred_index import vceu
+        hosts = {"ycombinator.com": "Y Combinator", "sequoiacap.com": "Sequoia Capital"}
+        c = {"domain": "a.io", "yc_batch": "W24", "evidence": ["https://www.ycombinator.com/companies/a",
+                                                             "https://sequoiacap.com/our-companies/", "Seedtable",
+                                                             "https://www.eu-startups.com/2026/01/a-raises/"]}
+        self.assertEqual(vceu.backers_of(c, hosts), [{"name": "Y Combinator", "url": "https://www.ycombinator.com/companies/a", "batch": "W24"},
+                                                     {"name": "Sequoia Capital", "url": "https://sequoiacap.com/our-companies/"}])

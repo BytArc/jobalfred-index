@@ -112,6 +112,12 @@ class TestProbe(unittest.TestCase):
         t = res["tenants"][0]
         self.assertEqual((t["ats"], t["data"]["pages"]), ("jsonld", ["https://acme.example/careers"]))
 
+    def test_guessed_paths_stay_on_the_company_domain(self):
+        c = FakeClient({"https://a.example/": (200, "<p>hi</p>"), "https://a.example/join-us": (200, "<h1>Careers</h1>")})
+        res = startups.probe_company(c, "a.example")
+        self.assertEqual((res["status"], res["careers"]), ("careers_no_ats", "https://a.example/join-us"))
+        self.assertIn("https://careers.a.example/", c.asked)
+
     def test_statuses(self):
         self.assertEqual(startups.probe_company(FakeClient({"https://a.example/": (403, "")}), "a.example")["status"], "site_blocked")
         self.assertEqual(startups.probe_company(FakeClient({"https://a.example/": (-1, "")}), "a.example")["status"], "site_robots")

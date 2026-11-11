@@ -26,78 +26,11 @@ OUT = ROOT / "work" / "vc_portfolios.json"
 
 # Large, active European venture investors, each with the portfolio page(s) it publishes. Pages that paginate list
 # every page we read. A page that serves its list only through JavaScript yields nothing and is reported as such.
-INVESTORS: dict[str, list[str]] = {
-    "Index Ventures": ["https://www.indexventures.com/companies/"],
-    "Accel": ["https://www.accel.com/relationships"],
-    "Balderton Capital": ["https://www.balderton.com/portfolio", "https://www.balderton.com/companies/"],
-    "Atomico": ["https://atomico.com/portfolio"],
-    "Northzone": ["https://northzone.com/portfolio/"],
-    "Creandum": ["https://creandum.com/portfolio/", "https://creandum.com/"],
-    "EQT Ventures": ["https://eqtgroup.com/ventures/portfolio", "https://eqtventures.com/portfolio/"],
-    "Lakestar": ["https://www.lakestar.com/portfolio"],
-    "Earlybird": ["https://earlybird.com/companies/"],
-    "HV Capital": ["https://www.hvcapital.com/portfolio"],
-    "Point Nine": ["https://www.pointnine.com/companies", "https://www.pointnine.com/"],
-    "Seedcamp": ["https://seedcamp.com/companies/"],
-    "LocalGlobe": ["https://localglobe.vc/", "https://localglobe.vc/portfolio"],
-    "Notion Capital": ["https://www.notion.vc/portfolio"],
-    "Cherry Ventures": ["https://www.cherry.vc/companies", "https://www.cherry.vc/"],
-    "Partech": ["https://partechpartners.com/companies"],
-    "Speedinvest": ["https://www.speedinvest.com/portfolio"],
-    "Project A": ["https://www.project-a.com/portfolio"],
-    "Kima Ventures": ["https://www.kimaventures.com/portfolio"],
-    "Felix Capital": ["https://www.felixcap.com/companies", "https://www.felixcap.com/"],
-    "Octopus Ventures": ["https://octopusventures.com/portfolio/"],
-    "Dawn Capital": ["https://www.dawncapital.com/companies"],
-    "Highland Europe": ["https://www.highlandeurope.com/companies/"],
-    "Target Global": ["https://www.targetglobal.vc/portfolio"],
-    "Frontline Ventures": ["https://www.frontline.vc/companies"],
-    "Mosaic Ventures": ["https://www.mosaicventures.com/portfolio"],
-    "Plural": ["https://www.plural.vc/portfolio", "https://www.plural.vc/"],
-    "Alven": ["https://www.alven.co/portfolio"],
-    "Elaia": ["https://www.elaia.com/portfolio"],
-    "Global Founders Capital": ["https://www.globalfounders.vc/companies", "https://www.globalfounders.vc/"],
-    "Molten Ventures": ["https://www.moltenventures.com/portfolio"],
-    "MMC Ventures": ["https://mmc.vc/portfolio/"],
-    "Seaya": ["https://seaya.vc/portfolio/"],
-    "Kibo Ventures": ["https://kiboventures.com/portfolio/"],
-    "Indico Capital Partners": ["https://www.indicocapital.com/portfolio"],
-    "byFounders": ["https://byfounders.vc/portfolio"],
-    "Inventure": ["https://www.inventure.vc/portfolio"],
-    "Picus Capital": ["https://www.picuscap.com/portfolio"],
-    "Visionaries Club": ["https://www.visionaries.vc/portfolio"],
-    "Heartcore Capital": ["https://www.heartcore.com/companies"],
-    "Hoxton Ventures": ["https://hoxtonventures.com/portfolio/"],
-    "Connect Ventures": ["https://www.connectventures.co/companies"],
-    "firstminute capital": ["https://www.firstminute.capital/portfolio"],
-    "Fly Ventures": ["https://fly.vc/portfolio"],
-    "Peak Capital": ["https://peak.capital/portfolio"],
-    "Hummingbird Ventures": ["https://hummingbird.vc/portfolio"],
-    "Maki.vc": ["https://www.maki.vc/portfolio"],
-    "Lightspeed": ["https://lsvp.com/portfolio/"],
-    "General Catalyst": ["https://www.generalcatalyst.com/portfolio"],
-}
-# Investors whose list page is drawn by JavaScript but who publish one page per company in their sitemap:
-# (site host, path pattern of a company page). Each company page is read and its outbound website kept.
-DETAIL: dict[str, tuple[str, str]] = {
-    "Index Ventures": ("www.indexventures.com", r"/companies/[^/]+/?$"),
-    "Accel": ("www.accel.com", r"/companies/[^/]+/?$"),
-    "Earlybird": ("earlybird.com", r"/companies/[^/]+/?$"),
-    "Dawn Capital": ("dawncapital.com", r"/companies/[^/]+/?$"),
-    "Highland Europe": ("www.highlandeurope.com", r"/company/[^/]+/?$"),
-    "Heartcore Capital": ("www.heartcore.com", r"/companies/[^/]+/?$"),
-    "Connect Ventures": ("www.connectventures.co", r"/companies/[^/]+/?$"),
-    "HV Capital": ("www.hvcapital.com", r"/portfolio/[^/]+/?$"),
-    "Notion Capital": ("www.notion.vc", r"/portfolio/[^/]+/?$"),
-    "Partech": ("partechpartners.com", r"/companies/[^/]+/?$"),
-    "Speedinvest": ("www.speedinvest.com", r"/portfolio/[^/]+/?$"),
-    "Target Global": ("www.targetglobal.vc", r"/portfolio/[^/]+/?$"),
-    "Alven": ("www.alven.co", r"/portfolio/[^/]+/?$"),
-    "Molten Ventures": ("www.moltenventures.com", r"/portfolio/[^/]+/?$"),
-    "Northzone": ("northzone.com", r"/portfolio/[^/]+/?$"),
-    "Lightspeed": ("lsvp.com", r"/company/[^/]+/?$"),
-    "General Catalyst": ("www.generalcatalyst.com", r"/companies/[^/]+/?$"),
-}
+# Investors and their portfolio pages live in data/vc_investors.json (also used to name a company's backers).
+_INV = json.loads((ROOT / "data" / "vc_investors.json").read_text())["investors"]
+INVESTORS: dict[str, list[str]] = {k: v["pages"] for k, v in _INV.items() if k != "Y Combinator"}
+# Investors whose list page is drawn by JavaScript but who publish one page per company in their sitemap
+DETAIL: dict[str, tuple[str, str]] = {k: tuple(v["detail"]) for k, v in _INV.items() if v.get("detail")}
 DETAIL_SKIP = re.compile(r"(?i)/(portfolio|companies|company)/(exits?|country|focus-area|sector|stage|page|category|all|filter)s?/?$")
 
 SKIP_HOSTS = re.compile(

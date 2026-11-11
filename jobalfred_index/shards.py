@@ -98,7 +98,7 @@ def dedupe(rows_iter):
 
 
 TENANT_ATS = {"workday", "greenhouse", "lever", "ashby", "oracle", "workable", "recruitee", "bamboohr", "breezy",
-              "teamtailor", "gupy", "jazzhr", "rippling", "comeet", "pinpoint", "personio", "smartrecruiters", "join", "jsonld", "gem"}
+              "teamtailor", "gupy", "jazzhr", "rippling", "comeet", "pinpoint", "personio", "smartrecruiters", "join", "jsonld", "gem", "careers-page"}
 
 
 def fill_country(rows: list[list]) -> int:

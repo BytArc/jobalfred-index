@@ -104,6 +104,17 @@ def cmd_companies() -> dict:
                         "last_round": (c.get("lastFundingDate") or "")[:10], "total_funding": c.get("totalFunding"),
                         "seedtable_id": c.get("id"), "hq_from": "seedtable"})
     counts["seedtable_domains"] = sum(1 for r in out.values() if "seedtable" in r["sources"])
+    # country listings without the funding filter (work/seedtable_listings/<CC>-*.json): a country's startups that Seedtable
+    # lists with no disclosed round. Added as backing "listed" (not claimed as VC-backed) so their roles are read too.
+    for f in sorted(glob.glob(str(WORK / "seedtable_listings" / "*.json"))):
+        for c in json.load(open(f)).get("data", []):
+            d = site_domain(c.get("website"))
+            if not d or d in out or c.get("status") not in (None, "active"):
+                continue
+            out[d] = {"domain": d, "name": c.get("name"), "website": c.get("website"), "sources": ["seedtable-listing"],
+                      "country": cc_of(c.get("country")), "city": c.get("city"), "stage": c.get("fundingStage"),
+                      "seedtable_id": c.get("id"), "hq_from": "seedtable", "backing": "listed"}
+            counts["seedtable_listing_added"] += 1
 
     yc_path = WORK / "yc_companies.json"
     if yc_path.exists():
@@ -180,7 +191,16 @@ def cmd_world(countries: list[str]) -> dict:
         if c.get("country") not in countries or c.get("ycdc_status") != "Active":
             continue
         d = site_domain(c.get("website"))
-        if not d or d in have:
+        if not d:
+            continue
+        if d in have:                                  # already listed: only gains investor pages read since
+            rec = have[d]
+            for inv, page in by_dom.get(d, []):
+                if page not in rec.setdefault("evidence", []):
+                    rec["evidence"].append(page)
+                    rec.setdefault("investors", []).append(inv)
+                    if "portfolio" not in rec["sources"]:
+                        rec["sources"].append("portfolio")
             continue
         rec = {"domain": d, "name": c.get("name"), "website": c.get("website"), "country": c["country"], "sources": ["yc"],
                "hq_from": "yc", "yc": {"slug": slug, "batch": c.get("batch"), "country": c["country"], "tags": c.get("tags")},
@@ -424,7 +444,10 @@ def cmd_publish() -> dict:
             tenants.setdefault((t["ats"], t["key"]), t.get("data") or {})
         if ts and r["domain"] not in startups.EXCLUDE_DOMAINS:
             entry = {"name": r.get("name"), "domain": r["domain"], "country": r.get("country") or "",
-                     "evidence": vc_evidence(r) or ["Seedtable"], "tenants": [[t["ats"], t["key"]] for t in ts]}
+                     "evidence": vc_evidence(r) or ["Seedtable"], "tenants": [[t["ats"], t["key"]] for t in ts],
+                     "backing": "listed" if r.get("backing") == "listed" and not vc_evidence(r) else "vc"}
+            if (r.get("yc") or {}).get("batch"):
+                entry["yc_batch"] = r["yc"]["batch"]       # public, from the company's YC page
             named = [[t["ats"], t["key"]] for t in ts if t.get("named")]
             if named:
                 entry["named"] = named

@@ -278,7 +278,7 @@ def probe_company(client, website: str, max_pages: int = 4) -> dict:
         res["note"] = f"HTTP {r.status} {r.reason}".strip()
         return res
     final = r.url or home
-    found = {"tenants": {}, "other": {}, "linkedin": False, "jsonld_pages": [], "custom": {}}
+    found = {"tenants": {}, "other": {}, "linkedin": False, "jsonld_pages": [], "custom": {}, "pagelist": ""}
 
     def absorb(d: dict, url: str):
         for k, v in d["tenants"].items():
@@ -294,8 +294,11 @@ def probe_company(client, website: str, max_pages: int = 4) -> dict:
     absorb(detect(r.text, final), final)
     links = careers_links(r.text, final)
     tried = set()
-    guesses = [] if links else [urljoin(final, "/careers"), urljoin(final, "/jobs")]
-    for u in (links + guesses)[:max_pages]:
+    dom = registrable(final)
+    # no careers link on the homepage: the common places, before calling it "no careers page"
+    guesses = [] if links else [urljoin(final, p) for p in ("/careers", "/jobs", "/join", "/join-us", "/company/careers",
+                                                            "/about/careers")] + [f"https://careers.{dom}/", f"https://jobs.{dom}/"]
+    for u in (links[:max_pages] if links else guesses):
         if u in tried or u.rstrip("/") == final.rstrip("/"):
             continue
         tried.add(u)
@@ -310,11 +313,16 @@ def probe_company(client, website: str, max_pages: int = 4) -> dict:
         res["pages"] += 1
         if p.status != 200:
             continue
+        if not links and registrable(p.url or u) != dom and not list(classify(p.url or u)):
+            continue                     # a guessed path that redirects to another company's site is not this one's page
         res["careers"] = res["careers"] or (p.url or u)
         d = detect(p.text, p.url or u)
         absorb(d, p.url or u)
         if not d["tenants"] and not d["other"] and not d["jsonld"]:
-            # careers page with no ATS in sight: read one job page for JobPosting markup
+            # careers page with no ATS in sight: roles listed as plain links (adapters/pagelist), else JobPosting markup
+            from .adapters import pagelist
+            if pagelist.entries(p.text, p.url or u):
+                found["pagelist"] = p.url or u
             jl = _job_links(p.text, p.url or u, 3)
             if jl:
                 q = client.get(jl[0], max_bytes=MAX_PAGE)
@@ -342,6 +350,10 @@ def probe_company(client, website: str, max_pages: int = 4) -> dict:
         res["tenants"] = [{"ats": "jsonld", "key": host_of(page) + urlsplit(page).path.rstrip("/"),
                            "data": {"host": host_of(page), "pages": [page]}}]
         res["status"] = "jsonld"
+    elif found["pagelist"]:
+        page = found["pagelist"]
+        res["tenants"] = [{"ats": "pagelist", "key": host_of(page) + urlsplit(page).path.rstrip("/"), "data": {"pages": [page]}}]
+        res["status"] = "careers_page_list"
     elif found["other"]:
         res["status"] = "ats_no_adapter"
     elif res["careers"] and found["linkedin"]:

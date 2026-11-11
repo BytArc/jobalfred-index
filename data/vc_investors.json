@@ -1,0 +1,464 @@
+{
+ "about": "Investors whose own public portfolio pages are read (scripts/vc_portfolios.py); a company listed there is tagged with the investor (vc-eu and vc-world backers). detail = [host, path pattern] of one-page-per-company sitemaps.",
+ "investors": {
+  "Index Ventures": {
+   "pages": [
+    "https://www.indexventures.com/companies/"
+   ],
+   "detail": [
+    "www.indexventures.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Accel": {
+   "pages": [
+    "https://www.accel.com/relationships"
+   ],
+   "detail": [
+    "www.accel.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Balderton Capital": {
+   "pages": [
+    "https://www.balderton.com/portfolio",
+    "https://www.balderton.com/companies/"
+   ]
+  },
+  "Atomico": {
+   "pages": [
+    "https://atomico.com/portfolio"
+   ]
+  },
+  "Northzone": {
+   "pages": [
+    "https://northzone.com/portfolio/"
+   ],
+   "detail": [
+    "northzone.com",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Creandum": {
+   "pages": [
+    "https://creandum.com/portfolio/",
+    "https://creandum.com/"
+   ]
+  },
+  "EQT Ventures": {
+   "pages": [
+    "https://eqtgroup.com/ventures/portfolio",
+    "https://eqtventures.com/portfolio/"
+   ]
+  },
+  "Lakestar": {
+   "pages": [
+    "https://www.lakestar.com/portfolio"
+   ]
+  },
+  "Earlybird": {
+   "pages": [
+    "https://earlybird.com/companies/"
+   ],
+   "detail": [
+    "earlybird.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "HV Capital": {
+   "pages": [
+    "https://www.hvcapital.com/portfolio"
+   ],
+   "detail": [
+    "www.hvcapital.com",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Point Nine": {
+   "pages": [
+    "https://www.pointnine.com/companies",
+    "https://www.pointnine.com/"
+   ]
+  },
+  "Seedcamp": {
+   "pages": [
+    "https://seedcamp.com/companies/"
+   ]
+  },
+  "LocalGlobe": {
+   "pages": [
+    "https://localglobe.vc/",
+    "https://localglobe.vc/portfolio"
+   ]
+  },
+  "Notion Capital": {
+   "pages": [
+    "https://www.notion.vc/portfolio"
+   ],
+   "detail": [
+    "www.notion.vc",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Cherry Ventures": {
+   "pages": [
+    "https://www.cherry.vc/companies",
+    "https://www.cherry.vc/"
+   ]
+  },
+  "Partech": {
+   "pages": [
+    "https://partechpartners.com/companies"
+   ],
+   "detail": [
+    "partechpartners.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Speedinvest": {
+   "pages": [
+    "https://www.speedinvest.com/portfolio"
+   ],
+   "detail": [
+    "www.speedinvest.com",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Project A": {
+   "pages": [
+    "https://www.project-a.com/portfolio"
+   ]
+  },
+  "Kima Ventures": {
+   "pages": [
+    "https://www.kimaventures.com/portfolio"
+   ]
+  },
+  "Felix Capital": {
+   "pages": [
+    "https://www.felixcap.com/companies",
+    "https://www.felixcap.com/"
+   ]
+  },
+  "Octopus Ventures": {
+   "pages": [
+    "https://octopusventures.com/portfolio/"
+   ]
+  },
+  "Dawn Capital": {
+   "pages": [
+    "https://www.dawncapital.com/companies"
+   ],
+   "detail": [
+    "dawncapital.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Highland Europe": {
+   "pages": [
+    "https://www.highlandeurope.com/companies/"
+   ],
+   "detail": [
+    "www.highlandeurope.com",
+    "/company/[^/]+/?$"
+   ]
+  },
+  "Target Global": {
+   "pages": [
+    "https://www.targetglobal.vc/portfolio"
+   ],
+   "detail": [
+    "www.targetglobal.vc",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Frontline Ventures": {
+   "pages": [
+    "https://www.frontline.vc/companies"
+   ]
+  },
+  "Mosaic Ventures": {
+   "pages": [
+    "https://www.mosaicventures.com/portfolio"
+   ]
+  },
+  "Plural": {
+   "pages": [
+    "https://www.plural.vc/portfolio",
+    "https://www.plural.vc/"
+   ]
+  },
+  "Alven": {
+   "pages": [
+    "https://www.alven.co/portfolio"
+   ],
+   "detail": [
+    "www.alven.co",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Elaia": {
+   "pages": [
+    "https://www.elaia.com/portfolio"
+   ]
+  },
+  "Global Founders Capital": {
+   "pages": [
+    "https://www.globalfounders.vc/companies",
+    "https://www.globalfounders.vc/"
+   ]
+  },
+  "Molten Ventures": {
+   "pages": [
+    "https://www.moltenventures.com/portfolio"
+   ],
+   "detail": [
+    "www.moltenventures.com",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "MMC Ventures": {
+   "pages": [
+    "https://mmc.vc/portfolio/"
+   ]
+  },
+  "Seaya": {
+   "pages": [
+    "https://seaya.vc/portfolio/"
+   ]
+  },
+  "Kibo Ventures": {
+   "pages": [
+    "https://kiboventures.com/portfolio/"
+   ]
+  },
+  "Indico Capital Partners": {
+   "pages": [
+    "https://www.indicocapital.com/portfolio"
+   ]
+  },
+  "byFounders": {
+   "pages": [
+    "https://byfounders.vc/portfolio"
+   ]
+  },
+  "Inventure": {
+   "pages": [
+    "https://www.inventure.vc/portfolio"
+   ]
+  },
+  "Picus Capital": {
+   "pages": [
+    "https://www.picuscap.com/portfolio"
+   ]
+  },
+  "Visionaries Club": {
+   "pages": [
+    "https://www.visionaries.vc/portfolio"
+   ]
+  },
+  "Heartcore Capital": {
+   "pages": [
+    "https://www.heartcore.com/companies"
+   ],
+   "detail": [
+    "www.heartcore.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Hoxton Ventures": {
+   "pages": [
+    "https://hoxtonventures.com/portfolio/"
+   ]
+  },
+  "Connect Ventures": {
+   "pages": [
+    "https://www.connectventures.co/companies"
+   ],
+   "detail": [
+    "www.connectventures.co",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "firstminute capital": {
+   "pages": [
+    "https://www.firstminute.capital/portfolio"
+   ]
+  },
+  "Fly Ventures": {
+   "pages": [
+    "https://fly.vc/portfolio"
+   ]
+  },
+  "Peak Capital": {
+   "pages": [
+    "https://peak.capital/portfolio"
+   ]
+  },
+  "Hummingbird Ventures": {
+   "pages": [
+    "https://hummingbird.vc/portfolio"
+   ]
+  },
+  "Maki.vc": {
+   "pages": [
+    "https://www.maki.vc/portfolio"
+   ]
+  },
+  "Lightspeed": {
+   "pages": [
+    "https://lsvp.com/portfolio/"
+   ],
+   "detail": [
+    "lsvp.com",
+    "/company/[^/]+/?$"
+   ]
+  },
+  "General Catalyst": {
+   "pages": [
+    "https://www.generalcatalyst.com/portfolio"
+   ],
+   "detail": [
+    "www.generalcatalyst.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Sequoia Capital": {
+   "pages": [
+    "https://sequoiacap.com/our-companies/"
+   ],
+   "detail": [
+    "sequoiacap.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Andreessen Horowitz (a16z)": {
+   "pages": [
+    "https://a16z.com/portfolio/"
+   ]
+  },
+  "Founders Fund": {
+   "pages": [
+    "https://foundersfund.com/portfolio/"
+   ],
+   "detail": [
+    "foundersfund.com",
+    "/company/[^/]+/?$"
+   ]
+  },
+  "Kleiner Perkins": {
+   "pages": [
+    "https://www.kleinerperkins.com/partnerships/"
+   ]
+  },
+  "GV": {
+   "pages": [
+    "https://www.gv.com/portfolio/"
+   ]
+  },
+  "Greylock": {
+   "pages": [
+    "https://greylock.com/portfolio/"
+   ],
+   "detail": [
+    "greylock.com",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "NEA": {
+   "pages": [
+    "https://www.nea.com/portfolio"
+   ],
+   "detail": [
+    "www.nea.com",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Bessemer Venture Partners": {
+   "pages": [
+    "https://www.bvp.com/companies"
+   ],
+   "detail": [
+    "www.bvp.com",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Insight Partners": {
+   "pages": [
+    "https://www.insightpartners.com/portfolio/"
+   ],
+   "detail": [
+    "www.insightpartners.com",
+    "/portfolio/[^/]+/?$"
+   ]
+  },
+  "Khosla Ventures": {
+   "pages": [
+    "https://www.khoslaventures.com/portfolio"
+   ]
+  },
+  "Thrive Capital": {
+   "pages": [
+    "https://thrivecap.com/companies"
+   ]
+  },
+  "First Round Capital": {
+   "pages": [
+    "https://www.firstround.com/companies/"
+   ],
+   "detail": [
+    "www.firstround.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Union Square Ventures": {
+   "pages": [
+    "https://www.usv.com/companies/"
+   ]
+  },
+  "Redpoint Ventures": {
+   "pages": [
+    "https://www.redpoint.com/companies/"
+   ],
+   "detail": [
+    "www.redpoint.com",
+    "/companies/[^/]+/?$"
+   ]
+  },
+  "Battery Ventures": {
+   "pages": [
+    "https://www.battery.com/companies/"
+   ],
+   "detail": [
+    "www.battery.com",
+    "/company/[^/]+/?$"
+   ]
+  },
+  "IVP": {
+   "pages": [
+    "https://www.ivp.com/portfolio/"
+   ]
+  },
+  "Spark Capital": {
+   "pages": [
+    "https://www.sparkcapital.com/portfolio"
+   ]
+  },
+  "Lux Capital": {
+   "pages": [
+    "https://www.luxcapital.com/companies"
+   ]
+  },
+  "Felicis": {
+   "pages": [
+    "https://www.felicis.com/companies"
+   ]
+  },
+  "Y Combinator": {
+   "pages": [
+    "https://www.ycombinator.com/companies/"
+   ],
+   "note": "read by scripts/yc_directory.py, one page per company"
+  }
+ }
+}

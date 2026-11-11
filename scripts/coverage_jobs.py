@@ -99,7 +99,9 @@ def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 200
     seed = sys.argv[2] if len(sys.argv) > 2 else time.strftime("jobs-%Y-%m-%d")
     vc_path = Path(sys.argv[3]) if len(sys.argv) > 3 else ROOT / "dist-vc" / "vc-eu.json.gz"
-    pub = json.loads((ROOT / "data" / "startups_eu.json").read_text())
+    import os
+    region = os.environ.get("REGION", "eu")
+    pub = json.loads((ROOT / "data" / ("startups_world.json" if region == "world" else "startups_eu.json")).read_text())
     body = json.loads(gzip.decompress(vc_path.read_bytes()))
     in_file = {c["domain"]: c for c in body["companies"]}
     probe = json.loads((ROOT / "work" / "startups_probe.json").read_text()) if (ROOT / "work" / "startups_probe.json").exists() else {}
@@ -113,6 +115,13 @@ def main():
     finally:
         pool.close()          # workers exit normally, so each closes its browser
         pool.join()
+    PENDING = {"personio", "pinpoint", "smartrecruiters"}
+    for r in recs:
+        if r["kind"] in ("seen_page", "seen_board") and r.get("seen"):
+            ats = {a for a, _ in (r.get("systems") or [])}
+            r["behind"] = ("permission_pending" if ats & PENDING else
+                           "linkedin_only" if r.get("status") == "linkedin_only" else
+                           "not_read_yet")
     known = [r for r in recs if r["kind"] != "unknown" and r.get("seen") is not None]
     seen = sum(r["seen"] for r in known)
     ours = sum(min(r.get("ours") or 0, r["seen"]) for r in known)
@@ -127,7 +136,18 @@ def main():
         "roles_seen_by_kind": {k: sum(r["seen"] for r in known if r["kind"] == k) for k in ("read", "seen_board", "seen_page")},
         "companies_by_kind": dict(__import__("collections").Counter(r["kind"] for r in recs)),
     }
-    (ROOT / "work" / f"coverage-jobs-{seed}.json").write_text(json.dumps({"summary": out, "companies": recs}, indent=1))
+    behind = __import__("collections").Counter()
+    for r in known:
+        if r.get("behind"):
+            behind[r["behind"]] += r["seen"]
+    out["roles_not_covered_by_reason"] = dict(behind)
+    # the ceiling: roles we could read within the rules = all seen minus those behind a permission we do not have
+    # (LinkedIn is never read). Companies whose site we may not open are counted, not estimated.
+    blocked = behind.get("permission_pending", 0) + behind.get("linkedin_only", 0)
+    out["ceiling_pct_of_seen_roles"] = round(100 * (seen - blocked) / max(1, seen), 1)
+    out["companies_we_may_not_open"] = out["companies_unknown"]
+    out["region"] = region
+    (ROOT / "work" / f"coverage-jobs-{region}-{seed}.json").write_text(json.dumps({"summary": out, "companies": recs}, indent=1))
     print(json.dumps(out, indent=1))
 
 
