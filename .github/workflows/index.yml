@@ -38,7 +38,7 @@ jobs:
           gh release download index-latest --pattern homepages.json.gz --dir data/industry --clobber || echo "no earlier homepage cache; using the committed one"
 
       - name: Build the index
-        run: python -u -m jobalfred_index run --minutes 270 --discover-minutes 40 --crawls 4 --out dist
+        run: python -u -m jobalfred_index run --minutes 270 --discover-minutes 40 --crawls 4 --out dist --extra-tenants data/companies/tenants.json
 
       - name: Publish release assets
         run: bash scripts/publish_release.sh dist data/tenants.json.gz work
