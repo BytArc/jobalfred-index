@@ -68,6 +68,7 @@ PATTERNS: list[tuple[str, re.Pattern, callable]] = [
     ("lever-eu", re.compile(rf"https?://jobs\.eu\.lever\.co/({SLUG})", re.I), _gh),
     ("ashby", re.compile(rf"https?://jobs\.ashbyhq\.com/({SLUG})", re.I), _gh),
     ("join", re.compile(r"https?://(?:www\.)?join\.com/companies/([A-Za-z0-9][A-Za-z0-9_-]{0,80})", re.I), _gh),
+    ("gem", re.compile(r"https?://(?:jobs\.gem\.com|api\.gem\.com/job_board/v0)/([A-Za-z0-9][A-Za-z0-9_-]{0,80})", re.I), _gh),
     ("workable", re.compile(rf"https?://apply\.workable\.com/({SLUG})", re.I), _gh),
     ("smartrecruiters", re.compile(rf"https?://(?:jobs|careers)\.smartrecruiters\.com/({SLUG})", re.I), _gh),
     ("recruitee", re.compile(r"https?://([a-z0-9][a-z0-9-]{0,60})\.recruitee\.com", re.I), _sub),
@@ -111,9 +112,11 @@ def classify(url: str):
         if ats in ("oracle", "comeet", "successfactors"):
             yield ats, key, data
             continue
-        if low in BAD_TOKENS or len(low) < 2 or "." in low and ats in ("greenhouse", "lever", "lever-eu", "ashby", "workable", "smartrecruiters", "rippling", "join"):
+        if low in BAD_TOKENS or len(low) < 2 or "." in low and ats in ("greenhouse", "lever", "lever-eu", "ashby", "workable", "smartrecruiters", "rippling", "join", "gem"):
             continue
-        if ats in ("greenhouse", "lever", "lever-eu", "ashby", "workable", "smartrecruiters", "rippling", "join"):
+        if ats == "gem" and low in ("gem", "job_board", "embed", "static"):
+            continue
+        if ats in ("greenhouse", "lever", "lever-eu", "ashby", "workable", "smartrecruiters", "rippling", "join", "gem"):
             yield ats, (key if ats in ("smartrecruiters", "ashby") else low), data
         else:
             if low in ("www", "api", "app", "careers", "jobs", "support", "help", "blog", "status", "mail", "cdn", "static",

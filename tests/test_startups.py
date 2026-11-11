@@ -162,6 +162,18 @@ class TestNameCheck(unittest.TestCase):
         self.assertEqual(startups.verify_board(c, "lever", "mistral", "Mistral AI", "mistral.ai"), "unknown")
 
 
+class TestGem(unittest.TestCase):
+    def test_parse_and_classify(self):
+        from jobalfred_index.adapters import gem
+        data = json.loads((Path(__file__).parent / "fixtures" / "gem_job_posts.json").read_text())
+        jobs = gem.parse(data, {"key": "senndertechnologies-gmbh", "name": "sennder"})
+        self.assertEqual(len(jobs), len([x for x in data if x["first_published_at"] >= "2025-11-11"]))   # older than a year: dropped
+        self.assertEqual(jobs[0].company, "sennder")
+        self.assertTrue(jobs[0].url.startswith("https://jobs.gem.com/senndertechnologies-gmbh/"))
+        self.assertEqual(list(classify("https://jobs.gem.com/senndertechnologies-gmbh?embed=true")),
+                         [("gem", "senndertechnologies-gmbh", {})])
+
+
 class TestJoin(unittest.TestCase):
     def test_parse_saved_page(self):
         html = (Path(__file__).parent / "fixtures" / "join_company.html").read_text()

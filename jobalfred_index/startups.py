@@ -141,7 +141,6 @@ DETECT_ONLY = [
     ("softgarden", r"([a-z0-9][a-z0-9-]*)\.softgarden\.io"),
     ("dvinci", r"([a-z0-9][a-z0-9-]*)\.dvinci(?:-easy|-hr)?\.(?:com|de)"),
     ("jobvite", r"jobs\.jobvite\.com/([A-Za-z0-9_-]+)"),
-    ("gem", r"jobs\.gem\.com/([A-Za-z0-9_-]+)"),
     ("dover", r"app\.dover\.(?:io|com)/(?:jobs|apply)/([A-Za-z0-9_-]+)"),
     ("polymer", r"jobs\.polymer\.co/([A-Za-z0-9_-]+)"),
     ("wellfound", r"wellfound\.com/company/([A-Za-z0-9_-]+)"),

@@ -37,7 +37,7 @@ PROBE = WORK / "startups_probe.json"
 PRIVATE = WORK / "startups_eu_private.json"
 ROLES = WORK / "startups_roles.json"
 RELEASE_TENANTS = WORK / "release" / "tenants.json.gz"
-ADAPTED = {"join", "welcomekit"}   # recognised as detect-only by the probe, read by an adapter now
+ADAPTED = {"join", "welcomekit", "gem"}   # recognised as detect-only by the probe, read by an adapter now
 
 
 def adapted_tenant(name: str, key: str) -> dict:
@@ -320,6 +320,11 @@ def hq_in_europe(r: dict) -> bool:
     return (r.get("country") or "") in EUROPE or r.get("hq_from") == "seedtable" or (r.get("hq_from") == "cctld")
 
 
+def startups_ats_ok() -> set[str]:
+    from jobalfred_index.adapters import SOURCES
+    return set(SOURCES) | set(ROBOTS_BLOCKED_ATS)
+
+
 def cmd_publish() -> dict:
     doc = json.load(open(COMPANIES))
     probe = json.load(open(PROBE))
@@ -330,6 +335,7 @@ def cmd_publish() -> dict:
                 for k, v in sl.items():
                     if v == "yes" or k not in guess.get(dom, {}).get(ats, {}):
                         guess.setdefault(dom, {}).setdefault(ats, {})[k] = v
+    render = json.load(open(WORK / "render_probe.json")) if (WORK / "render_probe.json").exists() else {}
     # a board that answered 404/410 when read and never answered well is not published (it would be asked every day)
     gone = set()
     if ROLES.exists():
@@ -340,6 +346,17 @@ def cmd_publish() -> dict:
     for r in doc["companies"]:
         p = dict(probe.get(r["domain"]) or {})
         found_by = "page" if p.get("tenants") else ""
+        rp = render.get(r["domain"]) or {}
+        if rp.get("tenants") and not [t for t in p.get("tenants", []) if t["ats"] not in ROBOTS_BLOCKED_ATS]:
+            # systems the company's own careers page loads when opened in a browser (found once; read without one)
+            p["tenants"] = list(p.get("tenants", [])) + [t for t in rp["tenants"] if t["ats"] in startups_ats_ok()]
+            found_by = found_by or "render"
+        if rp.get("custom") and rp.get("careers") and not p.get("tenants"):
+            host = startups.host_of(rp["careers"])
+            p["tenants"] = [{"ats": a, "key": host, "data": {"host": host}} for a in rp["custom"]]
+            found_by = found_by or "render"
+        if rp.get("other") and not p.get("other"):
+            p["other"] = rp["other"]
         for ats, slugs in (guess.get(r["domain"]) or {}).items():
             for sl, verdict in slugs.items():
                 weak = sl == r["domain"].split(".")[0] and len(sl) < 5 and sl != startups._fold(r.get("name") or "")

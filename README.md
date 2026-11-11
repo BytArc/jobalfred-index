@@ -46,7 +46,11 @@ A tenant is dropped after three separate runs that answered 404 or 410.
 
 ## What it never touches
 
-- No login, no account, no CAPTCHA solving or bypass, no proxies, no IP rotation, no browser impersonation, no headless browser.
+- No login, no account, no CAPTCHA solving or bypass, no proxies, no IP rotation, no browser impersonation.
+- The daily runs use no browser. Discovery of European startups' careers systems may open a company's own careers page
+  once in a headless browser (`scripts/render_probe.py`) to see which careers system the page loads: robots.txt is
+  checked first, the browser sends our User-Agent, images and fonts are not loaded, and a bot check is left alone.
+  The system found is then read through its public endpoint like any other.
 - Not LinkedIn, Indeed, Glassdoor, Naukri, ZipRecruiter, Monster or any other job aggregator.
 - Nothing behind `robots.txt`: it is read for every host and obeyed, including `Crawl-delay`.
   Two discovery APIs (Common Crawl's index and its public data files, and crt.sh) are used as their operators publish them, one request at a time.
