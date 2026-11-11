@@ -53,7 +53,11 @@ def _label(domain: str) -> str:
 
 
 def index() -> dict:
-    """{'names': norm name -> group id, 'domains': registrable domain -> group id, 'groups': [group]}"""
+    """{'names': norm name -> [group ids], 'domains': registrable domain -> group id, 'groups': [group], 'boards': {(ats, board): group id}}
+
+    Two index members are one company when they share a Wikipedia article or a website (Airbus in the DAX and the CAC 40), never on a
+    name alone: Merck in the S&P 500 and Merck in the DAX are two companies. A curated member joins the index member whose name, alias or
+    website it shares (Google, alias Alphabet, is Alphabet in the S&P 500): its aliases are chosen by hand."""
     with _lock:
         if _idx:
             return _idx
@@ -71,30 +75,49 @@ def index() -> dict:
                 i = parent[i]
             return i
 
-        seen: dict[str, int] = {}
+        def union(keys_of):
+            seen: dict[str, int] = {}
+            for i, keys in keys_of:
+                for k in keys:
+                    if k in seen:
+                        parent[find(i)] = find(seen[k])
+                    else:
+                        seen[k] = i
+
+        def mnames(m):
+            return {norm(n) for n in [m["name"]] + list(m.get("aliases") or []) if len(norm(n)) >= 2}
+
+        def mdomain(m):
+            return industry.own_domain(["https://" + m["domain"] + "/"]) if m.get("domain") else ""
+
+        union((i, ({"w:" + m["wiki"]} if m.get("wiki") else set()) | ({"d:" + mdomain(m)} if mdomain(m) else set()))
+              for i, (code, m, cur, _) in enumerate(members))
+        by_key: dict[str, set[int]] = {}
         for i, (code, m, cur, _) in enumerate(members):
-            keys = {"n:" + norm(n) for n in [m["name"]] + list(m.get("aliases") or []) if len(norm(n)) >= 2}
-            if m.get("domain"):
-                keys.add("d:" + industry.own_domain(["https://" + m["domain"] + "/"]))
-            for k in keys:
-                if k in ("n:", "d:"):
-                    continue
-                if k in seen:
-                    parent[find(i)] = find(seen[k])
-                else:
-                    seen[k] = i
+            if not cur:
+                for k in {"n:" + n for n in mnames(m)} | ({"d:" + mdomain(m)} if mdomain(m) else set()):
+                    by_key.setdefault(k, set()).add(i)
+        for i, (code, m, cur, _) in enumerate(members):
+            if cur:
+                for k in {"n:" + n for n in mnames(m)} | ({"d:" + mdomain(m)} if mdomain(m) else set()):
+                    hits = {find(j) for j in by_key.get(k, ())}
+                    if len(hits) == 1:                # an alias shared by two different index companies joins neither
+                        parent[find(i)] = hits.pop()
         groups: dict[int, dict] = {}
         for i, (code, m, cur, lhq) in enumerate(members):
             g = groups.setdefault(find(i), {"codes": [], "names": set(), "domains": set(), "hq": "", "lhq": "", "curated": False, "name": m["name"]})
             if code not in g["codes"]:
                 g["codes"].append(code)
-            g["names"] |= {norm(n) for n in [m["name"]] + list(m.get("aliases") or []) if len(norm(n)) >= 2}
-            if m.get("domain"):
-                g["domains"].add(industry.own_domain(["https://" + m["domain"] + "/"]))
+            g["names"] |= mnames(m)
+            if mdomain(m):
+                g["domains"].add(mdomain(m))
             g["hq"] = g["hq"] or m.get("hq") or ""
             g["lhq"] = g["lhq"] or lhq
             g["curated"] = g["curated"] or cur
         out_groups, names, domains = [], {}, {}
+        gid_of = {}
+        for root_i, g in groups.items():
+            gid_of[root_i] = len(gid_of)
         for g in groups.values():
             g["codes"].sort(key=lambda c: order.get(c, 999))
             g["hq"] = g["hq"] or g["lhq"]
@@ -102,21 +125,24 @@ def index() -> dict:
             gid = len(out_groups)
             out_groups.append(g)
             for n in g["names"]:
-                names.setdefault(n, gid)
+                names.setdefault(n, []).append(gid)
             for d in g["domains"]:
                 domains.setdefault(d, gid)
-        # boards the probe found for a member (data/companies/tenants.json, each carrying the member's name): their rows belong to the
-        # member whatever name the careers system shows ("Johnson Controls International" on jci.wd5.myworkdayjobs.com)
+        # boards the probe found for a member (data/companies/tenants.json, each carrying the member's name and list): their rows belong
+        # to the member whatever name the careers system shows ("Johnson Controls International" on jci.wd5.myworkdayjobs.com)
         boards = {}
         tp = DATA / "tenants.json"
         if tp.exists():
             for t in json.loads(tp.read_text()).get("tenants", []):
                 ats = {"lever-eu": "lever"}.get(t["ats"], t["ats"])
-                gid = names.get(norm((t.get("data") or {}).get("name") or ""))
+                code = (t.get("source") or "").partition(":")[2]
+                cands = names.get(norm((t.get("data") or {}).get("name") or ""), [])
+                gid = next((g for g in cands if code in out_groups[g]["codes"]), cands[0] if len(cands) == 1 else None)
                 if gid is not None and ats not in ("jsonld", "pagelist", "careers-page"):
                     boards[(ats, norm(t["key"].split("|")[0].split(".")[0].split("/")[0]))] = gid
                     boards[(ats, "=" + norm(t["data"]["name"]))] = gid      # for postings whose URL does not name the board
-        _idx.update(names=names, domains=domains, groups=out_groups, boards=boards)
+        member_gid = {(code, m["name"]): gid_of[find(i)] for i, (code, m, cur, _) in enumerate(members)}
+        _idx.update(names=names, domains=domains, groups=out_groups, boards=boards, member_gid=member_gid)
         return _idx
 
 
@@ -169,7 +195,10 @@ def match(name: str, url: str = "", ats: str = "", cc: str = "") -> int | None:
         return ix["boards"][(ats, key)]
     if not key and (ats, "=" + norm(name)) in ix["boards"]:
         return ix["boards"][(ats, "=" + norm(name))]
-    gid = ix["names"].get(norm(name))
+    cands = ix["names"].get(norm(name), [])
+    if len(cands) > 1:            # two listed companies share the name (Merck in the US, Merck in Germany): the head-office country decides
+        cands = [g for g in cands if ix["groups"][g]["hq"] == cc] or [g for g in cands if (dom and dom in ix["groups"][g]["domains"])]
+    gid = cands[0] if len(cands) == 1 else None
     if gid is not None:
         g = ix["groups"][gid]
         from .adapters import FEED_NAMES

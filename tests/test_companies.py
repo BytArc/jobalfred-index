@@ -16,7 +16,13 @@ INDICES = {"lists": {
               "retrieved": "2026-11-11", "members": [
                   {"name": "Alphabet Inc. (Class A)", "aliases": ["Alphabet"], "domain": "abc.xyz", "hq": "US"},
                   {"name": "Target Corporation", "aliases": ["Target"], "domain": "target.com", "hq": "US"},
-                  {"name": "Johnson Controls", "domain": "johnsoncontrols.com", "hq": "IE"}]},
+                  {"name": "Johnson Controls", "domain": "johnsoncontrols.com", "hq": "IE"},
+                  {"name": "Merck & Co.", "aliases": ["Merck"], "wiki": "Merck_&_Co.", "domain": "merck.com", "hq": "US"}]},
+    "dax": {"label": "DAX", "hq": "DE", "gdp_rank": 3, "source": "x", "retrieved": "2026-11-11", "members": [
+        {"name": "Merck KGaA", "aliases": ["Merck"], "wiki": "Merck_Group", "domain": "merckgroup.com", "hq": "DE"},
+        {"name": "Airbus", "wiki": "Airbus", "domain": "airbus.com", "hq": "NL"}]},
+    "cac40": {"label": "CAC 40", "hq": "FR", "gdp_rank": 7, "source": "x", "retrieved": "2026-11-11", "members": [
+        {"name": "Airbus SE", "aliases": ["Airbus"], "wiki": "Airbus", "domain": "airbus.com", "hq": "NL"}]},
     "omxh25": {"label": "OMX Helsinki 25", "hq": "FI", "gdp_rank": 44, "source": "x", "retrieved": "2026-11-11",
                "members": [{"name": "Orion B", "aliases": ["Orion"], "hq": "FI"}]},
 }}
@@ -76,6 +82,12 @@ class TestMembership(unittest.TestCase):
         self.assertEqual(self.co("Anthropic", "https://apply.workable.com/j/81B46579FE", "workable"), "ailab")   # a board the probe found
         self.assertEqual(self.co("Target", "https://apply.workable.com/j/19A136F8E2", "workable"), "")
 
+    def test_two_listed_companies_share_a_name(self):
+        self.assertEqual(self.co("Merck", "https://msd.wd5.myworkdayjobs.com/SearchJobs/job/1", "workday", "US"), "sp500")
+        self.assertEqual(self.co("Merck", "https://emdgroup.wd3.myworkdayjobs.com/x/job/1", "workday", "DE"), "dax")
+        self.assertEqual(self.co("Merck", "https://x.wd3.myworkdayjobs.com/x/job/1", "workday", "FR"), "")
+        self.assertEqual(self.co("Airbus", "https://ag.wd3.myworkdayjobs.com/Airbus/job/1", "workday", "FR"), "dax,cac40")
+
     def test_index_member_namesake_abroad(self):
         self.assertEqual(self.co("Orion", "https://boards.greenhouse.io/orion/jobs/1", "greenhouse", "US"), "")
         self.assertEqual(self.co("Orion", "https://boards.greenhouse.io/orion/jobs/1", "greenhouse", "FI"), "omxh25")
@@ -89,4 +101,4 @@ class TestMembership(unittest.TestCase):
         m = companies.published_map()
         self.assertEqual(list(m)[:3], ["bigtech", "ailab", "big4"])
         self.assertEqual(m["sp500"]["kind"], "index")
-        self.assertEqual(m["sp500"]["members"], 3)
+        self.assertEqual(m["sp500"]["members"], 4)

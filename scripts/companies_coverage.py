@@ -27,9 +27,7 @@ out = {}
 for code, lst in companies.lists().items():
     found, missing = {}, []
     for m in lst["members"]:
-        gid = ix["names"].get(companies.norm(m["name"]))
-        if gid is None:
-            gid = next((ix["names"][companies.norm(a)] for a in m.get("aliases") or [] if companies.norm(a) in ix["names"]), None)
+        gid = ix["member_gid"].get((code, m["name"]))
         n = rows_per_group.get(gid, 0) if gid is not None else 0
         if n:
             found[m["name"]] = n
