@@ -110,7 +110,7 @@ CUE_BEFORE = re.compile(_C.format("|".join([
     r"fluen(?:t|cy|tly)", r"(?<!cloud[- ])(?<!react )native", r"mother[- ]tongue", r"proficien(?:t|cy)", r"bilingual", r"business[- ]level",
     r"business[- ]fluent", r"working knowledge", r"knowledge of", r"command of", r"speak(?:s|ing)?", r"spoken", r"written",
     r"verbal", r"[bc][12]", r"level", r"languages?\s*:", r"language skills", r"conversational", r"writing", r"reading", r"skills in",
-    r"communication in", r"(?:working|company|operating|business|official|main) language(?:s)?(?: is| are)?", r"communicate in",
+    r"communication in", r"communicator in", r"communicating in", r"(?:upper[- ]|pre[- ])?intermediate", r"advanced", r"basic", r"professional", r"(?:working|company|operating|business|official|main) language(?:s)?(?: is| are)?", r"communicate in",
     # pt es it fr de nl pl sv da fi cs hu
     r"fluente", r"fluencia", r"fluidez", r"fluido", r"nativ[oa]", r"dominio", r"conhecimentos? (?:de|em)", r"conocimientos? de",
     r"nivel", r"idiomas?\s*:", r"lingua madre", r"madrelingua", r"conoscenza", r"padronanza", r"courant", r"maitrise", r"maitriser",
