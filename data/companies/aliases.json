@@ -1,0 +1,15 @@
+{
+ "note": "Names a list member is also known by that neither its listed name nor its Wikipedia article gives (the brand on its own careers site). Edited by hand; added to the member's aliases when the lists are read.",
+ "lists": {
+  "psi20": {
+   "Banco Comercial Português": ["Millennium bcp", "Millennium BCP", "BCP"],
+   "Energias de Portugal": ["EDP"],
+   "EDP Renováveis": ["EDPR", "EDP Renewables"],
+   "Redes Energéticas Nacionais": ["REN"],
+   "CTT Correios de Portugal": ["CTT"],
+   "Galp Energia": ["Galp"],
+   "Corticeira Amorim": ["Amorim"],
+   "The Navigator Company": ["Navigator"]
+  }
+ }
+}

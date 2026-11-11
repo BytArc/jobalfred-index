@@ -284,6 +284,10 @@ def main():
         found = sum(1 for m in members if m.get("domain"))
         print(f"   {found}/{len(members)} with a website, {sum(1 for m in members if m.get('hq'))} with a head-office country")
         out_path.write_text(json.dumps(doc, ensure_ascii=False, indent=1))
+    if not dry and not want:
+        for code in [c for c in doc["lists"] if c not in {i[0] for i in INDICES}]:
+            print(f"{code}: no longer configured, removed")
+            del doc["lists"][code]
     if not dry:
         realias(doc)
         doc["lists"] = dict(sorted(doc["lists"].items(), key=lambda kv: kv[1].get("gdp_rank", 999)))
