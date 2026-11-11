@@ -3928,5 +3928,195 @@
    "checked": "2026-11-11",
    "read": []
   }
+ },
+ "psi20": {
+  "Altri": {
+   "status": "careers_no_ats",
+   "website": "altri.pt",
+   "careers": "https://careers.altri.pt/?locale=pt_PT",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Banco Comercial Português": {
+   "status": "no_careers_page",
+   "website": "millenniumbcp.pt",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Corticeira Amorim": {
+   "status": "no_careers_page",
+   "website": "amorim.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "CTT Correios de Portugal": {
+   "status": "no_careers_page",
+   "website": "ctt.pt",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "EDP Renováveis": {
+   "status": "ats_no_adapter",
+   "website": "edpr.com",
+   "careers": "https://edp.com/en/careers",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "EDP"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Energias de Portugal": {
+   "status": "ats_no_adapter",
+   "website": "edp.com",
+   "careers": "https://edp.com/en/careers",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "EDP"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Galp Energia": {
+   "status": "ats_no_adapter",
+   "website": "galp.com",
+   "careers": "https://www.galp.com/corp/pt/",
+   "note": "",
+   "boards": [
+    [
+     "successfactors",
+     "galpenergi"
+    ]
+   ],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Ibersol": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Jerónimo Martins": {
+   "status": "careers_page_list",
+   "website": "jeronimomartins.com",
+   "careers": "https://careers.jeronimomartins.com/search/?locale=en_US&q=&locationsearch=",
+   "note": "",
+   "boards": [
+    [
+     "pagelist",
+     "careers.jeronimomartins.com/search"
+    ]
+   ],
+   "read": [
+    [
+     "pagelist",
+     "careers.jeronimomartins.com/search",
+     4
+    ]
+   ],
+   "checked": "2026-11-11"
+  },
+  "Mota-Engil": {
+   "status": "site_robots",
+   "website": "mota-engil.pt",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "NOS": {
+   "status": "no_careers_page",
+   "website": "nos.pt",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Novabase": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Pharol": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Redes Energéticas Nacionais": {
+   "status": "careers_no_ats",
+   "website": "ren.pt",
+   "careers": "https://oportunidades.ren.pt/",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Semapa": {
+   "status": "no_careers_page",
+   "website": "semapa.pt",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sonae": {
+   "status": "site_unreachable",
+   "website": "sonae.pt",
+   "careers": "",
+   "note": "HTTP 247",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "Sonae Capital": {
+   "status": "no_website_found",
+   "website": "",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  },
+  "The Navigator Company": {
+   "status": "site_robots",
+   "website": "thenavigatorcompany.com",
+   "careers": "",
+   "note": "",
+   "boards": [],
+   "read": [],
+   "checked": "2026-11-11"
+  }
  }
 }

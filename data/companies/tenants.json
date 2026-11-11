@@ -74,6 +74,17 @@
 "source": "companies:consulting"
 },
 {
+"ats": "pagelist",
+"key": "careers.jeronimomartins.com/search",
+"data": {
+"pages": [
+"https://careers.jeronimomartins.com/search/?locale=en_US&q=&locationsearch="
+],
+"name": "Jerónimo Martins"
+},
+"source": "companies:psi20"
+},
+{
 "ats": "ashby",
 "key": "gen-digital",
 "data": {
