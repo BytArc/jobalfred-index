@@ -122,3 +122,15 @@ class TestPipeline(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTitleGapsFromHandChecks(unittest.TestCase):
+    """Titles a hand check of 230 unlabelled rows (11 Nov 2026) found the rules missing."""
+    def test_cases(self):
+        from jobalfred_index import seniority as S
+        cases = {"Senior Home Lending Advisor - Silver Spring MD": S.SENIOR, "Senior Home Care Aide": S.NOT_STATED,
+                 "ASST STORE MGR in EAST BEND NC S16942": S.MANAGER, "Staff Manufacturing Engineer": S.LEAD, "Staff Accountant": S.NOT_STATED,
+                 "SMTS Integration Engineering": S.LEAD, "Full Time Keyholder - Fran 2400": S.LEAD, "Work From Home - Manager in Training": S.INTERN,
+                 "ETIC, Full Stack Developer( Node.js + React), Manager": S.MANAGER, "Product Manager": S.NOT_STATED}
+        for title, want in cases.items():
+            self.assertEqual(S.from_title(title), want, title)

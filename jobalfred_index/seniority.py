@@ -35,7 +35,7 @@ INTERN_RX = _rx(
     r"praktikant(?:in)?", r"praktikum", r"pflichtpraktikum", r"auszubildende[rn]?", r"azubi", r"ausbildung", r"duales? studium",
     r"estagiari[oa]s?", r"estagi\w*", r"aprendiz(?:es)?", r"jovem aprendiz", r"becari[oa]s?", r"practicas", r"practicante", r"pasante",
     r"stagiaires?", r"stage", r"alternan[ct]e?", r"alternance", r"apprenti(?:e|s)?", r"apprentissage", r"stagista", r"tirocini[oa]", r"tirocinante",
-    r"stagiair(?:e|s)?", r"afstudeer\w*", r"leerling", r"summer analyst", r"summer associate", r"graduate trainee", r"internado", r"prakti\w*", r"etudiant[- ]chercheur", r"student researchers?", r"studentische\w*", r"hilfskraft", r"werkstudent\w*",
+    r"stagiair(?:e|s)?", r"afstudeer\w*", r"in training", r"leerling", r"summer analyst", r"summer associate", r"graduate trainee", r"internado", r"prakti\w*", r"etudiant[- ]chercheur", r"student researchers?", r"studentische\w*", r"hilfskraft", r"werkstudent\w*",
 )
 DIRECTOR_RX = _rx(
     r"directors?", r"directeur", r"directrice", r"direktor(?:in)?", r"direttore", r"direttrice", r"diretor(?:a)?", r"directora?",
@@ -66,7 +66,7 @@ LEAD_RX = _rx(
     r"program|technical|infrastructure|cloud|applied|research|sales|solutions?|support|customer|forward|field)\w*", r"distinguished", r"fellow", r"lider", r"lideres", r"tech leader",
     r"team leader", r"chefe de equipa", r"chefe de equipe", r"chefe de (?:turno|sector|setor)", r"supervisor(?:a)?", r"supervisora", r"superviseur",
     r"superviseuse", r"schichtleiter\w*", r"shift ?leaders?", r"gruppenleiter\w*", r"vorarbeiter\w*", r"tl", r"referent(?:e)?", r"sous chef", r"foreman", r"charge nurse", r"shift lead\w*",
-    r"head chef", r"chef de partie", r"voorman", r"meewerkend voorman", r"teamleiter(?:in)?", r"teamleitung", r"teamleider(?:s)?", r"vorarbeiter",
+    r"head chef", r"chef de partie", r"voorman", r"staff \w+ engineer\w*", r"smts", r"pmts", r"key ?holders?", r"meewerkend voorman", r"teamleiter(?:in)?", r"teamleitung", r"teamleider(?:s)?", r"vorarbeiter",
 )
 SENIOR_RX = _rx(r"senior", r"sr", r"snr", r"senior\w*", r"senhor", r"sr\.", r"experienced", r"erfahren\w*", r"experimente\w*",
                 r"experimentado", r"senior level", r"sinior", r"specialist iii", r"consultant iii")
@@ -91,7 +91,7 @@ PEOPLE_NOUN = (r"engineering", r"software", r"operations?", r"store", r"restaura
                r"accounting", r"payroll", r"claims", r"underwriting", r"credit", r"collections", r"infrastructure", r"platform", r"programme? delivery", r"construction", r"project delivery", r"nursing",
                r"unit", r"ward", r"salon", r"bar", r"studio", r"territory", r"hub", r"pharmacy", r"loja", r"tienda",
                r"magasin", r"filiale", r"vendas", r"ventas", r"vente", r"vertrieb")
-_PEOPLE_MGR = re.compile(r"(?<![a-z0-9])(?:" + "|".join(PEOPLE_NOUN) + r")\s+manager(?![a-z0-9])")
+_PEOPLE_MGR = re.compile(r"(?<![a-z0-9])(?:" + "|".join(PEOPLE_NOUN) + r")\s+(?:manager|mgr)(?![a-z0-9])")
 
 
 def _people_manager(t: str) -> bool:
@@ -103,8 +103,10 @@ def _people_manager(t: str) -> bool:
     if not m:
         return False
     before = t[:m.start()].strip()
-    if re.search(r"(?<![a-z0-9])(?:senior|sr\.?|assistant|deputy|group|regional|area|general)\s+(?:managers?|mgr)(?![a-z0-9])", t):
+    if re.search(r"(?<![a-z0-9])(?:senior|sr\.?|assistant|asst\.?|deputy|group|regional|area|general)\s+(?:managers?|mgr)(?![a-z0-9])", t):
         return True
+    if re.search(r"[,|]\s*(?:senior\s+|sr\.?\s+)?manager\s*$|\s[-–]\s*(?:senior\s+|sr\.?\s+)?manager\s*$", t):
+        return True                                  # a grade after the role: "Full Stack Developer, Manager"
     if re.search(r"in[- ]charge", t):
         return True
     before = re.sub(r"(?<![a-z])(?:senior|sr\.?|assistant|deputy|junior|associate|jr\.?|lead|principal|regional|area|general|group|global)\s*", "", before).strip(" -,")
@@ -114,7 +116,7 @@ def _people_manager(t: str) -> bool:
 def from_title(title: str) -> int:
     """Level from the title alone, 0 when the title says nothing."""
     t = fold(title)
-    t = re.sub(r"senior (?:care|living|citizens?|housing|center|centre|services?|home|help|support worker)", "elderlycare", t)
+    t = re.sub(r"senior (?:care|living|citizens?|housing|center|centre|services?|home(?! lend| loan| mortgage)|help|support worker)", "elderlycare", t)
     t = re.sub(r"[/_|]+", " ", t)
     t = re.sub(r"\s+", " ", t).strip()
     if not t:
