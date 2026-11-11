@@ -217,11 +217,14 @@ class TestVcEu(unittest.TestCase):
             st.save_result("lever", "other", [self.row("https://jobs.lever.co/other/2", ats="lever", company="Other")])
             head = vceu.build(st, self.doc(), Path(d) / "vc-eu.json.gz", log=lambda m: None)
             body = json.loads(gzip.decompress((Path(d) / "vc-eu.json.gz").read_bytes()))
-            self.assertEqual(body["f"], shards.FIELDS + ["d"])
+            self.assertEqual(body["f"][:len(shards.FIELDS) + 1], shards.FIELDS + ["d"])
             self.assertEqual(len(body["rows"]), 1)                      # the same posting twice is kept once
-            self.assertEqual(body["rows"][0][-1], "acme.example")
-            self.assertEqual(body["counts"], {"companies_checked": 3, "companies_with_careers_system": 2,
-                                              "companies_with_roles": 1, "roles": 1, "boards_dropped": {}})
+            self.assertEqual(body["rows"][0][body["f"].index("d")], "acme.example")
+            c = body["counts"]
+            self.assertEqual({k: c[k] for k in ("companies_checked", "companies_with_careers_system", "companies_with_roles",
+                                                "roles", "boards_dropped")},
+                             {"companies_checked": 3, "companies_with_careers_system": 2, "companies_with_roles": 1,
+                              "roles": 1, "boards_dropped": {}})
             self.assertEqual([c["roles"] for c in body["companies"]], [1, 0])
             self.assertEqual(body["companies"][1]["evidence"], ["Seedtable"])
             self.assertTrue(head["built"].endswith("Z"))
@@ -252,7 +255,7 @@ class TestVcEu(unittest.TestCase):
             vceu.build(st, self.doc(), Path(d) / "v.gz", log=lambda m: None)
             body = json.loads(gzip.decompress((Path(d) / "v.gz").read_bytes()))
             self.assertEqual(len(body["rows"][0]), len(body["f"]))
-            self.assertEqual(body["rows"][0][-1], "acme.example")
+            self.assertEqual(body["rows"][0][body["f"].index("d")], "acme.example")
 
     def test_startup_tenants_load_first(self):
         with tempfile.TemporaryDirectory() as d:
@@ -306,3 +309,32 @@ class TestCoverageAndNewest(unittest.TestCase):
                 self.assertEqual(json.loads(startups.DATA.read_text())["built"], "2026-11-15")
             finally:
                 startups.DATA = old_data
+
+
+class TestFunding(unittest.TestCase):
+    def test_slugs(self):
+        from jobalfred_index import funding as f
+        self.assertEqual(f.parse_slug("https://www.eu-startups.com/2026/11/london-based-neobe-raises-e6-1-million-to-engineer/"),
+                         {"company": "neobe", "amount": 6100000.0, "currency": "EUR", "stage": ""})
+        self.assertEqual(f.parse_slug("https://www.eu-startups.com/2024/05/berlin-based-acme-closes-e500k-pre-seed-round/")["stage"],
+                         "pre_seed")
+        self.assertEqual(f.parse_slug("https://www.eu-startups.com/2025/03/paris-based-alan-secures-e173-million-series-f/")["stage"],
+                         "series_e_plus")
+        self.assertIsNone(f.parse_slug("https://www.eu-startups.com/2024/05/acme-raises-e10-million-at-e100-million-valuation/"))
+        self.assertIsNone(f.parse_slug("https://www.eu-startups.com/2024/05/z-fund-secures-over-e35-million-at-first-close/"))
+
+    def test_article_and_summary(self):
+        from jobalfred_index import funding as f
+        page = ('<meta property="og:title" content="Acme raises €12 million Series A to grow | EU-Startups">'
+                '"datePublished":"2026-03-04T10:00:00"'
+                '<div class="td-post-content tagdiv-type"><p>Acme, <a href="https://www.acme.io/">a startup</a>, raised '
+                '€12 million, bringing its total funding to €20 million.</p></div><footer>')
+        a = f.parse_article(page, "https://www.eu-startups.com/2026/03/acme-raises-e12-million-series-a/")
+        self.assertEqual((a["stage"], a["amount"], a["currency"], a["total"], a["date"]), ("series_a", 12e6, "EUR", 20e6, "2026-03-04"))
+        self.assertIn("acme.io", a["domains"])
+        s = f.summarise([{"date": "2024-01-01", "stage": "seed", "amount": 3e6, "currency": "EUR", "url": "u1"},
+                         {"date": "2026-03-04", "stage": "series_a", "amount": 12e6, "currency": "EUR", "url": "u2"}])
+        self.assertEqual((s["stage"], s["total"], s["at_least"], s["source"]), ("series_a", 15000000, True, "u2"))
+        s = f.summarise([{"date": "2026-03-04", "stage": "series_a", "amount": 12e6, "currency": "EUR", "url": "u2",
+                          "total": 20e6, "total_currency": "EUR"}])
+        self.assertEqual((s["total"], s["at_least"]), (20000000, False))

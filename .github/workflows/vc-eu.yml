@@ -65,6 +65,17 @@ jobs:
             echo "Not Sunday: the company list is unchanged."
           fi
 
+      - name: Funding rounds from public news (EU-Startups feed each run; its archive on the weekly refresh)
+        run: |
+          if gh release download index-latest --pattern funding-eu.json --output work/funding-eu.release.json 2>/dev/null; then
+            python scripts/funding_eu.py newest work/funding-eu.release.json
+          fi
+          if [ "${{ inputs.refresh }}" = "true" ] || { [ "${{ github.event.schedule }}" = "41 13 * * *" ] && [ "$(date -u +%u)" = "7" ]; }; then
+            python -u scripts/funding_eu.py archive || true
+          fi
+          python -u scripts/funding_eu.py rss || true
+          cp data/funding_eu.json work/funding-eu.json && gh release upload index-latest work/funding-eu.json --clobber || true
+
       - name: Read every listed company's careers system and build vc-eu.json.gz
         run: python -u -m jobalfred_index vceu --minutes 60
 

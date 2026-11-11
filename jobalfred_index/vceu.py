@@ -52,7 +52,24 @@ def board_problem(c: dict, named: bool, rows: list, ats: str = "") -> str:
                     "an enterprise board with no employer name and roles mostly outside Europe (likely an acquirer)")
     return ""
 
-FIELDS = shards.FIELDS + ["d"]
+FIELDS = shards.FIELDS + ["d", "gs", "gt", "gc", "gl", "gd", "gu"]
+# d: company domain. Funding of the company, from public news (data/funding_eu.json), copied onto each of its rows:
+# gs latest stage, gt total raised, gc its currency, gl 1 when the total is "at least" (summed from rounds found),
+# gd date of the latest round found, gu that article. Empty when no round was found.
+FUNDING = Path(__file__).resolve().parent.parent / "data" / "funding_eu.json"
+
+
+def funding_of() -> tuple[dict, dict]:
+    """(summary per domain, round article URLs per domain, newest first)."""
+    if not FUNDING.exists():
+        return {}, {}
+    try:
+        doc = json.loads(FUNDING.read_text())
+    except ValueError:
+        return {}, {}
+    urls = {d: [r["url"] for r in sorted(rs, key=lambda r: r.get("date") or "", reverse=True)]
+            for d, rs in (doc.get("rounds") or {}).items()}
+    return doc.get("companies") or {}, urls
 BASIS = ("A company is listed when it is headquartered in Europe and backed by venture investors: shown on an investor's "
          "own public portfolio page or Y Combinator's directory (the evidence URL is given), or listed in Seedtable's "
          "startup database with a disclosed round from pre-seed to growth and USD 1M or more raised (evidence 'Seedtable'). "
@@ -73,6 +90,12 @@ def build(state, doc: dict, out: Path, log=print) -> dict:
     dropped: dict[str, int] = {}
     dropped_boards: set = set()
     per_company: dict[str, int] = {}
+    fund, round_urls = funding_of()
+
+    def ftail(dom):
+        f = fund.get(dom) or {}
+        return [f.get("stage") or "", f.get("total"), f.get("currency") or "", 1 if f.get("at_least") else 0,
+                f.get("date") or "", f.get("source") or ""] if f else ["", None, "", 0, "", ""]
     rows, seen = [], set()
     for ats, key, trows in state.iter_rows():
         c = owner.get((ats, key))
@@ -100,7 +123,7 @@ def build(state, doc: dict, out: Path, log=print) -> dict:
                 r.extend(seniority.label(r[0]))
             r = r[:len(shards.FIELDS)]
             r[1] = cache[r[1]]
-            rows.append(r + [c["domain"]])
+            rows.append(r + [c["domain"]] + ftail(c["domain"]))
             per_company[c["domain"]] = per_company.get(c["domain"], 0) + 1
     rows.sort(key=lambda r: (shards.norm(r[1]), r[0].lower(), r[5]))
     companies = []
@@ -108,13 +131,23 @@ def build(state, doc: dict, out: Path, log=print) -> dict:
         boards = [b for b in c.get("tenants", []) if tuple(b) not in dropped_boards]
         if c["domain"] in startups.EXCLUDE_DOMAINS or not boards:
             continue
-        companies.append({"name": c.get("name"), "domain": c["domain"], "country": c.get("country") or "",
-                          "evidence": c.get("evidence") or ["Seedtable"], "boards": boards,
-                          "roles": per_company.get(c["domain"], 0)})
+        evidence = c.get("evidence") or ["Seedtable"]
+        if evidence == ["Seedtable"] and round_urls.get(c["domain"]):
+            evidence = round_urls[c["domain"]][:2]      # a public article on its funding round replaces "Seedtable"
+        entry = {"name": c.get("name"), "domain": c["domain"], "country": c.get("country") or "",
+                 "evidence": evidence, "boards": boards, "roles": per_company.get(c["domain"], 0)}
+        if fund.get(c["domain"]):
+            entry["funding"] = fund[c["domain"]]
+        companies.append(entry)
     counts = dict(doc.get("counts") or {})
     counts.update({"companies_with_careers_system": len(companies),
                    "companies_with_roles": sum(1 for c in companies if c["roles"]),
-                   "roles": len(rows), "boards_dropped": dropped})
+                   "roles": len(rows), "boards_dropped": dropped,
+                   "companies_with_funding": sum(1 for c in companies if c.get("funding")),
+                   "evidence_public": sum(1 for c in companies if c["evidence"] != ["Seedtable"]),
+                   "evidence_seedtable_only": sum(1 for c in companies if c["evidence"] == ["Seedtable"]),
+                   "companies_with_stage": sum(1 for c in companies if (c.get("funding") or {}).get("stage")),
+                   "companies_with_total": sum(1 for c in companies if (c.get("funding") or {}).get("total"))})
     head = {"v": 1, "built": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "basis": BASIS, "counts": counts,
             "f": FIELDS}
     body = {**head, "rows": rows, "companies": companies}
