@@ -128,6 +128,12 @@ def main():
     if cmd == "newest":
         newest(sys.argv[2])
         return
+    if cmd == "reparse":            # apply the current rules to stored rounds from their kept sentences, no network
+        doc = load()
+        doc["rounds"] = {d: [funding.reparse(r) for r in rs] for d, rs in doc["rounds"].items()}
+        save(doc)
+        print(f"reparsed {sum(len(v) for v in doc['rounds'].values())} rounds")
+        return
     client = Client(timeout=30, retries=1)
     import os
     client.configure_host("www.eu-startups.com", gap=float(os.environ.get("GAP", "3")), inflight=1)   # bursts get a bot check
