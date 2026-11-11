@@ -402,7 +402,9 @@ def cmd_publish() -> dict:
                   "No funding stage is published."),
         "built": time.strftime("%Y-%m-%d", time.gmtime()),
         "counts": {"companies_checked": len(doc["companies"]), "by_status": dict(status.most_common()),
-                   "waiting_on_permission": dict(waiting)},
+                   "waiting_on_permission": dict(waiting),
+                   **({"coverage_jobs": json.load(open(WORK / "coverage-jobs-latest.json"))}
+                      if (WORK / "coverage-jobs-latest.json").exists() else {})},
         "tenants": [{"ats": a, "key": k, "data": d} for (a, k), d in sorted(tenants.items())],
         "companies": sorted(companies, key=lambda e: e["domain"]),
         "checked": sorted(checked),

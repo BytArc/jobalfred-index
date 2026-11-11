@@ -110,10 +110,13 @@ class Renderer:
             page = await ctx.new_page()
 
             async def route(r):
-                if r.request.resource_type in SKIP_TYPES:
-                    await r.abort()
-                else:
-                    await r.continue_()
+                try:
+                    if r.request.resource_type in SKIP_TYPES:
+                        await r.abort()
+                    else:
+                        await r.continue_()
+                except Exception:           # the page closed while a request was in flight
+                    pass
             await page.route("**/*", route)
             page.on("request", lambda r: reqs.append(r.url))
             resp = await page.goto(url, wait_until="domcontentloaded", timeout=self.timeout)
