@@ -28,6 +28,15 @@ CREATE TABLE IF NOT EXISTS meta(k TEXT PRIMARY KEY, v TEXT);
 """
 
 
+def fetched_ts(day: str) -> float | None:
+    """Noon UTC of a YYYY-MM-DD day, as a timestamp."""
+    import calendar
+    try:
+        return calendar.timegm(time.strptime(day[:10], "%Y-%m-%d")) + 12 * 3600
+    except ValueError:
+        return None
+
+
 class State:
     def __init__(self, path: str | Path, run_id: str):
         self.path = Path(path)
@@ -60,12 +69,16 @@ class State:
             return False
 
     def tenants(self, ats: str, max_age_hours: float | None = None, include_dead: bool = False) -> list[dict]:
+        """A source's tenants, the ones fetched longest ago first (never fetched first of all), so a run that runs out of time skips
+        different tenants each night. Ties: startups first, then an order that changes every day."""
         q = "SELECT key,data,last_ok,n_jobs FROM tenants WHERE ats=?"
         if not include_dead:
             q += " AND status!='dead'"
-        q += " ORDER BY CASE WHEN source='startup' THEN 0 ELSE 1 END, rowid"
+        q += (" ORDER BY CASE WHEN last_ok IS NULL THEN 0 ELSE 1 END, last_ok, CASE WHEN source='startup' THEN 0 ELSE 1 END,"
+              " (rowid * 2654435761 + ?) % 4294967296")
+        day = int(time.time() // 86400)
         with self.lock:
-            rows = self.db.execute(q, (ats,)).fetchall()
+            rows = self.db.execute(q, (ats, day * 40503)).fetchall()
         cutoff = time.time() - max_age_hours * 3600 if max_age_hours else None
         out = []
         for key, data, last_ok, n in rows:
@@ -157,11 +170,13 @@ class State:
     def export_tenants(self, path: str | Path) -> int:
         with self.lock:
             rows = self.db.execute(
-                "SELECT ats,key,data,source,first_seen,gone_runs,status FROM tenants WHERE (status!='dead' AND NOT (source='probe' AND last_ok IS NULL)) "
+                "SELECT ats,key,data,source,first_seen,gone_runs,status,last_ok FROM tenants WHERE (status!='dead' AND NOT (source='probe' AND last_ok IS NULL)) "
                 "OR (source='probe' AND status='dead') ORDER BY ats,key").fetchall()
         out = []
-        for a, k, d, s, f, g, st in rows:
+        for a, k, d, s, f, g, st, ok in rows:
             rec = {"ats": a, "key": k, "source": s, "first_seen": f}
+            if ok:
+                rec["fetched"] = time.strftime("%Y-%m-%d", time.gmtime(ok))      # the last day its roles were read
             if st == "dead":
                 rec["dead"] = 1       # a probe candidate that does not exist: remembered so we do not ask again
             else:
@@ -192,7 +207,25 @@ class State:
                 with self.lock:
                     self.db.execute("UPDATE tenants SET gone_runs=MAX(gone_runs,?) WHERE ats=? AND key=?",
                                     (t["gone_runs"], t["ats"], t["key"]))
+            if t.get("fetched"):                 # the last day its roles were read, kept across runs (noon UTC of that day)
+                ts = fetched_ts(t["fetched"])
+                if ts:
+                    with self.lock:
+                        self.db.execute("UPDATE tenants SET last_ok=? WHERE ats=? AND key=? AND (last_ok IS NULL OR last_ok<?)",
+                                        (ts, t["ats"], t["key"], ts))
         return n
+
+    def all_tenants(self) -> list[tuple[str, str, dict]]:
+        with self.lock:
+            rows = self.db.execute("SELECT ats,key,data FROM tenants").fetchall()
+        return [(a, k, json.loads(d or "{}")) for a, k, d in rows]
+
+    def unreached(self, since: float) -> list[tuple[str, str, dict, float | None]]:
+        """Live tenants this run never tried (no fetch, failure or gone answer since `since`): (ats, key, data, last_ok)."""
+        with self.lock:
+            rows = self.db.execute("SELECT ats,key,data,last_ok FROM tenants WHERE status!='dead' AND (last_try IS NULL OR last_try<?)",
+                                   (since,)).fetchall()
+        return [(a, k, json.loads(d or "{}"), ok) for a, k, d, ok in rows]
 
     def meta_set(self, k: str, v: str) -> None:
         with self.lock:
