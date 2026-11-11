@@ -78,7 +78,7 @@ class TestNewCompanyIsTaggedInANormalRun(unittest.TestCase):
             cache = Path(tmp) / "homepages.json.gz"
             client = FakeClient({"zenithcardiaccare.com": HOSPITAL_PAGE})
             doc, at, labels, hp = self.run_build(client, cache)
-            self.assertEqual(doc["f"][-8:], ["lv", "ls", "in", "fn", "ft", "co", "lr", "lq"])
+            self.assertEqual(doc["f"][-10:], ["lv", "ls", "in", "fn", "ft", "co", "lr", "lq", "wt", "ws"])
             self.assertEqual({r[at["in"]] for r in doc["rows"]}, {"hlt"})
             self.assertEqual(labels["hlt"], I.taxonomy()["hlt"])
             self.assertTrue(client.asked, "the new company's homepage should have been fetched")

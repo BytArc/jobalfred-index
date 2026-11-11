@@ -49,9 +49,9 @@ class TestFunction(unittest.TestCase):
 class TestCompaniesAndLanguage(unittest.TestCase):
     def test_list_membership_and_headoffice_language(self):
         from jobalfred_index import companies, language
-        rows = [["Software Engineer", "Google", "Berlin", "DE", 0, "https://careers.google.com/1", "", "google"] + [""] * 11,
-                ["Associate", "Deloitte Conseil", "Paris", "FR", 0, "https://x.test/2", "", "workday"] + [""] * 11,
-                ["Cook", "Corner Cafe", "Lisbon", "PT", 0, "https://x.test/3", "", "bamboohr"] + [""] * 11]
+        rows = [["Software Engineer", "Google", "Berlin", "DE", 0, "https://careers.google.com/1", "", "google"] + [""] * 13,
+                ["Associate", "Deloitte Conseil", "Paris", "FR", 0, "https://x.test/2", "", "workday"] + [""] * 13,
+                ["Cook", "Corner Cafe", "Lisbon", "PT", 0, "https://x.test/3", "", "bamboohr"] + [""] * 13]
         companies.assign(rows, log=lambda m: None)
         self.assertIn("bigtech", rows[0][companies.CO].split(","))
         self.assertEqual((rows[0][companies.LR], rows[0][companies.LQ]), ("en", "i"))       # HQ is US, not the Berlin office

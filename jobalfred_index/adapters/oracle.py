@@ -4,6 +4,8 @@ GET https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyD
 """
 from __future__ import annotations
 
+import re
+
 from ..model import Failed, Gone, make
 from .base import check, slug_title
 
@@ -23,7 +25,7 @@ def parse(data: dict, tenant: dict) -> list:
         for j in item.get("requisitionList") or []:
             locs = [j.get("PrimaryLocation") or ""] + [s.get("Name") or "" for s in j.get("secondaryLocations") or []]
             wt = str(j.get("WorkplaceTypeCode") or j.get("WorkplaceType") or "").lower()
-            workplace = "remote" if "remote" in wt else ("hybrid" if "hybrid" in wt else "")
+            workplace = "remote" if "remote" in wt else ("hybrid" if "hybrid" in wt else ("onsite" if re.search(r"on.?site|office", wt) else ""))
             job = make(ATS, j.get("Title"), company, locs,
                        f"https://{host}/hcmUI/CandidateExperience/en/sites/{site}/job/{j.get('Id')}",
                        j.get("PostedDate"), cc_hint=j.get("PrimaryLocationCountry") or "", workplace=workplace,

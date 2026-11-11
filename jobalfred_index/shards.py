@@ -12,7 +12,7 @@ from pathlib import Path
 from . import companies, function, industry, seniority
 from .adapters import FEED_NAMES
 
-FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft", "co", "lr", "lq"]
+FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft", "co", "lr", "lq", "wt", "ws"]
 # lv: seniority level 0 not stated, 1 intern, 2 junior, 3 mid, 4 senior, 5 lead/staff/principal, 6 manager, 7 director and above.
 # ls: where it came from: "n" the source's own tag, "t" the title, "d" the description, "" not stated. Readers map fields by name.
 # in: industry code, see data/industry/taxonomy.json (published beside the manifest as industries.json). Every row has one; "oth" when the signal is weak.
@@ -20,7 +20,9 @@ FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", 
 # ft: sub-role code within the function, "" when none. Both are read from the title only.
 # co: codes of the well-known lists the company is on, joined by commas ("sp500,bigtech"), "" when none; map published as companies.json.
 # lr: ISO 639-1 codes of the languages the role asks for, joined by commas; lq: "s" stated in the description, "i" inferred from the HQ or role country.
-LV, LS, IND, FN, FT, CO, LR, LQ = (FIELDS.index(k) for k in ("lv", "ls", "in", "fn", "ft", "co", "lr", "lq"))
+# wt: work type, 1 remote, 2 hybrid, 3 on site; ws: "s" stated (source flag, location, title or description) or "i" inferred. Every row has one.
+# ls also takes "i": a level inferred by the trained model (levelinfer.py) where nothing states one, so every row has a level.
+LV, LS, IND, FN, FT, CO, LR, LQ, WT, WS = (FIELDS.index(k) for k in ("lv", "ls", "in", "fn", "ft", "co", "lr", "lq", "wt", "ws"))
 
 
 def complete(r: list) -> list:

@@ -35,14 +35,18 @@ _idx: dict = {}
 
 
 def lists() -> dict:
-    """code -> list, curated lists first, then indexes in GDP order."""
+    """code -> list, curated lists first, then indexes in GDP order; hand-added aliases (aliases.json) folded in."""
     out: dict[str, dict] = {}
+    extra = json.loads((DATA / "aliases.json").read_text()).get("lists", {}) if (DATA / "aliases.json").exists() else {}
     for fn in ("curated.json", "indices.json"):
         p = DATA / fn
         if p.exists():
             doc = json.loads(p.read_text()).get("lists", {})
             for code, lst in sorted(doc.items(), key=lambda kv: kv[1].get("gdp_rank", 0)):
-                out[code] = {**lst, "curated": fn == "curated.json"}
+                more = extra.get(code, {})
+                members = [{**m, "aliases": sorted(set(m.get("aliases") or []) | set(more[m["name"]]))} if m["name"] in more else m
+                           for m in lst["members"]]
+                out[code] = {**lst, "members": members, "curated": fn == "curated.json"}
     return out
 
 
@@ -224,7 +228,8 @@ CO, LR, LQ = 16, 17, 18        # positions after t c l cc r u p a smin smax cur 
 
 
 def assign(rows: list[list], log=print) -> dict:
-    """Fill co for every row, and lr/lq (inferred) where the description stated nothing. One lookup per employer and board."""
+    """Fill co for every row, and lr/lq (inferred) where the description stated nothing. One lookup per employer and board.
+    Then the work type (worktype.assign) and, where no level is stated, the inferred level (levelinfer.assign)."""
     cache: dict[tuple, tuple[list[str], str]] = {}
     stated = inferred = unknown = listed = 0
     per_code: dict[str, int] = {}
@@ -253,6 +258,10 @@ def assign(rows: list[list], log=print) -> dict:
                 unknown += 1
     stats = {"rows_on_a_list": listed, "lang_stated": stated, "lang_inferred": inferred, "lang_unknown": unknown, "per_list": per_code}
     log(f"companies: {stats}")
+    # the other per-row labels that every row must carry, here so every caller (shards.build, vceu) labels a row completely
+    from . import levelinfer, worktype
+    stats["work_type"] = worktype.assign(rows, log=log)
+    stats["level_inferred"] = levelinfer.assign(rows, log=log)
     return stats
 
 

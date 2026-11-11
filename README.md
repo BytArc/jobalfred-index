@@ -188,6 +188,29 @@ when neither is known. `jobalfred_index/language.py` is deterministic: a languag
 the name describes a market, clients or a team ("the German market", "German-speaking team"), and not when the posting calls it a plus. The description
 is read only where the source already returns it in the same request (Lever, Ashby, Amazon, Google, Oracle, Breezy, Gem and the feeds) and is never stored.
 
+## Work type (wt, ws) and a level on every row (lv, ls "i")
+
+**`wt`, `ws`**, the last two fields: `wt` is 1 remote, 2 hybrid, 3 on site; `ws` is `s` when something states it and `i` when it is
+inferred. Stated, strongest first: the source's own workplace or remote flag, the location or title (the `r` field), then the description
+where the source returns it ("this is a hybrid role", "three days a week in the office", "fully remote", "on-site role"; "hybrid cloud" or
+"remote monitoring" do not count). A remote-only job board counts as stated. When nothing is stated the role is inferred on site, unless
+most of the company's roles in the same build are stated remote, then remote. `jobalfred_index/worktype.py`; every row gets a value.
+
+**A level for every row**: where nothing states a level (`lv` 0 before), `jobalfred_index/levelinfer.py` writes the most likely level and
+sets `ls` to `i` (inferred). The model is a multinomial logistic regression over the title's words with every level word removed, its word
+pairs, the job function and sub-role, the careers system, the country and the company's mix of stated levels; it is trained offline on the
+rows that state a level by `scripts/seniority_train_infer.py` (plain Python) and saved as versioned data, `data/seniority/infer-model.json.gz`.
+The nightly build runs it with no network and no AI. A reader that wants stated levels only keeps rows whose `ls` is not `i`; the same for
+`ws`.
+
+Measured 11 Nov 2026 by hand, reading each posting's description (years asked for, supervision, entry-level wording):
+- Inferred level, on 115 fresh rows with no stated level (`data/seniority/infer-hand-r2.jsonl`, never trained on): 47% exact (54/115),
+  90% within one level; always answering "junior", the most common level there, gets 41%. Most of these roles are frontline or clinical
+  (cashier, nurse, technician) and the title is the only signal for most of them, so the junior-or-mid line is where it errs. Training
+  also uses 115 other hand-checked rows (`infer-hand-r1.jsonl`) and sets the class priors to their mix.
+- Work type, on 55 random rows: 48 right; the misses are hybrid roles whose list entry says nothing (Workday shows it only on the job page)
+  and one Lever posting flagged remote for a ship's officer.
+
 ## Run
 
 ```

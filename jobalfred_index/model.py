@@ -9,7 +9,7 @@ from datetime import date, datetime, timedelta, timezone
 from . import geo, seniority
 from .industry import from_native as industry_from_native
 from .function import label as function_label
-from . import language
+from . import language, worktype
 
 # Not real roles: evergreen forms that only collect CVs.
 NOT_A_ROLE = re.compile(
@@ -46,10 +46,13 @@ class Job:
     ind: str = ""        # industry code when the source itself names the industry; otherwise filled in at build (industry.py)
     lr: str = ""         # languages the description asks for, ISO codes joined by commas (language.py); filled by inference at build when empty
     lq: str = ""         # s stated in the description, i inferred from the country, "" unknown
+    wt: int = 0          # work type stated by the source, location, title or description: 1 remote, 2 hybrid, 3 on site (worktype.py); 0 not stated
+    ws: str = ""         # "s" when stated; rows not stated are inferred at build ("i")
 
     def row(self) -> list:
         return [self.title, self.company, self.location, self.cc, self.remote, self.url,
-                self.posted, self.ats, self.smin, self.smax, self.cur or None, self.lv, self.ls, self.ind, *function_label(self.title), "", self.lr, self.lq]
+                self.posted, self.ats, self.smin, self.smax, self.cur or None, self.lv, self.ls, self.ind, *function_label(self.title), "", self.lr, self.lq,
+                self.wt, self.ws]
 
 
 def clean(s) -> str:
@@ -139,6 +142,7 @@ def make(ats: str, title, company, locs, url, posted="", *, cc_hint="", workplac
         smin, smax = smax, smin
     lv, ls = seniority.label(title, native, desc)     # the description is read here and never stored
     langs = language.detect(desc)
+    wt, ws = worktype.stated(workplace, remote, desc)
     return Job(title[:200], company[:120], location[:200], cc, remote, url, posted, ats, smin, smax,
                (cur or "")[:3].upper() if (smin or smax) else "", lv, ls, industry_from_native(industry),
-               ",".join(langs), "s" if langs else "")
+               ",".join(langs), "s" if langs else "", wt, ws)

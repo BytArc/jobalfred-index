@@ -29,7 +29,7 @@ INDICES = {"lists": {
 
 
 def row(company, url, ats, cc="US"):
-    return ["Engineer", company, "", cc, 0, url, "", ats] + [""] * 11
+    return ["Engineer", company, "", cc, 0, url, "", ats] + [""] * 13
 
 
 class TestMembership(unittest.TestCase):
