@@ -34,6 +34,12 @@ CHALLENGE = re.compile(
     rb"cf-chl|challenge-platform|Just a moment\.\.\.|Attention Required|g-recaptcha|h-captcha|"
     rb"hcaptcha|px-captcha|Access Denied|Request unsuccessful\. Incapsula|_Incapsula_Resource|"
     rb"datadome|Pardon Our Interruption", re.I)
+# MediaWiki (Wikipedia) names its edit-form captcha in every article's page config: a setting, not a challenge
+NOT_CHALLENGE = re.compile(rb'"wgConfirmEdit[A-Za-z]*":(?:"[^"]{0,80}"|true|false)')
+
+
+def is_challenge(head: bytes) -> bool:
+    return bool(CHALLENGE.search(NOT_CHALLENGE.sub(b"", head or b"")))
 
 # Multi-tenant SaaS families: every tenant is its own hostname, but they share one platform.
 # We treat each family as ONE host for pacing, in-flight limits and robots.txt, so probing
@@ -244,7 +250,7 @@ class Client:
             self.stats["bytes"] += len(content)
             hdrs = {k.lower(): v for k, v in r.headers.items()}
             status = r.status_code
-            if status in (403, 429, 401) or (status in (200, 503) and CHALLENGE.search(content[:6000] or b"")
+            if status in (403, 429, 401) or (status in (200, 503) and is_challenge(content[:6000])
                                               and "json" not in hdrs.get("content-type", "")):
                 if status == 429:
                     ra = hdrs.get("retry-after", "")
