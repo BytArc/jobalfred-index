@@ -147,7 +147,8 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     per_company: dict[str, int] = {}
     fund, round_urls = funding_of()
     hosts = investor_hosts()
-    backers = {c["domain"]: backers_of(c, hosts) for c in doc.get("companies", [])}
+    # a VC firm's evidence is its own site: it is not its own backer
+    backers = {c["domain"]: ([] if c.get("kind") == "investor" else backers_of(c, hosts)) for c in doc.get("companies", [])}
 
     def ftail(dom):
         f = fund.get(dom) or {}

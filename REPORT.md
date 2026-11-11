@@ -15,7 +15,7 @@
   not a portfolio job board, are kept; boards found by name were each checked by hand (25 kept, 20 rejected as
   namesakes, empty placeholders or portfolio talent pools). 24 firms have a careers system; 10 had roles today, 50 roles
   (a16z 21, EQT 10, Y Combinator 9, others 1 or 2).
-- Backer tags (`gi`): 16,593 world rows and 9,828 Europe rows name at least one backer from public evidence; new US
+- Backer tags (`gi`, never the firm itself on a firm's own roles): 16,564 world rows and 9,828 Europe rows name at least one backer from public evidence; new US
   fund pages read (Sequoia, NEA, Bessemer, Greylock, Redpoint, Felicis, Kleiner Perkins, Khosla and others).
 - Fixes: a company page that links news coverage keeps only the site named like the page (Battery's pages had linked
   Axios, Fortune and others; re-read pending); news and data sites are never companies (bbc.co.uk had been listed as a
