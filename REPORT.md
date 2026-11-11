@@ -1,5 +1,30 @@
 # JobAlfred index: VC-backed startups in Europe (updated 11 Nov 2026)
 
+## Update, 11 Nov 2026, evening (built 18:07 UTC)
+- `vc-eu.json.gz`: 25,859 roles from 2,096 companies; 2,927 with a careers system we read. `vc-world.json.gz`:
+  45,526 roles from 3,313 companies (was 31,905); 4,395 with a careers system we read.
+- Startups known only from investors' pages (not on Y Combinator's directory, no European domain): their headquarters
+  is now read from their own site (`jobalfred_index/hq.py`): homepage and up to three of its contact, about, imprint,
+  legal, privacy or terms pages; schema.org address, "headquartered in", a postal address, or "based in". Addresses
+  of others (GDPR representatives, regulators, registered agents in Dover DE or Sheridan WY), dates and blog
+  platforms do not count; a level naming several countries alike decides nothing. 5,590 sites read: 2,463 state a
+  headquarters (US 1,749, Europe 521, elsewhere 193), 2,214 state none, 602 disallow us in robots.txt, 308 did not
+  answer. Hand check of 40 answers: 38 right; the 2 rule faults found (a date read as a postcode, a blog platform's
+  own address) are fixed. Listed now: 757 US companies and 130 European ones with a careers system we read;
+  676 US companies had roles (14,283) and 89 European ones (1,359).
+- Not startups (`data/not_startups.json`, with evidence): 246 companies whose homepage now redirects to another
+  company (acquired or renamed), 20 whose English Wikipedia infobox (website = their domain) says listed on a stock
+  exchange, 2 owned by another company; plus companies on the stock-index and big-tech lists. They are left out of
+  both files and their boards are no longer read. The Wikipedia check ran on the 243 companies with 40 or more roles;
+  Slate Auto is kept by hand (its listed parent is a private incubator). Not confirmed, so still listed: Pluxee and
+  SailPoint (no page we may read states a listing).
+- Coverage, new 200-company samples (seed 2026-11-11; the lists changed, so the samples differ from this afternoon's):
+  Europe 22.0% of the sample read, 34.4% of the sampled companies with a known careers page, counts match the live
+  board 93.0%; world 36.0% read (was 20.5%), 56.7% of known careers pages (was 40.6%), counts match 97.2%. A
+  200-company sample moves by several points from one draw to the next.
+- The weekly refresh reads the headquarters of up to 400 new companies from investors' pages per run and keeps every
+  answer in the published lists (`hq`), so no site is asked twice.
+
 ## Update, 11 Nov 2026, afternoon (built 12:25 UTC)
 - `vc-eu.json.gz`: 25,119 roles from 2,026 companies (was 23,506); 2,810 companies with a careers system we read,
   11,351 checked. `vc-world.json.gz` (every region, Europe included): 31,905 roles from 2,659 companies (was 28,879);
