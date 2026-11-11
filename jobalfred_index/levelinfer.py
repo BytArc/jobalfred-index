@@ -113,8 +113,11 @@ def reset() -> None:
         _model.clear()
 
 
-def predict(feats: dict[str, float], model: dict | None = None) -> tuple[int, float]:
-    """(level 1-7, probability)."""
+INFER = range(2, 8)        # never "intern": a title that names no internship, traineeship or apprenticeship is not one
+
+
+def predict(feats: dict[str, float], model: dict | None = None, allowed=INFER) -> tuple[int, float]:
+    """(level, probability) among the allowed levels (2-7 by default)."""
     m = model or load()
     if not m:
         return seniority.MID, 0.0
@@ -128,7 +131,7 @@ def predict(feats: dict[str, float], model: dict | None = None) -> tuple[int, fl
     mx = max(z)
     e = [math.exp(a - mx) for a in z]
     s = sum(e)
-    i = max(range(len(e)), key=e.__getitem__)
+    i = max((j for j, c in enumerate(m["classes"]) if c in allowed), key=e.__getitem__)
     return m["classes"][i], e[i] / s
 
 

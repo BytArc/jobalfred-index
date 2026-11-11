@@ -204,8 +204,9 @@ The nightly build runs it with no network and no AI. A reader that wants stated 
 `ws`.
 
 Measured 11 Nov 2026 by hand, reading each posting's description (years asked for, supervision, entry-level wording):
-- Inferred level, on 115 fresh rows with no stated level (`data/seniority/infer-hand-r2.jsonl`, never trained on): 47% exact (54/115),
-  90% within one level; always answering "junior", the most common level there, gets 41%. Most of these roles are frontline or clinical
+- Inferred level, on 115 fresh rows with no stated level (`data/seniority/infer-hand-r2.jsonl`, never trained on): 49% exact (56/115),
+  90% within one level (104/115); always answering "junior", the most common level there, gets 41%. The model never infers "intern": a
+  title that names no internship is not one. Most of these roles are frontline or clinical
   (cashier, nurse, technician) and the title is the only signal for most of them, so the junior-or-mid line is where it errs. Training
   also uses 115 other hand-checked rows (`infer-hand-r1.jsonl`) and sets the class priors to their mix.
 - Work type, on 55 random rows: 48 right; the misses are hybrid roles whose list entry says nothing (Workday shows it only on the job page)

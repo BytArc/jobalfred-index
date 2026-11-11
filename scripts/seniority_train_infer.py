@@ -155,7 +155,7 @@ if CALIBRATE:
           f"exact on it {sum(L.predict(feats(r, train_row=False), model)[0] == r[6] for r in cal) / len(cal):.1%}")
     model["calibrated_on"] = Path(CALIBRATE).name
 right = sum(L.predict(feats(r, train_row=False), model)[0] == r[6] for r in hold)
-near = sum(abs(L.predict(feats(r, train_row=False), model)[0] - r[6]) <= 1 for r in hold)
+near = sum(abs(L.predict(feats(r, train_row=False), model)[0] - r[6]) <= 1 for r in hold)      # as inferred: never intern
 print(f"held-out n/d rows: {right}/{len(hold)} = {right / max(1, len(hold)):.1%} exact, {near / max(1, len(hold)):.1%} within one level")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 with gzip.open(OUT, "wt", encoding="utf-8") as fh:
