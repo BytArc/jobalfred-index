@@ -162,7 +162,9 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
         urls = [r[5] for r in trows[:30]]
         cache: dict[str, str] = {}
         polished = [names.polish(r[1], slug, urls) or r[1] for r in trows]
-        why = board_problem(c, (ats, key) in named, [[t[0], p] + list(t[2:]) for t, p in zip(trows, polished)], ats)
+        # a VC firm's guessed boards were each checked by hand (and a firm has no HQ country to judge a namesake by)
+        is_named = (ats, key) in named and c.get("kind") != "investor"
+        why = board_problem(c, is_named, [[t[0], p] + list(t[2:]) for t, p in zip(trows, polished)], ats)
         if why:
             dropped[why] = dropped.get(why, 0) + 1
             dropped_boards.add((ats, key))

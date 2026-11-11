@@ -1,5 +1,28 @@
 # JobAlfred index: VC-backed startups in Europe (updated 11 Nov 2026)
 
+## Update, 11 Nov 2026, afternoon (built 12:25 UTC)
+- `vc-eu.json.gz`: 25,119 roles from 2,026 companies (was 23,506); 2,810 companies with a careers system we read,
+  11,351 checked. `vc-world.json.gz` (every region, Europe included): 31,905 roles from 2,659 companies (was 28,879);
+  625 US companies with roles (was 494).
+- Company-based coverage, new sample of 200 (seed 2026-11-11): Europe 27.0% of the sample read (was 16.0%), 40.6% of
+  the sampled companies with a known careers page; role counts match the live board for 98.1%. World sample: 20.5%
+  read, 40.6% of known careers pages, counts match 100%. The job-weighted figure (76.9%) was measured this morning,
+  before these gains.
+- Careers pages that list roles as plain links (`adapters/pagelist.py`): 320 boards, 1,464 roles in this read
+  (Augusta Labs, Lisbon: 4 roles).
+- Jobs at VC firms (world file, `kind: "investor"`): the 68 firms in `data/vc_investors.json` were probed. Their sites
+  mostly link their portfolio's boards, so only boards named like the firm, or a careers page on its own site that is
+  not a portfolio job board, are kept; boards found by name were each checked by hand (25 kept, 20 rejected as
+  namesakes, empty placeholders or portfolio talent pools). 24 firms have a careers system; 10 had roles today, 50 roles
+  (a16z 21, EQT 10, Y Combinator 9, others 1 or 2).
+- Backer tags (`gi`): 16,593 world rows and 9,828 Europe rows name at least one backer from public evidence; new US
+  fund pages read (Sequoia, NEA, Bessemer, Greylock, Redpoint, Felicis, Kleiner Perkins, Khosla and others).
+- Fixes: a company page that links news coverage keeps only the site named like the page (Battery's pages had linked
+  Axios, Fortune and others; re-read pending); news and data sites are never companies (bbc.co.uk had been listed as a
+  Dawn Capital company); a non-European company's board found by name is judged against its HQ country, not Europe.
+- Open: US companies known only from fund pages (not YC) have no public HQ source yet, so they are not in the world
+  list; Battery Ventures' evidence returns with the next weekly refresh.
+
 ## Update, 11 Nov 2026
 - File now: 23,541 roles from 1,729 companies; 2,517 companies with a careers system we read (11,236 checked).
 - Job-weighted coverage (`counts.coverage_jobs`), fresh sample of 200 companies (seed jobs-2026-11-11), measured
