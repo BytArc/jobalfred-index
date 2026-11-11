@@ -127,7 +127,8 @@ def parse_article(page: str, url: str) -> dict:
             "currency": CUR.get(amt.group("cur").lower(), amt.group("cur").upper()) if amt else "",
             "total": total, "total_currency": total_cur, "total_at_least": total_at_least,
             "not_equity": bool(NOT_EQUITY.search(title)), "domains": doms, "body_len": len(body),
-            "stage_ctx": stage_ctx[:300], "total_ctx": first[max(0, tot.start() - 80): tot.end() + 40] if tot else ""}
+            "stage_ctx": stage_ctx[:300], "total_ctx": first[max(0, tot.start() - 80): tot.end() + 40] if tot else "",
+            "lede": first.split("Linkedin", 1)[-1].strip()[:400]}
 
 
 def reparse(r: dict) -> dict:

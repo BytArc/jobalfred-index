@@ -37,13 +37,16 @@ def parse_company(text: str) -> dict | None:
     c = (doc.get("props") or {}).get("company")
     if not isinstance(c, dict):
         return None
-    return {k: c.get(k) for k in ("slug", "name", "website", "country", "location", "city", "batch", "ycdc_status", "team_size")}
+    return {k: c.get(k) for k in ("slug", "name", "website", "country", "location", "city", "batch", "ycdc_status", "team_size",
+                                  "tags", "one_liner")}
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--gap", type=float, default=0.7)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--refresh-countries", default="", help="read again the companies already saved with these countries "
+                    "(comma list of ISO codes, or 'europe'), e.g. to pick up fields added since")
     a = ap.parse_args()
     client = Client()
     client.configure_host("www.ycombinator.com", gap=a.gap, inflight=1)
@@ -53,7 +56,13 @@ def main() -> int:
         print(f"sitemap: HTTP {r.status} {r.reason}")
         return 1
     urls = [u for u in re.findall(r"<loc>([^<]+)</loc>", r.text) if COMPANY.match(u.strip())]
-    todo = [u for u in urls if COMPANY.match(u).group(1) not in done["companies"]]
+    again = set()
+    if a.refresh_countries:
+        want = a.refresh_countries.upper().split(",")
+        europe = set("AL AD AT BY BE BA BG HR CY CZ DK EE FI FR DE GR HU IS IE IT XK LV LI LT LU MT MD MC ME NL MK NO PL PT RO RU "
+                     "SM RS SK SI ES SE CH TR UA GB VA GI IM JE GG FO".split())
+        again = {s for s, c in done["companies"].items() if (c.get("country") in europe if want == ["EUROPE"] else c.get("country") in want)}
+    todo = [u for u in urls if COMPANY.match(u).group(1) not in done["companies"] or COMPANY.match(u).group(1) in again]
     if a.limit:
         todo = todo[:a.limit]
     print(f"{len(urls)} company pages, {len(todo)} to read", flush=True)

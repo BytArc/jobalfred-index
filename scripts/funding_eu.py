@@ -82,7 +82,7 @@ def confirm(client, items, doc) -> int:
                    "stage": art["stage"] or s["stage"], "amount": art["amount"] or s["amount"],
                    "currency": art["currency"] or s["currency"], "total": art["total"],
                    "total_currency": art["total_currency"], "title": art["title"][:200],
-                   "stage_ctx": art["stage_ctx"], "total_ctx": art["total_ctx"]}
+                   "stage_ctx": art["stage_ctx"], "total_ctx": art["total_ctx"], "lede": art.get("lede", "")}
             if not art["stage"]:
                 rnd["stage"] = s["stage"]                  # a stage in the URL's own words still counts
             lst = doc["rounds"].setdefault(c["domain"], [])
