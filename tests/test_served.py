@@ -29,14 +29,12 @@ class TestNotServed(unittest.TestCase):
         self.assertTrue(served.not_served("UA", "Feodosia"))
         self.assertTrue(served.not_served("UA", "Yevpatoria"))
 
-    @unittest.expectedFailure
-    def test_feodosiya_spelling(self):
-        # Wanted dropped, but the site's pattern (kept word for word) reads feodosi[ay] then a word end, so "Feodosiya" and
-        # "Yevpatoriya" pass. Fix both pattern copies together (e.g. feodosiy?a, yevpatoriy?a), then drop this decorator.
+    def test_both_spellings(self):
         self.assertTrue(served.not_served("UA", "Feodosiya"))
+        self.assertTrue(served.not_served("UA", "Yevpatoriya"))
 
     def test_pattern_is_the_sites(self):
-        self.assertEqual(served.NOT_SERVED_PLACES, r"\b(?:crimea|krym|sevastopol|simferopol|kerch|yalta|feodosi[ay]|yevpatori[ay]|donetsk|"
+        self.assertEqual(served.NOT_SERVED_PLACES, r"\b(?:crimea|krym|sevastopol|simferopol|kerch|yalta|feodosiy?a|yevpatoriy?a|donetsk|"
                                                    r"makiivka|horlivka|mariupol|luhansk|lugansk|alchevsk)\b")
 
     def test_build_writes_no_shard_and_no_row_for_them(self):
