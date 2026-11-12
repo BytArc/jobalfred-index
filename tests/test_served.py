@@ -24,6 +24,20 @@ class TestNotServed(unittest.TestCase):
         self.assertTrue(served.not_served("UA", "Mariupol, Donetsk Oblast"))
         self.assertFalse(served.not_served("UA", "Kyiv, Ukraine"))
         self.assertFalse(served.not_served("IQ", "Baghdad, Iraq"))
+        self.assertFalse(served.not_served("US", "Kercheval Ave, Grosse Pointe, MI"))     # whole words only
+        self.assertFalse(served.not_served("CA", "Lyalta, AB"))
+        self.assertTrue(served.not_served("UA", "Feodosia"))
+        self.assertTrue(served.not_served("UA", "Yevpatoria"))
+
+    @unittest.expectedFailure
+    def test_feodosiya_spelling(self):
+        # Wanted dropped, but the site's pattern (kept word for word) reads feodosi[ay] then a word end, so "Feodosiya" and
+        # "Yevpatoriya" pass. Fix both pattern copies together (e.g. feodosiy?a, yevpatoriy?a), then drop this decorator.
+        self.assertTrue(served.not_served("UA", "Feodosiya"))
+
+    def test_pattern_is_the_sites(self):
+        self.assertEqual(served.NOT_SERVED_PLACES, r"\b(?:crimea|krym|sevastopol|simferopol|kerch|yalta|feodosi[ay]|yevpatori[ay]|donetsk|"
+                                                   r"makiivka|horlivka|mariupol|luhansk|lugansk|alchevsk)\b")
 
     def test_build_writes_no_shard_and_no_row_for_them(self):
         rows = [row("Engineer", "Tehran", "IR", 1), row("Analyst", "Simferopol", "UA", 2), row("Analyst", "Kyiv", "UA", 3),
