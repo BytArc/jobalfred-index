@@ -9,7 +9,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import companies, function, industry, seniority
+from . import companies, function, industry, seniority, served
 from .adapters import FEED_NAMES
 
 FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft", "co", "lr", "lq", "wt", "ws"]
@@ -160,6 +160,7 @@ def build(rows_iter, out_dir: Path, log=print, homepages=None, meta: dict | None
         for r in it:
             yield complete(r)
     rows, dropped = dedupe(labelled(rows_iter))
+    rows, dropped["not_served"] = served.drop_not_served(rows)        # Cuba, Iran, North Korea, Syria, Crimea, Donetsk, Luhansk
     for r in rows:   # strip page words ("Careers", "Career Opportunities") that some APIs leave in company names
         c = clean_company(r[1])
         if c and c != r[1] and len(c) >= 2:
