@@ -237,6 +237,21 @@ class TestVcEu(unittest.TestCase):
             self.assertTrue(head["built"].endswith("Z"))
             self.assertNotIn("stage", body["companies"][0])
 
+    def test_roles_in_places_not_served_are_dropped_and_counted(self):
+        with tempfile.TemporaryDirectory() as d:
+            st = State(Path(d) / "s.db", "r1")
+            st.add_tenant("greenhouse", "acme", {}, "startup")
+            rows = [self.row("https://acme.example/jobs/1"),
+                    self.row("https://acme.example/jobs/2")[:2] + ["Tehran", "IR"] + self.row("x")[4:],
+                    self.row("https://acme.example/jobs/3")[:2] + ["Donetsk, Ukraine", "UA"] + self.row("x")[4:]]
+            rows[1][5], rows[2][5] = "https://acme.example/jobs/2", "https://acme.example/jobs/3"
+            st.save_result("greenhouse", "acme", rows)
+            vceu.build(st, self.doc(), Path(d) / "v.gz", log=lambda m: None)
+            body = json.loads(gzip.decompress((Path(d) / "v.gz").read_bytes()))
+        self.assertEqual(len(body["rows"]), 1)
+        self.assertEqual(body["counts"]["not_served_rows_dropped"], 2)
+        self.assertEqual(body["companies"][0]["roles"], 1)
+
     def test_a_vc_firm_is_kind_investor_with_no_backers(self):
         """The site keys its "VC firm" tag on kind == "investor" exactly; a firm is never its own backer."""
         doc = {"counts": {}, "companies": [{"name": "Acme Ventures", "domain": "acme.example", "country": "", "kind": "investor",

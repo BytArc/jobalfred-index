@@ -16,7 +16,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import companies as colists, industry, names, seniority, shards, startups, vcindustry
+from . import served, companies as colists, industry, names, seniority, shards, startups, vcindustry
 
 EUROPE = set("AL AD AT BY BE BA BG HR CY CZ DK EE FI FR DE GR HU IS IE IT XK LV LI LT LU MT MD MC ME NL MK NO PL PT RO RU SM "
              "RS SK SI ES SE CH TR UA GB VA GI IM JE GG FO".split())
@@ -185,6 +185,13 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
             rows.append(r + [c["domain"]] + ftail(c["domain"]) + ["|".join(b["name"] for b in backers.get(c["domain"], []))])
             per_company[c["domain"]] = per_company.get(c["domain"], 0) + 1
     rows.sort(key=lambda r: (shards.norm(r[1]), r[0].lower(), r[5]))
+    # places JobAlfred does not serve (served.py, the same rule as the main index): their roles are not written
+    rows, not_served_n = served.drop_not_served(rows)
+    if not_served_n:
+        per_company = {}
+        for r in rows:
+            per_company[r[len(shards.FIELDS)]] = per_company.get(r[len(shards.FIELDS)], 0) + 1
+        log(f"vc: {not_served_n} roles in places JobAlfred does not serve dropped")
     # industry: a reader's hand label first, then public evidence (vcindustry: the funding article's description, YC tags),
     # then industry.assign's own sources (stored labels, the local model above its cutoff), then Not stated
     listed = [c for c in doc.get("companies", []) if c["domain"] in per_company or c.get("tenants")]
@@ -222,7 +229,7 @@ def build(state, doc: dict, out: Path, log=print, homepages=None) -> dict:
     counts = dict(doc.get("counts") or {})
     counts.update({"companies_with_careers_system": len(companies),
                    "companies_with_roles": sum(1 for c in companies if c["roles"]),
-                   "roles": len(rows), "boards_dropped": dropped,
+                   "roles": len(rows), "boards_dropped": dropped, "not_served_rows_dropped": not_served_n,
                    "companies_with_funding": sum(1 for c in companies if c.get("funding")),
                    "industry_rows_tagged": sum(1 for r in rows if r[industry.IN] not in ("", industry.OTHER, industry.NOT_STATED)),
                    "industry_from_public_evidence": {"companies": sum(1 for c in companies if c.get("industry")), "rows": vc_rows},
