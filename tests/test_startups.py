@@ -4,13 +4,27 @@ import json
 import tempfile
 import unittest
 from unittest import mock
+from datetime import date
 from pathlib import Path
 
-from jobalfred_index import shards, startups, vceu
+from jobalfred_index import model, shards, startups, vceu
 from jobalfred_index.adapters import join, jsonld, recruitee, teamtailor
 from jobalfred_index.discovery import classify
 from jobalfred_index.polite import Resp
 from jobalfred_index.state import State
+
+
+# The saved fixtures date from 11 Nov 2026. Tests that count roles dropped for being over a year old
+# run as if today were that day, so they don't start failing as the calendar moves on.
+FIXTURE_DAY = date(2026, 11, 11)
+_real_too_old = model.too_old
+
+
+def _too_old_on_fixture_day(posted, today=None):
+    return _real_too_old(posted, today or FIXTURE_DAY)
+
+
+on_fixture_day = mock.patch.object(model, "too_old", _too_old_on_fixture_day)
 
 
 class FakeClient:
@@ -169,6 +183,7 @@ class TestNameCheck(unittest.TestCase):
         self.assertEqual(startups.verify_board(c, "lever", "mistral", "Mistral AI", "mistral.ai"), "unknown")
 
 
+@on_fixture_day
 class TestGem(unittest.TestCase):
     def test_parse_and_classify(self):
         from jobalfred_index.adapters import gem
@@ -181,6 +196,7 @@ class TestGem(unittest.TestCase):
                          [("gem", "senndertechnologies-gmbh", {})])
 
 
+@on_fixture_day
 class TestJoin(unittest.TestCase):
     def test_parse_saved_page(self):
         html = (Path(__file__).parent / "fixtures" / "join_company.html").read_text()
