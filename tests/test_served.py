@@ -32,7 +32,8 @@ class TestNotServed(unittest.TestCase):
     def test_named_places_and_cities(self):          # Stripe's review, 20 Nov 2026: rows located there by name, not by code
         for cc, loc in (("", "Havana, Cuba"), ("CO", "Havana, Pinar del Río, Cuba; Bogotá, Colombia"), ("AL", "Al-Hasakah, Syria"),
                         ("", "Syrian Arab Republic"), ("", "Syria, Damascus"), ("MX", "Mexico; Argentina; Cuba; Ecuador"), ("", "Guantánamo, Cuba"),
-                        ("", "Damascus, Damascus"), ("", "Aleppo, Aleppo"), ("", "Damascus, SYR"), ("", "Tehran"), ("", "Pyongyang"), ("", "Iran")):
+                        ("", "Damascus, Damascus"), ("", "Aleppo, Aleppo"), ("", "Damascus, SYR"), ("", "Tehran"), ("", "Pyongyang"), ("", "Iran"),
+                        ("", "Syria Location"), ("", "Syria (Remote)"), ("", "Cuba Office")):
             self.assertTrue(served.not_served(cc, loc), (cc, loc))
         for cc, loc in (("US", "Cuba, NY, United States"), ("US", "Cuba, MO"), ("US", "Damascus, MD, United States"), ("GB", "FXE-EU/GBR/QQDBO/Cuba Mills"),
                         ("ES", "Habana P.I. Centrovia 19, La Muela, Spain"), ("", "Aurora-Havana Gardens (1241)"), ("US", "Remote - USA"), ("", "Remote"),

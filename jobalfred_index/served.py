@@ -18,7 +18,7 @@ import re
 NOT_SERVED_CC = frozenset({"CU", "IR", "KP", "SY"})
 NOT_SERVED_PLACES = r"\b(?:crimea|krym|sevastopol|simferopol|kerch|yalta|feodosiy?a|yevpatoriy?a|donetsk|makiivka|horlivka|mariupol|luhansk|lugansk|alchevsk)\b"
 _PLACES = re.compile(NOT_SERVED_PLACES, re.I)
-NOT_SERVED_NAMES = r"(?:^|[,;|(])\s*(?:iran|islamic republic of iran|cuba|syria|syrian arab republic|north korea|dprk|democratic people's republic of korea)\s*(?=[,;|)]|$)"
+NOT_SERVED_NAMES = r"(?:^|[,;|(])\s*(?:iran|islamic republic of iran|cuba|syria|syrian arab republic|north korea|dprk|democratic people's republic of korea)\s*(?=[,;|()]|location\b|office\b|$)"
 NOT_SERVED_CITIES = r"\b(?:tehran|teheran|isfahan|esfahan|mashhad|shiraz|tabriz|karaj|havana(?! gardens)|la habana|santiago de cuba|damascus|aleppo|homs|latakia|al-?hasakah|hasakah|raqqa|al-raqqa|idlib|deir ez-?zor|pyongyang)\b"
 _NAMES = re.compile(NOT_SERVED_NAMES, re.I)
 _CITIES = re.compile(NOT_SERVED_CITIES, re.I)
