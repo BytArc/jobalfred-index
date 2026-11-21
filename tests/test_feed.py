@@ -137,6 +137,20 @@ class TestFeed(unittest.TestCase):
         self.assertEqual(got[shards.FIELDS.index("ws")], "")
         self.assertEqual(len(got), len(shards.FIELDS))
 
+    def test_never_read_tenants_go_last_and_are_capped_when_asked(self):
+        st = State(self.d / "order.db", "o")
+        for k in ("new1", "new2", "new3", "read_old", "read_recent"):
+            st.add_tenant("lever", k, {})
+        with st.lock:
+            st.db.execute("UPDATE tenants SET last_ok=? WHERE key='read_old'", (self.now - 5 * DAY,))
+            st.db.execute("UPDATE tenants SET last_ok=? WHERE key='read_recent'", (self.now - DAY,))
+        usual = [t["key"] for t in st.tenants("lever")]
+        self.assertEqual(usual[3:], ["read_old", "read_recent"])          # the nightly: never-read first
+        known_first = [t["key"] for t in st.tenants("lever", new_max=2)]
+        self.assertEqual(known_first[:2], ["read_old", "read_recent"])
+        self.assertEqual(len(known_first), 4)
+        self.assertEqual(len(st.tenants("lever", new_max=0)), 2)
+
     def test_the_fetch_leaves_out_skipped_sources(self):
         st = self.nightly()
         st.add_tenant("lever", "acme", {})

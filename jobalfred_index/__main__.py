@@ -50,6 +50,10 @@ def main(argv=None) -> int:
     ap.add_argument("--carry-days", type=float, default=14, help="carry a tenant's rows only if they were read at most this many days ago")
     ap.add_argument("--feed", default="", help="run: a feed file, or a folder of them, read on another machine (feed.py); the newest whole "
                                                "one is merged before fetching and, when fresh, its sources are not fetched here")
+    ap.add_argument("--new-max", type=int, default=-1, help="feed: read tenants never read before last, and at most this many of them "
+                                                            "per source (-1: the usual order, never-read first)")
+    ap.add_argument("--host-pace", action="append", default=[], help="HOST=GAP:INFLIGHT, for example .myworkdayjobs.com=0.15:10 "
+                                                                    "(a family starts with a dot); repeatable")
     ap.add_argument("--feed-out", default=str(ROOT / "work" / "feed"), help="feed: the folder the feed file is written to")
     a = ap.parse_args(argv)
     if a.command == "feed" and not a.only:
@@ -71,6 +75,10 @@ def main(argv=None) -> int:
     client.configure_host("www.themuse.com", gap=1.0)
     client.configure_host("apply.workable.com", gap=2.5, inflight=1)  # answered 429 at 2 requests a second
     client.configure_host("himalayas.app", gap=1.0)
+    for hp in a.host_pace:
+        host, _, pace = hp.partition("=")
+        gap, _, inflight = pace.partition(":")
+        client.configure_host(host, gap=float(gap) if gap else None, inflight=int(inflight) if inflight else None)
     out_dir = Path(a.out)
     report: dict = {"run_id": run_id, "started": time.strftime("%Y-%m-%dT%H:%M:%S%z")}
 
@@ -174,7 +182,7 @@ def main(argv=None) -> int:
     if a.command == "feed":
         log(f"== fetch for the feed: {', '.join(only)}")
         report["fetch"] = pipeline.run_fetch(state, client, max(60, budget - (time.time() - T0) - 300), only, a.max_age_hours, out_dir,
-                                             10 ** 9, log, a.limit or None)
+                                             10 ** 9, log, a.limit or None, new_max=a.new_max if a.new_max >= 0 else None)
         path, report["feed"] = feed.export(state, Path(a.feed_out), only, a.carry_days, shards.FIELDS, log,
                                            stats={"run_id": run_id, "fetch": report["fetch"]})
         report["feed"]["file"] = str(path)

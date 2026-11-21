@@ -147,7 +147,8 @@ def iter_rows(state: State):
 
 
 def run_fetch(state: State, client: Client, budget_s: float, only: list[str] | None, max_age_hours: float,
-              out_dir: Path, checkpoint_s: float, log, limit: int | None = None, skip: set[str] | frozenset = frozenset()) -> dict:
+              out_dir: Path, checkpoint_s: float, log, limit: int | None = None, skip: set[str] | frozenset = frozenset(),
+              new_max: int | None = None) -> dict:
     t0 = time.monotonic()
     deadline = t0 + budget_s
     client.deadline = time.time() + budget_s + 180   # in-flight sources get three minutes of grace
@@ -155,7 +156,7 @@ def run_fetch(state: State, client: Client, budget_s: float, only: list[str] | N
     for name, src in sorted(SOURCES.items(), key=lambda kv: kv[1].priority):
         if (only and name not in only) or name in skip:   # skip: sources a fresh feed already read (feed.py)
             continue
-        tenants = state.tenants(name, max_age_hours=max_age_hours)
+        tenants = state.tenants(name, max_age_hours=max_age_hours, new_max=new_max)
         if limit:
             tenants = tenants[:limit]
         if tenants:

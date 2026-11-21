@@ -68,22 +68,29 @@ class State:
                                 (json.dumps(merged, separators=(",", ":")), ats, key))
             return False
 
-    def tenants(self, ats: str, max_age_hours: float | None = None, include_dead: bool = False) -> list[dict]:
+    def tenants(self, ats: str, max_age_hours: float | None = None, include_dead: bool = False, new_max: int | None = None) -> list[dict]:
         """A source's tenants, the ones fetched longest ago first (never fetched first of all), so a run that runs out of time skips
-        different tenants each night. Ties: startups first, then an order that changes every day."""
+        different tenants each night. Ties: startups first, then an order that changes every day.
+        new_max: tenants never read go last instead, and at most new_max of them. A burst of never-read hosts is mostly hosts that do
+        not exist, and Workday answers such a burst with HTTP 429 for every host (seen 21 Nov 2026), so the feed reads known ones first."""
         q = "SELECT key,data,last_ok,n_jobs FROM tenants WHERE ats=?"
         if not include_dead:
             q += " AND status!='dead'"
-        q += (" ORDER BY CASE WHEN last_ok IS NULL THEN 0 ELSE 1 END, last_ok, CASE WHEN source='startup' THEN 0 ELSE 1 END,"
-              " (rowid * 2654435761 + ?) % 4294967296")
+        q += (f" ORDER BY CASE WHEN last_ok IS NULL THEN {1 if new_max is not None else 0} ELSE {0 if new_max is not None else 1} END,"
+              " last_ok, CASE WHEN source='startup' THEN 0 ELSE 1 END, (rowid * 2654435761 + ?) % 4294967296")
         day = int(time.time() // 86400)
         with self.lock:
             rows = self.db.execute(q, (ats, day * 40503)).fetchall()
         cutoff = time.time() - max_age_hours * 3600 if max_age_hours else None
         out = []
+        new = 0
         for key, data, last_ok, n in rows:
             if cutoff and last_ok and last_ok > cutoff:
                 continue
+            if new_max is not None and last_ok is None:
+                new += 1
+                if new > new_max:
+                    break
             d = json.loads(data or "{}")
             d["key"] = key
             out.append(d)

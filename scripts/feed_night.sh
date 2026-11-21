@@ -3,7 +3,8 @@
 # jobalfred_index/feed.py). Run by cron, one run at a time: fetch those sources, write the feed, publish it to release aws-feed.
 # The nightly build on GitHub merges the newest feed and skips fetching those sources itself.
 #
-# Settings by environment: FEED_SOURCES (default workday,oracle), FEED_MINUTES (default 230).
+# Settings by environment: FEED_SOURCES (default workday,oracle), FEED_MINUTES (default 230), FEED_NEW_MAX (never-read tenants
+# per source per night, read last; default 300), FEED_WORKDAY_PACE (default .myworkdayjobs.com=0.15:10, gap seconds:in flight).
 set -uo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p work/feed work/logs
@@ -22,7 +23,7 @@ else
 fi
 nice -n 10 .venv/bin/python -u -m jobalfred_index feed --only "${FEED_SOURCES:-workday,oracle}" --minutes "${FEED_MINUTES:-230}" \
   --state work/feed.db --tenants work/tenants.json.gz --extra-tenants data/companies/tenants.json --feed-out work/feed \
-  --carry-days 14 --industry-budget 0
+  --carry-days 14 --industry-budget 0 --new-max "${FEED_NEW_MAX:-300}" --host-pace "${FEED_WORKDAY_PACE:-.myworkdayjobs.com=0.15:10}"
 rc=$?
 echo "$(date -u +%FT%TZ) fetch finished (exit $rc)"
 .venv/bin/python scripts/feed_upload.py work/feed || echo "publish failed; the nightly falls back to carry-over"
