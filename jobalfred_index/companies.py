@@ -295,7 +295,8 @@ CO, LR, LQ = 16, 17, 18        # positions after t c l cc r u p a smin smax cur 
 
 def assign(rows: list[list], log=print) -> dict:
     """Fill co for every row, and lr/lq (inferred) where the description stated nothing. One lookup per employer and board.
-    Then the work type (worktype.assign) and, where no level is stated, the inferred level (levelinfer.assign)."""
+    Then the work type (worktype.assign), where no level is stated the inferred level (levelinfer.assign), and the eight-level
+    seniority and years tags (levels.assign)."""
     cache: dict[tuple, tuple[list[str], str]] = {}
     stated = inferred = unknown = listed = 0
     per_code: dict[str, int] = {}
@@ -326,9 +327,10 @@ def assign(rows: list[list], log=print) -> dict:
     stats = {"rows_on_a_list": listed, "lang_stated": stated, "lang_inferred": inferred, "lang_unknown": unknown, "per_list": per_code}
     log(f"companies: {stats}")
     # the other per-row labels that every row must carry, here so every caller (shards.build, vceu) labels a row completely
-    from . import levelinfer, worktype
+    from . import levelinfer, levels, worktype
     stats["work_type"] = worktype.assign(rows, log=log)
     stats["level_inferred"] = levelinfer.assign(rows, log=log)
+    stats["level_and_years"] = levels.assign(rows, log=log)
     return stats
 
 

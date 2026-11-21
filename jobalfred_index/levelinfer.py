@@ -135,6 +135,24 @@ def predict(feats: dict[str, float], model: dict | None = None, allowed=INFER) -
     return m["classes"][i], e[i] / s
 
 
+def distribution(feats: dict[str, float], model: dict | None = None) -> list[tuple[int, float]]:
+    """[(level, probability)] over the model's classes (old 1-7 scale), most likely first."""
+    m = model or load()
+    if not m:
+        return [(seniority.MID, 1.0)]
+    z = list(m["b"])
+    W = m["w"]
+    for k, v in feats.items():
+        row = W.get(k)
+        if row:
+            for i, wv in enumerate(row):
+                z[i] += v * wv
+    mx = max(z)
+    e = [math.exp(a - mx) for a in z]
+    s = sum(e)
+    return sorted(((c, e[i] / s) for i, c in enumerate(m["classes"])), key=lambda x: -x[1])
+
+
 def assign(rows: list[list], log=print, model: dict | None = None) -> dict:
     """Give every row with lv 0 the most likely level, ls "i". One prediction per distinct (title, fn, ft, ats, cc, company)."""
     from .industry import group_key

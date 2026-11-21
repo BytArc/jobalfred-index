@@ -221,6 +221,56 @@ Measured 11 Nov 2026 by hand, reading each posting's description (years asked fo
 - Work type, on 55 random rows: 48 right; the misses are hybrid roles whose list entry says nothing (Workday shows it only on the job page)
   and one Lever posting flagged remote for a ship's officer.
 
+## Seniority level (sl, ss) and years of experience (yx, ys)
+
+Four more fields close every shard row, after `ws` (VC rows carry them too, before `d`). Every served row has all four, the way every row
+has a work type. `lv`/`ls` above stay as they were for readers that use them; `sl` is the closed eight-level set that replaces them.
+
+| `sl` | level | | `yx` | years the posting requires |
+|---|---|---|---|---|
+| 1 | internship (internships, working students, apprenticeships) | | 1 | 0-1 (none, or under a year) |
+| 2 | early career (entry, junior, graduate, trainee) | | 2 | 1-3 (1 or 2) |
+| 3 | mid | | 3 | 3-5 (3 or 4) |
+| 4 | senior | | 4 | 5-8 (5 to 7) |
+| 5 | lead, staff, principal, supervisor | | 5 | 8-12 (8 to 11) |
+| 6 | manager | | 6 | 12+ |
+| 7 | director, head of | | | |
+| 8 | executive (VP and above) | | | |
+
+`ss`: `n` the careers system's own level field, `t` the title, `d` the description in words ("no experience needed", "this 6-month
+internship"); these three are **stated**. `i` inferred, `a` inferred by the optional AI fallback. `ys`: `s` stated by the posting (a
+structured field, the title or the description), `i` inferred from the level, `a` read by the AI fallback. An inferred interval is never
+marked `s`; a reader that wants stated values only keeps `ss` in (`n`, `t`, `d`) and `ys` = `s`.
+
+The cascade, cheapest and most certain first (`jobalfred_index/levels.py`, no network, no AI):
+
+1. **Stated.** A title word is published as stated only when its family was right on at least 97% of hand-checked titles: internship
+   words in seven languages, junior, graduate, entry level, pleno/medior/confirmé, senior, supervisor, shift leader, kitchen ranks,
+   "Lead/Staff/Principal Engineer", store, restaurant, branch and engineering managers, spelled-out chief officers and Geschäftsführer.
+   Then the careers system's own field (internship values only; "Experienced" or "Mid-level" are often a picker's default), then the
+   description. A title that names two levels ("Senior/Lead", "(Senior) Consultant", "Jr e Pleno", "Analyst / Senior Analyst") states none.
+   Years are read from JSON-LD `experienceRequirements`, the title, then the description: required years only, not preferred ones; degree
+   ladders take the smallest number; company history, age, availability, contract or degree length are not experience; a posting for
+   several levels states none.
+2. **Weaker words as hints.** Director, head of, VP, team lead, associate, coordinator, "Manager, X", Roman numeral grades: their level is
+   used, marked inferred (`i`). They were right on about 80% of checked titles, against 34% for the model on the same rows.
+3. **Trained model.** `levelinfer.py` (unchanged, trained on the rows that state a level plus hand-checked rows) with a per-level
+   calibration and the stated years (P(level | years)) from `data/levels/tables.json`, fitted on the adjudicated development labels so the
+   predicted level mix stays near the true one. Inferred years are the median interval of the level among postings that state both.
+4. **AI fallback, off.** `aifallback.py` asks Cloudflare Workers AI (free 10,000 Neurons a day) about roles whose own description the rules
+   could not read, only when `JOBALFRED_LEVEL_AI=cloudflare`, `CF_ACCOUNT_ID` and `CF_AI_TOKEN` are set. It counts Neurons from
+   Cloudflare's own token counts and stops before a run passes 8,000 (`JOBALFRED_LEVEL_AI_NEURONS`), so it stays inside the free daily
+   allocation and costs nothing. Its answers are marked `a`; a years number is kept only if the excerpt itself writes it.
+
+Descriptions are read when a role is collected and never stored. To read more of them at no extra request, Greenhouse boards are read
+with `content=true` (`JOBALFRED_GREENHOUSE_CONTENT=0` turns it off), and Recruitee's, Teamtailor's and JSON-LD career sites' own
+descriptions and level fields are passed to the rules. Workday, Oracle, iCIMS search, JazzHR, BambooHR and Gupy give no description in
+the list, so their years are inferred.
+
+Measured on a fresh sample of 919 roles labelled blind and adjudicated blind (`LEVELS_REPORT.md`, `data/levels/`): a stated level is
+right 99.0% of the time (95% CI 97.2 to 99.7), a stated years interval 93.5% (89.1 to 96.1); a posting that states no years is marked
+inferred 98.3% of the time. Inferred levels are 57.9% exact and 86.9% within one level.
+
 ## Run
 
 ```

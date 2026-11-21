@@ -2,7 +2,9 @@
 career site is served on the employer's own domain (tenant data {"host": ...})."""
 from __future__ import annotations
 
-from ..model import make
+import html
+
+from ..model import clean, make
 from .base import check, parse_xml, slug_title, txt
 
 ATS = "teamtailor"
@@ -24,7 +26,8 @@ def parse(text: str, tenant: dict) -> list:
             cc = cc or country
         rs = txt(it, "remoteStatus").lower()
         workplace = {"fully": "remote", "full": "remote", "remote": "remote", "hybrid": "hybrid"}.get(rs, "")
-        job = make(ATS, txt(it, "title"), company, locs, txt(it, "link"), txt(it, "pubDate"), workplace=workplace)
+        job = make(ATS, txt(it, "title"), company, locs, txt(it, "link"), txt(it, "pubDate"), workplace=workplace,
+                   desc=clean(html.unescape(txt(it, "description") or "")) or None)     # the feed carries the description: read, never stored
         if job:
             out.append(job)
     return out

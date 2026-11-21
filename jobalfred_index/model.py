@@ -9,7 +9,7 @@ from datetime import date, datetime, timedelta, timezone
 from . import geo, seniority
 from .industry import from_native as industry_from_native
 from .function import label as function_label
-from . import language, worktype
+from . import aifallback, language, levels, worktype
 
 # Not real roles: evergreen forms that only collect CVs.
 NOT_A_ROLE = re.compile(
@@ -48,11 +48,15 @@ class Job:
     lq: str = ""         # s stated in the description, i inferred from the country, "" unknown
     wt: int = 0          # work type stated by the source, location, title or description: 1 remote, 2 hybrid, 3 on site (worktype.py); 0 not stated
     ws: str = ""         # "s" when stated; rows not stated are inferred at build ("i")
+    sl: int = 0          # seniority level 1-8 (levels.py), stated by the source's field, the title or the description; 0 until inferred at build
+    ss: str = ""         # n source field, t title, d description; filled with "i" at build when inferred
+    yx: int = 0          # years-of-experience interval 1-6 (levels.YEARS), stated by the posting; 0 until inferred from the level at build
+    ys: str = ""         # "s" stated; "i" inferred at build
 
     def row(self) -> list:
         return [self.title, self.company, self.location, self.cc, self.remote, self.url,
                 self.posted, self.ats, self.smin, self.smax, self.cur or None, self.lv, self.ls, self.ind, *function_label(self.title), "", self.lr, self.lq,
-                self.wt, self.ws]
+                self.wt, self.ws, self.sl, self.ss, self.yx, self.ys]
 
 
 def clean(s) -> str:
@@ -113,7 +117,7 @@ def money(v) -> float | None:
 
 
 def make(ats: str, title, company, locs, url, posted="", *, cc_hint="", workplace="", remote_hint: bool | None = None,
-         smin=None, smax=None, cur="", native=None, desc=None, industry=None) -> Job | None:
+         smin=None, smax=None, cur="", native=None, desc=None, industry=None, level_native=None, years_native=None) -> Job | None:
     """Build a Job, or None when the row is not a usable role."""
     title = clean(title)
     url = (url or "").strip()
@@ -143,6 +147,12 @@ def make(ats: str, title, company, locs, url, posted="", *, cc_hint="", workplac
     lv, ls = seniority.label(title, native, desc)     # the description is read here and never stored
     langs = language.detect(desc)
     wt, ws = worktype.stated(workplace, remote, desc)
+    tags = [t for t in ((native if isinstance(native, (list, tuple)) else [native]) +
+                        (level_native if isinstance(level_native, (list, tuple)) else [level_native])) if t]
+    sl, ss, yx, ys = levels.stated(title, tags or None, desc, years_native)
+    ss, ys = ss or levels.READ, ys or levels.READ        # read, nothing stated: inferred at build
+    if desc and (ss not in levels.STATED or ys != "s"):
+        aifallback.offer(url, title, desc)                # no-op unless the optional AI fallback is configured
     return Job(title[:200], company[:120], location[:200], cc, remote, url, posted, ats, smin, smax,
                (cur or "")[:3].upper() if (smin or smax) else "", lv, ls, industry_from_native(industry),
-               ",".join(langs), "s" if langs else "", wt, ws)
+               ",".join(langs), "s" if langs else "", wt, ws, sl, ss, yx, ys)

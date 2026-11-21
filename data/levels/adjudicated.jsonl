@@ -1,0 +1,177 @@
+{"id": "g0024", "why": "title says Internship; the field mid_level is a default", "level": "internship"}
+{"id": "g0029", "why": "no team or reports mentioned; 3 years required, independent design role -> mid", "level": "mid"}
+{"id": "g0044", "why": "all quals required; broadest is 4+ years in a technology domain; 2+ is a narrower item", "years": 4}
+{"id": "g0085", "why": "Experienced is Accenture's non-campus default; asks 1-2 years, no senior scope -> mid", "level": "mid"}
+{"id": "g0111", "why": "starts as inspector, onboards colleagues, deputy to leader; Abteilungsleiter is only a future perspective", "level": "lead"}
+{"id": "g0115", "why": "title word Lider (lead); 5-8 years; text does not contradict", "level": "lead"}
+{"id": "g0194", "why": "title word Lead; 8 years, mentors juniors; rubric puts staff-level IC leads under lead", "level": "lead"}
+{"id": "g0203", "why": "Superviseur: rubric lists supervisor as lead", "level": "lead"}
+{"id": "g0252", "why": "CRO = conversion rate optimization, not an exec; 5+ years, field Experienced -> senior", "level": "senior"}
+{"id": "g0311", "why": "title and text say mid-level; 2-5 years", "level": "mid"}
+{"id": "g0335", "why": "chef de chantier is a site foreman; rubric lists foreman as lead", "level": "lead"}
+{"id": "g0362", "why": "directeur de restaurant = restaurant manager of one site; hires and evaluates -> manager", "level": "manager"}
+{"id": "g0374", "why": "title word Lead; owns IR operations and builds processes; nothing clearly contradicts", "level": "lead"}
+{"id": "g0377", "why": "(Senior) Consultant hires at both levels; the floor is Consultant, no years stated -> mid", "level": "mid"}
+{"id": "g0390", "why": "Nike Athlete = sales associate, on-call, retail experience only a plus -> early", "level": "early"}
+{"id": "g0397", "why": "asks only erste Berufserfahrung (first experience); experienced field is a default", "level": "early"}
+{"id": "g0400", "why": "Service Manager manages cleaning vendors, no direct reports shown -> not a people manager; mid", "level": "mid"}
+{"id": "g0426", "why": "title word Lead, owns day-to-day AP; 5+ years; text does not contradict", "level": "lead"}
+{"id": "g0450", "why": "title intermediate or senior; requires minimum 8 years -> senior", "level": "senior"}
+{"id": "g0451", "why": "chef de projet = project manager, no reports; experience confirmee -> mid", "level": "mid"}
+{"id": "g0466", "why": "Manager PMO/PM title but text says functional (not disciplinary) leadership of teams -> lead", "level": "lead"}
+{"id": "g0468", "why": "a fellowship is an early-career programme; nothing suggests leading a team", "level": "early"}
+{"id": "g0471", "why": "prior experience only preferential; no number of years stated", "years": null}
+{"id": "g0505", "why": "text is only a job list; title says Operations Manager and nothing contradicts it", "level": "manager"}
+{"id": "g0557", "why": "hands-on consultant working with experienced colleagues; minimum 2 years -> mid; field is a default", "level": "mid"}
+{"id": "g0575", "why": "duties are all individual door-to-door collection, no team at all; title clearly contradicted -> early", "level": "early"}
+{"id": "g0587", "why": "text is only a job list; Coordenador(a) in Brazil is the first formal people-manager level", "level": "manager"}
+{"id": "g0610", "why": "Senior/Lead hands-on IC, floor is Senior; years differ by level (4+ vs Senior 6+) -> null", "level": "senior", "years": null}
+{"id": "g0615", "why": "requires at least 3-5 years in business analytics -> mid despite Associate title", "level": "mid"}
+{"id": "g0677", "why": "text calls it People Coordinator, a solo first hire with no team; 4+ years -> mid", "level": "mid"}
+{"id": "g0688", "why": "text says a 6-month stage with 800 EUR allowance -> internship despite Trainee title", "level": "internship"}
+{"id": "g0798", "why": "hourly assistant to the store manager, keyholder; supervises shifts without being the formal manager -> lead", "level": "lead"}
+{"id": "g0848", "why": "Assistant Manager is a grade title; duties are all assist, no reports; 3-4 years -> mid", "level": "mid"}
+{"id": "g0855", "why": "part-time frontline sales associate, only prior retail asked; Sr title clearly contradicted -> early", "level": "early"}
+{"id": "g0874", "why": "Lider Tecnico = tech lead; raises the team's technical standard; rubric lists tech lead as lead", "level": "lead"}
+{"id": "g0889", "why": "shift manager assisting the GM, hourly; rubric lists shift leader as lead", "level": "lead"}
+{"id": "g0890", "why": "Consultor title; IT service management of vendors and contracts, no reports -> mid", "level": "mid"}
+{"id": "g0915", "why": "range starts at Senior Associate; individual trade support; 5+ years -> senior", "level": "senior"}
+{"id": "g0940", "why": "professional investigator role, no level or years stated, works under Head of Investigation -> mid", "level": "mid"}
+{"id": "g0975", "why": "Einsatzleiter leads, plans and instructs security staff without formal HR duties -> lead; field is a default", "level": "lead"}
+{"id": "g0976", "why": "Entre 3 y 5 anos o mas como Product Manager -> lower end 3", "years": 3.0}
+{"id": "g1000", "why": "range starts at Senior Associate; supervises juniors; 3-9 years -> senior, not early", "level": "senior"}
+{"id": "g1020", "why": "title Senior; hands-on security engineer, no reports; field manager is a careless default", "level": "senior"}
+{"id": "g1027", "why": "floor is Senior Manager doing hands-on authoring, line mgmt only at AD where applicable; 6+/10+ yrs -> senior", "level": "senior"}
+{"id": "g1052", "why": "Associate grade but a technical valuation officer role; 3+ years preferred -> mid", "level": "mid"}
+{"id": "g1099", "why": "leads guard teams, vacation and payroll planning, needs 5 years Personalfuehrung -> people manager", "level": "manager"}
+{"id": "g1148", "why": "commission sales agent, no team; Manager title contradicted; asks experience anche breve -> early", "level": "early"}
+{"id": "g1162", "why": "disciplinary superior of about 170 employees -> manager; field mid_level is a default", "level": "manager"}
+{"id": "g1221", "why": "text calls it Senior Manager; owns brand, PR and budget alone (domain owner), no reports -> senior", "level": "senior"}
+{"id": "g1233", "why": "text says virtual consultant role with full training, no team; Team Lead title clearly contradicted -> early", "level": "early"}
+{"id": "g1238", "why": "3+ years required in fraud strategy; independent role -> mid", "level": "mid"}
+{"id": "g1268", "why": "project/service responsible handling own orders, no reports; first experience in similar role -> mid", "level": "mid"}
+{"id": "g1294", "why": "title Confirme / Principal hires at two levels; the floor Confirme is mid per rubric", "level": "mid"}
+{"id": "g1370", "why": "title Product Manager Senior; PM with no reports is not a manager -> senior", "level": "senior"}
+{"id": "g1392", "why": "project manager leading project teams, no direct reports shown; 15 years, senior reviewer scope -> senior", "level": "senior"}
+{"id": "g1403", "why": "graduate program; no number of years and no explicit no-experience-required phrase -> null", "years": null}
+{"id": "g1407", "why": "seeks an experienced associate; 3-5 years desired; independent client-service professional -> mid", "level": "mid"}
+{"id": "g1442", "why": "directeur de projets runs projects, no function or teams of managers; 5 years min -> senior", "level": "senior"}
+{"id": "g1475", "why": "commission sales agent, no team; Manager title contradicted; asks experience anche breve -> early", "level": "early"}
+{"id": "g1485", "why": "title Ingenieur travaux principal; rubric puts principal ICs under lead; 5-7 years", "level": "lead"}
+{"id": "g1527", "why": "JPM Associate is a mid corporate title; independently manages a KYC portfolio; no years -> mid", "level": "mid"}
+{"id": "g1549", "why": "bank VP doing an individual reporting job; 7+ years -> senior per rubric", "level": "senior"}
+{"id": "g1598", "why": "postdoctoral fellow is an early-career research training post; no team to lead", "level": "early"}
+{"id": "g1599", "why": "title Lead SAP Consultant; leads CO projects and coaches juniors -> lead", "level": "lead"}
+{"id": "g1621", "why": "Lider Tecnico = tech lead guiding engineers; rubric lists tech lead as lead", "level": "lead"}
+{"id": "g1623", "why": "title grade I is the entry grade; 1-5 years only desirable; field Mid Level is a default", "level": "early"}
+{"id": "g1669", "why": "section chief hires, runs performance reviews, schedules and time control for own team -> manager", "level": "manager"}
+{"id": "g1714", "why": "title Team Lead; rubric lists team lead as lead, though role hires engineers and codes 20-40%", "level": "lead"}
+{"id": "g1724", "why": "title Director; owns the sponsorship sales function, reports to VP; nothing clearly contradicts", "level": "director"}
+{"id": "g1774", "why": "Manager of client project finances with no reports; 2-4 years -> mid", "level": "mid"}
+{"id": "g1779", "why": "EXPERIENCED means not a trainee; at least 2-3 years for an equipment operator -> mid", "level": "mid"}
+{"id": "g1812", "why": "part-time assistant who assists in supervising the store team as sales lead -> lead", "level": "lead"}
+{"id": "g1813", "why": "Directeur of a senior residence run as a profit centre (site GM, chef d'entreprise); 5 years; title directeur", "level": "director"}
+{"id": "g1854", "why": "text is an empty template; Project Finance Manager is a functional title like Project Manager -> mid", "level": "mid"}
+{"id": "g1899", "why": "title Build Lead; leads cabling builds with vendor crews under minimum supervision; not clearly contradicted", "level": "lead"}
+{"id": "g1915", "why": "SDR Team Leader coaching SDRs; rubric lists team lead as lead", "level": "lead"}
+{"id": "g1930", "why": "runs intern/rotation programs, not an intern; no reports, 6+ years -> senior", "level": "senior"}
+{"id": "g0070", "why": "administrative assistant at a branch, no years; 'Presidente Vargas' is the branch name, not a level", "level": "early"}
+{"id": "g0101", "why": "Consultant/Senior Consultant grades, 1-6 years; lower grade Consultant is an independent mid role, PM with no reports", "level": "mid"}
+{"id": "g0106", "why": "title states Engineering Manager; leads engineers and managers, people manager role", "level": "manager"}
+{"id": "g0116", "why": "only 'esperienza consolidata' with no number; 17 anni is company history", "years": null}
+{"id": "g0118", "why": "video director is a creative profession, not running a function; 3-5 years directing -> mid", "level": "mid"}
+{"id": "g0133", "why": "junior store manager supervising about 50 staff and deputising for the store director: manager", "level": "manager"}
+{"id": "g0143", "why": "experience only 'is a plus'; 12 months is contract/availability length, not experience", "years": null}
+{"id": "g0145", "why": "overall 'expérience industrielle confirmée (minimum 10 ans)' beats narrower 6 ans in project management", "years": 10.0}
+{"id": "g0147", "why": "text says Vice President, 'this executive', on Commercial Leadership Team, 20+ years: real executive role", "level": "executive"}
+{"id": "g0163", "why": "junior title but leads and develops a team of 20-100 staff as formal team manager (like jefe de equipo)", "level": "manager"}
+{"id": "g0171", "why": "bakery assistant, no experience required; Presidente Epitácio is the street name", "level": "early"}
+{"id": "g0172", "why": "People Ops Manager with no reports shown, hands-on payroll/onboarding, 3+ years -> mid", "level": "mid"}
+{"id": "g0175", "why": "Shift Area Manager, 'entry-level manager' leading a large team; asks 1+ years directly managing others", "level": "manager"}
+{"id": "g0184", "why": "two-year Future Leaders Graduate Program: graduate programme is early, not an internship", "level": "early"}
+{"id": "g0200", "why": "Director title but part-time 12h/week running one chapel program and managing volunteers; no staff or managers below", "level": "manager"}
+{"id": "g0258", "why": "5 years driving is akin to licence tenure; the work requirement is 'at least 2 years of professional driving'", "years": 2}
+{"id": "g0283", "why": "agency Account Director managing 1-2 direct reports and client relationship, not running a function", "level": "manager"}
+{"id": "g0293", "why": "'solo, end-to-end ownership' with no reports, 3+ years: Manager title is not people management", "level": "mid"}
+{"id": "g0309", "why": "Team Lead title, but text says he builds the team and leads it 'fachlich und disziplinarisch': formal people manager", "level": "manager"}
+{"id": "g0310", "why": "text calls it a People Operations Specialist, no reports; Manager title is not people management", "level": "mid"}
+{"id": "g0312", "why": "Legal Associate, management level Specialist, at least 2 years; 'Chief Risk Office' is the team name", "level": "mid"}
+{"id": "g0322", "why": "5 years driving is akin to licence tenure; the work requirement is 'at least 2 years of professional driving'", "years": 2}
+{"id": "g0409", "why": "contrat de professionnalisation in alternance = training contract (internship); 'débutant accepté' = no experience needed", "level": "internship", "years": 0}
+{"id": "g0594", "why": "consulting VP leading engagement teams with performance management of juniors; not a real executive, not running the practice", "level": "manager"}
+{"id": "g0595", "why": "hires, coaches and manages applied scientists with performance feedback: people manager", "level": "manager"}
+{"id": "g0626", "why": "qualifications list experience with no numbers; '3-5 year vision' is not experience", "years": null}
+{"id": "g0705", "why": "5 years 'conduciendo' is general driving (licence tenure); professional driving experience has no number", "years": null}
+{"id": "g0716", "why": "production manager/technical director of a college theatre, supervises a small production staff; not running a function", "level": "manager"}
+{"id": "g0726", "why": "Chief Information & Technology Officer, C-level; field says Executive", "level": "executive"}
+{"id": "g0756", "why": "5 years driving is akin to licence tenure; the work requirement is 'at least 2 years of professional driving'", "years": 2}
+{"id": "g0776", "why": "fund-admin VP in local daily management overseeing a group of investment accountants; not a real executive role", "level": "manager"}
+{"id": "g0777", "why": "demi chef is below chef de partie and leads no one; asks prior experience in the same role, so an experienced cook -> mid", "level": "mid"}
+{"id": "g0791", "why": "bank VP doing individual NAV/fund accounting work: senior per rubric", "level": "senior"}
+{"id": "g0796", "why": "all years (2+, 1+, 1+) are marked preferred", "years": null}
+{"id": "g0819", "why": "overall '8+ years of relevant DoD financial management...' beats the narrower 5-10+ requirement", "years": 8.0}
+{"id": "g0853", "why": "Trainee title, but paid via a €300/month study grant: a student training contract (beca/prácticas)", "level": "internship"}
+{"id": "g0862", "why": "internship asks for ML experience with no number; 6 months is contract length", "years": null}
+{"id": "g0909", "why": "no years of experience stated; 'last twelve months' is about recent AI work, fifteen years is company history", "years": null}
+{"id": "g0922", "why": "manages a team of 3-5 BI analysts: people manager despite Senior in title", "level": "manager"}
+{"id": "g0954", "why": "text: 'notre Responsable Pentest / Red Team' who builds the pole and grows the team, upskills juniors -> lead", "level": "lead"}
+{"id": "g0959", "why": "EVP is a grade; leads the Luxembourg CoSec client-services line, reports to Head of Europe: director not C-level", "level": "director"}
+{"id": "g0982", "why": "Assistant CFO directs a hospital finance department under the CFO: runs a function, not C-level", "level": "director"}
+{"id": "g1116", "why": "Junior is the grade, but asks 3-4 years and may supervise junior consultants: text contradicts early -> mid", "level": "mid"}
+{"id": "g1146", "why": "only 'Erfahrung in...' with no number of years", "years": null}
+{"id": "g1150", "why": "maintenance chief on a rig supervising maintenance crew, reports to Rig Manager: supervisor/foreman -> lead", "level": "lead"}
+{"id": "g1156", "why": "Minimum Experience: 'New graduate', moves to level II after one year: no experience needed", "years": 0}
+{"id": "g1166", "why": "text: 'a strong Product Manager to lead cross-sell'; no reports, owns a product domain -> senior", "level": "senior"}
+{"id": "g1180", "why": "title says Internship, 6-month duration", "level": "internship"}
+{"id": "g1190", "why": "text: 'a high-impact individual contributor role', senior architecture with mentoring; Manager title contradicted", "level": "senior"}
+{"id": "g1242", "why": "BD & Ops Manager with no reports, advisor to management, 3-5 years -> mid", "level": "mid"}
+{"id": "g1251", "why": "CFO = courants forts (electrical), not Chief Financial Officer; fitter role, first experience accepted", "level": "early"}
+{"id": "g1311", "why": "requires A.S.A./O.S.S. qualification, no years; 35 anni and 6 mesi are company history and contract", "years": null}
+{"id": "g1324", "why": "'2 años de experiencia en Customer Success...'; 30 años is company history", "years": 2.0}
+{"id": "g1336", "why": "Country Lead but text says hands-on Individual Contributor with no team; 5+ years -> senior", "level": "senior"}
+{"id": "g1358", "why": "'plus de 10 ans sur la solution HR Access' is the overall requirement; 5 ans as Chef de Projet is narrower", "years": 10}
+{"id": "g1359", "why": "supervises and mentors a team of PMs and APMs, managing direct reports: manager", "level": "manager"}
+{"id": "g1368", "why": "Amazon Retail Manager is an individual vendor/category role with no reports; Sr in title -> senior", "level": "senior"}
+{"id": "g1406", "why": "text: 'manager-level individual contributor role with no direct reports', owns channel ops -> senior", "level": "senior"}
+{"id": "g1420", "why": "Account Director is an individual sales role owning accounts, no reports; 8+ years -> senior", "level": "senior"}
+{"id": "g1429", "why": "lead teacher = main classroom teacher, no team led; field Mid Level and 3 years -> mid", "level": "mid"}
+{"id": "g1498", "why": "directeur of one crèche running its team, which the posting itself calls 'nos managers': site manager like a store manager", "level": "manager"}
+{"id": "g1546", "why": "Cluster Revenue Chief is a revenue-manager role with no reports shown; asks 2 years -> mid; Chief is not C-level", "level": "mid"}
+{"id": "g1547", "why": "5 years 'driving experience' is licence tenure; professional driving asked with no number", "years": null}
+{"id": "g1577", "why": "demi chef is below chef de partie, 'No supervisory experience'; 3 years related experience (preferred) -> mid", "level": "mid"}
+{"id": "g1588", "why": "ladder: diploma or 3 ans, or 18 mois with internal training: smallest number 1.5", "years": 1.5}
+{"id": "g1645", "why": "overall '7+ years in cloud engineering' beats narrower 3+ years people management", "years": 7.0}
+{"id": "g1661", "why": "'Almeno 5 anni di esperienza in ambito elettrico'; 30 anni is company history", "years": 5.0}
+{"id": "g1673", "why": "overall '5+ years of cloud architecture' beats narrower 4+ years", "years": 5.0}
+{"id": "g1716", "why": "Associate Director grade with 3-4 years, leads workstreams and mentors juniors, no function run -> senior", "level": "senior"}
+{"id": "g1722", "why": "office manager with no reports shown; at least 5 years required -> senior", "level": "senior"}
+{"id": "g1725", "why": "'stagiaire' is a trainee title; text is junior hypermarket store director, 5 years as director, cadre: store manager", "level": "manager"}
+{"id": "g1744", "why": "Head of title, but runs one hands-on team of software developers, 5+ years: manager, not several teams", "level": "manager"}
+{"id": "g1757", "why": "title says Lead; leads the DMP team under the Head of Procurement, no hiring/reviews stated: rubric list -> lead", "level": "lead"}
+{"id": "g1763", "why": "'Lead' means sales lead; first-contact qualifier asking 1-2 years call-centre experience -> early", "level": "early"}
+{"id": "g1764", "why": "'3+ years leading engineering teams, on top of 5+ years as a software engineer': 8 years in all are required", "years": 8}
+{"id": "g1787", "why": "5 years driving is akin to licence tenure; the work requirement is 'at least 2 years of professional driving'", "years": 2}
+{"id": "g1788", "why": "department manager responsible for the PLS aisles' P&L and planning the team's work; management experience asked", "level": "manager"}
+{"id": "g1794", "why": "Account Director owning a client portfolio, no reports, reports to Head of LatAm: senior individual role", "level": "senior"}
+{"id": "g1846", "why": "junior supermarket store director managing about 50 staff: store manager per rubric, not running several teams", "level": "manager"}
+{"id": "h0043", "why": "Only number shown is PE licence within 3 years, a licence timeline, not experience; no years required in visible text.", "years": null}
+{"id": "h0106", "why": "Overall: 5+ years clinical vet tech; 2+ leadership is narrower. B is an interval, not a plain number.", "years": 5}
+{"id": "h0144", "why": "'2-3years min ... experience ... is preferred': the sentence marks it preferred, so it does not count.", "years": null}
+{"id": "h0172", "why": "'Valoramos al menos experiencia de 1 año' is valued/a plus, not required.", "years": null}
+{"id": "h0180", "why": "'8–12+ years of experience in senior sales roles': lower end 8.", "years": 8.0}
+{"id": "h0229", "why": "Only 'first practical working experience' (no number); 6 months is availability.", "years": null}
+{"id": "h0266", "why": "Leads 40+ architects across two countries, 15+ yrs: runs a function, not a principal IC; director.", "level": "director"}
+{"id": "h0282", "why": "SWE experience at senior level 'usually from 7-8 years' is the overall bar; 2-3 yrs management is narrower.", "years": 7.0}
+{"id": "h0339", "why": "Apprendistato is an apprenticeship contract, which the rubric lists under internship.", "level": "internship"}
+{"id": "h0499", "why": "'au moins 5 ans dans des environnements Agiles, dont 2 ans' : overall 5.", "years": 5.0}
+{"id": "h0531", "why": "5 yrs general driving is like licence time, not work; 'At least 2 years of professional driving experience' is the job requirement.", "years": 2}
+{"id": "h0570", "why": "5 ans d'expérience de conduite is general driving (licence-like); professional driving has no number.", "years": null}
+{"id": "h0584", "why": "'7+ years of professional experience in brand, partnerships, or digital marketing'.", "years": 7.0}
+{"id": "h0613", "why": "Only years are a manager's bio (12 years) and data retention (2 years); no requirement.", "years": null}
+{"id": "h0626", "why": "No years of experience stated in the posting.", "years": null}
+{"id": "h0656", "why": "Analyst/(Snr) Analyst, 3+ years, work reviewed by the Commercial Finance Manager: mid.", "level": "mid"}
+{"id": "h0662", "why": "Title says Supervisor (rubric: lead); guiding caregivers does not clearly contradict it.", "level": "lead"}
+{"id": "h0705", "why": "Degree or 4 years related experience: degree ladder, take smallest number written (4).", "years": 4}
+{"id": "h0788", "why": "No number of years required; 12 months is the programme length.", "years": null}
+{"id": "h0881", "why": "No years of experience stated; 24-36 months is data retention.", "years": null}
+{"id": "h0902", "why": "Senior in title; role owns compliance across Italian sites, reports to a leader, no direct reports stated: senior IC.", "level": "senior"}

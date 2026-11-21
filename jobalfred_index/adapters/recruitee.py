@@ -2,7 +2,7 @@
 career site is served on the employer's own domain (tenant data {"host": ...})."""
 from __future__ import annotations
 
-from ..model import make
+from ..model import clean, make
 from .base import get_json, slug_title
 
 ATS = "recruitee"
@@ -28,7 +28,9 @@ def parse(data: dict, tenant: dict) -> list:
         sal = j.get("salary") or {}
         job = make(ATS, j.get("title"), company, locs, j.get("careers_url"), j.get("published_at") or j.get("created_at"),
                    cc_hint=j.get("country_code") or "", workplace=workplace,
-                   smin=sal.get("min"), smax=sal.get("max"), cur=sal.get("currency") or "")
+                   smin=sal.get("min"), smax=sal.get("max"), cur=sal.get("currency") or "",
+                   desc=clean((j.get("description") or "") + " " + (j.get("requirements") or "")) or None,
+                   level_native=j.get("experience_code") or None)
         if job:
             out.append(job)
     return out

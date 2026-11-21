@@ -9,10 +9,11 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import companies, function, industry, seniority, served
+from . import companies, function, industry, levels, seniority, served
 from .adapters import FEED_NAMES
 
-FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft", "co", "lr", "lq", "wt", "ws"]
+FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", "ls", "in", "fn", "ft", "co", "lr", "lq", "wt", "ws",
+          "sl", "ss", "yx", "ys"]
 # lv: seniority level 0 not stated, 1 intern, 2 junior, 3 mid, 4 senior, 5 lead/staff/principal, 6 manager, 7 director and above.
 # ls: where it came from: "n" the source's own tag, "t" the title, "d" the description, "" not stated. Readers map fields by name.
 # in: industry code, see data/industry/taxonomy.json (published beside the manifest as industries.json). Every row has one; "oth" when the signal is weak.
@@ -22,7 +23,13 @@ FIELDS = ["t", "c", "l", "cc", "r", "u", "p", "a", "smin", "smax", "cur", "lv", 
 # lr: ISO 639-1 codes of the languages the role asks for, joined by commas; lq: "s" stated in the description, "i" inferred from the HQ or role country.
 # wt: work type, 1 remote, 2 hybrid, 3 on site; ws: "s" stated (source flag, location, title or description) or "i" inferred. Every row has one.
 # ls also takes "i": a level inferred by the trained model (levelinfer.py) where nothing states one, so every row has a level.
+# sl: seniority level, one of 8 (levels.py): 1 internship, 2 early career, 3 mid, 4 senior, 5 lead/staff/principal, 6 manager, 7 director,
+#     8 executive. ss: "n" the source's own field, "t" the title, "d" the description (stated); "i" inferred by the model; "a" inferred by
+#     the optional AI fallback. Every row has one. lv/ls stay as they were for readers that use them.
+# yx: years of experience the posting requires, interval 1 "0-1", 2 "1-3", 3 "3-5", 4 "5-8", 5 "8-12", 6 "12+"; ys: "s" stated by the
+#     posting, "i" inferred from the level, "a" read by the AI fallback. Every row has one; an inferred interval is never marked "s".
 LV, LS, IND, FN, FT, CO, LR, LQ, WT, WS = (FIELDS.index(k) for k in ("lv", "ls", "in", "fn", "ft", "co", "lr", "lq", "wt", "ws"))
+SL, SS, YX, YS = (FIELDS.index(k) for k in ("sl", "ss", "yx", "ys"))
 
 
 def complete(r: list) -> list:
@@ -32,6 +39,9 @@ def complete(r: list) -> list:
     r += [""] * (len(FIELDS) - len(r))
     if not r[FN]:
         r[FN], r[FT] = function.label(r[0])
+    if not r[SS]:                    # a row stored before the level and years tags: what its title and its old stated level say
+        r[SL], r[SS] = levels.from_stored(r[0], r[LV], r[LS])
+        r[YX], r[YS] = 0, ""
     return r
 MAX_GZ = 8 * 1024 * 1024
 TARGET_GZ = 6 * 1024 * 1024
@@ -212,9 +222,13 @@ def build(rows_iter, out_dir: Path, log=print, homepages=None, meta: dict | None
     tmp = out_dir / "manifest.json.tmp"
     tmp.write_text(json.dumps(manifest, separators=(",", ":")))
     tmp.replace(out_dir / "manifest.json")
-    levels = {seniority.NAMES[k]: v for k, v in sorted(collections.Counter(r[LV] for r in rows).items())}
-    dropped["levels"] = levels
+    old_levels = {seniority.NAMES[k]: v for k, v in sorted(collections.Counter(r[LV] for r in rows).items())}
+    dropped["levels"] = old_levels
     dropped["industries"] = dict(collections.Counter(r[IND] for r in rows).most_common())
     dropped["level_source"] = dict(collections.Counter(r[LS] or "none" for r in rows))
+    dropped["seniority"] = {levels.NAMES.get(k, str(k)): v for k, v in sorted(collections.Counter(r[SL] for r in rows).items())}
+    dropped["seniority_source"] = dict(collections.Counter(r[SS] or "none" for r in rows))
+    dropped["years"] = {levels.YEARS.get(k, str(k)): v for k, v in sorted(collections.Counter(r[YX] for r in rows).items())}
+    dropped["years_source"] = dict(collections.Counter(r[YS] or "none" for r in rows))
     log(f"build: {len(rows)} rows in {len(manifest_shards)} shards; dropped {dropped}")
     return {"manifest": manifest, "dropped": dropped}

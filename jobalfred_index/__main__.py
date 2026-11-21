@@ -232,6 +232,9 @@ def main(argv=None) -> int:
             from itertools import chain
             from . import carryover
             carried, cstats = carryover.carry_over(state, Path(a.carry_over), T0, shards.FIELDS, log, a.carry_days)
+            from . import aifallback
+            if aifallback.enabled():         # roles the optional AI fallback labelled on earlier runs keep their labels
+                log(f"level AI fallback: {aifallback.reuse(carryover.published_rows(Path(a.carry_over)))} earlier labels to reuse")
             rows_iter, meta["carried"] = chain(rows_iter, carried), cstats
             report["carried"] = cstats
         res = shards.build(rows_iter, out_dir, log, homepages=homepages, meta=meta)

@@ -1,6 +1,7 @@
 """One small test per adapter, each on a saved fixture. No network."""
 import json
 import unittest
+from jobalfred_index import shards
 from datetime import date
 from pathlib import Path
 
@@ -25,7 +26,7 @@ class Basics:
         self.assertTrue(j.url.startswith("http"))
         self.assertEqual(j.ats, ats)
         self.assertIn(j.remote, (0, 1, 2))
-        self.assertEqual(len(j.row()), 21)
+        self.assertEqual(len(j.row()), len(shards.FIELDS))      # every field, the level and years tags included
 
 
 class TestGreenhouse(unittest.TestCase, Basics):

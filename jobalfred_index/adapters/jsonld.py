@@ -9,6 +9,8 @@ Tenant data: {"sitemaps": [...], "name": "Company", "include": "regex", "max": 1
 """
 from __future__ import annotations
 
+import html
+
 import gzip
 import json
 import re
@@ -16,7 +18,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from urllib.parse import urlsplit
 
-from ..model import Failed, Gone, make, day
+from ..model import clean, Failed, Gone, make, day
 from .base import check, parse_xml, slug_title
 
 ATS = "jsonld"
@@ -100,8 +102,11 @@ def to_job(p: dict, page_url: str, company_default: str):
         cur = ""
     org = p.get("hiringOrganization")
     company = _s(org) or company_default
+    er = p.get("experienceRequirements")
+    desc = clean(html.unescape(str(p.get("description") or ""))) + (" " + clean(str(p.get("qualifications"))) if p.get("qualifications") else "")
     return make(ATS, p.get("title"), company, locs, page_url, p.get("datePosted"),
-                cc_hint=cc, remote_hint=remote, smin=smin, smax=smax, cur=cur)
+                cc_hint=cc, remote_hint=remote, smin=smin, smax=smax, cur=cur, desc=desc.strip() or None,
+                level_native=(er if isinstance(er, str) and not re.search(r"\d", er) else None), years_native=er or None)
 
 
 def parse(html: str, page_url: str, tenant: dict) -> list:
