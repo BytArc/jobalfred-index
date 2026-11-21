@@ -118,6 +118,23 @@ class State:
                         self.db.execute("UPDATE tenants SET data=? WHERE ats=? AND key=?",
                                         (json.dumps(d, separators=(",", ":")), ats, key))
 
+    def save_read(self, ats: str, key: str, rows: list[list], read_at: float, company: str | None = None) -> None:
+        """Rows read elsewhere at `read_at` (a feed): stored like a fetch, with that time as the fetch date. The try counts as this
+        run's, so the tenant is neither unreached nor failed and carry-over leaves it alone."""
+        blob = gzip.compress(json.dumps(rows, separators=(",", ":")).encode(), 3)
+        with self.lock:
+            self.db.execute("INSERT OR REPLACE INTO jobs(ats,key,fetched,blob) VALUES(?,?,?,?)", (ats, key, read_at, blob))
+            self.db.execute("UPDATE tenants SET last_ok=MAX(COALESCE(last_ok,0),?), last_try=?, gone_runs=0, status='live', n_jobs=?, "
+                            "note='feed' WHERE ats=? AND key=?", (read_at, time.time(), len(rows), ats, key))
+            if company:
+                row = self.db.execute("SELECT data FROM tenants WHERE ats=? AND key=?", (ats, key)).fetchone()
+                if row:
+                    d = json.loads(row[0] or "{}")
+                    if d.get("name") != company:
+                        d["name"] = company
+                        self.db.execute("UPDATE tenants SET data=? WHERE ats=? AND key=?",
+                                        (json.dumps(d, separators=(",", ":")), ats, key))
+
     def set_name(self, ats: str, key: str, name: str, rewrite_rows: bool = True) -> int:
         """Store a tenant's company name (the cache) and, optionally, put it on the tenant's stored rows."""
         with self.lock:
@@ -221,18 +238,20 @@ class State:
         return [(a, k, json.loads(d or "{}")) for a, k, d in rows]
 
     def failed_since(self, since: float) -> list[tuple[str, str, dict, float | None]]:
-        """Live tenants this run tried and could not read (refused, rate limited, timed out), neither read nor gone: (ats, key, data, last_ok)."""
+        """Live tenants this run tried and could not read (refused, rate limited, timed out), neither read nor gone, with no stored rows:
+        (ats, key, data, last_ok)."""
         with self.lock:
             rows = self.db.execute(
                 "SELECT ats,key,data,last_ok FROM tenants WHERE status!='dead' AND last_try>=? AND (last_ok IS NULL OR last_ok<?) "
-                "AND (last_gone_run IS NULL OR last_gone_run!=?)", (since, since, self.run_id)).fetchall()
+                "AND (last_gone_run IS NULL OR last_gone_run!=?) AND NOT EXISTS (SELECT 1 FROM jobs j WHERE j.ats=tenants.ats AND j.key=tenants.key)",
+                (since, since, self.run_id)).fetchall()
         return [(a, k, json.loads(d or "{}"), ok) for a, k, d, ok in rows]
 
     def unreached(self, since: float) -> list[tuple[str, str, dict, float | None]]:
-        """Live tenants this run never tried (no fetch, failure or gone answer since `since`): (ats, key, data, last_ok)."""
+        """Live tenants this run never tried (no fetch, failure or gone answer since `since`) and with no stored rows: (ats, key, data, last_ok)."""
         with self.lock:
-            rows = self.db.execute("SELECT ats,key,data,last_ok FROM tenants WHERE status!='dead' AND (last_try IS NULL OR last_try<?)",
-                                   (since,)).fetchall()
+            rows = self.db.execute("SELECT ats,key,data,last_ok FROM tenants WHERE status!='dead' AND (last_try IS NULL OR last_try<?) "
+                                   "AND NOT EXISTS (SELECT 1 FROM jobs j WHERE j.ats=tenants.ats AND j.key=tenants.key)", (since,)).fetchall()
         return [(a, k, json.loads(d or "{}"), ok) for a, k, d, ok in rows]
 
     def meta_set(self, k: str, v: str) -> None:

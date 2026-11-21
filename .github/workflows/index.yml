@@ -44,11 +44,16 @@ jobs:
           mkdir -p prev
           gh release download index-latest --pattern manifest.json --pattern "*.json.gz" --dir prev --clobber || echo "no published index; nothing to carry over"
 
+      - name: Download the Workday and Oracle feed (they refuse GitHub's servers; a server they answer reads them at night, see jobalfred_index/feed.py)
+        run: |
+          mkdir -p feed
+          gh release download aws-feed --pattern "feed-*.jsonl.gz" --dir feed --clobber || echo "no feed; Workday and Oracle are fetched here"
+
       # --checkpoint-minutes: no snapshot builds while fetching; each one labelled every row on the main thread and slowed the fetch
       - name: Build the index
         run: >-
           python -u -m jobalfred_index run --minutes 315 --discover-minutes 40 --crawls 4 --out dist --checkpoint-minutes 100000
-          --extra-tenants data/companies/tenants.json --carry-over prev --carry-days 14
+          --extra-tenants data/companies/tenants.json --carry-over prev --carry-days 14 --feed feed
 
       - name: Publish release assets
         run: bash scripts/publish_release.sh dist data/tenants.json.gz work

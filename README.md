@@ -231,9 +231,16 @@ python -m jobalfred_index names                    # fill company names for know
 python -m jobalfred_index build                    # rebuild shards from stored rows
 python scripts/startups_eu.py companies|measure|probe|guess|publish|roles|report   # European startups, see the script
 python -m jobalfred_index vceu --minutes 60         # re-read the startups' boards, write dist-vc/vc-eu.json.gz
+python -m jobalfred_index feed --only workday,oracle --minutes 230   # read some sources only and write a feed file (see below)
 ```
 
 `.github/workflows/index.yml` runs this daily and publishes the release assets with the built-in `GITHUB_TOKEN`; it needs no secret.
+
+Since 13 November 2026 Workday and Oracle refuse GitHub's servers while answering other machines normally. A small server reads
+those two at night with the same user agent and the same pace and robots.txt rules (`scripts/feed_night.sh`, run by cron) and
+publishes the result to the release `aws-feed`. The nightly merges the newest feed, keeps each tenant's real read time, and does
+not fetch those sources itself while the feed is fresh (`jobalfred_index/feed.py`). Tenants the feed could not read are carried over
+from the published index for up to 14 days, as before.
 
 ## Licence
 

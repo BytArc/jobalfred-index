@@ -5,6 +5,7 @@
   fetch      fetch only
   build      rebuild shards from stored rows
   stats      print tenant counts
+  feed       fetch some sources only (--only) and write them as a feed for the nightly build (feed.py); no shards
 """
 from __future__ import annotations
 
@@ -14,7 +15,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import discovery, industry, pipeline, probe, shards, startups
+from . import discovery, feed, industry, pipeline, probe, shards, startups
 from .polite import Client
 from .state import State
 
@@ -28,7 +29,7 @@ def log(msg: str) -> None:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="jobalfred_index")
-    ap.add_argument("command", choices=["run", "discover", "fetch", "build", "stats", "names", "vceu"])
+    ap.add_argument("command", choices=["run", "discover", "fetch", "build", "stats", "names", "vceu", "feed"])
     ap.add_argument("--state", default=str(ROOT / "work" / "index.db"))
     ap.add_argument("--tenants", default=str(ROOT / "data" / "tenants.json.gz"), help="persistent tenant list (read and rewritten)")
     ap.add_argument("--seeds", default=str(ROOT / "data" / "seeds.json"))
@@ -47,7 +48,12 @@ def main(argv=None) -> int:
     ap.add_argument("--carry-over", default="", help="a downloaded copy of the published index (manifest.json and shards): the rows of "
                                                      "tenants this run did not reach are kept from it (carryover.py)")
     ap.add_argument("--carry-days", type=float, default=14, help="carry a tenant's rows only if they were read at most this many days ago")
+    ap.add_argument("--feed", default="", help="run: a feed file, or a folder of them, read on another machine (feed.py); the newest whole "
+                                               "one is merged before fetching and, when fresh, its sources are not fetched here")
+    ap.add_argument("--feed-out", default=str(ROOT / "work" / "feed"), help="feed: the folder the feed file is written to")
     a = ap.parse_args(argv)
+    if a.command == "feed" and not a.only:
+        ap.error("feed needs --only, the sources to read (for example --only workday,oracle)")
     if a.command == "vceu":   # its own state and output, so the main index is never touched
         if a.state == ap.get_default("state"):
             a.state = str(ROOT / "work" / "vceu.db")
@@ -118,7 +124,7 @@ def main(argv=None) -> int:
                     continue
             added += state.add_tenant(t["ats"], t["key"], t.get("data"), t.get("source", "extra"))
         log(f"extra tenants added: {added} of {len(extra)}")
-    if a.command in ("fetch", "build"):
+    if a.command in ("fetch", "build", "feed"):
         discovery.load_seeds(state, Path(a.seeds), log)
     if a.command in ("run", "discover"):
         log("== discovery")
@@ -140,6 +146,11 @@ def main(argv=None) -> int:
         def remaining():
             return max(60, budget - (time.time() - T0) - 300)
         report["fetch"] = {}
+        skip: set[str] = set()
+        if a.feed:
+            skip, report["feed"] = feed.merge(state, a.feed, shards.FIELDS, log, a.carry_days)
+            if skip:
+                log(f"== the feed is fresh: {', '.join(sorted(skip))} are not fetched here")
         if a.command == "run" and not only and a.probe_max:
             log("== fetch stage 1: open feeds and big-company sources (also feeds the probe with company names)")
             stage1 = ["amazon", "google", "apple", "uber", "eightfold", "remotive", "arbeitnow", "remoteok", "himalayas",
@@ -154,11 +165,19 @@ def main(argv=None) -> int:
             n_exp = state.export_tenants(a.tenants)
             log(f"== fetch stage 2: every other source (tenants fetched in the last hour are skipped)")
             report["fetch"].update(pipeline.run_fetch(state, client, remaining(), None, 1.0, out_dir,
-                                                      a.checkpoint_minutes * 60, log, a.limit or None))
+                                                      a.checkpoint_minutes * 60, log, a.limit or None, skip))
         else:
             log("== fetch")
             report["fetch"] = pipeline.run_fetch(state, client, remaining(), only or None, a.max_age_hours, out_dir,
-                                                  a.checkpoint_minutes * 60, log, a.limit or None)
+                                                  a.checkpoint_minutes * 60, log, a.limit or None, skip)
+
+    if a.command == "feed":
+        log(f"== fetch for the feed: {', '.join(only)}")
+        report["fetch"] = pipeline.run_fetch(state, client, max(60, budget - (time.time() - T0) - 300), only, a.max_age_hours, out_dir,
+                                             10 ** 9, log, a.limit or None)
+        path, report["feed"] = feed.export(state, Path(a.feed_out), only, a.carry_days, shards.FIELDS, log,
+                                           stats={"run_id": run_id, "fetch": report["fetch"]})
+        report["feed"]["file"] = str(path)
 
     if a.command == "names":
         from concurrent.futures import ThreadPoolExecutor
