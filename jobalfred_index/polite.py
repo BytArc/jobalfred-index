@@ -5,7 +5,8 @@ Rules enforced here, for every request:
   * robots.txt is read for every host and obeyed (including Crawl-delay)
   * a per-host minimum gap between requests and a per-host cap on requests in flight
   * 403, 429 and bot-challenge pages are never worked around: the host is skipped
-    for the rest of the run
+    for the rest of the run; a 429 or a challenge from one host of a platform family
+    (FAMILIES) skips the whole family, since they share one front door
   * no proxies, no cookies kept across hosts, no browser impersonation
 """
 from __future__ import annotations
@@ -207,6 +208,21 @@ class Client:
         with self._guard:
             self.blocked.setdefault(host, reason)
 
+    def block_family(self, host: str, reason: str) -> None:
+        """A rate limit or a bot check from one host of a platform family (every Workday tenant sits behind one Cloudflare zone,
+        seen 21 Nov 2026): the whole family is skipped for the rest of the run, so no other host of it is asked."""
+        self.block(host, reason)
+        f = family(host)
+        if f != host:
+            self.block(f, f"{reason} on {host}")
+
+    def blocked_reason(self, host: str) -> str:
+        r = self.blocked.get(host)
+        if r is None:
+            f = family(host)
+            r = self.blocked.get(f) if f != host else None
+        return r or ""
+
     # -- requests ---------------------------------------------------------
     def request(self, method: str, url: str, *, params=None, json=None, headers=None, data=None,
                 robots: bool = True, timeout: float | None = None, max_bytes: int | None = None) -> Resp:
@@ -214,9 +230,9 @@ class Client:
         host = sp.hostname or ""
         if self.deadline and time.time() > self.deadline:
             return Resp(HOST_SKIPPED, reason="run time box reached", url=url)
-        if host in self.blocked:
+        if self.blocked_reason(host):
             self.stats["host_skipped"] += 1
-            return Resp(HOST_SKIPPED, reason=self.blocked[host], url=url)
+            return Resp(HOST_SKIPPED, reason=self.blocked_reason(host), url=url)
         if robots and not self.robots_allows(url):
             self.stats["robots_denied"] += 1
             with self._guard:
@@ -225,8 +241,8 @@ class Client:
         sem = self._sem(host)
         last = Resp(0, reason="no attempt", url=url)
         for attempt in range(self.retries + 1):
-            if host in self.blocked:
-                return Resp(HOST_SKIPPED, reason=self.blocked[host], url=url)
+            if self.blocked_reason(host):
+                return Resp(HOST_SKIPPED, reason=self.blocked_reason(host), url=url)
             with sem:
                 self._wait_slot(host)
                 self.stats["requests"] += 1
@@ -259,7 +275,7 @@ class Client:
                         time.sleep(wait)
                         last = Resp(429, reason="rate limited", url=url)
                         continue
-                    self.block(host, "HTTP 429 (backed off, skipped for this run)")
+                    self.block_family(host, "HTTP 429 (backed off, skipped for this run)")
                     return Resp(429, reason="rate limited", url=url)
                 if status == 401:
                     return Resp(401, content, hdrs, url, "unauthorised")
@@ -269,8 +285,10 @@ class Client:
                     n = self._strikes[strike_key]
                 limit = 1 if host.endswith(("myworkdayjobs.com",)) else 3
                 challenge = status != 403
-                if challenge or n >= limit:
-                    self.block(host, "bot challenge" if challenge else "HTTP 403 (skipped for this run)")
+                if challenge:
+                    self.block_family(host, "bot challenge")
+                elif n >= limit:
+                    self.block(host, "HTTP 403 (skipped for this run)")
                 return Resp(status, content, hdrs, url, "bot challenge" if challenge else "forbidden")
             if status in RETRY_STATUS:
                 last = Resp(status, content, hdrs, url, f"HTTP {status}")
