@@ -46,7 +46,7 @@ def main(argv=None) -> int:
     ap.add_argument("--probe-max", type=int, default=20000, help="candidate slugs per ATS family from known company names (0 = off)")
     ap.add_argument("--carry-over", default="", help="a downloaded copy of the published index (manifest.json and shards): the rows of "
                                                      "tenants this run did not reach are kept from it (carryover.py)")
-    ap.add_argument("--carry-days", type=float, default=3, help="carry a tenant's rows only if they were read at most this many days ago")
+    ap.add_argument("--carry-days", type=float, default=14, help="carry a tenant's rows only if they were read at most this many days ago")
     a = ap.parse_args(argv)
     if a.command == "vceu":   # its own state and output, so the main index is never touched
         if a.state == ap.get_default("state"):

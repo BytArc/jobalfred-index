@@ -39,7 +39,7 @@ jobs:
           gh release download index-latest --pattern tenants.json.gz --dir data --clobber || echo "no earlier tenant list; starting from data/seeds.json"
           gh release download index-latest --pattern homepages.json.gz --dir data/industry --clobber || echo "no earlier homepage cache; using the committed one"
 
-      - name: Download the published index (the roles of tenants this run does not reach are kept from it)
+      - name: Download the published index (the roles of tenants this run does not reach or cannot read are kept from it, up to 14 days)
         run: |
           mkdir -p prev
           gh release download index-latest --pattern manifest.json --pattern "*.json.gz" --dir prev --clobber || echo "no published index; nothing to carry over"
@@ -48,7 +48,7 @@ jobs:
       - name: Build the index
         run: >-
           python -u -m jobalfred_index run --minutes 315 --discover-minutes 40 --crawls 4 --out dist --checkpoint-minutes 100000
-          --extra-tenants data/companies/tenants.json --carry-over prev --carry-days 3
+          --extra-tenants data/companies/tenants.json --carry-over prev --carry-days 14
 
       - name: Publish release assets
         run: bash scripts/publish_release.sh dist data/tenants.json.gz work

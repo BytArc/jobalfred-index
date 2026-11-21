@@ -1,10 +1,12 @@
-"""Carry-over: the roles of tenants a run did not reach in time are kept from the published index, for a few days.
+"""Carry-over: the roles of tenants a run could not read are kept from the published index, for up to MAX_DAYS days.
 
-A nightly run is time-boxed. Tenants it never tried (no fetch, no failure, no "gone" answer this run) would otherwise lose their roles,
-and the published total would drop. For each such tenant whose roles were last read at most MAX_DAYS days ago, its rows in the
+A nightly run is time-boxed, and some careers systems refuse GitHub's servers for a while (from 13 Nov 2026 Workday and Oracle did,
+taking about 1.6 million roles with them). Tenants a run never tried, and tenants it tried but could not read (refused, rate limited,
+timed out: a failure says nothing about whether the roles are gone), would otherwise lose their roles and the published total would
+drop below the publish guard every night. For each such tenant whose roles were last read at most MAX_DAYS days ago, its rows in the
 currently published shards are kept as they are (same posting date, every field as published); the tenant's own fetch date is not
-moved, so after MAX_DAYS without a fetch its rows are dropped. Tenants that answered gone, failed this run, or were read this run are
-never carried. A row is matched to its tenant among all known tenants by its URL (the careers system's host, board or site) or, failing
+moved, so after MAX_DAYS without a successful read its rows are dropped. Tenants that answered gone or were read this run are never
+carried. A row is matched to its tenant among all known tenants by its URL (the careers system's host, board or site) or, failing
 that, by the company name when only one tenant of that system carries it; rows that match no unreached tenant are not carried.
 """
 from __future__ import annotations
@@ -19,7 +21,7 @@ from .adapters import SOURCES
 from .discovery import classify
 from .state import State, fetched_ts
 
-MAX_DAYS = 3
+MAX_DAYS = 14   # was 3: three days of refusals emptied the carry-over and the guard then refused every night (15 to 20 Nov 2026)
 # subdomain boards: the first label of the host is the tenant key
 SUBDOMAIN = {"gupy.io": "gupy", "recruitee.com": "recruitee", "teamtailor.com": "teamtailor", "bamboohr.com": "bamboohr",
              "breezy.hr": "breezy", "applytojob.com": "jazzhr", "pinpointhq.com": "pinpoint", "jobs.personio.de": "personio",
@@ -90,7 +92,7 @@ def carry_over(state: State, prev: Path | str | None, run_started: float, fields
                max_days: float = MAX_DAYS, now: float | None = None) -> tuple[list[list], dict]:
     """The published rows of the tenants this run did not reach, read at most `max_days` ago, laid out as `fields`."""
     now = now or time.time()
-    stats = {"tenants": 0, "rows": 0, "unreached": 0, "too_old": 0, "max_days": max_days, "from": ""}
+    stats = {"tenants": 0, "rows": 0, "unreached": 0, "failed": 0, "too_old": 0, "max_days": max_days, "from": ""}
     prev = Path(prev) if prev else None
     if not prev or not (prev / "manifest.json").exists():
         log("carry-over: no published index to carry from")
@@ -100,8 +102,9 @@ def carry_over(state: State, prev: Path | str | None, run_started: float, fields
     fallback = fetched_ts(man.get("fetched") or man.get("built") or "")     # tenants with no fetch date of their own
     cutoff = now - max_days * 86400
     eligible = []
-    for ats, key, data, ok in state.unreached(run_started):
-        stats["unreached"] += 1
+    candidates = [(t, "unreached") for t in state.unreached(run_started)] + [(t, "failed") for t in state.failed_since(run_started)]
+    for (ats, key, data, ok), why in candidates:
+        stats[why] += 1
         when = ok or fallback
         if when and when >= cutoff:
             eligible.append((ats, key, data))

@@ -25,15 +25,18 @@ class TestCarryOver(unittest.TestCase):
         self.state = State(d / "s.db", "run")
         st = self.state
         for ats, key, data in [("lever", "acme", {}), ("lever", "oldco", {}), ("lever", "fresh", {}),
-                               ("workday", "big.wd5|careers", {"tenant": "big", "wd": "wd5", "site": "Careers"}), ("lever", "gone", {})]:
+                               ("workday", "big.wd5|careers", {"tenant": "big", "wd": "wd5", "site": "Careers"}), ("lever", "gone", {}),
+                               ("lever", "refused", {}), ("lever", "longrefused", {})]:
             st.add_tenant(ats, key, data)
-        with st.lock:   # last read: acme yesterday, oldco five days ago, big two days ago
-            for key, age in (("acme", 1), ("oldco", 5), ("fresh", 1), ("gone", 1)):
+        with st.lock:   # last read: acme yesterday, oldco twenty days ago, big two days ago, refused nine, longrefused twenty
+            for key, age in (("acme", 1), ("oldco", 20), ("fresh", 1), ("gone", 1), ("refused", 9), ("longrefused", 20)):
                 st.db.execute("UPDATE tenants SET last_ok=? WHERE ats='lever' AND key=?", (self.now - age * DAY, key))
             st.db.execute("UPDATE tenants SET last_ok=? WHERE ats='workday'", (self.now - 2 * DAY,))
         self.started = self.now - 60
         st.save_result("lever", "fresh", [row("New role", "Fresh", "https://jobs.lever.co/fresh/new", "lever").copy()])  # read this run
         st.mark_gone("lever", "gone", "404")                                                                              # answered gone
+        st.mark_failed("lever", "refused", "HTTP 429")                                                                    # tried, refused
+        st.mark_failed("lever", "longrefused", "HTTP 429")
         self.prev = d / "prev"
         self.prev.mkdir()
         rows = [row("Engineer", "Acme", "https://jobs.lever.co/acme/1", "lever", "2026-10-30"),
@@ -41,9 +44,11 @@ class TestCarryOver(unittest.TestCase):
                 row("Old role", "Oldco", "https://jobs.lever.co/oldco/1", "lever"),
                 row("Closed role", "Fresh", "https://jobs.lever.co/fresh/old", "lever"),
                 row("Gone role", "Gone", "https://jobs.lever.co/gone/1", "lever"),
-                row("Nurse", "Big", "https://big.wd5.myworkdayjobs.com/en-US/Careers/job/Lisbon/Nurse_R1", "workday")]
+                row("Nurse", "Big", "https://big.wd5.myworkdayjobs.com/en-US/Careers/job/Lisbon/Nurse_R1", "workday"),
+                row("Kept role", "Refused", "https://jobs.lever.co/refused/1", "lever"),
+                row("Stale role", "Longrefused", "https://jobs.lever.co/longrefused/1", "lever")]
         (self.prev / "PT.json.gz").write_bytes(gzip.compress(json.dumps({"v": 1, "f": shards.FIELDS, "rows": rows}).encode()))
-        (self.prev / "manifest.json").write_text(json.dumps({"version": 1, "built": "2026-11-11T12:00:00Z", "total": 6,
+        (self.prev / "manifest.json").write_text(json.dumps({"version": 1, "built": "2026-11-11T12:00:00Z", "total": 8,
                                                              "shards": [{"id": "PT", "file": "PT.json.gz"}]}))
 
     def tearDown(self):
@@ -53,10 +58,17 @@ class TestCarryOver(unittest.TestCase):
         rows, stats = carryover.carry_over(self.state, self.prev, self.started, shards.FIELDS, log=lambda m: None, now=self.now)
         got = {(r[5], r[6]) for r in rows}
         self.assertEqual(got, {("https://jobs.lever.co/acme/1", "2026-10-30"), ("https://jobs.lever.co/acme/2", "2026-11-01"),
-                               ("https://big.wd5.myworkdayjobs.com/en-US/Careers/job/Lisbon/Nurse_R1", "2026-11-01")})
-        self.assertEqual((stats["tenants"], stats["rows"], stats["too_old"]), (2, 3, 1))
+                               ("https://big.wd5.myworkdayjobs.com/en-US/Careers/job/Lisbon/Nurse_R1", "2026-11-01"),
+                               ("https://jobs.lever.co/refused/1", "2026-11-01")})
+        self.assertEqual((stats["tenants"], stats["rows"], stats["too_old"], stats["failed"]), (3, 4, 2, 2))
 
-    def test_past_three_days_read_this_run_or_gone_are_dropped(self):
+    def test_a_refusal_keeps_the_roles_within_the_window_only(self):
+        rows, _ = carryover.carry_over(self.state, self.prev, self.started, shards.FIELDS, log=lambda m: None, now=self.now)
+        urls = {r[5] for r in rows}
+        self.assertIn("https://jobs.lever.co/refused/1", urls)          # refused tonight, read nine days ago: kept
+        self.assertNotIn("https://jobs.lever.co/longrefused/1", urls)   # refused, last read twenty days ago: dropped
+
+    def test_past_the_window_read_this_run_or_gone_are_dropped(self):
         rows, _ = carryover.carry_over(self.state, self.prev, self.started, shards.FIELDS, log=lambda m: None, now=self.now)
         urls = {r[5] for r in rows}
         for u in ("https://jobs.lever.co/oldco/1", "https://jobs.lever.co/fresh/old", "https://jobs.lever.co/gone/1"):
@@ -69,8 +81,8 @@ class TestCarryOver(unittest.TestCase):
         res = shards.build(chain([r for _, _, rs in self.state.iter_rows() for r in rs], carried), out, log=lambda m: None,
                            meta={"fetched": "2026-11-12", "carried": stats})
         m = json.loads((out / "manifest.json").read_text())
-        self.assertEqual(m["total"], 4)                      # one fresh row and three carried
-        self.assertEqual(m["carried"]["rows"], 3)
+        self.assertEqual(m["total"], 5)                      # one fresh row and four carried
+        self.assertEqual(m["carried"]["rows"], 4)
         self.assertEqual(m["fetched"], "2026-11-12")
 
     def test_nothing_published_nothing_carried(self):

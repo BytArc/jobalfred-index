@@ -220,6 +220,14 @@ class State:
             rows = self.db.execute("SELECT ats,key,data FROM tenants").fetchall()
         return [(a, k, json.loads(d or "{}")) for a, k, d in rows]
 
+    def failed_since(self, since: float) -> list[tuple[str, str, dict, float | None]]:
+        """Live tenants this run tried and could not read (refused, rate limited, timed out), neither read nor gone: (ats, key, data, last_ok)."""
+        with self.lock:
+            rows = self.db.execute(
+                "SELECT ats,key,data,last_ok FROM tenants WHERE status!='dead' AND last_try>=? AND (last_ok IS NULL OR last_ok<?) "
+                "AND (last_gone_run IS NULL OR last_gone_run!=?)", (since, since, self.run_id)).fetchall()
+        return [(a, k, json.loads(d or "{}"), ok) for a, k, d, ok in rows]
+
     def unreached(self, since: float) -> list[tuple[str, str, dict, float | None]]:
         """Live tenants this run never tried (no fetch, failure or gone answer since `since`): (ats, key, data, last_ok)."""
         with self.lock:
