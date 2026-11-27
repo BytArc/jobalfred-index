@@ -130,3 +130,26 @@ collected after this change with a description (about 22% of roles in the nightl
 4. **The nightly build failed from about 15 to 20 Nov** ("Refusing to publish: 699589 roles against 2011050"), so the live index is from
    14 Nov. `main` b9af59c (carry-over of refused tenants for 14 days), which this branch is rebased on, targets that; the next nightly will
    show whether it publishes again.
+
+## 27 Nov 2026: a description model, measured and not shipped
+
+Owner's ask: a good guess for every role, from the title and the description, with an ML model behind the stated rules. Every
+row already has one (sl/ss "i" from the title model; yx from the level). A search for open models found none that fits our eight
+levels, six years intervals, six languages and the nightly's CPU budget (no LLM in the nightly), so the market-standard recipe
+was built and measured: `scripts/levels_corpus.py` read 56,998 postings with descriptions from 1,947 Greenhouse, Lever, Ashby,
+Recruitee, Teamtailor and Breezy boards through the polite client (kept on this machine only; descriptions are never
+committed); `jobalfred_index/descmodel.py` is a hashed logistic regression over the masked title, its character n-grams and the
+description with every years statement and the title taken out; `scripts/levels_train_desc.py` trains it by distant
+supervision (9,454 stated levels, 20,000 stated years) and scores it on the gold sample with the cascade of `levels_eval.py`.
+
+| nightly configuration | today | with the description model |
+|---|---|---|
+| inferred level exact, dev+test (1,359 rows), best weight | 62.9% | 63.1% (label-shift correction and gating tried; within noise) |
+| inferred level exact, test2 (614, frozen) | 58.5% | 58.3% |
+| inferred years exact, test2 (189) | 40.2% | 39.7% |
+
+Not wired into the build. Why it doesn't help: the rows that state a level are 60% senior, while the rows we infer for are
+mostly frontline and early-career roles, and the title model's company and title mixes already carry what the description
+adds. Where the description does help is stating: reading each posting's own text (the "full" configuration) moves years
+from inferred to stated on 319 of 430 dev+test rows that lacked them, at 93.5% precision. So the next gain is reading more
+posting pages per night and keeping only the tags they state, not a bigger model.
